@@ -1,0 +1,33 @@
+/**
+ * CCPA Page Styles
+ * Page-specific styles for indented content
+ */
+
+/* Import shared legal page styles */
+@import '../components/legal-common.css';
+
+/* ==================== INDENTED CONTENT ==================== */
+.indented-content {
+    padding-left: 24px;
+    border-left: 3px solid rgba(129, 103, 234, 0.2);
+    margin: 20px 0;
+}
+
+.indented-content p {
+    margin: 12px 0;
+}
+
+.indented-content p:first-child {
+    margin-top: 0;
+}
+
+.indented-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 600px) {
+    .indented-content {
+        padding-left: 16px;
+    }
+}

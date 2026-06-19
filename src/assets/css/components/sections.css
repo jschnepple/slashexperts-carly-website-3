@@ -1,0 +1,117 @@
+/* ========== SECTIONS ========== */
+
+/* Common section container */
+section {
+    padding: 100px 48px;
+}
+
+.section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Section badge */
+.section-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: rgba(129, 103, 234, 0.1);
+    border-radius: 100px;
+    margin-bottom: 24px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--violet);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.badge-icon {
+    width: 16px;
+    height: 16px;
+    stroke: var(--violet);
+}
+
+/* Section title */
+.section-title {
+    font-size: clamp(32px, 5vw, 56px);
+    font-weight: 800;
+    color: var(--navy);
+    line-height: 1.2;
+    margin-bottom: 20px;
+    letter-spacing: -2px;
+}
+
+/* Section subtitle/description */
+.section-subtitle {
+    font-size: clamp(16px, 2vw, 20px);
+    color: var(--muted);
+    max-width: 700px;
+    margin: 0 auto 60px;
+    line-height: 1.7;
+}
+
+/* Gradient text utility */
+.gradient-text {
+    background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-purple) 50%, var(--accent-pink) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Serif italic utility */
+.serif-italic {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-style: italic;
+    font-weight: 400;
+}
+
+/* Light background section */
+.section-light {
+    background: var(--off-white);
+}
+
+/* Dark background section */
+.section-dark {
+    background: var(--navy);
+    color: var(--white);
+}
+
+.section-dark .section-title {
+    color: var(--white);
+}
+
+.section-dark .section-subtitle {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* ========== LAST UPDATED BAR ========== */
+.last-updated-bar {
+    position: relative;
+    z-index: 1;
+    padding: 0 48px;
+}
+
+.last-updated-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    color: var(--muted, #64748b);
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(129, 103, 234, 0.08);
+}
+
+.last-updated-inner svg {
+    opacity: 0.5;
+    flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+    .last-updated-bar {
+        padding: 0 20px;
+    }
+}

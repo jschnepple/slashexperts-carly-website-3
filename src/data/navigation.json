@@ -1,0 +1,118 @@
+{
+  "logo": {
+    "text": "Experts",
+    "url": "/"
+  },
+  "mainNav": [
+    {
+      "label": "Product",
+      "hasDropdown": true,
+      "items": [
+        {
+          "label": "How It Works",
+          "url": "/how-it-works/",
+          "icon": "lightning"
+        },
+        {
+          "label": "Expert Booking",
+          "url": "/expert-booking/",
+          "icon": "calendar"
+        },
+        {
+          "label": "CRM Integration",
+          "url": "/crm-integration/",
+          "icon": "link"
+        },
+        {
+          "label": "Analytics & ROI",
+          "url": "/analytics-roi/",
+          "icon": "chart"
+        },
+        {
+          "label": "Integrations",
+          "url": "/integrations/",
+          "icon": "grid"
+        }
+      ]
+    },
+    {
+      "label": "Solutions",
+      "hasDropdown": true,
+      "items": [
+        {
+          "label": "For Sales Teams",
+          "url": "#",
+          "icon": "trending"
+        },
+        {
+          "label": "For Marketing",
+          "url": "/solutions-marketing/",
+          "icon": "target"
+        },
+        {
+          "label": "For Customer Success",
+          "url": "/solutions-customer-success/",
+          "icon": "users"
+        },
+        {
+          "label": "By Use Case",
+          "url": "/solutions-by-use-case/",
+          "icon": "package"
+        }
+      ]
+    },
+    {
+      "label": "Become an Expert",
+      "url": "/become-an-expert/",
+      "hasDropdown": false
+    },
+    {
+      "label": "Pricing",
+      "url": "/pricing/",
+      "hasDropdown": false
+    },
+    {
+      "label": "About",
+      "url": "/about/",
+      "hasDropdown": false
+    },
+    {
+      "label": "Resources",
+      "hasDropdown": true,
+      "items": [
+        {
+          "label": "2026 GTM Report",
+          "url": "/download-report-2026/",
+          "icon": "file"
+        },
+        {
+          "label": "Blog",
+          "url": "/resources-blog/",
+          "icon": "edit"
+        },
+        {
+          "label": "Documentation",
+          "url": "/documentation/",
+          "icon": "book"
+        },
+        {
+          "label": "ROI Calculator",
+          "url": "/roi-calculator/",
+          "icon": "calculator"
+        }
+      ]
+    }
+  ],
+  "ctaButtons": [
+    {
+      "label": "Sign In",
+      "url": "#",
+      "type": "ghost"
+    },
+    {
+      "label": "Book a Demo",
+      "url": "/book-a-demo/",
+      "type": "primary"
+    }
+  ]
+}

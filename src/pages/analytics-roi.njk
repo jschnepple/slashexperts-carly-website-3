@@ -1,0 +1,923 @@
+---
+title: Analytics & ROI | SlashExperts - Prove Your Impact with Data
+description: Comprehensive ROI reporting that tracks every expert interaction from first conversation to closed deal. Prove the value of your program with metrics executives actually care about.
+permalink: /analytics-roi/
+pageCSS: analytics-roi
+pageJS: analytics-roi
+darkOverlayFooter: true
+---
+
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+
+<section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="section-badge">
+                    <svg viewBox="0 0 24 24">
+                        <line x1="18" y1="20" x2="18" y2="10"/>
+                        <line x1="12" y1="20" x2="12" y2="4"/>
+                        <line x1="6" y1="20" x2="6" y2="14"/>
+                    </svg>
+                    Analytics & ROI
+                </div>
+                <h1>Prove Your Impact with <span class="serif-italic gradient-text">Data</span></h1>
+                <p class="hero-subtitle">Comprehensive ROI reporting that tracks every expert interaction from first conversation to closed deal. Prove the value of your program with metrics executives actually care about.</p>
+                <div class="hero-ctas">
+                    <a href="/book-a-demo/" class="btn btn-white-glow btn-large">Book a Demo</a>
+                    <a href="#calculator" class="btn-secondary has-glow">Calculate Your ROI</a>
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                <div class="dashboard-preview">
+                    <div class="window-bar">
+                        <div class="window-dot red"></div>
+                        <div class="window-dot yellow"></div>
+                        <div class="window-dot green"></div>
+                        <span class="window-title">SlashExperts Analytics Dashboard</span>
+                    </div>
+                    <div class="dashboard-content">
+                        <div class="metrics-row">
+                            <div class="hero-metric-card">
+                                <div class="hero-metric-value green"><span class="hero-counter" data-target="847" data-suffix="%">0%</span></div>
+                                <div class="hero-metric-label">Program ROI</div>
+                                <div class="hero-metric-change">↑ +12% this quarter</div>
+                            </div>
+                            <div class="hero-metric-card">
+                                <div class="hero-metric-value violet">$<span class="hero-counter" data-target="2.4" data-decimals="1" data-suffix="M">0M</span></div>
+                                <div class="hero-metric-label">Pipeline Influenced</div>
+                                <div class="hero-metric-change">↑ +$340K this month</div>
+                            </div>
+                            <div class="hero-metric-card">
+                                <div class="hero-metric-value cyan"><span class="hero-counter" data-target="68" data-suffix="%">0%</span></div>
+                                <div class="hero-metric-label">Quota Attainment</div>
+                                <div class="hero-metric-change">↑ vs 28% baseline</div>
+                            </div>
+                        </div>
+                        <div class="chart-container">
+                            <div class="chart-title">Pipeline Influence Over Time</div>
+                            <div class="line-chart">
+                                <svg viewBox="0 0 400 100" preserveAspectRatio="none">
+                                    <!-- Purple line -->
+                                    <path class="animated-line" d="M0,80 Q50,75 100,60 T200,50 T300,35 T400,30" 
+                                          fill="none" 
+                                          stroke="url(#purpleGradient)" 
+                                          stroke-width="3"
+                                          stroke-linecap="round"/>
+                                    <!-- Cyan line -->
+                                    <path class="animated-line-2" d="M0,90 Q50,85 100,75 T200,65 T300,55 T400,45" 
+                                          fill="none" 
+                                          stroke="url(#cyanGradient)" 
+                                          stroke-width="3"
+                                          stroke-linecap="round"/>
+                                    <defs>
+                                        <linearGradient id="purpleGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                            <stop offset="0%" stop-color="#6366f1"/>
+                                            <stop offset="100%" stop-color="#a78bfa"/>
+                                        </linearGradient>
+                                        <linearGradient id="cyanGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                            <stop offset="0%" stop-color="#06b6d4"/>
+                                            <stop offset="100%" stop-color="#67e8f9"/>
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Stats Section -->
+    <section class="stats-section">
+        <div class="stats-container">
+            <div class="stats-header">
+                <div class="section-badge">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                        <polyline points="22 4 12 14.01 9 11.01"/>
+                    </svg>
+                    Proven Results
+                </div>
+                <h2>Numbers That Speak to the <span class="serif-italic gradient-text">C-Suite</span></h2>
+                <p>Real results from companies using SlashExperts analytics to prove their program's impact</p>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number gradient-cyan"><span class="stat-counter" data-target="35" data-suffix="%">0%</span></div>
+                    <div class="stat-label">Increase in website visitor-to-opportunity conversion</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number gradient-pink"><span class="stat-counter" data-target="29" data-suffix="%">0%</span></div>
+                    <div class="stat-label">Reduction in sales cycle length for deals using expert validation</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number gradient-purple"><span class="stat-counter" data-target="2.4" data-decimals="1" data-suffix="x">0x</span></div>
+                    <div class="stat-label">Higher close rates on opportunities with expert conversations</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number gradient-orange"><span class="stat-counter" data-target="847" data-suffix="%">0%</span></div>
+                    <div class="stat-label">Average program ROI demonstrated to executives</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Views Section -->
+    <section class="dashboard-section">
+        <div class="dashboard-container">
+            <div class="dashboard-header">
+                <div class="section-badge">
+                    <svg viewBox="0 0 24 24">
+                        <rect x="3" y="3" width="7" height="7"/>
+                        <rect x="14" y="3" width="7" height="7"/>
+                        <rect x="14" y="14" width="7" height="7"/>
+                        <rect x="3" y="14" width="7" height="7"/>
+                    </svg>
+                    Dashboard Views
+                </div>
+                <h2>Every Team Gets Their <span class="serif-italic gradient-text">View</span></h2>
+                <p>Role-specific dashboards that surface the metrics each team cares about most</p>
+            </div>
+            
+            <div class="dashboard-tabs">
+                <button class="dashboard-tab active" data-view="marketing">Marketing</button>
+                <button class="dashboard-tab" data-view="sales">Sales</button>
+                <button class="dashboard-tab" data-view="operations">Operations</button>
+                <button class="dashboard-tab" data-view="executive">Executive</button>
+            </div>
+            
+            <div class="dashboard-views">
+                <!-- Marketing View -->
+                <div class="dashboard-view active" id="marketing-view">
+                    <div class="view-content">
+                        <div class="view-text">
+                            <h3>Full-Funnel <span class="gradient-text">Conversion</span> Analytics</h3>
+                            <p>Track every visitor touchpoint from first website hit to expert match to closed deal. See exactly where peer validation accelerates your funnel.</p>
+                            <div class="view-features">
+                                <div class="view-feature">
+                                    <div class="view-feature-icon">✓</div>
+                                    <span>Visitor-to-match conversion tracking</span>
+                                </div>
+                                <div class="view-feature">
+                                    <div class="view-feature-icon">✓</div>
+                                    <span>A/B test results by placement</span>
+                                </div>
+                                <div class="view-feature">
+                                    <div class="view-feature-icon">✓</div>
+                                    <span>Page-level performance metrics</span>
+                                </div>
+                                <div class="view-feature">
+                                    <div class="view-feature-icon">✓</div>
+                                    <span>Funnel drop-off analysis</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="view-mockup">
+                            <div class="mockup-bar">
+                                <div class="mockup-dot" style="background: #ff5f57;"></div>
+                                <div class="mockup-dot" style="background: #ffbd2e;"></div>
+                                <div class="mockup-dot" style="background: #28c840;"></div>
+                            </div>
+                            <div class="mockup-content">
+                                <div class="funnel-chart">
+                                    <div class="funnel-row">
+                                        <span class="funnel-label">Website Visitors</span>
+                                        <div class="funnel-bar violet" style="width: 100%;"><span>12,847</span></div>
+                                    </div>
+                                    <div class="funnel-row">
+                                        <span class="funnel-label">Expert Matches</span>
+                                        <div class="funnel-bar cyan" style="width: 75%;"><span>3,211</span></div>
+                                    </div>
+                                    <div class="funnel-row">
+                                        <span class="funnel-label">Calls Booked</span>
+                                        <div class="funnel-bar pink" style="width: 45%;"><span>1,284</span></div>
+                                    </div>
+                                    <div class="funnel-row">
+                                        <span class="funnel-label">Opportunities</span>
+                                        <div class="funnel-bar green" style="width: 25%;"><span>642</span></div>
+                                    </div>
+                                </div>
+                                <div class="conversion-metrics">
+                                    <div class="conversion-metric">
+                                        <div class="conversion-value">35%</div>
+                                        <div class="conversion-label">Conversion Lift</div>
+                                    </div>
+                                    <div class="conversion-metric">
+                                        <div class="conversion-value">4.2x</div>
+                                        <div class="conversion-label">vs. Control</div>
+                                    </div>
+                                    <div class="conversion-metric">
+                                        <div class="conversion-value">$1.2M</div>
+                                        <div class="conversion-label">Pipeline</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Sales View -->
+                <div class="dashboard-view" id="sales-view">
+                    <div class="view-content">
+                        <div class="view-text">
+                            <h3>Pipeline <span class="gradient-text-cyan">Influence</span> Tracking</h3>
+                            <p>See which deals used expert conversations and track revenue attribution from first call to closed-won. Multi-touch influence modeling shows the true impact.</p>
+                            <div class="view-features">
+                                <div class="view-feature">
+                                    <div class="view-feature-icon">✓</div>
+                                    <span>Deal-level influence attribution</span>
+                                </div>
+                                <div class="view-feature">
+                                    <div class="view-feature-icon">✓</div>
+                                    <span>Rep activity tracking</span>
+                                </div>
+                                <div class="view-feature">
+                                    <div class="view-feature-icon">✓</div>
+                                    <span>Win rate comparisons</span>
+                                </div>
+                                <div class="view-feature">
+                                    <div class="view-feature-icon">✓</div>
+                                    <span>Stage velocity analysis</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="view-mockup">
+                            <div class="mockup-bar">
+                                <div class="mockup-dot" style="background: #ff5f57;"></div>
+                                <div class="mockup-dot" style="background: #ffbd2e;"></div>
+                                <div class="mockup-dot" style="background: #28c840;"></div>
+                            </div>
+                            <div class="mockup-content">
+                                <div class="pipeline-header">
+                                    <span class="pipeline-title">Pipeline Influenced This Quarter</span>
+                                    <span class="pipeline-total">$2.4M Total</span>
+                                </div>
+                                <div class="pipeline-bars">
+                                    <div class="pipeline-row">
+                                        <span class="pipeline-label">Discovery</span>
+                                        <div class="pipeline-bar-track">
+                                            <div class="pipeline-bar-fill" style="width: 85%; background: linear-gradient(90deg, var(--violet), #a78bfa);"><span>$892K</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="pipeline-row">
+                                        <span class="pipeline-label">Evaluation</span>
+                                        <div class="pipeline-bar-track">
+                                            <div class="pipeline-bar-fill" style="width: 65%; background: linear-gradient(90deg, #06b6d4, var(--accent-cyan));"><span>$654K</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="pipeline-row">
+                                        <span class="pipeline-label">Negotiation</span>
+                                        <div class="pipeline-bar-track">
+                                            <div class="pipeline-bar-fill" style="width: 45%; background: linear-gradient(90deg, #ec4899, var(--accent-pink));"><span>$421K</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="pipeline-row">
+                                        <span class="pipeline-label">Closed-Won</span>
+                                        <div class="pipeline-bar-track">
+                                            <div class="pipeline-bar-fill" style="width: 35%; background: linear-gradient(90deg, #10b981, var(--green));"><span>$387K</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="deal-list">
+                                    <div class="deal-list-header">Recent Influenced Deals</div>
+                                    <div class="deal-item">
+                                        <span class="deal-name">Acme Corp - Enterprise</span>
+                                        <span class="deal-badge influenced">Expert Influenced</span>
+                                    </div>
+                                    <div class="deal-item">
+                                        <span class="deal-name">TechCo - Pro Plan</span>
+                                        <span class="deal-badge influenced">Expert Influenced</span>
+                                    </div>
+                                    <div class="deal-item">
+                                        <span class="deal-name">GlobalDev - Scale</span>
+                                        <span class="deal-badge influenced">Expert Influenced</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Operations View -->
+                <div class="dashboard-view" id="operations-view">
+                    <div class="view-content">
+                        <div class="view-text">
+                            <h3>Program <span class="gradient-text">Health</span> at a Glance</h3>
+                            <p>Monitor expert utilization, response times, and program health metrics. Keep your expert network happy and engaged while maximizing value.</p>
+                            <div class="view-features">
+                                <div class="view-feature">
+                                    <div class="view-feature-icon">✓</div>
+                                    <span>Expert leaderboard & performance</span>
+                                </div>
+                                <div class="view-feature">
+                                    <div class="view-feature-icon">✓</div>
+                                    <span>Utilization rate tracking</span>
+                                </div>
+                                <div class="view-feature">
+                                    <div class="view-feature-icon">✓</div>
+                                    <span>Response time monitoring</span>
+                                </div>
+                                <div class="view-feature">
+                                    <div class="view-feature-icon">✓</div>
+                                    <span>Compensation totals & payouts</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="view-mockup">
+                            <div class="mockup-bar">
+                                <div class="mockup-dot" style="background: #ff5f57;"></div>
+                                <div class="mockup-dot" style="background: #ffbd2e;"></div>
+                                <div class="mockup-dot" style="background: #28c840;"></div>
+                            </div>
+                            <div class="mockup-content">
+                                <div class="ops-grid">
+                                    <div class="ops-card">
+                                        <div class="ops-card-title">Utilization Rate</div>
+                                        <div class="gauge-container">
+                                            <svg class="gauge" viewBox="0 0 100 50">
+                                                <path class="gauge-bg" d="M10,50 A40,40 0 0,1 90,50"/>
+                                                <path class="gauge-fill" d="M10,50 A40,40 0 0,1 90,50" stroke="url(#gaugeGradient)" stroke-dasharray="125.6" stroke-dashoffset="31.4"/>
+                                                <defs>
+                                                    <linearGradient id="gaugeGradient">
+                                                        <stop offset="0%" stop-color="#8167ea"/>
+                                                        <stop offset="100%" stop-color="#22c55e"/>
+                                                    </linearGradient>
+                                                </defs>
+                                            </svg>
+                                        </div>
+                                        <div class="gauge-value" style="color: var(--green);">78%</div>
+                                    </div>
+                                    <div class="ops-card">
+                                        <div class="ops-card-title">Avg Response Time</div>
+                                        <div class="gauge-container">
+                                            <svg class="gauge" viewBox="0 0 100 50">
+                                                <path class="gauge-bg" d="M10,50 A40,40 0 0,1 90,50"/>
+                                                <path class="gauge-fill" d="M10,50 A40,40 0 0,1 90,50" stroke="url(#gaugeGradient2)" stroke-dasharray="125.6" stroke-dashoffset="50"/>
+                                                <defs>
+                                                    <linearGradient id="gaugeGradient2">
+                                                        <stop offset="0%" stop-color="#06b6d4"/>
+                                                        <stop offset="100%" stop-color="#8167ea"/>
+                                                    </linearGradient>
+                                                </defs>
+                                            </svg>
+                                        </div>
+                                        <div class="gauge-value" style="color: var(--accent-cyan);">4.2h</div>
+                                    </div>
+                                </div>
+                                <div class="ops-card" style="margin-top: 16px;">
+                                    <div class="ops-card-title">Top Performing Experts</div>
+                                    <div class="leaderboard-item">
+                                        <div class="leaderboard-rank">1</div>
+                                        <div class="leaderboard-avatar">SC</div>
+                                        <span class="leaderboard-name">Sarah Chen</span>
+                                        <span class="leaderboard-calls">47 calls</span>
+                                    </div>
+                                    <div class="leaderboard-item">
+                                        <div class="leaderboard-rank">2</div>
+                                        <div class="leaderboard-avatar">MR</div>
+                                        <span class="leaderboard-name">Mike Rodriguez</span>
+                                        <span class="leaderboard-calls">42 calls</span>
+                                    </div>
+                                    <div class="leaderboard-item">
+                                        <div class="leaderboard-rank">3</div>
+                                        <div class="leaderboard-avatar">JW</div>
+                                        <span class="leaderboard-name">Jennifer Wu</span>
+                                        <span class="leaderboard-calls">38 calls</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Executive View -->
+                <div class="dashboard-view" id="executive-view">
+                    <div class="view-content">
+                        <div class="view-text">
+                            <h3>One-Click <span class="gradient-text">C-Suite</span> Reports</h3>
+                            <p>Executive summaries that prove ROI in seconds. Generate board-ready reports with revenue attribution and program performance at a glance.</p>
+                            <div class="view-features">
+                                <div class="view-feature">
+                                    <div class="view-feature-icon">✓</div>
+                                    <span>Revenue attribution summaries</span>
+                                </div>
+                                <div class="view-feature">
+                                    <div class="view-feature-icon">✓</div>
+                                    <span>Quarterly business review exports</span>
+                                </div>
+                                <div class="view-feature">
+                                    <div class="view-feature-icon">✓</div>
+                                    <span>Benchmark comparisons</span>
+                                </div>
+                                <div class="view-feature">
+                                    <div class="view-feature-icon">✓</div>
+                                    <span>Scheduled report delivery</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="view-mockup">
+                            <div class="mockup-bar">
+                                <div class="mockup-dot" style="background: #ff5f57;"></div>
+                                <div class="mockup-dot" style="background: #ffbd2e;"></div>
+                                <div class="mockup-dot" style="background: #28c840;"></div>
+                            </div>
+                            <div class="mockup-content">
+                                <div class="exec-summary">
+                                    <div class="exec-metric">
+                                        <div class="exec-value" style="color: var(--green);">847%</div>
+                                        <div class="exec-label">Program ROI</div>
+                                    </div>
+                                    <div class="exec-metric">
+                                        <div class="exec-value" style="color: var(--violet);">$2.4M</div>
+                                        <div class="exec-label">Revenue Influenced</div>
+                                    </div>
+                                    <div class="exec-metric">
+                                        <div class="exec-value" style="color: var(--accent-cyan);">68%</div>
+                                        <div class="exec-label">Quota Attainment</div>
+                                    </div>
+                                    <div class="exec-metric">
+                                        <div class="exec-value" style="color: var(--accent-pink);">+143%</div>
+                                        <div class="exec-label">Performance Lift</div>
+                                    </div>
+                                </div>
+                                <div class="exec-chart">
+                                    <div class="exec-chart-header">
+                                        <span class="exec-chart-title">Quarterly Trend</span>
+                                        <div class="exec-chart-legend">
+                                            <div class="legend-item"><span class="legend-dot violet"></span>Pipeline</div>
+                                            <div class="legend-item"><span class="legend-dot green"></span>Closed</div>
+                                        </div>
+                                    </div>
+                                    <div class="trend-chart">
+                                        <div class="trend-bar-group">
+                                            <div class="trend-bars">
+                                                <div class="trend-bar" style="height: 50px; background: var(--violet);"></div>
+                                                <div class="trend-bar" style="height: 30px; background: var(--green);"></div>
+                                            </div>
+                                            <span class="trend-label">Q1</span>
+                                        </div>
+                                        <div class="trend-bar-group">
+                                            <div class="trend-bars">
+                                                <div class="trend-bar" style="height: 65px; background: var(--violet);"></div>
+                                                <div class="trend-bar" style="height: 40px; background: var(--green);"></div>
+                                            </div>
+                                            <span class="trend-label">Q2</span>
+                                        </div>
+                                        <div class="trend-bar-group">
+                                            <div class="trend-bars">
+                                                <div class="trend-bar" style="height: 80px; background: var(--violet);"></div>
+                                                <div class="trend-bar" style="height: 55px; background: var(--green);"></div>
+                                            </div>
+                                            <span class="trend-label">Q3</span>
+                                        </div>
+                                        <div class="trend-bar-group">
+                                            <div class="trend-bars">
+                                                <div class="trend-bar" style="height: 95px; background: var(--violet);"></div>
+                                                <div class="trend-bar" style="height: 70px; background: var(--green);"></div>
+                                            </div>
+                                            <span class="trend-label">Q4</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Analytics Features Section - LIGHT MODE -->
+    <section class="features-section">
+        <div class="features-container">
+            <div class="features-header">
+                <div class="section-badge">
+                    <svg viewBox="0 0 24 24">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                    </svg>
+                    Analytics Features
+                </div>
+                <h2>Everything You Need to <span class="serif-italic gradient-text">Prove Value</span></h2>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+                            <polyline points="17 6 23 6 23 12"/>
+                        </svg>
+                    </div>
+                    <h3>Pipeline Influence</h3>
+                    <p>See which deals used expert conversations. Track revenue influenced with multi-touch attribution modeling.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12 6 12 12 16 14"/>
+                        </svg>
+                    </div>
+                    <h3>Cycle Analysis</h3>
+                    <p>Compare sales cycle length with and without expert calls. Measure stage velocity and time-to-close impact.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                    </div>
+                    <h3>Expert Performance</h3>
+                    <p>Track calls completed, ratings, and response times. Identify top performers with leaderboards.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="18" y1="20" x2="18" y2="10"/>
+                            <line x1="12" y1="20" x2="12" y2="4"/>
+                            <line x1="6" y1="20" x2="6" y2="14"/>
+                        </svg>
+                    </div>
+                    <h3>Real-Time Activity</h3>
+                    <p>Live booking notifications, call completion alerts, and expert availability updates as they happen.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="7" height="7"/>
+                            <rect x="14" y="3" width="7" height="7"/>
+                            <rect x="14" y="14" width="7" height="7"/>
+                            <rect x="3" y="14" width="7" height="7"/>
+                        </svg>
+                    </div>
+                    <h3>Custom Dashboards</h3>
+                    <p>Build views by team, region, or product. Set date range comparisons with goal tracking and alerts.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                            <polyline points="14 2 14 8 20 8"/>
+                            <line x1="16" y1="13" x2="8" y2="13"/>
+                            <line x1="16" y1="17" x2="8" y2="17"/>
+                        </svg>
+                    </div>
+                    <h3>Executive Reports</h3>
+                    <p>One-click C-suite dashboards with exportable PDF and CSV reports. Schedule automated delivery.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reports Section -->
+    <section class="reports-section">
+        <div class="reports-container">
+            <div class="reports-header">
+                <div class="section-badge">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                        <polyline points="14 2 14 8 20 8"/>
+                    </svg>
+                    Report Library
+                </div>
+                <h2>Reports Built for <span class="serif-italic gradient-text">Every Stakeholder</span></h2>
+            </div>
+            
+            <div class="reports-grid">
+                <div class="report-card">
+                    <div class="report-preview">
+                        <div class="report-line title"></div>
+                        <div class="report-line medium"></div>
+                        <div class="report-line long"></div>
+                        <div class="report-line short"></div>
+                        <div class="report-line medium"></div>
+                        <div class="report-line long"></div>
+                    </div>
+                    <div class="report-info">
+                        <h4>Executive Summary</h4>
+                        <p>One-page ROI overview for board meetings and C-suite reviews.</p>
+                    </div>
+                </div>
+                <div class="report-card">
+                    <div class="report-preview">
+                        <div class="report-line title"></div>
+                        <div class="report-line long"></div>
+                        <div class="report-line medium"></div>
+                        <div class="report-line long"></div>
+                        <div class="report-line short"></div>
+                        <div class="report-line medium"></div>
+                    </div>
+                    <div class="report-info">
+                        <h4>Deal Influence</h4>
+                        <p>Detailed attribution report showing expert impact on closed deals.</p>
+                    </div>
+                </div>
+                <div class="report-card">
+                    <div class="report-preview">
+                        <div class="report-line title"></div>
+                        <div class="report-line short"></div>
+                        <div class="report-line medium"></div>
+                        <div class="report-line long"></div>
+                        <div class="report-line medium"></div>
+                        <div class="report-line short"></div>
+                    </div>
+                    <div class="report-info">
+                        <h4>Expert Performance</h4>
+                        <p>Individual and aggregate expert metrics with rankings.</p>
+                    </div>
+                </div>
+                <div class="report-card">
+                    <div class="report-preview">
+                        <div class="report-line title"></div>
+                        <div class="report-line medium"></div>
+                        <div class="report-line short"></div>
+                        <div class="report-line long"></div>
+                        <div class="report-line long"></div>
+                        <div class="report-line medium"></div>
+                    </div>
+                    <div class="report-info">
+                        <h4>Custom Reports</h4>
+                        <p>Build your own reports with drag-and-drop metrics.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Before vs After Section -->
+    <section class="comparison-section">
+        <div class="comparison-container">
+            <div class="comparison-header">
+                <div class="section-badge">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                        <polyline points="22 4 12 14.01 9 11.01"/>
+                    </svg>
+                    The Difference
+                </div>
+                <h2>Before vs After <span class="serif-italic gradient-text">SlashExperts</span></h2>
+                <p>See how peer validation transforms your key metrics</p>
+            </div>
+            
+            <div class="comparison-table">
+                <div class="comparison-row header">
+                    <div class="comparison-cell metric header-cell">Metric</div>
+                    <div class="comparison-cell without header-cell">Without SlashExperts</div>
+                    <div class="comparison-cell with header-cell">With SlashExperts</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-cell metric">Close Rate</div>
+                    <div class="comparison-cell without">22%</div>
+                    <div class="comparison-cell with">53%</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-cell metric">Sales Cycle</div>
+                    <div class="comparison-cell without">45 days</div>
+                    <div class="comparison-cell with">32 days</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-cell metric">Quota Attainment</div>
+                    <div class="comparison-cell without">28%</div>
+                    <div class="comparison-cell with">68%</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-cell metric">Reference Availability</div>
+                    <div class="comparison-cell without">2-3 days</div>
+                    <div class="comparison-cell with">5 min</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-cell metric">Admin Time per Call</div>
+                    <div class="comparison-cell without">45 min</div>
+                    <div class="comparison-cell with">0 min</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ROI Calculator Section -->
+    <section class="calculator-section" id="calculator">
+        <div class="calculator-container">
+            <div class="calculator-content">
+                <div class="calculator-text">
+                    <div class="section-badge">
+                        <svg viewBox="0 0 24 24">
+                            <rect x="4" y="2" width="16" height="20" rx="2" ry="2"/>
+                            <line x1="8" y1="6" x2="16" y2="6"/>
+                            <line x1="8" y1="10" x2="16" y2="10"/>
+                            <line x1="8" y1="14" x2="12" y2="14"/>
+                        </svg>
+                        ROI Calculator
+                    </div>
+                    <h2>See Your <span class="serif-italic gradient-text">Potential</span></h2>
+                    <p>Calculate the impact SlashExperts could have on your pipeline based on your team size and deal metrics.</p>
+                    
+                    <div class="calculator-features">
+                        <div class="calculator-feature">
+                            <div class="calculator-feature-check">
+                                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                            </div>
+                            <span>Based on data from 450+ B2B companies</span>
+                        </div>
+                        <div class="calculator-feature">
+                            <div class="calculator-feature-check">
+                                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                            </div>
+                            <span>Conservative estimates using median outcomes</span>
+                        </div>
+                        <div class="calculator-feature">
+                            <div class="calculator-feature-check">
+                                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                            </div>
+                            <span>Customizable to your specific metrics</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="calculator-card">
+                    <div class="calculator-card-header">
+                        <h3>Calculate Your ROI</h3>
+                        <p>Adjust the sliders to match your business</p>
+                    </div>
+                    
+                    <div class="calculator-inputs">
+                        <div class="calculator-row">
+                            <div class="calculator-label">
+                                <span>Sales Team Size</span>
+                                <span class="calculator-value"><span id="team-value">25</span> reps</span>
+                            </div>
+                            <input type="range" id="team-size" min="5" max="100" value="25">
+                        </div>
+                        <div class="calculator-row">
+                            <div class="calculator-label">
+                                <span>Average Deal Size</span>
+                                <span class="calculator-value">$<span id="deal-value">75,000</span></span>
+                            </div>
+                            <input type="range" id="deal-size" min="10000" max="500000" step="5000" value="75000">
+                        </div>
+                        <div class="calculator-row">
+                            <div class="calculator-label">
+                                <span>Monthly Opportunities</span>
+                                <span class="calculator-value"><span id="opps-value">100</span> opps</span>
+                            </div>
+                            <input type="range" id="opps" min="10" max="500" value="100">
+                        </div>
+                    </div>
+                    
+                    <div class="calculator-result">
+                        <div class="result-label">Projected Annual ROI</div>
+                        <div class="result-value">$<span id="roi-value">35.4M</span></div>
+                        <div class="result-subtitle">Based on 35% conversion lift + 29% faster cycles</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Lead Capture Form -->
+            <div class="lead-capture-section">
+                <div class="lead-capture-content">
+                    <div class="lead-capture-text">
+                        <h3>Get the 2026 GTM <span class="serif-italic gradient-text">Benchmark Report</span></h3>
+                        <p>Unlock detailed ROI projections and see how your metrics compare to 450+ B2B companies. Get exclusive access to our comprehensive benchmark data.</p>
+                        
+                        <div class="report-highlights">
+                            <div class="report-highlight">
+                                <div class="report-highlight-icon">
+                                    <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                                </div>
+                                <span>Industry-specific conversion benchmarks</span>
+                            </div>
+                            <div class="report-highlight">
+                                <div class="report-highlight-icon">
+                                    <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                                </div>
+                                <span>Sales cycle comparisons by company size</span>
+                            </div>
+                            <div class="report-highlight">
+                                <div class="report-highlight-icon">
+                                    <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                                </div>
+                                <span>Expert program ROI analysis</span>
+                            </div>
+                            <div class="report-highlight">
+                                <div class="report-highlight-icon">
+                                    <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                                </div>
+                                <span>2026 GTM strategy recommendations</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="lead-form-card">
+                        <div class="lead-form-header">
+                            <h4>Download the Report</h4>
+                            <p>Fill in your details to get instant access</p>
+                        </div>
+                        
+                        <form id="reportDownloadForm" class="lead-form" data-pdf-url="/assets/pdfs/2026-GTM-Report-SlashExperts-Heinz.pdf" data-pdf-filename="2026-GTM-Report-SlashExperts-Heinz.pdf">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label">First Name</label>
+                                    <input type="text" name="firstName" class="form-input" placeholder="John" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Last Name</label>
+                                    <input type="text" name="lastName" class="form-input" placeholder="Smith" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Work Email</label>
+                                <input type="email" name="email" class="form-input" placeholder="john@company.com" required>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label">Company</label>
+                                    <input type="text" name="company" class="form-input" placeholder="Acme Inc." required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Role</label>
+                                    <select name="role" class="form-select" required>
+                                        <option value="" disabled selected>Select your role</option>
+                                        <option value="marketing">Marketing</option>
+                                        <option value="sales">Sales</option>
+                                        <option value="revops">Revenue Operations</option>
+                                        <option value="customer-success">Customer Success</option>
+                                        <option value="executive">Executive</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn-submit">
+                                Get Free Report →
+                            </button>
+
+                            <p class="form-disclaimer">
+                                By submitting, you agree to our <a href="/privacy/">Privacy Policy</a> and to receive marketing communications.
+                            </p>
+                        </form>
+
+                        <!-- Success State -->
+                        <div id="formSuccess" class="form-success" style="display: none;">
+                            <div class="success-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                            </div>
+                            <h3 class="success-title">Download Started!</h3>
+                            <p class="success-message">Your 2026 GTM Report is downloading now. Check your downloads folder.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section - LIGHT MODE -->
+    <section class="testimonial-section">
+        <div class="testimonial-container">
+            <div class="section-badge">
+                <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                Customer Story
+            </div>
+            <div class="testimonial-quote">
+                "SlashExperts transformed how we prove the value of peer validation. Within 90 days, we had concrete data showing 847% ROI—data that got us a 3x budget increase for the program."
+            </div>
+            <div class="testimonial-author">
+                <div class="testimonial-avatar">JM</div>
+                <div class="testimonial-info">
+                    <h4>Jennifer Martinez</h4>
+                    <p>VP Revenue Operations, TechScale</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-container">
+            <div class="section-badge">
+                <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+                Get Started
+            </div>
+            <h2>Ready to Prove Your <span class="serif-italic gradient-text">Impact</span>?</h2>
+            <p>Join the companies already demonstrating 847% ROI with SlashExperts analytics.</p>
+            <div class="cta-buttons">
+                <a href="/book-a-demo/" class="btn btn-white-glow btn-xl">Book a Demo</a>
+                <a href="#calculator" class="btn-secondary has-glow">Calculate Your ROI</a>
+            </div>
+            <p class="cta-note">
+                <span>✓</span> See real dashboards in your demo &nbsp;•&nbsp; <span>✓</span> No commitment required
+            </p>
+        </div>
+    </section>
+
+{% endblock %}

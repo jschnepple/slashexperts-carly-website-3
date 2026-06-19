@@ -1,0 +1,155 @@
+/**
+ * Privacy Policy Page Styles
+ * Page-specific styles for data tables and category cards
+ */
+
+/* Import shared legal page styles */
+@import '../components/legal-common.css';
+
+/* ==================== DATA TABLE ==================== */
+.data-table-wrapper {
+    margin: 24px 0;
+    overflow: hidden;
+    border-radius: 16px;
+    border: 1px solid rgba(129, 103, 234, 0.15);
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.data-table thead {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+}
+
+.data-table th {
+    padding: 18px 20px;
+    text-align: left;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: white;
+    border-bottom: none;
+}
+
+.data-table th:first-child {
+    border-radius: 16px 0 0 0;
+}
+
+.data-table th:last-child {
+    border-radius: 0 16px 0 0;
+}
+
+.data-table td {
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.5);
+    border-bottom: 1px solid rgba(129, 103, 234, 0.08);
+    vertical-align: top;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.data-table tr:last-child td {
+    border-bottom: none;
+}
+
+.data-table tr:last-child td:first-child {
+    border-radius: 0 0 0 16px;
+}
+
+.data-table tr:last-child td:last-child {
+    border-radius: 0 0 16px 0;
+}
+
+.data-table tr:hover td {
+    background: rgba(129, 103, 234, 0.04);
+}
+
+.data-table td strong {
+    color: var(--navy);
+    font-weight: 600;
+}
+
+.data-table ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.data-table li {
+    padding: 6px 0;
+    padding-left: 16px;
+    position: relative;
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+.data-table li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 14px;
+    width: 6px;
+    height: 6px;
+    background: var(--violet);
+    border-radius: 50%;
+}
+
+/* ==================== CATEGORY CARDS ==================== */
+.category-grid {
+    display: grid;
+    gap: 16px;
+    margin: 24px 0;
+}
+
+.category-card {
+    background: linear-gradient(135deg, rgba(248, 247, 252, 0.8) 0%, rgba(255, 255, 255, 0.8) 100%);
+    border: 1px solid rgba(129, 103, 234, 0.1);
+    border-radius: 14px;
+    padding: 20px 24px;
+    transition: all 0.3s ease;
+}
+
+.category-card:hover {
+    border-color: rgba(129, 103, 234, 0.25);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(129, 103, 234, 0.08);
+}
+
+.category-card h4 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.category-card h4::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: linear-gradient(135deg, var(--violet) 0%, var(--violet-light) 100%);
+    border-radius: 50%;
+}
+
+.category-card p {
+    color: var(--muted);
+    font-size: 14px;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 900px) {
+    .data-table-wrapper {
+        overflow-x: auto;
+    }
+
+    .data-table {
+        min-width: 600px;
+    }
+}

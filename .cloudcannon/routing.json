@@ -1,0 +1,14 @@
+{
+  "routes": [
+    {
+      "from": "/resources/2026-b2b-invisible-influence-report",
+      "to": "/download-report-2026",
+      "status": 301
+    },
+    {
+      "from": "/resources/2026-b2b-invisible-influence-report/",
+      "to": "/download-report-2026",
+      "status": 301
+    }
+  ]
+}

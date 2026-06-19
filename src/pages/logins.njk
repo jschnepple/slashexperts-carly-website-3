@@ -1,0 +1,63 @@
+---
+permalink: /logins/
+title: Login - SlashExperts
+description: Login to SlashExperts as an Expert or Company user
+pageCSS: logins
+---
+
+{% extends "layouts/standalone.njk" %}
+
+{% block content %}
+<div class="logins-page">
+    <div class="logins-container">
+        <a href="/" class="logins-logo-link">
+            <img src="/assets/images/full-logo-white.svg" alt="SlashExperts" class="logins-logo">
+        </a>
+
+        <h1 class="logins-title">Login</h1>
+        <p class="logins-subtitle">Pick which type of user you want to login as</p>
+
+        <div class="logins-cards">
+            <a href="https://app.slashexperts.com/" class="login-card" target="_blank" rel="noopener noreferrer">
+                <div class="login-card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                        <circle cx="12" cy="7" r="4"/>
+                    </svg>
+                </div>
+                <div class="login-card-content">
+                    <h2 class="login-card-heading">Expert</h2>
+                    <p class="login-card-description">Login as an Expert user</p>
+                </div>
+                <div class="login-card-arrow">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"/>
+                        <polyline points="12 5 19 12 12 19"/>
+                    </svg>
+                </div>
+            </a>
+
+            <a href="https://manage.slashexperts.com/" class="login-card" target="_blank" rel="noopener noreferrer">
+                <div class="login-card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                        <circle cx="9" cy="7" r="4"/>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                    </svg>
+                </div>
+                <div class="login-card-content">
+                    <h2 class="login-card-heading">Company</h2>
+                    <p class="login-card-description">Login as Company user</p>
+                </div>
+                <div class="login-card-arrow">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"/>
+                        <polyline points="12 5 19 12 12 19"/>
+                    </svg>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

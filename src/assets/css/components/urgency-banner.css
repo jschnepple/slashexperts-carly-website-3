@@ -1,0 +1,89 @@
+/* ==================== URGENCY BANNER ==================== */
+
+.urgency-banner {
+    background: linear-gradient(90deg, var(--navy) 0%, #1a1333 100%);
+    color: var(--white);
+    padding: 12px 24px;
+    text-align: center;
+    position: relative;
+    z-index: 1001;
+}
+
+.urgency-banner-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.urgency-banner .pulse-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--accent-green);
+    border-radius: 50%;
+    animation: pulseDot 2s infinite;
+}
+
+@keyframes pulseDot {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.5;
+        transform: scale(1.2);
+    }
+}
+
+.urgency-banner p {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.urgency-banner .highlight {
+    color: var(--accent-orange);
+}
+
+.download-counter {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 6px 14px;
+    border-radius: 100px;
+    font-size: 13px;
+}
+
+/* Navigation adjustment when banner is present */
+nav.with-banner {
+    top: 44px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .urgency-banner {
+        padding: 10px 20px;
+    }
+
+    .urgency-banner p {
+        font-size: 13px;
+    }
+
+    .urgency-banner-content {
+        gap: 12px;
+    }
+
+    .download-counter {
+        font-size: 12px;
+        padding: 5px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .urgency-banner-content {
+        flex-direction: column;
+        gap: 8px;
+    }
+}

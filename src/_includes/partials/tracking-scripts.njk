@@ -1,0 +1,70 @@
+{#
+  ============================================================================
+  TRACKING & ANALYTICS SCRIPTS
+  ============================================================================
+
+  This file contains Google Tag Manager (GTM) and is loaded on every page.
+
+  ARCHITECTURE OVERVIEW:
+  - GTM (this file): Contains most marketing pixels (GA4, ads, social)
+  - Customer.io (head.njk): Email marketing - kept separate for direct JS access
+  - Revenue Hero (head.njk): Scheduling widget - conditional on book-a-demo/pricing
+
+  GTM CONTAINER: GTM-W5ZHWLL6
+  MANAGED VIA: https://tagmanager.google.com
+
+  TAGS IN GTM:
+  - Google Analytics 4 (GA4): G-J489TMVRDR
+  - Google Ads: AW-16935709056
+  - LinkedIn Insight Tag: 7102220
+  - Meta/Facebook Pixel: 1053303143563541
+  - Reddit Pixel: a2_h5ev1oo4mlap
+  - HubSpot Tracking: 48943215
+  - Google Consent Mode (GDPR compliance)
+  - PostHog Analytics: phc_6CGAIoA7NfXCuvZzayZNktQ9sG8DVOTM4UruDSmR9eC
+  - Warmly Pixel (B2B visitor intelligence)
+  - Spara Pixel (B2B tracking)
+
+  TO ADD A NEW PIXEL:
+  1. If it's a marketing/advertising pixel: Add via GTM (see docs/gtm-setup-guide.md)
+  2. If it needs direct JS access: Add section below with documentation
+
+  TO MODIFY GTM TAGS:
+  1. Log in to tagmanager.google.com
+  2. Select container GTM-W5ZHWLL6
+  3. Make changes in workspace
+  4. Preview and test
+  5. Publish new version
+  6. Export and save to gtm_exports/ folder
+
+  Last Updated: January 2026 (Session 37)
+  ============================================================================
+#}
+
+{# ========== GOOGLE TAG MANAGER (HEAD SNIPPET) ========== #}
+{#
+  Container ID: GTM-W5ZHWLL6
+  This snippet MUST be placed as high in the <head> as possible.
+  The noscript fallback is added in base.njk after <body>.
+
+  Do NOT modify this code - manage tags via tagmanager.google.com
+#}
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W5ZHWLL6');</script>
+
+{# ========== DATALAYER INITIALIZATION (OPTIONAL) ========== #}
+{#
+  Uncomment below to pre-populate dataLayer with page-level data.
+  This is useful for passing Eleventy/Nunjucks variables to GTM.
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  dataLayer.push({
+    'pageType': '{{ pageJS | default("unknown") }}',
+    'pageTitle': '{{ title | default("SlashExperts") }}'
+  });
+</script>
+#}

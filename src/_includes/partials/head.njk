@@ -1,0 +1,91 @@
+{# ========== TRACKING SCRIPTS (LOAD FIRST) ========== #}
+{# GTM must load as early as possible in <head> #}
+{% include "partials/tracking-scripts.njk" %}
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ title | default("SlashExperts | Peer Validation Platform for B2B Sales") }}</title>
+
+<!-- Meta Tags -->
+{% if description %}
+<meta name="description" content="{{ description }}">
+{% endif %}
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://slashexperts.com{{ page.url | url }}">
+
+<!-- Robots -->
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph Tags -->
+<meta property="og:type" content="{{ ogType | default('website') }}">
+<meta property="og:title" content="{{ title }}">
+{% if description %}
+<meta property="og:description" content="{{ description }}">
+{% endif %}
+<meta property="og:url" content="https://slashexperts.com{{ page.url | url }}">
+<meta property="og:site_name" content="SlashExperts">
+{% if ogImage %}
+<meta property="og:image" content="https://slashexperts.com{{ ogImage }}">
+{% elif featuredImage %}
+<meta property="og:image" content="https://slashexperts.com{{ featuredImage }}">
+{% else %}
+<meta property="og:image" content="https://slashexperts.com/assets/images/og-default.png">
+{% endif %}
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ title }}">
+{% if description %}
+<meta name="twitter:description" content="{{ description }}">
+{% endif %}
+{% if ogImage %}
+<meta name="twitter:image" content="https://slashexperts.com{{ ogImage }}">
+{% elif featuredImage %}
+<meta name="twitter:image" content="https://slashexperts.com{{ featuredImage }}">
+{% else %}
+<meta name="twitter:image" content="https://slashexperts.com/assets/images/og-default.png">
+{% endif %}
+
+<!-- Favicons (theme-aware) -->
+<link rel="icon" type="image/svg+xml" href="/favicon-light.svg" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/svg+xml" href="/favicon-dark.svg" media="(prefers-color-scheme: dark)">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-title" content="SlashExperts">
+<link rel="manifest" href="/site.webmanifest">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+
+<!-- Main Stylesheet -->
+<link rel="stylesheet" href="/assets/css/main.css">
+{% if pageCSS %}
+<link rel="stylesheet" href="/assets/css/pages/{{ pageCSS }}.css">
+{% endif %}
+
+<!-- Revenue Hero Script (for Book A Demo and Pricing pages) -->
+{% if pageJS == 'book-a-demo' or pageJS == 'pricing' %}
+<script src="https://app.revenuehero.io/scheduler.min.js"></script>
+{% endif %}
+
+<!-- Customer.io Tracking -->
+<script type="text/javascript">
+  var _cio = _cio || [];
+  (function() {
+    var a,b,c;a=function(f){return function(){_cio.push([f].concat(Array.prototype.slice.call(arguments,0)))}};b=["load","identify","sidentify","track","page"];for(c=0;c<b.length;c++){_cio[b[c]]=a(b[c])};
+    var t = document.createElement('script'),
+        s = document.getElementsByTagName('script')[0];
+    t.async = true;
+    t.id    = 'cio-tracker';
+    t.setAttribute('data-site-id', 'cab6fd71fecd76e884d5');
+    t.src = 'https://assets.customer.io/assets/track.js';
+    s.parentNode.insertBefore(t, s);
+  })();
+</script>
+
+{# Organization Schema — site-wide structured data for LLM/search visibility #}
+{% include "partials/organization-schema.njk" %}

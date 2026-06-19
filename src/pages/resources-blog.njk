@@ -1,0 +1,443 @@
+---
+title: Blog & Insights - The Science of Buyer Trust | SlashExperts
+description: Research-backed strategies for building authentic connections between prospects and successful customers. Win more deals through trusted peer influence.
+pageCSS: blog
+pageJS: blog
+lightNav: true
+pagination:
+  data: collections.posts
+  size: 12
+  alias: posts
+  reverse: false
+permalink: "{% if pagination.pageNumber == 0 %}/blog/{% else %}/blog/page/{{ pagination.pageNumber + 1 }}/{% endif %}"
+---
+
+{% extends "layouts/base.njk" %}
+
+{# Get featured post - use first featured post or first post #}
+{% set featuredPost = collections.featuredPosts[0] or collections.posts[0] %}
+{# Get total post count #}
+{% set totalPosts = collections.posts.length %}
+
+{% block content %}
+    <!-- Hero Section -->
+    <section class="blog-hero">
+        <div class="hero-content">
+            <div class="hero-label">
+                <div class="hero-label-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                    </svg>
+                </div>
+                <span>Insights & Research</span>
+            </div>
+            <h1 class="hero-title">The science of <em>buyer trust</em> and peer connection</h1>
+            <p class="hero-subtitle">Research-backed strategies for building authentic connections between your prospects and your most successful customers. Win more deals through trusted peer influence.</p>
+            
+            <div class="category-nav">
+                <a href="#" class="category-pill active">All Articles</a>
+                <a href="#" class="category-pill">Win More Deals</a>
+                <a href="#" class="category-pill">Build Trust</a>
+                <a href="#" class="category-pill">Scale Connection</a>
+                <a href="#" class="category-pill">Research & Data</a>
+            </div>
+        </div>
+    </section>
+
+    {% if pagination.pageNumber == 0 %}
+    <!-- Featured Article -->
+    <section class="featured-section">
+        <div class="featured-card">
+            <div class="featured-image-wrapper">
+                <div class="featured-illustration">
+                    <!-- Ambient Background -->
+                    <div class="ambient-orb orb-1"></div>
+                    <div class="ambient-orb orb-2"></div>
+                    <div class="ambient-orb orb-3"></div>
+                    
+                    <!-- Featured Badge -->
+                    <div class="featured-badge">
+                        <div class="featured-badge-dot"></div>
+                        <span>Featured Research</span>
+                    </div>
+                    
+                    <!-- Buyer Journey Visual -->
+                    <div class="buyer-journey-visual">
+                        <!-- Connection Lines SVG -->
+                        <svg class="connection-lines" viewBox="0 0 400 400">
+                            <defs>
+                                <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" style="stop-color:rgba(129, 103, 234, 0.5)"/>
+                                    <stop offset="100%" style="stop-color:rgba(73, 204, 249, 0.5)"/>
+                                </linearGradient>
+                            </defs>
+                            <line class="connection-line" x1="200" y1="60" x2="200" y2="150"/>
+                            <line class="connection-line" x1="60" y1="120" x2="150" y2="180"/>
+                            <line class="connection-line" x1="340" y1="120" x2="250" y2="180"/>
+                            <line class="connection-line" x1="60" y1="280" x2="150" y2="220"/>
+                            <line class="connection-line" x1="340" y1="280" x2="250" y2="220"/>
+                            <line class="connection-line" x1="200" y1="340" x2="200" y2="250"/>
+                        </svg>
+                        
+                        <!-- Buyer Nodes -->
+                        <div class="buyer-node buyer-1">
+                            <div class="buyer-avatar">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                                    <circle cx="12" cy="7" r="4"/>
+                                </svg>
+                            </div>
+                            <span class="buyer-label">Prospect</span>
+                        </div>
+                        <div class="buyer-node buyer-2">
+                            <div class="buyer-avatar">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                                    <line x1="8" y1="21" x2="16" y2="21"/>
+                                    <line x1="12" y1="17" x2="12" y2="21"/>
+                                </svg>
+                            </div>
+                            <span class="buyer-label">Research</span>
+                        </div>
+                        <div class="buyer-node buyer-3">
+                            <div class="buyer-avatar">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                                </svg>
+                            </div>
+                            <span class="buyer-label">Peer Chat</span>
+                        </div>
+                        <div class="buyer-node buyer-4">
+                            <div class="buyer-avatar">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                    <polyline points="22 4 12 14.01 9 11.01"/>
+                                </svg>
+                            </div>
+                            <span class="buyer-label">Validation</span>
+                        </div>
+                        <div class="buyer-node buyer-5">
+                            <div class="buyer-avatar">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="12" y1="1" x2="12" y2="23"/>
+                                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                                </svg>
+                            </div>
+                            <span class="buyer-label">Decision</span>
+                        </div>
+                        <div class="buyer-node buyer-6">
+                            <div class="buyer-avatar">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                                </svg>
+                            </div>
+                            <span class="buyer-label">Champion</span>
+                        </div>
+                        
+                        <!-- Central Expert Hub -->
+                        <div class="expert-hub">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                <circle cx="9" cy="7" r="4"/>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                            </svg>
+                        </div>
+                    </div>
+                    
+                    <!-- Conversation Bubbles -->
+                    <div class="conversation-bubble bubble-1">
+                        <div class="bubble-content">
+                            <div class="bubble-icon trust">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12"/>
+                                </svg>
+                            </div>
+                            <span class="bubble-text">"This changed everything"</span>
+                        </div>
+                    </div>
+                    <div class="conversation-bubble bubble-2">
+                        <div class="bubble-content">
+                            <div class="bubble-icon deal">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+                                </svg>
+                            </div>
+                            <span class="bubble-text">Deal closed 3x faster</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Trust Indicator -->
+                    <div class="trust-indicator">
+                        <div class="trust-meter">
+                            <span class="trust-meter-label">Trust Score</span>
+                            <div class="trust-meter-bar">
+                                <div class="trust-meter-fill"></div>
+                            </div>
+                        </div>
+                        <span class="trust-value">85%</span>
+                    </div>
+                </div>
+            </div>
+            {% if featuredPost %}
+            {% set featuredAuthor = authors | selectattr('slug', 'equalto', featuredPost.data.author) | first %}
+            <a href="{{ featuredPost.url }}" class="featured-content">
+                <div class="featured-meta">
+                    <span class="featured-category">{{ featuredPost.data.category or 'Research' }}</span>
+                    <span class="featured-date">{{ featuredPost.data.date | date }}</span>
+                </div>
+                <h2 class="featured-title">{{ featuredPost.data.title }}</h2>
+                <p class="featured-excerpt">{{ featuredPost.data.description or featuredPost.content | excerpt | safe }}</p>
+                <div class="featured-author">
+                    <div class="author-avatar">{{ featuredAuthor.initials if featuredAuthor else 'SE' }}</div>
+                    <div class="author-info">
+                        <h4>{{ featuredAuthor.name if featuredAuthor else 'SlashExperts' }}</h4>
+                        <span>{{ featuredAuthor.title if featuredAuthor else 'Team' }}</span>
+                    </div>
+                    <div class="read-time">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12 6 12 12 16 14"/>
+                        </svg>
+                        {{ featuredPost.data.readTime or (featuredPost.content | readingTime) }} min read
+                    </div>
+                </div>
+            </a>
+            {% else %}
+            <div class="featured-content">
+                <div class="featured-meta">
+                    <span class="featured-category">Research</span>
+                    <span class="featured-date">Coming Soon</span>
+                </div>
+                <h2 class="featured-title">The 80% Problem: Why Your Buyers Have Already Decided Before They Talk to Sales</h2>
+                <p class="featured-excerpt">New research reveals that 80% of the B2B buying journey happens before a prospect ever engages with your sales team. Learn how leading companies are using peer connections to influence the invisible stages of the buyer journey.</p>
+                <div class="featured-author">
+                    <div class="author-avatar">MR</div>
+                    <div class="author-info">
+                        <h4>Maya Richardson</h4>
+                        <span>Head of Research</span>
+                    </div>
+                    <div class="read-time">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12 6 12 12 16 14"/>
+                        </svg>
+                        12 min read
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </section>
+    {% endif %}
+
+    <!-- Articles Grid -->
+    <section class="articles-section">
+        <div class="articles-container">
+            <div class="section-header">
+                <h2>Latest Insights <span>{{ totalPosts }} article{% if totalPosts != 1 %}s{% endif %}</span></h2>
+                {% if pagination.pageNumber > 0 %}
+                <a href="/blog/" class="view-all-link">
+                    Back to first page
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="19" y1="12" x2="5" y2="12"/>
+                        <polyline points="12 19 5 12 12 5"/>
+                    </svg>
+                </a>
+                {% endif %}
+            </div>
+
+            <div class="articles-grid">
+                {% for post in posts %}
+                {% set postAuthor = authors | selectattr('slug', 'equalto', post.data.author) | first %}
+                <a href="{{ post.url }}" class="article-card reveal">
+                    <div class="article-card-image">
+                        {% if post.data.featuredImage %}
+                        <img src="{{ post.data.featuredImage }}" alt="{{ post.data.featuredImageAlt or post.data.title }}" loading="lazy">
+                        {% else %}
+                        <div class="card-illustration card-default">
+                            <div class="default-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                                    <path d="M2 17l10 5 10-5"/>
+                                    <path d="M2 12l10 5 10-5"/>
+                                </svg>
+                            </div>
+                        </div>
+                        {% endif %}
+                        <span class="article-card-category">{{ post.data.category or 'Article' }}</span>
+                    </div>
+                    <div class="article-card-content">
+                        <h3 class="article-card-title">{{ post.data.title }}</h3>
+                        <p class="article-card-excerpt">{{ post.data.description or (post.content | excerpt) | safe }}</p>
+                        <div class="article-card-meta">
+                            <div class="article-card-author">
+                                <div class="author-avatar">{{ postAuthor.initials if postAuthor else 'SE' }}</div>
+                                <span>{{ postAuthor.name if postAuthor else 'SlashExperts' }}</span>
+                            </div>
+                            <span class="article-card-read-time">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <polyline points="12 6 12 12 16 14"/>
+                                </svg>
+                                {{ post.data.readTime or (post.content | readingTime) }} min
+                            </span>
+                        </div>
+                    </div>
+                </a>
+                {% else %}
+                <div class="no-posts-message">
+                    <p>No articles found. Check back soon for new content!</p>
+                </div>
+                {% endfor %}
+            </div>
+
+            {# Pagination Navigation #}
+            {% if pagination.pages.length > 1 %}
+            <nav class="pagination" aria-label="Blog pagination">
+                <div class="pagination-inner">
+                    {% if pagination.href.previous %}
+                    <a href="{{ pagination.href.previous }}" class="pagination-btn pagination-prev" aria-label="Previous page">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="15 18 9 12 15 6"/>
+                        </svg>
+                        Previous
+                    </a>
+                    {% else %}
+                    <span class="pagination-btn pagination-prev disabled">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="15 18 9 12 15 6"/>
+                        </svg>
+                        Previous
+                    </span>
+                    {% endif %}
+
+                    <div class="pagination-numbers">
+                        {% for pageEntry in pagination.pages %}
+                        {% set pageNumber = loop.index %}
+                        {% if pageNumber == pagination.pageNumber + 1 %}
+                        <span class="pagination-number active" aria-current="page">{{ pageNumber }}</span>
+                        {% else %}
+                        <a href="{{ pagination.hrefs[loop.index0] }}" class="pagination-number">{{ pageNumber }}</a>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+
+                    {% if pagination.href.next %}
+                    <a href="{{ pagination.href.next }}" class="pagination-btn pagination-next" aria-label="Next page">
+                        Next
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="9 18 15 12 9 6"/>
+                        </svg>
+                    </a>
+                    {% else %}
+                    <span class="pagination-btn pagination-next disabled">
+                        Next
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="9 18 15 12 9 6"/>
+                        </svg>
+                    </span>
+                    {% endif %}
+                </div>
+            </nav>
+            {% endif %}
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="newsletter-container">
+            <div class="newsletter-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                    <polyline points="22 4 12 14.01 9 11.01"/>
+                </svg>
+                <span>Join 12,000+ Revenue Leaders</span>
+            </div>
+            <h2 class="newsletter-title">Get the <em>Buyer Trust Brief</em> weekly</h2>
+            <p class="newsletter-subtitle">Research-backed insights on peer influence, buyer psychology, and sales acceleration delivered every Tuesday.</p>
+            <form class="newsletter-form">
+                <input type="email" class="newsletter-input" placeholder="Enter your work email">
+                <button type="submit" class="newsletter-btn">Subscribe</button>
+            </form>
+            <p class="newsletter-privacy">We respect your privacy. <a href="/privacy/">Unsubscribe anytime</a>.</p>
+        </div>
+    </section>
+
+    <!-- Popular Posts Section -->
+    <section class="popular-section">
+        <div class="popular-container">
+            <div class="section-header">
+                <h2>Most Read This Month</h2>
+            </div>
+            <div class="popular-grid">
+                <div class="popular-list">
+                    <div class="popular-item">
+                        <span class="popular-number">01</span>
+                        <div class="popular-content">
+                            <h4>The Death of the Cold Call: What Comes Next</h4>
+                            <div class="popular-meta">
+                                <span>James Sterling</span>
+                                <span>•</span>
+                                <span>11 min read</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="popular-item">
+                        <span class="popular-number">02</span>
+                        <div class="popular-content">
+                            <h4>Why Your Buyers Trust Strangers More Than Your Sales Team</h4>
+                            <div class="popular-meta">
+                                <span>Maya Richardson</span>
+                                <span>•</span>
+                                <span>8 min read</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="popular-item">
+                        <span class="popular-number">03</span>
+                        <div class="popular-content">
+                            <h4>The Science of Trust Signals in B2B Buying</h4>
+                            <div class="popular-meta">
+                                <span>Amanda Knox</span>
+                                <span>•</span>
+                                <span>14 min read</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="popular-item">
+                        <span class="popular-number">04</span>
+                        <div class="popular-content">
+                            <h4>Measuring What Matters: Expert Program ROI Framework</h4>
+                            <div class="popular-meta">
+                                <span>Thomas Chen</span>
+                                <span>•</span>
+                                <span>10 min read</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="popular-visual">
+                    <div class="popular-visual-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                        </svg>
+                    </div>
+                    <h3>The 2025 State of Buyer Trust Report</h3>
+                    <p>Our most comprehensive research yet on how B2B buyers make decisions and who they trust.</p>
+                    <a href="/download-report-2026/" class="popular-visual-btn has-glow has-glow-full">
+                        Download Free Report
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7 10 12 15 17 10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+{% endblock %}

@@ -1,0 +1,40 @@
+---
+title: Page Not Found | SlashExperts
+description: The page you're looking for has moved or no longer exists.
+pageCSS: 404
+pageJS: 404
+lightNav: true
+permalink: /404.html
+---
+
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+<!-- Main Content -->
+<div class="page-container">
+    <div class="error-content">
+        <div class="error-number">404</div>
+
+        <h1 class="error-heading">This page couldn't be found</h1>
+
+        <p class="error-subheading">The page you're looking for has moved or no longer exists. Let's get you back on track.</p>
+
+        <div class="error-actions">
+            <a href="/" class="btn-action primary has-glow has-glow-full">
+                Back to Homepage
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14"/>
+                    <path d="m12 5 7 7-7 7"/>
+                </svg>
+            </a>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="quick-links">
+            <a href="/blog/" class="quick-link has-glow">Resources</a>
+            <a href="/contact/" class="quick-link has-glow">Contact Support</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

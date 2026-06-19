@@ -1,0 +1,43 @@
+{
+  "name": "slashexperts-website",
+  "version": "2.0.0",
+  "description": "SlashExperts B2B Peer Validation Platform - Modernized Website",
+  "type": "module",
+  "scripts": {
+    "dev": "eleventy --serve --port=8080",
+    "build": "eleventy",
+    "build:prod": "NODE_ENV=production npm run build && npm run optimize",
+    "optimize": "npm run optimize:css && npm run optimize:js",
+    "optimize:css": "postcss _site/assets/css/**/*.css --use cssnano --dir _site/assets/css --ext .css",
+    "optimize:js": "node scripts/minify-js.js",
+    "clean": "rm -rf _site",
+    "preview": "npm run build && cd _site && python3 -m http.server 8080",
+    "test:build": "npm run build:prod && npm run preview"
+  },
+  "keywords": [
+    "slashexperts",
+    "b2b",
+    "peer-validation",
+    "static-site"
+  ],
+  "author": "SlashExperts",
+  "license": "UNLICENSED",
+  "private": true,
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "cssnano": "^6.0.2",
+    "eslint": "^9.15.0",
+    "glob": "^10.3.10",
+    "postcss": "^8.4.32",
+    "postcss-cli": "^11.0.0",
+    "prettier": "^3.3.3",
+    "terser": "^5.26.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "csv-parse": "^6.1.0",
+    "turndown": "^7.2.2"
+  }
+}

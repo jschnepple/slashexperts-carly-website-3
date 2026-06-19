@@ -1,0 +1,54 @@
+---
+permalink: /sitemap.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  {# Homepage #}
+  <url>
+    <loc>https://slashexperts.com/</loc>
+    <lastmod>{{ page.date | date }}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  {# Static Pages - exclude blog posts and pagination pages #}
+  {%- for item in collections.all %}
+  {%- if item.url and item.url != "/" and not item.data.eleventyExcludeFromCollections %}
+  {%- if "/post/" not in item.url and "/page/" not in item.url %}
+  <url>
+    <loc>https://slashexperts.com{{ item.url }}</loc>
+    {%- if item.data.date %}
+    <lastmod>{{ item.data.date | date }}</lastmod>
+    {%- else %}
+    <lastmod>{{ item.date | date }}</lastmod>
+    {%- endif %}
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  {%- endif %}
+  {%- endif %}
+  {%- endfor %}
+
+  {# Blog Posts #}
+  {%- for post in collections.posts %}
+  <url>
+    <loc>https://slashexperts.com{{ post.url }}</loc>
+    <lastmod>{{ post.data.date | date }}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    {%- if post.data.featuredImage %}
+    <image:image>
+      <image:loc>https://slashexperts.com{{ post.data.featuredImage }}</image:loc>
+      <image:title>{{ post.data.title | escape }}</image:title>
+      {%- if post.data.featuredImageAlt %}
+      <image:caption>{{ post.data.featuredImageAlt | escape }}</image:caption>
+      {%- endif %}
+    </image:image>
+    {%- endif %}
+  </url>
+  {%- endfor %}
+</urlset>

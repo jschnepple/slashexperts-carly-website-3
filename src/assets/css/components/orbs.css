@@ -1,0 +1,126 @@
+/* ==================== ANIMATED BACKGROUND ORBS ==================== */
+
+/* Base orb styles */
+.bg-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.5;
+    animation: floatOrb 20s ease-in-out infinite;
+    pointer-events: none;
+}
+
+/* Orb 1 - Top Right - Violet */
+.bg-orb-1 {
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(129, 103, 234, 0.25) 0%, transparent 70%);
+    top: -200px;
+    right: -200px;
+    animation-delay: 0s;
+}
+
+/* Orb 2 - Bottom Left - Purple */
+.bg-orb-2 {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(168, 85, 247, 0.2) 0%, transparent 70%);
+    bottom: -100px;
+    left: -150px;
+    animation-delay: -7s;
+}
+
+/* Orb 3 - Middle Right - Pink */
+.bg-orb-3 {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(236, 72, 153, 0.15) 0%, transparent 70%);
+    top: 30%;
+    right: 10%;
+    animation-delay: -14s;
+}
+
+/* Orb 4 - Bottom Center - Indigo */
+.bg-orb-4 {
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.18) 0%, transparent 70%);
+    bottom: 20%;
+    left: 20%;
+    animation-delay: -5s;
+}
+
+/* Float animation */
+@keyframes floatOrb {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    25% {
+        transform: translate(30px, -30px) scale(1.05);
+    }
+    50% {
+        transform: translate(-20px, 20px) scale(0.95);
+    }
+    75% {
+        transform: translate(-30px, -20px) scale(1.02);
+    }
+}
+
+/* Alternative smaller orbs (for other pages) */
+.bg-orb-small {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(80px);
+    pointer-events: none;
+    z-index: -1;
+}
+
+.bg-orb-small-1 {
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(129, 103, 234, 0.12) 0%, transparent 70%);
+    top: -200px;
+    right: -100px;
+}
+
+.bg-orb-small-2 {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(168, 85, 247, 0.08) 0%, transparent 70%);
+    bottom: -150px;
+    left: -100px;
+}
+
+.bg-orb-small-3 {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(236, 72, 153, 0.06) 0%, transparent 70%);
+    top: 50%;
+    left: 30%;
+    transform: translateY(-50%);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .bg-orb-1,
+    .bg-orb-2,
+    .bg-orb-3,
+    .bg-orb-4 {
+        opacity: 0.3;
+    }
+}
+
+@media (max-width: 768px) {
+    .bg-orb-1,
+    .bg-orb-2,
+    .bg-orb-3,
+    .bg-orb-4 {
+        display: none;  /* Hide orbs on mobile for performance */
+    }
+
+    .bg-orb-small-1,
+    .bg-orb-small-2,
+    .bg-orb-small-3 {
+        display: none;
+    }
+}

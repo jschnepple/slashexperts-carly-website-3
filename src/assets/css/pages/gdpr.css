@@ -1,0 +1,62 @@
+/**
+ * GDPR Page Styles
+ * Page-specific styles for rights grid
+ */
+
+/* Import shared legal page styles */
+@import '../components/legal-common.css';
+
+/* ==================== RIGHTS GRID ==================== */
+.rights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+    margin: 24px 0;
+}
+
+.right-item {
+    background: linear-gradient(135deg, rgba(248, 247, 252, 0.8) 0%, rgba(255, 255, 255, 0.8) 100%);
+    border: 1px solid rgba(129, 103, 234, 0.1);
+    border-radius: 14px;
+    padding: 20px 24px;
+    transition: all 0.3s ease;
+}
+
+.right-item:hover {
+    border-color: rgba(129, 103, 234, 0.25);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(129, 103, 234, 0.08);
+}
+
+.right-item-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.right-item-title::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: linear-gradient(135deg, var(--violet) 0%, var(--violet-light) 100%);
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.right-item p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 600px) {
+    .rights-grid {
+        grid-template-columns: 1fr;
+    }
+}

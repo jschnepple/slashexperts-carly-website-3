@@ -1,0 +1,59 @@
+{# JSON-LD Structured Data for Blog Posts #}
+{# Get author data #}
+{% set authorData = null %}
+{% for a in authors %}
+  {% if a.slug == author %}
+    {% set authorData = a %}
+  {% endif %}
+{% endfor %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://slashexperts.com{{ page.url }}"
+  },
+  "headline": "{{ title | replace('"', '\\"') }}",
+  "description": "{{ description | replace('"', '\\"') }}",
+  {% if featuredImage %}
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://slashexperts.com{{ featuredImage }}",
+    "width": 1200,
+    "height": 630
+  },
+  {% endif %}
+  "datePublished": "{{ date | date('Y-m-dTHH:mm:ssZ') }}",
+  "dateModified": "{{ date | date('Y-m-dTHH:mm:ssZ') }}",
+  {% if authorData %}
+  "author": {
+    "@type": "Person",
+    "name": "{{ authorData.name }}",
+    "jobTitle": "{{ authorData.title }}",
+    "url": "https://slashexperts.com/pages/about/"
+  },
+  {% endif %}
+  "publisher": {
+    "@type": "Organization",
+    "name": "SlashExperts",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://slashexperts.com/assets/images/logo-dark.svg",
+      "width": 200,
+      "height": 60
+    },
+    "url": "https://slashexperts.com"
+  },
+  {% if category %}
+  "articleSection": "{{ category }}",
+  {% endif %}
+  {% if tags and tags.length > 1 %}
+  "keywords": "{% for tag in tags %}{% if tag != 'posts' %}{{ tag }}{% if not loop.last %}, {% endif %}{% endif %}{% endfor %}",
+  {% endif %}
+  "wordCount": "{{ content | wordCount }}",
+  "inLanguage": "en-US",
+  "isAccessibleForFree": true
+}
+</script>

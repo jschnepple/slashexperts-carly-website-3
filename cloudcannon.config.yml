@@ -1,0 +1,233 @@
+# CloudCannon Configuration for SlashExperts Blog
+# Official Eleventy CMS Partner
+# Documentation: https://cloudcannon.com/documentation/
+
+# =============================================
+# COLLECTIONS
+# =============================================
+collections_config:
+  posts:
+    path: blog
+    output: true
+    url: /post/[slug]/
+    icon: article
+    name: Blog Posts
+    description: Blog articles for the SlashExperts resource center
+
+    # Schema for new posts
+    schema_key: blog_post
+
+    # File creation settings
+    create:
+      path: "[relative_base_path]/{date|year}-{date|month}-{date|day}-{title|slugify}.md"
+
+    # Add date to new posts
+    add_options:
+      - name: Add Blog Post
+        schema: blog_post
+        icon: post_add
+
+    # Sort by date descending
+    sort:
+      key: date
+      order: desc
+
+    # Preview card configuration
+    preview:
+      text:
+        - key: title
+      subtext:
+        - key: date
+      image:
+        - key: featuredImage
+      metadata:
+        - text:
+            - key: category
+        - icon: schedule
+          text:
+            - key: readTime
+            - text: " min read"
+
+  data:
+    path: data
+    output: false
+    icon: database
+    name: Site Data
+    description: Global data files (authors, categories, navigation)
+
+# =============================================
+# SCHEMAS
+# =============================================
+schemas:
+  blog_post:
+    path: ../.cloudcannon/schemas/blog-post.md
+    name: Blog Post
+    icon: article
+
+# =============================================
+# DATA CONFIGURATION
+# =============================================
+data_config:
+  authors:
+    path: data/authors.json
+  categories:
+    path: data/categories.json
+  navigation:
+    path: data/navigation.json
+
+# =============================================
+# BUILD CONFIGURATION
+# =============================================
+source: "src"
+build:
+  install_command: npm install
+  command: npx @11ty/eleventy
+
+paths:
+  uploads: assets/images/blog
+  dam_uploads: assets/images/blog
+  dam_static: /assets/images/blog
+  static: ""
+  collections: ""
+  output: ../_site
+
+# =============================================
+# INPUT CONFIGURATION
+# =============================================
+_inputs:
+  title:
+    type: text
+    label: Title
+    comment: The main headline for this blog post (60-70 characters recommended for SEO)
+
+  description:
+    type: textarea
+    label: Meta Description
+    comment: SEO description shown in search results (155-160 characters recommended)
+
+  date:
+    type: datetime
+    label: Publish Date
+    instance_value: NOW
+
+  author:
+    type: select
+    label: Author
+    options:
+      values: data.authors
+      value_key: slug
+      preview:
+        text:
+          - key: name
+        subtext:
+          - key: title
+
+  category:
+    type: select
+    label: Category
+    options:
+      values: data.categories
+      value_key: name
+      preview:
+        text:
+          - key: name
+        subtext:
+          - key: description
+
+  tags:
+    type: multiselect
+    label: Tags
+    options:
+      allow_create: true
+      values:
+        - enterprise-sales
+        - peer-validation
+        - roi
+        - buyer-trust
+        - case-study
+        - research
+        - best-practices
+        - expert-matching
+        - implementation
+        - analytics
+        - playbook
+        - strategy
+        - customer-success
+        - sales-acceleration
+
+  featuredImage:
+    type: image
+    label: Featured Image
+    comment: Recommended size 1200x630 pixels (OG image dimensions)
+
+  featuredImageAlt:
+    type: text
+    label: Image Alt Text
+    comment: Describe the image for accessibility and SEO
+
+  readTime:
+    type: number
+    label: Read Time (minutes)
+    comment: Estimated reading time in minutes
+
+  featured:
+    type: switch
+    label: Featured Post
+    comment: Show this post prominently in the featured section
+
+  draft:
+    type: switch
+    label: Draft Mode
+    comment: Draft posts are hidden from the live site
+
+  content:
+    type: markdown
+    label: Post Content
+    options:
+      bold: true
+      italic: true
+      link: true
+      bulletedlist: true
+      numberedlist: true
+      blockquote: true
+      code: true
+      horizontalrule: true
+      image: true
+      table: true
+
+# =============================================
+# EDITOR CONFIGURATION
+# =============================================
+_editables:
+  content:
+    bold: true
+    italic: true
+    link: true
+    bulletedlist: true
+    numberedlist: true
+    blockquote: true
+    code: true
+    horizontalrule: true
+    image: true
+    table: true
+    heading2: true
+    heading3: true
+    heading4: true
+
+# Source editor for code editing
+source_editor:
+  tab_size: 2
+  show_gutter: true
+  theme: monokai
+
+# Timezone
+timezone: America/Los_Angeles
+
+# Generator configuration
+generator:
+  metadata:
+    markdown: markdown-it
+    markdown-it:
+      html: true
+      linkify: true
+      typographer: true

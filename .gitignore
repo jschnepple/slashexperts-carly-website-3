@@ -1,0 +1,44 @@
+# Dependencies
+node_modules/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Build outputs
+_site/
+dist/
+.cache/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Editor directories and files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.DS_Store
+
+# Debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Vite
+.vite/
+
+# One-time migration files (Session 30 - Webflow blog migration)
+migration-report.json
+webflow-export.csv
+
+# Local SSL certificates (generated via mkcert)
+certs/
+
+# Hosted landing page examples (client-specific)
+hosted-landing-page-example/

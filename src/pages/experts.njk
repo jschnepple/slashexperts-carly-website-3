@@ -1,0 +1,37 @@
+---
+permalink: /experts/
+title: Expert Booking System | SlashExperts
+description: Connect with verified customer experts through the SlashExperts booking system for real product proof from people who use it.
+pageCSS: experts
+lightNav: true
+---
+
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+<div class="page-content">
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="tour-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="5 3 19 12 5 21 5 3"/>
+            </svg>
+            How It Works
+            <span class="duration">30 sec</span>
+        </div>
+
+        <h1>Skip the Sales Pitch.<br><span class="serif-italic">Hear It</span> from Our Customers.</h1>
+
+        <p>You're evaluating SlashExperts. Our customers have been where you are. Talk to them directly—unfiltered, unscripted, and on your timeline.</p>
+    </section>
+
+    <section class="experts-page">
+        <div class="experts-container">
+            <div id="experts-directory-container" data-experts-directory-id="903b58e2-3d12-469e-9ab7-0be92b71ceea:8f70a1aa-c40e-4970-98d9-be910bd3da3c:0104aba8-518e-42e7-acdd-629f05bb7148"></div>
+        </div>
+    </section>
+</div>
+
+<link rel="stylesheet" href="https://slashexperts-booking-system-production.s3.us-east-1.amazonaws.com/company-booking-system-widget/experts-directory-bundle.css">
+<script src="https://slashexperts-booking-system-production.s3.us-east-1.amazonaws.com/company-booking-system-widget/experts-directory-bundle.js"></script>
+{% endblock %}

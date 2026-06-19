@@ -1,0 +1,179 @@
+/**
+ * DPA Page Styles
+ * Page-specific styles for definition items, subprocessor cards, and annex boxes
+ */
+
+/* Import shared legal page styles */
+@import '../components/legal-common.css';
+
+/* ==================== DEFINITION ITEMS ==================== */
+.definition-item {
+    padding: 16px 0;
+    padding-left: 24px;
+    position: relative;
+    border-bottom: 1px solid rgba(129, 103, 234, 0.06);
+}
+
+.definition-item:last-child {
+    border-bottom: none;
+}
+
+.definition-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 24px;
+    width: 8px;
+    height: 8px;
+    background: linear-gradient(135deg, var(--violet) 0%, var(--violet-light) 100%);
+    border-radius: 50%;
+}
+
+.definition-item p {
+    margin: 0;
+    line-height: 1.8;
+}
+
+/* ==================== SUBPROCESSOR CARDS ==================== */
+.subprocessor-card {
+    background: linear-gradient(135deg, rgba(248, 247, 252, 0.8) 0%, rgba(255, 255, 255, 0.8) 100%);
+    border: 1px solid rgba(129, 103, 234, 0.1);
+    border-radius: 14px;
+    padding: 20px 24px;
+    margin: 16px 0;
+    transition: all 0.3s ease;
+}
+
+.subprocessor-card:hover {
+    border-color: rgba(129, 103, 234, 0.25);
+    box-shadow: 0 8px 24px rgba(129, 103, 234, 0.08);
+}
+
+.subprocessor-card h4 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.subprocessor-card h4::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: linear-gradient(135deg, var(--violet) 0%, var(--violet-light) 100%);
+    border-radius: 50%;
+}
+
+.subprocessor-card p {
+    margin: 6px 0;
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+.subprocessor-card p strong {
+    color: var(--dark-text);
+}
+
+/* ==================== ANNEX BOXES ==================== */
+.annex-box {
+    background: linear-gradient(135deg, rgba(129, 103, 234, 0.06) 0%, rgba(168, 85, 247, 0.04) 100%);
+    border: 1px solid rgba(129, 103, 234, 0.12);
+    border-radius: 16px;
+    padding: 24px;
+    margin: 20px 0;
+}
+
+.annex-box h4 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.annex-box h4::before {
+    content: '';
+    width: 24px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--violet), var(--violet-light));
+    border-radius: 3px;
+}
+
+.annex-box p {
+    margin: 8px 0;
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--dark-text);
+}
+
+.annex-box p strong {
+    color: var(--navy);
+}
+
+/* ==================== ALERT BOX (shared with terms) ==================== */
+.alert-box {
+    background: linear-gradient(135deg, rgba(249, 115, 22, 0.08) 0%, rgba(234, 88, 12, 0.06) 100%);
+    border: 1px solid rgba(249, 115, 22, 0.2);
+    border-left: 4px solid #f97316;
+    border-radius: 14px;
+    padding: 24px;
+    margin: 32px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.alert-box-icon {
+    width: 44px;
+    height: 44px;
+    background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.alert-box-icon svg {
+    width: 22px;
+    height: 22px;
+    stroke: white;
+}
+
+.alert-box-content {
+    flex: 1;
+}
+
+.alert-box-content p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--dark-text);
+}
+
+.alert-box-content p strong {
+    color: #c2410c;
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 600px) {
+    .definition-item {
+        padding-left: 20px;
+    }
+
+    .subprocessor-card,
+    .annex-box {
+        padding: 20px;
+    }
+
+    .alert-box {
+        flex-direction: column;
+        gap: 12px;
+    }
+}

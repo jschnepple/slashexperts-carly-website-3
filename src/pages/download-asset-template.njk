@@ -1,0 +1,245 @@
+---
+permalink: /download-asset-template/
+# ========== REQUIRED CONFIGURATION ==========
+title: Download Sales Enablement Playbook | SlashExperts
+description: Get instant access to our comprehensive sales enablement playbook with proven frameworks, templates, and strategies from 350+ B2B companies.
+pageCSS: download-asset
+pageJS: download-asset
+lightNav: true
+
+# ========== RESOURCE CONFIGURATION ==========
+resourceType: guide # Options: guide, report, template, case-study, whitepaper, toolkit, ebook
+resourceIcon: file-text # Icon name for badge (file-text, document, template, chart, book, etc.)
+resourceTitle: Sales Enablement Playbook
+resourceSubtitle: A comprehensive guide to accelerating your B2B sales process
+resourcePages: 42
+resourceReadTime: 25 min
+resourceSurveyed: 350+ companies # Optional: Remove if not applicable
+
+# ========== PDF CONFIGURATION ==========
+pdfUrl: /assets/pdfs/sales-enablement-playbook.pdf
+pdfFilename: Sales-Enablement-Playbook-2025.pdf
+
+# ========== KEY TAKEAWAYS ==========
+# List 3-5 key takeaways (rendered as checkmark list)
+takeaways:
+  - Framework for building repeatable sales processes
+  - 15+ proven templates and scripts
+  - Case studies from high-growth B2B companies
+  - Metrics dashboard for tracking performance
+
+# ========== RELATED RESOURCES (Optional) ==========
+# Remove this section if not needed
+relatedResources:
+  - title: ROI Calculator
+    description: Calculate your potential revenue impact
+    url: /roi-calculator/
+  - title: Blog
+    description: Insights and strategies for peer validation
+    url: /blog/
+  - title: Book a Demo
+    description: Get a personalized walkthrough
+    url: /book-a-demo/
+---
+
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+
+<!-- Hero Section (Two-column layout) -->
+<section class="asset-hero">
+  <div class="asset-container">
+    <div class="asset-columns">
+      <!-- Left Column: Content -->
+      <div class="asset-content">
+        <!-- Resource Badge -->
+        <div class="resource-badge">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            {% if resourceIcon == 'file-text' %}
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            {% elif resourceIcon == 'document' %}
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+            {% elif resourceIcon == 'chart' %}
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+            {% else %}
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            {% endif %}
+          </svg>
+          <span>{{ resourceType | upper }}</span>
+        </div>
+
+        <h1 class="asset-title">{{ resourceTitle }}</h1>
+        <p class="asset-subtitle">{{ resourceSubtitle }}</p>
+
+        <!-- Resource Meta -->
+        <div class="resource-meta">
+          <div class="meta-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+            <span>{{ resourcePages }} pages</span>
+          </div>
+          <div class="meta-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span>{{ resourceReadTime }} read</span>
+          </div>
+          {% if resourceSurveyed %}
+          <div class="meta-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+            <span>{{ resourceSurveyed }} surveyed</span>
+          </div>
+          {% endif %}
+        </div>
+
+        <!-- Key Takeaways -->
+        <div class="takeaways-section">
+          <h3 class="takeaways-title">What's Inside:</h3>
+          <ul class="takeaways-list">
+            {% for takeaway in takeaways %}
+            <li class="takeaway-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span>{{ takeaway }}</span>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+
+        <!-- Asset Preview Mockup -->
+        <div class="asset-preview">
+          <div class="preview-mockup">
+            <div class="mockup-badge">
+              <span>Preview</span>
+            </div>
+            <div class="mockup-title">{{ resourceTitle }}</div>
+            <div class="mockup-pages">{{ resourcePages }} Pages · {{ resourceReadTime }} Read</div>
+            <div class="mockup-content">
+              <div class="mockup-line"></div>
+              <div class="mockup-line short"></div>
+              <div class="mockup-line"></div>
+              <div class="mockup-line medium"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Form Card (Sticky) -->
+      <div class="asset-form-column">
+        <div class="asset-form-card">
+          <div class="free-badge">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span>100% Free</span>
+          </div>
+
+          <h3 class="form-card-title">Get Instant Access</h3>
+          <p class="form-card-subtitle">Download now · No credit card required</p>
+
+          <form id="assetForm" class="asset-form" data-pdf-url="{{ pdfUrl }}" data-pdf-filename="{{ pdfFilename }}">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstname">First Name <span class="required">*</span></label>
+                <input type="text" id="firstname" name="firstname" required>
+              </div>
+              <div class="form-group">
+                <label for="lastname">Last Name <span class="required">*</span></label>
+                <input type="text" id="lastname" name="lastname" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Work Email <span class="required">*</span></label>
+              <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+              <label for="company">Company Name <span class="required">*</span></label>
+              <input type="text" id="company" name="company" required>
+            </div>
+
+            <div class="form-group">
+              <label for="jobtitle">Job Title</label>
+              <input type="text" id="jobtitle" name="jobtitle">
+            </div>
+
+            <button type="submit" class="btn-submit">
+              Download {{ resourceType | title }}
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+              </svg>
+            </button>
+
+            <p class="form-privacy">
+              By submitting, you agree to our <a href="/privacy-hub/">Privacy Policy</a>. We'll send you the {{ resourceType }} instantly.
+            </p>
+          </form>
+
+          <!-- Trust Section -->
+          <div class="form-trust">
+            <div class="trust-stat">
+              <div class="trust-number">5,000+</div>
+              <div class="trust-label">Downloads</div>
+            </div>
+            <div class="trust-stat">
+              <div class="trust-number">4.9★</div>
+              <div class="trust-label">Rating</div>
+            </div>
+            <div class="trust-stat">
+              <div class="trust-number">98%</div>
+              <div class="trust-label">Recommend</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Success State (Hidden by default) -->
+<div id="assetSuccess" class="success-state">
+  <div class="success-content">
+    <div class="success-icon">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+    </div>
+    <h2 class="success-title">You're all set!</h2>
+    <p class="success-description">
+      Your {{ resourceType }} is downloading now. We've also sent a copy to your email with the download link.
+    </p>
+    <button id="downloadAssetAgain" class="btn-download">
+      Download Again
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+      </svg>
+    </button>
+  </div>
+</div>
+
+<!-- Related Resources Section (Optional) -->
+{% if relatedResources %}
+<section class="related-resources">
+  <div class="related-container">
+    <h2 class="related-title">Related Resources</h2>
+    <div class="related-grid">
+      {% for resource in relatedResources %}
+      <a href="{{ resource.url }}" class="related-card">
+        <h3 class="related-card-title">{{ resource.title }}</h3>
+        <p class="related-card-description">{{ resource.description }}</p>
+        <span class="related-card-link">
+          Learn More →
+        </span>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% endblock %}

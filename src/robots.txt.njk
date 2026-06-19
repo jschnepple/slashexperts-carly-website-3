@@ -1,0 +1,35 @@
+---
+permalink: /robots.txt
+eleventyExcludeFromCollections: true
+---
+# SlashExperts Robots.txt
+# https://slashexperts.com
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://slashexperts.com/sitemap.xml
+
+# Block admin/staging paths if any
+Disallow: /admin/
+Disallow: /_drafts/
+Disallow: /staging/
+Disallow: /rd/
+
+# Allow all crawlers to index blog posts
+User-agent: Googlebot
+Allow: /post/
+Allow: /resources/blog/
+
+User-agent: Bingbot
+Allow: /post/
+Allow: /resources/blog/
+
+# Block common AI training crawlers (optional - uncomment if desired)
+# User-agent: GPTBot
+# Disallow: /
+# User-agent: CCBot
+# Disallow: /
+# User-agent: Google-Extended
+# Disallow: /

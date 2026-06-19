@@ -1,0 +1,97 @@
+/* ========== CARDS ========== */
+
+/* Base card styles */
+.card {
+    background: var(--white);
+    border-radius: 24px;
+    padding: 32px;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Problem card */
+.problem-card {
+    background: var(--white);
+    border-radius: 24px;
+    padding: 40px;
+    text-align: left;
+    transition: all 0.4s ease;
+    border: 1px solid rgba(14, 14, 68, 0.08);
+}
+
+.problem-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12);
+    border-color: rgba(129, 103, 234, 0.2);
+}
+
+/* Solution step */
+.solution-step {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 32px;
+    text-align: center;
+    position: relative;
+    border: 1px solid rgba(14, 14, 68, 0.08);
+    transition: all 0.3s ease;
+}
+
+.solution-step:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Metric card */
+/* Note: Specific metric card styles are defined in pages/home.css for flip card effect */
+.metric-card {
+    border-radius: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+/* Testimonial card */
+.testimonial-card {
+    background: var(--white);
+    border-radius: 24px;
+    padding: 40px;
+    text-align: left;
+    border: 1px solid rgba(14, 14, 68, 0.08);
+    transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* Profile card - for floating avatars */
+.profile-card {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+.profile-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Floating card - for hero section */
+.floating-card {
+    position: absolute;
+    transition: transform 0.1s ease;
+}
+
+.floating-avatar {
+    position: absolute;
+    transition: transform 0.1s ease;
+}

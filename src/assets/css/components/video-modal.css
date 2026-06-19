@@ -1,0 +1,173 @@
+/* ========================================================
+   Video Modal Component
+   Reusable video modal for Vimeo/YouTube embeds
+   ======================================================== */
+
+/* Overlay - covers entire screen */
+.video-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    padding: 20px;
+    cursor: pointer; /* Click overlay to close */
+}
+
+.video-modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Modal Container */
+.video-modal {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    background: #000;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow:
+        0 25px 80px rgba(0, 0, 0, 0.6),
+        0 0 60px rgba(129, 103, 234, 0.15);
+    transform: scale(0.9) translateY(20px);
+    transition: transform 0.3s ease;
+    cursor: default; /* Prevent overlay close when clicking modal */
+}
+
+.video-modal-overlay.active .video-modal {
+    transform: scale(1) translateY(0);
+}
+
+/* Close Button */
+.video-modal-close {
+    position: absolute;
+    top: -48px;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.video-modal-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+}
+
+.video-modal-close:focus {
+    outline: 2px solid var(--violet);
+    outline-offset: 2px;
+}
+
+.video-modal-close svg {
+    width: 20px;
+    height: 20px;
+    stroke: #fff;
+}
+
+/* Video Container - 16:9 aspect ratio */
+.video-modal-content {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 aspect ratio */
+    background: #000;
+}
+
+.video-modal-content iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Loading State */
+.video-modal-loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 14px;
+    opacity: 0.6;
+}
+
+/* ========== RESPONSIVE ========== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .video-modal {
+        max-width: 90%;
+    }
+
+    .video-modal-close {
+        top: -44px;
+        width: 36px;
+        height: 36px;
+    }
+
+    .video-modal-close svg {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .video-modal-overlay {
+        padding: 16px;
+        align-items: center;
+    }
+
+    .video-modal {
+        max-width: 100%;
+        border-radius: 12px;
+    }
+
+    .video-modal-close {
+        top: -40px;
+        right: 0;
+        width: 32px;
+        height: 32px;
+    }
+
+    .video-modal-close svg {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .video-modal-overlay {
+        padding: 12px;
+    }
+
+    .video-modal {
+        border-radius: 8px;
+    }
+}
+
+/* Prevent body scroll when modal is open */
+body.video-modal-open {
+    overflow: hidden;
+}

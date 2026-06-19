@@ -1,0 +1,46 @@
+:root {
+    /* Main Brand Colors */
+    --navy: #0e0e44;
+    --navy-dark: #0a0a30;
+    --violet: #8167ea;
+    --violet-light: #a78bfa;
+    --violet-bright: #b794f6;
+    --lavender: #d2c3ef;
+    --off-white: #f4f4f4;
+    --white: #ffffff;
+
+    /* Accent Colors */
+    --accent-cyan: #49ccf9;
+    --accent-purple: #8700ff;
+    --accent-pink: #ff6b9d;
+    --accent-orange: #f9a852;
+    --accent-green: #10b981;
+
+    /* Text */
+    --dark-text: #1a1a2e;
+    --muted: #64748b;
+    --light-muted: #94a3b8;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, #0d0a1a 0%, #1a1333 50%, #0f0c1f 100%);
+    --gradient-hero-mesh:
+        radial-gradient(ellipse 600px 400px at 15% 20%, rgba(124, 92, 252, 0.25) 0%, transparent 60%),
+        radial-gradient(ellipse 500px 500px at 85% 15%, rgba(168, 85, 247, 0.2) 0%, transparent 55%),
+        radial-gradient(ellipse 400px 300px at 75% 75%, rgba(236, 72, 153, 0.15) 0%, transparent 50%),
+        radial-gradient(ellipse 450px 350px at 25% 80%, rgba(99, 102, 241, 0.18) 0%, transparent 55%),
+        radial-gradient(ellipse 300px 300px at 50% 50%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
+    --gradient-violet: linear-gradient(135deg, #8167ea 0%, #a855f7 50%, #c084fc 100%);
+    --gradient-mesh: radial-gradient(ellipse at 50% 0%, rgba(138, 92, 246, 0.4) 0%, transparent 50%),
+                    radial-gradient(ellipse at 20% 50%, rgba(168, 85, 247, 0.25) 0%, transparent 45%),
+                    radial-gradient(ellipse at 80% 30%, rgba(192, 132, 252, 0.2) 0%, transparent 40%),
+                    radial-gradient(ellipse at 60% 80%, rgba(129, 103, 234, 0.15) 0%, transparent 45%),
+                    radial-gradient(ellipse at 0% 100%, rgba(88, 28, 135, 0.2) 0%, transparent 50%);
+
+    /* Animated gradient for glow effect - uses accent colors */
+    --glow-gradient: linear-gradient(90deg,
+        #49ccf9, #8700ff, #8167ea, #ff6b9d,
+        #f9a852, #ff6b9d, #8167ea, #8700ff, #49ccf9);
+
+    /* Serif gradient for italic text highlights */
+    --serif-gradient: linear-gradient(90deg, #a78bfa 0%, #c084fc 25%, #e879f9 50%, #f472b6 75%, #fb923c 100%);
+}

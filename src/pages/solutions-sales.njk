@@ -1,0 +1,1216 @@
+---
+permalink: /solutions-sales/
+title: Solutions for Sales Teams | SlashExperts
+description: Close more deals with the Trust Layer for B2B Sales. Give prospects direct access to real customer proof from your happiest customers.
+pageCSS: solutions-sales
+pageJS: solutions-sales
+---
+
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
+    <div class="hero-orb hero-orb-1"></div>
+    <div class="hero-orb hero-orb-2"></div>
+    <div class="hero-orb hero-orb-3"></div>
+
+    <div class="hero-content">
+        <div class="hero-text">
+            <div class="hero-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="12" y1="20" x2="12" y2="10"/>
+                    <line x1="18" y1="20" x2="18" y2="4"/>
+                    <line x1="6" y1="20" x2="6" y2="16"/>
+                </svg>
+                For Sales Teams
+            </div>
+
+            <h1>Close More Deals with <span class="serif-italic">Authentic</span> Peer Validation</h1>
+
+            <p class="hero-subtitle">Your prospects trust their peers more than your sales pitch. Our AI matches them with the right experts instantly—give them direct access to your happiest customers and watch deals accelerate through your pipeline.</p>
+
+            <div class="hero-cta-group">
+                <a href="/book-a-demo/" class="btn-primary has-glow has-glow-full">
+                    Book a Demo
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14"/>
+                        <path d="m12 5 7 7-7 7"/>
+                    </svg>
+                </a>
+                <a href="/product-tour/" class="btn-secondary has-glow">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="5 3 19 12 5 21 5 3"/>
+                    </svg>
+                    Take Product Tour
+                </a>
+            </div>
+
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <span class="hero-stat-value">2.4x</span>
+                    <span class="hero-stat-label">Higher close rates</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="hero-stat-value">29%</span>
+                    <span class="hero-stat-label">Shorter sales cycles</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="hero-stat-value">70%</span>
+                    <span class="hero-stat-label">Less admin time</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-visual">
+            <div class="pipeline-mockup">
+                <div class="mockup-header">
+                    <div class="mockup-dots">
+                        <span class="mockup-dot red"></span>
+                        <span class="mockup-dot yellow"></span>
+                        <span class="mockup-dot green"></span>
+                    </div>
+                    <span class="mockup-title">Q4 Pipeline - $2.4M</span>
+                </div>
+                <div class="mockup-body">
+                    <div class="pipeline-stages">
+                        <div class="pipeline-stage">
+                            <span class="stage-label">Qualified</span>
+                            <div class="stage-bar"><div class="stage-bar-fill stage-1"></div></div>
+                            <span class="stage-count">24</span>
+                        </div>
+                        <div class="pipeline-stage">
+                            <span class="stage-label">Demo</span>
+                            <div class="stage-bar"><div class="stage-bar-fill stage-2"></div></div>
+                            <span class="stage-count">18</span>
+                        </div>
+                        <div class="pipeline-stage">
+                            <span class="stage-label">Evaluation</span>
+                            <div class="stage-bar"><div class="stage-bar-fill stage-3"></div></div>
+                            <span class="stage-count">12</span>
+                        </div>
+                        <div class="pipeline-stage">
+                            <span class="stage-label">Negotiation</span>
+                            <div class="stage-bar"><div class="stage-bar-fill stage-4"></div></div>
+                            <span class="stage-count">8</span>
+                        </div>
+                    </div>
+
+                    <div class="deal-cards">
+                        <div class="deal-card highlighted">
+                            <div class="deal-avatar">AC</div>
+                            <div class="deal-info">
+                                <span class="deal-name">Acme Corp</span>
+                                <span class="deal-company">Enterprise - SaaS</span>
+                            </div>
+                            <div class="deal-expert-badge">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                    <polyline points="22 4 12 14.01 9 11.01"/>
+                                </svg>
+                                Expert call booked
+                            </div>
+                            <span class="deal-value">$185K</span>
+                        </div>
+                        <div class="deal-card">
+                            <div class="deal-avatar">TI</div>
+                            <div class="deal-info">
+                                <span class="deal-name">TechInnovate</span>
+                                <span class="deal-company">Mid-Market - FinTech</span>
+                            </div>
+                            <span class="deal-value">$92K</span>
+                        </div>
+                        <div class="deal-card">
+                            <div class="deal-avatar">GS</div>
+                            <div class="deal-info">
+                                <span class="deal-name">GlobalScale</span>
+                                <span class="deal-company">Enterprise - Healthcare</span>
+                            </div>
+                            <span class="deal-value">$240K</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Floating Expert Call Popup -->
+            <div class="expert-popup">
+                <div class="popup-header">
+                    <div class="popup-avatar">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                            <circle cx="12" cy="7" r="4"/>
+                        </svg>
+                    </div>
+                    <div class="popup-title">
+                        <h4>ExpertScore AI Match</h4>
+                        <span>98% fit score • Agentic matching</span>
+                    </div>
+                </div>
+                <div class="popup-content">
+                    <p><strong>Sarah K.</strong> from DataStream is available to speak with your prospect about scaling in the SaaS space.</p>
+                </div>
+                <button class="popup-cta">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                        <line x1="16" y1="2" x2="16" y2="6"/>
+                        <line x1="8" y1="2" x2="8" y2="6"/>
+                        <line x1="3" y1="10" x2="21" y2="10"/>
+                    </svg>
+                    Send Booking Link
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Pain Points Section -->
+<section class="pain-section">
+    <div class="section-container">
+        <!-- BANNER ICON GLOW - Book with gear background effect -->
+        <div class="banner-icon-glow-container">
+            <div class="banner-icon-glow-radial"></div>
+            <div class="banner-icon-particles">
+                <div class="banner-icon-particle"></div>
+                <div class="banner-icon-particle"></div>
+                <div class="banner-icon-particle"></div>
+                <div class="banner-icon-particle"></div>
+                <div class="banner-icon-particle"></div>
+                <div class="banner-icon-particle"></div>
+                <div class="banner-icon-particle"></div>
+                <div class="banner-icon-particle"></div>
+                <div class="banner-icon-particle"></div>
+                <div class="banner-icon-particle"></div>
+            </div>
+            <div class="banner-icon-glow">
+                <!-- Open book with gear icon -->
+                <svg class="glow-diagram" viewBox="0 0 100 100" fill="none">
+                    <!-- Gradient definitions -->
+                    <defs>
+                        <linearGradient id="glassGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:rgba(239, 68, 68, 0.5)"/>
+                            <stop offset="50%" style="stop-color:rgba(168, 85, 247, 0.4)"/>
+                            <stop offset="100%" style="stop-color:rgba(129, 103, 234, 0.3)"/>
+                        </linearGradient>
+                        <linearGradient id="glassGradientFill" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:rgba(239, 68, 68, 0.08)"/>
+                            <stop offset="100%" style="stop-color:rgba(129, 103, 234, 0.05)"/>
+                        </linearGradient>
+                    </defs>
+
+                    <!-- Gear/cog at top -->
+                    <path d="M50 8 L53 8 L54 12 L58 13 L61 10 L64 13 L61 16 L62 20 L66 21 L66 24 L62 25 L61 29 L64 32 L61 35 L58 32 L54 33 L53 37 L50 37 L47 37 L46 33 L42 32 L39 35 L36 32 L39 29 L38 25 L34 24 L34 21 L38 20 L39 16 L36 13 L39 10 L42 13 L46 12 L47 8 Z"
+                          stroke="url(#glassGradient)" stroke-width="0.8" fill="url(#glassGradientFill)"/>
+                    <circle cx="50" cy="22.5" r="6" stroke="url(#glassGradient)" stroke-width="0.8" fill="none"/>
+                    <!-- Inner gear detail -->
+                    <circle cx="50" cy="22.5" r="2.5" fill="rgba(168, 85, 247, 0.3)"/>
+
+                    <!-- Stem from gear to book -->
+                    <line x1="50" y1="37" x2="50" y2="48" stroke="url(#glassGradient)" stroke-width="0.8"/>
+
+                    <!-- Open book - left page -->
+                    <path d="M12 50 L12 88 Q12 92 16 92 L48 92 L48 52 Q48 48 44 48 L16 48 Q12 48 12 52 Z"
+                          stroke="url(#glassGradient)" stroke-width="1" fill="url(#glassGradientFill)"/>
+
+                    <!-- Open book - right page -->
+                    <path d="M88 50 L88 88 Q88 92 84 92 L52 92 L52 52 Q52 48 56 48 L84 48 Q88 48 88 52 Z"
+                          stroke="url(#glassGradient)" stroke-width="1" fill="url(#glassGradientFill)"/>
+
+                    <!-- Book spine/center -->
+                    <path d="M48 48 Q50 45 52 48" stroke="url(#glassGradient)" stroke-width="1" fill="none"/>
+                    <line x1="50" y1="48" x2="50" y2="92" stroke="rgba(168, 85, 247, 0.25)" stroke-width="0.5"/>
+
+                    <!-- Left page lines -->
+                    <line x1="20" y1="58" x2="40" y2="58" stroke="rgba(239, 68, 68, 0.25)" stroke-width="0.8" stroke-linecap="round"/>
+                    <line x1="20" y1="66" x2="42" y2="66" stroke="rgba(196, 76, 186, 0.22)" stroke-width="0.8" stroke-linecap="round"/>
+                    <line x1="20" y1="74" x2="38" y2="74" stroke="rgba(168, 85, 247, 0.2)" stroke-width="0.8" stroke-linecap="round"/>
+                    <line x1="20" y1="82" x2="40" y2="82" stroke="rgba(129, 103, 234, 0.18)" stroke-width="0.8" stroke-linecap="round"/>
+
+                    <!-- Right page lines -->
+                    <line x1="60" y1="58" x2="80" y2="58" stroke="rgba(239, 68, 68, 0.25)" stroke-width="0.8" stroke-linecap="round"/>
+                    <line x1="58" y1="66" x2="80" y2="66" stroke="rgba(196, 76, 186, 0.22)" stroke-width="0.8" stroke-linecap="round"/>
+                    <line x1="62" y1="74" x2="80" y2="74" stroke="rgba(168, 85, 247, 0.2)" stroke-width="0.8" stroke-linecap="round"/>
+                    <line x1="60" y1="82" x2="80" y2="82" stroke="rgba(129, 103, 234, 0.18)" stroke-width="0.8" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <div class="banner-icon-glow-fade"></div>
+        </div>
+
+        <div class="pain-header">
+            <div class="section-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"/>
+                    <line x1="12" y1="8" x2="12" y2="12"/>
+                    <line x1="12" y1="16" x2="12.01" y2="16"/>
+                </svg>
+                The Problem
+            </div>
+            <h2>The Old Playbook Is <span class="gradient-text">Broken</span></h2>
+            <p>Your buyers complete 80% of their journey before talking to sales. They trust peer opinions over vendor pitches.</p>
+        </div>
+
+        <div class="pain-grid">
+            <div class="pain-card">
+                <div class="pain-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"/>
+                        <polyline points="12 6 12 12 16 14"/>
+                    </svg>
+                </div>
+                <h3>3-5 Day Reference Delays</h3>
+                <p>Manual coordination kills momentum. By the time you arrange a reference call, your prospect has gone cold or moved to a competitor.</p>
+                <div class="pain-stat">
+                    <span class="pain-stat-value">60%</span>
+                    <span class="pain-stat-label">of reference requests fail to connect</span>
+                </div>
+            </div>
+
+            <div class="pain-card">
+                <div class="pain-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                        <circle cx="9" cy="7" r="4"/>
+                        <line x1="17" y1="8" x2="23" y2="8"/>
+                    </svg>
+                </div>
+                <h3>Reference Customer Fatigue</h3>
+                <p>Your best customers get bombarded with requests. Without limits, you risk damaging your most valuable relationships.</p>
+                <div class="pain-stat">
+                    <span class="pain-stat-value">Zero</span>
+                    <span class="pain-stat-label">visibility into reference usage</span>
+                </div>
+            </div>
+
+            <div class="pain-card">
+                <div class="pain-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14.5 10c-.83 0-1.5-.67-1.5-1.5v-5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5z"/>
+                        <path d="M20.5 10H19V8.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
+                        <path d="M9.5 14c.83 0 1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5S8 21.33 8 20.5v-5c0-.83.67-1.5 1.5-1.5z"/>
+                        <path d="M3.5 14H5v1.5c0 .83-.67 1.5-1.5 1.5S2 16.33 2 15.5 2.67 14 3.5 14z"/>
+                    </svg>
+                </div>
+                <h3>Wrong Customer Matches</h3>
+                <p>Connecting enterprise prospects with SMB references destroys credibility. Without AI-powered matching, you're guessing. ExpertScore AI eliminates mismatches by analyzing 50+ data points per prospect.</p>
+                <div class="pain-stat">
+                    <span class="pain-stat-value">&lt;30%</span>
+                    <span class="pain-stat-label">average win rates reported</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Solution Section -->
+<section class="solution-section">
+    <div class="section-container">
+        <div class="solution-header">
+            <div class="section-badge-light">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                </svg>
+                The Solution
+            </div>
+            <h2>Your New Sales <span class="serif-italic">Weapon</span></h2>
+            <p>SlashExperts gives your sales team an unfair advantage-instant access to perfectly matched customer references, right when deals need momentum.</p>
+        </div>
+
+        <div class="solution-grid">
+            <div class="solution-card">
+                <div class="solution-card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"/>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                        <line x1="11" y1="8" x2="11" y2="14"/>
+                        <line x1="8" y1="11" x2="14" y2="11"/>
+                    </svg>
+                </div>
+                <h3>ExpertScore AI Matching Agent</h3>
+                <p>Our ExpertScore AI agent autonomously matches prospects with the most relevant customer references based on industry, use case, company size, and tech stack. No more awkward mismatches—just intelligent, agentic matching that learns and improves.</p>
+                <div class="solution-features">
+                    <span class="solution-feature">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                        ExpertScore AI
+                    </span>
+                    <span class="solution-feature">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                        Agentic matching
+                    </span>
+                    <span class="solution-feature">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                        Auto-learning
+                    </span>
+                </div>
+            </div>
+
+            <div class="solution-card">
+                <div class="solution-card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                        <line x1="16" y1="2" x2="16" y2="6"/>
+                        <line x1="8" y1="2" x2="8" y2="6"/>
+                        <line x1="3" y1="10" x2="21" y2="10"/>
+                    </svg>
+                </div>
+                <h3>One-Click Booking Links</h3>
+                <p>Create custom, branded booking links for any deal in seconds using our Chrome extension. Share in emails, sequences, or during live calls. No more scheduling ping-pong.</p>
+                <div class="solution-features">
+                    <span class="solution-feature">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                        Chrome extension
+                    </span>
+                    <span class="solution-feature">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                        Custom branding
+                    </span>
+                    <span class="solution-feature">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                        Sequence integration
+                    </span>
+                </div>
+            </div>
+
+            <div class="solution-card">
+                <div class="solution-card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    </svg>
+                </div>
+                <h3>Automatic Relationship Protection</h3>
+                <p>Set usage limits per expert to prevent burnout. The system automatically enforces caps, rotates references, and ensures your best customers stay happy.</p>
+                <div class="solution-features">
+                    <span class="solution-feature">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                        Usage caps
+                    </span>
+                    <span class="solution-feature">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                        Auto-rotation
+                    </span>
+                    <span class="solution-feature">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                        Fair compensation
+                    </span>
+                </div>
+            </div>
+
+            <div class="solution-card">
+                <div class="solution-card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="20" x2="18" y2="10"/>
+                        <line x1="12" y1="20" x2="12" y2="4"/>
+                        <line x1="6" y1="20" x2="6" y2="14"/>
+                    </svg>
+                </div>
+                <h3>AI-Powered Deal Intelligence Agent</h3>
+                <p>Your AI deal intelligence agent tracks every expert conversation's impact, predicts deal outcomes, and surfaces insights to optimize your strategy. Real-time CRM sync means your AI copilot always has the full picture.</p>
+                <div class="solution-features">
+                    <span class="solution-feature">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                        AI insights
+                    </span>
+                    <span class="solution-feature">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                        Predictive analytics
+                    </span>
+                    <span class="solution-feature">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                        Real-time CRM sync
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- How It Works Section -->
+<section class="how-section">
+    <div class="section-container">
+        <div class="how-header">
+            <div class="section-badge-dark">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+                    <polyline points="2 17 12 22 22 17"/>
+                    <polyline points="2 12 12 17 22 12"/>
+                </svg>
+                How It Works
+            </div>
+            <h2>From Pipeline to <span class="gradient-text">Closed-Won</span> in 4 Steps</h2>
+            <p>Get started in days, not months. SlashExperts integrates seamlessly into your existing sales workflow.</p>
+        </div>
+
+        <div class="how-steps">
+            <div class="how-step">
+                <div class="step-number">1</div>
+                <div class="step-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                        <circle cx="9" cy="7" r="4"/>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                    </svg>
+                </div>
+                <h3>Build Your Expert Pool</h3>
+                <p>Invite your happiest customers to become paid experts. We handle onboarding, profiles, and compensation.</p>
+            </div>
+
+            <div class="how-step">
+                <div class="step-number">2</div>
+                <div class="step-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"/>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                    </svg>
+                </div>
+                <h3>AI Curates Your Experts</h3>
+                <p>Our AI agent automatically curates the perfect expert group for each opportunity, or use our Chrome extension for manual control.</p>
+            </div>
+
+            <div class="how-step">
+                <div class="step-number">3</div>
+                <div class="step-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+                    </svg>
+                </div>
+                <h3>Share Booking Links</h3>
+                <p>Drop branded booking links into outbound sequences, follow-ups, or during live calls.</p>
+            </div>
+
+            <div class="how-step">
+                <div class="step-number">4</div>
+                <div class="step-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                        <polyline points="22 4 12 14.01 9 11.01"/>
+                    </svg>
+                </div>
+                <h3>Close with Confidence</h3>
+                <p>Prospects book calls directly with matched experts. You get notified and track impact on the deal.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Results Section -->
+<section class="results-section">
+    <div class="section-container">
+        <div class="results-header">
+            <div class="section-badge-light">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 20V10"/>
+                    <path d="M18 20V4"/>
+                    <path d="M6 20v-4"/>
+                </svg>
+                Proven Results
+            </div>
+            <h2>Numbers That Move <span class="serif-italic">Quotas</span></h2>
+        </div>
+
+        <div class="results-grid">
+            <div class="result-card">
+                <span class="result-value">2.4x</span>
+                <span class="result-label">Higher close rates on deals<br>with expert conversations</span>
+            </div>
+            <div class="result-card">
+                <span class="result-value">29%</span>
+                <span class="result-label">Reduction in average<br>sales cycle length</span>
+            </div>
+            <div class="result-card">
+                <span class="result-value">30%</span>
+                <span class="result-label">Improvement in late-stage<br>deal close rates</span>
+            </div>
+            <div class="result-card">
+                <span class="result-value">70%</span>
+                <span class="result-label">Decrease in admin time<br>managing references</span>
+            </div>
+        </div>
+
+        <div class="stories-grid">
+            <div class="story-card">
+                <div class="story-visual">
+                    <span class="story-logo">Spara</span>
+                </div>
+                <div class="story-content">
+                    <p class="story-quote">"SlashExperts transformed how we manage pipeline. Our reps now have real-time access to perfectly matched references, and it's directly impacting our numbers."</p>
+                    <div class="story-author">
+                        <div class="story-author-avatar">JS</div>
+                        <div class="story-author-info">
+                            <h4>Jon Studham</h4>
+                            <span>VP of Sales, Spara</span>
+                        </div>
+                    </div>
+                    <div class="story-result">
+                        <span class="story-result-value">30%</span>
+                        <span class="story-result-label">improvement in late-stage close rates</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="story-card">
+                <div class="story-visual">
+                    <span class="story-logo">Warmly</span>
+                </div>
+                <div class="story-content">
+                    <p class="story-quote">"We completely rethought demo follow-ups. Now every prospect gets a tailored expert connection. The sales cycle compression has been incredible."</p>
+                    <div class="story-author">
+                        <div class="story-author-avatar">K</div>
+                        <div class="story-author-info">
+                            <h4>Keegan</h4>
+                            <span>Head of Sales, Warmly</span>
+                        </div>
+                    </div>
+                    <div class="story-result">
+                        <span class="story-result-value">25%</span>
+                        <span class="story-result-label">reduction in sales cycle</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Use Cases Section -->
+<section class="usecases-section">
+    <div class="section-container">
+        <div class="usecases-header">
+            <div class="section-badge-dark">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                </svg>
+                Use Cases
+            </div>
+            <h2>Built for How You <span class="gradient-text">Actually Sell</span></h2>
+            <p>From outbound sequences to late-stage negotiations, SlashExperts accelerates every stage of your pipeline.</p>
+        </div>
+
+        <div class="usecases-tabs">
+            <button class="usecase-tab active" data-tab="reference">Reference Calls</button>
+            <button class="usecase-tab" data-tab="acceleration">Deal Acceleration</button>
+            <button class="usecase-tab" data-tab="technical">Technical Validation</button>
+            <button class="usecase-tab" data-tab="competitive">Competitive Deals</button>
+        </div>
+
+        <!-- Tab Panel 1: Reference Calls -->
+        <div class="usecase-panel active" id="panel-reference">
+            <div class="usecase-content">
+                <div class="usecase-text">
+                    <h3>Streamlined Reference Call Management</h3>
+                    <p>Stop spending hours coordinating reference calls. Create curated expert groups for each deal and let prospects self-schedule with the most relevant customers.</p>
+
+                    <div class="usecase-benefits">
+                        <div class="usecase-benefit">
+                            <div class="benefit-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"/>
+                                </svg>
+                            </div>
+                            <span>Automated scheduling eliminates back-and-forth coordination</span>
+                        </div>
+                        <div class="usecase-benefit">
+                            <div class="benefit-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"/>
+                                </svg>
+                            </div>
+                            <span>Usage limits protect your most valuable reference accounts</span>
+                        </div>
+                        <div class="usecase-benefit">
+                            <div class="benefit-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"/>
+                                </svg>
+                            </div>
+                            <span>CRM integration tracks every call's impact on deal outcome</span>
+                        </div>
+                        <div class="usecase-benefit">
+                            <div class="benefit-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"/>
+                                </svg>
+                            </div>
+                            <span>Expert compensation handled automatically</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="usecase-visual">
+                    <div class="usecase-mockup">
+                        <div class="usecase-mockup-header">
+                            <div class="mockup-dots">
+                                <span class="mockup-dot red"></span>
+                                <span class="mockup-dot yellow"></span>
+                                <span class="mockup-dot green"></span>
+                            </div>
+                            <span class="mockup-title">Expert Booking System - Acme Corp Deal</span>
+                        </div>
+                        <div class="usecase-mockup-body">
+                            <div class="expert-grid-mockup">
+                                <div class="expert-card-mini">
+                                    <div class="expert-mini-header">
+                                        <div class="expert-mini-avatar">SK</div>
+                                        <div class="expert-mini-info">
+                                            <h5>Sarah K.</h5>
+                                            <span>VP Engineering - DataStream</span>
+                                        </div>
+                                    </div>
+                                    <div class="expert-mini-tags">
+                                        <span class="expert-mini-tag">SaaS</span>
+                                        <span class="expert-mini-tag">Enterprise</span>
+                                        <span class="expert-mini-tag">API</span>
+                                    </div>
+                                    <button class="expert-mini-cta">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                                            <line x1="16" y1="2" x2="16" y2="6"/>
+                                            <line x1="8" y1="2" x2="8" y2="6"/>
+                                        </svg>
+                                        Book 30 min
+                                    </button>
+                                </div>
+
+                                <div class="expert-card-mini">
+                                    <div class="expert-mini-header">
+                                        <div class="expert-mini-avatar cyan">MR</div>
+                                        <div class="expert-mini-info">
+                                            <h5>Marcus R.</h5>
+                                            <span>CTO - TechScale</span>
+                                        </div>
+                                    </div>
+                                    <div class="expert-mini-tags">
+                                        <span class="expert-mini-tag">FinTech</span>
+                                        <span class="expert-mini-tag">Scale</span>
+                                        <span class="expert-mini-tag">Security</span>
+                                    </div>
+                                    <button class="expert-mini-cta">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                                            <line x1="16" y1="2" x2="16" y2="6"/>
+                                            <line x1="8" y1="2" x2="8" y2="6"/>
+                                        </svg>
+                                        Book 30 min
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab Panel 2: Deal Acceleration -->
+        <div class="usecase-panel" id="panel-acceleration">
+            <div class="usecase-content">
+                <div class="usecase-text">
+                    <h3>Accelerate Stalled Deals</h3>
+                    <p>When deals stall in the pipeline, peer validation can be the catalyst that moves them forward. Give prospects the confidence they need to move faster.</p>
+
+                    <div class="usecase-benefits">
+                        <div class="usecase-benefit">
+                            <div class="benefit-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"/>
+                                </svg>
+                            </div>
+                            <span>Inject social proof at critical decision points</span>
+                        </div>
+                        <div class="usecase-benefit">
+                            <div class="benefit-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"/>
+                                </svg>
+                            </div>
+                            <span>Match prospects with customers who faced similar objections</span>
+                        </div>
+                        <div class="usecase-benefit">
+                            <div class="benefit-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"/>
+                                </svg>
+                            </div>
+                            <span>Real-time notifications when expert calls are booked</span>
+                        </div>
+                        <div class="usecase-benefit">
+                            <div class="benefit-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"/>
+                                </svg>
+                            </div>
+                            <span>Track correlation between expert calls and deal velocity</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="usecase-visual">
+                    <div class="usecase-mockup email-mockup">
+                        <div class="usecase-mockup-header">
+                            <div class="mockup-dots">
+                                <span class="mockup-dot red"></span>
+                                <span class="mockup-dot yellow"></span>
+                                <span class="mockup-dot green"></span>
+                            </div>
+                            <span class="mockup-title">Outbound Sequence - Follow Up</span>
+                        </div>
+                        <div class="usecase-mockup-body email-mockup-body">
+                            <div class="email-header">
+                                <div class="email-avatar">SK</div>
+                                <div class="email-meta">
+                                    <span class="email-from">Sarah Chen (Sales Rep)</span>
+                                    <span class="email-subject">Quick question about your evaluation</span>
+                                </div>
+                                <span class="email-time">2m ago</span>
+                            </div>
+                            <div class="email-body">
+                                <p>Hi Alex,</p>
+                                <p>I noticed you haven't had a chance to connect with one of our customers yet. I've curated a group of experts in your industry who can share their experience...</p>
+
+                                <div class="email-cta-block">
+                                    <div class="email-cta-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                            <circle cx="9" cy="7" r="4"/>
+                                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                                        </svg>
+                                    </div>
+                                    <div class="email-cta-text">
+                                        <span class="email-cta-title">3 Experts Available</span>
+                                        <span class="email-cta-desc">SaaS, Enterprise, your industry</span>
+                                    </div>
+                                    <span class="email-cta-button">Book Now</span>
+                                </div>
+                            </div>
+                            <div class="email-tracking">
+                                <div class="tracking-item tracking-highlight">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="20 6 9 17 4 12"/>
+                                    </svg>
+                                    Opened
+                                </div>
+                                <div class="tracking-item tracking-highlight">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="20 6 9 17 4 12"/>
+                                    </svg>
+                                    Clicked
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab Panel 3: Technical Validation -->
+        <div class="usecase-panel" id="panel-technical">
+            <div class="usecase-content">
+                <div class="usecase-text">
+                    <h3>Technical Validation from Peers</h3>
+                    <p>When technical buyers need to validate architecture, security, or integration details, connect them with peers who've already solved similar challenges.</p>
+
+                    <div class="usecase-benefits">
+                        <div class="usecase-benefit">
+                            <div class="benefit-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"/>
+                                </svg>
+                            </div>
+                            <span>Filter experts by technical certifications and credentials</span>
+                        </div>
+                        <div class="usecase-benefit">
+                            <div class="benefit-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"/>
+                                </svg>
+                            </div>
+                            <span>Match by specific tech stack and integration experience</span>
+                        </div>
+                        <div class="usecase-benefit">
+                            <div class="benefit-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"/>
+                                </svg>
+                            </div>
+                            <span>Enable architect-to-architect conversations</span>
+                        </div>
+                        <div class="usecase-benefit">
+                            <div class="benefit-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"/>
+                                </svg>
+                            </div>
+                            <span>Reduce objections from technical stakeholders</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="usecase-visual">
+                    <div class="usecase-mockup technical-mockup">
+                        <div class="usecase-mockup-header">
+                            <div class="mockup-dots">
+                                <span class="mockup-dot red"></span>
+                                <span class="mockup-dot yellow"></span>
+                                <span class="mockup-dot green"></span>
+                            </div>
+                            <span class="mockup-title">Technical Expert Matching</span>
+                        </div>
+                        <div class="usecase-mockup-body technical-mockup-body">
+                            <div class="filter-bar">
+                                <span class="filter-tag active">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="20 6 9 17 4 12"/>
+                                    </svg>
+                                    AWS
+                                </span>
+                                <span class="filter-tag active">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="20 6 9 17 4 12"/>
+                                    </svg>
+                                    SOC2
+                                </span>
+                                <span class="filter-tag">Kubernetes</span>
+                                <span class="filter-tag">Terraform</span>
+                            </div>
+
+                            <div class="tech-expert-list">
+                                <div class="tech-expert-card">
+                                    <div class="tech-expert-left">
+                                        <div class="tech-expert-avatar">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                                                <circle cx="12" cy="7" r="4"/>
+                                            </svg>
+                                        </div>
+                                        <div class="tech-expert-info">
+                                            <h5>David Chen</h5>
+                                            <span>Principal Architect - CloudSecure</span>
+                                            <div class="tech-expert-creds">
+                                                <span class="cred-badge">AWS SA</span>
+                                                <span class="cred-badge">SOC2</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tech-expert-right">
+                                        <div class="match-score">
+                                            <span class="match-value">97%</span>
+                                            <span class="match-label">Match</span>
+                                        </div>
+                                        <button class="tech-book-btn">Book</button>
+                                    </div>
+                                </div>
+
+                                <div class="tech-expert-card">
+                                    <div class="tech-expert-left">
+                                        <div class="tech-expert-avatar">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                                                <circle cx="12" cy="7" r="4"/>
+                                            </svg>
+                                        </div>
+                                        <div class="tech-expert-info">
+                                            <h5>Elena Rodriguez</h5>
+                                            <span>CTO - FinanceFlow</span>
+                                            <div class="tech-expert-creds">
+                                                <span class="cred-badge">AWS SA</span>
+                                                <span class="cred-badge">HIPAA</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tech-expert-right">
+                                        <div class="match-score">
+                                            <span class="match-value">94%</span>
+                                            <span class="match-label">Match</span>
+                                        </div>
+                                        <button class="tech-book-btn">Book</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab Panel 4: Competitive Deals -->
+        <div class="usecase-panel" id="panel-competitive">
+            <div class="usecase-content">
+                <div class="usecase-text">
+                    <h3>Win Competitive Deals</h3>
+                    <p>When you're up against a competitor, nothing beats hearing from a customer who switched. Connect prospects with customers who migrated from the same competitor.</p>
+
+                    <div class="usecase-benefits">
+                        <div class="usecase-benefit">
+                            <div class="benefit-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"/>
+                                </svg>
+                            </div>
+                            <span>Match by specific competitor being evaluated</span>
+                        </div>
+                        <div class="usecase-benefit">
+                            <div class="benefit-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"/>
+                                </svg>
+                            </div>
+                            <span>Highlight migration success stories and ROI</span>
+                        </div>
+                        <div class="usecase-benefit">
+                            <div class="benefit-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"/>
+                                </svg>
+                            </div>
+                            <span>Address competitor-specific objections with real data</span>
+                        </div>
+                        <div class="usecase-benefit">
+                            <div class="benefit-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"/>
+                                </svg>
+                            </div>
+                            <span>Turn competitor weaknesses into your advantages</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="usecase-visual">
+                    <div class="usecase-mockup competitive-mockup">
+                        <div class="usecase-mockup-header">
+                            <div class="mockup-dots">
+                                <span class="mockup-dot red"></span>
+                                <span class="mockup-dot yellow"></span>
+                                <span class="mockup-dot green"></span>
+                            </div>
+                            <span class="mockup-title">Competitive Intelligence</span>
+                        </div>
+                        <div class="usecase-mockup-body competitive-mockup-body">
+                            <div class="competitive-header">
+                                <span class="comp-badge">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                                    </svg>
+                                    Switched from Competitor X
+                                </span>
+                            </div>
+
+                            <div class="migration-story">
+                                <div class="migration-expert">
+                                    <div class="migration-avatar">JM</div>
+                                    <div class="migration-info">
+                                        <h5>Jennifer Martinez</h5>
+                                        <span>VP Operations - ScaleForce</span>
+                                    </div>
+                                </div>
+
+                                <div class="migration-stats">
+                                    <div class="migration-stat">
+                                        <span class="mstat-value">6 mo</span>
+                                        <span class="mstat-label">Migration</span>
+                                    </div>
+                                    <div class="migration-stat">
+                                        <span class="mstat-value">3.2x</span>
+                                        <span class="mstat-label">ROI</span>
+                                    </div>
+                                    <div class="migration-stat">
+                                        <span class="mstat-value">40%</span>
+                                        <span class="mstat-label">Time Saved</span>
+                                    </div>
+                                </div>
+
+                                <div class="migration-quote">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V21z"/>
+                                        <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3z"/>
+                                    </svg>
+                                    <p>"The switch was smoother than we expected. Their team guided us every step of the way."</p>
+                                </div>
+
+                                <button class="migration-cta">
+                                    Book a Call
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M5 12h14"/>
+                                        <path d="m12 5 7 7-7 7"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Integrations Section -->
+<section class="integrations-section">
+    <div class="section-container">
+        <div class="integrations-header">
+            <h2>Integrates with Your <span class="serif-italic">Sales Stack</span></h2>
+            <p>Connect seamlessly with the tools your team already uses</p>
+        </div>
+
+        <!-- Orbital Container -->
+        <div class="orbital-container">
+            <!-- Orbital Rings -->
+            <div class="orbital-ring orbital-ring-1"></div>
+            <div class="orbital-ring orbital-ring-2"></div>
+            <div class="orbital-ring orbital-ring-3"></div>
+            <div class="orbital-ring orbital-ring-4"></div>
+
+            <!-- Center Logo -->
+            <div class="orbital-center">
+                <img src="/assets/images/slashexperts-logo-icon.svg" alt="SlashExperts">
+            </div>
+
+            <!-- Integration Logos -->
+            <div class="int-logo pos-1">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#00A1E0" stroke-width="1.5">
+                    <path d="M17.5 19.5c.7.7 1.5.8 2.2.5.7-.3 1.2-1 1.3-1.8l1-9.2c.1-.8-.2-1.6-.8-2.1-.6-.5-1.4-.7-2.1-.5l-9.2 2.2c-.7.2-1.4.7-1.7 1.4-.3.7-.2 1.5.3 2.1l2.9 3.5"/>
+                    <path d="M10.7 15.3l-4.3 4.3"/>
+                    <circle cx="6" cy="18" r="2"/>
+                </svg>
+            </div>
+            <div class="int-logo pos-2">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#FF6C37" stroke-width="1.5">
+                    <rect x="2" y="4" width="20" height="16" rx="2"/>
+                    <path d="M7 12h10M12 8v8"/>
+                </svg>
+            </div>
+            <div class="int-logo pos-3">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#4285F4" stroke-width="1.5">
+                    <rect x="3" y="4" width="18" height="16" rx="2"/>
+                    <path d="M3 10h18"/>
+                    <path d="M8 4v16"/>
+                </svg>
+            </div>
+            <div class="int-logo pos-4">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#00BFA5" stroke-width="1.5">
+                    <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                    <path d="M2 17l10 5 10-5"/>
+                    <path d="M2 12l10 5 10-5"/>
+                </svg>
+            </div>
+            <div class="int-logo pos-5">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#0052CC" stroke-width="1.5">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M8 14s1.5 2 4 2 4-2 4-2"/>
+                    <path d="M9 9h.01M15 9h.01"/>
+                </svg>
+            </div>
+            <div class="int-logo pos-6">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#7B68EE" stroke-width="1.5">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                    <polyline points="22,6 12,13 2,6"/>
+                </svg>
+            </div>
+            <div class="int-logo pos-7">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#E01E5A" stroke-width="1.5">
+                    <path d="M14.5 10c-.83 0-1.5-.67-1.5-1.5v-5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5z"/>
+                    <path d="M20.5 10H19V8.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
+                    <path d="M9.5 14c.83 0 1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5S8 21.33 8 20.5v-5c0-.83.67-1.5 1.5-1.5z"/>
+                    <path d="M3.5 14H5v1.5c0 .83-.67 1.5-1.5 1.5S2 16.33 2 15.5 2.67 14 3.5 14z"/>
+                    <path d="M14 14.5c0-.83.67-1.5 1.5-1.5h5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5h-5c-.83 0-1.5-.67-1.5-1.5z"/>
+                    <path d="M15.5 19H14v1.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5z"/>
+                    <path d="M10 9.5C10 8.67 9.33 8 8.5 8h-5C2.67 8 2 8.67 2 9.5S2.67 11 3.5 11h5c.83 0 1.5-.67 1.5-1.5z"/>
+                    <path d="M8.5 5H10V3.5C10 2.67 9.33 2 8.5 2S7 2.67 7 3.5 7.67 5 8.5 5z"/>
+                </svg>
+            </div>
+            <div class="int-logo pos-8">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#26B5F8" stroke-width="1.5">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                    <polyline points="9 22 9 12 15 12 15 22"/>
+                </svg>
+            </div>
+            <div class="int-logo pos-9">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#6264A7" stroke-width="1.5">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                    <circle cx="9" cy="7" r="4"/>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                </svg>
+            </div>
+            <div class="int-logo pos-10">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#FF5F57" stroke-width="1.5">
+                    <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                    <path d="M2 17l10 5 10-5"/>
+                    <path d="M2 12l10 5 10-5"/>
+                </svg>
+            </div>
+            <div class="int-logo pos-11">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#4353FF" stroke-width="1.5">
+                    <rect x="2" y="3" width="20" height="18" rx="2"/>
+                    <path d="M8 10h8"/>
+                    <path d="M8 14h5"/>
+                </svg>
+            </div>
+            <div class="int-logo pos-12">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#00D4AA" stroke-width="1.5">
+                    <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                </svg>
+            </div>
+        </div>
+
+        <div class="integration-cta">
+            <p>Don't see your CRM? We integrate with 50+ tools.</p>
+            <a href="/integrations/" class="btn-outline has-glow">
+                View All Integrations
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14"/>
+                    <path d="m12 5 7 7-7 7"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Final CTA -->
+<section class="final-cta">
+    <div class="cta-orb cta-orb-1"></div>
+    <div class="cta-orb cta-orb-2"></div>
+    <div class="cta-orb cta-orb-3"></div>
+
+    <div class="final-cta-content">
+        <h2>Ready to Hit <span class="serif-italic">Quota</span>?</h2>
+        <p>Join sales teams closing more deals with authentic peer validation</p>
+        <a href="/book-a-demo/" class="btn-white has-glow">
+            Book Your Demo
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14"/>
+                <path d="m12 5 7 7-7 7"/>
+            </svg>
+        </a>
+        <div class="final-cta-note">
+            <span>Setup in under 60 minutes</span>
+            <span>Free CRM integration</span>
+            <span>ROI within 30 days</span>
+        </div>
+    </div>
+</section>
+{% endblock %}

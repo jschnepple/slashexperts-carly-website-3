@@ -1,0 +1,60 @@
+/**
+ * Terms of Service Page Styles
+ * Page-specific styles for alert boxes
+ */
+
+/* Import shared legal page styles */
+@import '../components/legal-common.css';
+
+/* ==================== ALERT BOX ==================== */
+.alert-box {
+    background: linear-gradient(135deg, rgba(249, 115, 22, 0.08) 0%, rgba(234, 88, 12, 0.06) 100%);
+    border: 1px solid rgba(249, 115, 22, 0.2);
+    border-left: 4px solid #f97316;
+    border-radius: 14px;
+    padding: 24px;
+    margin: 32px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.alert-box-icon {
+    width: 44px;
+    height: 44px;
+    background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.alert-box-icon svg {
+    width: 22px;
+    height: 22px;
+    stroke: white;
+}
+
+.alert-box-content {
+    flex: 1;
+}
+
+.alert-box-content p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--dark-text);
+}
+
+.alert-box-content p strong {
+    color: #c2410c;
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 600px) {
+    .alert-box {
+        flex-direction: column;
+        gap: 12px;
+    }
+}

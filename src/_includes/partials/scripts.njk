@@ -1,0 +1,227 @@
+<!-- Main JavaScript -->
+<script type="module" src="/assets/js/main.js"></script>
+{% if pageJS %}
+<script type="module">
+  {% if pageJS == 'home' %}
+  import { initHomepage } from '/assets/js/pages/home.js';
+  document.addEventListener('DOMContentLoaded', () => {
+    if (typeof initHomepage === 'function') {
+      initHomepage();
+    }
+  });
+  {% elif pageJS == 'how-it-works' %}
+  import { initHowItWorks } from '/assets/js/pages/how-it-works.js';
+  document.addEventListener('DOMContentLoaded', () => {
+    if (typeof initHowItWorks === 'function') {
+      initHowItWorks();
+    }
+  });
+  {% elif pageJS == 'crm-integration' %}
+  import { initCrmintegration } from '/assets/js/pages/crm-integration.js';
+  document.addEventListener('DOMContentLoaded', () => {
+    if (typeof initCrmintegration === 'function') {
+      initCrmintegration();
+    }
+  });
+  {% elif pageJS == 'expert-booking' %}
+  import { initExpertBooking } from '/assets/js/pages/expert-booking.js';
+  document.addEventListener('DOMContentLoaded', () => {
+    if (typeof initExpertBooking === 'function') {
+      initExpertBooking();
+    }
+  });
+  {% elif pageJS == 'analytics-roi' %}
+  import { initAnalyticsroi } from '/assets/js/pages/analytics-roi.js';
+  document.addEventListener('DOMContentLoaded', () => {
+    if (typeof initAnalyticsroi === 'function') {
+      initAnalyticsroi();
+    }
+  });
+  {% elif pageJS == 'pricing' %}
+  import { initPricing } from '/assets/js/pages/pricing.js';
+  document.addEventListener('DOMContentLoaded', () => {
+    if (typeof initPricing === 'function') {
+      initPricing();
+    }
+  });
+  {% elif pageJS == 'become-an-expert' %}
+  import { initBecomeanexpert } from '/assets/js/pages/become-an-expert.js';
+  document.addEventListener('DOMContentLoaded', () => {
+    if (typeof initBecomeanexpert === 'function') {
+      initBecomeanexpert();
+    }
+  });
+  {% elif pageJS == 'solutions-marketing' %}
+  import { initSolutionsMarketing } from '/assets/js/pages/solutions-marketing.js';
+  document.addEventListener('DOMContentLoaded', () => {
+    if (typeof initSolutionsMarketing === 'function') {
+      initSolutionsMarketing();
+    }
+  });
+  {% elif pageJS == 'solutions-customer-success' %}
+  import { initSolutionsCustomerSuccess } from '/assets/js/pages/solutions-customer-success.js';
+  document.addEventListener('DOMContentLoaded', () => {
+    if (typeof initSolutionsCustomerSuccess === 'function') {
+      initSolutionsCustomerSuccess();
+    }
+  });
+  {% elif pageJS == 'solutions-sales' %}
+  import { initSolutionsSales } from '/assets/js/pages/solutions-sales.js';
+  document.addEventListener('DOMContentLoaded', () => {
+    if (typeof initSolutionsSales === 'function') {
+      initSolutionsSales();
+    }
+  });
+  {% elif pageJS == 'blog' %}
+  import { initBlog } from '/assets/js/pages/blog.js';
+  document.addEventListener('DOMContentLoaded', () => {
+    if (typeof initBlog === 'function') {
+      initBlog();
+    }
+  });
+  {% elif pageJS == 'blog-post' %}
+  import { initBlogPost } from '/assets/js/pages/blog-post.js';
+  document.addEventListener('DOMContentLoaded', () => {
+    if (typeof initBlogPost === 'function') {
+      initBlogPost();
+    }
+  });
+  {% elif pageJS == 'integrations' %}
+  import { initIntegrations } from '/assets/js/pages/integrations.js';
+  document.addEventListener('DOMContentLoaded', () => {
+    if (typeof initIntegrations === 'function') {
+      initIntegrations();
+    }
+  });
+  {% elif pageJS == 'about' %}
+  import { initAbout } from '/assets/js/pages/about.js';
+  document.addEventListener('DOMContentLoaded', () => {
+    if (typeof initAbout === 'function') {
+      initAbout();
+    }
+  });
+  {% elif pageJS == 'privacy-hub' %}
+  import { initPrivacyhub } from '/assets/js/pages/privacy-hub.js';
+  document.addEventListener('DOMContentLoaded', () => {
+    if (typeof initPrivacyhub === 'function') {
+      initPrivacyhub();
+    }
+  });
+  {% elif pageJS == 'book-a-demo' %}
+  import { initBookADemo } from '/assets/js/pages/book-a-demo.js';
+  document.addEventListener('DOMContentLoaded', () => {
+    if (typeof initBookADemo === 'function') {
+      initBookADemo();
+    }
+  });
+  {% elif pageJS == 'download-report' %}
+  import { initDownloadReport } from '/assets/js/pages/download-report.js';
+  document.addEventListener('DOMContentLoaded', () => {
+    if (typeof initDownloadReport === 'function') {
+      initDownloadReport();
+    }
+  });
+  {% elif pageJS == 'download-asset' %}
+  import { initDownloadAsset } from '/assets/js/pages/download-asset.js';
+  document.addEventListener('DOMContentLoaded', () => {
+    if (typeof initDownloadAsset === 'function') {
+      initDownloadAsset();
+    }
+  });
+  {% elif pageJS == 'privacy' %}
+  import { initPrivacy } from '/assets/js/pages/privacy.js';
+  document.addEventListener('DOMContentLoaded', () => {
+    if (typeof initPrivacy === 'function') {
+      initPrivacy();
+    }
+  });
+  {% elif pageJS == 'terms' %}
+  import { initTerms } from '/assets/js/pages/terms.js';
+  document.addEventListener('DOMContentLoaded', () => {
+    if (typeof initTerms === 'function') {
+      initTerms();
+    }
+  });
+  {% elif pageJS == 'dpa' %}
+  import { initDpa } from '/assets/js/pages/dpa.js';
+  document.addEventListener('DOMContentLoaded', () => {
+    if (typeof initDpa === 'function') {
+      initDpa();
+    }
+  });
+  {% elif pageJS == 'gdpr' %}
+  import { initGdpr } from '/assets/js/pages/gdpr.js';
+  document.addEventListener('DOMContentLoaded', () => {
+    if (typeof initGdpr === 'function') {
+      initGdpr();
+    }
+  });
+  {% elif pageJS == 'ccpa' %}
+  import { initCcpa } from '/assets/js/pages/ccpa.js';
+  document.addEventListener('DOMContentLoaded', () => {
+    if (typeof initCcpa === 'function') {
+      initCcpa();
+    }
+  });
+  {% elif pageJS == 'pipeline-calculator' %}
+  import { initPipelineCalculator } from '/assets/js/pages/pipeline-calculator.js';
+  document.addEventListener('DOMContentLoaded', () => {
+    if (typeof initPipelineCalculator === 'function') {
+      initPipelineCalculator();
+    }
+  });
+  {% elif pageJS == 'careers' %}
+  import { initCareers } from '/assets/js/pages/careers.js';
+  document.addEventListener('DOMContentLoaded', () => {
+    if (typeof initCareers === 'function') {
+      initCareers();
+    }
+  });
+  {% elif pageJS == 'contact' %}
+  import { initContact } from '/assets/js/pages/contact.js';
+  document.addEventListener('DOMContentLoaded', () => {
+    if (typeof initContact === 'function') {
+      initContact();
+    }
+  });
+  {% elif pageJS == '404' %}
+  import { init404 } from '/assets/js/pages/404.js';
+  document.addEventListener('DOMContentLoaded', () => {
+    if (typeof init404 === 'function') {
+      init404();
+    }
+  });
+  {% elif pageJS == 'product-tour' %}
+  import { initProductTour } from '/assets/js/pages/product-tour.js';
+  document.addEventListener('DOMContentLoaded', () => {
+    if (typeof initProductTour === 'function') {
+      initProductTour();
+    }
+  });
+  {% elif pageJS == 'carly-ai-agent' %}
+  import { initCarlyAiAgent } from '/assets/js/pages/carly-ai-agent.js';
+  document.addEventListener('DOMContentLoaded', () => {
+    if (typeof initCarlyAiAgent === 'function') {
+      initCarlyAiAgent();
+    }
+  });
+  {% elif pageJS == 'form-become-an-expert' %}
+  import { initFormBecomeAnExpert } from '/assets/js/pages/form-become-an-expert.js';
+  document.addEventListener('DOMContentLoaded', () => {
+    if (typeof initFormBecomeAnExpert === 'function') {
+      initFormBecomeAnExpert();
+    }
+  });
+  {% else %}
+  // Generic page initialization
+  import('/assets/js/pages/{{ pageJS }}.js').then(module => {
+    document.addEventListener('DOMContentLoaded', () => {
+      const initFunction = module[`init${pageJS.replace(/-/g, '').charAt(0).toUpperCase() + pageJS.replace(/-/g, '').slice(1)}`];
+      if (typeof initFunction === 'function') {
+        initFunction();
+      }
+    });
+  });
+  {% endif %}
+</script>
+{% endif %}

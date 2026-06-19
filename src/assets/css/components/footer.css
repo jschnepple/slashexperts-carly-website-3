@@ -1,0 +1,194 @@
+/* ========== FOOTER ========== */
+footer {
+    background: var(--navy);
+    padding: 80px 48px 40px;
+}
+
+.footer-top {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr repeat(4, 1fr);
+    gap: 60px;
+    padding-bottom: 60px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-brand {
+    max-width: 300px;
+}
+
+.footer-brand .logo {
+    margin-bottom: 20px;
+}
+
+.footer-brand .logo-img {
+    height: 32px;
+    width: auto;
+}
+
+.footer-brand p {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.7;
+}
+
+.footer-column h4 {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 24px;
+}
+
+.footer-column a {
+    display: block;
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    margin-bottom: 14px;
+    transition: all 0.3s ease;
+}
+
+.footer-column a:hover {
+    color: var(--white);
+    transform: translateX(4px);
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 40px auto 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-bottom p {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.footer-legal {
+    display: flex;
+    gap: 32px;
+}
+
+.footer-legal a {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-legal a:hover {
+    color: var(--white);
+}
+
+/* ========== LIGHT FOOTER VARIANT ========== */
+/* Light theme footer for pages with light backgrounds */
+footer.footer-light {
+    background: var(--off-white);
+}
+
+footer.footer-light .footer-top {
+    border-bottom: 1px solid rgba(14, 14, 68, 0.1);
+}
+
+footer.footer-light .footer-brand p {
+    color: var(--muted);
+}
+
+footer.footer-light .footer-column h4 {
+    color: var(--navy);
+}
+
+footer.footer-light .footer-column a {
+    color: rgba(14, 14, 68, 0.7);
+}
+
+footer.footer-light .footer-column a:hover {
+    color: var(--navy);
+}
+
+footer.footer-light .footer-bottom p {
+    color: rgba(14, 14, 68, 0.6);
+}
+
+footer.footer-light .footer-legal a {
+    color: rgba(14, 14, 68, 0.6);
+}
+
+footer.footer-light .footer-legal a:hover {
+    color: var(--navy);
+}
+
+/* ========== DARK OVERLAY FOOTER VARIANT ========== */
+/* Dark transparent overlay for pages with dark/gradient backgrounds */
+footer.footer-dark-overlay {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+/* ==================== RESPONSIVE DESIGN ==================== */
+/* Extracted from original HTML - Session 13 */
+
+/* Desktop Small (1200px) */
+@media (max-width: 1200px) {
+    .footer-top {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .footer-brand {
+        grid-column: span 3;
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+/* Tablet Landscape (992px) */
+@media (max-width: 992px) {
+    footer {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    .footer-top {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .footer-brand {
+        grid-column: span 2;
+    }
+}
+
+/* Tablet Portrait / Mobile Landscape (768px) */
+@media (max-width: 768px) {
+    footer {
+        padding: 60px 20px 30px;
+    }
+
+    .footer-top {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .footer-brand {
+        grid-column: span 1;
+        text-align: center;
+    }
+
+    .footer-column {
+        text-align: center;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .footer-legal {
+        flex-direction: column;
+        gap: 12px;
+    }
+}

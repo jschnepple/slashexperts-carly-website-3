@@ -1,0 +1,42 @@
+[
+  {
+    "slug": "news",
+    "name": "news",
+    "description": "Industry news and updates"
+  },
+  {
+    "slug": "strategy",
+    "name": "Strategy",
+    "description": "Strategic approaches to peer validation and buyer trust"
+  },
+  {
+    "slug": "case-study",
+    "name": "Case Study",
+    "description": "Real-world examples of successful implementations"
+  },
+  {
+    "slug": "data",
+    "name": "Data",
+    "description": "Research reports and data-driven insights"
+  },
+  {
+    "slug": "best-practices",
+    "name": "Best Practices",
+    "description": "Proven methods for expert program success"
+  },
+  {
+    "slug": "expert-spotlight",
+    "name": "Expert Spotlight",
+    "description": "Stories from our expert community"
+  },
+  {
+    "slug": "playbook",
+    "name": "Playbook",
+    "description": "Step-by-step guides and templates"
+  },
+  {
+    "slug": "research",
+    "name": "Research",
+    "description": "Industry research and buyer behavior analysis"
+  }
+]

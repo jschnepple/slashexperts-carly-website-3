@@ -1,0 +1,1197 @@
+---
+permalink: /expert-booking/
+title: Expert Booking System | SlashExperts
+description: A sophisticated booking system that connects qualified prospects with your company's experts through ExpertScore AI matching, automated scheduling, and seamless CRM integration.
+pageCSS: expert-booking
+pageJS: expert-booking
+---
+
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <div class="hero-badge-icon">
+                    <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                </div>
+                <span>Expert Booking System</span>
+            </div>
+            
+            <h1>Connect Prospects with<br>Your Best Customers — <span class="serif-italic">Instantly</span></h1>
+            
+            <p class="hero-subtitle">A sophisticated booking system that connects qualified prospects with your company's experts through ExpertScore AI matching, automated scheduling, and seamless CRM integration.</p>
+            
+            <div class="hero-cta">
+                <a href="/book-a-demo/" class="btn btn-primary has-glow has-glow-full">Book a Demo</a>
+                <a href="/product-tour/" class="btn btn-white has-glow has-glow-full">See It In Action →</a>
+            </div>
+        </div>
+        
+        <!-- Hero Demo Preview -->
+        <div class="hero-demo">
+            <div class="demo-window">
+                <div class="window-header">
+                    <div class="window-dots">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="window-url">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        <span>yourcompany.com/experts</span>
+                    </div>
+                </div>
+                <div class="demo-content">
+                    <div class="demo-booking-grid">
+                        <div class="demo-experts-list">
+                            <div class="demo-expert-card">
+                                <div class="demo-expert-avatar">KH</div>
+                                <div class="demo-expert-info">
+                                    <div class="demo-expert-name">Karen Hughes</div>
+                                    <div class="demo-expert-title">VP of Operations • TechFlow Inc.</div>
+                                    <div class="demo-expert-tags">
+                                        <span class="demo-tag match">98% Match</span>
+                                        <span class="demo-tag">Enterprise</span>
+                                        <span class="demo-tag">SaaS</span>
+                                    </div>
+                                </div>
+                                <div class="demo-expert-cta">
+                                    <button class="book-btn">Book Call</button>
+                                </div>
+                            </div>
+                            <div class="demo-expert-card">
+                                <div class="demo-expert-avatar" style="background: linear-gradient(135deg, #49ccf9 0%, #8167ea 100%);">MR</div>
+                                <div class="demo-expert-info">
+                                    <div class="demo-expert-name">Marcus Rodriguez</div>
+                                    <div class="demo-expert-title">Director of IT • Global Retail Co.</div>
+                                    <div class="demo-expert-tags">
+                                        <span class="demo-tag match">95% Match</span>
+                                        <span class="demo-tag">Mid-Market</span>
+                                        <span class="demo-tag">Retail</span>
+                                    </div>
+                                </div>
+                                <div class="demo-expert-cta">
+                                    <button class="book-btn">Book Call</button>
+                                </div>
+                            </div>
+                            <div class="demo-expert-card">
+                                <div class="demo-expert-avatar" style="background: linear-gradient(135deg, #ff6b9d 0%, #f9a852 100%);">JL</div>
+                                <div class="demo-expert-info">
+                                    <div class="demo-expert-name">Jennifer Liu</div>
+                                    <div class="demo-expert-title">CTO • HealthTech Solutions</div>
+                                    <div class="demo-expert-tags">
+                                        <span class="demo-tag match">92% Match</span>
+                                        <span class="demo-tag">Healthcare</span>
+                                        <span class="demo-tag">Technical</span>
+                                    </div>
+                                </div>
+                                <div class="demo-expert-cta">
+                                    <button class="book-btn">Book Call</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="demo-sidebar">
+                            <div class="demo-sidebar-title">
+                                <svg viewBox="0 0 24 24"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+                                Smart Filters
+                            </div>
+                            <div class="demo-filter-group">
+                                <div class="demo-filter-label">Industry</div>
+                                <div class="demo-filter-tags">
+                                    <span class="filter-tag active">SaaS</span>
+                                    <span class="filter-tag">Healthcare</span>
+                                    <span class="filter-tag">Retail</span>
+                                    <span class="filter-tag">Finance</span>
+                                </div>
+                            </div>
+                            <div class="demo-filter-group">
+                                <div class="demo-filter-label">Company Size</div>
+                                <div class="demo-filter-tags">
+                                    <span class="filter-tag">SMB</span>
+                                    <span class="filter-tag active">Mid-Market</span>
+                                    <span class="filter-tag active">Enterprise</span>
+                                </div>
+                            </div>
+                            <div class="demo-filter-group">
+                                <div class="demo-filter-label">Use Case</div>
+                                <div class="demo-filter-tags">
+                                    <span class="filter-tag active">Operations</span>
+                                    <span class="filter-tag">Technical</span>
+                                    <span class="filter-tag">Security</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ROI Stats Bar -->
+    <section class="roi-section" id="roiStats">
+        <div class="section-container">
+            <div class="roi-grid">
+                <div class="roi-card">
+                    <div class="roi-value"><span class="counter" data-target="35">0</span><span class="suffix">%</span></div>
+                    <div class="roi-label">Increase in visitor-to-opportunity conversion</div>
+                </div>
+                <div class="roi-card">
+                    <div class="roi-value"><span class="counter" data-target="29">0</span><span class="suffix">%</span></div>
+                    <div class="roi-label">Reduction in sales cycle length</div>
+                </div>
+                <div class="roi-card">
+                    <div class="roi-value"><span class="counter" data-target="70">0</span><span class="suffix">%</span></div>
+                    <div class="roi-label">Decrease in admin time for reference calls</div>
+                </div>
+                <div class="roi-card">
+                    <div class="roi-value"><span class="counter" data-target="2.4" data-decimal="true">0</span><span class="suffix">x</span></div>
+                    <div class="roi-label">Higher close rates with expert conversations</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="section-container">
+            <div class="section-badge">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                How It Works
+            </div>
+            <h2 class="section-title">From Setup to <span class="serif-italic">Success</span></h2>
+            <p class="section-subtitle">Get your booking system live in days, not months. Our streamlined process makes it easy to connect prospects with your best customers.</p>
+            
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">
+                        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <h3>Build Your Expert Pool</h3>
+                    <p>Identify and onboard successful customers, partners, and industry leaders who can speak authentically about their experience.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">
+                        <svg viewBox="0 0 24 24"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+                    </div>
+                    <h3>Configure ExpertScore AI</h3>
+                    <p>Set up matching criteria by industry, company size, use case, tech stack, and more to ensure perfect expert-prospect alignment.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">
+                        <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                    </div>
+                    <h3>Deploy Everywhere</h3>
+                    <p>Embed on your website, share via Chrome Extension, or create custom branded booking pages for ABM campaigns.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <div class="step-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 20V10M18 20V4M6 20v-4"/></svg>
+                    </div>
+                    <h3>Track & Optimize</h3>
+                    <p>Monitor conversion rates, deal influence, and ROI in real-time. Automatically sync all activity to your CRM.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="section-container" style="text-align: center; position: relative; z-index: 1;">
+            <div class="section-badge">
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                Core Features
+            </div>
+            <h2 class="section-title">Everything You Need to <span class="serif-italic">Scale</span></h2>
+            <p class="section-subtitle">A complete platform for connecting prospects with your best customers at every stage of the buyer journey.</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon purple">🎯</div>
+                    <h3>ExpertScore AI Matching</h3>
+                    <p>Filter by industry, company size, job title, use case, tech stack, revenue, language, and location for perfect alignment.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon cyan">🧩</div>
+                    <h3>Chrome Extension</h3>
+                    <p>AEs curate expert groups and create custom booking links directly from CRM without leaving their workflow.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon pink">🎨</div>
+                    <h3>Custom Branding</h3>
+                    <p>Branded booking pages tailored to specific accounts or campaigns for a seamless buyer experience.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon orange">📅</div>
+                    <h3>Automated Scheduling</h3>
+                    <p>Self-service booking with calendar sync, reminders, and timezone handling for frictionless conversations.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon green">🛡️</div>
+                    <h3>Usage Limits</h3>
+                    <p>Protect valuable experts with automatic usage enforcement so they never get overwhelmed with requests.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon blue">💰</div>
+                    <h3>Expert Compensation</h3>
+                    <p>Built-in payment automation for expert rewards. Track and distribute compensation seamlessly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Matching Criteria Section -->
+    <section class="matching-section">
+        <div class="section-container">
+            <div class="matching-grid">
+                <div class="matching-visual">
+                    <div class="matching-header">
+                        <div class="matching-header-icon">
+                            <svg viewBox="0 0 24 24"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+                        </div>
+                        <div class="matching-header-text">
+                            <h4>ExpertScore AI Criteria</h4>
+                            <span>Configure your perfect expert match</span>
+                        </div>
+                    </div>
+                    
+                    <div class="criteria-group">
+                        <div class="criteria-label">Industry</div>
+                        <div class="criteria-tags">
+                            <span class="criteria-tag selected">SaaS</span>
+                            <span class="criteria-tag">Healthcare</span>
+                            <span class="criteria-tag selected">FinTech</span>
+                            <span class="criteria-tag">Retail</span>
+                            <span class="criteria-tag">Manufacturing</span>
+                        </div>
+                    </div>
+                    
+                    <div class="criteria-group">
+                        <div class="criteria-label">Company Size</div>
+                        <div class="criteria-tags">
+                            <span class="criteria-tag">1-50</span>
+                            <span class="criteria-tag">51-200</span>
+                            <span class="criteria-tag selected">201-1000</span>
+                            <span class="criteria-tag selected">1000+</span>
+                        </div>
+                    </div>
+                    
+                    <div class="criteria-group">
+                        <div class="criteria-label">Use Case</div>
+                        <div class="criteria-tags">
+                            <span class="criteria-tag selected">Operations</span>
+                            <span class="criteria-tag">Security</span>
+                            <span class="criteria-tag selected">Integration</span>
+                            <span class="criteria-tag">Analytics</span>
+                        </div>
+                    </div>
+                    
+                    <div class="criteria-group">
+                        <div class="criteria-label">Language</div>
+                        <div class="criteria-tags">
+                            <span class="criteria-tag selected">English</span>
+                            <span class="criteria-tag">Spanish</span>
+                            <span class="criteria-tag">French</span>
+                            <span class="criteria-tag">German</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="matching-content">
+                    <div class="section-badge">
+                        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+                        ExpertScore AI Matching
+                    </div>
+                    <h3>Find the Perfect Expert for <span class="serif-italic">Every</span> Prospect</h3>
+                    <p>ExpertScore AI considers multiple dimensions to surface the most relevant experts, ensuring authentic peer conversations that drive decisions.</p>
+                    
+                    <div class="matching-list">
+                        <div class="matching-item">
+                            <div class="matching-check">
+                                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                            </div>
+                            <span class="matching-item-text"><strong>Industry & vertical alignment</strong> — Prospects talk to experts in their exact space</span>
+                        </div>
+                        <div class="matching-item">
+                            <div class="matching-check">
+                                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                            </div>
+                            <span class="matching-item-text"><strong>Company size matching</strong> — SMB talks to SMB, enterprise to enterprise</span>
+                        </div>
+                        <div class="matching-item">
+                            <div class="matching-check">
+                                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                            </div>
+                            <span class="matching-item-text"><strong>Use case relevance</strong> — Security buyers meet security champions</span>
+                        </div>
+                        <div class="matching-item">
+                            <div class="matching-check">
+                                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                            </div>
+                            <span class="matching-item-text"><strong>Tech stack compatibility</strong> — Similar integrations and workflows</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases Section -->
+    <section class="usecases-section">
+        <div class="section-container" style="text-align: center;">
+            <div class="section-badge">
+                <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><path d="M3 9h18M9 21V9"/></svg>
+                Use Cases
+            </div>
+            <h2 class="section-title">Built for Every <span class="serif-italic">Team</span></h2>
+            <p class="section-subtitle">From marketing to sales to operations, SlashExperts integrates seamlessly into your existing workflows.</p>
+            
+            <div class="usecase-tabs">
+                <button class="usecase-tab active" data-tab="marketing">For Marketing</button>
+                <button class="usecase-tab" data-tab="sales">For Sales</button>
+                <button class="usecase-tab" data-tab="operations">For Operations</button>
+            </div>
+            
+            <!-- Marketing Content -->
+            <div class="usecase-content active" data-content="marketing">
+                <div class="usecase-text" style="text-align: left;">
+                    <h3>Drive Website <span class="gradient-accent">Conversion</span></h3>
+                    <p>Embed your booking system directly on your website to let visitors self-discover and connect with experts who match their needs.</p>
+                    
+                    <div class="usecase-features">
+                        <div class="usecase-feature">
+                            <div class="usecase-feature-icon">
+                                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                            </div>
+                            <span>Real-time visitor tracking and matching</span>
+                        </div>
+                        <div class="usecase-feature">
+                            <div class="usecase-feature-icon">
+                                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                            </div>
+                            <span>A/B testing for placement optimization</span>
+                        </div>
+                        <div class="usecase-feature">
+                            <div class="usecase-feature-icon">
+                                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                            </div>
+                            <span>Conversion analytics and attribution</span>
+                        </div>
+                        <div class="usecase-feature">
+                            <div class="usecase-feature-icon">
+                                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                            </div>
+                            <span>Place at pricing pages and upgrade modals</span>
+                        </div>
+                    </div>
+
+                    <a href="/solutions-marketing/" class="btn btn-dark has-glow has-glow-full">Learn More →</a>
+                </div>
+                <div class="usecase-visual">
+                    <div class="usecase-mock usecase-mock-marketing">
+                        <!-- Luxurious Marketing Visual: Floating Website with Analytics -->
+                        <div class="luxury-visual-container">
+                            <!-- Main browser window -->
+                            <div class="luxury-browser">
+                                <div class="luxury-browser-header">
+                                    <div class="browser-dots-lux">
+                                        <span></span><span></span><span></span>
+                                    </div>
+                                    <div class="browser-url-lux">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                                        <span>yourcompany.com/pricing</span>
+                                    </div>
+                                </div>
+                                <div class="luxury-browser-content">
+                                    <div class="pricing-mock">
+                                        <div class="pricing-header-mock">Enterprise Plan</div>
+                                        <div class="pricing-price-mock">$299<span>/mo</span></div>
+                                        <div class="pricing-features-mock">
+                                            <div class="pricing-feature-item"></div>
+                                            <div class="pricing-feature-item"></div>
+                                            <div class="pricing-feature-item"></div>
+                                        </div>
+                                    </div>
+                                    <!-- Embedded Expert Widget -->
+                                    <div class="embedded-widget">
+                                        <div class="widget-glow"></div>
+                                        <div class="widget-header-lux">
+                                            <div class="widget-icon-lux">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                                            </div>
+                                            <div class="widget-text-lux">
+                                                <div class="widget-title-lux">Talk to a customer on Enterprise</div>
+                                                <div class="widget-sub-lux">5 experts available now</div>
+                                            </div>
+                                        </div>
+                                        <div class="widget-avatars">
+                                            <div class="widget-avatar" style="background: linear-gradient(135deg, #8167ea, #a855f7);">SC</div>
+                                            <div class="widget-avatar" style="background: linear-gradient(135deg, #49ccf9, #8167ea);">MR</div>
+                                            <div class="widget-avatar" style="background: linear-gradient(135deg, #ff6b9d, #f9a852);">JL</div>
+                                            <div class="widget-avatar-more">+2</div>
+                                        </div>
+                                        <button class="widget-cta-lux">Connect with an Expert →</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Floating Analytics Card -->
+                            <div class="floating-analytics-card">
+                                <div class="analytics-card-header">
+                                    <span class="analytics-live-dot"></span>
+                                    <span>Live Conversions</span>
+                                </div>
+                                <div class="analytics-value">+35%</div>
+                                <div class="analytics-chart">
+                                    <div class="chart-bar" style="height: 40%;"></div>
+                                    <div class="chart-bar" style="height: 55%;"></div>
+                                    <div class="chart-bar" style="height: 45%;"></div>
+                                    <div class="chart-bar" style="height: 70%;"></div>
+                                    <div class="chart-bar" style="height: 85%;"></div>
+                                    <div class="chart-bar active" style="height: 100%;"></div>
+                                </div>
+                                <div class="analytics-label">Visitor-to-opportunity lift</div>
+                            </div>
+                            <!-- Floating visitor notification -->
+                            <div class="floating-visitor-card">
+                                <div class="visitor-avatar">
+                                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop&crop=face" alt="Visitor">
+                                </div>
+                                <div class="visitor-info">
+                                    <div class="visitor-name">New visitor matched</div>
+                                    <div class="visitor-company">TechCorp • Enterprise</div>
+                                </div>
+                                <div class="visitor-match">98%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sales Content -->
+            <div class="usecase-content" data-content="sales">
+                <div class="usecase-text" style="text-align: left;">
+                    <h3>Accelerate Every <span class="gradient-accent">Deal</span></h3>
+                    <p>Empower your sales team to instantly share relevant expert connections during negotiations and evaluations.</p>
+                    
+                    <div class="usecase-features">
+                        <div class="usecase-feature">
+                            <div class="usecase-feature-icon">
+                                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                            </div>
+                            <span>One-click booking link generation from CRM</span>
+                        </div>
+                        <div class="usecase-feature">
+                            <div class="usecase-feature-icon">
+                                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                            </div>
+                            <span>Expert selection tailored to each deal</span>
+                        </div>
+                        <div class="usecase-feature">
+                            <div class="usecase-feature-icon">
+                                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                            </div>
+                            <span>Deal influence tracking and reporting</span>
+                        </div>
+                        <div class="usecase-feature">
+                            <div class="usecase-feature-icon">
+                                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                            </div>
+                            <span>Replace 3-5 day delays with instant booking</span>
+                        </div>
+                    </div>
+
+                    <a href="/book-a-demo/" class="btn btn-dark has-glow has-glow-full">Learn More →</a>
+                </div>
+                <div class="usecase-visual">
+                    <div class="usecase-mock usecase-mock-sales">
+                        <!-- Luxurious Sales Visual: Deal Pipeline with Expert Integration -->
+                        <div class="luxury-visual-container">
+                            <!-- CRM Deal Card -->
+                            <div class="luxury-crm-card">
+                                <div class="crm-card-header">
+                                    <div class="crm-logo-badge">
+                                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
+                                        <span>Salesforce</span>
+                                    </div>
+                                    <div class="deal-stage-badge">Negotiation</div>
+                                </div>
+                                <div class="crm-deal-info">
+                                    <div class="deal-company">
+                                        <div class="company-logo-mock">AC</div>
+                                        <div class="company-details">
+                                            <div class="company-name">Acme Corporation</div>
+                                            <div class="company-meta">Enterprise • 2,500 employees</div>
+                                        </div>
+                                    </div>
+                                    <div class="deal-value">$245,000</div>
+                                </div>
+                                <div class="deal-timeline">
+                                    <div class="timeline-item complete">
+                                        <div class="timeline-dot"></div>
+                                        <span>Discovery</span>
+                                    </div>
+                                    <div class="timeline-item complete">
+                                        <div class="timeline-dot"></div>
+                                        <span>Demo</span>
+                                    </div>
+                                    <div class="timeline-item active">
+                                        <div class="timeline-dot"></div>
+                                        <span>Negotiation</span>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <div class="timeline-dot"></div>
+                                        <span>Closed</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Floating Expert Popup -->
+                            <div class="floating-expert-popup">
+                                <div class="expert-popup-glow"></div>
+                                <div class="expert-popup-header">
+                                    <div class="popup-icon">
+                                        <span class="logo-slash">/</span>E
+                                    </div>
+                                    <div class="popup-title">
+                                        <div class="popup-title-main">ExpertScore AI Match</div>
+                                        <div class="popup-title-sub">Based on industry & company size</div>
+                                    </div>
+                                </div>
+                                <div class="matched-expert-card">
+                                    <div class="matched-expert-avatar">
+                                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=120&h=120&fit=crop&crop=face" alt="Expert">
+                                        <div class="expert-verified-badge">✓</div>
+                                    </div>
+                                    <div class="matched-expert-info">
+                                        <div class="expert-name-lux">David Chen</div>
+                                        <div class="expert-role-lux">CTO, Similar Enterprise</div>
+                                        <div class="expert-match-score">
+                                            <div class="match-score-bar"><div class="match-score-fill" style="width: 96%;"></div></div>
+                                            <span>96% match</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="expert-send-link-btn">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+                                    Send Expert Link
+                                </button>
+                            </div>
+                            <!-- Deal Acceleration Badge -->
+                            <div class="floating-acceleration-badge">
+                                <div class="acceleration-icon">⚡</div>
+                                <div class="acceleration-text">
+                                    <div class="acceleration-value">-12 days</div>
+                                    <div class="acceleration-label">Avg. cycle reduction</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Operations Content -->
+            <div class="usecase-content" data-content="operations">
+                <div class="usecase-text" style="text-align: left;">
+                    <h3>Manage Your Expert <span class="gradient-accent">Program</span></h3>
+                    <p>Full control over expert availability, usage limits, compensation, and performance analytics in one central dashboard.</p>
+                    
+                    <div class="usecase-features">
+                        <div class="usecase-feature">
+                            <div class="usecase-feature-icon">
+                                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                            </div>
+                            <span>Expert management interface</span>
+                        </div>
+                        <div class="usecase-feature">
+                            <div class="usecase-feature-icon">
+                                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                            </div>
+                            <span>Usage limits and controls per expert</span>
+                        </div>
+                        <div class="usecase-feature">
+                            <div class="usecase-feature-icon">
+                                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                            </div>
+                            <span>Payment automation and tracking</span>
+                        </div>
+                        <div class="usecase-feature">
+                            <div class="usecase-feature-icon">
+                                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                            </div>
+                            <span>Performance analytics and ROI reporting</span>
+                        </div>
+                    </div>
+
+                    <a href="/book-a-demo/" class="btn btn-dark has-glow has-glow-full">Learn More →</a>
+                </div>
+                <div class="usecase-visual">
+                    <div class="usecase-mock usecase-mock-operations">
+                        <!-- Luxurious Operations Visual: Command Center Dashboard -->
+                        <div class="luxury-visual-container">
+                            <!-- Main Dashboard -->
+                            <div class="luxury-dashboard">
+                                <div class="dashboard-header-lux">
+                                    <div class="dashboard-title-lux">
+                                        <span class="logo-slash">/</span>Experts Command Center
+                                    </div>
+                                    <div class="dashboard-period">December 2025</div>
+                                </div>
+                                <div class="dashboard-metrics-row">
+                                    <div class="metric-card-lux">
+                                        <div class="metric-icon-lux" style="background: rgba(34, 197, 94, 0.15);">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                                        </div>
+                                        <div class="metric-value-lux">47</div>
+                                        <div class="metric-label-lux">Active Experts</div>
+                                        <div class="metric-trend-lux up">+8 this month</div>
+                                    </div>
+                                    <div class="metric-card-lux">
+                                        <div class="metric-icon-lux" style="background: rgba(139, 92, 246, 0.15);">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+                                        </div>
+                                        <div class="metric-value-lux">312</div>
+                                        <div class="metric-label-lux">Calls This Month</div>
+                                        <div class="metric-trend-lux up">+24% vs last month</div>
+                                    </div>
+                                    <div class="metric-card-lux">
+                                        <div class="metric-icon-lux" style="background: rgba(249, 168, 82, 0.15);">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="#f9a852" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                                        </div>
+                                        <div class="metric-value-lux">$18.4K</div>
+                                        <div class="metric-label-lux">Compensation</div>
+                                        <div class="metric-trend-lux">Pending: $2.1K</div>
+                                    </div>
+                                </div>
+                                <div class="dashboard-expert-list">
+                                    <div class="expert-list-header">
+                                        <span>Top Performing Experts</span>
+                                        <span class="view-all-link">View All →</span>
+                                    </div>
+                                    <div class="expert-list-item">
+                                        <div class="expert-list-avatar" style="background: linear-gradient(135deg, #8167ea, #a855f7);">TN</div>
+                                        <div class="expert-list-info">
+                                            <div class="expert-list-name">Tara Nelson</div>
+                                            <div class="expert-list-calls">28 calls • 4.9★</div>
+                                        </div>
+                                        <div class="expert-list-usage">
+                                            <div class="usage-bar"><div class="usage-fill" style="width: 70%;"></div></div>
+                                            <span>7/10 this week</span>
+                                        </div>
+                                    </div>
+                                    <div class="expert-list-item">
+                                        <div class="expert-list-avatar" style="background: linear-gradient(135deg, #49ccf9, #8167ea);">DW</div>
+                                        <div class="expert-list-info">
+                                            <div class="expert-list-name">Daniel Wright</div>
+                                            <div class="expert-list-calls">24 calls • 4.8★</div>
+                                        </div>
+                                        <div class="expert-list-usage">
+                                            <div class="usage-bar"><div class="usage-fill" style="width: 50%;"></div></div>
+                                            <span>5/10 this week</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Floating ROI Card -->
+                            <div class="floating-roi-card">
+                                <div class="roi-card-header">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20V10M18 20V4M6 20v-4"/></svg>
+                                    Program ROI
+                                </div>
+                                <div class="roi-card-value">847%</div>
+                                <div class="roi-card-detail">$2.4M influenced revenue</div>
+                            </div>
+                            <!-- Floating Payment Card -->
+                            <div class="floating-payment-card">
+                                <div class="payment-icon">💳</div>
+                                <div class="payment-info">
+                                    <div class="payment-title">Auto-payment sent</div>
+                                    <div class="payment-detail">$150 → Tara Nelson</div>
+                                </div>
+                                <div class="payment-status">✓</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof -->
+    <section class="social-proof-section">
+        <div class="section-container">
+            <div class="section-badge" style="margin: 0 auto 24px;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                CUSTOMER RESULTS
+            </div>
+            <h2 class="section-title" style="text-align: center;">Real Results from <span class="serif-italic" style="background: linear-gradient(135deg, var(--violet) 0%, var(--accent-purple) 50%, var(--accent-pink) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Real</span> Teams</h2>
+            <p class="section-subtitle">See how leading companies are using SlashExperts to accelerate their sales and drive revenue.</p>
+            
+            <div class="proof-cards">
+                <div class="proof-card">
+                    <div class="proof-stat">+40%</div>
+                    <div class="proof-label">Increase in reference conversions</div>
+                    <p class="proof-quote">"SlashExperts completely transformed how we manage reference calls. What used to take days now happens in minutes."</p>
+                    <div class="proof-author">
+                        <div class="proof-avatar">LM</div>
+                        <div class="proof-author-info">
+                            <span class="proof-author-name">Lauren</span>
+                            <span class="proof-author-role">Customer Marketing Manager, Sendoso</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="proof-card">
+                    <div class="proof-stat">-25%</div>
+                    <div class="proof-label">Reduction in sales cycle</div>
+                    <p class="proof-quote">"Our reps love it. They can share an expert link in seconds and prospects get validated on their own time. Deals close faster."</p>
+                    <div class="proof-author">
+                        <div class="proof-avatar" style="background: linear-gradient(135deg, #49ccf9 0%, #8167ea 100%);">KM</div>
+                        <div class="proof-author-info">
+                            <span class="proof-author-name">Keegan</span>
+                            <span class="proof-author-role">Head of Sales, Warmly</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="proof-card">
+                    <div class="proof-stat">+30%</div>
+                    <div class="proof-label">Improvement in late-stage close rates</div>
+                    <p class="proof-quote">"SlashExperts gives our reps real-time references to win more revenue. Pipeline management has never been easier."</p>
+                    <div class="proof-author">
+                        <div class="proof-avatar" style="background: linear-gradient(135deg, #f9a852 0%, #ff6b9d 100%);">JS</div>
+                        <div class="proof-author-info">
+                            <span class="proof-author-name">Jon</span>
+                            <span class="proof-author-role">VP of Sales, Spara</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Preview Section -->
+    <section class="demo-section">
+        <div class="section-container">
+            <div style="text-align: center;">
+                <div class="section-badge" style="margin: 0 auto 24px;">
+                    <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                    Platform Preview
+                </div>
+                <h2 class="section-title">See the Platform in <span class="serif-italic">Action</span></h2>
+                <p class="section-subtitle">Explore the different views designed for each team's unique workflow.</p>
+            </div>
+            
+            <div class="demo-tabs">
+                <button class="demo-tab active" data-demo="marketing">For Marketing</button>
+                <button class="demo-tab" data-demo="sales">For Sales</button>
+                <button class="demo-tab" data-demo="operations">For Operations</button>
+            </div>
+            
+            <div class="demo-panel active" data-panel="marketing">
+                <div class="demo-panel-header">
+                    <span class="demo-panel-title">Marketing Dashboard</span>
+                    <span class="demo-panel-badge">Real-time data</span>
+                </div>
+                <div class="platform-preview preview-marketing">
+                    <div class="platform-preview-grid">
+                        <!-- Conversion Funnel -->
+                        <div class="glass-card">
+                            <div class="glass-card-header">
+                                <span class="glass-card-title">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                                    Conversion Funnel
+                                </span>
+                                <span class="live-badge">Live</span>
+                            </div>
+                            <div class="conversion-funnel">
+                                <div class="funnel-stage">
+                                    <div class="funnel-bar-container">
+                                        <div class="funnel-bar visitors">Website Visitors</div>
+                                    </div>
+                                    <span class="funnel-value">12,847</span>
+                                </div>
+                                <div class="funnel-stage">
+                                    <div class="funnel-bar-container">
+                                        <div class="funnel-bar matched">Expert Matched</div>
+                                    </div>
+                                    <span class="funnel-value">9,250</span>
+                                </div>
+                                <div class="funnel-stage">
+                                    <div class="funnel-bar-container">
+                                        <div class="funnel-bar booked">Calls Booked</div>
+                                    </div>
+                                    <span class="funnel-value">5,782</span>
+                                </div>
+                                <div class="funnel-stage">
+                                    <div class="funnel-bar-container">
+                                        <div class="funnel-bar converted">Converted</div>
+                                    </div>
+                                    <span class="funnel-value">3,594</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Activity Feed -->
+                        <div class="glass-card">
+                            <div class="glass-card-header">
+                                <span class="glass-card-title">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                                    Visitor Activity
+                                </span>
+                            </div>
+                            <div class="activity-feed">
+                                <div class="activity-item booked">
+                                    <div class="activity-avatar">ET</div>
+                                    <div class="activity-content">
+                                        <div class="activity-text"><strong>Emma Taylor</strong> booked a call with expert</div>
+                                        <div class="activity-time">Just now</div>
+                                    </div>
+                                </div>
+                                <div class="activity-item matched">
+                                    <div class="activity-avatar" style="background: linear-gradient(135deg, #49ccf9, #38bdf8);">DP</div>
+                                    <div class="activity-content">
+                                        <div class="activity-text"><strong>David Park</strong> matched with 3 experts</div>
+                                        <div class="activity-time">2 min ago</div>
+                                    </div>
+                                </div>
+                                <div class="activity-item">
+                                    <div class="activity-avatar" style="background: linear-gradient(135deg, #f9a852, #fbbf24);">LW</div>
+                                    <div class="activity-content">
+                                        <div class="activity-text"><strong>Lisa Wong</strong> viewing pricing page</div>
+                                        <div class="activity-time">4 min ago</div>
+                                    </div>
+                                </div>
+                                <div class="activity-item booked">
+                                    <div class="activity-avatar" style="background: linear-gradient(135deg, #22c55e, #4ade80);">RC</div>
+                                    <div class="activity-content">
+                                        <div class="activity-text"><strong>Ryan Cooper</strong> completed expert call</div>
+                                        <div class="activity-time">8 min ago</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Metrics Row -->
+                        <div class="metrics-row">
+                            <div class="metric-card violet">
+                                <div class="metric-value">+35%</div>
+                                <div class="metric-label">Conversion Lift</div>
+                                <div class="metric-change">↑ 12% vs last week</div>
+                            </div>
+                            <div class="metric-card cyan">
+                                <div class="metric-value">2,847</div>
+                                <div class="metric-label">Visitors Matched</div>
+                                <div class="metric-change">↑ 8% vs last week</div>
+                            </div>
+                            <div class="metric-card green">
+                                <div class="metric-value">412</div>
+                                <div class="metric-label">Calls Booked</div>
+                                <div class="metric-change">↑ 23% vs last week</div>
+                            </div>
+                            <div class="metric-card pink">
+                                <div class="metric-value">89%</div>
+                                <div class="metric-label">Match Accuracy</div>
+                                <div class="metric-change">↑ 3% vs last week</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="demo-panel" data-panel="sales">
+                <div class="demo-panel-header">
+                    <span class="demo-panel-title">Sales Dashboard</span>
+                    <span class="demo-panel-badge">CRM Connected</span>
+                </div>
+                <div class="platform-preview preview-sales">
+                    <div class="platform-preview-grid">
+                        <!-- Pipeline Column 1 -->
+                        <div class="pipeline-column">
+                            <div class="pipeline-header">
+                                <span class="pipeline-title">Discovery</span>
+                                <span class="pipeline-count">4</span>
+                            </div>
+                            <div class="pipeline-cards">
+                                <div class="deal-card">
+                                    <div class="deal-company">Acme Corp</div>
+                                    <div class="deal-value">$45,000</div>
+                                    <div class="deal-meta">
+                                        <span class="deal-stage-indicator warm"></span>
+                                        <span class="deal-days">12 days</span>
+                                    </div>
+                                </div>
+                                <div class="deal-card">
+                                    <div class="deal-company">TechStart Inc</div>
+                                    <div class="deal-value">$28,000</div>
+                                    <div class="deal-meta">
+                                        <span class="deal-stage-indicator"></span>
+                                        <span class="deal-days">5 days</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Pipeline Column 2 -->
+                        <div class="pipeline-column">
+                            <div class="pipeline-header">
+                                <span class="pipeline-title">Evaluation</span>
+                                <span class="pipeline-count">3</span>
+                            </div>
+                            <div class="pipeline-cards">
+                                <div class="deal-card highlighted">
+                                    <div class="deal-company">GlobalTech</div>
+                                    <div class="deal-value">$125,000</div>
+                                    <div class="deal-meta">
+                                        <span class="deal-stage-indicator hot"></span>
+                                        <span class="deal-days">8 days</span>
+                                        <div class="expert-match-badge">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                                            Expert Ready
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="deal-card">
+                                    <div class="deal-company">DataFlow Systems</div>
+                                    <div class="deal-value">$67,000</div>
+                                    <div class="deal-meta">
+                                        <span class="deal-stage-indicator warm"></span>
+                                        <span class="deal-days">15 days</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Pipeline Column 3 -->
+                        <div class="pipeline-column">
+                            <div class="pipeline-header">
+                                <span class="pipeline-title">Negotiation</span>
+                                <span class="pipeline-count">2</span>
+                            </div>
+                            <div class="pipeline-cards">
+                                <div class="deal-card">
+                                    <div class="deal-company">Enterprise Plus</div>
+                                    <div class="deal-value">$210,000</div>
+                                    <div class="deal-meta">
+                                        <span class="deal-stage-indicator hot"></span>
+                                        <span class="deal-days">3 days</span>
+                                        <div class="expert-match-badge">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+                                            Call Done
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- AI Matching Panel -->
+                        <div class="ai-matching-panel">
+                            <div class="matching-deal-info">
+                                <h4>Selected Deal</h4>
+                                <div class="matching-deal-name">GlobalTech</div>
+                                <div class="matching-deal-details">Healthcare SaaS • 500+ employees • Series C</div>
+                            </div>
+                            <div class="matching-animation">
+                                <div class="matching-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                                </div>
+                                <span class="matching-text">AI Matching</span>
+                            </div>
+                            <div class="matched-expert-card">
+                                <div class="matched-expert-avatar">AF</div>
+                                <div class="matched-expert-info">
+                                    <h4>Amanda Foster</h4>
+                                    <p>VP of Ops • MedTech Solutions</p>
+                                    <div class="match-score">
+                                        <div class="match-score-bar">
+                                            <div class="match-score-fill" style="width: 94%;"></div>
+                                        </div>
+                                        <span class="match-score-text">94% Match</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="demo-panel" data-panel="operations">
+                <div class="demo-panel-header">
+                    <span class="demo-panel-title">Operations Dashboard</span>
+                    <span class="demo-panel-badge">Full Control</span>
+                </div>
+                <div class="platform-preview preview-operations">
+                    <div class="platform-preview-grid">
+                        <!-- Expert Leaderboard -->
+                        <div class="glass-card expert-leaderboard">
+                            <div class="glass-card-header">
+                                <span class="glass-card-title">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8.21 13.89L7 23l5-3 5 3-1.21-9.12"/><path d="M15 7a4 4 0 1 0-6 3.46V11a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-.54A4 4 0 0 0 15 7z"/></svg>
+                                    Expert Leaderboard
+                                </span>
+                                <span class="live-badge">This Month</span>
+                            </div>
+                            <div class="leaderboard-list">
+                                <div class="leaderboard-item">
+                                    <div class="leaderboard-rank gold">1</div>
+                                    <div class="leaderboard-avatar">NB</div>
+                                    <div class="leaderboard-info">
+                                        <div class="leaderboard-name">Nicole Bradley</div>
+                                        <div class="leaderboard-company">MedTech Solutions</div>
+                                    </div>
+                                    <div class="leaderboard-stats">
+                                        <div class="leaderboard-calls">18 calls</div>
+                                        <div class="leaderboard-rating">★ 4.9</div>
+                                    </div>
+                                </div>
+                                <div class="leaderboard-item">
+                                    <div class="leaderboard-rank silver">2</div>
+                                    <div class="leaderboard-avatar" style="background: linear-gradient(135deg, #49ccf9, #38bdf8);">MT</div>
+                                    <div class="leaderboard-info">
+                                        <div class="leaderboard-name">Marcus Thompson</div>
+                                        <div class="leaderboard-company">CloudFirst Inc</div>
+                                    </div>
+                                    <div class="leaderboard-stats">
+                                        <div class="leaderboard-calls">15 calls</div>
+                                        <div class="leaderboard-rating">★ 4.8</div>
+                                    </div>
+                                </div>
+                                <div class="leaderboard-item">
+                                    <div class="leaderboard-rank bronze">3</div>
+                                    <div class="leaderboard-avatar" style="background: linear-gradient(135deg, #f9a852, #fbbf24);">PS</div>
+                                    <div class="leaderboard-info">
+                                        <div class="leaderboard-name">Priya Sharma</div>
+                                        <div class="leaderboard-company">DataFlow</div>
+                                    </div>
+                                    <div class="leaderboard-stats">
+                                        <div class="leaderboard-calls">12 calls</div>
+                                        <div class="leaderboard-rating">★ 5.0</div>
+                                    </div>
+                                </div>
+                                <div class="leaderboard-item">
+                                    <div class="leaderboard-rank regular">4</div>
+                                    <div class="leaderboard-avatar" style="background: linear-gradient(135deg, #22c55e, #4ade80);">JO</div>
+                                    <div class="leaderboard-info">
+                                        <div class="leaderboard-name">James O'Brien</div>
+                                        <div class="leaderboard-company">ScaleUp Pro</div>
+                                    </div>
+                                    <div class="leaderboard-stats">
+                                        <div class="leaderboard-calls">10 calls</div>
+                                        <div class="leaderboard-rating">★ 4.7</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Gauge Grid -->
+                        <div class="glass-card">
+                            <div class="glass-card-header">
+                                <span class="glass-card-title">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20V10M18 20V4M6 20v-4"/></svg>
+                                    Program Health
+                                </span>
+                            </div>
+                            <div class="gauge-grid">
+                                <div class="gauge-card">
+                                    <div class="gauge-circle">
+                                        <svg width="80" height="80" viewBox="0 0 80 80">
+                                            <circle class="gauge-bg" cx="40" cy="40" r="34"/>
+                                            <circle class="gauge-fill violet" cx="40" cy="40" r="34" stroke-dasharray="213.6" stroke-dashoffset="42.7"/>
+                                        </svg>
+                                        <span class="gauge-value">47</span>
+                                    </div>
+                                    <div class="gauge-label">Active Experts</div>
+                                </div>
+                                <div class="gauge-card">
+                                    <div class="gauge-circle">
+                                        <svg width="80" height="80" viewBox="0 0 80 80">
+                                            <circle class="gauge-bg" cx="40" cy="40" r="34"/>
+                                            <circle class="gauge-fill cyan" cx="40" cy="40" r="34" stroke-dasharray="213.6" stroke-dashoffset="46.99"/>
+                                        </svg>
+                                        <span class="gauge-value">78%</span>
+                                    </div>
+                                    <div class="gauge-label">Utilization</div>
+                                </div>
+                                <div class="gauge-card">
+                                    <div class="gauge-circle">
+                                        <svg width="80" height="80" viewBox="0 0 80 80">
+                                            <circle class="gauge-bg" cx="40" cy="40" r="34"/>
+                                            <circle class="gauge-fill green" cx="40" cy="40" r="34" stroke-dasharray="213.6" stroke-dashoffset="21.36"/>
+                                        </svg>
+                                        <span class="gauge-value">4.9</span>
+                                    </div>
+                                    <div class="gauge-label">Avg Rating</div>
+                                </div>
+                                <div class="gauge-card">
+                                    <div class="gauge-circle">
+                                        <svg width="80" height="80" viewBox="0 0 80 80">
+                                            <circle class="gauge-bg" cx="40" cy="40" r="34"/>
+                                            <circle class="gauge-fill pink" cx="40" cy="40" r="34" stroke-dasharray="213.6" stroke-dashoffset="32.04"/>
+                                        </svg>
+                                        <span class="gauge-value">847%</span>
+                                    </div>
+                                    <div class="gauge-label">ROI</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Payment Timeline -->
+                        <div class="glass-card" style="grid-column: 2;">
+                            <div class="glass-card-header">
+                                <span class="glass-card-title">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                                    Payment Activity
+                                </span>
+                            </div>
+                            <div class="payment-timeline">
+                                <div class="payment-item">
+                                    <div class="payment-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+                                    </div>
+                                    <div class="payment-info">
+                                        <div class="payment-name">Nicole Bradley</div>
+                                        <div class="payment-details">3 calls completed • Paid</div>
+                                    </div>
+                                    <div class="payment-amount">$450</div>
+                                </div>
+                                <div class="payment-item pending">
+                                    <div class="payment-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                                    </div>
+                                    <div class="payment-info">
+                                        <div class="payment-name">Marcus Thompson</div>
+                                        <div class="payment-details">2 calls • Processing</div>
+                                    </div>
+                                    <div class="payment-amount">$300</div>
+                                </div>
+                                <div class="payment-item scheduled">
+                                    <div class="payment-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                                    </div>
+                                    <div class="payment-info">
+                                        <div class="payment-name">Priya Sharma</div>
+                                        <div class="payment-details">1 call • Scheduled Dec 5</div>
+                                    </div>
+                                    <div class="payment-amount">$150</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="section-container">
+            <h2>Ready to See It <span class="serif-italic">Live?</span></h2>
+            <p>Book a personalized demo and see how SlashExperts can accelerate your sales cycle and increase win rates.</p>
+            <div class="final-cta-buttons">
+                <a href="/book-a-demo/" class="btn btn-primary has-glow has-glow-full">Book a Demo</a>
+                <a href="/book-a-demo/" class="btn btn-dark has-glow has-glow-full">Contact Sales →</a>
+            </div>
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include "partials/head.njk" %}
+    {% block extraHead %}{% endblock %}
+</head>
+<body>
+    {# GTM noscript fallback - must be immediately after <body> #}
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5ZHWLL6"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    {% include "partials/scripts.njk" %}
+    {% block extraScripts %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,940 @@
+---
+permalink: /pricing/
+title: Pricing - SlashExperts
+description: Start small and prove ROI, then scale without limits. No hidden fees, no surprises—just results.
+lightNav: true
+pageCSS: pricing
+pageJS: pricing
+lastUpdated: 2026-04-10
+---
+
+{% extends "layouts/base.njk" %}
+
+{% block extraHead %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How does the free trial work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Start with a 14-day free trial on any plan—no credit card required. You'll get full access to all features in your chosen plan so you can test SlashExperts with your actual sales process and see real results before committing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I change plans later?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely. You can upgrade or downgrade at any time. When upgrading, you'll get immediate access to new features. When downgrading, changes take effect at the start of your next billing cycle."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does implementation take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most teams are up and running within a week. Day 1 covers account setup, CRM integration, and branding (about 60 minutes). Days 2-3 involve identifying and inviting your initial experts. By day 7, experts have completed their profiles and you're ready to go live."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What CRMs do you integrate with?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "All plans include native integrations with Salesforce and HubSpot. Growth and Enterprise plans include additional integrations with Outreach, Salesloft, Gong, and more. Enterprise customers also get API access for custom integrations."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do expert payouts work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "SlashExperts handles all expert compensation automatically. You set the reward amount (typically $50-150 per call), and we manage payments directly to your experts. Expert payouts are billed separately from your subscription and you only pay for completed conversations."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there a contract or commitment?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Monthly plans have no long-term commitment—cancel anytime. Annual plans offer a 20% discount and are paid upfront for the year. Enterprise contracts can be customized to your needs."
+      }
+    }
+  ]
+}
+</script>
+{% endblock %}
+
+{% block content %}
+<!-- Hero + Pricing Background Wrapper -->
+<div class="hero-pricing-wrapper">
+        <!-- Background Effects -->
+        <div class="background-gradient-wrapper">
+            <div class="background-gradient"></div>
+            <div class="background-gradient-secondary"></div>
+            <div class="background-gradient-tertiary"></div>
+            <div class="background-lines"></div>
+        </div>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+            <div class="section-badge">
+                <svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                    <path d="M2 17l10 5 10-5"/>
+                    <path d="M2 12l10 5 10-5"/>
+                </svg>
+                Simple Pricing
+            </div>
+            <h1>
+                Invest in <span class="serif-italic">authentic</span><br>
+                <span class="gradient-text">customer connections</span>
+            </h1>
+            <p class="hero-subtitle">
+                Start small and prove ROI, then scale without limits. No hidden fees, no surprises—just results.
+            </p>
+            <div class="billing-toggle">
+                <button class="billing-option active" data-billing="monthly">Monthly</button>
+                <button class="billing-option" data-billing="annual">Annual<span class="save-badge">Save 20%</span></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Cards -->
+    <section class="pricing-section">
+        <div class="pricing-grid">
+            <!-- Essentials Plan -->
+            <div class="pricing-card">
+                <div class="plan-icon essentials">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                        <path d="M2 17l10 5 10-5"/>
+                        <path d="M2 12l10 5 10-5"/>
+                    </svg>
+                </div>
+                <div class="plan-name">Essentials</div>
+                <p class="plan-tagline">Perfect for testing expert-led growth. Start with your top references and prove ROI.</p>
+                <p class="annual-savings">Save 20% with annual billing</p>
+                <ul class="plan-features">
+                    <li>
+                        <span class="feature-check cyan">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                        </span>
+                        Up to 25 AI-matched expert references
+                    </li>
+                    <li>
+                        <span class="feature-check cyan">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                        </span>
+                        15 concurrent deals
+                    </li>
+                    <li>
+                        <span class="feature-check cyan">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                        </span>
+                        AI-powered ROI dashboard
+                    </li>
+                    <li>
+                        <span class="feature-check cyan">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                        </span>
+                        Native CRM sync (Salesforce, HubSpot)
+                    </li>
+                    <li>
+                        <span class="feature-check cyan">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                        </span>
+                        Branded booking pages
+                    </li>
+                    <li>
+                        <span class="feature-check cyan">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                        </span>
+                        Email support + 1:1 onboarding
+                    </li>
+                </ul>
+                <button type="button" class="btn-plan secondary has-glow has-glow-full" data-sales-modal="salesModal">Talk to Sales</button>
+                <p class="btn-subtext">Start with a free trial</p>
+            </div>
+
+            <!-- Growth Plan -->
+            <div class="pricing-card featured">
+                <div class="popular-badge">Most Popular</div>
+                <div class="plan-icon growth">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+                        <polyline points="17 6 23 6 23 12"/>
+                    </svg>
+                </div>
+                <div class="plan-name">Growth</div>
+                <p class="plan-tagline">Built for revenue teams ready to scale. Unlimited experts, AI matching, and automations.</p>
+                <p class="annual-savings">Save 20% with annual billing</p>
+                <ul class="plan-features">
+                    <li>
+                        <span class="feature-check violet">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                        </span>
+                        <strong>Unlimited</strong> AI-matched experts
+                    </li>
+                    <li>
+                        <span class="feature-check violet">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                        </span>
+                        <strong>ExpertScore AI</strong> matching engine
+                    </li>
+                    <li>
+                        <span class="feature-check violet">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                        </span>
+                        Chrome extension for sales reps
+                    </li>
+                    <li>
+                        <span class="feature-check violet">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                        </span>
+                        Advanced ROI attribution &amp; analytics
+                    </li>
+                    <li>
+                        <span class="feature-check violet">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                        </span>
+                        Enterprise SSO/SAML + SOC2
+                    </li>
+                    <li>
+                        <span class="feature-check violet">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                        </span>
+                        Dedicated Customer Success Manager
+                    </li>
+                </ul>
+                <button type="button" class="btn-plan primary has-glow has-glow-full" data-sales-modal="salesModal">Talk to Sales</button>
+                <p class="btn-subtext">Start with a free trial</p>
+            </div>
+
+            <!-- Enterprise Plan -->
+            <div class="pricing-card">
+                <div class="plan-icon enterprise">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+                        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                    </svg>
+                </div>
+                <div class="plan-name">Enterprise</div>
+                <p class="plan-tagline">Complete solution with AI-powered insights and dedicated support for complex sales motions.</p>
+                <p class="annual-savings">Save 20% with annual billing</p>
+                <ul class="plan-features">
+                    <li>
+                        <span class="feature-check orange">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                        </span>
+                        Everything in Growth, plus:
+                    </li>
+                    <li>
+                        <span class="feature-check orange">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                        </span>
+                        <strong>AI assistant</strong> for deal intelligence
+                    </li>
+                    <li>
+                        <span class="feature-check orange">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                        </span>
+                        Strategic Account Executive
+                    </li>
+                    <li>
+                        <span class="feature-check orange">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                        </span>
+                        Unlimited expert programs &amp; insights
+                    </li>
+                    <li>
+                        <span class="feature-check orange">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                        </span>
+                        Full API access + SLA guarantee
+                    </li>
+                    <li>
+                        <span class="feature-check orange">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                        </span>
+                        White-label &amp; custom security review
+                    </li>
+                </ul>
+                <button type="button" class="btn-plan outline has-glow" data-sales-modal="salesModal">Talk to Sales</button>
+                <p class="btn-subtext">Start with a free trial</p>
+            </div>
+        </div>
+
+        <!-- Feature Comparison Table - moved here -->
+        <div class="comparison-header" style="margin-top: 80px;">
+            <div class="section-badge">
+                <svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>
+                    <rect x="8" y="2" width="8" height="4" rx="1" ry="1"/>
+                </svg>
+                Compare Plans
+            </div>
+            <h2>Full Feature Comparison</h2>
+            <p>See everything included in each plan to find your perfect fit.</p>
+        </div>
+
+        <div class="comparison-table-wrapper">
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Features</th>
+                        <th class="plan-header">Essentials</th>
+                        <th class="plan-header featured">Growth</th>
+                        <th class="plan-header">Enterprise</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="category-row">
+                        <td colspan="4">Expert Booking System</td>
+                    </tr>
+                    <tr>
+                        <td>AI-matched expert references</td>
+                        <td class="feature-value">Up to 25</td>
+                        <td class="feature-value">Unlimited</td>
+                        <td class="feature-value">Unlimited</td>
+                    </tr>
+                    <tr>
+                        <td>Concurrent deals</td>
+                        <td class="feature-value">15</td>
+                        <td class="feature-value">Unlimited</td>
+                        <td class="feature-value">Unlimited</td>
+                    </tr>
+                    <tr>
+                        <td>Branded booking pages</td>
+                        <td><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                        <td><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                        <td><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                    </tr>
+                    <tr>
+                        <td>Expert matching by industry/use case</td>
+                        <td><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                        <td><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                        <td><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                    </tr>
+                    <tr>
+                        <td>Automated expert compensation</td>
+                        <td><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                        <td><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                        <td><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                    </tr>
+                    <tr class="category-row">
+                        <td colspan="4">Automation &amp; Workflows</td>
+                    </tr>
+                    <tr>
+                        <td>Deal automations</td>
+                        <td><span class="dash-icon">—</span></td>
+                        <td><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                        <td><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                    </tr>
+                    <tr>
+                        <td>Custom workflows &amp; triggers</td>
+                        <td><span class="dash-icon">—</span></td>
+                        <td><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                        <td><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                    </tr>
+                    <tr>
+                        <td>Usage limits enforcement</td>
+                        <td><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                        <td><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                        <td><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                    </tr>
+                    <tr class="category-row">
+                        <td colspan="4">Analytics &amp; Reporting</td>
+                    </tr>
+                    <tr>
+                        <td>Basic analytics</td>
+                        <td><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                        <td><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                        <td><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                    </tr>
+                    <tr>
+                        <td>Advanced ROI tracking</td>
+                        <td><span class="dash-icon">—</span></td>
+                        <td><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                        <td><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                    </tr>
+                    <tr>
+                        <td>Deal influence reporting</td>
+                        <td><span class="dash-icon">—</span></td>
+                        <td><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                        <td><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                    </tr>
+                    <tr>
+                        <td>Custom analytics &amp; dashboards</td>
+                        <td><span class="dash-icon">—</span></td>
+                        <td><span class="dash-icon">—</span></td>
+                        <td><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                    </tr>
+                    <tr class="category-row">
+                        <td colspan="4">Integrations</td>
+                    </tr>
+                    <tr>
+                        <td>CRM integration (Salesforce, HubSpot)</td>
+                        <td><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                        <td><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                        <td><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                    </tr>
+                    <tr>
+                        <td>All integrations</td>
+                        <td><span class="dash-icon">—</span></td>
+                        <td><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                        <td><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                    </tr>
+                    <tr>
+                        <td>API access</td>
+                        <td><span class="dash-icon">—</span></td>
+                        <td><span class="dash-icon">—</span></td>
+                        <td><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                    </tr>
+                    <tr class="category-row">
+                        <td colspan="4">AI &amp; Intelligence</td>
+                    </tr>
+                    <tr>
+                        <td>ExpertScore AI matching</td>
+                        <td><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                        <td><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                        <td><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                    </tr>
+                    <tr>
+                        <td>Chrome extension for sales reps</td>
+                        <td><span class="dash-icon">—</span></td>
+                        <td><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                        <td><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                    </tr>
+                    <tr>
+                        <td>AI assistant for deal intelligence</td>
+                        <td><span class="dash-icon">—</span></td>
+                        <td><span class="dash-icon">—</span></td>
+                        <td><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                    </tr>
+                    <tr class="category-row">
+                        <td colspan="4">Support &amp; Security</td>
+                    </tr>
+                    <tr>
+                        <td>Email support + 1:1 onboarding</td>
+                        <td><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                        <td><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                        <td><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                    </tr>
+                    <tr>
+                        <td>Dedicated Customer Success Manager</td>
+                        <td><span class="dash-icon">—</span></td>
+                        <td><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                        <td><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                    </tr>
+                    <tr>
+                        <td>Strategic Account Executive</td>
+                        <td><span class="dash-icon">—</span></td>
+                        <td><span class="dash-icon">—</span></td>
+                        <td><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                    </tr>
+                    <tr>
+                        <td>Enterprise SSO/SAML</td>
+                        <td><span class="dash-icon">—</span></td>
+                        <td><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                        <td><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                    </tr>
+                    <tr>
+                        <td>SOC2 Type II certified</td>
+                        <td><span class="dash-icon">—</span></td>
+                        <td><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                        <td><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                    </tr>
+                    <tr>
+                        <td>SLA guarantee</td>
+                        <td><span class="dash-icon">—</span></td>
+                        <td><span class="dash-icon">—</span></td>
+                        <td><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                    </tr>
+                    <tr>
+                        <td>White-label deployment</td>
+                        <td><span class="dash-icon">—</span></td>
+                        <td><span class="dash-icon">—</span></td>
+                        <td><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                    </tr>
+                    <tr>
+                        <td>Custom security review</td>
+                        <td><span class="dash-icon">—</span></td>
+                        <td><span class="dash-icon">—</span></td>
+                        <td><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    </div><!-- End hero-pricing-wrapper -->
+
+    <!-- Social Proof Bar -->
+    <section class="social-proof">
+        <div class="social-proof-content">
+            <p>Trusted by revenue teams at leading companies</p>
+            <div class="logos-carousel-wrapper">
+                <div class="logos-carousel">
+                    <div class="logo-item">Sendspark</div>
+                    <div class="logo-item">Sendoso</div>
+                    <div class="logo-item">Overdryve</div>
+                    <div class="logo-item">Mobly</div>
+                    <div class="logo-item">OutboundSync</div>
+                    <div class="logo-item">Warmly</div>
+                    <div class="logo-item">Spara</div>
+                    <div class="logo-item">Udemy</div>
+                    <!-- Duplicate for seamless loop -->
+                    <div class="logo-item">Sendspark</div>
+                    <div class="logo-item">Sendoso</div>
+                    <div class="logo-item">Overdryve</div>
+                    <div class="logo-item">Mobly</div>
+                    <div class="logo-item">OutboundSync</div>
+                    <div class="logo-item">Warmly</div>
+                    <div class="logo-item">Spara</div>
+                    <div class="logo-item">Udemy</div>
+                </div>
+            </div>
+            <div class="metrics-row" style="margin-top: 40px;">
+                <div class="metric-item">
+                    <div class="metric-value">35%</div>
+                    <div class="metric-label">Increase in conversion</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-value">29%</div>
+                    <div class="metric-label">Shorter sales cycles</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-value">70%</div>
+                    <div class="metric-label">Less admin time</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-value">2.4×</div>
+                    <div class="metric-label">Higher close rates</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Wall -->
+    <section class="reviews-section">
+        <div class="reviews-header">
+            <div class="section-badge">
+                <svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+                Customer Reviews
+            </div>
+            <h2>What our <span class="serif-italic">customers</span> say</h2>
+            <p>Real feedback from revenue teams using SlashExperts</p>
+        </div>
+
+        <div class="reviews-wall">
+            <!-- Row 1 -->
+            <div class="review-card tall">
+                <div class="review-stars">
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                </div>
+                <p class="review-text large">"The Growth plan paid for itself in the first month. We closed a $180K deal that had been stalled for weeks—the prospect just needed to hear from someone in their industry. Transparent pricing made the decision easy for our CFO."</p>
+                <div class="review-author">
+                    <div class="review-avatar purple">MR</div>
+                    <div class="review-info">
+                        <div class="review-name">Marcus Rodriguez</div>
+                        <div class="review-role">Head of Revenue Operations</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review-card">
+                <div class="review-stars">
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                </div>
+                <p class="review-text">"No hidden fees. What you see is what you pay. Refreshing for enterprise software."</p>
+                <div class="review-author">
+                    <div class="review-avatar cyan">TK</div>
+                    <div class="review-info">
+                        <div class="review-name">Tanya Krishnamurthy</div>
+                        <div class="review-role">VP of Sales</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review-card wide">
+                <div class="review-stars">
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                </div>
+                <p class="review-text">"We started with Essentials to test the concept with 3 references. Within 6 weeks, we upgraded to Growth because the ROI was undeniable. The pricing tiers are designed exactly how a scaling team needs them."</p>
+                <div class="review-author">
+                    <div class="review-avatar pink">AL</div>
+                    <div class="review-info">
+                        <div class="review-name">Aisha Lawson</div>
+                        <div class="review-role">Director of Sales Enablement</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 2 -->
+            <div class="review-card">
+                <div class="review-stars">
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                </div>
+                <p class="review-text">"The annual discount saved us almost $10K. That's budget we reinvested into more expert incentives."</p>
+                <div class="review-author">
+                    <div class="review-avatar orange">JH</div>
+                    <div class="review-info">
+                        <div class="review-name">Jordan Huang</div>
+                        <div class="review-role">Finance Manager</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review-card">
+                <div class="review-stars">
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                </div>
+                <p class="review-text">"Finally, pricing that makes sense. No per-seat nonsense, no surprise overages. Just a flat rate that lets us scale."</p>
+                <div class="review-author">
+                    <div class="review-avatar green">NP</div>
+                    <div class="review-info">
+                        <div class="review-name">Natalie Park</div>
+                        <div class="review-role">Chief Revenue Officer</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review-card tall">
+                <div class="review-stars">
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                </div>
+                <p class="review-text large">"I showed my CEO the pricing page and he approved it in one meeting. Clear tiers, clear value, clear ROI metrics. The comparison table answered every question before he could ask it. We went with Enterprise for the dedicated CSM."</p>
+                <div class="review-author">
+                    <div class="review-avatar indigo">BT</div>
+                    <div class="review-info">
+                        <div class="review-name">Brandon Torres</div>
+                        <div class="review-role">VP of Business Development</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 3 -->
+            <div class="review-card wide">
+                <div class="review-stars">
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                </div>
+                <p class="review-text">"What sold me was the 14-day trial. No credit card, full features. We ran 8 expert calls during the trial and closed 2 deals. The math was obvious after that."</p>
+                <div class="review-author">
+                    <div class="review-avatar cyan">SP</div>
+                    <div class="review-info">
+                        <div class="review-name">Samira Patel</div>
+                        <div class="review-role">Sales Director</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review-card">
+                <div class="review-stars">
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                </div>
+                <p class="review-text">"Upgrading from Essentials to Growth was seamless. One click, immediate access to unlimited experts."</p>
+                <div class="review-author">
+                    <div class="review-avatar purple">CW</div>
+                    <div class="review-info">
+                        <div class="review-name">Cameron Wright</div>
+                        <div class="review-role">Account Executive</div>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+    </section>
+
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="faq-header">
+            <div class="section-badge">
+                <svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+                    <line x1="12" y1="17" x2="12.01" y2="17"/>
+                </svg>
+                FAQ
+            </div>
+            <h2>Questions? <span class="serif-italic">Answered.</span></h2>
+            <p>Everything you need to know about pricing and getting started.</p>
+        </div>
+
+        <div class="faq-list">
+            <div class="faq-item active">
+                <button class="faq-question">
+                    How does the free trial work?
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"/>
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Start with a 14-day free trial on any plan—no credit card required. You'll get full access to all features in your chosen plan so you can test SlashExperts with your actual sales process and see real results before committing.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    Can I change plans later?
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"/>
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Absolutely. You can upgrade or downgrade at any time. When upgrading, you'll get immediate access to new features. When downgrading, changes take effect at the start of your next billing cycle.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    How long does implementation take?
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"/>
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Most teams are up and running within a week. Day 1 covers account setup, CRM integration, and branding (about 60 minutes). Days 2-3 involve identifying and inviting your initial experts. By day 7, experts have completed their profiles and you're ready to go live.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    What CRMs do you integrate with?
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"/>
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        All plans include native integrations with Salesforce and HubSpot. Growth and Enterprise plans include additional integrations with Outreach, Salesloft, Gong, and more. Enterprise customers also get API access for custom integrations.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    How do expert payouts work?
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"/>
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        SlashExperts handles all expert compensation automatically. You set the reward amount (typically $50-150 per call), and we manage payments directly to your experts. Expert payouts are billed separately from your subscription and you only pay for completed conversations.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    Is there a contract or commitment?
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"/>
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Monthly plans have no long-term commitment—cancel anytime. Annual plans offer a 20% discount and are paid upfront for the year. Enterprise contracts can be customized to your needs.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Ready to accelerate your pipeline?</h2>
+            <p>Talk to our team and see how SlashExperts can transform your sales process.</p>
+            <div class="cta-buttons">
+                <button type="button" class="btn-cta-primary" data-sales-modal="salesModal">
+                    Talk to Sales
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"/>
+                        <polyline points="12 5 19 12 12 19"/>
+                    </svg>
+                </button>
+            </div>
+            <p class="cta-subtext">Start with a free trial • No credit card required</p>
+        </div>
+    </section>
+
+    <!-- Sales Modal with Revenue Hero -->
+    <div class="sales-modal-overlay" id="salesModal">
+        <div class="sales-modal">
+            <button class="sales-modal-close" aria-label="Close form">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"/>
+                    <line x1="6" y1="6" x2="18" y2="18"/>
+                </svg>
+            </button>
+            <div class="sales-modal-content">
+                <div class="sales-modal-header">
+                    <div class="modal-badge">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                        </svg>
+                        Book Your Demo
+                    </div>
+                    <h3 class="modal-title">Let's Talk About Your Goals</h3>
+                    <p class="modal-subtitle">Get a personalized demo and pricing tailored to your team's needs.</p>
+                </div>
+
+                <form id="salesForm" class="sales-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">First Name *</label>
+                            <input type="text" name="firstName" class="form-input" placeholder="John" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Last Name *</label>
+                            <input type="text" name="lastName" class="form-input" placeholder="Smith" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Work Email *</label>
+                        <input type="email" name="email" class="form-input" placeholder="john@company.com" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">Company *</label>
+                            <input type="text" name="company" class="form-input" placeholder="Acme Inc." required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Job Title *</label>
+                            <input type="text" name="jobTitle" class="form-input" placeholder="VP of Sales" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Company Size *</label>
+                        <select name="companySize" class="form-select" required>
+                            <option value="" disabled selected>Select size</option>
+                            <option value="1-50">1-50 employees</option>
+                            <option value="51-200">51-200 employees</option>
+                            <option value="201-500">201-500 employees</option>
+                            <option value="501-1000">501-1,000 employees</option>
+                            <option value="1000+">1,000+ employees</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn-submit">
+                        Book My Demo
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14"/>
+                            <path d="m12 5 7 7-7 7"/>
+                        </svg>
+                    </button>
+                </form>
+
+                <div class="modal-footer">
+                    <div class="footer-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                            <polyline points="22 4 12 14.01 9 11.01"/>
+                        </svg>
+                        30-minute call
+                    </div>
+                    <div class="footer-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                            <polyline points="22 4 12 14.01 9 11.01"/>
+                        </svg>
+                        Free trial included
+                    </div>
+                    <div class="footer-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                            <polyline points="22 4 12 14.01 9 11.01"/>
+                        </svg>
+                        Custom pricing
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

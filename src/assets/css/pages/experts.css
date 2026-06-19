@@ -1,0 +1,156 @@
+/* ========== EXPERTS DIRECTORY PAGE ========== */
+
+/* Page Content */
+.page-content {
+    padding-top: 100px;
+    min-height: 100vh;
+    background: linear-gradient(180deg, #ffffff 0%, #f8f7fc 40%, #f3f0ff 100%);
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 48px 24px 40px;
+    max-width: 900px;
+    margin: 0 auto;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tour-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, rgba(129, 103, 234, 0.1) 0%, rgba(168, 85, 247, 0.1) 100%);
+    border: 1px solid rgba(129, 103, 234, 0.2);
+    padding: 10px 20px;
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--violet);
+    margin-bottom: 24px;
+}
+
+.tour-badge svg {
+    width: 16px;
+    height: 16px;
+}
+
+.tour-badge .duration {
+    color: var(--muted);
+    font-weight: 500;
+    margin-left: 4px;
+    padding-left: 8px;
+    border-left: 1px solid rgba(129, 103, 234, 0.3);
+}
+
+.hero h1 {
+    font-size: clamp(36px, 5vw, 52px);
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 16px;
+    line-height: 1.15;
+}
+
+.hero p {
+    font-size: 18px;
+    color: var(--muted);
+    max-width: 640px;
+    margin: 0 auto 32px;
+    line-height: 1.7;
+}
+
+/* Trust Badge */
+.trust-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+    background: var(--white);
+    border: 1px solid rgba(129, 103, 234, 0.12);
+    padding: 14px 24px;
+    border-radius: 100px;
+    font-size: 14px;
+    color: var(--dark-text);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.trust-badge .stat {
+    font-weight: 700;
+    color: var(--accent-green);
+}
+
+.trust-badge .divider {
+    width: 1px;
+    height: 24px;
+    background: rgba(129, 103, 234, 0.12);
+}
+
+.trust-badge .companies-text {
+    font-weight: 500;
+    color: var(--dark-text);
+}
+
+/* ========== WIDGET SECTION ========== */
+
+.experts-page {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 0 24px 80px;
+}
+
+/* ========== WIDGET CONTAINER ========== */
+
+.experts-container {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+/* ========== RESPONSIVE ========== */
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 32px 20px 32px;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .trust-badge {
+        flex-direction: column;
+        gap: 12px;
+        border-radius: 16px;
+        padding: 16px 20px;
+    }
+
+    .trust-badge .divider {
+        width: 100%;
+        height: 1px;
+    }
+
+    .experts-page {
+        padding: 0 16px 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .experts-page {
+        padding: 0 12px 40px;
+    }
+}

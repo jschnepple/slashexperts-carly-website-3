@@ -1,0 +1,699 @@
+---
+permalink: /invisible-pipeline-calculator/
+title: Invisible Pipeline Score | SlashExperts
+description: Calculate your Invisible Pipeline Score and discover hidden opportunities in your sales process. Based on research from 454 B2B companies.
+pageCSS: pipeline-calculator
+pageJS: pipeline-calculator
+lightNav: false
+---
+
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+<!-- Calculator Section -->
+<section class="calculator-section" id="calculator">
+    <div class="calculator-container">
+        <div class="calculator-header">
+            <div class="section-badge">
+                <svg viewBox="0 0 24 24">
+                    <rect x="3" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="14" width="7" height="7"></rect>
+                    <rect x="3" y="14" width="7" height="7"></rect>
+                </svg>
+                <span>Invisible Pipeline Score</span>
+            </div>
+            <h2 class="calculator-title">
+                What's Your <span class="gradient-serif">Invisible Pipeline</span> Score?
+            </h2>
+            <p class="calculator-subtitle">
+                66% of deals are influenced in channels you can't see.
+            </p>
+        </div>
+
+        <div class="calculator-grid">
+            <!-- Input Panel -->
+            <div class="input-panel">
+                <!-- Start Screen -->
+                <div class="quiz-start-screen" id="quizStartScreen">
+                    <div class="start-content">
+                        <div class="start-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                            </svg>
+                        </div>
+                        <h3>Discover Your <span class="gradient-serif">Invisible Pipeline</span> Score</h3>
+                        <p class="start-subtitle">See how your GTM motion compares to 454 B2B companies</p>
+                        <ul class="start-benefits">
+                            <li>
+                                <span class="benefit-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                </span>
+                                <span>How your peer validation strategy compares to top performers</span>
+                            </li>
+                            <li>
+                                <span class="benefit-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                </span>
+                                <span>Critical blind spots that may be costing you deals</span>
+                            </li>
+                            <li>
+                                <span class="benefit-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                </span>
+                                <span>Specific areas where you can improve conversion rates</span>
+                            </li>
+                            <li>
+                                <span class="benefit-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                </span>
+                                <span>Your personalized pipeline visibility score out of 100</span>
+                            </li>
+                        </ul>
+                        <button class="btn-start-quiz has-glow has-glow-full has-glow-rect" id="startQuizBtn">
+                            Start Assessment
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </button>
+                        <p class="start-time">Takes about 2 minutes</p>
+                    </div>
+                </div>
+
+                <!-- Quiz Steps Container -->
+                <div class="quiz-steps-container" id="quizStepsContainer">
+                    <div class="input-panel-header">
+                        <div class="input-panel-title">Assessment Questions</div>
+                        <div class="progress-indicator">
+                            <div class="progress-step" id="step1"></div>
+                            <div class="progress-step" id="step2"></div>
+                            <div class="progress-step" id="step3"></div>
+                            <div class="progress-step" id="step4"></div>
+                            <div class="progress-step" id="step5"></div>
+                            <div class="progress-step" id="step6"></div>
+                        </div>
+                    </div>
+
+                    <!-- Step 1: Response Time -->
+                    <div class="quiz-step" id="quiz-step-1" data-step="1">
+                        <div class="step-question">
+                            <span class="question-number">Question 1 of 6</span>
+                            <span class="question-category">Speed</span>
+                            <h4 class="question-label">How quickly can you connect prospects with peers?</h4>
+                            <p class="question-hint">Research shows deals won in under 48 hours have 60% higher close rates. How fast can you respond to peer validation requests?</p>
+                        </div>
+                        <div class="option-grid" data-question="responseTime">
+                            <button class="option-btn" data-value="1" data-state="danger">No system</button>
+                            <button class="option-btn" data-value="2" data-state="warning">3-5 days</button>
+                            <button class="option-btn" data-value="3" data-state="warning">24-48 hrs</button>
+                            <button class="option-btn" data-value="4" data-state="success">Under 24 hrs</button>
+                        </div>
+                        <div class="step-nav">
+                            <button class="btn-back" disabled>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                                    <polyline points="12 19 5 12 12 5"></polyline>
+                                </svg>
+                                Back
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Tracking -->
+                    <div class="quiz-step" id="quiz-step-2" data-step="2">
+                        <div class="step-question">
+                            <span class="question-number">Question 2 of 6</span>
+                            <span class="question-category">Visibility</span>
+                            <h4 class="question-label">Do you track peer validation conversations?</h4>
+                            <p class="question-hint">73% of top performers now track these conversations. The bottom 27% are losing 61% more deals to competitors.</p>
+                        </div>
+                        <div class="option-grid" data-question="tracking">
+                            <button class="option-btn" data-value="1" data-state="danger">Not at all</button>
+                            <button class="option-btn" data-value="2" data-state="warning">Manually</button>
+                            <button class="option-btn" data-value="3" data-state="warning">Partial</button>
+                            <button class="option-btn" data-value="4" data-state="success">Fully automated</button>
+                        </div>
+                        <div class="step-nav">
+                            <button class="btn-back">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                                    <polyline points="12 19 5 12 12 5"></polyline>
+                                </svg>
+                                Back
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Matching -->
+                    <div class="quiz-step" id="quiz-step-3" data-step="3">
+                        <div class="step-question">
+                            <span class="question-number">Question 3 of 6</span>
+                            <span class="question-category">Precision</span>
+                            <h4 class="question-label">How do you match prospects with relevant peers?</h4>
+                            <p class="question-hint">AI-powered matching increases relevance by 3.2x and conversion by 47% compared to manual matching.</p>
+                        </div>
+                        <div class="option-grid" data-question="matching">
+                            <button class="option-btn" data-value="1" data-state="danger">Random/None</button>
+                            <button class="option-btn" data-value="2" data-state="warning">Manual list</button>
+                            <button class="option-btn" data-value="3" data-state="warning">Basic criteria</button>
+                            <button class="option-btn" data-value="4" data-state="success">AI-powered</button>
+                        </div>
+                        <div class="step-nav">
+                            <button class="btn-back">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                                    <polyline points="12 19 5 12 12 5"></polyline>
+                                </svg>
+                                Back
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Scale -->
+                    <div class="quiz-step" id="quiz-step-4" data-step="4">
+                        <div class="step-question">
+                            <span class="question-number">Question 4 of 6</span>
+                            <span class="question-category">Scale</span>
+                            <h4 class="question-label">How many customer experts are available for calls?</h4>
+                            <p class="question-hint">Top performers maintain 100+ active experts to ensure availability and relevance across all market segments.</p>
+                        </div>
+                        <div class="option-grid" data-question="scale">
+                            <button class="option-btn" data-value="1" data-state="danger">0-10</button>
+                            <button class="option-btn" data-value="2" data-state="warning">11-50</button>
+                            <button class="option-btn" data-value="3" data-state="warning">51-100</button>
+                            <button class="option-btn" data-value="4" data-state="success">100+</button>
+                        </div>
+                        <div class="step-nav">
+                            <button class="btn-back">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                                    <polyline points="12 19 5 12 12 5"></polyline>
+                                </svg>
+                                Back
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 5: Integration -->
+                    <div class="quiz-step" id="quiz-step-5" data-step="5">
+                        <div class="step-question">
+                            <span class="question-number">Question 5 of 6</span>
+                            <span class="question-category">Integration</span>
+                            <h4 class="question-label">Is peer validation connected to your sales workflow?</h4>
+                            <p class="question-hint">CRM-integrated proof programs see 29% faster sales cycles and 40% higher rep adoption rates.</p>
+                        </div>
+                        <div class="option-grid" data-question="integration">
+                            <button class="option-btn" data-value="1" data-state="danger">None</button>
+                            <button class="option-btn" data-value="2" data-state="warning">Spreadsheets</button>
+                            <button class="option-btn" data-value="3" data-state="warning">Partial CRM</button>
+                            <button class="option-btn" data-value="4" data-state="success">Full CRM sync</button>
+                        </div>
+                        <div class="step-nav">
+                            <button class="btn-back">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                                    <polyline points="12 19 5 12 12 5"></polyline>
+                                </svg>
+                                Back
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 6: Channel Coverage -->
+                    <div class="quiz-step" id="quiz-step-6" data-step="6">
+                        <div class="step-question">
+                            <span class="question-number">Question 6 of 6</span>
+                            <span class="question-category">Coverage</span>
+                            <h4 class="question-label">Where can prospects access peer validation?</h4>
+                            <p class="question-hint">Multi-channel availability increases engagement by 2.4x compared to single-channel approaches.</p>
+                        </div>
+                        <div class="option-grid" data-question="channels">
+                            <button class="option-btn" data-value="1" data-state="danger">None</button>
+                            <button class="option-btn" data-value="2" data-state="warning">Rep request</button>
+                            <button class="option-btn" data-value="3" data-state="warning">Website only</button>
+                            <button class="option-btn" data-value="4" data-state="success">Multi-channel</button>
+                        </div>
+                        <div class="step-nav step-nav-final">
+                            <button class="btn-back">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                                    <polyline points="12 19 5 12 12 5"></polyline>
+                                </svg>
+                                Back
+                            </button>
+                            <button class="calculate-btn" id="calculateBtn">
+                                <span>Calculate My Score</span>
+                                <svg viewBox="0 0 24 24">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results Panel -->
+            <div class="results-panel">
+                <div class="results-card">
+                    <div class="results-header">
+                        <div class="results-title">Your Invisible Pipeline Score</div>
+                        <div class="results-desc">Based on 454-company benchmark study</div>
+                    </div>
+
+                    <!-- Main Score Display -->
+                    <div class="main-score-display">
+                        <div class="score-circle-container">
+                            <svg width="180" height="180" viewBox="0 0 180 180">
+                                <circle class="score-circle-bg" cx="90" cy="90" r="78"/>
+                                <circle class="score-circle-fill" id="scoreCircle" cx="90" cy="90" r="78"
+                                    stroke-dasharray="490" stroke-dashoffset="490"/>
+                            </svg>
+                            <div class="score-value-container">
+                                <div class="score-value" id="mainScore">--</div>
+                                <div class="score-label">out of 100</div>
+                            </div>
+                        </div>
+                        <div class="score-rating warning" id="scoreRating">Answer questions to see your score</div>
+                    </div>
+
+                    <!-- Dimension Scores -->
+                    <div class="dimension-scores">
+                        <div class="dimension-scores-header">Dimension Breakdown</div>
+
+                        <div class="dimension-score-item">
+                            <div class="dimension-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                </svg>
+                            </div>
+                            <div class="dimension-info">
+                                <div class="dimension-name">Response Speed</div>
+                                <div class="dimension-bar-container">
+                                    <div class="dimension-bar warning" id="speedBar" style="width: 0%"></div>
+                                </div>
+                            </div>
+                            <div class="dimension-score-value" id="speedScore">--</div>
+                        </div>
+
+                        <div class="dimension-score-item">
+                            <div class="dimension-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                            </div>
+                            <div class="dimension-info">
+                                <div class="dimension-name">Conversation Visibility</div>
+                                <div class="dimension-bar-container">
+                                    <div class="dimension-bar warning" id="visibilityBar" style="width: 0%"></div>
+                                </div>
+                            </div>
+                            <div class="dimension-score-value" id="visibilityScore">--</div>
+                        </div>
+
+                        <div class="dimension-score-item">
+                            <div class="dimension-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <circle cx="12" cy="12" r="6"></circle>
+                                    <circle cx="12" cy="12" r="2"></circle>
+                                </svg>
+                            </div>
+                            <div class="dimension-info">
+                                <div class="dimension-name">Matching Precision</div>
+                                <div class="dimension-bar-container">
+                                    <div class="dimension-bar warning" id="matchingBar" style="width: 0%"></div>
+                                </div>
+                            </div>
+                            <div class="dimension-score-value" id="matchingScore">--</div>
+                        </div>
+
+                        <div class="dimension-score-item">
+                            <div class="dimension-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <line x1="18" y1="20" x2="18" y2="10"></line>
+                                    <line x1="12" y1="20" x2="12" y2="4"></line>
+                                    <line x1="6" y1="20" x2="6" y2="14"></line>
+                                </svg>
+                            </div>
+                            <div class="dimension-info">
+                                <div class="dimension-name">Program Scale</div>
+                                <div class="dimension-bar-container">
+                                    <div class="dimension-bar warning" id="scaleBar" style="width: 0%"></div>
+                                </div>
+                            </div>
+                            <div class="dimension-score-value" id="scaleScore">--</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="hero-container">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <div class="hero-badge-icon">
+                    <svg viewBox="0 0 24 24">
+                        <line x1="18" y1="20" x2="18" y2="10"></line>
+                        <line x1="12" y1="20" x2="12" y2="4"></line>
+                        <line x1="6" y1="20" x2="6" y2="14"></line>
+                    </svg>
+                </div>
+                <span>Based on research from 454 B2B companies</span>
+            </div>
+            <h1 class="hero-title">
+                How Much Pipeline<br>Are You <span class="gradient-serif">Missing?</span>
+            </h1>
+            <p class="hero-subtitle">
+                Our research across 454 companies revealed that 66% of deals are influenced by conversations you can't see. This 2-minute assessment reveals your visibility gaps and how you compare to industry leaders.
+            </p>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="hero-stat-value">454</div>
+                    <div class="hero-stat-label">Companies Studied</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-value">2,530</div>
+                    <div class="hero-stat-label">Responses Analyzed</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-value">$47B</div>
+                    <div class="hero-stat-label">Combined Revenue</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hero Graphic - Interactive Radar -->
+        <div class="hero-graphic">
+            <div class="graphic-container">
+                <!-- Ambient Glows -->
+                <div class="hero-glow hero-glow-1"></div>
+                <div class="hero-glow hero-glow-2"></div>
+
+                <!-- Radar Visual -->
+                <div class="radar-visual">
+                    <div class="radar-background"></div>
+
+                    <!-- Radar Rings -->
+                    <div class="radar-rings">
+                        <div class="radar-ring"></div>
+                        <div class="radar-ring"></div>
+                        <div class="radar-ring"></div>
+                        <div class="radar-ring"></div>
+                    </div>
+
+                    <!-- Radar Axes -->
+                    <div class="radar-axes">
+                        <div class="radar-axis"></div>
+                        <div class="radar-axis"></div>
+                        <div class="radar-axis"></div>
+                        <div class="radar-axis"></div>
+                        <div class="radar-axis"></div>
+                        <div class="radar-axis"></div>
+                    </div>
+
+                    <!-- Animated Radar Fill -->
+                    <svg class="radar-fill" width="270" height="270" viewBox="0 0 270 270">
+                        <polygon class="radar-polygon" points="135,35 220,85 220,185 135,235 50,185 50,85"/>
+                        <circle class="radar-point" cx="135" cy="35" r="5"/>
+                        <circle class="radar-point" cx="220" cy="85" r="5"/>
+                        <circle class="radar-point" cx="220" cy="185" r="5"/>
+                        <circle class="radar-point" cx="135" cy="235" r="5"/>
+                        <circle class="radar-point" cx="50" cy="185" r="5"/>
+                        <circle class="radar-point" cx="50" cy="85" r="5"/>
+                    </svg>
+
+                    <!-- Radar Labels -->
+                    <div class="radar-labels">
+                        <div class="radar-label">Response Speed</div>
+                        <div class="radar-label">Peer Matching</div>
+                        <div class="radar-label">Channel Coverage</div>
+                        <div class="radar-label">Tracking Depth</div>
+                        <div class="radar-label">Program Scale</div>
+                        <div class="radar-label">Integration Level</div>
+                    </div>
+                </div>
+
+                <!-- Floating Score Cards -->
+                <div class="score-card-float score-card-1">
+                    <div class="score-card-icon warning">
+                        <svg viewBox="0 0 24 24" stroke="#f59e0b">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                    </div>
+                    <div class="score-card-value warning">48hrs</div>
+                    <div class="score-card-label">Response Benchmark</div>
+                </div>
+
+                <div class="score-card-float score-card-2">
+                    <div class="score-card-icon danger">
+                        <svg viewBox="0 0 24 24" stroke="#ef4444">
+                            <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>
+                            <line x1="1" y1="1" x2="23" y2="23"></line>
+                        </svg>
+                    </div>
+                    <div class="score-card-value danger">66%</div>
+                    <div class="score-card-label">Invisible Deals</div>
+                </div>
+
+                <div class="score-card-float score-card-3">
+                    <div class="score-card-icon violet">
+                        <svg viewBox="0 0 24 24" stroke="#8167ea">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    </div>
+                    <div class="score-card-value violet">300+</div>
+                    <div class="score-card-label">Monthly Backchannels</div>
+                </div>
+
+                <div class="score-card-float score-card-4">
+                    <div class="score-card-icon success">
+                        <svg viewBox="0 0 24 24" stroke="#22c55e">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                    </div>
+                    <div class="score-card-value success">73%</div>
+                    <div class="score-card-label">Now Tracking</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Score Results Modal -->
+<div class="score-modal-overlay" id="scoreModalOverlay">
+    <div class="score-modal">
+        <button class="score-modal-close" id="scoreModalClose" aria-label="Close modal">
+            <svg viewBox="0 0 24 24">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+
+        <!-- Loading State -->
+        <div class="modal-loading-state" id="modalLoadingState">
+            <div class="loader"></div>
+            <div class="loader-text">Analyzing Your Pipeline</div>
+            <div class="loader-subtext">Comparing against 454 companies...</div>
+        </div>
+
+        <!-- Results Content -->
+        <div class="score-modal-content" id="modalResultsContent">
+            <!-- Left: Where You Stand -->
+            <div class="score-modal-left">
+                <div class="modal-section-title">Where You Stand</div>
+                <div class="modal-section-badge">vs. 454 Companies</div>
+
+                <div class="modal-score-display">
+                    <div class="modal-score-circle">
+                        <svg width="120" height="120" viewBox="0 0 120 120">
+                            <circle class="modal-score-bg" cx="60" cy="60" r="50"/>
+                            <circle class="modal-score-fill" id="modalScoreCircle" cx="60" cy="60" r="50"
+                                stroke-dasharray="314" stroke-dashoffset="314"/>
+                        </svg>
+                        <div class="modal-score-value" id="modalScoreValue">--</div>
+                    </div>
+                    <div class="modal-score-rating" id="modalScoreRating">--</div>
+                </div>
+
+                <div class="modal-comparison">
+                    <div class="modal-comparison-visual">
+                        <div class="modal-zone blind">Blind<br><span>27%</span></div>
+                        <div class="modal-zone aware">Aware<br><span>46%</span></div>
+                        <div class="modal-zone leaders">Leaders<br><span>27%</span></div>
+                        <div class="modal-position" id="modalPosition">
+                            <span class="modal-position-label">YOU</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-impact">
+                    <div class="modal-impact-text" id="modalImpactText">
+                        Your score indicates significant gaps in pipeline visibility.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Lead Magnet - Full Form -->
+            <div class="score-modal-right">
+                <div class="modal-lead-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="7 10 12 15 17 10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                </div>
+
+                <div class="modal-lead-title">Get Your Full Report</div>
+
+                <div class="modal-lead-benefits">
+                    <div class="modal-benefit">
+                        <div class="modal-benefit-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                        <span>Exact revenue you're leaving on the table</span>
+                    </div>
+                    <div class="modal-benefit">
+                        <div class="modal-benefit-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                        <span>Your 3 highest-impact fixes (prioritized)</span>
+                    </div>
+                    <div class="modal-benefit">
+                        <div class="modal-benefit-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                        <span>30-60-90 day implementation roadmap</span>
+                    </div>
+                    <div class="modal-benefit">
+                        <div class="modal-benefit-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                        <span>Benchmark data for your industry</span>
+                    </div>
+                </div>
+
+                <form class="modal-lead-form" id="modalLeadForm">
+                    <div class="modal-form-row">
+                        <input type="text" class="modal-input" placeholder="First name" required id="modalFirstName">
+                        <input type="text" class="modal-input" placeholder="Last name" required id="modalLastName">
+                    </div>
+                    <input type="email" class="modal-input" placeholder="Work email" required id="modalEmail">
+                    <input type="text" class="modal-input" placeholder="Company" required id="modalCompany">
+                    <button type="submit" class="modal-submit-btn has-glow has-glow-rect">
+                        <span>Get My Personalized Action Plan</span>
+                        <svg viewBox="0 0 24 24">
+                            <line x1="22" y1="2" x2="11" y2="13"></line>
+                            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                        </svg>
+                    </button>
+                </form>
+
+                <div class="modal-lead-success" id="modalLeadSuccess">
+                    <div class="modal-success-icon">
+                        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </div>
+                    <div class="modal-success-title">Download complete!</div>
+                </div>
+
+                <div class="modal-privacy">
+                    We respect your privacy. No spam, ever. <a href="/privacy/">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Insights Section -->
+<section class="insights-section">
+    <div class="insights-container">
+        <div class="insights-header">
+            <h2 class="insights-title">Why Your Score <span class="gradient-serif">Matters</span></h2>
+            <p class="insights-subtitle">
+                Data from our GTM 2026 Benchmark Report reveals the impact of pipeline visibility on revenue outcomes.
+            </p>
+        </div>
+
+        <div class="insights-grid">
+            <div class="insight-card">
+                <div class="insight-icon warning">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+                        <line x1="12" y1="9" x2="12" y2="13" stroke-linecap="round"></line>
+                        <circle cx="12" cy="17" r="1" fill="#f9a852" stroke="none"></circle>
+                    </svg>
+                </div>
+                <div class="insight-stat warning">27%</div>
+                <div class="insight-title">Still Playing Blind</div>
+                <div class="insight-desc">
+                    More than 1 in 4 companies have zero visibility into peer conversations influencing their deals. They lose 61% more opportunities than competitors who track these interactions.
+                </div>
+                <div class="insight-source">SlashExperts GTM 2026 Benchmark Report</div>
+            </div>
+
+            <div class="insight-card">
+                <div class="insight-icon danger">
+                    <svg viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="15" y1="9" x2="9" y2="15"></line>
+                        <line x1="9" y1="9" x2="15" y2="15"></line>
+                    </svg>
+                </div>
+                <div class="insight-stat danger">26.6%</div>
+                <div class="insight-title">Mid-Funnel Evaporation</div>
+                <div class="insight-desc">
+                    The biggest leakage happens between Evaluation and Proposal stages—where peer validation matters most. Most attrition occurs before you can even make your case.
+                </div>
+                <div class="insight-source">SlashExperts GTM 2026 Benchmark Report</div>
+            </div>
+
+            <div class="insight-card">
+                <div class="insight-icon violet">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                    </svg>
+                </div>
+                <div class="insight-stat violet">2.4x</div>
+                <div class="insight-title">Higher Close Rates</div>
+                <div class="insight-desc">
+                    Companies with full conversation visibility outperform blind competitors by 2.4x on win rates. Speed to proof within 48 hours correlates with 60% higher close probability.
+                </div>
+                <div class="insight-source">SlashExperts GTM 2026 Benchmark Report</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section">
+    <div class="cta-container">
+        <h2 class="cta-title">Ready to See Your <span class="gradient-serif">Hidden Pipeline?</span></h2>
+        <p class="cta-subtitle">
+            Join the 73% of companies who've moved from blind to brilliant. Book a personalized demo to see exactly how SlashExperts illuminates your invisible deals.
+        </p>
+        <div class="cta-buttons">
+            <a href="/book-a-demo/" class="cta-btn-primary has-glow has-glow-full">
+                Book a Demo
+                <svg viewBox="0 0 24 24">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+            </a>
+            <a href="/download-report-2026/" class="cta-btn-secondary has-glow">Download Full Report</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

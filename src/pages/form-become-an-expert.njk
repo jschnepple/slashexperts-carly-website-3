@@ -1,0 +1,139 @@
+---
+permalink: /become-an-expert/apply/
+title: Apply to Become an Expert | SlashExperts
+description: Join thousands of professionals who earn by sharing their real-world software experience with buyers making important decisions. Apply in minutes.
+pageCSS: form-become-an-expert
+pageJS: form-become-an-expert
+lightNav: true
+---
+
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+<!-- Page Content -->
+<div class="hero-wrapper">
+    <div class="page-content">
+
+        <!-- Left Side — Form -->
+        <div class="form-card" id="formCard">
+            <div id="formContent">
+                <div class="form-header">
+                    <h2>Apply to Become an Expert</h2>
+                    <p>Fill in your details and we'll get you set up within 48 hours.</p>
+                </div>
+
+                <form id="expertForm" novalidate>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name <span class="required">*</span></label>
+                            <input type="text" id="firstName" name="firstName" placeholder="Jane" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name <span class="required">*</span></label>
+                            <input type="text" id="lastName" name="lastName" placeholder="Smith" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Work Email <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" placeholder="jane@company.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="company">Company <span class="required">*</span></label>
+                        <input type="text" id="company" name="company" placeholder="Where do you currently work?" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="role">Role / Title <span class="required">*</span></label>
+                        <input type="text" id="role" name="role" placeholder="e.g. Sales Operations Manager" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="linkedin">LinkedIn Profile <span class="required">*</span></label>
+                        <input type="url" id="linkedin" name="linkedin" placeholder="https://linkedin.com/in/yourprofile" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Software Expertise <span class="required">*</span></label>
+                        <div class="tag-input-wrapper" id="tagWrapper">
+                            <input type="text" class="tag-input" id="tagInput" placeholder="Type a product name & press Enter (e.g. Salesforce)">
+                        </div>
+                        <div class="tag-hint">Press Enter or comma to add each product. Add as many as you like.</div>
+                        <input type="hidden" id="expertiseHidden" name="expertise">
+                    </div>
+
+                    <div class="form-error" id="formError" role="alert"></div>
+
+                    <button type="submit" class="btn-submit" id="submitBtn">
+                        Submit Application
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14"/>
+                            <path d="m12 5 7 7-7 7"/>
+                        </svg>
+                    </button>
+                </form>
+
+                <p class="form-note">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    Your information is kept private and never shared publicly.
+                </p>
+            </div>
+
+            <!-- Success State -->
+            <div class="form-success" id="formSuccess">
+                <div class="success-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"/>
+                    </svg>
+                </div>
+                <h3>Application Submitted!</h3>
+                <p>Thanks for signing up. We'll review your profile and get back to you within 48 hours with your next steps.</p>
+            </div>
+        </div>
+
+        <!-- Right Side — Messaging -->
+        <div class="hero-messaging">
+            <div class="badge">
+                <span class="badge-dot"></span>
+                Now Accepting Experts
+            </div>
+            <h1><span style="white-space: nowrap;">Share What You Know.</span><br>Get <span class="serif-italic">Rewarded</span> For It.</h1>
+            <p>Join thousands of professionals who earn by sharing their real-world experience with software buyers making important decisions.</p>
+
+            <div class="trust-signals">
+                <div class="trust-item">
+                    <div class="trust-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12 6 12 12 16 14"/>
+                        </svg>
+                    </div>
+                    <div class="trust-text">15-minute conversations <span>— on your schedule</span></div>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="12" y1="1" x2="12" y2="23"/>
+                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                        </svg>
+                    </div>
+                    <div class="trust-text">$100–$500 per call <span>— paid immediately</span></div>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                    </div>
+                    <div class="trust-text">10,000+ experts <span>— already on the platform</span></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

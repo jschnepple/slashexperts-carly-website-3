@@ -1,0 +1,49 @@
+<footer class="{% if lightFooter %}footer-light{% elif darkOverlayFooter %}footer-dark-overlay{% endif %}">
+    <div class="footer-top">
+        <div class="footer-brand">
+            <a href="/" class="logo">
+                {% if lightFooter %}
+                <img src="/assets/images/full-logo-dark.svg" alt="SlashExperts" class="logo-img">
+                {% else %}
+                <img src="/assets/images/full-logo-white.svg" alt="SlashExperts" class="logo-img">
+                {% endif %}
+            </a>
+            <p>The Trust Layer for B2B Sales. Carly delivers the right customer proof to your prospects at the moments that matter most.</p>
+        </div>
+        <div class="footer-column">
+            <h4>Product</h4>
+            <a href="/how-it-works/">Features</a>
+            <a href="/integrations/">Integrations</a>
+            <a href="/pricing/">Pricing</a>
+        </div>
+        <div class="footer-column">
+            <h4>Solutions</h4>
+            <a href="/solutions-by-use-case/#deal-acceleration">Deal Acceleration</a>
+            <a href="/solutions-by-use-case/#website-conversion">Website Conversion</a>
+            <a href="/solutions-by-use-case/#plg-conversion">PLG Conversion</a>
+            <a href="/solutions-by-use-case/#abm">ABM</a>
+        </div>
+        <div class="footer-column">
+            <h4>Resources</h4>
+            <a href="/blog/">Blog</a>
+            <a href="/documentation/">Documentation</a>
+        </div>
+        <div class="footer-column">
+            <h4>Company</h4>
+            <a href="/about/">About</a>
+            <a href="/careers/">Careers</a>
+            <a href="/privacy-hub/">Trust Center</a>
+            <a href="/contact/">Contact</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© {% year %} SlashExperts. All rights reserved.</p>
+        <div class="footer-legal">
+            <a href="/privacy/">Privacy</a>
+            <a href="/terms/">Terms</a>
+            <a href="/dpa/">DPA</a>
+            <a href="/gdpr/">GDPR</a>
+            <a href="/ccpa/">CCPA</a>
+        </div>
+    </div>
+</footer>

@@ -1,0 +1,50 @@
+[
+  {
+    "slug": "maya-richardson",
+    "name": "Maya Richardson",
+    "initials": "MR",
+    "title": "Head of Research",
+    "bio": "Maya leads research initiatives at SlashExperts, focusing on buyer trust and peer influence in B2B sales.",
+    "avatar": "/assets/images/authors/maya-richardson.webp"
+  },
+  {
+    "slug": "james-sterling",
+    "name": "James Sterling",
+    "initials": "JS",
+    "title": "VP of Sales",
+    "bio": "James brings 15 years of enterprise sales experience to SlashExperts.",
+    "avatar": "/assets/images/authors/james-sterling.webp"
+  },
+  {
+    "slug": "amanda-knox",
+    "name": "Amanda Knox",
+    "initials": "AK",
+    "title": "Customer Success Director",
+    "bio": "Amanda helps customers maximize value from their expert networks.",
+    "avatar": "/assets/images/authors/amanda-knox.webp"
+  },
+  {
+    "slug": "thomas-chen",
+    "name": "Thomas Chen",
+    "initials": "TC",
+    "title": "Product Manager",
+    "bio": "Thomas shapes the SlashExperts product roadmap based on customer feedback.",
+    "avatar": "/assets/images/authors/thomas-chen.webp"
+  },
+  {
+    "slug": "sarah-liu",
+    "name": "Sarah Liu",
+    "initials": "SL",
+    "title": "Marketing Lead",
+    "bio": "Sarah drives growth through content and demand generation.",
+    "avatar": "/assets/images/authors/sarah-liu.webp"
+  },
+  {
+    "slug": "rachel-park",
+    "name": "Rachel Park",
+    "initials": "RP",
+    "title": "Implementation Specialist",
+    "bio": "Rachel helps new customers launch their expert programs successfully.",
+    "avatar": "/assets/images/authors/rachel-park.webp"
+  }
+]

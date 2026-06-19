@@ -1,0 +1,187 @@
+---
+title: Product Tour | SlashExperts
+description: Take an interactive tour of SlashExperts. Discover how teams close 30% more deals by connecting prospects with real customer experts.
+permalink: /product-tour/
+pageCSS: product-tour
+pageJS: product-tour
+lightNav: true
+lastUpdated: 2026-04-10
+---
+
+{% extends "layouts/base.njk" %}
+
+{% block extraHead %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "SlashExperts",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "url": "https://slashexperts.com",
+  "description": "AI-powered peer validation and expert booking platform that connects B2B prospects with existing customers for authentic peer conversations during the sales process.",
+  "featureList": [
+    "Expert booking system — build and manage curated expert networks",
+    "Smart matching — AI pairs prospects with relevant experts using 50+ data points",
+    "Deal intelligence — track pipeline impact and ROI from every expert conversation",
+    "CRM integration — native Salesforce and HubSpot sync with deal attribution",
+    "Chrome extension — share branded booking links directly from your workflow",
+    "Website embeds — let prospects self-serve peer conversations on your site"
+  ]
+}
+</script>
+{% endblock %}
+
+{% block content %}
+<div class="page-content">
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="tour-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="5 3 19 12 5 21 5 3"/>
+            </svg>
+            Interactive Product Tour
+            <span class="duration">~3 min</span>
+        </div>
+
+        <h1>Discover How Teams Close<br><span class="serif-italic">30% More Deals</span></h1>
+
+        <p>See exactly how SlashExperts connects your prospects with real customer experts at the moments that matter most — accelerating trust and shortening sales cycles.</p>
+
+        <div class="trust-badge">
+            <span><span class="stat">+30%</span> avg. improvement in close rates</span>
+            <span class="divider"></span>
+            <span class="companies-text">Trusted by 200+ B2B teams</span>
+        </div>
+    </section>
+
+    <!-- What You'll Discover -->
+    <section class="discover-section">
+        <div class="discover-grid">
+            <div class="discover-item">
+                <div class="discover-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                        <circle cx="9" cy="7" r="4"/>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                    </svg>
+                </div>
+                <div>
+                    <h3>Booking System Setup</h3>
+                    <p>Build your expert network in minutes</p>
+                </div>
+            </div>
+            <div class="discover-item">
+                <div class="discover-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                        <line x1="16" y1="2" x2="16" y2="6"/>
+                        <line x1="8" y1="2" x2="8" y2="6"/>
+                        <line x1="3" y1="10" x2="21" y2="10"/>
+                    </svg>
+                </div>
+                <div>
+                    <h3>Smart Matching</h3>
+                    <p>AI pairs prospects with perfect experts</p>
+                </div>
+            </div>
+            <div class="discover-item">
+                <div class="discover-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="20" x2="18" y2="10"/>
+                        <line x1="12" y1="20" x2="12" y2="4"/>
+                        <line x1="6" y1="20" x2="6" y2="14"/>
+                    </svg>
+                </div>
+                <div>
+                    <h3>Deal Intelligence</h3>
+                    <p>Track impact on pipeline & revenue</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tour Container -->
+    <div class="tour-container">
+        <div class="tour-wrapper">
+            <div class="tour-inner">
+                <iframe
+                    class="tour-embed"
+                    src="https://capture.navattic.com/cm9c0e0v6000004l70l6k3n4d?g=cm9c0efl1000004jw1xdb9bf1&s=0"
+                    title="SlashExperts Product Tour"
+                    allow="fullscreen"
+                    loading="lazy">
+                </iframe>
+                <div class="tour-progress">
+                    <div class="progress-step active">
+                        <span class="progress-dot"></span>
+                        Overview
+                    </div>
+                    <span class="progress-line"></span>
+                    <div class="progress-step">
+                        <span class="progress-dot"></span>
+                        Booking System
+                    </div>
+                    <span class="progress-line"></span>
+                    <div class="progress-step">
+                        <span class="progress-dot"></span>
+                        Matching
+                    </div>
+                    <span class="progress-line"></span>
+                    <div class="progress-step">
+                        <span class="progress-dot"></span>
+                        Analytics
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>Ready to Accelerate Your Pipeline?</h2>
+        <p>Join 200+ B2B teams using authentic peer conversations to win more deals.</p>
+
+        <div class="cta-buttons">
+            <a href="/book-a-demo/" class="btn-cta-primary has-glow has-glow-full">
+                Start Winning More Deals
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14"/>
+                    <path d="m12 5 7 7-7 7"/>
+                </svg>
+            </a>
+            <a href="/book-a-demo/" class="btn-secondary has-glow">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                    <line x1="16" y1="2" x2="16" y2="6"/>
+                    <line x1="8" y1="2" x2="8" y2="6"/>
+                    <line x1="3" y1="10" x2="21" y2="10"/>
+                </svg>
+                Book a Demo
+            </a>
+        </div>
+
+        <div class="social-proof">
+            <div class="proof-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"/>
+                </svg>
+                <span><strong>SOC 2 Type II</strong> certified</span>
+            </div>
+            <div class="proof-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"/>
+                </svg>
+                <span><strong>29% faster</strong> deal cycles</span>
+            </div>
+            <div class="proof-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"/>
+                </svg>
+                <span><strong>35% pipeline</strong> increase</span>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

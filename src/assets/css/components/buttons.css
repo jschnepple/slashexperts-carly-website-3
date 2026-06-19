@@ -1,0 +1,367 @@
+/* ========== BUTTONS ========== */
+
+/* Base button styles */
+.btn {
+    padding: 16px 32px;
+    border-radius: 100px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+}
+
+/* Ghost Button - Transparent with hover */
+.btn-ghost {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 12px 20px;
+    border-radius: 100px;
+    transition: all 0.3s ease;
+    border: none;
+    background: transparent;
+    display: inline-flex;
+    align-items: center;
+}
+
+.btn-ghost:hover {
+    color: var(--white);
+}
+
+/* Nav CTA Button - Gradient Purple with Animated Glow */
+.btn-nav-cta {
+    background: linear-gradient(135deg, #8b5cf6 0%, #a855f7 50%, #9333ea 100%);
+    color: var(--white);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 12px 24px;
+    border-radius: 100px;
+    transition: all 0.3s ease;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    white-space: nowrap;
+    box-shadow:
+        0 4px 20px rgba(139, 92, 246, 0.4),
+        0 0 40px rgba(139, 92, 246, 0.2);
+    animation: navGlowPulse 2.5s ease-in-out infinite;
+}
+
+.btn-nav-cta:hover {
+    transform: translateY(-2px);
+    animation: none;
+    box-shadow:
+        0 6px 30px rgba(139, 92, 246, 0.5),
+        0 0 60px rgba(139, 92, 246, 0.35);
+}
+
+/* Primary button - Violet gradient */
+.btn-primary {
+    background: var(--gradient-violet);
+    color: var(--white);
+    border: 2px solid transparent;
+    box-shadow:
+        0 4px 20px rgba(129, 103, 234, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow:
+        0 8px 30px rgba(129, 103, 234, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+/* Glowing button with animated gradient border */
+.btn-glow {
+    position: relative;
+    background: var(--navy);
+    color: var(--white);
+    z-index: 1;
+    overflow: visible;
+}
+
+.btn-glow::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    background: var(--glow-gradient);
+    background-size: 400% 100%;
+    border-radius: 100px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    animation: gradientMove 8s ease-in-out infinite;
+}
+
+.btn-glow::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--navy);
+    border-radius: 100px;
+    z-index: -1;
+}
+
+.btn-glow:hover::before {
+    opacity: 1;
+}
+
+.btn-glow:hover {
+    transform: translateY(-2px);
+}
+
+/* White button with animated gradient glow */
+.btn-white-glow {
+    position: relative;
+    background: var(--white);
+    color: var(--navy);
+    z-index: 1;
+    font-weight: 700;
+}
+
+.btn-white-glow::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    background: var(--glow-gradient);
+    background-size: 400% 100%;
+    border-radius: 100px;
+    z-index: -1;
+    opacity: 0;
+    animation: gradientMove 8s ease-in-out infinite;
+    transition: opacity 0.5s ease;
+}
+
+.btn-white-glow::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--white);
+    border-radius: 100px;
+    z-index: -1;
+}
+
+.btn-white-glow:hover::before {
+    opacity: 1;
+}
+
+.btn-white-glow:hover {
+    transform: translateY(-2px);
+}
+
+/* Gradient glow button - Violet gradient with animated border */
+.btn-gradient-glow {
+    position: relative;
+    background: var(--gradient-violet);
+    color: var(--white);
+    z-index: 1;
+    overflow: visible;
+    box-shadow: 0 4px 20px rgba(129, 103, 234, 0.4);
+}
+
+.btn-gradient-glow::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    background: var(--glow-gradient);
+    background-size: 400% 100%;
+    border-radius: 100px;
+    z-index: -1;
+    opacity: 0;
+    animation: gradientMove 8s ease-in-out infinite;
+    transition: opacity 0.5s ease;
+}
+
+.btn-gradient-glow:hover::before {
+    opacity: 1;
+}
+
+.btn-gradient-glow:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(129, 103, 234, 0.5);
+}
+
+/* Button sizes */
+.btn-large {
+    padding: 16px 32px;
+    font-size: 16px;
+}
+
+.btn-xl {
+    padding: 20px 40px;
+    font-size: 18px;
+}
+
+/* Color variants */
+.btn-white {
+    background: var(--white);
+    color: var(--navy);
+    border: 2px solid var(--white);
+}
+
+.btn-white:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.btn-dark {
+    background: var(--navy);
+    color: var(--white);
+    box-shadow: 0 4px 20px rgba(14, 14, 68, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle shine effect on dark button - uses ::after to not conflict with .has-glow */
+.btn-dark::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.08), transparent);
+    border-radius: 100px 100px 0 0;
+    pointer-events: none;
+}
+
+.btn-dark:hover {
+    transform: translateY(-3px);
+    background: var(--navy-dark);
+    box-shadow: 0 8px 30px rgba(14, 14, 68, 0.4);
+}
+
+/* Outline button - Default (dark) */
+.btn-outline {
+    background: transparent;
+    color: var(--navy);
+    border: 2px solid rgba(14, 14, 68, 0.15);
+}
+
+.btn-outline:hover {
+    background: rgba(14, 14, 68, 0.05);
+    border-color: rgba(14, 14, 68, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Outline button - Light variant */
+.btn-outline-light {
+    background: transparent;
+    color: var(--white);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-outline-light:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+/* ========== GLOW MODIFIER ========== */
+/* Adds animated rainbow border glow to any button */
+/* Works on both solid AND transparent backgrounds */
+.has-glow {
+    position: relative;
+    overflow: visible;
+    z-index: 1;
+}
+
+.has-glow::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    background: var(--glow-gradient);
+    background-size: 400% 100%;
+    border-radius: 100px;
+    z-index: -1;
+    opacity: 0;
+    animation: gradientMove 8s ease-in-out infinite;
+    transition: opacity 0.5s ease;
+    /* Mask to create ring effect - works on transparent backgrounds */
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    padding: 3px; /* Controls ring/glow thickness */
+}
+
+.has-glow:hover::before {
+    opacity: 1;
+}
+
+/* Full glow variant - removes mask so glow fills entire area */
+.has-glow-full::before {
+    -webkit-mask: none;
+    mask: none;
+    padding: 0;
+}
+
+/* Rectangular glow variant - for elements with slight border-radius */
+.has-glow-rect::before {
+    border-radius: 12px; /* Matches nav dropdown links (10px + 2px for glow offset) */
+}
+
+/* ========== TEXT GLOW ========== */
+/* Animated rainbow gradient on text itself (not border) */
+.has-text-glow {
+    background: var(--glow-gradient);
+    background-size: 400% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientMove 8s ease-in-out infinite;
+}
+
+/* Text glow on hover only */
+.has-text-glow-hover {
+    transition: all 0.3s ease;
+}
+
+.has-text-glow-hover:hover {
+    background: var(--glow-gradient) !important;
+    background-size: 400% 100% !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    color: transparent !important;
+    animation: gradientMove 8s ease-in-out infinite;
+}
+
+/* Button animations */
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 400% 50%; }
+}
