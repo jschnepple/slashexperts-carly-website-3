@@ -1,0 +1,67 @@
+/* ===== shared chrome CSS (lifted verbatim from W-PRICING / W-BOOK-DEMO _chrome) ===== */
+.cz-light{
+  background:var(--w-bg);color:var(--w-text);
+  --w-bg:#f5f5f5; --w-bg-deep:#ebebeb; --w-bg-elev:#fafafa;
+  --w-card:#ffffff; --w-card-lo:#efefef; --w-card-hi:#ffffff;
+  --w-text:var(--w-charcoal); --w-text-2:rgba(28,26,36,0.66); --w-text-3:rgba(28,26,36,0.62);
+  --w-text-prose:#302d2e; --w-text-on-brand:#ffffff; --w-icon-ink:var(--w-charcoal);
+  --w-line-soft:rgba(28,26,36,0.06); --w-line:rgba(28,26,36,0.10); --w-line-strong:rgba(28,26,36,0.16); --w-edge-top:rgba(255,255,255,0.9);
+  --w-brand:var(--w-purple-ink); --w-brand-2:var(--w-purple); --w-brand-soft:rgba(152,135,244,0.10); --w-brand-line:rgba(152,135,244,0.28);
+  --w-shadow-raise:0 8px 18px -8px rgba(28,26,36,0.07), inset 0 1px 0 rgba(255,255,255,0.9);
+  --w-shadow-raise-soft:0 4px 10px -6px rgba(28,26,36,0.05), inset 0 1px 0 rgba(255,255,255,0.85);
+  --w-shadow-recess:inset 0 1px 3px rgba(28,26,36,0.05), inset 0 -1px 0 rgba(255,255,255,0.8);
+  --w-shadow-recess-deep:inset 0 2px 5px rgba(28,26,36,0.07), inset 0 -1px 0 rgba(255,255,255,0.7);
+  --w-shadow-sm:0 1px 2px rgba(28,26,36,0.04); --w-shadow-md:0 4px 12px rgba(28,26,36,0.05); --w-shadow-lg:0 12px 28px rgba(28,26,36,0.07);
+  --w-glow-brand:0 2px 8px rgba(28,26,36,0.05); --w-glow-brand-strong:0 6px 16px rgba(28,26,36,0.07);
+  --w-glass-fill:rgba(255,255,255,0.66); --w-glass-fill-strong:rgba(255,255,255,0.86); --w-glass-tint:rgba(28,26,36,0.90);
+  --w-glass-fill-soft:rgba(28,26,36,0.03); --w-glass-line:rgba(28,26,36,0.10); --w-glass-line-bright:rgba(28,26,36,0.16);
+  --w-glass-rim-top:rgba(255,255,255,0.95); --w-glass-rim-bottom:rgba(28,26,36,0.05);
+  --w-glass-blur:blur(18px) saturate(140%); --w-glass-blur-lg:blur(22px) saturate(145%);
+  --w-glass-shadow:0 10px 24px rgba(28,26,36,0.06); --w-glass-shadow-soft:0 4px 12px rgba(28,26,36,0.05);
+  --w-cta-fill:var(--w-glass-tint); --w-cta-text:#ffffff; --w-cta-glow:var(--w-shadow-md); --w-cta-glow-strong:var(--w-shadow-lg);
+  --w-card-brand-wash:linear-gradient(160deg, rgba(28,26,36,0.06), rgba(28,26,36,0.015)); --w-card-brand-line:var(--w-line-strong);
+  --w-tag-brand-bg:rgba(28,26,36,0.06); --w-tag-brand-fg:var(--w-text); --w-focus:rgba(28,26,36,0.55);
+  --w-grad-surface:linear-gradient(180deg, #ffffff 0%, #f5f5f5 100%);
+  --w-grad-surface-hi:linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
+  --w-grad-recess:linear-gradient(180deg, #ededed 0%, #e3e3e3 100%);
+}
+/* keep glass legible if the OS asks for less transparency, inside a light band */
+@media (prefers-reduced-transparency: reduce){
+  .cz-light .w-glass,.cz-light .w-btn--glass,.cz-light .w-tag,.cz-light .w-card,.cz-light .w-cta-band{background:var(--w-card);border-color:var(--w-line)}
+}
+/* footer peel-up reveal — /Experts static, footer scrolls up over it (matches Home) */
+.w-foot-spacer{display:none}
+@media(min-width:901px){
+  main{position:relative;z-index:1;background:var(--w-bg)}
+  .w-footer{position:relative;z-index:1}
+  .w-footer__bigmark{position:fixed!important;left:0;right:0;bottom:0;z-index:0;overflow:hidden}
+  .w-footer__bigmark-tx{transform:none!important}
+  .w-foot-spacer{display:block}
+}
+@media(max-width:900px){
+  .w-footer__bigmark-tx{transform:none!important;font-size:clamp(52px,21vw,150px)}
+}
+.w-footer{position:relative;z-index:1}
+
+/* ===== W-CONTACT page-local styles ===== */
+.w-section{padding-block:clamp(52px,3vw + 1rem,84px) clamp(76px,4.5vw + 1.7rem,120px)}
+.ct-hero{position:relative;overflow:hidden;background:var(--w-bg);padding-block:clamp(96px,12vh + 2rem,160px) clamp(48px,6vw,84px);text-align:center}
+.ct-hero__bg{position:absolute;inset:0;z-index:0;pointer-events:none;background:radial-gradient(ellipse 60% 55% at 50% 0%,rgba(152,135,244,.16),transparent 70%),radial-gradient(rgba(255,255,255,.045) 1px,transparent 1.4px);background-size:auto,26px 26px}
+.ct-hero__bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent,var(--w-bg))}
+.ct-hero .w-container{position:relative;z-index:1}
+.ct-hero__inner{max-width:760px;margin-inline:auto}
+.ct-hero__h{margin-top:16px;font-size:clamp(40px,5.4vw,76px);line-height:1.03;letter-spacing:-.03em;font-weight:var(--w-fw-black);color:#fff}
+.ct-hero__h .w-accent{font-family:var(--w-font-serif);font-style:italic;font-weight:400;color:#c9bcff;-webkit-text-fill-color:#c9bcff;background:none}
+.ct-hero__lead{margin:18px auto 0;max-width:60ch;color:rgba(255,255,255,.84)}
+.ct-hero__actions{margin-top:28px;display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+.ct-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(16px,1.6vw,22px);margin-top:clamp(38px,4vw,54px)}
+.ct-card{display:flex;flex-direction:column;gap:10px;min-height:230px}
+.ct-card .w-card__foot{margin-top:auto}
+.ct-link{display:inline-flex;align-items:center;gap:7px;color:var(--w-brand);font-weight:var(--w-fw-medium);text-decoration:none}
+.ct-link .w-icon{width:16px;height:16px}
+.ct-link:hover{text-decoration:underline}
+.ct-info{display:flex;flex-wrap:wrap;justify-content:center;gap:14px 40px;margin-top:clamp(30px,3vw,44px);padding-top:clamp(26px,2.6vw,36px);border-top:1px solid var(--w-line)}
+.ct-info__item{display:inline-flex;align-items:center;gap:9px;font-size:15px;color:var(--w-text-2)}
+.ct-info__item .w-icon{width:17px;height:17px;color:var(--w-brand)}
+.ct-info__item a{color:var(--w-text);text-decoration:none;font-weight:var(--w-fw-medium)}
+.ct-info__item a:hover{color:var(--w-brand)}

@@ -195,12 +195,16 @@ export class FormHandler {
     }
 
     async submitToWebhook(formData) {
+        // 3.0 fix (INTEGRATIONS_PARITY §8.2): 2.0 omitted options.metadata (incl. leadSource)
+        // from the n8n payload, so FormHandler forms hit the workflow without a leadSource.
+        // Metadata still flows to Customer.io separately (sendToCustomerIO).
+        const payload = { ...formData, ...(this.options.metadata || {}) };
         const response = await fetch(this.options.webhookUrl, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify(formData)
+            body: JSON.stringify(payload)
         });
 
         if (!response.ok) {

@@ -1,0 +1,381 @@
+---
+title: "Documentation | SlashExperts"
+description: "Everything you need to master SlashExperts — from quick-start guides to advanced integrations and the API. Search the knowledge base or browse by category."
+pageCSS: docs
+ds7: true
+permalink: /documentation/
+---
+
+{% extends "layouts/base-w.njk" %}
+
+{% block content %}
+{% raw %}
+<!-- ══ §1 · HERO — DARK · search-first knowledge base ════════════════════════════ -->
+  <section class="dxh w-section--hero" id="top" data-nav-surface="dark">
+    <div class="w-container dxh__wrap w-stagger">
+      <span class="w-tag w-tag--kicker w-reveal">
+        <svg class="w-icon"><use href="#i-book"/></svg> Documentation
+      </span>
+      <h1 class="dxh__title w-reveal">Find Answers Instantly</h1>
+      <p class="w-lead dxh__lead w-reveal">Everything you need to master SlashExperts&mdash;from quick-start guides to advanced integrations. Search our knowledge base or browse by category.</p>
+      <div class="dxh__search w-reveal">
+        <svg class="w-icon dxh__search-ic"><use href="#i-search"/></svg>
+        <input class="dxh__input" type="text" placeholder="Search guides, tutorials, and API reference&hellip;" aria-label="Search documentation">
+        <button class="dxh__searchbtn" type="button">Search</button>
+      </div>
+      <div class="dxh__chips w-reveal">
+        <a class="dxh__chip" href="#categories">Getting started</a>
+        <a class="dxh__chip" href="#categories">Booking system setup</a>
+        <a class="dxh__chip" href="#categories">Expert onboarding</a>
+        <a class="dxh__chip" href="#categories">Integrations</a>
+        <a class="dxh__chip" href="#categories">Analytics</a>
+      </div>
+      <div class="dxh__stats w-reveal">
+        <span class="dxh__stat"><svg class="w-icon"><use href="#i-link"/></svg> 50+ apps</span>
+        <span class="dxh__stat"><svg class="w-icon"><use href="#i-shield"/></svg> SOC 2 Certified</span>
+        <span class="dxh__stat"><svg class="w-icon"><use href="#i-clock"/></svg> Updated weekly</span>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ §2 · QUICK-START — LIGHT (panel-rise) · 3-step guided path [NEW] ══════════ -->
+  <section class="cz-light dxq w-section w-panel-rise" id="start" data-nav-surface="light">
+    <div class="w-container">
+      <div class="w-section-head w-section-head--center w-reveal">
+        <span class="w-tag w-tag--kicker">
+          <svg class="w-icon"><use href="#i-play"/></svg> New here?
+        </span>
+        <h2 class="dxq__title">Get started in 3 steps</h2>
+        <p class="w-lead dxq__lead">Go from sign-up to your first expert booking in an afternoon.</p>
+      </div>
+      <div class="dxq__grid w-stagger">
+        <article class="dxq__step w-card w-card--brand w-card--link w-reveal w-reveal--scale">
+          <span class="dxq__num">1</span>
+          <h3 class="dxq__h">Set up your account</h3>
+          <p class="dxq__b">Create your workspace, configure your brand, and invite your team in minutes.</p>
+        </article>
+        <article class="dxq__step w-card w-card--brand w-card--link w-reveal w-reveal--scale">
+          <span class="dxq__num">2</span>
+          <h3 class="dxq__h">Invite your first experts</h3>
+          <p class="dxq__b">Recruit your happiest customers, send opt-in invites, and build your expert network.</p>
+        </article>
+        <article class="dxq__step w-card w-card--brand w-card--link w-reveal w-reveal--scale">
+          <span class="dxq__num">3</span>
+          <h3 class="dxq__h">Embed your booking system</h3>
+          <p class="dxq__b">Drop the booking widget onto your site with a few lines of code and go live.</p>
+        </article>
+      </div>
+      <div class="dxq__cta w-reveal">
+        <a class="w-btn w-btn--ghost" href="#start">Read the quick-start guide <svg class="w-icon"><use href="#i-arrow-right"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ §3 · BROWSE BY CATEGORY — LIGHT · 6 topic cards ══════════════════════════ -->
+  <section class="cz-light dxc w-section" id="categories" data-nav-surface="light">
+    <div class="w-container">
+      <div class="w-section-head w-section-head--center w-reveal">
+        <span class="w-tag w-tag--kicker">
+          <svg class="w-icon"><use href="#i-file"/></svg> Knowledge base
+        </span>
+        <h2 class="dxc__title">Browse by Category</h2>
+        <p class="w-lead dxc__lead">Find guides organized by topic to help you get the most out of SlashExperts</p>
+      </div>
+      <div class="dxc__grid w-stagger">
+
+        <article class="dxc__card w-card w-card--brand w-card--link w-reveal w-reveal--scale">
+          <span class="dxc__ic"><svg class="w-icon"><use href="#i-play"/></svg></span>
+          <h3 class="dxc__h">Getting Started</h3>
+          <p class="dxc__b">Quick-start guides to get your team up and running with SlashExperts in minutes.</p>
+          <div class="dxc__links">
+            <a class="dxc__link" href="#">Account setup &amp; configuration</a>
+            <a class="dxc__link" href="#">Inviting your first experts</a>
+            <a class="dxc__link" href="#">Your first booking walkthrough</a>
+          </div>
+          <span class="dxc__count">12 articles</span>
+        </article>
+
+        <article class="dxc__card w-card w-card--brand w-card--link w-reveal w-reveal--scale">
+          <span class="dxc__ic"><svg class="w-icon"><use href="#i-book"/></svg></span>
+          <h3 class="dxc__h">Platform Guide</h3>
+          <p class="dxc__b">Deep-dive into every feature and capability of the SlashExperts platform.</p>
+          <div class="dxc__links">
+            <a class="dxc__link" href="#">Dashboard overview</a>
+            <a class="dxc__link" href="#">Managing expert profiles</a>
+            <a class="dxc__link" href="#">Analytics &amp; reporting</a>
+          </div>
+          <span class="dxc__count">24 articles</span>
+        </article>
+
+        <article class="dxc__card w-card w-card--brand w-card--link w-reveal w-reveal--scale">
+          <span class="dxc__ic"><svg class="w-icon"><use href="#i-users"/></svg></span>
+          <h3 class="dxc__h">Expert Setup</h3>
+          <p class="dxc__b">Everything you need to recruit, onboard, and manage your expert network.</p>
+          <div class="dxc__links">
+            <a class="dxc__link" href="#">Expert recruitment best practices</a>
+            <a class="dxc__link" href="#">Configuring incentive programs</a>
+            <a class="dxc__link" href="#">Expert profile optimization</a>
+          </div>
+          <span class="dxc__count">18 articles</span>
+        </article>
+
+        <article class="dxc__card w-card w-card--brand w-card--link w-reveal w-reveal--scale">
+          <span class="dxc__ic"><svg class="w-icon"><use href="#i-link"/></svg></span>
+          <h3 class="dxc__h">Integrations</h3>
+          <p class="dxc__b">Connect SlashExperts with your CRM, calendar, and favorite tools.</p>
+          <div class="dxc__links">
+            <a class="dxc__link" href="#">Salesforce integration</a>
+            <a class="dxc__link" href="#">HubSpot integration</a>
+            <a class="dxc__link" href="#">Calendar sync (Google, Outlook)</a>
+          </div>
+          <span class="dxc__count">15 articles</span>
+        </article>
+
+        <article class="dxc__card w-card w-card--brand w-card--link w-reveal w-reveal--scale">
+          <span class="dxc__ic"><svg class="w-icon"><use href="#i-calendar"/></svg></span>
+          <h3 class="dxc__h">Booking System</h3>
+          <p class="dxc__b">Set up and customize your expert booking system for maximum conversion.</p>
+          <div class="dxc__links">
+            <a class="dxc__link" href="#">Embedding on your website</a>
+            <a class="dxc__link" href="#">Customizing booking widgets</a>
+            <a class="dxc__link" href="#">Managing availability</a>
+          </div>
+          <span class="dxc__count">21 articles</span>
+        </article>
+
+        <article class="dxc__card w-card w-card--brand w-card--link w-reveal w-reveal--scale">
+          <span class="dxc__ic"><svg class="w-icon"><use href="#i-settings"/></svg></span>
+          <h3 class="dxc__h">API &amp; Developers</h3>
+          <p class="dxc__b">Technical documentation for building custom integrations with our API.</p>
+          <div class="dxc__links">
+            <a class="dxc__link" href="#">API quickstart guide</a>
+            <a class="dxc__link" href="#">Authentication &amp; tokens</a>
+            <a class="dxc__link" href="#">Webhooks reference</a>
+          </div>
+          <span class="dxc__count">32 articles</span>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ §4 · MOST POPULAR — LIGHT · article rows ═════════════════════════════════ -->
+  <section class="cz-light dxp w-section" id="popular" data-nav-surface="light">
+    <div class="w-container">
+      <div class="dxp__head w-reveal">
+        <h2 class="dxp__title">Most Popular</h2>
+        <a class="dxp__viewall" href="#categories">View all articles <svg class="w-icon"><use href="#i-arrow-right"/></svg></a>
+      </div>
+      <div class="dxp__list w-stagger">
+        <a class="dxp__item w-card w-card--soft w-card--link w-reveal" href="#">
+          <span class="dxp__ic"><svg class="w-icon"><use href="#i-widget"/></svg></span>
+          <div class="dxp__tx">
+            <h3 class="dxp__h">How to embed the booking system on your website</h3>
+            <p class="dxp__b">Step-by-step guide to adding the SlashExperts booking widget to any website with just a few lines of code.</p>
+            <div class="dxp__meta"><span><svg class="w-icon"><use href="#i-clock"/></svg> 8 min read</span><span><svg class="w-icon"><use href="#i-trending"/></svg> 12.4k views</span></div>
+          </div>
+          <svg class="w-icon dxp__arrow"><use href="#i-arrow-right"/></svg>
+        </a>
+        <a class="dxp__item w-card w-card--soft w-card--link w-reveal" href="#">
+          <span class="dxp__ic"><svg class="w-icon"><use href="#i-link"/></svg></span>
+          <div class="dxp__tx">
+            <h3 class="dxp__h">Setting up Salesforce integration</h3>
+            <p class="dxp__b">Sync your SlashExperts bookings with Salesforce to track deals influenced by expert conversations.</p>
+            <div class="dxp__meta"><span><svg class="w-icon"><use href="#i-clock"/></svg> 12 min read</span><span><svg class="w-icon"><use href="#i-trending"/></svg> 9.8k views</span></div>
+          </div>
+          <svg class="w-icon dxp__arrow"><use href="#i-arrow-right"/></svg>
+        </a>
+        <a class="dxp__item w-card w-card--soft w-card--link w-reveal" href="#">
+          <span class="dxp__ic"><svg class="w-icon"><use href="#i-users"/></svg></span>
+          <div class="dxp__tx">
+            <h3 class="dxp__h">Best practices for expert recruitment</h3>
+            <p class="dxp__b">Learn how top companies build and maintain a thriving network of engaged customer experts.</p>
+            <div class="dxp__meta"><span><svg class="w-icon"><use href="#i-clock"/></svg> 15 min read</span><span><svg class="w-icon"><use href="#i-trending"/></svg> 8.2k views</span></div>
+          </div>
+          <svg class="w-icon dxp__arrow"><use href="#i-arrow-right"/></svg>
+        </a>
+        <a class="dxp__item w-card w-card--soft w-card--link w-reveal" href="#">
+          <span class="dxp__ic"><svg class="w-icon"><use href="#i-chart"/></svg></span>
+          <div class="dxp__tx">
+            <h3 class="dxp__h">Understanding analytics and attribution</h3>
+            <p class="dxp__b">Master the reporting dashboard to measure expert impact on pipeline and closed-won revenue.</p>
+            <div class="dxp__meta"><span><svg class="w-icon"><use href="#i-clock"/></svg> 10 min read</span><span><svg class="w-icon"><use href="#i-trending"/></svg> 7.6k views</span></div>
+          </div>
+          <svg class="w-icon dxp__arrow"><use href="#i-arrow-right"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ §5 · API BAND — DARK (panel-rise) · developer code moment [NEW] ══════════ -->
+  <section class="dxa w-section w-panel-rise w-panel-rise--dark" id="api" data-nav-surface="dark">
+    <div class="w-container dxa__grid">
+      <div class="dxa__copy w-stagger">
+        <span class="w-tag w-tag--kicker w-reveal">
+          <svg class="w-icon"><use href="#i-settings"/></svg> For developers
+        </span>
+        <h2 class="dxa__title w-reveal">Build with the SlashExperts API</h2>
+        <p class="dxa__body w-reveal">Programmatic access to bookings, experts, and events. Authenticate with a token, call the REST API, and subscribe to webhooks to keep your systems in sync.</p>
+        <div class="dxa__cta w-reveal">
+          <a class="w-btn w-btn--primary" href="#">Read the API docs</a>
+          <a class="dxa__ghost" href="#">Get your API key</a>
+        </div>
+      </div>
+      <div class="dxa__code w-reveal">
+        <div class="dxa__code-bar"><span class="dxa__dot"></span><span class="dxa__dot"></span><span class="dxa__dot"></span><em class="dxa__file">create_booking.sh</em></div>
+        <pre class="dxa__pre"><code><span class="c-c"># Create a booking via the REST API</span>
+curl -X POST https://api.slashexperts.com/v1/bookings \
+  -H <span class="c-s">"Authorization: Bearer $SE_TOKEN"</span> \
+  -H <span class="c-s">"Content-Type: application/json"</span> \
+  -d '{
+    <span class="c-k">"expert_id"</span>: <span class="c-s">"exp_8Kd2"</span>,
+    <span class="c-k">"prospect_email"</span>: <span class="c-s">"buyer@acme.com"</span>,
+    <span class="c-k">"source"</span>: <span class="c-s">"website_widget"</span>
+  }'
+
+<span class="c-c"># → 201 Created</span>
+<span class="c-p">{</span> <span class="c-k">"id"</span>: <span class="c-s">"bk_19Xa"</span>, <span class="c-k">"status"</span>: <span class="c-s">"confirmed"</span> <span class="c-p">}</span></code></pre>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ §6 · VIDEO TUTORIALS — LIGHT (panel-rise) · 3 video cards ════════════════ -->
+  <section class="cz-light dxv w-section w-panel-rise" id="videos" data-nav-surface="light">
+    <div class="w-container">
+      <div class="w-section-head w-section-head--center w-reveal">
+        <span class="w-tag w-tag--kicker">
+          <svg class="w-icon"><use href="#i-play"/></svg> Watch &amp; learn
+        </span>
+        <h2 class="dxv__title">Video Tutorials</h2>
+        <p class="w-lead dxv__lead">Learn visually with our step-by-step video guides</p>
+      </div>
+      <div class="dxv__grid w-stagger">
+        <a class="dxv__card w-reveal w-reveal--scale" href="#">
+          <span class="dxv__thumb dxv__thumb--1"><span class="dxv__play"><svg class="w-icon"><use href="#i-play"/></svg></span><span class="dxv__dur">4:32</span></span>
+          <div class="dxv__body"><span class="dxv__tag">Overview</span><h3 class="dxv__h">Platform Overview in 5 Minutes</h3><p class="dxv__b">A quick tour of the SlashExperts dashboard and key features.</p></div>
+        </a>
+        <a class="dxv__card w-reveal w-reveal--scale" href="#">
+          <span class="dxv__thumb dxv__thumb--2"><span class="dxv__play"><svg class="w-icon"><use href="#i-play"/></svg></span><span class="dxv__dur">7:15</span></span>
+          <div class="dxv__body"><span class="dxv__tag">Setup</span><h3 class="dxv__h">Building Your Expert Network</h3><p class="dxv__b">How to invite, onboard, and engage your customer experts.</p></div>
+        </a>
+        <a class="dxv__card w-reveal w-reveal--scale" href="#">
+          <span class="dxv__thumb dxv__thumb--3"><span class="dxv__play"><svg class="w-icon"><use href="#i-play"/></svg></span><span class="dxv__dur">6:48</span></span>
+          <div class="dxv__body"><span class="dxv__tag">Advanced</span><h3 class="dxv__h">Maximizing Conversion Rates</h3><p class="dxv__b">Pro tips for optimizing your booking system placement and design.</p></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ §7 · WHAT'S NEW — LIGHT · changelog highlights [NEW] ═════════════════════ -->
+  <section class="cz-light dxn w-section" id="whats-new" data-nav-surface="light">
+    <div class="w-container">
+      <div class="w-section-head w-section-head--center w-reveal">
+        <span class="w-tag w-tag--kicker">
+          <svg class="w-icon"><use href="#i-bell"/></svg> Changelog
+        </span>
+        <h2 class="dxn__title">What's new</h2>
+        <p class="w-lead dxn__lead">The latest improvements to the platform and the docs.</p>
+      </div>
+      <div class="dxn__list w-stagger">
+        <div class="dxn__item w-card w-card--soft w-reveal">
+          <span class="dxn__date">Jul 2026</span>
+          <div class="dxn__tx"><span class="dxn__badge">New</span><h3 class="dxn__h">Two-way Salesforce sync</h3><p class="dxn__b">Bookings and outcomes now sync bi-directionally with your Salesforce opportunities.</p></div>
+        </div>
+        <div class="dxn__item w-card w-card--soft w-reveal">
+          <span class="dxn__date">Jun 2026</span>
+          <div class="dxn__tx"><span class="dxn__badge dxn__badge--imp">Improved</span><h3 class="dxn__h">Redesigned analytics dashboard</h3><p class="dxn__b">Clearer attribution from expert conversations to pipeline and closed-won revenue.</p></div>
+        </div>
+        <div class="dxn__item w-card w-card--soft w-reveal">
+          <span class="dxn__date">May 2026</span>
+          <div class="dxn__tx"><span class="dxn__badge">New</span><h3 class="dxn__h">Webhooks 2.0</h3><p class="dxn__b">New event types and signed payloads for more reliable, secure integrations.</p></div>
+        </div>
+        <div class="dxn__item w-card w-card--soft w-reveal">
+          <span class="dxn__date">Apr 2026</span>
+          <div class="dxn__tx"><span class="dxn__badge dxn__badge--imp">Improved</span><h3 class="dxn__h">Embeddable booking widget v3</h3><p class="dxn__b">Faster load, fresh themes, and better mobile conversion out of the box.</p></div>
+        </div>
+      </div>
+      <div class="dxn__cta w-reveal">
+        <a class="w-btn w-btn--ghost" href="#whats-new">View full changelog <svg class="w-icon"><use href="#i-arrow-right"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ §8 · FAQ — LIGHT · native accordion [NEW] ═══════════════════════════════ -->
+  <section class="cz-light dxf w-section" id="faq" data-nav-surface="light">
+    <div class="w-container dxf__wrap">
+      <div class="w-section-head w-section-head--center w-reveal">
+        <span class="w-tag w-tag--kicker">
+          <svg class="w-icon"><use href="#i-message"/></svg> FAQ
+        </span>
+        <h2 class="dxf__title">Frequently asked questions</h2>
+      </div>
+      <div class="dxf__list w-stagger">
+        <details class="dxf__item w-reveal">
+          <summary class="dxf__q">How long does it take to get set up?<svg class="w-icon dxf__chev"><use href="#i-chevron-down"/></svg></summary>
+          <div class="dxf__a"><p>Most teams are live within a day. Account setup takes minutes, and embedding the booking widget is just a few lines of code.</p></div>
+        </details>
+        <details class="dxf__item w-reveal">
+          <summary class="dxf__q">Do you integrate with my CRM?<svg class="w-icon dxf__chev"><use href="#i-chevron-down"/></svg></summary>
+          <div class="dxf__a"><p>Yes &mdash; native Salesforce and HubSpot integrations, plus calendar sync with Google and Outlook. See the Integrations category for setup guides.</p></div>
+        </details>
+        <details class="dxf__item w-reveal">
+          <summary class="dxf__q">How do experts get onboarded?<svg class="w-icon dxf__chev"><use href="#i-chevron-down"/></svg></summary>
+          <div class="dxf__a"><p>You invite happy customers, they opt in, and you configure their incentives and profiles. The Expert Setup guides walk through the best practices.</p></div>
+        </details>
+        <details class="dxf__item w-reveal">
+          <summary class="dxf__q">Is there an API?<svg class="w-icon dxf__chev"><use href="#i-chevron-down"/></svg></summary>
+          <div class="dxf__a"><p>Yes. Our REST API covers bookings, experts, and events, with token authentication and webhooks. Start with the API quickstart guide.</p></div>
+        </details>
+        <details class="dxf__item w-reveal">
+          <summary class="dxf__q">Where can I get help?<svg class="w-icon dxf__chev"><use href="#i-chevron-down"/></svg></summary>
+          <div class="dxf__a"><p>Live chat during business hours, email support within 24 hours, our community, or a 1-on-1 call with our success team.</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ §9 · SUPPORT CTA — LIGHT · nebula band + channel cards ═══════════════════ -->
+  <section class="cz-light dxs w-section" id="support" data-nav-surface="light">
+    <div class="w-container">
+      <div class="dxs__band w-reveal">
+        <h2 class="dxs__title">Still Have Questions?</h2>
+        <p class="dxs__body">Our support team is here to help you succeed. Reach out anytime and we'll get back to you within hours, not days.</p>
+        <div class="dxs__actions">
+          <a class="w-btn w-btn--primary w-btn--lg" href="/contact">Contact Support</a>
+          <a class="dxs__ghost" href="#">Join Community</a>
+        </div>
+      </div>
+      <div class="dxs__grid w-stagger">
+        <div class="dxs__ch w-reveal w-reveal--scale">
+          <span class="dxs__ch-ic"><svg class="w-icon"><use href="#i-message"/></svg></span>
+          <h3 class="dxs__ch-h">Live Chat</h3>
+          <p class="dxs__ch-b">Chat with our team in real-time during business hours.</p>
+        </div>
+        <div class="dxs__ch w-reveal w-reveal--scale">
+          <span class="dxs__ch-ic"><svg class="w-icon"><use href="#i-mail"/></svg></span>
+          <h3 class="dxs__ch-h">Email Support</h3>
+          <p class="dxs__ch-b">Send us a message and we'll respond within 24 hours.</p>
+        </div>
+        <div class="dxs__ch w-reveal w-reveal--scale">
+          <span class="dxs__ch-ic"><svg class="w-icon"><use href="#i-users"/></svg></span>
+          <h3 class="dxs__ch-h">Community</h3>
+          <p class="dxs__ch-b">Join 2,000+ users sharing tips and best practices.</p>
+        </div>
+        <div class="dxs__ch w-reveal w-reveal--scale">
+          <span class="dxs__ch-ic"><svg class="w-icon"><use href="#i-calendar"/></svg></span>
+          <h3 class="dxs__ch-h">Book a Call</h3>
+          <p class="dxs__ch-b">Schedule a 1-on-1 session with our success team.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endraw %}
+{% endblock %}

@@ -1,44 +1,39 @@
-# Dependencies
+# ── Dependencies / build ──
 node_modules/
 package-lock.json
 yarn.lock
 pnpm-lock.yaml
-
-# Build outputs
 _site/
 dist/
 .cache/
+.vite/
 
-# Environment variables
+# ── Environment / secrets ──
 .env
 .env.local
 .env.*.local
-
-# Editor directories and files
-.vscode/
-.idea/
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
-.DS_Store
-
-# Debug logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-
-# Vite
-.vite/
-
-# One-time migration files (Session 30 - Webflow blog migration)
-migration-report.json
-webflow-export.csv
-
-# Local SSL certificates (generated via mkcert)
 certs/
 
-# Hosted landing page examples (client-specific)
-hosted-landing-page-example/
+# ── Editor / OS ──
+.vscode/
+.idea/
+.DS_Store
+*.log
+
+# ── 3.0 EXECUTION WORKSPACE (not deployed to CloudCannon) ──
+# Designer input bundles — source material only
+Original Pages/
+# Phase 1/2 working copies, ledgers, screenshots
+Working Pages/
+# Project brain: plan, status, tracker, doctrine, gates, session logs
+_project/
+_tools/
+PROJECT_PLAN.md
+*.bundle.html
+# ── Claude / agent working files (not part of the site) ──
+/CLAUDE.md
+/CONTRIBUTING.md
+/ASSET_TEMPLATE_GUIDE.md
+/.gitignore.check
+/docs/
+*.skill

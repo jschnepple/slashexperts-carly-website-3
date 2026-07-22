@@ -1,0 +1,2520 @@
+:root{
+  /* shared avatar token canonical ds7.css lacks (D51 page-scoped) */
+  --w-img-av-george: url("/assets/images/w/av-george.png");
+}
+
+/* ============================================================================
+   W-CARLY-USECASES · Carly Use Cases  /carly/use-cases/
+   Theme rhythm: D · D · L · L · L · L · L · D · L
+     dark open (hero + the FIVE moves) → LONG LIGHT RUN carrying all five use
+     cases (told apart by LAYOUT, not by a theme stripe) → ONE dark punch on
+     §8 The Pattern (the loop diagram IS the page's thesis) → light CTA close.
+   Prefixes: cuh- hero · cum- moves · cud- momentum · cup- proof · cuv- conversations
+             cuo- outbound · cui- intelligence · cul- loop · cuc- cta · cux- scene kit
+   Foundation-only: every value is a --w-* token. No invented tokens, no raw brand hex.
+   ============================================================================ */
+
+/* ===== light-band technique (.cz-light) — WHITE variant (verbatim from sibling Carly-depth pages) ===== */
+.cz-light{
+  background:var(--w-bg);color:var(--w-text);
+  --w-bg:#ffffff; --w-bg-deep:#ececec; --w-bg-elev:#ffffff;
+  --w-card:#ffffff; --w-card-lo:#efefef; --w-card-hi:#ffffff;
+  --w-text:var(--w-charcoal); --w-text-2:rgba(28,26,36,0.66); --w-text-3:rgba(28,26,36,0.62);
+  --w-text-prose:#302d2e; --w-text-on-brand:#ffffff; --w-icon-ink:var(--w-charcoal);
+  --w-line-soft:rgba(28,26,36,0.06); --w-line:rgba(28,26,36,0.10); --w-line-strong:rgba(28,26,36,0.16); --w-edge-top:rgba(255,255,255,0.9);
+  --w-brand:var(--w-purple-ink); --w-brand-2:var(--w-purple); --w-brand-soft:rgba(152,135,244,0.10); --w-brand-line:rgba(152,135,244,0.28);
+  --w-shadow-raise:0 8px 18px -8px rgba(28,26,36,0.07), inset 0 1px 0 rgba(255,255,255,0.9);
+  --w-shadow-raise-soft:0 4px 10px -6px rgba(28,26,36,0.05), inset 0 1px 0 rgba(255,255,255,0.85);
+  --w-shadow-recess:inset 0 1px 3px rgba(28,26,36,0.05), inset 0 -1px 0 rgba(255,255,255,0.8);
+  --w-shadow-recess-deep:inset 0 2px 5px rgba(28,26,36,0.07), inset 0 -1px 0 rgba(255,255,255,0.7);
+  --w-shadow-sm:0 1px 2px rgba(28,26,36,0.04); --w-shadow-md:0 4px 12px rgba(28,26,36,0.05); --w-shadow-lg:0 12px 28px rgba(28,26,36,0.07);
+  --w-glow-brand:0 2px 8px rgba(28,26,36,0.05); --w-glow-brand-strong:0 6px 16px rgba(28,26,36,0.07);
+  --w-glass-fill:rgba(255,255,255,0.66); --w-glass-fill-strong:rgba(255,255,255,0.86); --w-glass-tint:rgba(28,26,36,0.90);
+  --w-glass-fill-soft:rgba(28,26,36,0.03); --w-glass-line:rgba(28,26,36,0.10); --w-glass-line-bright:rgba(28,26,36,0.16);
+  --w-glass-rim-top:rgba(255,255,255,0.95); --w-glass-rim-bottom:rgba(28,26,36,0.05);
+  --w-glass-blur:blur(18px) saturate(140%); --w-glass-blur-lg:blur(22px) saturate(145%);
+  --w-glass-shadow:0 10px 24px rgba(28,26,36,0.06); --w-glass-shadow-soft:0 4px 12px rgba(28,26,36,0.05);
+  --w-cta-fill:var(--w-glass-tint); --w-cta-text:#ffffff; --w-cta-glow:var(--w-shadow-md); --w-cta-glow-strong:var(--w-shadow-lg);
+  --w-card-brand-wash:linear-gradient(160deg, rgba(28,26,36,0.06), rgba(28,26,36,0.015)); --w-card-brand-line:var(--w-line-strong);
+  --w-tag-brand-bg:rgba(28,26,36,0.06); --w-tag-brand-fg:var(--w-text); --w-focus:rgba(28,26,36,0.55);
+  --w-grad-surface:linear-gradient(180deg, #ffffff 0%, #f5f5f5 100%);
+  --w-grad-surface-hi:linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
+  --w-grad-recess:linear-gradient(180deg, #ededed 0%, #e3e3e3 100%);
+  /* ⚠️ MUST re-declare: --w-edge-fade is declared in :root with var(--w-bg) INSIDE it, so it
+     substitutes to the DARK bg there and inherits already-resolved. Without this, every cux-
+     scene's edge-fade dissolves to charcoal on a white section (the "gray box" bug). */
+  --w-edge-fade:radial-gradient(ellipse 84% 82% at 50% 48%, transparent 52%, var(--w-bg) 100%);
+}
+@media (prefers-reduced-transparency: reduce){
+  .cz-light .w-glass,.cz-light .w-btn--glass,.cz-light .w-tag,.cz-light .w-card,.cz-light .w-cta-band{background:var(--w-card);border-color:var(--w-line)}
+}
+
+/* ===== asymmetric section rhythm (tight top / generous bottom) ===== */
+.w-section{padding-block:clamp(36px, 2.2vw + 1rem, 64px) clamp(64px, 4vw + 1.7rem, 108px)}
+.w-section--hero{padding-block:clamp(96px, 6rem + 5vw, 168px) clamp(72px, 5vw + 2rem, 128px)}
+.w-badge{box-shadow:0 2px 10px rgba(12,10,22,.12), inset 0 1px 0 var(--w-glass-rim-top)}
+.w-panel-rise{--w-panel-overlap:34px}
+
+
+/* ═══ page-scoped image tokens (dev paths; base64'd at bundle) ═══════════════ */
+:root{
+  --w-img-cuc-ctabg:url("/assets/images/w/use-cases/cuc-ctabg.webp");
+  --w-img-av-lauren:url("/assets/images/w/use-cases/av-lauren.webp");
+  --w-img-dock:url("/assets/images/w/use-cases/dock.png");   /* real customer logo (transparent) */
+  /* Carly avatar, optimized: the foundation --w-img-carly is an 80KB 256px PNG, and
+     inline var() images inline PER OCCURRENCE at bundle (7 cards → 560KB). This 96px
+     WebP (~1.8KB) is what the scene cards use instead. */
+  --w-img-cuav:url("/assets/images/w/use-cases/cuav.webp");
+  --w-img-visor-sm:url("/assets/images/w/use-cases/visor-sm.webp");   /* the /AGENTS visor — timeline playhead */
+  /* real B2B SaaS company marks (from the SE Logo Collection) — §6 pipeline rows */
+  --w-img-co-gong:url("/assets/images/w/use-cases/co-gong.webp");
+  --w-img-co-apollo:url("/assets/images/w/use-cases/co-apollo.webp");
+  --w-img-co-clay:url("/assets/images/w/use-cases/co-clay.webp");
+  --w-img-co-outreach:url("/assets/images/w/use-cases/co-outreach.webp");
+  --w-img-co-sendoso:url("/assets/images/w/use-cases/co-sendoso.webp");
+  --w-img-co-clari:url("/assets/images/w/use-cases/co-clari.webp");
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   THE USE-CASE BAND — the page's structural workhorse (§3–§6)
+   Four bands, ONE anatomy: head (kicker · title · lead) → the moment (argument +
+   scene) → three moves → payoff (+ proof + CTA) → works-with. Each band varies its
+   SHAPE (media side / bleed / bento vs rail vs table) — that variety is what carries
+   the long light run, per MAP Rule 6b. Shared bones live here; per-band shape below.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.cub{position:relative}
+/* scroll-margin so an anchor jump from the nav / the §2 cards / the §7 loop diagram
+   clears the sticky nav bar instead of hiding the band's kicker under it. */
+.cub[id]{scroll-margin-top:88px}
+
+.cub__head{max-width:820px}
+.cub__title{font-size:var(--w-fs-h1);margin-top:var(--w-s-4)}
+.cub__lead{margin-top:var(--w-s-4);color:var(--w-text-prose);font-size:var(--w-fs-lead);
+  max-width:64ch;line-height:1.5}
+
+/* — the moment: the argument paragraph. Serif accent carries the emphasis, not colour. */
+.cub__moment-t{font-size:var(--w-fs-h3);max-width:22ch}
+.cub__moment-b{margin-top:var(--w-s-4);color:var(--w-text-prose);font-size:var(--w-fs-prose);
+  line-height:1.62;max-width:60ch}
+
+/* — three moves */
+.cub__moves-t{font-size:var(--w-fs-h3);margin-bottom:var(--w-s-6)}
+.cub__moves{display:grid;gap:var(--w-s-5)}
+.cub__moves--3{grid-template-columns:repeat(3,1fr)}
+.cub__move{padding:var(--w-s-6);border-radius:var(--w-r-xl);background:var(--w-card);
+  border:1px solid var(--w-line);box-shadow:var(--w-shadow-raise-soft)}
+.cub__move-ic{width:40px;height:40px;border-radius:var(--w-r-md);display:grid;place-items:center;
+  background:var(--w-charcoal);margin-bottom:var(--w-s-4)}
+.cub__move-ic .w-icon{width:20px;height:20px;color:#fff}
+.cub__move-t{font-size:var(--w-fs-body);font-weight:var(--w-fw-bold);margin-bottom:var(--w-s-2)}
+.cub__move-b{color:var(--w-text-prose);font-size:var(--w-fs-sm);line-height:1.6}
+
+/* — payoff strip: the section's "so what". Title + body + proof + CTA. */
+.cub__payoff{margin-top:var(--w-s-9);padding-top:var(--w-s-8);
+  border-top:1px solid var(--w-line);
+  display:grid;grid-template-columns:1.15fr 1fr;gap:var(--w-s-8);align-items:start}
+.cub__payoff-t{font-size:var(--w-fs-h3)}
+.cub__payoff-b{margin-top:var(--w-s-4);color:var(--w-text-prose);font-size:var(--w-fs-prose);
+  line-height:1.62}
+.cub__payoff-side{display:flex;flex-direction:column;gap:var(--w-s-5)}
+.cub__cta{display:flex;gap:var(--w-s-4);align-items:center;flex-wrap:wrap}
+
+/* — works-with: the loop, made walkable. Quiet by design — it must not compete with the CTA. */
+.cub__with{margin-top:var(--w-s-8);padding-top:var(--w-s-6);border-top:1px solid var(--w-line-soft)}
+.cub__with-lead{font-size:var(--w-fs-sm);font-weight:var(--w-fw-semi);color:var(--w-text-2);
+  margin-bottom:var(--w-s-4)}
+.cub__with-list{display:grid;gap:var(--w-s-3)}
+.cub__with-item{display:flex;gap:var(--w-s-3);align-items:baseline;
+  color:var(--w-text-prose);font-size:var(--w-fs-sm);line-height:1.6}
+.cub__with-item>.w-icon{width:16px;height:16px;flex:none;color:var(--w-text-3);
+  transform:translateY(2px)}
+.cub__with-item a{color:var(--w-text);font-weight:var(--w-fw-semi);
+  border-bottom:1px solid var(--w-line-strong);transition:border-color var(--w-dur) var(--w-ease)}
+.cub__with-item a:hover{border-bottom-color:var(--w-text)}
+
+/* ═══ PROOF PRIMITIVES ══════════════════════════════════════════════════════ */
+
+/* a SOURCED stat (RS-1 66% · RS-6 60% · RS-8 79%) — renders as a real claim */
+.cu-stat{padding:var(--w-s-6);border-radius:var(--w-r-xl);background:var(--w-card-lo);
+  border:1px solid var(--w-line)}
+.cu-stat__v{font-size:var(--w-fs-h1);font-weight:var(--w-fw-black);line-height:1;
+  background:var(--w-grad-brand);-webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent}
+.cu-stat__b{margin-top:var(--w-s-3);color:var(--w-text-prose);font-size:var(--w-fs-sm);
+  line-height:1.6}
+
+/* ⚠️ an UNSOURCED figure ([SAMPLE — SM-5 / SM-6]). Jeff 07-14: render VISIBLY MOCK — the
+   W-PRICING "Pricing TBD" treatment — so it can never be mistaken for a sourced claim.
+   Mono, recessed, dashed, and explicitly labelled. DO NOT restyle this into a real stat
+   until the figure is sourced; swapping the class is the whole swap. */
+.cu-mock{padding:var(--w-s-6);border-radius:var(--w-r-xl);
+  background:var(--w-grad-recess);border:1px dashed var(--w-line-strong)}
+.cu-mock__tag{display:inline-flex;align-items:center;gap:6px;
+  font:400 10px/1 var(--w-font-kicker);letter-spacing:.09em;text-transform:uppercase;
+  color:var(--w-text-3);margin-bottom:var(--w-s-3)}
+.cu-mock__tag::before{content:"";width:6px;height:6px;border-radius:var(--w-r-full);
+  background:var(--w-text-3)}
+.cu-mock__v{font-family:var(--w-font-mono);font-weight:var(--w-fw-bold);
+  font-size:var(--w-fs-h3);color:var(--w-text-2);line-height:1.1}
+.cu-mock__b{margin-top:var(--w-s-3);color:var(--w-text-3);font-size:var(--w-fs-sm);line-height:1.6}
+
+/* quote card (Q-2 Keegan · Q-1 Lauren). Keegan appears ONLY here, as a review attribution. */
+.cu-quote{padding:var(--w-s-6);border-radius:var(--w-r-xl);background:var(--w-card);
+  border:1px solid var(--w-line);box-shadow:var(--w-shadow-raise-soft)}
+.cu-quote__q{font-size:var(--w-fs-prose);line-height:1.55;color:var(--w-text)}
+.cu-quote__by{margin-top:var(--w-s-5);display:flex;gap:var(--w-s-3);align-items:center}
+.cu-quote__av{width:40px;height:40px;border-radius:var(--w-r-full);flex:none;
+  background-size:cover;background-position:center;filter:grayscale(1);
+  box-shadow:0 0 0 2px var(--w-card),0 4px 10px -5px rgba(28,26,36,.3)}
+.cu-quote__nm{font-size:var(--w-fs-sm);font-weight:var(--w-fw-bold)}
+.cu-quote__rl{font-size:var(--w-fs-xs);color:var(--w-text-3)}
+
+/* ═══ §1 · HERO — the UC1 photo at FULL RATIO, copy on the vacant RIGHT edge ═══
+   The <img> IS the hero (natural aspect, no crop, no zoom, retina-crisp WebP). The
+   copy floats over the grey right side, right-aligned, charcoal, NO shadow. The grey
+   section bg matches the photo so the nav strip above it is seamless. */
+.cuh{position:relative;overflow:hidden;background:#e7e7e6}
+.cuh__img{display:block;width:100%;height:auto}
+/* the copy sits ENTIRELY in the clean grey right edge (left edge ~66%), clear of the
+   tablet + hands (which end ~64%). Narrow right column, right-aligned. */
+.cuh__copy{position:absolute;top:0;right:0;height:100%;width:38%;
+  padding-right:max(var(--w-s-8), calc((100% - var(--w-container)) / 2));
+  padding-left:0;
+  display:flex;flex-direction:column;align-items:flex-end;justify-content:center;
+  text-align:right;color:var(--w-charcoal)}
+.cuh__title{font-size:clamp(2.5rem,1.4rem + 3vw,4.25rem);line-height:1.05;letter-spacing:-.02em;
+  color:var(--w-charcoal);text-shadow:none}
+.cuh__lead{margin-top:var(--w-s-5);color:var(--w-text-prose);font-size:var(--w-fs-lead);
+  line-height:1.5;max-width:34ch;text-shadow:none}
+.cuh__cta{margin-top:var(--w-s-7);display:flex;gap:var(--w-s-4);align-items:center;
+  justify-content:flex-end;flex-wrap:wrap}
+/* honour "no shadow": the kicker pill + hero title/lead carry none */
+.cuh .w-tag--kicker{box-shadow:none;color:var(--w-charcoal)}
+
+/* ═══ PHOTO-HERO BAND (reusable) — a full-ratio photo forming a section head, copy
+   floated on the vacant edge, right-aligned, charcoal, no shadow. §4 uses --left
+   (subject on the right → copy on the vacant LEFT). Same mechanic as §1's .cuh. */
+.cuph{position:relative;overflow:hidden;background:#e7e7e6}
+.cuph__img{display:block;width:100%;height:auto}
+.cuph__copy{position:absolute;top:0;height:100%;width:31%;
+  display:flex;flex-direction:column;justify-content:center;align-items:flex-end;
+  text-align:right;color:var(--w-charcoal)}
+/* UC2's clean grey is the UPPER-left; the subject's knee/arm intrudes lower-left, so top-
+   align the copy to keep the lead out of the dark. */
+.cuph--left .cuph__copy{justify-content:flex-start;padding-top:clamp(76px,11vh,168px)}
+/* §4's left column is narrower than §1's hero, so it holds the standard section-title
+   size (h1), not display — display overflows the photo band here. */
+.cuph__title{font-size:var(--w-fs-h1);line-height:1.08;letter-spacing:-.01em;
+  color:var(--w-charcoal);text-shadow:none}
+.cuph__lead{margin-top:var(--w-s-5);color:var(--w-text-prose);font-size:var(--w-fs-prose);
+  line-height:1.55;max-width:32ch;text-shadow:none}
+.cuph .w-tag--kicker{box-shadow:none;color:var(--w-charcoal)}
+.cuph--left .cuph__copy{left:0;
+  padding-left:max(var(--w-container-pad), calc((100% - var(--w-container)) / 2));
+  padding-right:var(--w-s-5)}
+.cuph--right .cuph__copy{right:0;
+  padding-right:max(var(--w-container-pad), calc((100% - var(--w-container)) / 2));
+  padding-left:var(--w-s-5)}
+/* §4 body sits below the photo band, contained, with its own rhythm */
+.cup__body{padding-block:clamp(52px,4vw+1rem,92px) clamp(64px,4vw+1.7rem,108px)}
+.cup__intro{max-width:64ch}
+/* the relocated §4 lead: a centred statement with room above and below (Jeff 07-14) */
+.cup__lead{margin:0 auto;max-width:64ch;text-align:center;
+  padding-block:clamp(64px,12vh,150px)}
+
+/* ═══ §2 · THE FOUR MOVES — DARK, 2×2 bento ════════════════════════════════
+   Dark ground → NO hover-charcoal (that pattern is for f3f3f3 cards on white).
+   Hover here lifts the rim + the arrow only. */
+.cum__grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--w-s-5);margin-top:var(--w-s-8)}
+.cum__card{position:relative;display:flex;flex-direction:column;
+  padding:var(--w-s-7);border-radius:var(--w-r-2xl);
+  background:var(--w-card);border:1px solid var(--w-line);
+  transition:border-color var(--w-dur) var(--w-ease), box-shadow var(--w-dur) var(--w-ease)}
+.cum__card:hover{border-color:var(--w-brand-line);box-shadow:var(--w-glow-brand)}
+.cum__no{font-family:var(--w-font-mono);font-size:var(--w-fs-xs);color:var(--w-text-3);
+  letter-spacing:.08em}
+.cum__fig{position:relative;height:132px;margin:var(--w-s-5) 0 var(--w-s-6);border-radius:var(--w-r-lg);
+  overflow:hidden;background:var(--w-card-lo);border:1px solid var(--w-line-soft)}
+.cum__t{font-size:var(--w-fs-h4);line-height:1.25}
+.cum__job{margin-top:var(--w-s-3);font-family:var(--w-font-serif);font-style:italic;
+  font-size:var(--w-fs-prose);color:var(--w-text-2);line-height:1.4}
+.cum__b{margin-top:var(--w-s-4);color:var(--w-text-prose);font-size:var(--w-fs-sm);line-height:1.6;
+  flex:1}
+.cum__link{margin-top:var(--w-s-6);display:inline-flex;align-items:center;gap:var(--w-s-2);
+  font-size:var(--w-fs-sm);font-weight:var(--w-fw-semi);color:var(--w-text);align-self:flex-start}
+.cum__link .w-icon{width:18px;height:18px;transition:transform var(--w-dur) var(--w-ease)}
+.cum__card:hover .cum__link .w-icon{transform:translateX(4px)}
+
+/* the WIDE 5th card (03 · 24/7) — spans both columns and lays out horizontally.
+   It reads as a SPINE running under the four discrete moves, not as a 5th tile. */
+.cum__card--wide{grid-column:1 / -1;flex-direction:row;align-items:center;gap:var(--w-s-8)}
+.cum__fig--wide{flex:0 0 42%;height:186px;margin:0}
+/* the number rides WITH the copy here — absolutely positioning it on the card would
+   land it on top of the figure, which is flush to the card's left padding edge. */
+.cum__wide-tx{flex:1;min-width:0;display:flex;flex-direction:column;align-items:flex-start}
+.cum__wide-tx .cum__no{margin-bottom:var(--w-s-4)}
+.cum__wide-tx .cum__link{margin-top:var(--w-s-5)}
+
+/* ═══ §3 · DEAL MOMENTUM — LIGHT, split media RIGHT ════════════════════════ */
+.cud__split{display:grid;grid-template-columns:1fr 1.1fr;gap:var(--w-s-9);align-items:center;
+  margin-top:var(--w-s-8)}
+.cud__stage{position:relative;aspect-ratio:1180/860;border-radius:var(--w-r-2xl);overflow:hidden}
+.cud__moves{margin-top:var(--w-s-9)}
+
+/* ═══ §4 · PROOF DELIVERY — LIGHT, split media LEFT + moves as a NUMBERED RAIL
+   (deliberately not cards — §3 already used cards, and a rail reads as a sequence,
+   which is what "reads context → pulls supply → delivers in flow" actually is). */
+.cup__split{display:grid;grid-template-columns:1.1fr 1fr;gap:var(--w-s-9);align-items:center;
+  margin-top:var(--w-s-8)}
+.cup__stage{position:relative;aspect-ratio:1180/860;border-radius:var(--w-r-2xl);overflow:hidden}
+.cup__rail{margin-top:var(--w-s-9);display:grid;gap:0}
+.cup__step{display:grid;grid-template-columns:auto 1fr;gap:var(--w-s-6);
+  padding:var(--w-s-6) 0;border-top:1px solid var(--w-line)}
+.cup__step:last-child{border-bottom:1px solid var(--w-line)}
+.cup__no{font-family:var(--w-font-mono);font-weight:var(--w-fw-bold);font-size:var(--w-fs-sm);
+  color:var(--w-text-3);width:34px;padding-top:2px}
+.cup__step-t{font-size:var(--w-fs-body);font-weight:var(--w-fw-bold);margin-bottom:var(--w-s-2)}
+.cup__step-b{color:var(--w-text-prose);font-size:var(--w-fs-prose);line-height:1.6;max-width:72ch}
+
+/* ═══ §5 · 24/7 CONVERSATION HANDLING — LIGHT ══════════════════════════════
+   Split media-RIGHT that BLEEDS off the right page edge — the thread that never
+   ends, running out of frame. Distinct from §3 (contained split-R) and §4 (split-L).
+   The section drops its own container so the stage can reach the viewport edge; the
+   copy re-enters a .w-container of its own. */
+.cuv__split{display:grid;grid-template-columns:1fr 1fr;gap:var(--w-s-8);align-items:center;
+  margin-top:var(--w-s-8);
+  /* re-create the container's LEFT gutter (the copy lines up with every other section's
+     left edge). The stage keeps a MODEST bleed past the container on the right — enough
+     to still read as "the thread runs on", but pulled well off the viewport edge (Jeff
+     07-14: it was too close to the right edge). */
+  padding-left:max(var(--w-container-pad), calc((100% - var(--w-container)) / 2));
+  padding-right:max(var(--w-s-8), calc((100% - var(--w-container)) / 2 - 40px))}
+.cuv__copy{min-width:0;padding-right:var(--w-s-8)}
+.cuv__stage{position:relative;aspect-ratio:1180/860;overflow:hidden;
+  border-radius:var(--w-r-2xl)}
+.cuv__moves{margin-top:var(--w-s-9)}
+
+/* ═══ §6 · AI OUTBOUND — LIGHT, full-bleed centered DIAGRAM band ═══════════
+   No split anywhere in this section: copy centered, diagram wide beneath it. */
+.cuo__head{max-width:760px;margin-inline:auto;text-align:center}
+.cuo__head .cub__lead{margin-inline:auto}
+.cuo__stage{position:relative;margin-top:var(--w-s-8);aspect-ratio:1180/620;
+  border-radius:var(--w-r-2xl);overflow:hidden}
+.cuo__moves{margin-top:var(--w-s-9)}
+.cuo__payoff{grid-template-columns:1.15fr 1fr}
+
+/* ═══ §6 · DEAL INTELLIGENCE — LIGHT, centered head + PORTFOLIO view below ══
+   The only tabular composition on the page — a scored pipeline, seen from above. */
+.cui__head{max-width:820px;margin-inline:auto;text-align:center}
+.cui__head .cub__lead{margin-inline:auto}
+.cui__stage{position:relative;margin-top:var(--w-s-8);aspect-ratio:1180/700;
+  border-radius:var(--w-r-2xl);overflow:hidden}
+.cui__moves{margin-top:var(--w-s-9)}
+
+/* Jeff 07-14: the §5 (AI Outbound) + §6 (Deal Intelligence) scenes read too big.
+   Cap them to 80% and centre — DESKTOP ONLY (≥1025px), where the slack is. Below that
+   they stay full-width so the contain-scaled type never drops under the 7px floor. */
+@media(min-width:1025px){
+  .cuo__stage,.cui__stage{max-width:80%;margin-inline:auto}
+}
+
+/* ═══ §7 · THE PATTERN — DARK. The page's one brand moment. ════════════════
+   The loop diagram is the whole section, and it is also the page's second nav:
+   every node links to its own use-case anchor. */
+.cul{position:relative;overflow:hidden}
+.cul__head{max-width:760px;margin-inline:auto;text-align:center}
+.cul__title{font-size:var(--w-fs-h1)}
+.cul__body{margin-top:var(--w-s-5);color:var(--w-text-prose);font-size:var(--w-fs-prose);
+  line-height:1.62}
+.cul__stage{position:relative;margin-top:var(--w-s-9);aspect-ratio:1180/700;
+  border-radius:var(--w-r-2xl);overflow:hidden}
+
+/* ═══ §8 · BETTER TOGETHER + FINAL CTA — LIGHT, contained soft-brand band ══ */
+.cuc{position:relative}
+.cuc__band{position:relative;overflow:hidden;border-radius:var(--w-r-2xl);
+  padding:clamp(56px,5.2vw,104px) var(--w-s-6);text-align:center;isolation:isolate}
+.cuc__band::before{content:"";position:absolute;inset:0;z-index:-2;
+  background-image:var(--w-img-cuc-ctabg);background-size:cover;background-position:center;
+  filter:grayscale(1)}
+.cuc__band::after{content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(180deg, rgba(28,26,36,0.72), rgba(28,26,36,0.80))}
+.cuc__title{font-size:var(--w-fs-h1);color:#fff;max-width:760px;margin-inline:auto}
+.cuc__body{margin-top:var(--w-s-5);color:rgba(255,255,255,0.80);font-size:var(--w-fs-prose);
+  line-height:1.62;max-width:700px;margin-inline:auto}
+.cuc__actions{margin-top:var(--w-s-7);display:flex;gap:var(--w-s-4);justify-content:center;
+  align-items:center;flex-wrap:wrap}
+.cuc__link{display:inline-flex;align-items:center;gap:var(--w-s-2);
+  color:rgba(255,255,255,0.82);font-weight:var(--w-fw-semi);font-size:var(--w-fs-sm);
+  padding:var(--w-s-3) var(--w-s-4);border-radius:var(--w-r-pill);
+  transition:color var(--w-dur) var(--w-ease)}
+.cuc__link:hover{color:#fff}
+.cuc__link>svg{width:18px;height:18px}
+.cuc__band .w-btn--primary{background:var(--w-grad-brand);color:var(--w-charcoal);
+  box-shadow:var(--w-glow-brand)}
+.cuc__band .w-btn--primary:hover{box-shadow:var(--w-glow-brand-strong)}
+/* the Experts+ lockup must flow INLINE (inline-flex splits the text nodes and collapses the
+   space onto the wrong side → "Experts +network") — the standing ep-plus gotcha. */
+.cuc__wm{white-space:nowrap}
+
+/* ═══ §8 · THE DIFFERENCE — DARK · "five tools" vs one agent (net-new) ══════
+   Two panels side by side: the disconnected stack (recessed, seamed) vs the one
+   agent (brand-lifted). Pure component composition — no scaler scene. */
+.cog__head{max-width:820px}
+.cog__title{font-size:var(--w-fs-h1);margin-top:var(--w-s-4)}
+.cog__lead{margin-top:var(--w-s-4);color:var(--w-text-prose);font-size:var(--w-fs-lead);
+  line-height:1.5;max-width:64ch}
+.cog__cols{margin-top:var(--w-s-8);display:grid;grid-template-columns:1fr 1fr;gap:var(--w-s-6);
+  align-items:stretch}
+.cog__panel{display:flex;flex-direction:column;padding:var(--w-s-7);
+  border-radius:var(--w-r-2xl);border:1px solid var(--w-line)}
+/* the old way: recessed, muted — it should feel like dead weight */
+.cog__panel--old{background:var(--w-card-lo)}
+/* with Carly: lifted, a brand hairline */
+.cog__panel--new{background:var(--w-card);border-color:var(--w-brand-line);
+  box-shadow:var(--w-glow-brand)}
+.cog__phd{display:flex;align-items:center;justify-content:space-between;gap:var(--w-s-3);
+  padding-bottom:var(--w-s-5);margin-bottom:var(--w-s-5);border-bottom:1px solid var(--w-line);
+  flex-wrap:wrap}
+.cog__ptag{display:inline-flex;align-items:center;gap:var(--w-s-2);
+  font-size:var(--w-fs-body);font-weight:var(--w-fw-bold);color:var(--w-text)}
+.cog__ptag--brand{color:var(--w-text)}
+.cog__pav{width:26px;height:26px;flex:none;border-radius:var(--w-r-full);
+  background-size:cover;background-position:center;
+  box-shadow:0 0 0 2px var(--w-bg),0 0 0 3px var(--w-brand-2)}
+.cog__psub{font-size:var(--w-fs-xs);font-family:var(--w-font-mono);color:var(--w-text-3);
+  letter-spacing:.04em}
+.cog__stack{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:var(--w-s-3);flex:1}
+.cog__srow{display:flex;align-items:baseline;justify-content:space-between;gap:var(--w-s-4);
+  padding:var(--w-s-4) var(--w-s-5);border-radius:var(--w-r-md);
+  background:var(--w-bg);border:1px solid var(--w-line-soft);
+  filter:grayscale(1);opacity:.72}
+.cog__snm{font-size:var(--w-fs-sm);font-weight:var(--w-fw-semi);color:var(--w-text-2)}
+.cog__sjb{font-size:var(--w-fs-xs);color:var(--w-text-3);white-space:nowrap}
+.cog__moves{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:var(--w-s-3);flex:1}
+.cog__mrow{display:flex;align-items:center;gap:var(--w-s-3);
+  padding:var(--w-s-4) var(--w-s-5);border-radius:var(--w-r-md);
+  background:var(--w-card-brand-wash);border:1px solid var(--w-brand-line);
+  font-size:var(--w-fs-sm);font-weight:var(--w-fw-semi);color:var(--w-text)}
+.cog__mrow .w-icon{width:18px;height:18px;flex:none;color:var(--w-brand)}
+.cog__pft{margin-top:var(--w-s-5);font-size:var(--w-fs-sm);color:var(--w-text-3);line-height:1.5}
+.cog__pft--brand{color:var(--w-text-2)}
+
+/* ═══ §10 · A DAY ON ONE DEAL — LIGHT · ANIMATED playhead timeline (net-new) ═══
+   The /AGENTS visor rides the rail left→right; each of the 5 nodes COMPLETES (fills
+   + checks) as the visor arrives (Jeff 07-14 — visor instead of plain dots). One
+   shared ~13s CSS loop drives the visor's `left` and every node's fill (per-step
+   delay). Steps are CENTERED so node ↔ visor ↔ text all sit on clean column centres
+   (10/30/50/70/90%) — that's what lets the visor land exactly on each node.
+   BASE = the RESOLVED end state (all nodes complete, visor parked at node 5); the
+   animation only runs under prefers-reduced-motion:no-preference. ≥900px only —
+   below that it's a static vertical rail (no travelling playhead). */
+.cod__head{max-width:820px}
+.cod__title{font-size:var(--w-fs-h1);margin-top:var(--w-s-4)}
+.cod__lead{margin-top:var(--w-s-4);color:var(--w-text-prose);font-size:var(--w-fs-lead);
+  line-height:1.5;max-width:64ch}
+.cod__rail{--cod-loop:13s;--cod-ease:cubic-bezier(.5,0,.2,1);
+  list-style:none;margin:var(--w-s-9) 0 0;padding:0;
+  display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative}
+/* the rail line — from the first node centre (10%) to the last (90%) */
+.cod__rail::before{content:"";position:absolute;left:10%;right:10%;top:calc(var(--w-s-7) + 12px);
+  height:2px;background:var(--w-line)}
+.cod__step{position:relative;display:flex;flex-direction:column;align-items:center;
+  text-align:center;gap:var(--w-s-3);padding:0 var(--w-s-3);
+  /* progressive reveal (Jeff 07-14): step i APPEARS when the visor arrives (--dr), and
+     is CHECKED only once the visor moves on to i+1 (--dc). Arrival cadence = i·0.17·T. */
+  --dr:calc(var(--i) * 0.17 * var(--cod-loop));
+  --dc:calc((var(--i) + 1) * 0.17 * var(--cod-loop))}
+.cod__time{font-family:var(--w-font-mono);font-weight:var(--w-fw-bold);font-size:var(--w-fs-sm);
+  color:var(--w-text-2);height:var(--w-s-7);display:flex;align-items:center}
+/* NO ring circle (Jeff) — just a checkmark on a clean break in the rail. The white fill +
+   halo mask the line so the check reads cleanly; there's no visible circle outline. */
+.cod__node{width:26px;height:26px;border-radius:var(--w-r-full);display:grid;place-items:center;
+  position:relative;z-index:1;background:var(--w-bg);border:none;
+  box-shadow:0 0 0 3px var(--w-bg)}
+.cod__chk{width:15px;height:15px;fill:none;stroke:var(--w-charcoal);stroke-width:2.6;
+  stroke-linecap:round;stroke-linejoin:round;opacity:1}
+/* the visor playhead — BASE parked on node 5 (90%). z above the line + nodes. */
+.cod__visor{position:absolute;top:calc(var(--w-s-7) - 6px);left:90%;transform:translateX(-50%);
+  width:52px;height:52px;background-size:contain;background-repeat:no-repeat;background-position:center;
+  z-index:3;pointer-events:none;filter:drop-shadow(0 6px 14px rgba(120,100,220,.35))}
+.cod__move{font-size:var(--w-fs-body);font-weight:var(--w-fw-bold);color:var(--w-text);
+  border-bottom:1px solid transparent;transition:border-color var(--w-dur) var(--w-ease)}
+.cod__move:hover{border-bottom-color:var(--w-text)}
+.cod__line{color:var(--w-text-prose);font-size:var(--w-fs-sm);line-height:1.55;max-width:32ch}
+.cod__foot{margin-top:var(--w-s-8);padding-top:var(--w-s-6);border-top:1px solid var(--w-line);
+  font-size:var(--w-fs-prose);font-weight:var(--w-fw-semi);color:var(--w-text);max-width:70ch}
+
+/* ⚠️ Each step's timing is baked into ITS OWN keyframe — NOT animation-delay. A positive
+   animation-delay only offsets the FIRST iteration; on an infinite loop every later pass
+   would fire all steps together (they'd all show at once). Per-step keyframes re-stagger
+   every loop: a level is HIDDEN until the visor lands on it (reveal at R), and its check
+   appears only once the visor has PASSED it (check at R+17%), so a check never sits under
+   the visor. Reveal R = 0/17/34/51/68% · Check = 17/34/51/68/85% · hold → reset ~96%. */
+@media (prefers-reduced-motion: no-preference) and (min-width:901px){
+  .cod__visor{animation:cod-travel var(--cod-loop) var(--cod-ease) infinite}
+  .cod__step{animation:var(--cod-loop) ease-out infinite both}
+  .cod__chk{animation:var(--cod-loop) ease-out infinite both}
+  .cod__step:nth-of-type(1){animation-name:cod-rev0}
+  .cod__step:nth-of-type(2){animation-name:cod-rev1}
+  .cod__step:nth-of-type(3){animation-name:cod-rev2}
+  .cod__step:nth-of-type(4){animation-name:cod-rev3}
+  .cod__step:nth-of-type(5){animation-name:cod-rev4}
+  .cod__step:nth-of-type(1) .cod__chk{animation-name:cod-chk0}
+  .cod__step:nth-of-type(2) .cod__chk{animation-name:cod-chk1}
+  .cod__step:nth-of-type(3) .cod__chk{animation-name:cod-chk2}
+  .cod__step:nth-of-type(4) .cod__chk{animation-name:cod-chk3}
+  .cod__step:nth-of-type(5) .cod__chk{animation-name:cod-chk4}
+}
+/* the visor: dwell on level 1, then arrive-and-dwell on each next level; hold; reset unseen. */
+@keyframes cod-travel{
+  0%{left:10%;opacity:1}    8%{left:10%}
+  17%{left:30%}  25%{left:30%}
+  34%{left:50%}  42%{left:50%}
+  51%{left:70%}  59%{left:70%}
+  68%{left:90%}  90%{left:90%;opacity:1}
+  95%{left:90%;opacity:0}   96%{left:10%;opacity:0}  100%{left:10%;opacity:1}
+}
+/* per-level REVEAL (opacity + slight rise), hidden until the visor lands */
+@keyframes cod-rev0{0%{opacity:0;transform:translateY(8px)}4%{opacity:1;transform:none}90%{opacity:1;transform:none}96%{opacity:0}100%{opacity:0}}
+@keyframes cod-rev1{0%,17%{opacity:0;transform:translateY(8px)}21%{opacity:1;transform:none}90%{opacity:1;transform:none}96%{opacity:0}100%{opacity:0}}
+@keyframes cod-rev2{0%,34%{opacity:0;transform:translateY(8px)}38%{opacity:1;transform:none}90%{opacity:1;transform:none}96%{opacity:0}100%{opacity:0}}
+@keyframes cod-rev3{0%,51%{opacity:0;transform:translateY(8px)}55%{opacity:1;transform:none}90%{opacity:1;transform:none}96%{opacity:0}100%{opacity:0}}
+@keyframes cod-rev4{0%,68%{opacity:0;transform:translateY(8px)}72%{opacity:1;transform:none}92%{opacity:1;transform:none}96%{opacity:0}100%{opacity:0}}
+/* per-level CHECK (pops in only after the visor has moved on) */
+@keyframes cod-chk0{0%,17%{opacity:0;transform:scale(.3)}21%{opacity:1;transform:scale(1)}90%{opacity:1}96%{opacity:0}100%{opacity:0}}
+@keyframes cod-chk1{0%,34%{opacity:0;transform:scale(.3)}38%{opacity:1;transform:scale(1)}90%{opacity:1}96%{opacity:0}100%{opacity:0}}
+@keyframes cod-chk2{0%,51%{opacity:0;transform:scale(.3)}55%{opacity:1;transform:scale(1)}90%{opacity:1}96%{opacity:0}100%{opacity:0}}
+@keyframes cod-chk3{0%,68%{opacity:0;transform:scale(.3)}72%{opacity:1;transform:scale(1)}90%{opacity:1}96%{opacity:0}100%{opacity:0}}
+@keyframes cod-chk4{0%,85%{opacity:0;transform:scale(.3)}89%{opacity:1;transform:scale(1)}92%{opacity:1}96%{opacity:0}100%{opacity:0}}
+
+/* ═══ §11 · ON YOUR TERMS — LIGHT · 2×3 guardrail grid (net-new) ════════════ */
+.cot__head{max-width:820px}
+.cot__title{font-size:var(--w-fs-h1);margin-top:var(--w-s-4)}
+.cot__lead{margin-top:var(--w-s-4);color:var(--w-text-prose);font-size:var(--w-fs-lead);
+  line-height:1.5;max-width:64ch}
+.cot__grid{margin-top:var(--w-s-8);display:grid;grid-template-columns:repeat(3,1fr);gap:var(--w-s-5)}
+.cot__card{padding:var(--w-s-6);border-radius:var(--w-r-xl);background:var(--w-card);
+  border:1px solid var(--w-line);box-shadow:var(--w-shadow-raise-soft)}
+.cot__ic{width:44px;height:44px;border-radius:var(--w-r-md);display:grid;place-items:center;
+  background:var(--w-charcoal);margin-bottom:var(--w-s-4)}
+.cot__ic .w-icon{width:22px;height:22px;color:#fff}
+.cot__ct{font-size:var(--w-fs-body);font-weight:var(--w-fw-bold);margin-bottom:var(--w-s-2)}
+.cot__cb{color:var(--w-text-prose);font-size:var(--w-fs-sm);line-height:1.6}
+
+/* ═══ ADOBE COVER-REVEAL STACK (motion-library §2) — the closing run reads as
+   stacking cards: as each panel scrolls up, its rounded top rises OVER the panel
+   below (no pinning — pinning fought these taller-than-viewport, top-weighted
+   sections and left dead bands; Jeff picked the scroll cover-reveal, 07-15).
+   The cover = a rising z-index + a deliberate overlap that eats ONLY the previous
+   panel's bottom padding (never its content) + a rounded top + a soft up-shadow. */
+.cu-stack{position:relative;z-index:0}
+/* Standard section rhythm everywhere else: zero the panel-rise overlap page-wide
+   (it had crushed the gaps unevenly, −34/0). */
+main .w-panel-rise{--w-panel-overlap:0}
+/* …then give ONLY the closing stack a cover-overlap so each card rises over the
+   last. 56px < the ~85px bottom padding it slides into, so no content is hidden. */
+.cu-stack .w-panel-rise{--w-panel-overlap:56px}
+.cu-panel{position:relative;z-index:var(--z,1)}   /* z-index carries the cover order */
+/* every panel is OPAQUE so a covering one fully hides the card beneath it */
+.cu-panel{background:var(--w-bg)}
+.cz-light.cu-panel{background:#fff}
+/* the covering panel casts a soft shadow UP onto the panel it slides over */
+.cu-panel::before{content:"";position:absolute;left:0;right:0;top:0;height:1px;pointer-events:none;
+  box-shadow:0 -26px 48px -18px rgba(16,14,26,.20)}
+.cul.cu-panel::before{box-shadow:0 -26px 50px -16px rgba(0,0,0,.5)}   /* dark loop panel */
+
+/* Jeff 07-15 — the two chapter-openers rise-and-cover the section before them, the
+   same move as the closing stack. #one-deal ("The loop, on one deal") already lives
+   in .cu-stack; #deal-momentum ("Carly Use Case · Sales", the use-case opener) gets
+   the matching cover over the dark bento. Overlap eats only §2's bottom padding. */
+#deal-momentum{--w-panel-overlap:56px;z-index:3;position:relative}
+#deal-momentum::before{content:"";position:absolute;left:0;right:0;top:0;height:1px;
+  pointer-events:none;box-shadow:0 -26px 48px -18px rgba(16,14,26,.20)}
+/* #conversations rises light-over-light (over §4), so its rounded top only exposed
+   the dark page bg at the corners (Jeff: "remove dark corners"). A rounded rise only
+   reads over a DARK section; light→light wants a flush seam. Flatten it. */
+#conversations{border-top-left-radius:0;border-top-right-radius:0}
+
+/* ═══ RESPONSIVE ═══════════════════════════════════════════════════════════
+   Contract: 1440 / 1280(×800 + ×720) / 1024 / 834 / 768 / 540 / 430 / 390 / 360.
+   Copy-before-scene on every split (responsive-traps §5) — the scene never sits
+   above the copy on mobile. */
+
+@media(max-width:1100px){
+  .cub__payoff{grid-template-columns:1fr;gap:var(--w-s-6)}
+  .cuo__payoff{grid-template-columns:1fr}
+}
+@media(max-width:1024px){
+  /* the photo gets too short to overlay copy — stack the hero. Mobile order: copy
+     (incl. the CTA) FIRST, the image drops BELOW the button (Jeff 07-15). */
+  .cuh{display:flex;flex-direction:column}
+  .cuh__copy{order:1;position:static;width:auto;height:auto;
+    padding:var(--w-s-8) var(--w-container-pad) var(--w-s-9);align-items:flex-end}
+  .cuh__img{order:2}
+  .cuh__lead{max-width:60ch}
+  /* §4 photo band ("image 1"): the stacked copy sat on the grey photo-ground, reading
+     as a grey bar behind the title. Drop it to white on mobile (Jeff 07-15). */
+  .cuph{background:#fff}
+  /* the §4 photo band stacks too: photo on top, copy below (still right-aligned charcoal) */
+  .cuph__copy{position:static;width:auto;height:auto;align-items:flex-end;
+    padding:var(--w-s-8) var(--w-container-pad) 0}
+  .cuph--left .cuph__copy,.cuph--right .cuph__copy{padding-left:var(--w-container-pad);
+    padding-right:var(--w-container-pad)}
+  .cuph__lead{max-width:60ch}
+  .cup__body{padding-top:var(--w-s-8)}
+  .cud__split,.cup__split{grid-template-columns:1fr;gap:var(--w-s-8);
+    display:flex;flex-direction:column}
+  .cud__split>.cub__moment,.cup__split>.cub__moment{order:-1}  /* copy first — traps §5 */
+  .cud__stage,.cup__stage{width:100%;aspect-ratio:1180/760}
+  /* the §5 bleed stops bleeding: it becomes a normal stacked, contained block */
+  .cuv__split{display:flex;flex-direction:column;gap:var(--w-s-8);
+    padding-left:var(--w-container-pad);padding-right:var(--w-container-pad)}
+  .cuv__copy{order:-1;padding-right:0}
+  .cuv__stage{width:100%;aspect-ratio:1180/760;border-radius:var(--w-r-2xl)}
+}
+@media(max-width:900px){
+  /* the day-on-a-deal timeline turns vertical: node rail down the left, content right.
+     No travelling playhead on mobile — the visor is hidden; nodes show completed. */
+  .cod__visor{display:none}
+  .cod__rail{grid-template-columns:1fr;gap:0}
+  .cod__rail::before{left:12px;right:auto;top:6px;bottom:6px;width:2px;height:auto}
+  .cod__step{flex-direction:row;flex-wrap:wrap;align-items:baseline;text-align:left;
+    gap:var(--w-s-2) var(--w-s-4);padding:0 0 var(--w-s-7) var(--w-s-8)}
+  .cod__step:last-child{padding-bottom:0}
+  .cod__node{position:absolute;left:0;top:2px;width:26px;height:26px}
+  .cod__time{height:auto;order:1}
+  .cod__move{order:2;margin-left:auto}
+  .cod__line{order:3;flex-basis:100%;max-width:none}
+  /* the difference panels + guardrail grid stack */
+  .cog__cols{grid-template-columns:1fr;gap:var(--w-s-5)}
+  .cot__grid{grid-template-columns:1fr 1fr}
+  .cum__grid{grid-template-columns:1fr}
+  /* the wide card stops being wide — it stacks like every other card, and its figure
+     goes back ABOVE the copy so it matches its four siblings exactly. */
+  .cum__card--wide{flex-direction:column;align-items:stretch;gap:0}
+  .cum__wide-tx{align-items:stretch}
+  .cum__wide-tx .cum__no{display:none}          /* the card-level 03 would duplicate below */
+  .cum__card--wide::before{content:"03";font-family:var(--w-font-mono);font-size:var(--w-fs-xs);
+    color:var(--w-text-3);letter-spacing:.08em}
+  .cum__fig--wide{flex:none;width:100%;height:132px;margin:var(--w-s-5) 0 var(--w-s-6);order:0}
+  .cum__wide-tx .cum__link{margin-top:var(--w-s-6)}
+  .cub__moves--3{grid-template-columns:1fr}
+  .cuo__stage{aspect-ratio:1180/700}
+  .cui__stage{aspect-ratio:1180/760}
+  .cul__stage{aspect-ratio:1180/760}
+}
+@media(max-width:700px){
+  .cub__title,.cul__title,.cuc__title,.cog__title,.cod__title,.cot__title,.cuh__title,.cuph__title{font-size:var(--w-fs-h2)}
+  .cuh__title{font-size:var(--w-fs-h1)}
+  .cub__moment-t,.cub__moves-t,.cub__payoff-t{font-size:var(--w-fs-h4)}
+  /* the scene canvases re-lay-out to their PORTRAIT alternate below 700 (data-canvas-sm),
+     so the stages must take a portrait aspect too or the canvas contain-scales into a
+     letterboxed strip — the legibility floor, not just the fit (SCENE-LEGIBILITY gate). */
+  .cud__stage,.cup__stage,.cuv__stage,.cuo__stage,.cui__stage,.cul__stage{aspect-ratio:440/620}
+  .cup__step{grid-template-columns:1fr;gap:var(--w-s-2)}
+  .cup__no{width:auto}
+}
+@media(max-width:560px){
+  .cot__grid{grid-template-columns:1fr}
+  .cog__srow{flex-direction:column;gap:2px}
+  .cog__sjb{white-space:normal}
+  .cub__cta,.cuc__actions{flex-direction:column;align-items:stretch}
+  .cub__cta>*,.cuc__actions>*{width:100%;justify-content:center}
+  .cuh__cta{flex-direction:column;align-items:stretch}
+  .cuh__cta>*{width:100%;justify-content:center}
+}
+
+
+/* ══════════ ASSET FRAGMENT CSS (hoisted, Phase 6) ══════════ */
+
+/* ═══ cux- · shared animated-scene canvas kit (W-CARLY-USECASES) ═══════════════
+   Every A-slot fragment renders a fixed-px canvas (.cux-fit) inside its section
+   stage (.emh__stage / .eme__stage / .emf__stage). The scaler JS scales the
+   canvas CONTAIN + CENTER (never width-only — that clips at medium widths,
+   responsive-traps.md §3). All values are --w-* tokens.
+   ─────────────────────────────────────────────────────────────────────────── */
+.emx{position:absolute;inset:0;overflow:hidden;border-radius:inherit}
+.cux-fit{position:absolute;left:0;top:0;transform-origin:0 0;will-change:transform}
+/* composition dissolves to the section ground at the canvas edges (brand signature) */
+.cux-fit::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:9;
+  background:var(--w-edge-fade)}
+
+/* surfaces */
+.cux-card{position:absolute;background:var(--w-card);border-radius:var(--w-r-lg);
+  box-shadow:var(--w-shadow-raise-soft);border:1px solid var(--w-line);padding:16px 18px}
+.cux-card--focal{box-shadow:var(--w-shadow-raise)}
+/* bloom-rim focal card — the brand moment (gradient rim, purple lives in product UI only) */
+.cux-rim{position:relative}
+.cux-rim::before{content:"";position:absolute;inset:-1.5px;border-radius:inherit;z-index:-1;
+  background:var(--w-grad-brand);opacity:.9}
+.cux-rim::after{content:"";position:absolute;inset:-14px;border-radius:inherit;z-index:-2;
+  background:var(--w-grad-brand);filter:blur(18px);opacity:.16}
+
+/* ghost / receding surface — the "undifferentiated list" state */
+.cux-ghost{background:var(--w-card-lo);border-color:var(--w-line-soft);box-shadow:none;
+  filter:grayscale(1);opacity:.5}
+.cux-ghost .cux-ln{background:var(--w-line-strong);opacity:.5}
+
+/* skeleton text lines (faceless rows) */
+.cux-ln{display:block;height:8px;border-radius:var(--w-r-pill);background:var(--w-line-strong)}
+
+/* chips + pills */
+.cux-chip{display:inline-flex;align-items:center;gap:6px;padding:7px 12px;
+  border-radius:var(--w-r-pill);background:var(--w-glass-fill-soft);
+  border:1px solid var(--w-line);color:var(--w-text-2);
+  font:600 12px/1 var(--w-font);white-space:nowrap}
+.cux-chip--brand{background:var(--w-tag-brand-bg);border-color:var(--w-brand-line);
+  color:var(--w-tag-brand-fg)}
+.cux-chip--score{background:var(--w-grad-brand);border-color:transparent;color:var(--w-charcoal);
+  font-family:var(--w-font-mono);font-weight:700}
+.cux-chip--mono{font-family:var(--w-font-mono);font-weight:700;font-size:11.5px}
+
+/* the illustrative marker — demo numbers must READ as demo (copy PROOF rule) */
+.cux-illus{font:400 10px/1 var(--w-font-kicker);letter-spacing:.09em;text-transform:uppercase;
+  color:var(--w-text-3);white-space:nowrap}
+
+/* avatars (foundation tokens only) */
+.cux-av{border-radius:var(--w-r-full);background-size:cover;background-position:center;flex:none;
+  box-shadow:0 0 0 2px var(--w-card),0 4px 10px -4px rgba(0,0,0,.28)}
+.cux-av--ring{box-shadow:0 0 0 2px var(--w-card),0 0 0 4px var(--w-brand),0 6px 14px -5px rgba(0,0,0,.32)}
+
+/* weight bar — the "weighing" primitive (A2) */
+.cux-bar{position:relative;height:7px;border-radius:var(--w-r-pill);
+  background:var(--w-glass-fill-soft);overflow:hidden;flex:none}
+.cux-bar>i{display:block;height:100%;border-radius:var(--w-r-pill);
+  background:var(--w-grad-brand);transform-origin:0 50%}
+
+/* connector rail (cz4 recipe — orthogonal, token stroke, gradient pulse) */
+.cux-cn{position:absolute;background:var(--w-line-strong);border-radius:var(--w-r-pill)}
+
+/* every fragment's motion is opt-IN: base CSS renders the RESOLVED END STATE, so
+   reduced-motion + no-JS both get a correct, finished scene for free. */
+
+/* ═══ v02 additions (Jeff 07-13) — pegboard motif · frosted glass · scanned faces ══════════ */
+
+/* PEGBOARD — the house back-motif. Sits behind every scene, fading OUTWARD so the composition
+   dissolves into the section ground (stacks with .cux-fit::after's edge-fade). z-index:0, and
+   every scene element must sit above it (the kit's .cux-card is position:absolute → auto z). */
+.cux-peg{position:absolute;inset:-8%;z-index:0;pointer-events:none;
+  --cux-peg-dot:rgba(28,26,36,0.17);
+  background-image:radial-gradient(circle, var(--cux-peg-dot) 1.5px, transparent 1.7px);
+  background-size:26px 26px;
+  -webkit-mask-image:radial-gradient(ellipse 58% 56% at 50% 48%, #000 0%, rgba(0,0,0,.6) 46%, transparent 80%);
+          mask-image:radial-gradient(ellipse 58% 56% at 50% 48%, #000 0%, rgba(0,0,0,.6) 46%, transparent 80%)}
+.cux-peg--dark{--cux-peg-dot:rgba(255,255,255,0.15)}
+
+/* FROSTED GLASS cards. Theme-independent on purpose: --w-glass-* flips with the section, but a
+   DARK-glass card on a LIGHT section (and vice-versa) must hold its own surface either way.
+   Pair each with the matching ink scope below so contents stay legible. */
+.cux-glass{position:absolute;border-radius:var(--w-glass-radius);
+  -webkit-backdrop-filter:var(--w-glass-blur-lg);backdrop-filter:var(--w-glass-blur-lg)}
+.cux-glass--dark{background:rgba(22,20,30,0.72);border:1px solid rgba(255,255,255,0.16);
+  box-shadow:0 24px 60px -18px rgba(10,8,18,.55), inset 0 1px 0 rgba(255,255,255,0.20)}
+.cux-glass--light{background:rgba(255,255,255,0.80);border:1px solid rgba(28,26,36,0.10);
+  box-shadow:0 24px 60px -18px rgba(10,8,18,.30), inset 0 1px 0 rgba(255,255,255,0.95)}
+/* reduced-transparency: blur is dropped → make the surfaces solid so text never lands on scene art */
+@media (prefers-reduced-transparency: reduce){
+  .cux-glass{-webkit-backdrop-filter:none;backdrop-filter:none}
+  .cux-glass--dark{background:rgba(22,20,30,0.97)}
+  .cux-glass--light{background:rgba(255,255,255,0.98)}
+}
+
+/* INK SCOPES — put on a glass card so its contents flip legibly regardless of section theme. */
+.cux-on-dark{--cux-ink:rgba(255,255,255,0.95);--cux-ink-2:rgba(255,255,255,0.66);
+  --cux-ink-3:rgba(255,255,255,0.45);--cux-hair:rgba(255,255,255,0.16);--cux-well:rgba(255,255,255,0.08)}
+.cux-on-light{--cux-ink:var(--w-charcoal);--cux-ink-2:rgba(28,26,36,0.66);
+  --cux-ink-3:rgba(28,26,36,0.48);--cux-hair:rgba(28,26,36,0.12);--cux-well:rgba(28,26,36,0.06)}
+.cux-on-dark .cux-nm,.cux-on-light .cux-nm{color:var(--cux-ink)}
+.cux-sub{color:var(--cux-ink-2)}
+/* chips inside a glass card follow the card's ink, not the section's */
+.cux-glass .cux-chip{background:var(--cux-well);border-color:var(--cux-hair);color:var(--cux-ink-2)}
+.cux-glass .cux-illus{color:var(--cux-ink-3)}
+/* the score chip stays the brand moment in BOTH scopes (charcoal on the bright gradient = AA) */
+.cux-glass .cux-chip--score{background:var(--w-grad-brand);border-color:transparent;color:var(--w-charcoal)}
+/* the avatar ring's inner halo must match the card it sits on, not the section */
+.cux-on-dark .cux-av{box-shadow:0 0 0 2px rgba(22,20,30,.9),0 4px 10px -4px rgba(0,0,0,.4)}
+.cux-on-dark .cux-av--ring{box-shadow:0 0 0 2px rgba(22,20,30,.9),0 0 0 4px var(--w-brand-2),0 6px 14px -5px rgba(0,0,0,.45)}
+.cux-on-light .cux-av--ring{box-shadow:0 0 0 2px #fff,0 0 0 4px var(--w-brand),0 6px 14px -5px rgba(28,26,36,.28)}
+
+/* SCANNED FACES — the rows/pills being scanned carry real people, desaturated. They are candidates,
+   not records: grayscale + dimmed reads as "not yet chosen", and the ONE match resolves to colour. */
+.cux-face{border-radius:var(--w-r-full);background-size:cover;background-position:center;flex:none;
+  filter:grayscale(1) contrast(.92);opacity:.55}
+
+
+/* ---- cu2a_fragment ---- */
+/* ============================================================================
+   cu2a…cu2e · §2 THE FIVE MOVES — real Carly screenshots in a subtle browser
+   frame (replaces the abstract loop scenes). Shared frame CSS lives here (cu2a
+   is hoisted first); cu2b–cu2e supply markup only.
+   ========================================================================== */
+/* let the framed shot define its own height (the scaffold fig is a fixed 132px
+   letterbox built for the old canvas) */
+#cu2a,#cu2b,#cu2c,#cu2d,#cu2e{height:auto!important;background:transparent!important;
+  border:0!important;overflow:visible!important;margin:var(--w-s-5) 0 var(--w-s-6)!important}
+#cu2e{margin:0!important}
+
+.cum-shot{position:relative;width:100%;aspect-ratio:520/286;display:flex;flex-direction:column;
+  border-radius:14px;overflow:hidden;background:#0b0a12;
+  border:1px solid rgba(255,255,255,.12);
+  box-shadow:0 16px 44px rgba(8,6,16,.50),inset 0 1px 0 rgba(255,255,255,.08);}
+.cum-shot__bar{flex:0 0 26px;display:flex;align-items:center;gap:7px;padding:0 12px;
+  background:rgba(18,16,28,.94);border-bottom:1px solid rgba(255,255,255,.07);}
+.cum-shot__dot{width:9px;height:9px;border-radius:50%;opacity:.92;}
+.cum-shot__img{flex:1;width:100%;min-height:0;display:block;object-fit:cover;object-position:top center;}
+@media (max-width:700px){.cum-shot__bar{flex-basis:22px}.cum-shot__dot{width:8px;height:8px}}
+
+/* ---- cu3_fragment ---- */
+/* ============================================================================
+   cu3 · A3 — W-CARLY-USECASES §3 DEAL MONITORING & MOMENTUM (light)
+   "she noticed, and she noticed in time"
+
+   ONE real deal, as a CARD (the sibling cu1 owns the timeline view — this must
+   not repeat it). Left: the deal — account, buying committee, its engagement,
+   and the SIGNAL that just landed on it. Right: Carly's bloom-rim reasoning
+   card — the recommended MOVE, and, the payload, WHY NOW: the signal she read
+   plus the clock that makes this the moment. A single orthogonal connector runs
+   from the signal row straight into her card: she read THAT → she says THIS.
+   Loop 11s, pure CSS.
+
+   THE "WHY NOW" SIGNAL: the champion re-opened the pricing thread this morning
+   after eleven silent days — and re-engagement on price goes cold fast. The
+   deal's engagement bars carry the same story (decay → 11 flat days → today's
+   spike), so the read is visible before it is written.
+
+   TWO CANVASES, ONE STORY
+   · data-canvas    1180×860 — deal card LEFT, Carly's card RIGHT, connector
+     between them at the signal row's height.
+   · data-canvas-sm  440×620 — PORTRAIT (the host scaler stamps .is-sm at ≤700,
+     data-sm-at). The pair STACKS: the deal card condenses (older activity rows
+     dropped, sparkline shortened, avatars smaller) and Carly's card lands
+     directly beneath it, overlapping its bottom edge; the horizontal connector
+     becomes a short vertical drop. All .is-sm rules are ADDITIVE.
+
+   LEGIBILITY FLOOR: the wide canvas contain-scales to ≈0.376 at its worst stage
+   width (≈1025px viewport — the split is still 2-col down to 1024), so NO type
+   on the wide canvas is under 20px → ≥7.5px effective. Portrait bottoms out at
+   ≈0.727 (360px viewport), so 12px is the floor there → ≥8.7px.
+
+   ⚠ STACKING-CONTEXT: .cux-rim's ::before is z-index:-1, so the rim must never
+   be a stacking context. It lives on its own STATIC underlay <i class="cu3-rim">
+   inside the animated .cu3-focal wrapper — never on the glass card (backdrop-
+   filter) and never on an element with animated opacity/transform.
+   ⚠ The dark-glass face is near-OPAQUE: a translucent face over the rim bloom
+   washes the whole card lavender. Brand reads as a RIM, not a fill.
+   ⚠ .cux-ghost's --w-card-lo (#efefef) on a white glass card is nearly invisible
+   → scope-lifted here (stronger line, higher opacity) so the receding rows read.
+
+   Builds on the shared cux- kit (already in the page — never redefined here).
+   Every selector is scoped .cu3- / .cu3-scene. Tokens only — zero raw hex.
+   BASE CSS = RESOLVED END STATE (signal read, move recommended, why visible) in
+   BOTH layouts; all motion is opt-in under prefers-reduced-motion:no-preference,
+   and an explicit reduce block freezes it. No JS, no <img>.
+   ============================================================================ */
+
+.cu3-scene{--cu3-loop:11s;--cu3-ease:cubic-bezier(.2,.7,.2,1);
+  font-family:var(--w-font)}
+
+/* type floor — the kit's 10/12px defaults go illegible at this canvas scale */
+.cu3-scene .cux-chip{font-size:20px;padding:7px 12px;gap:7px}
+.cu3-scene .cux-illus{font-size:20px}
+
+/* the receding rows: kit .cux-ghost sits on --w-card-lo, which all but vanishes
+   on a white glass card. Lift it onto a real line + honest opacity (scoped). */
+.cu3-scene .cux-ghost{border-color:var(--w-line-strong);opacity:.72}
+.cu3-scene .cux-ghost .cux-ln{opacity:.8}
+
+/* ═══ WIDE (1180×860) ════════════════════════════════════════════════════════ */
+
+/* ---- THE DEAL · a real product card ------------------------------------- */
+.cu3-deal{left:60px;top:96px;width:500px;height:656px;padding:32px;
+  display:flex;flex-direction:column;gap:18px}
+
+.cu3-row{display:flex;align-items:center;gap:14px}
+.cu3-logo{width:40px;height:40px;flex:none;border-radius:10px;
+  background-size:contain;background-repeat:no-repeat;background-position:center}
+.cu3-acct{font:700 24px/1.2 var(--w-font);letter-spacing:var(--w-ls-tight);
+  color:var(--cux-ink);white-space:nowrap}
+.cu3-stage{margin-left:auto}
+.cu3-meta{font:500 20px/1.3 var(--w-font);color:var(--cux-ink-2);white-space:nowrap}
+
+/* section labels inside the card */
+.cu3-lb{font:400 20px/1 var(--w-font-kicker);letter-spacing:.09em;text-transform:uppercase;
+  color:var(--cux-ink-3);white-space:nowrap}
+
+/* the buying committee — real people, the champion ringed */
+.cu3-cmt{display:flex;flex-direction:column;gap:12px}
+.cu3-faces{display:flex;align-items:center;gap:16px}
+.cu3-av{width:52px;height:52px}
+.cu3-stack{display:flex;align-items:center}
+.cu3-stack .cu3-av+.cu3-av{margin-left:-14px}
+.cu3-champ{font:600 20px/1.2 var(--w-font);color:var(--cux-ink-2);white-space:nowrap}
+
+/* the deal's engagement — decay, then eleven flat days, then today */
+.cu3-eng{display:flex;flex-direction:column;gap:10px}
+.cu3-eng-h{display:flex;align-items:center;gap:12px}
+/* the kit's `.cux-glass .cux-chip` (0,2,0) repaints every chip inside a glass card,
+   so the tone chip needs a heavier hand to keep its warning tint. */
+.cu3-scene .cux-chip.cu3-quiet{margin-left:auto;background:var(--w-warning-soft);
+  border-color:var(--w-warning);color:var(--cux-ink-2)}
+.cu3-spark{display:block;width:436px;height:92px;transform-origin:0 100%}
+.cu3-b{fill:var(--w-line-strong)}
+.cu3-b--q{fill:var(--w-line)}
+.cu3-b--hit{fill:var(--w-success);transform-box:fill-box;transform-origin:50% 100%}
+
+/* ---- THE SIGNAL · the thing she read, this morning ----------------------- */
+.cu3-sig{height:96px;display:flex;align-items:center;gap:16px;
+  padding:0 18px 0 16px;border-radius:var(--w-r-sm);
+  background:var(--w-success-soft);border:1px solid var(--cux-hair);
+  border-left:4px solid var(--w-success)}
+.cu3-dot{width:16px;height:16px;flex:none;border-radius:var(--w-r-full);
+  background:var(--w-success);box-shadow:0 0 0 6px var(--w-success-soft)}
+.cu3-sig-t{display:flex;flex-direction:column;gap:4px;min-width:0}
+.cu3-sig-1{font:600 21px/1.3 var(--w-font);color:var(--cux-ink)}
+.cu3-sig-2{font:500 20px/1.35 var(--w-font);color:var(--cux-ink-2)}
+.cu3-sig-2 b{font-family:var(--w-font-mono);font-weight:700}
+
+/* ---- everything else on the deal · older, undifferentiated activity ------ */
+.cu3-acts{display:flex;flex-direction:column;gap:12px}
+.cu3-act{height:52px;display:flex;align-items:center;gap:14px;padding:0 16px;
+  border-radius:var(--w-r-sm);border:1px solid var(--w-line)}
+.cu3-face{width:32px;height:32px}
+.cu3-lns{display:flex;flex-direction:column;gap:7px;flex:1}
+.cu3-lns .cux-ln:first-child{width:62%}
+.cu3-lns .cux-ln:last-child{width:34%}
+
+/* ---- the connector · signal → Carly (orthogonal, neutral; brand stays product) -- */
+.cu3-cn{left:560px;top:533px;width:82px;height:6px;transform-origin:0 50%;
+  background:linear-gradient(90deg,var(--w-success),var(--w-line-strong))}
+
+/* ---- CARLY'S CARD · the recommended move + WHY NOW ----------------------- */
+.cu3-focal{position:absolute;left:632px;top:190px;width:488px;height:490px}
+.cu3-rim{position:absolute;inset:0;border-radius:var(--w-glass-radius);
+  pointer-events:none}   /* STATIC underlay — never animated, never a stacking ctx */
+.cu3-card{inset:0;padding:30px;display:flex;flex-direction:column;gap:18px;
+  /* near-opaque face: a translucent one lets the rim bloom bleed through and
+     washes the card lavender. The brand lives on the RIM, not in the fill. */
+  background:rgba(22,20,30,0.94)}
+.cu3-crow{display:flex;align-items:center;gap:12px}
+.cu3-cav{width:32px;height:32px;flex:none;border-radius:var(--w-r-full);
+  background-size:cover;background-position:center;
+  box-shadow:0 0 0 2px rgba(22,20,30,.9),0 0 0 4px var(--w-brand-2),0 4px 10px -4px rgba(0,0,0,.45)}
+.cu3-crow .cux-illus{margin-left:auto}
+.cu3-move{margin:0;font:600 23px/1.34 var(--w-font);letter-spacing:var(--w-ls-tight);
+  color:var(--cux-ink)}
+
+/* THE PAYLOAD — why THIS is the moment */
+.cu3-why{padding:20px;border-radius:var(--w-glass-radius-nested);
+  background:var(--cux-well);border:1px solid var(--cux-hair);
+  display:flex;flex-direction:column;gap:12px}
+.cu3-why-h{display:flex;align-items:center;gap:10px}
+.cu3-why-r{display:flex;gap:12px;font:500 20px/1.4 var(--w-font);color:var(--cux-ink-2)}
+.cu3-why-r i{margin-top:8px;width:7px;height:7px;flex:none;border-radius:var(--w-r-full);
+  background:var(--w-success)}
+.cu3-why-r:last-child i{background:var(--w-warning)}
+.cu3-why-r b{color:var(--cux-ink);font-weight:700}
+.cu3-why-r b.cu3-num{font-family:var(--w-font-mono)}
+
+/* the rep takes the move */
+.cu3-foot{display:flex;align-items:center;gap:14px;margin-top:auto}
+.cu3-accept{display:inline-flex;align-items:center;gap:10px;padding:13px 22px;
+  border-radius:var(--w-r-pill);border:1px solid transparent;
+  background:var(--w-white);color:var(--w-charcoal);
+  font:600 20px/1 var(--w-font);white-space:nowrap;transform-origin:50% 50%}
+.cu3-accept svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2.6;
+  stroke-linecap:round;stroke-linejoin:round}
+.cu3-when{margin-left:auto}
+
+/* ═══ PORTRAIT (440×620) — .is-sm · the pair STACKS ══════════════════════════
+   Additive overrides only; the base here is ALSO the resolved end state.      */
+
+.cux-fit.is-sm .cux-chip{font-size:12px;padding:6px 10px;gap:6px}
+.cux-fit.is-sm .cux-illus{font-size:12px}
+
+.cux-fit.is-sm .cu3-deal{left:22px;top:16px;width:396px;height:298px;padding:14px 16px;gap:10px}
+.cux-fit.is-sm .cu3-acct{font-size:20px}
+.cux-fit.is-sm .cu3-meta{font-size:13px}
+.cux-fit.is-sm .cu3-lb{font-size:12px;letter-spacing:.07em}
+.cux-fit.is-sm .cu3-cmt{gap:8px}
+.cux-fit.is-sm .cu3-faces{gap:10px}
+.cux-fit.is-sm .cu3-av{width:32px;height:32px}
+.cux-fit.is-sm .cu3-stack .cu3-av+.cu3-av{margin-left:-9px}
+.cux-fit.is-sm .cu3-champ{font-size:12px}
+.cux-fit.is-sm .cu3-eng{gap:6px}
+.cux-fit.is-sm .cu3-spark{width:364px;height:44px}
+.cux-fit.is-sm .cu3-sig{height:58px;padding:0 12px 0 10px;gap:10px}
+.cux-fit.is-sm .cu3-dot{width:10px;height:10px;box-shadow:0 0 0 4px var(--w-success-soft)}
+.cux-fit.is-sm .cu3-sig-1{font-size:14px;line-height:1.25}
+.cux-fit.is-sm .cu3-sig-2{font-size:12px}
+/* the older activity rows are the first thing to go — the signal is the point */
+.cux-fit.is-sm .cu3-acts{display:none}
+
+/* the connector stands up: a short drop from the signal row into Carly's card */
+.cux-fit.is-sm .cu3-cn{left:52px;top:314px;width:6px;height:16px;
+  transform-origin:50% 0;
+  background:linear-gradient(180deg,var(--w-success),var(--w-line-strong))}
+
+.cux-fit.is-sm .cu3-focal{left:22px;top:330px;width:396px;height:282px}
+.cux-fit.is-sm .cu3-card{padding:14px 16px;gap:10px}
+.cux-fit.is-sm .cu3-crow{gap:10px}
+.cux-fit.is-sm .cu3-move{font-size:17px;line-height:1.28}
+.cux-fit.is-sm .cu3-why{padding:12px;gap:8px}
+.cux-fit.is-sm .cu3-why-h{gap:8px}
+.cux-fit.is-sm .cu3-why-r{font-size:12px;line-height:1.35;gap:8px}
+.cux-fit.is-sm .cu3-why-r i{margin-top:5px;width:6px;height:6px}
+.cux-fit.is-sm .cu3-foot{gap:10px}
+.cux-fit.is-sm .cu3-accept{padding:9px 14px;font-size:13px;gap:7px}
+.cux-fit.is-sm .cu3-accept svg{width:14px;height:14px}
+
+/* ═══ MOTION · everything above is the resolved end state ════════════════════
+   beat 1 ·  0–10%  the deal is there — committee, meta, the older rows settle
+   beat 2 ·  6–18%  the engagement bars draw: decay, then eleven flat days
+   beat 3 · 20–30%  TODAY spikes — the champion is back on the pricing thread
+   beat 4 · 24–34%  the SIGNAL row lights (this is "she noticed")
+   beat 5 · 34–44%  the connector runs from the signal into Carly
+   beat 6 · 42–56%  Carly's bloom-rim card LANDS — the recommended move
+   beat 7 · 56–70%  WHY NOW resolves: the signal she read + the clock on it
+   beat 8 · 72–82%  the rep can take it — the Accept control lifts and settles
+   beat 9 · 84–94%  hold  ·  94–100% reset                                     */
+@media (prefers-reduced-motion:no-preference){
+  .cu3-acts{animation:cu3-kin var(--cu3-loop) var(--cu3-ease) infinite}
+  .cu3-spark{animation:cu3-kdraw var(--cu3-loop) var(--cu3-ease) infinite}
+  .cu3-b--hit{animation:cu3-kspike var(--cu3-loop) var(--cu3-ease) infinite}
+  .cu3-quiet{animation:cu3-kquiet var(--cu3-loop) var(--cu3-ease) infinite}
+  .cu3-sig{animation:cu3-ksig var(--cu3-loop) var(--cu3-ease) infinite}
+  .cu3-dot{animation:cu3-kpulse 2.4s var(--cu3-ease) infinite}
+  .cu3-cn{animation:cu3-krun var(--cu3-loop) var(--cu3-ease) infinite}
+  .cu3-focal{animation:cu3-kland var(--cu3-loop) var(--cu3-ease) infinite}
+  .cu3-move{animation:cu3-kmove var(--cu3-loop) var(--cu3-ease) infinite}
+  .cu3-focal .cux-illus{animation:cu3-kmark var(--cu3-loop) var(--cu3-ease) infinite}
+  .cu3-why{animation:cu3-kwhy var(--cu3-loop) var(--cu3-ease) infinite}
+  .cu3-foot{animation:cu3-kfoot var(--cu3-loop) var(--cu3-ease) infinite}
+  .cu3-accept{animation:cu3-ktake var(--cu3-loop) var(--cu3-ease) infinite}
+  /* the only structurally different beat: in portrait the connector DROPS */
+  .cux-fit.is-sm .cu3-cn{animation-name:cu3-krunv}
+}
+
+@keyframes cu3-kin{
+  0%       {opacity:0}
+  10%,94%  {opacity:1}
+  100%     {opacity:0}
+}
+/* the bars sweep up from the baseline (transform-origin 0 100%) */
+@keyframes cu3-kdraw{
+  0%,6%    {opacity:0;transform:scaleY(.12)}
+  18%,94%  {opacity:1;transform:none}
+  100%     {opacity:0;transform:scaleY(.12)}
+}
+@keyframes cu3-kspike{
+  0%,20%   {transform:scaleY(.05)}
+  27%      {transform:scaleY(1.12)}
+  30%,94%  {transform:scaleY(1)}
+  100%     {transform:scaleY(.05)}
+}
+@keyframes cu3-kquiet{
+  0%,12%   {opacity:0}
+  20%,94%  {opacity:1}
+  100%     {opacity:0}
+}
+@keyframes cu3-ksig{
+  0%,24%   {opacity:0;transform:translateY(10px)}
+  34%,94%  {opacity:1;transform:none}
+  100%     {opacity:0;transform:translateY(10px)}
+}
+@keyframes cu3-krun{
+  0%,34%   {transform:scaleX(0)}
+  44%,94%  {transform:scaleX(1)}
+  100%     {transform:scaleX(0)}
+}
+@keyframes cu3-krunv{
+  0%,34%   {transform:scaleY(0)}
+  44%,94%  {transform:scaleY(1)}
+  100%     {transform:scaleY(0)}
+}
+/* runs on the WRAPPER (.cu3-focal) — never on .cu3-rim */
+@keyframes cu3-kland{
+  0%,42%   {opacity:0;transform:translateY(-34px) scale(.95)}
+  56%,94%  {opacity:1;transform:none}
+  100%     {opacity:0;transform:translateY(-34px) scale(.95)}
+}
+@keyframes cu3-kmove{
+  0%,48%   {opacity:0}
+  58%,94%  {opacity:1}
+  100%     {opacity:0}
+}
+@keyframes cu3-kmark{
+  0%,54%   {opacity:0}
+  62%,94%  {opacity:1}
+  100%     {opacity:0}
+}
+@keyframes cu3-kwhy{
+  0%,56%   {opacity:0;transform:translateY(12px)}
+  70%,94%  {opacity:1;transform:none}
+  100%     {opacity:0;transform:translateY(12px)}
+}
+@keyframes cu3-kfoot{
+  0%,66%   {opacity:0}
+  76%,94%  {opacity:1}
+  100%     {opacity:0}
+}
+@keyframes cu3-ktake{
+  0%,72%   {transform:none}
+  77%      {transform:scale(.94)}
+  82%,94%  {transform:scale(1)}
+  100%     {transform:none}
+}
+@keyframes cu3-kpulse{
+  0%       {box-shadow:0 0 0 2px var(--w-success-soft)}
+  70%,100% {box-shadow:0 0 0 12px transparent}
+}
+
+/* motion is opt-in above; this freezes the scene at its resolved end state. */
+@media (prefers-reduced-motion:reduce){
+  .cu3-scene,.cu3-scene *,.cu3-scene *::before,.cu3-scene *::after{
+    animation:none !important;transition:none !important}
+}
+
+/* ---- cu4b_fragment ---- */
+/* ============================================================================
+   cu4b · A4b — W-CARLY-USECASES §5 24/7 CONVERSATION HANDLING (light)
+   "someone was there"
+
+   THE SUBJECT IS THE CLOCK, NOT THE MATCH.
+   §4 (cu4) already owns the expert-match card — a person, a fit score, a
+   why-she-answers reason block, a recorded story, "Send the intro". This scene
+   must not re-stage any of it. There is NO fit %, NO candidate scan, NO reason
+   list, NO expert as the subject. What is on screen instead:
+     · A TIME COLUMN — the thing this use case actually sells. Real stamps at
+       antisocial hours, and MIDNIGHT crossed in the middle of the composition.
+     · THE RESPONSE DELTA — the buyer asks at Fri 23:52; Carly answers at Fri
+       23:52. The two stamps sit on top of each other on the rail, and the gap
+       is named twice: a mono "+40s" mark in the time column, and the gradient
+       chip in her card. That delta IS the argument.
+     · QUALIFICATION IN FLIGHT — the weekend stakeholder's question comes back
+       already marked "Qualified". She reads as she goes; it is not a step.
+     · THE ROUTE — handed to a rep with what she captured and the proof already
+       ATTACHED. The proof is a one-line attachment ON the routed conversation
+       (a paperclip, not a media card): here it is a footnote, not the payload.
+   The thread runs to the RIGHT edge of the canvas, where the kit's edge-fade
+   dissolves it — the stage itself bleeds off the right page edge, so the
+   conversation visibly has no end. That is the composition's whole right side.
+
+   NOT A CHAT UI. No bubbles, no tails, no composer, no unread badge — that
+   reads as a support widget. These are deal entries on a timeline: product-real
+   rows, each one a person, a time, and a move.
+
+   TWO CANVASES, ONE STORY
+   · data-canvas    1180×860 — time column LEFT (stamps + a dashed rail that
+     keeps ticking past the last entry), thread RIGHT, running to the edge.
+   · data-canvas-sm  440×620 — PORTRAIT (.is-sm at ≤700 via data-sm-at). The
+     time column NARROWS to a 52px gutter and the stamps re-set to two tight
+     mono lines; the thread keeps its order. All .is-sm rules are ADDITIVE.
+
+   LEGIBILITY FLOOR: the wide canvas contain-scales to ≈0.390 at its worst stage
+   width (≈1025px viewport — .cuv__split stays 2-col down to 1024: 460px column
+   → 460/1180). So NO type on the wide canvas is under 20px → ≥7.8px effective.
+   Portrait bottoms out at ≈0.727 (360px viewport); its floor is 11px → 8.0px.
+
+   ⚠ .cux-rim's ::before/::after are z-index:-1/-2 → the rim must never be a
+     stacking context. It lives on a STATIC underlay <i class="cu4b-rim"> inside
+     the animated .cu4b-focal wrapper — never on the backdrop-filter card.
+   ⚠ The routed card's dark-glass face is near-OPAQUE (rgba(22,20,30,0.94)): a
+     translucent one lets the rim bloom through and washes the card lavender.
+   ⚠ .cux-glass .cux-chip (0,2,0) repaints EVERY chip inside a glass card, so the
+     success-tone chips need .cu4b-scene .cux-chip.cu4b-live to keep their tint.
+
+   Builds on the shared cux- kit (already in the page — never redefined here).
+   Every selector scoped .cu4b- / .cu4b-scene. Tokens only — zero raw hex.
+   Purple appears in exactly two places, both product UI: the delta chip inside
+   Carly's card and the routed card's rim. Never as a scene accent: the rail,
+   the dots and the midnight divider are all neutral on purpose, and §7's loop
+   keeps the page's one full-strength brand moment.
+   BASE CSS = RESOLVED END STATE (asked, answered, qualified, routed) in BOTH
+   layouts; motion is opt-in under prefers-reduced-motion:no-preference and an
+   explicit reduce block freezes it. Loop 12s. No JS, no <img>.
+   ============================================================================ */
+
+.cu4b-scene{--cu4b-loop:12s;--cu4b-ease:cubic-bezier(.2,.7,.2,1);font-family:var(--w-font)}
+
+/* type floor — the kit's 10/12px defaults go illegible at this canvas scale */
+.cu4b-scene .cux-chip{font-size:20px;padding:7px 12px;gap:7px}
+.cu4b-scene .cux-illus{font-size:20px}
+
+/* ═══ WIDE (1180×860) ════════════════════════════════════════════════════════ */
+
+/* shared vocabulary inside the entries */
+.cu4b-lb{font:400 20px/1 var(--w-font-kicker);letter-spacing:.09em;text-transform:uppercase;
+  color:var(--cux-ink-3);white-space:nowrap}
+.cu4b-hd{display:flex;align-items:center;gap:12px}
+.cu4b-cav{width:30px;height:30px;flex:none;border-radius:var(--w-r-full);
+  background-size:cover;background-position:center;
+  box-shadow:0 0 0 2px rgba(22,20,30,.9),0 0 0 4px var(--w-brand-2),0 4px 10px -4px rgba(0,0,0,.45)}
+/* ONLY the trailing element takes the auto margin — two autos in one flex row split
+   the free space between them and the header falls apart. */
+.cu4b-mark{margin-left:auto;flex:none}
+.cu4b-who{display:flex;align-items:center;gap:16px}
+/* overflow:hidden is load-bearing — the name and role are nowrap, so at the
+   portrait width they would run UNDER the trailing chip instead of shrinking.
+   With min-width:0 + hidden they truncate, which is what a real row does. */
+.cu4b-tx{display:flex;flex-direction:column;gap:3px;min-width:0;overflow:hidden}
+.cu4b-nm{font:700 21px/1.2 var(--w-font);letter-spacing:var(--w-ls-tight);color:var(--cux-ink);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cu4b-role{font:500 20px/1.3 var(--w-font);color:var(--cux-ink-2);white-space:nowrap;
+  overflow:hidden;text-overflow:ellipsis}
+/* the success-tone chips must out-specify the kit's .cux-glass .cux-chip repaint */
+.cu4b-scene .cux-chip.cu4b-live{background:var(--w-success-soft);border-color:var(--w-success);
+  color:var(--cux-ink-2)}
+.cu4b-live i{width:10px;height:10px;flex:none;border-radius:var(--w-r-full);
+  background:var(--w-success)}
+
+/* ---- THE CLOCK · a dashed rail that keeps ticking, and the hours it ticked --
+   the rail is ONE element: a repeating gradient reads as a clock, and it runs
+   16px→844px — past the last entry, because the night does not stop there. */
+.cu4b-rail{position:absolute;left:240px;top:16px;width:2px;height:828px;
+  border-radius:var(--w-r-pill);transform-origin:50% 0;
+  background:repeating-linear-gradient(180deg,
+    var(--w-line-strong) 0 12px, transparent 12px 26px)}
+/* an event on the rail — punched out of it with a ring in the section ground */
+.cu4b-dot{position:absolute;left:235px;width:12px;height:12px;border-radius:var(--w-r-full);
+  background:var(--w-text-3);box-shadow:0 0 0 5px var(--w-bg)}
+.cu4b-d1{top:65px} .cu4b-d2{top:265px} .cu4b-d3{top:499px} .cu4b-d4{top:635px}
+
+/* the stamps — right-aligned into the rail. Mono, because they are the payload. */
+.cu4b-stamp{position:absolute;left:40px;width:176px;
+  display:flex;flex-direction:column;align-items:flex-end;gap:2px}
+.cu4b-day{font:700 20px/1 var(--w-font-kicker);letter-spacing:.14em;text-transform:uppercase;
+  color:var(--w-text-3)}
+.cu4b-hh{font:600 25px/1 var(--w-font-mono);letter-spacing:-.01em;color:var(--w-text)}
+.cu4b-s1{top:36px} .cu4b-s2{top:236px} .cu4b-s3{top:470px} .cu4b-s4{top:606px}
+/* THE DELTA, named in the time column: two stamps read 23:52 and 23:52 — this
+   says how far apart they actually were. Neutral: purple stays in product UI. */
+.cu4b-gap{margin-top:10px}
+.cu4b-scene .cux-chip.cu4b-gap{background:var(--w-glass-fill-soft);border-color:var(--w-line-strong);
+  color:var(--w-text-2);font-family:var(--w-font-mono);font-weight:700}
+
+/* ---- MIDNIGHT · the line the whole use case is about ----------------------
+   2px, not a hairline: at the worst stage scale (0.390) a 1px rule renders at
+   0.39px and washes out entirely — and --w-line at 0.10 alpha disappears with
+   it. The divider takes the --w-line-strong tier so midnight still reads. */
+.cu4b-mid{position:absolute;left:280px;top:444px;width:876px;height:2px;
+  border-radius:var(--w-r-pill);transform-origin:0 50%;
+  background:var(--w-line-strong)}
+.cu4b-midl{position:absolute;left:40px;top:434px;width:176px;text-align:right;
+  font:700 20px/1 var(--w-font-kicker);letter-spacing:.12em;text-transform:uppercase;
+  color:var(--w-text-3);white-space:nowrap}
+
+/* ---- THE THREAD · every entry starts at the rail and runs to the edge ------
+   876px wide → right edge at 1156 of 1180. The kit's edge-fade eats the last
+   ~24px, so the thread visibly leaves frame on the side the STAGE also bleeds. */
+.cu4b-e{left:280px;width:876px}
+
+/* 1 · THE BUYER ASKS — 23:52 on a Friday. Heights are MEASURED, not budgeted:
+      the question sets to two lines at 26px in an 836px content box. */
+.cu4b-ask{top:32px;height:184px;padding:20px 24px;
+  display:flex;flex-direction:column;gap:14px}
+.cu4b-av{width:60px;height:60px}
+.cu4b-q{margin:0;font:600 22px/1.38 var(--w-font);letter-spacing:var(--w-ls-tight);
+  color:var(--cux-ink)}
+
+/* 2 · CARLY ANSWERS — same minute. Dark glass = she is product UI. NO rim: the
+      rim belongs to the hand-off, and two blooms would flatten the story. */
+.cu4b-ans{top:232px;height:190px;padding:22px 24px;
+  display:flex;flex-direction:column;gap:12px;background:rgba(22,20,30,0.90)}
+.cu4b-delta{margin-left:auto;flex:none;
+  display:flex;flex-direction:column;align-items:flex-end;gap:4px}
+.cu4b-body{margin:0;font:500 20px/1.5 var(--w-font);color:var(--cux-ink-2)}
+.cu4b-body b{color:var(--cux-ink);font-weight:700}
+
+/* 3 · THE WEEKEND STAKEHOLDER — 02:31, Saturday. Comes back already Qualified:
+      she reads as she goes, so qualification is a state, not a step. */
+.cu4b-nxt{top:466px;height:116px;padding:20px;
+  display:flex;align-items:center;gap:16px}
+.cu4b-nav{width:48px;height:48px}
+.cu4b-q3{font:600 21px/1.32 var(--w-font);color:var(--cux-ink);margin-top:6px}
+.cu4b-nxt .cux-chip{margin-left:auto;flex:none}
+
+/* 4 · THE ROUTE — the one bloom-rim card. The rep, what she captured, and the
+      proof as an ATTACHMENT LINE (not a media card — that is §4's payload). */
+/* height is MEASURED, not budgeted: the attachment line wraps to TWO lines at
+   this width, and at padding:24/gap:14 the content lays out 4px taller than the
+   card — the footer then paints outside its own glass, which is worse than a
+   taller card. 236 / 22 / 12 leaves 4px of slack, and the rim bloom (inset −14)
+   still lands at 852 of the 860 canvas. */
+.cu4b-focal{position:absolute;left:280px;top:602px;width:876px;height:236px}
+.cu4b-rim{position:absolute;inset:0;border-radius:var(--w-glass-radius);
+  pointer-events:none}   /* STATIC underlay — never animated, never a stacking ctx */
+.cu4b-route{inset:0;padding:22px;display:flex;flex-direction:column;gap:12px;
+  /* near-opaque face: a translucent one bleeds the rim bloom into the fill */
+  background:rgba(22,20,30,0.94)}
+.cu4b-arrow{width:30px;height:30px;flex:none;fill:none;stroke:var(--cux-ink-2);
+  stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.cu4b-rav{width:56px;height:56px}
+.cu4b-caps{display:flex;flex-wrap:wrap;gap:10px}
+.cu4b-att{display:flex;align-items:center;gap:12px;
+  font:500 20px/1.3 var(--w-font);color:var(--cux-ink-2);margin-top:auto}
+.cu4b-att b{color:var(--cux-ink);font-weight:700}
+.cu4b-clip{width:22px;height:22px;flex:none;fill:none;stroke:var(--cux-ink-3);
+  stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+
+/* ═══ PORTRAIT (440×620) — .is-sm · the time column becomes a gutter ═════════
+   Additive overrides only; this base is ALSO the resolved end state.          */
+
+.cux-fit.is-sm .cux-chip{font-size:12px;padding:5px 9px;gap:5px}
+.cux-fit.is-sm .cux-illus{font-size:11px}
+.cux-fit.is-sm .cu4b-lb{font-size:11px;letter-spacing:.07em}
+.cux-fit.is-sm .cu4b-hd{gap:8px}
+/* the portrait answer-card header is tight (chip + delta already fill 332px);
+   the avatar is a wide-canvas nicety — drop it here, the chip still says "Carly". */
+.cux-fit.is-sm .cu4b-cav{display:none}
+.cux-fit.is-sm .cu4b-who{gap:10px}
+.cux-fit.is-sm .cu4b-nm{font-size:15px}
+.cux-fit.is-sm .cu4b-role{font-size:12px}
+.cux-fit.is-sm .cu4b-live i{width:7px;height:7px}
+
+/* the rail pulls in to a 52px gutter; the stamps re-set to two tight mono lines */
+.cux-fit.is-sm .cu4b-rail{left:68px;top:6px;height:606px}
+.cux-fit.is-sm .cu4b-dot{left:64px;width:9px;height:9px;box-shadow:0 0 0 4px var(--w-bg)}
+.cux-fit.is-sm .cu4b-d1{top:24px}  .cux-fit.is-sm .cu4b-d2{top:166px}
+.cux-fit.is-sm .cu4b-d3{top:330px} .cux-fit.is-sm .cu4b-d4{top:432px}
+.cux-fit.is-sm .cu4b-stamp{left:6px;width:52px;gap:1px}
+.cux-fit.is-sm .cu4b-day{font-size:11px;letter-spacing:.08em}
+.cux-fit.is-sm .cu4b-hh{font-size:15px}
+.cux-fit.is-sm .cu4b-s1{top:14px} .cux-fit.is-sm .cu4b-s2{top:156px}
+.cux-fit.is-sm .cu4b-s3{top:320px} .cux-fit.is-sm .cu4b-s4{top:422px}
+.cux-fit.is-sm .cu4b-gap{margin-top:6px}
+.cux-fit.is-sm .cu4b-mid{left:84px;top:300px;width:332px;height:1px}
+.cux-fit.is-sm .cu4b-midl{left:6px;top:292px;width:52px;font-size:11px;letter-spacing:.06em}
+
+.cux-fit.is-sm .cu4b-e{left:84px;width:332px}
+.cux-fit.is-sm .cu4b-ask{top:6px;height:132px;padding:12px 14px;gap:8px}
+/* MEASURED: at 332px the avatar + her nowrap role already fill the row, so the
+   "Buyer thread" label pushes the header 35px past the card (11px past the whole
+   canvas). It is a redundant label in portrait — the stamps and the faces carry
+   it — so the re-layout DROPS it rather than shrinking the row into mush. */
+.cux-fit.is-sm .cu4b-ask .cu4b-mark{display:none}
+.cux-fit.is-sm .cu4b-av{width:34px;height:34px}
+.cux-fit.is-sm .cu4b-q{font-size:14px;line-height:1.3}
+.cux-fit.is-sm .cu4b-ans{top:148px;height:140px;padding:12px 14px;gap:7px}
+.cux-fit.is-sm .cu4b-delta{gap:2px}
+.cux-fit.is-sm .cu4b-body{font-size:12.5px;line-height:1.4}
+.cux-fit.is-sm .cu4b-nxt{top:312px;height:92px;padding:10px 12px;gap:10px;
+  /* the chip cannot share a row with the name at 332px — it drops under the copy */
+  flex-wrap:wrap}
+.cux-fit.is-sm .cu4b-nav{width:32px;height:32px}
+.cux-fit.is-sm .cu4b-q3{font-size:13px;margin-top:4px}
+.cux-fit.is-sm .cu4b-nxt .cux-chip{margin-left:44px;width:auto}
+.cux-fit.is-sm .cu4b-focal{left:84px;top:414px;width:332px;height:188px}
+.cux-fit.is-sm .cu4b-route{padding:12px 14px;gap:8px}
+.cux-fit.is-sm .cu4b-arrow{width:18px;height:18px;stroke-width:2.8}
+.cux-fit.is-sm .cu4b-rav{width:34px;height:34px}
+.cux-fit.is-sm .cu4b-caps{gap:6px}
+.cux-fit.is-sm .cu4b-att{font-size:12px;gap:8px;line-height:1.3}
+.cux-fit.is-sm .cu4b-clip{width:14px;height:14px;stroke-width:2.6}
+
+/* ═══ MOTION · everything above is the RESOLVED END STATE ═════════════════════
+   beat 1 ·  0–10%  the clock is running — the rail draws down
+   beat 2 ·  6–16%  23:52 · SHE ASKS. Nobody is at a desk.
+   beat 3 · 16–26%  23:52 · CARLY ANSWERS — same minute
+   beat 4 · 24–32%  the delta lands: +40s, and the gradient chip in her card
+   beat 5 · 32–40%  MIDNIGHT crosses — the divider sweeps the thread
+   beat 6 · 38–50%  02:31 Saturday · a second stakeholder pulls himself in
+   beat 7 · 48–56%  he comes back QUALIFIED — she read it as she went
+   beat 8 · 54–68%  02:33 · the ROUTE lands: the rep, with the thread
+   beat 9 · 64–78%  what she captured, chip by chip
+   beat 10· 74–86%  the proof is already attached
+   beat 11· 86–94%  hold  ·  94–100% reset                                     */
+@media (prefers-reduced-motion:no-preference){
+  .cu4b-rail{animation:cu4b-ktick var(--cu4b-loop) var(--cu4b-ease) infinite}
+  .cu4b-dot{animation:cu4b-kdot var(--cu4b-loop) var(--cu4b-ease) infinite;
+    animation-delay:var(--cu4b-d,0s)}
+  .cu4b-stamp{animation:cu4b-kstamp var(--cu4b-loop) var(--cu4b-ease) infinite;
+    animation-delay:var(--cu4b-d,0s)}
+  .cu4b-gap{animation:cu4b-kgap var(--cu4b-loop) var(--cu4b-ease) infinite}
+  .cu4b-ask{animation:cu4b-kask var(--cu4b-loop) var(--cu4b-ease) infinite}
+  .cu4b-ans{animation:cu4b-kans var(--cu4b-loop) var(--cu4b-ease) infinite}
+  .cu4b-delta{animation:cu4b-kdelta var(--cu4b-loop) var(--cu4b-ease) infinite}
+  .cu4b-mid{animation:cu4b-kmid var(--cu4b-loop) var(--cu4b-ease) infinite}
+  .cu4b-midl{animation:cu4b-kmidl var(--cu4b-loop) var(--cu4b-ease) infinite}
+  .cu4b-nxt{animation:cu4b-knxt var(--cu4b-loop) var(--cu4b-ease) infinite}
+  .cu4b-nxt .cux-chip{animation:cu4b-kqual var(--cu4b-loop) var(--cu4b-ease) infinite}
+  .cu4b-focal{animation:cu4b-kroute var(--cu4b-loop) var(--cu4b-ease) infinite}
+  .cu4b-caps>*{animation:cu4b-kcap var(--cu4b-loop) var(--cu4b-ease) infinite;
+    animation-delay:var(--cu4b-d,0s)}
+  .cu4b-att{animation:cu4b-katt var(--cu4b-loop) var(--cu4b-ease) infinite}
+}
+
+/* the clock is the first thing that exists and the last thing that leaves */
+@keyframes cu4b-ktick{
+  0%       {transform:scaleY(0)}
+  10%,96%  {transform:scaleY(1)}
+  100%     {transform:scaleY(0)}
+}
+@keyframes cu4b-kdot{
+  0%,10%   {opacity:0;transform:scale(.4)}
+  18%,94%  {opacity:1;transform:none}
+  100%     {opacity:0;transform:scale(.4)}
+}
+@keyframes cu4b-kstamp{
+  0%,8%    {opacity:0;transform:translateX(-10px)}
+  18%,94%  {opacity:1;transform:none}
+  100%     {opacity:0;transform:translateX(-10px)}
+}
+/* the delta is measured only once both stamps are on the rail */
+@keyframes cu4b-kgap{
+  0%,26%   {opacity:0;transform:scale(.8)}
+  33%,94%  {opacity:1;transform:none}
+  100%     {opacity:0;transform:scale(.8)}
+}
+@keyframes cu4b-kask{
+  0%,6%    {opacity:0;transform:translateY(12px)}
+  16%,94%  {opacity:1;transform:none}
+  100%     {opacity:0;transform:translateY(12px)}
+}
+@keyframes cu4b-kans{
+  0%,16%   {opacity:0;transform:translateY(12px)}
+  26%,94%  {opacity:1;transform:none}
+  100%     {opacity:0;transform:translateY(12px)}
+}
+@keyframes cu4b-kdelta{
+  0%,24%   {opacity:0;transform:scale(.84)}
+  32%,94%  {opacity:1;transform:none}
+  100%     {opacity:0;transform:scale(.84)}
+}
+/* midnight sweeps ACROSS the thread — the hour the buyer was ready */
+@keyframes cu4b-kmid{
+  0%,32%   {transform:scaleX(0)}
+  42%,94%  {transform:scaleX(1)}
+  100%     {transform:scaleX(0)}
+}
+@keyframes cu4b-kmidl{
+  0%,34%   {opacity:0}
+  44%,94%  {opacity:1}
+  100%     {opacity:0}
+}
+@keyframes cu4b-knxt{
+  0%,38%   {opacity:0;transform:translateY(12px)}
+  50%,94%  {opacity:1;transform:none}
+  100%     {opacity:0;transform:translateY(12px)}
+}
+@keyframes cu4b-kqual{
+  0%,48%   {opacity:0;transform:scale(.84)}
+  56%,94%  {opacity:1;transform:none}
+  100%     {opacity:0;transform:scale(.84)}
+}
+/* runs on the WRAPPER (.cu4b-focal) — never on .cu4b-rim */
+@keyframes cu4b-kroute{
+  0%,54%   {opacity:0;transform:translateY(-22px) scale(.96)}
+  68%,94%  {opacity:1;transform:none}
+  100%     {opacity:0;transform:translateY(-22px) scale(.96)}
+}
+@keyframes cu4b-kcap{
+  0%,64%   {opacity:0;transform:translateY(6px)}
+  76%,94%  {opacity:1;transform:none}
+  100%     {opacity:0;transform:translateY(6px)}
+}
+@keyframes cu4b-katt{
+  0%,74%   {opacity:0}
+  86%,94%  {opacity:1}
+  100%     {opacity:0}
+}
+
+/* motion is opt-in above; this freezes the scene at its resolved end state. */
+@media (prefers-reduced-motion:reduce){
+  .cu4b-scene,.cu4b-scene *,.cu4b-scene *::before,.cu4b-scene *::after{
+    animation:none !important;transition:none !important}
+}
+
+/* ---- cu5_fragment ---- */
+/* ============================================================================
+   cu5 · A5 — W-CARLY-USECASES §5 AI OUTBOUND / PROOF DISTRIBUTION (light)
+   "one win → outbound programs across segments → new pipeline → attributed back"
+
+   THIS IS A DIAGRAM, NOT A SCREEN.
+   Tufte brief: high data-ink ratio. Three columns on the pegboard, one rule under
+   each, hairline edges between them, and ONE closing return edge. No fake dashboard,
+   no stacked drop-shadowed panels, no decorative chrome. A CMO reads it in four
+   seconds, left to right, and then the line comes back:
+
+     01  ONE CUSTOMER WIN — one person, one proven outcome, already yours. The only
+         object in the scene rendered as an artifact (a card): it's the thing you own.
+     02  OUTBOUND PROGRAMS — the win FANS OUT (1 → 4) into programs, each aimed at a
+         whole market segment. The fan is the drama; the tree is orthogonal, cz4-style.
+     03  NEW PIPELINE — each program lines up horizontally with the pipeline it opened,
+         so the causal read is spatial: this row made that bar. Ink bars, no purple.
+     04  ATTRIBUTED BACK — a genuine RETURN EDGE, not a badge: it leaves the pipeline
+         total, runs under the whole diagram and points back UP into the programs. The
+         win becomes a channel you can measure, fund and grow. THE ASSET COMPOUNDS.
+
+   WHERE THE PURPLE IS SPENT — ONCE. The return edge (stroke gradient --w-brand →
+   --w-brand-2) and its arrowhead, plus the 22px key-dash on the label chip in portrait.
+   Nowhere else: the fan, the links, the bars and every surface are ink + neutral. No
+   purple scrim, no glow, no filter (a drop-shadow on a Tufte line is exactly the
+   decorative chrome the brief bans).
+
+   TWO CANVASES, ONE CHAIN
+   · data-canvas    1180×620 — LANDSCAPE. Three columns + the return edge running back
+     underneath, its label breaking the line (Tufte's own trick).
+   · data-canvas-sm  440×620 — PORTRAIT (scaler stamps .is-sm at ≤700 = data-sm-at, which
+     must match _page.css flipping .cuo__stage to 440/620 at ≤700 or the canvas letterboxes).
+     RE-LAID-OUT, not shrunk: the chain stands UP. The fan becomes a left SPINE with four
+     stubs (same 1→many read), the columns stack, and the return edge climbs the RIGHT
+     gutter from the pipeline total back into the programs block.
+   Two wire SVGs (.cu5-wire / .cu5-wire-sm) — the paths are structurally different, so one
+   is swapped for the other. Both use pathLength="100" so ONE draw keyframe fits both.
+
+   LEGIBILITY FLOOR (measured, not assumed). The stage is full-width .w-container--wide,
+   so scale = (min(1320,vw) − 2·pad)/1180. Worst case is the width just above the sm flip:
+   vw 701 → pad 28 → stage 645 → scale 0.547. Floor type here is 17px → 9.3px effective.
+   Portrait bottoms out at vw 360 → stage 320 → scale 0.727; floor 11px → 8.0px effective.
+   Both clear the ≥7px gate.
+
+   ⚠ .cux-glass .cux-chip (0,2,0) repaints every chip inside a glass card, so the
+     "Closed-won" chip needs .cu5-scene .cux-chip.cu5-won to keep its success tone.
+   ⚠ .cux-ghost is unused on purpose — --w-card-lo is invisible on this white ground.
+   Scene root carries .cux-on-light so --cux-ink* resolve for the bare rows on the
+   pegboard too, not just inside the glass card.
+
+   Builds on the shared cux- kit (already in the page — never redefined here).
+   Every selector scoped .cu5- / .cu5-scene. Tokens only — zero raw brand hex.
+   BASE CSS = RESOLVED END STATE (fan complete, bars full, total accrued, return edge
+   closed) in BOTH layouts; motion is opt-in and an explicit reduce block freezes it.
+   Loop 12s. Pure CSS — no JS, no <img>.
+   ============================================================================ */
+
+.cu5-scene{--cu5-loop:12s;--cu5-ease:cubic-bezier(.2,.7,.2,1);font-family:var(--w-font)}
+
+/* type floor — the kit's 10/12px defaults go illegible at 0.547 */
+.cu5-scene .cux-chip{font-size:15px;padding:6px 11px;gap:6px}
+.cu5-scene .cux-illus{font-size:14px}
+
+/* ═══ WIDE (1180×620) ════════════════════════════════════════════════════════ */
+
+/* ---- COLUMN HEADS · kicker + one sentence + one rule. Fixed height so all three
+        rules land on the same baseline even when a sentence wraps to two lines. --- */
+.cu5-hd{position:absolute;top:36px;height:78px;padding-bottom:10px;
+  border-bottom:1px solid var(--w-line);display:flex;flex-direction:column;gap:6px}
+.cu5-hd1{left:56px;width:300px}
+.cu5-hd2{left:420px;width:300px}
+.cu5-hd3{left:820px;width:304px}
+.cu5-k{font:400 15px/1.2 var(--w-font-kicker);letter-spacing:.09em;text-transform:uppercase;
+  color:var(--cux-ink-3);white-space:nowrap}
+.cu5-hs{font:500 15px/1.4 var(--w-font);color:var(--cux-ink-2)}
+
+/* ---- 01 · THE WIN — the one artifact in the scene ------------------------- */
+.cu5-win{position:absolute;left:56px;top:153px;width:300px;height:240px}
+.cu5-card{inset:0;padding:20px;display:flex;flex-direction:column;gap:12px}
+.cu5-wtop{display:flex;align-items:center;gap:10px}
+.cu5-wtop .cux-illus{margin-left:auto}
+/* the tone chip must out-specify the kit's .cux-glass .cux-chip repaint */
+.cu5-scene .cux-chip.cu5-won{background:var(--w-success-soft);border-color:var(--w-success);
+  color:var(--cux-ink-2)}
+.cu5-won i{width:9px;height:9px;flex:none;border-radius:var(--w-r-full);background:var(--w-success)}
+.cu5-who{display:flex;align-items:center;gap:12px}
+.cu5-av{width:44px;height:44px}
+.cu5-wtxt{display:flex;flex-direction:column;gap:2px;min-width:0}
+.cu5-nm{font:700 17px/1.2 var(--w-font);letter-spacing:var(--w-ls-tight);color:var(--cux-ink);
+  white-space:nowrap}
+.cu5-rl{font:500 14px/1.3 var(--w-font);color:var(--cux-ink-2);white-space:nowrap}
+/* the proof itself — the largest voice in the column, because it starts everything */
+.cu5-q{margin:0;font:600 17px/1.4 var(--w-font);letter-spacing:var(--w-ls-tight);
+  color:var(--cux-ink)}
+.cu5-wfoot{margin-top:auto;display:flex}
+
+/* ---- 02 · PROGRAMS · one row per market segment --------------------------- */
+.cu5-prow{position:absolute;left:420px;width:300px;height:60px;box-sizing:border-box;
+  padding:6px 14px;border-radius:var(--w-r-sm);background:var(--w-glass-fill-soft);
+  display:flex;flex-direction:column;justify-content:center;gap:2px}
+.cu5-p1{top:138px} .cu5-p2{top:208px} .cu5-p3{top:278px} .cu5-p4{top:348px}
+.cu5-pl{display:flex;align-items:baseline;gap:10px}
+.cu5-pn{font:600 17px/1.2 var(--w-font);color:var(--cux-ink);white-space:nowrap}
+.cu5-pc{margin-left:auto;font:600 14.5px/1.2 var(--w-font-mono);color:var(--cux-ink-3);
+  white-space:nowrap}
+.cu5-ps{font:500 14px/1.25 var(--w-font);color:var(--cux-ink-2);white-space:nowrap}
+
+/* ---- 03 · NEW PIPELINE · each bar sits on its program's line -------------- */
+.cu5-brow{position:absolute;left:820px;width:304px;height:60px;box-sizing:border-box;
+  padding:8px 0;display:flex;flex-direction:column;justify-content:center;gap:8px}
+.cu5-b1{top:138px} .cu5-b2{top:208px} .cu5-b3{top:278px} .cu5-b4{top:348px}
+.cu5-bl{display:flex;align-items:baseline;gap:10px}
+.cu5-bv{font:600 17px/1.2 var(--w-font-mono);color:var(--cux-ink)}
+.cu5-bo{margin-left:auto;font:500 14px/1.2 var(--w-font);color:var(--cux-ink-2);white-space:nowrap}
+/* ink bars — NOT .cux-bar (its fill is --w-grad-brand; purple belongs to the return edge) */
+.cu5-bar{height:8px;border-radius:var(--w-r-pill);
+  background:color-mix(in srgb, var(--w-charcoal) 8%, transparent);overflow:hidden}
+.cu5-bar>i{display:block;height:100%;border-radius:var(--w-r-pill);background:var(--w-charcoal);
+  transform-origin:0 50%}
+
+/* ---- the two totals — the column feet, one rule each ---------------------- */
+.cu5-foot{position:absolute;top:424px;height:44px;box-sizing:border-box;padding-top:10px;
+  border-top:1px solid var(--w-line);display:flex;align-items:baseline;gap:10px}
+.cu5-f2{left:420px;width:300px}
+.cu5-f3{left:820px;width:304px}
+.cu5-fl{font:500 14px/1.2 var(--w-font);color:var(--cux-ink-2);white-space:nowrap}
+.cu5-fv{margin-left:auto;font:600 18px/1.2 var(--w-font-mono);color:var(--cux-ink);white-space:nowrap}
+/* the marker hangs under the LEFT of the pipeline foot: the return edge descends on the
+   right of that column, and a right-hung marker would sit on the line. */
+.cu5-f3 .cux-illus{position:absolute;left:0;top:44px}
+
+/* ---- 04 · THE RETURN EDGE'S LABEL · breaks the line (Tufte) --------------- */
+/* left = the midpoint of the return edge's horizontal run (486…1034). The run is deliberately
+   WIDER than the label: a chip that swallows the whole run kills the edge it is naming. */
+.cu5-attr{position:absolute;left:760px;top:538px;transform:translate(-50%,-50%);
+  background:var(--w-bg);padding:2px 18px;display:flex;flex-direction:column;
+  align-items:center;gap:4px;text-align:center}
+.cu5-ak{font:400 14.5px/1.2 var(--w-font-kicker);letter-spacing:.09em;text-transform:uppercase;
+  color:var(--cux-ink-3);white-space:nowrap}
+.cu5-at{font:600 17px/1.25 var(--w-font);letter-spacing:var(--w-ls-tight);color:var(--cux-ink);
+  white-space:nowrap}
+/* the key-dash: in portrait the label no longer sits ON the edge, so it carries the edge's
+   colour instead. Same single purple spend — never a second one. */
+.cu5-key{display:none;width:26px;height:3px;border-radius:var(--w-r-pill);
+  background:linear-gradient(90deg,var(--w-brand),var(--w-brand-2))}
+
+/* ---- THE WIRE · one SVG per layout (the paths are structurally different) --- */
+.cu5-wire,.cu5-wire-sm{position:absolute;inset:0;width:100%;height:100%;overflow:visible;
+  pointer-events:none}
+.cu5-wire-sm{display:none}
+.cux-fit.is-sm .cu5-wire{display:none}
+.cux-fit.is-sm .cu5-wire-sm{display:block}
+/* hairlines: --w-line-strong (.16α) is too faint to read as structure at 2px on white */
+.cu5-ln{fill:none;stroke:color-mix(in srgb, var(--w-charcoal) 30%, transparent);stroke-width:2;
+  stroke-linecap:round;stroke-linejoin:round}
+.cu5-tip{fill:color-mix(in srgb, var(--w-charcoal) 30%, transparent)}
+/* the ONE brand moment on this light diagram */
+.cu5-back{fill:none;stroke:url(#cu5g);stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.cu5-back-sm{stroke:url(#cu5gs)}
+/* mobile (portrait): the purple return edge + its arrowhead recede — thinner and
+   pushed to the back so they don't dominate the stacked chain (Jeff 07-15). */
+.cux-fit.is-sm .cu5-back{stroke-width:1.3;opacity:.45}
+.cux-fit.is-sm .cu5-arw{opacity:.45}
+/* transform-box: an SVG polygon scales from the user-space origin (0,0) without it —
+   the arrowhead would fly off-canvas on its settle beat. */
+.cu5-arw{fill:var(--w-brand);transform-box:fill-box;transform-origin:50% 50%}
+
+/* ═══ PORTRAIT (440×620) — .is-sm · the chain STANDS UP ══════════════════════
+   Additive overrides only; this base is ALSO the resolved end state.          */
+
+.cux-fit.is-sm .cux-chip{font-size:11.5px;padding:4px 8px;gap:5px}
+.cux-fit.is-sm .cux-illus{font-size:11px}
+
+.cux-fit.is-sm .cu5-hd{height:14px;padding-bottom:5px;gap:0;left:44px;width:356px}
+.cux-fit.is-sm .cu5-k{font-size:12px;letter-spacing:.07em}
+.cux-fit.is-sm .cu5-hs{display:none}   /* the sentence is the section copy's job down here */
+.cux-fit.is-sm .cu5-hd1{top:2px}
+.cux-fit.is-sm .cu5-hd2{top:132px}
+.cux-fit.is-sm .cu5-hd3{top:354px}
+
+.cux-fit.is-sm .cu5-win{left:44px;top:26px;width:356px;height:96px}
+/* the kit's glass shadow (0 24px 60px -18px) bleeds ~40px down here and greys out the
+   "02" kicker 10px below it. Portrait has no room for that halo — take it down a tier. */
+.cux-fit.is-sm .cu5-card{padding:10px 12px;gap:6px;
+  box-shadow:var(--w-shadow-md), inset 0 1px 0 var(--w-glass-rim-top)}
+.cux-fit.is-sm .cu5-wtop{gap:6px}
+.cux-fit.is-sm .cu5-won i{width:6px;height:6px}
+.cux-fit.is-sm .cu5-who{gap:8px}
+.cux-fit.is-sm .cu5-av{width:26px;height:26px}
+.cux-fit.is-sm .cu5-nm{font-size:13px}
+.cux-fit.is-sm .cu5-rl{font-size:11px}
+.cux-fit.is-sm .cu5-q{font-size:12.5px;line-height:1.3;white-space:nowrap}
+.cux-fit.is-sm .cu5-wfoot{display:none}  /* the story chip — the one thing the portrait sheds */
+
+.cux-fit.is-sm .cu5-prow{left:44px;width:356px;height:30px;padding:2px 10px;gap:0}
+.cux-fit.is-sm .cu5-p1{top:158px} .cux-fit.is-sm .cu5-p2{top:192px}
+.cux-fit.is-sm .cu5-p3{top:226px} .cux-fit.is-sm .cu5-p4{top:260px}
+.cux-fit.is-sm .cu5-pn{font-size:12.5px;line-height:1.1}
+.cux-fit.is-sm .cu5-pc{font-size:11px;line-height:1.1}
+.cux-fit.is-sm .cu5-ps{font-size:11px;line-height:1.2}
+
+.cux-fit.is-sm .cu5-brow{left:44px;width:356px;height:26px;padding:0;gap:3px}
+.cux-fit.is-sm .cu5-b1{top:380px} .cux-fit.is-sm .cu5-b2{top:410px}
+.cux-fit.is-sm .cu5-b3{top:440px} .cux-fit.is-sm .cu5-b4{top:470px}
+.cux-fit.is-sm .cu5-bv{font-size:12.5px;line-height:1.1}
+.cux-fit.is-sm .cu5-bo{font-size:11px;line-height:1.1}
+.cux-fit.is-sm .cu5-bar{height:5px}
+
+.cux-fit.is-sm .cu5-foot{left:44px;width:356px;height:26px;padding-top:6px}
+.cux-fit.is-sm .cu5-f2{top:294px}
+.cux-fit.is-sm .cu5-f3{top:500px}
+.cux-fit.is-sm .cu5-fl{font-size:11px}
+.cux-fit.is-sm .cu5-fv{font-size:13px}
+.cux-fit.is-sm .cu5-f3 .cux-illus{top:26px}
+
+.cux-fit.is-sm .cu5-attr{left:44px;top:566px;transform:none;padding:0;
+  align-items:flex-start;text-align:left;gap:3px}
+.cux-fit.is-sm .cu5-ak{font-size:11px}
+.cux-fit.is-sm .cu5-at{font-size:12.5px;white-space:normal;max-width:300px}
+.cux-fit.is-sm .cu5-key{display:block}
+
+/* ═══ MOTION · everything above is the RESOLVED END STATE ═════════════════════
+   beat 1 ·  0–8%   THE WIN resolves — one person, one proven outcome, already yours
+   beat 2 ·  8–22%  it FANS OUT — the tree draws, 1 → 4
+   beat 3 · 16–32%  the four PROGRAMS land, one market segment each (staggered)
+   beat 4 · 28–40%  880 accounts reached — the fan's reach adds up
+   beat 5 · 30–42%  the links run into pipeline, arrowheads first light
+   beat 6 · 38–52%  the pipeline rows arrive on their programs' lines (staggered)
+   beat 7 · 42–62%  the BARS GROW — warm, proof-led demand, not a cold list
+   beat 8 · 58–68%  the TOTAL accrues — $1.43M of pipeline that did not exist
+   beat 9 · 66–84%  THE RETURN EDGE RUNS BACK — the closing beat: every new deal is
+                    attributed to the program that created it, so the win becomes a
+                    channel you can measure, fund and grow. The asset compounds.
+   beat 10· 78–88%  the arrowhead + label settle · 88–94% hold · 94–100% reset       */
+@media (prefers-reduced-motion:no-preference){
+  .cu5-win{animation:cu5-kwin var(--cu5-loop) var(--cu5-ease) infinite}
+  .cu5-fan{animation:cu5-kfan var(--cu5-loop) var(--cu5-ease) infinite;
+    animation-delay:var(--cu5-d,0s)}
+  .cu5-prow{animation:cu5-krow var(--cu5-loop) var(--cu5-ease) infinite;
+    animation-delay:var(--cu5-d,0s)}
+  .cu5-f2{animation:cu5-kf2 var(--cu5-loop) var(--cu5-ease) infinite}
+  .cu5-link,.cu5-tip{animation:cu5-klink var(--cu5-loop) var(--cu5-ease) infinite;
+    animation-delay:var(--cu5-d,0s)}
+  .cu5-brow{animation:cu5-kbrow var(--cu5-loop) var(--cu5-ease) infinite;
+    animation-delay:var(--cu5-d,0s)}
+  .cu5-bar>i{animation:cu5-kbar var(--cu5-loop) var(--cu5-ease) infinite;
+    animation-delay:var(--cu5-d,0s)}
+  .cu5-f3{animation:cu5-kf3 var(--cu5-loop) var(--cu5-ease) infinite}
+  .cu5-back{animation:cu5-kback var(--cu5-loop) var(--cu5-ease) infinite}
+  .cu5-arw{animation:cu5-karw var(--cu5-loop) var(--cu5-ease) infinite}
+  .cu5-attr{animation:cu5-kattr var(--cu5-loop) var(--cu5-ease) infinite}
+}
+
+@keyframes cu5-kwin{
+  0%      {opacity:0;transform:translateY(10px) scale(.97)}
+  8%,94%  {opacity:1;transform:none}
+  100%    {opacity:0;transform:translateY(10px) scale(.97)}
+}
+/* pathLength="100" on every wire path → one draw keyframe serves both layouts */
+@keyframes cu5-kfan{
+  0%,8%   {stroke-dashoffset:100}
+  22%,94% {stroke-dashoffset:0}
+  100%    {stroke-dashoffset:100}
+}
+@keyframes cu5-krow{
+  0%,16%  {opacity:0;transform:translateX(-14px)}
+  32%,94% {opacity:1;transform:none}
+  100%    {opacity:0;transform:translateX(-14px)}
+}
+@keyframes cu5-kf2{
+  0%,28%  {opacity:0}
+  40%,94% {opacity:1}
+  100%    {opacity:0}
+}
+@keyframes cu5-klink{
+  0%,30%  {stroke-dashoffset:100;opacity:0}
+  34%     {opacity:1}
+  42%,94% {stroke-dashoffset:0;opacity:1}
+  100%    {stroke-dashoffset:100;opacity:0}
+}
+@keyframes cu5-kbrow{
+  0%,38%  {opacity:0;transform:translateX(10px)}
+  52%,94% {opacity:1;transform:none}
+  100%    {opacity:0;transform:translateX(10px)}
+}
+@keyframes cu5-kbar{
+  0%,42%  {transform:scaleX(0)}
+  62%,94% {transform:scaleX(1)}
+  100%    {transform:scaleX(0)}
+}
+@keyframes cu5-kf3{
+  0%,58%  {opacity:0;transform:translateY(6px)}
+  68%,94% {opacity:1;transform:none}
+  100%    {opacity:0;transform:translateY(6px)}
+}
+/* THE CLOSING BEAT — it runs BACK */
+@keyframes cu5-kback{
+  0%,66%  {stroke-dashoffset:100}
+  84%,94% {stroke-dashoffset:0}
+  100%    {stroke-dashoffset:100}
+}
+@keyframes cu5-karw{
+  0%,82%  {opacity:0}
+  86%     {opacity:1;transform:scale(1.12)}
+  90%,94% {opacity:1;transform:scale(1)}
+  100%    {opacity:0}
+}
+@keyframes cu5-kattr{
+  0%,78%  {opacity:0}
+  88%,94% {opacity:1}
+  100%    {opacity:0}
+}
+
+/* motion is opt-in above; this freezes the scene at its resolved end state. */
+@media (prefers-reduced-motion:reduce){
+  .cu5-scene,.cu5-scene *,.cu5-scene *::before,.cu5-scene *::after{
+    animation:none !important;transition:none !important}
+}
+
+/* ---- cu6_fragment ---- */
+/* ============================================================================
+   cu6 · A6 — W-CARLY-USECASES §6 DEAL INTELLIGENCE & READINESS SCORING (light)
+   "Imagine seeing every deal as clearly as your best rep sees their best one."
+
+   THE SUBJECT IS COVERAGE, NOT THE READ ON ONE DEAL.
+   /carly/intelligence/ already owns the single-deal anatomy — one transcript, one
+   sentiment gauge, one readiness ring. This scene must not be a second copy of it,
+   so it carries NO transcript, NO gauge, NO ring and NO "why" panel for one
+   opportunity. What is on screen instead is THE PORTFOLIO: six open deals, all of
+   them scored at once, ranked, each one carrying Carly's recommended next move.
+   The drama is that NONE of them is unattended — the thing no human team could
+   keep up with. It is the only tabular composition on the page, deliberately.
+
+   THE SORT IS THE ARGUMENT. Readiness is measured, not guessed — so the rows
+   arrive in the CRM's order and then RE-ORDER themselves once the scores resolve.
+   That beat is the honest visual for "scored", and it is the one thing a static
+   table can never say.
+
+   COLUMNS THAT SURVIVED THE LEGIBILITY FLOOR (four — see the floor note below):
+     DEAL       the account, its value and what it's on — the buyer as a person
+     READINESS  the tone-coded grade (Strong → mint · Medium → amber · Weak → red)
+     CONFIDENCE how sure she is — a meter, not a second number to read
+     NEXT MOVE  Carly's recommendation, in plain language, plus the reason
+   CUT: owner, stage, close date, last-touch, days-in-stage. A faithful CRM table
+   would put nine columns on this canvas and every one of them would land under the
+   7px floor. Fewer, bigger, readable columns beat a faithful illegible grid.
+
+   TWO CANVASES, ONE PORTFOLIO
+   · data-canvas    1180×700 — the table seen from above. Six rows.
+   · data-canvas-sm  440×620 — PORTRAIT (the scaler stamps .is-sm at ≤700 via
+     data-sm-at, which matches _page.css flipping .cui__stage to 440/620 at ≤700).
+     RE-LAID-OUT, not shrunk: the house responsive-table pattern — the row becomes a
+     STACKED ROW-CARD (deal + grade on line 1, meter on line 2, the move on line 3)
+     and the column headers go away with the columns. FOUR rows, not six, chosen to
+     keep the full tone range (Strong · Strong · Medium · Weak) on screen.
+
+   LEGIBILITY FLOOR (measured, not assumed) — the real risk on a table.
+   The stage is .cui__stage inside .w-container (1200 max, pad clamp(20,4vw,48)) and
+   the stage's aspect matches the canvas, so scale = stageW / 1180. Worst case is the
+   width just ABOVE the sm flip: vw 701 → pad 28.0 → stage 645 → scale 0.547. Floor
+   type on the wide canvas is therefore 16px → 8.7px effective. Nothing is smaller.
+   Portrait bottoms out at vw 360 → stage 320 → scale 0.727; floor 11px → 8.0px
+   effective. Both clear the ≥7px gate at every width, in both themes.
+
+   ⚠ NO .cux-glass on this scene — the rows are .cux-card (opaque white on the
+     pegboard, which is what a table seen from above actually looks like), so the
+     kit's .cux-glass .cux-chip (0,2,0) repaint never fires and the tone pills stay
+     tone-coded. The one chip that DOES need a scoped rule is the live chip, and it
+     gets one anyway (.cu6-scene .cux-chip.cu6-live) so a later glass wrapper can't
+     silently grey it out.
+   ⚠ .cux-ghost is unused on purpose — --w-card-lo is invisible on this white ground.
+   ⚠ --cu6-jump (the pre-sort offset) is set in CSS per row class, NOT inline: the
+     portrait layout needs a different offset, and an inline custom property would
+     beat every .is-sm override.
+   Scene root carries .cux-on-light so --cux-ink* resolve for the bare pegboard text
+   too, not only inside a card.
+
+   Builds on the shared cux- kit (already in the page — never redefined here).
+   Every selector scoped .cu6- / .cu6-scene. Tokens only — zero raw brand hex; the
+   tone tints are color-mix()es of --w-success / --w-warning / --w-danger against
+   --w-charcoal, because a light ground needs a DARKENED tone ink (mint text on white
+   is ~1.8:1). Brand purple appears in exactly one place, and it is product UI: the
+   CONFIDENCE meter (.cux-bar, --w-grad-brand). Never as a scene accent or glow.
+   BASE CSS = RESOLVED END STATE (every row scored, the portfolio sorted, every move
+   written) in BOTH layouts; motion is opt-in under prefers-reduced-motion:
+   no-preference and an explicit reduce block freezes it. Loop 12s. No JS, no <img>.
+   ============================================================================ */
+
+.cu6-scene{--cu6-loop:12s;--cu6-ease:cubic-bezier(.2,.7,.2,1);font-family:var(--w-font)}
+
+/* type floor — the kit's 10/12px defaults go illegible at 0.547 */
+.cu6-scene .cux-chip{font-size:15px;padding:6px 11px;gap:7px}
+.cu6-scene .cux-illus{font-size:14px}
+
+/* ═══ WIDE (1180×700) ════════════════════════════════════════════════════════ */
+
+/* ---- THE HEAD · what this view IS, and that it never stops -------------------- */
+.cu6-hd{position:absolute;left:56px;top:40px;width:1068px;display:flex;align-items:center;gap:18px}
+.cu6-cav{width:44px;height:44px;flex:none;border-radius:var(--w-r-full);
+  background-size:cover;background-position:center;
+  box-shadow:0 0 0 2px var(--w-card),0 0 0 4px var(--w-brand),0 4px 12px -4px rgba(28,26,36,.28)}
+.cu6-htxt{display:flex;flex-direction:column;gap:5px;min-width:0}
+.cu6-t{font:700 22px/1.2 var(--w-font);letter-spacing:var(--w-ls-tight);color:var(--cux-ink);
+  white-space:nowrap}
+.cu6-s{font:500 15px/1.35 var(--w-font);color:var(--cux-ink-2)}
+.cu6-hr{margin-left:auto;display:flex;flex-direction:column;align-items:flex-end;gap:7px}
+/* the live chip must out-specify the kit's .cux-glass .cux-chip repaint, defensively */
+.cu6-scene .cux-chip.cu6-live{background:var(--w-success-soft);border-color:var(--w-success);
+  color:var(--cux-ink-2)}
+.cu6-live i{width:10px;height:10px;flex:none;border-radius:var(--w-r-full);
+  background:var(--w-success)}
+
+/* ---- THE COLUMN HEADS · one rule under them; the sort key is marked ---------- */
+.cu6-grid{display:grid;grid-template-columns:300px 150px 150px 1fr;column-gap:22px;
+  align-items:center}
+.cu6-cols{position:absolute;left:56px;top:110px;width:1068px;height:36px;box-sizing:border-box;
+  padding:0 20px;border-bottom:1px solid var(--w-line)}
+.cu6-cl{display:flex;align-items:center;gap:7px;
+  font:400 14.5px/1.2 var(--w-font-kicker);letter-spacing:.09em;text-transform:uppercase;
+  color:var(--cux-ink-3);white-space:nowrap}
+/* the caret says WHICH column the portfolio is ranked by — the whole point of the sort */
+.cu6-caret{width:15px;height:15px;flex:none;fill:none;stroke:var(--cux-ink-2);stroke-width:2.6;
+  stroke-linecap:round;stroke-linejoin:round;transform-origin:50% 50%}
+
+/* ---- THE ROWS · six open deals, every one of them attended ------------------- */
+.cu6-row{left:56px;width:1068px;height:76px;box-sizing:border-box;padding:0 20px;
+  border-radius:var(--w-r-md)}
+/* base = the SORTED, resolved order. --cu6-jump is where each row sat before she scored it. */
+.cu6-r1{top:154px;--cu6-jump:86px;  --cu6-d:0s}
+.cu6-r2{top:240px;--cu6-jump:258px; --cu6-d:.07s}
+.cu6-r3{top:326px;--cu6-jump:86px;  --cu6-d:.14s}
+.cu6-r4{top:412px;--cu6-jump:172px; --cu6-d:.21s}
+.cu6-r5{top:498px;--cu6-jump:-172px;--cu6-d:.28s}
+.cu6-r6{top:584px;--cu6-jump:-430px;--cu6-d:.35s}
+
+/* DEAL — the account, and the person on the other end of it */
+.cu6-deal{display:flex;align-items:center;gap:12px;min-width:0}
+.cu6-av{width:40px;height:40px}
+/* company logo tile — the mark contained on a white rounded tile (not cropped like an avatar) */
+.cu6-logo{width:40px;height:40px;flex:none;border-radius:10px;background:#fff;
+  border:1px solid var(--cux-hair);background-size:22px 22px;background-repeat:no-repeat;
+  background-position:center;box-shadow:0 1px 2px rgba(28,26,36,.05)}
+.cu6-dtxt{display:flex;flex-direction:column;gap:2px;min-width:0}
+.cu6-nm{font:700 17px/1.2 var(--w-font);letter-spacing:var(--w-ls-tight);color:var(--cux-ink);
+  white-space:nowrap}
+.cu6-sub{font:500 14px/1.3 var(--w-font);color:var(--cux-ink-2);white-space:nowrap}
+
+/* READINESS — the tone-coded grade. Strong → mint · Medium → amber · Weak → red.
+   On a white ground the tone must be DARKENED to be read: the ink is a color-mix of
+   the status token against charcoal, the fill is the same token at low alpha. */
+.cu6-rd{display:inline-flex;align-items:center;gap:8px;padding:7px 11px;
+  border-radius:var(--w-r-pill);border:1px solid transparent;
+  font:600 15px/1 var(--w-font-mono);white-space:nowrap;transform-origin:0 50%}
+.cu6-rd b{font:700 16px/1 var(--w-font-mono)}
+.cu6-rd svg{width:16px;height:16px;flex:none;fill:none;stroke:currentColor;stroke-width:2.6;
+  stroke-linecap:round;stroke-linejoin:round}
+.cu6-rd--strong{color:color-mix(in srgb,var(--w-success) 45%,var(--w-charcoal));
+  background:color-mix(in srgb,var(--w-success) 16%,transparent);
+  border-color:color-mix(in srgb,var(--w-success) 40%,transparent)}
+.cu6-rd--med{color:color-mix(in srgb,var(--w-warning) 42%,var(--w-charcoal));
+  background:color-mix(in srgb,var(--w-warning) 20%,transparent);
+  border-color:color-mix(in srgb,var(--w-warning) 46%,transparent)}
+.cu6-rd--weak{color:color-mix(in srgb,var(--w-danger) 52%,var(--w-charcoal));
+  background:color-mix(in srgb,var(--w-danger) 15%,transparent);
+  border-color:color-mix(in srgb,var(--w-danger) 42%,transparent)}
+
+/* CONFIDENCE — how sure she is. A meter, not a second number to decode. The kit's
+   .cux-bar fill is --w-grad-brand: this is the scene's ONE purple, and it is product UI. */
+.cu6-cf{display:flex;flex-direction:column;gap:7px;min-width:0}
+.cu6-cfl{font:600 14.5px/1 var(--w-font-mono);color:var(--cux-ink-2);white-space:nowrap}
+.cu6-cf .cux-bar{width:130px}
+.cu6-cf .cux-bar>i{width:var(--cu6-c,100%)}
+
+/* NEXT MOVE — Carly's recommendation, in plain language, and why she's calling it */
+.cu6-mv{display:flex;align-items:flex-start;gap:10px;min-width:0}
+.cu6-arw{width:19px;height:19px;flex:none;margin-top:3px;fill:none;stroke:var(--cux-ink);
+  stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.cu6-mtxt{display:flex;flex-direction:column;gap:4px;min-width:0}
+.cu6-mt{font:600 16px/1.3 var(--w-font);color:var(--cux-ink)}
+.cu6-mw{font:500 14px/1.35 var(--w-font);color:var(--cux-ink-2)}
+
+/* THE READ · a soft pass DOWN the whole portfolio — she is reading all of it, always.
+   Its resting state is absent (the pass is over by the end of the loop), so opacity:0
+   IS its end state and reduced-motion never shows the band.
+   MEASURED travel: the rows run 154 → 660, the band is 90 tall → 660-154-90 = 416 ≈ 420. */
+.cu6-scan{position:absolute;z-index:8;left:56px;top:154px;width:1068px;height:90px;opacity:0;
+  --cu6-travel:420px;border-radius:var(--w-r-md);pointer-events:none;
+  background:linear-gradient(180deg,transparent,var(--cux-well),transparent)}
+
+/* ═══ PORTRAIT (440×620) — .is-sm · the table becomes STACKED ROW-CARDS ═══════
+   Additive overrides only; this base is ALSO the resolved end state.          */
+
+.cux-fit.is-sm .cux-chip{font-size:10.5px;padding:4px 8px;gap:5px}
+.cux-fit.is-sm .cux-illus{font-size:11px}
+
+.cux-fit.is-sm .cu6-hd{left:22px;top:12px;width:396px;flex-direction:row;
+  align-items:center;gap:12px;flex-wrap:wrap}
+.cux-fit.is-sm .cu6-cav{width:32px;height:32px}
+.cux-fit.is-sm .cu6-htxt{gap:2px}
+.cux-fit.is-sm .cu6-t{font-size:15px}
+.cux-fit.is-sm .cu6-s{font-size:11px;line-height:1.25}
+.cux-fit.is-sm .cu6-hr{margin-left:0;flex-direction:row;align-items:center;gap:10px}
+.cux-fit.is-sm .cu6-live i{width:7px;height:7px}
+
+/* the columns go away with the columns */
+.cux-fit.is-sm .cu6-cols{display:none}
+
+/* the row-card: deal + grade on line 1, the meter on line 2, the move on line 3 */
+.cux-fit.is-sm .cu6-row{left:22px;width:396px;height:120px;padding:8px 12px;
+  border-radius:var(--w-r-sm);
+  display:grid;grid-template-columns:1fr auto;column-gap:8px;row-gap:6px;
+  align-items:center;grid-template-areas:"deal score" "conf conf" "move move"}
+.cux-fit.is-sm .cu6-deal {grid-area:deal;gap:8px}
+.cux-fit.is-sm .cu6-score{grid-area:score;justify-self:end}
+.cux-fit.is-sm .cu6-cf   {grid-area:conf}
+.cux-fit.is-sm .cu6-mv   {grid-area:move}
+
+/* FOUR rows down here, not six — but the full tone range stays on screen (the two
+   rows that go are a duplicate Strong-adjacent and a duplicate Weak).
+   The pre-sort offsets are re-derived here: the portrait PITCH is 128px, not the wide
+   canvas's 86px, and an inline --cu6-jump would have beaten this override — hence the
+   per-row classes. Slots 74/202/330/458; the CRM order down here is Vantage first. */
+.cux-fit.is-sm .cu6-r3,.cux-fit.is-sm .cu6-r5{display:none}
+.cux-fit.is-sm .cu6-r1{top:74px; --cu6-jump:128px}
+.cux-fit.is-sm .cu6-r2{top:202px;--cu6-jump:128px}
+.cux-fit.is-sm .cu6-r4{top:330px;--cu6-jump:128px}
+.cux-fit.is-sm .cu6-r6{top:458px;--cu6-jump:-384px}
+
+.cux-fit.is-sm .cu6-av{width:26px;height:26px}
+.cux-fit.is-sm .cu6-logo{width:30px;height:30px;border-radius:8px;background-size:17px 17px}
+.cux-fit.is-sm .cu6-dtxt{gap:1px}
+.cux-fit.is-sm .cu6-nm{font-size:14px}
+.cux-fit.is-sm .cu6-sub{font-size:11.5px;line-height:1.25}
+
+.cux-fit.is-sm .cu6-rd{gap:5px;padding:4px 8px;font-size:11.5px}
+.cux-fit.is-sm .cu6-rd b{font-size:12.5px}
+.cux-fit.is-sm .cu6-rd svg{width:11px;height:11px;stroke-width:3}
+
+.cux-fit.is-sm .cu6-cf{flex-direction:row;align-items:center;gap:8px}
+.cux-fit.is-sm .cu6-cfl{font-size:11px}
+.cux-fit.is-sm .cu6-cf .cux-bar{width:120px;height:5px}
+
+.cux-fit.is-sm .cu6-mv{gap:6px}
+.cux-fit.is-sm .cu6-arw{width:13px;height:13px;margin-top:2px;stroke-width:3}
+.cux-fit.is-sm .cu6-mtxt{gap:2px}
+.cux-fit.is-sm .cu6-mt{font-size:12.5px;line-height:1.25}
+.cux-fit.is-sm .cu6-mw{font-size:11px;line-height:1.2}
+
+/* the pass is shorter down here: rows 74 → 578, band 60 tall → 578-74-60 = 444 */
+.cux-fit.is-sm .cu6-scan{left:22px;top:74px;width:396px;height:60px;--cu6-travel:444px}
+
+/* ═══ MOTION · everything above is the RESOLVED END STATE ═════════════════════
+   beat 1 ·  0–8%   the portfolio lands — six open deals, in the CRM's own order,
+                    unranked and unscored. This is what the pipeline looks like today.
+   beat 2 ·  6–24%  SHE READS IT ALL — one pass down every row. Not a sample: the
+                    conversations across the whole portfolio, continuously, 24/7.
+   beat 3 · 20–36%  THE SCORES RESOLVE — a readiness grade lands on EVERY row,
+                    tone-coded. Nothing is left unattended; that is the drama.
+   beat 4 · 30–46%  the CONFIDENCE meters fill — how sure she is, deal by deal.
+   beat 5 · 44–60%  THE SORT — the portfolio re-orders itself under the scores, and
+                    the caret marks the key. Readiness is measured, not guessed.
+   beat 6 · 56–76%  EVERY ROW CARRIES ITS NEXT MOVE — six recommendations, in plain
+                    language, with the reason. All of it, at once, always current.
+   beat 7 · 76–94%  hold  ·  94–100% reset
+   The live dot pulses on its own 2.2s cycle, outside the loop — because she does not
+   stop when the loop does. (The reduce block below freezes that too.)              */
+@media (prefers-reduced-motion:no-preference){
+  .cu6-hd{animation:cu6-kin var(--cu6-loop) var(--cu6-ease) infinite}
+  .cu6-cols{animation:cu6-kcols var(--cu6-loop) var(--cu6-ease) infinite}
+  .cu6-caret{animation:cu6-kcaret var(--cu6-loop) var(--cu6-ease) infinite}
+  .cu6-row{animation:cu6-krow var(--cu6-loop) var(--cu6-ease) infinite;
+    animation-delay:var(--cu6-d,0s)}
+  .cu6-scan{animation:cu6-kscan var(--cu6-loop) var(--cu6-ease) infinite}
+  .cu6-rd{animation:cu6-kscore var(--cu6-loop) var(--cu6-ease) infinite;
+    animation-delay:var(--cu6-d,0s)}
+  .cu6-cf .cux-bar>i{animation:cu6-kbar var(--cu6-loop) var(--cu6-ease) infinite;
+    animation-delay:var(--cu6-d,0s)}
+  .cu6-cfl{animation:cu6-kcfl var(--cu6-loop) var(--cu6-ease) infinite;
+    animation-delay:var(--cu6-d,0s)}
+  .cu6-mv{animation:cu6-kmove var(--cu6-loop) var(--cu6-ease) infinite;
+    animation-delay:var(--cu6-d,0s)}
+  .cu6-live i{animation:cu6-klive 2.2s var(--w-ease) infinite}
+}
+
+@keyframes cu6-kin{
+  0%      {opacity:0;transform:translateY(8px)}
+  8%,94%  {opacity:1;transform:none}
+  100%    {opacity:0;transform:translateY(8px)}
+}
+@keyframes cu6-kcols{
+  0%,4%   {opacity:0}
+  12%,94% {opacity:1}
+  100%    {opacity:0}
+}
+/* the caret marks the sort key exactly as the portfolio re-orders under it */
+@keyframes cu6-kcaret{
+  0%,44%  {opacity:.35;transform:translateY(-3px)}
+  52%     {opacity:1;transform:translateY(2px)}
+  60%,94% {opacity:1;transform:none}
+  100%    {opacity:.35;transform:translateY(-3px)}
+}
+/* the rows arrive in the CRM's order (translated by --cu6-jump) and SORT at 44–60% */
+@keyframes cu6-krow{
+  0%      {opacity:0;transform:translateY(calc(var(--cu6-jump) + 10px))}
+  8%,44%  {opacity:1;transform:translateY(var(--cu6-jump))}
+  60%,94% {opacity:1;transform:none}
+  100%    {opacity:0;transform:translateY(calc(var(--cu6-jump) + 10px))}
+}
+/* the read — one pass down the whole portfolio */
+@keyframes cu6-kscan{
+  0%,6%   {opacity:0;transform:translateY(0)}
+  10%     {opacity:1}
+  20%     {opacity:1;transform:translateY(var(--cu6-travel))}
+  24%,100%{opacity:0;transform:translateY(var(--cu6-travel))}
+}
+@keyframes cu6-kscore{
+  0%,20%  {opacity:0;transform:scale(.84)}
+  36%,94% {opacity:1;transform:none}
+  100%    {opacity:0;transform:scale(.84)}
+}
+@keyframes cu6-kbar{
+  0%,30%  {transform:scaleX(0)}
+  46%,94% {transform:scaleX(1)}
+  100%    {transform:scaleX(0)}
+}
+@keyframes cu6-kcfl{
+  0%,30%  {opacity:0}
+  46%,94% {opacity:1}
+  100%    {opacity:0}
+}
+/* the payoff: every single row carries a move */
+@keyframes cu6-kmove{
+  0%,56%  {opacity:0;transform:translateX(-10px)}
+  76%,94% {opacity:1;transform:none}
+  100%    {opacity:0;transform:translateX(-10px)}
+}
+@keyframes cu6-klive{
+  0%,100% {opacity:1;transform:scale(1)}
+  50%     {opacity:.45;transform:scale(.8)}
+}
+
+/* motion is opt-in above; this freezes the scene at its resolved end state. */
+@media (prefers-reduced-motion:reduce){
+  .cu6-scene,.cu6-scene *,.cu6-scene *::before,.cu6-scene *::after{
+    animation:none !important;transition:none !important}
+}
+
+/* ---- cu7_fragment ---- */
+/* ============================================================================
+   cu7 · A7 — W-CARLY-USECASES §7 THE PATTERN (dark)
+   "One agent. The whole revenue loop." — understand → anticipate → deliver →
+   engage → scale → (back to understand). THE PAGE'S ONE FULL-STRENGTH BRAND
+   MOMENT.
+
+   THE COMPOSITION — A CIRCULAR ORBIT RING (rebuilt from the rectangular circuit).
+   A single true CIRCLE carries --w-grad-brand at FULL STRENGTH — the loop IS a
+   ring. The five moves sit evenly spaced AROUND it, 72° apart, in loop order
+   clockwise from the top; Carly is the HUB the ring runs around, at the centre.
+   A pulse orbits the ring and LIGHTS each move node as it passes it, so the eye
+   follows the loop around and around. Faint neutral spokes run hub→node — the
+   flywheel's spokes — reinforcing that one agent drives every move.
+
+        01 Understand          (0°, top)
+              ·                        ·
+     05 Scale (288°)              02 Anticipate (72°)
+              ·        [Carly]         ·
+     04 Engage (216°)             03 Deliver (144°)
+
+   THE PURPLE. Every other scene on this page fences --w-grad-brand inside a
+   product surface. Here the RING ITSELF carries it at full strength: a brand
+   trace over an ink track, five arrowheads, and a gradient comet that orbits the
+   circle. That is the whole spend — the node cards, the hub and every hairline
+   (including the spokes) stay NEUTRAL INK. The only other brand light is the
+   transient glow the orbiting pulse throws onto each node as it arrives.
+
+   THE SECOND NAV. Each node is a real <a href="#…"> to its use-case band:
+     01 Understand → #deal-intelligence   02 Anticipate → #deal-momentum
+     03 Deliver    → #proof-delivery      04 Engage     → #conversations
+     05 Scale      → #ai-outbound
+   Real anchors — no JS, keyboard focus, middle-click. data-jump is the scaler's
+   OPTIONAL smooth-scroll sugar on top of the href. The hover/:focus-visible state
+   lives on the <a>; the loop's entry + node-hit animations live on a SEPARATE
+   .cu7-slot wrapper — an infinite animation on the same element would out-cascade
+   the :hover transform and the affordance would die. Nothing in the ancestor chain
+   takes pointer-events:none, and the wire SVG is a SIBLING of the nodes
+   (pointer-events:none) so it can never eat a node click.
+
+   ⭐ THE COMPOUNDING GESTURE — ONE, RESTRAINED. The ring does not just spin: it
+   ACCRETES. THREE orbits per cycle, and each completed orbit leaves the ring
+   permanently heavier and brighter (2.2px @ .42 → 3.4px @ .72 → 4.8px @ 1.0), so
+   orbit 2 runs on a sharper ring than orbit 1 and orbit 3 on a sharper ring than
+   orbit 2. The hub's three-step ramp is its readout (one bar per completed orbit,
+   each taller than the last) and the mono chip ON the return arc counts the orbits
+   off (01 → 02 → 03). A cycle that never resets — a flywheel gaining momentum.
+   Carly compounds.
+
+   TWO CANVASES, ONE LOOP
+   · data-canvas    1180×700 — LANDSCAPE. The RING (SVG <circle> r=270 at 590,350),
+     five node cards on it at 72° steps, Carly the hub inside. The pulse orbits and
+     lights each node in turn.
+   · data-canvas-sm  440×620 — PORTRAIT. RE-LAID-OUT, not shrunk: a 1180-wide ring
+     cannot fit a tall portrait stage without going illegible, so the loop STANDS
+     UP — the five nodes stack as a chain down the left rail and the return edge
+     climbs the right gutter from Scale back into Understand, carrying the pass
+     chip. Same read, different shape. Sub-labels SURVIVE (312px card → every
+     sub-label sets on one line).
+
+   LEGIBILITY FLOOR (measured). Stage = .cul__stage inside .w-container (1200 cap,
+   pad clamp(20px,4vw,48px)); ≤900px it takes aspect-ratio 1180/760, so
+   contain-scale = stage_w/1180. Worst case is the width just above the sm flip:
+   vw 701 → pad 28 → stage 645 → scale 0.547. FLOOR TYPE ON THE WIDE CANVAS IS 15px
+   → 8.2px effective (cards 236×120; the kit's 10px .cux-illus / 12px .cux-chip
+   defaults are re-floored to 15px below). Portrait bottoms out at vw 360 → stage
+   320 → scale 0.727; floor 11px → 8.0px effective. Both clear the ≥7px gate.
+   data-sm-at=700 — matches _page.css flipping .cul__stage to 440/620 at ≤700.
+   Canvas aspect UNCHANGED (1180×700 / 440×620) — _page.css needs no edit.
+
+   ⚠ SVG polygon arrowheads carry a presentation-attribute rotate(θ cx cy) with an
+     EXPLICIT USER-SPACE centre; each points along the clockwise tangent (θ = its
+     position angle). transform-box:fill-box is deliberately NOT set — with a
+     user-space rotate centre, fill-box would re-anchor the rotation to the polygon's
+     own fill box and throw it off-canvas (the QA escape gate catches exactly that).
+   ⚠ ONE CLOSED subpath per ring. A dash pattern RESTARTS at every subpath, so a
+     multi-stub path would spawn one comet per stub. The ring is a single closed
+     circle → exactly one pulse. Where the ring crosses a card it is hidden behind
+     it (cards are solid) — which is what makes the pulse read as entering a node
+     and leaving it.
+   ⚠ Gradient stops are set via style="stop-color:…", never as a presentation
+     attribute — var() in a presentation attribute is not reliably resolved and a
+     dropped stop paints the loop black.
+
+   Builds on the shared cux- kit (already in the page — never redefined here).
+   Every selector scoped .cu7- / .cu7-scene. Foundation tokens only — zero raw hex.
+   BASE CSS = THE RESOLVED END STATE in BOTH layouts (ring closed at full brand
+   strength, all FIVE nodes labeled and clickable, all three ramp bars accrued,
+   pass chip at 03). Motion is opt-in; an explicit reduce block freezes it.
+   Loop 13s. Pure CSS — no JS, no <img>.
+   ============================================================================ */
+
+.cu7-scene{--cu7-loop:13s;--cu7-ease:cubic-bezier(.2,.7,.2,1);font-family:var(--w-font)}
+
+/* type floor — the kit's 10/12px defaults go illegible at 0.547 */
+.cu7-scene .cux-chip{font-size:15px;padding:6px 11px;gap:6px}
+.cu7-scene .cux-chip--mono{font-size:15px}
+.cu7-scene .cux-illus{font-size:15px}
+
+/* ═══ THE WIRE · one SVG per layout (the loops are structurally different) ══════
+   pointer-events:none — the wire must never eat a click meant for a node. It is
+   a SIBLING of the nodes, not an ancestor of them.                              */
+.cu7-wire,.cu7-wire-sm{position:absolute;inset:0;width:100%;height:100%;
+  overflow:visible;pointer-events:none}
+.cu7-wire-sm{display:none}
+.cux-fit.is-sm .cu7-wire{display:none}
+.cux-fit.is-sm .cu7-wire-sm{display:block}
+
+/* the flywheel spokes — faint NEUTRAL ink hairlines hub→node. Static (resolved
+   state); the brand light is spent on the ring alone. They vanish behind the hub
+   card and each node card, so only the mid-radius segment shows: light coming out
+   from behind Carly to every move. */
+.cu7-spoke{stroke:var(--w-line-strong);stroke-width:1.5;opacity:.34;
+  stroke-linecap:round}
+/* the ink track — the ring exists before the brand ever runs on it */
+.cu7-track{fill:none;stroke:var(--w-line-strong);stroke-width:2;
+  stroke-linecap:round;stroke-linejoin:round}
+/* ⭐ THE BRAND MOMENT — the ring itself, at full strength.
+   BASE = the RESOLVED end state: the heaviest, brightest trace (3 orbits in). */
+.cu7-trace{fill:none;stroke:url(#cu7g);stroke-width:4.8px;opacity:1;
+  stroke-linecap:round;stroke-linejoin:round}
+.cu7-trace-sm{stroke:url(#cu7gs)}
+/* the comet — one gradient pulse orbiting the ring (cz4 recipe: pulse + glow).
+   Base opacity 0: with no motion there is no travelling head, and the resolved
+   scene is the finished ring, not a frozen dot. HEAD + TAIL: the tail is a longer,
+   dimmer, blurred streak riding just BEHIND the head, so the two read as one PULSE
+   OF ACTIVITY sweeping the ring — cause→effect — not a dot. */
+.cu7-comet{fill:none;stroke:url(#cu7g);stroke-width:5;stroke-linecap:round;
+  stroke-linejoin:round;stroke-dasharray:8 92;opacity:0;
+  filter:drop-shadow(0 0 8px var(--w-brand))}
+.cu7-comet-sm{stroke:url(#cu7gs)}
+/* the tail — ONE closed dash (18+82=100=pathLength) → exactly one tail, like the
+   head. Blurred + dim so it reads as the pulse's wake, brightening per orbit. */
+.cu7-tail{fill:none;stroke:url(#cu7g);stroke-width:8;stroke-linecap:round;
+  stroke-linejoin:round;stroke-dasharray:18 82;opacity:0;
+  filter:blur(2px) drop-shadow(0 0 6px var(--w-brand))}
+.cu7-tail-sm{stroke:url(#cu7gs)}
+/* direction — five arrowheads, one per arc between nodes, pointing clockwise. They
+   brighten WITH the trace. Each carries a presentation-attribute rotate(θ cx cy)
+   with an EXPLICIT USER-SPACE centre, so transform-box:fill-box must NOT be set:
+   fill-box would re-anchor that rotate to the element's own fill box and fling the
+   polygon off-canvas. No CSS transform touches these (only opacity animates), so the
+   attribute transform stands on its own — the user-space centre is all it needs. */
+.cu7-arw{fill:var(--w-brand-2);opacity:1}
+
+/* ═══ THE FIVE NODES · the page's second nav ══════════════════════════════════
+   .cu7-slot = the positioned, ANIMATED box.  <a class="cux-card cu7-node"> = the
+   interactive surface. Splitting them is what keeps :hover/:focus-visible alive
+   under an infinite loop animation.
+   Cards are 236×120 and CENTRED on their point on the ring — the circle passes
+   through each card centre (hidden behind the solid card), so the nodes read as
+   beads strung on the ring. Centres (trig on r=270 @ 590,350, θ from top CW):
+     01 (590, 80)  02 (847,267)  03 (749,568)  04 (431,568)  05 (333,267)         */
+.cu7-slot{position:absolute;width:236px;height:120px}
+.cu7-n1{left:472px;top:20px}    /* 01 Understand — top          (0°)   */
+.cu7-n2{left:729px;top:207px}   /* 02 Anticipate — upper right   (72°)  */
+.cu7-n3{left:631px;top:508px}   /* 03 Deliver    — lower right   (144°) */
+.cu7-n4{left:313px;top:508px}   /* 04 Engage     — lower left    (216°) */
+.cu7-n5{left:215px;top:207px}   /* 05 Scale      — upper left    (288°) */
+
+.cu7-node{position:absolute;inset:0;display:flex;flex-direction:column;gap:6px;
+  padding:12px 16px;box-sizing:border-box;text-decoration:none;cursor:pointer;
+  transition:border-color var(--w-dur) var(--w-ease),
+             background-color var(--w-dur) var(--w-ease),
+             box-shadow var(--w-dur) var(--w-ease),
+             transform var(--w-dur) var(--w-ease)}
+.cu7-node:hover{background:var(--w-card-hi);border-color:var(--w-brand-line);
+  box-shadow:var(--w-glow-brand-strong);transform:translateY(-3px)}
+.cu7-node:focus-visible{outline:2px solid var(--w-focus);outline-offset:3px;
+  border-color:var(--w-brand-line)}
+
+.cu7-top{display:flex;align-items:center;gap:9px}
+.cu7-step{font:700 15px/1 var(--w-font-mono);letter-spacing:.06em;color:var(--w-text-3)}
+/* the link affordance — quiet until you reach for it */
+.cu7-go{margin-left:auto;font:700 17px/1 var(--w-font);color:var(--w-text-3);
+  opacity:.55;transition:opacity var(--w-dur) var(--w-ease),
+                         transform var(--w-dur) var(--w-ease),
+                         color var(--w-dur) var(--w-ease)}
+.cu7-node:hover .cu7-go,.cu7-node:focus-visible .cu7-go{opacity:1;
+  color:var(--w-brand-2);transform:translateX(3px)}
+.cu7-verb{font:800 26px/1.1 var(--w-font);letter-spacing:var(--w-ls-tight);
+  color:var(--w-text)}
+.cu7-uc{font:500 15px/1.3 var(--w-font);color:var(--w-text-2)}
+
+/* ═══ THE HUB · Carly, inside the ring she runs. Neutral ink — the purple is
+       spent on the ring. Only the compounding ramp borrows the gradient, because
+       the ramp IS the ring's readout. Centred on the circle: (590,350).         */
+.cu7-hub{position:absolute;left:440px;top:271px;width:300px;height:158px}
+.cu7-hubcard{position:absolute;inset:0;padding:14px 18px;box-sizing:border-box;
+  display:flex;flex-direction:column;gap:7px}
+.cu7-nmrow{display:flex;align-items:center;gap:12px}
+.cu7-cav{width:34px;height:34px;flex:none;border-radius:var(--w-r-full);
+  background-size:cover;background-position:center;
+  box-shadow:0 0 0 2px var(--w-bg),0 0 0 4px var(--w-brand-2),0 4px 12px -4px rgba(0,0,0,.5)}
+.cu7-nm{font:800 24px/1.15 var(--w-font);letter-spacing:var(--w-ls-tight);
+  color:var(--w-text)}
+.cu7-sub{font:500 15px/1.3 var(--w-font);color:var(--w-text-2)}
+.cu7-rule{height:1px;background:var(--w-line);margin:2px 0 0}
+
+/* ⭐ THE RAMP — one bar per completed orbit, each taller than the last. The
+   compounding, made legible. BASE = all three accrued (the resolved end state). */
+.cu7-ramp{margin-top:auto;display:flex;align-items:flex-end;gap:10px}
+.cu7-bars{display:flex;align-items:flex-end;gap:5px;height:24px}
+.cu7-bar{width:11px;border-radius:var(--w-r-pill);background:var(--w-grad-brand);
+  transform-origin:50% 100%}
+.cu7-b1{height:10px} .cu7-b2{height:16px} .cu7-b3{height:24px}
+.cu7-rl{font:500 15px/1.2 var(--w-font);color:var(--w-text-2);white-space:nowrap}
+
+/* ═══ THE PASS COUNTER · sits ON the return arc (05→01) and BREAKS it (Tufte) ═══
+   Solid --w-bg so the arc reads as interrupted, not overprinted. Placed on the
+   ring at 315° → (399,159), on the bare return arc between Scale and Understand. */
+.cu7-pass{position:absolute;left:399px;top:159px;transform:translate(-50%,-50%);
+  background:var(--w-bg);border-color:var(--w-line-strong);color:var(--w-text-2)}
+.cu7-pk{font-style:normal;font-family:var(--w-font);font-weight:600;
+  color:var(--w-text-3)}
+.cu7-pd{position:relative;display:inline-block;width:2.2ch;height:1em;
+  font-weight:700;color:var(--w-text)}
+.cu7-pd i{position:absolute;left:0;top:0;font-style:normal;opacity:0}
+.cu7-pd i:last-child{opacity:1}   /* resolved end state: three orbits in */
+
+/* ═══ PORTRAIT (440×620) — .is-sm · THE LOOP STANDS UP ════════════════════════
+   Additive overrides only; this base is ALSO the resolved end state.
+   A wide ring shrunk into a 320px stage is a smudge, so it is re-cut: the five
+   nodes become a chain down the left rail, and the return edge climbs the right
+   gutter from Scale back into Understand. One loop, one return, still.
+   Five cards + the hub in 620px: pitch 98, card 82 → 16px gaps, exactly enough
+   for the arrowheads to live BETWEEN the cards and never under one.            */
+
+.cux-fit.is-sm .cux-chip{font-size:11.5px;padding:4px 8px;gap:5px}
+.cux-fit.is-sm .cux-chip--mono{font-size:11.5px}
+.cux-fit.is-sm .cux-illus{font-size:11px}
+
+.cux-fit.is-sm .cu7-slot{left:24px;width:312px;height:82px}
+.cux-fit.is-sm .cu7-n1{top:4px;left:24px}
+.cux-fit.is-sm .cu7-n2{top:102px;left:24px}
+.cux-fit.is-sm .cu7-n3{top:200px;left:24px}
+.cux-fit.is-sm .cu7-n4{top:298px;left:24px}
+.cux-fit.is-sm .cu7-n5{top:396px;left:24px}
+.cux-fit.is-sm .cu7-node{padding:9px 12px;gap:3px}
+.cux-fit.is-sm .cu7-node:hover{transform:none}   /* no hover on a touch stage */
+.cux-fit.is-sm .cu7-top{gap:8px}
+.cux-fit.is-sm .cu7-step{font-size:11.5px}
+.cux-fit.is-sm .cu7-go{font-size:13px}
+.cux-fit.is-sm .cu7-verb{font-size:19px;line-height:1.1}
+.cux-fit.is-sm .cu7-uc{font-size:12px;line-height:1.25}
+
+.cux-fit.is-sm .cu7-hub{left:24px;top:492px;width:312px;height:118px}
+.cux-fit.is-sm .cu7-hubcard{padding:11px 14px;gap:4px}
+.cux-fit.is-sm .cu7-nm{font-size:16px}
+.cux-fit.is-sm .cu7-cav{width:26px;height:26px}
+.cux-fit.is-sm .cu7-nmrow{gap:9px}
+.cux-fit.is-sm .cu7-sub{font-size:12px}
+.cux-fit.is-sm .cu7-rule{margin:1px 0 0}
+.cux-fit.is-sm .cu7-ramp{gap:8px}
+.cux-fit.is-sm .cu7-bars{height:15px;gap:4px}
+.cux-fit.is-sm .cu7-bar{width:8px}
+.cux-fit.is-sm .cu7-b1{height:6px}
+.cux-fit.is-sm .cu7-b2{height:10px}
+.cux-fit.is-sm .cu7-b3{height:15px}
+.cux-fit.is-sm .cu7-rl{font-size:11.5px}
+
+.cux-fit.is-sm .cu7-pass{left:386px;top:240px}
+
+/* ═══ MOTION · everything above is the RESOLVED END STATE ══════════════════════
+   Loop 13s. THREE ORBITS, and the ring is heavier after each one. The comet runs
+   the circle continuously (offset 0 → -300 over 0–92% = three laps), so nodes are
+   lit in turn as the head passes them (node k at path-fraction 20k%):
+     orbit 1 ·  0–31%   Understand→Anticipate→Deliver→Engage→Scale→(return).
+     land 1  · ~31%     ring steps up (2.2→3.4px), ramp bar 1, chip 01→02.
+     orbit 2 · 31–61%   same loop, sharper ring.
+     land 2  · ~62%     ring steps up (3.4→4.8px, full strength), bar 2, chip 02→03.
+     orbit 3 · 62–92%   the ring at full strength, the flywheel turning; bar 3.
+     hold · reset.  Nothing resets mid-cycle — Carly compounds.                  */
+@media (prefers-reduced-motion:no-preference){
+  .cu7-slot{animation:cu7-knode var(--cu7-loop) var(--cu7-ease) infinite;
+    animation-delay:var(--cu7-d,0s)}
+  /* ⭐ NODE ARRIVAL — each node briefly lights as the pulse reaches it (wide only;
+     the portrait chain is a different geometry, so the hit phases would not match —
+     it keeps just the entrance + travelling pulse). The glow is a second,
+     composited animation touching ONLY filter, so the entrance (opacity/transform)
+     and the <a>'s :hover/:focus-visible affordance both stay intact. */
+  .cux-fit:not(.is-sm) .cu7-n1{animation:
+    cu7-knode var(--cu7-loop) var(--cu7-ease) var(--cu7-d,0s) infinite,
+    cu7-hit1 var(--cu7-loop) linear 0s infinite}
+  .cux-fit:not(.is-sm) .cu7-n2{animation:
+    cu7-knode var(--cu7-loop) var(--cu7-ease) var(--cu7-d,0s) infinite,
+    cu7-hit2 var(--cu7-loop) linear 0s infinite}
+  .cux-fit:not(.is-sm) .cu7-n3{animation:
+    cu7-knode var(--cu7-loop) var(--cu7-ease) var(--cu7-d,0s) infinite,
+    cu7-hit3 var(--cu7-loop) linear 0s infinite}
+  .cux-fit:not(.is-sm) .cu7-n4{animation:
+    cu7-knode var(--cu7-loop) var(--cu7-ease) var(--cu7-d,0s) infinite,
+    cu7-hit4 var(--cu7-loop) linear 0s infinite}
+  .cux-fit:not(.is-sm) .cu7-n5{animation:
+    cu7-knode var(--cu7-loop) var(--cu7-ease) var(--cu7-d,0s) infinite,
+    cu7-hit5 var(--cu7-loop) linear 0s infinite}
+  /* Carly throbs gently each time an orbit LANDS — ties the centre to the ring, and
+     glows a touch brighter per orbit. filter only → composites with the entrance. */
+  .cu7-hub{animation:cu7-knode var(--cu7-loop) var(--cu7-ease) .1s infinite,
+    cu7-hubpulse var(--cu7-loop) var(--cu7-ease) 0s infinite}
+  .cu7-trace{animation:cu7-ktrace var(--cu7-loop) var(--cu7-ease) infinite}
+  .cu7-arw{animation:cu7-karw var(--cu7-loop) var(--cu7-ease) infinite}
+  .cu7-comet{animation:cu7-krun var(--cu7-loop) linear infinite}
+  .cu7-tail{animation:cu7-krun-tail var(--cu7-loop) linear infinite}
+  .cu7-b1{animation:cu7-kb1 var(--cu7-loop) var(--cu7-ease) infinite}
+  .cu7-b2{animation:cu7-kb2 var(--cu7-loop) var(--cu7-ease) infinite}
+  .cu7-b3{animation:cu7-kb3 var(--cu7-loop) var(--cu7-ease) infinite}
+  .cu7-p1{animation:cu7-kp1 var(--cu7-loop) steps(1,end) infinite}
+  .cu7-p2{animation:cu7-kp2 var(--cu7-loop) steps(1,end) infinite}
+  .cu7-p3{animation:cu7-kp3 var(--cu7-loop) steps(1,end) infinite}
+}
+
+@keyframes cu7-knode{
+  0%      {opacity:0;transform:translateY(12px)}
+  6%,96%  {opacity:1;transform:none}
+  100%    {opacity:0;transform:translateY(12px)}
+}
+/* ⭐ THE COMPOUNDING — the ring never goes back to thin. Steps aligned to the
+   orbit boundaries (~31% / ~62% / hold). */
+@keyframes cu7-ktrace{
+  0%,30%   {stroke-width:2.2px;opacity:.42}
+  33%,60%  {stroke-width:3.4px;opacity:.72}
+  63%,96%  {stroke-width:4.8px;opacity:1}
+  100%     {stroke-width:2.2px;opacity:.42}
+}
+@keyframes cu7-karw{
+  0%,30%   {opacity:.45}
+  33%,60%  {opacity:.72}
+  63%,96%  {opacity:1}
+  100%     {opacity:.45}
+}
+/* pathLength="100" → the head dash is ONE comet; -300 is exactly three laps.
+   OFFSET is keyed ONLY at 0% and 92% → travel stays perfectly LINEAR (the node
+   arrival phases below depend on it). The extra keys touch OPACITY only, so the
+   pulse rides BRIGHTER on each successive orbit — the compounding, in the trail. */
+@keyframes cu7-krun{
+  0%      {stroke-dashoffset:0;opacity:0}
+  5%      {opacity:.72}
+  30%     {opacity:.72}
+  33%     {opacity:.86}
+  57%     {opacity:.86}
+  60%     {opacity:1}
+  84%     {opacity:1}
+  92%,100%{stroke-dashoffset:-300;opacity:0}
+}
+/* the tail rides a constant +14 units BEHIND the head (same slope, fixed gap):
+   offset 14 → -286 mirrors the head's 0 → -300. Dimmer, brightening too. */
+@keyframes cu7-krun-tail{
+  0%      {stroke-dashoffset:14;opacity:0}
+  5%      {opacity:.34}
+  30%     {opacity:.34}
+  33%     {opacity:.42}
+  57%     {opacity:.42}
+  60%     {opacity:.5}
+  84%     {opacity:.5}
+  92%,100%{stroke-dashoffset:-286;opacity:0}
+}
+/* ⭐ NODE ARRIVAL PULSES — a soft brand glow fires 3× per node (once per orbit) at
+   the exact phase the head reaches that node. Node k sits at path-fraction 20k%, so
+   the head is there when travelled distance ≡ 20k (mod 100), i.e. at timeline
+   phases (20k, 20k+100, 20k+200)/300 × 92%. The nodes therefore light in order
+   01→02→03→04→05 every orbit and the light visibly travels the ring. filter-only →
+   entrance + :hover survive. */
+@keyframes cu7-hit1{  /* Understand · phases ~31 / 61 / 92 (return-to-top) */
+  0%,29%   {filter:drop-shadow(0 0 0 transparent)}
+  31%      {filter:drop-shadow(0 5px 18px var(--w-brand))}
+  36%,59%  {filter:drop-shadow(0 0 0 transparent)}
+  61%      {filter:drop-shadow(0 5px 18px var(--w-brand))}
+  66%,90%  {filter:drop-shadow(0 0 0 transparent)}
+  92%      {filter:drop-shadow(0 5px 18px var(--w-brand))}
+  97%,100% {filter:drop-shadow(0 0 0 transparent)}
+}
+@keyframes cu7-hit2{  /* Anticipate · phases ~6 / 37 / 68 */
+  0%,4%    {filter:drop-shadow(0 0 0 transparent)}
+  6%       {filter:drop-shadow(0 5px 18px var(--w-brand))}
+  11%,35%  {filter:drop-shadow(0 0 0 transparent)}
+  37%      {filter:drop-shadow(0 5px 18px var(--w-brand))}
+  42%,66%  {filter:drop-shadow(0 0 0 transparent)}
+  68%      {filter:drop-shadow(0 5px 18px var(--w-brand))}
+  73%,100% {filter:drop-shadow(0 0 0 transparent)}
+}
+@keyframes cu7-hit3{  /* Deliver · phases ~12 / 43 / 74 */
+  0%,10%   {filter:drop-shadow(0 0 0 transparent)}
+  12%      {filter:drop-shadow(0 5px 18px var(--w-brand))}
+  17%,41%  {filter:drop-shadow(0 0 0 transparent)}
+  43%      {filter:drop-shadow(0 5px 18px var(--w-brand))}
+  48%,72%  {filter:drop-shadow(0 0 0 transparent)}
+  74%      {filter:drop-shadow(0 5px 18px var(--w-brand))}
+  79%,100% {filter:drop-shadow(0 0 0 transparent)}
+}
+@keyframes cu7-hit4{  /* Engage · phases ~18 / 49 / 80 */
+  0%,16%   {filter:drop-shadow(0 0 0 transparent)}
+  18%      {filter:drop-shadow(0 5px 18px var(--w-brand))}
+  23%,47%  {filter:drop-shadow(0 0 0 transparent)}
+  49%      {filter:drop-shadow(0 5px 18px var(--w-brand))}
+  54%,78%  {filter:drop-shadow(0 0 0 transparent)}
+  80%      {filter:drop-shadow(0 5px 18px var(--w-brand))}
+  85%,100% {filter:drop-shadow(0 0 0 transparent)}
+}
+@keyframes cu7-hit5{  /* Scale · phases ~25 / 55 / 86 */
+  0%,23%   {filter:drop-shadow(0 0 0 transparent)}
+  25%      {filter:drop-shadow(0 5px 18px var(--w-brand))}
+  30%,53%  {filter:drop-shadow(0 0 0 transparent)}
+  55%      {filter:drop-shadow(0 5px 18px var(--w-brand))}
+  60%,84%  {filter:drop-shadow(0 0 0 transparent)}
+  86%      {filter:drop-shadow(0 5px 18px var(--w-brand))}
+  91%,100% {filter:drop-shadow(0 0 0 transparent)}
+}
+/* Carly's throb — one gentle halo per orbit-LAND (aligned to the ramp accruing),
+   each brighter than the last (20 → 26 → 32px). The centre compounds with the ring. */
+@keyframes cu7-hubpulse{
+  0%,29%   {filter:drop-shadow(0 0 0 transparent)}
+  33%      {filter:drop-shadow(0 0 20px var(--w-brand))}
+  39%,58%  {filter:drop-shadow(0 0 0 transparent)}
+  62%      {filter:drop-shadow(0 0 26px var(--w-brand))}
+  68%,88%  {filter:drop-shadow(0 0 0 transparent)}
+  92%      {filter:drop-shadow(0 0 32px var(--w-brand))}
+  97%,100% {filter:drop-shadow(0 0 0 transparent)}
+}
+@keyframes cu7-kb1{
+  0%,29%  {transform:scaleY(0);opacity:0}
+  33%,96% {transform:scaleY(1);opacity:1}
+  100%    {transform:scaleY(0);opacity:0}
+}
+@keyframes cu7-kb2{
+  0%,58%  {transform:scaleY(0);opacity:0}
+  62%,96% {transform:scaleY(1);opacity:1}
+  100%    {transform:scaleY(0);opacity:0}
+}
+@keyframes cu7-kb3{
+  0%,88%  {transform:scaleY(0);opacity:0}
+  92%,96% {transform:scaleY(1);opacity:1}
+  100%    {transform:scaleY(0);opacity:0}
+}
+@keyframes cu7-kp1{0%{opacity:1} 33%,100%{opacity:0}}
+@keyframes cu7-kp2{0%{opacity:0} 33%{opacity:1} 62%,100%{opacity:0}}
+@keyframes cu7-kp3{0%{opacity:0} 62%{opacity:1} 100%{opacity:0}}
+
+/* motion is opt-in above; this freezes the scene at its resolved end state.
+   Under reduce, all FIVE nodes stay present, labeled, focusable and clickable —
+   they are plain anchors and never depended on the animation. */
+@media (prefers-reduced-motion:reduce){
+  .cu7-scene,.cu7-scene *,.cu7-scene *::before,.cu7-scene *::after{
+    animation:none !important}
+  .cu7-node{transition:none !important}
+}

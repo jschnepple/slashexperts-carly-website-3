@@ -1,0 +1,1496 @@
+:root{
+  /* shared avatar + logo tokens canonical ds7.css lacks (D51 page-scoped; images already shared) */
+  --w-img-av-allison: url("/assets/images/w/av-allison.png");
+  --w-img-av-george: url("/assets/images/w/av-george.png");
+  --w-img-logo-highspot: url("/assets/images/w/logo-highspot.svg");
+  --w-img-logo-sixsense: url("/assets/images/w/logo-sixsense.svg");
+}
+
+/* ============================================================================
+   W-EXPERTS-USECASES · Experts+ Use Cases  /experts/use-cases/
+   ONE hub, five anchored sections (Jeff pattern, confirmed on the Carly sibling
+   07-14/07-15 — same call expected here): card CTAs in §2 resolve to
+   #deal-acceleration · #website-conversion · #plg-conversion · #abm ·
+   #reference-management, not five standalone sub-pages.
+   Theme rhythm: D · D · L · L · L · L · L · D · L
+     dark open (hero + the five moves) → LONG LIGHT RUN carrying all five
+     use-case bands (told apart by LAYOUT — split-R, split-L, full-bleed scene,
+     account-list, table — not by a theme stripe) → ONE dark punch on §8 The
+     Pattern (the hub-and-spoke diagram IS the page's thesis) → light CTA close.
+   Sibling contrast: CARLY-USECASES = D·D·LLLL·D·L (this page extends the light
+   run to five, one more section than the sibling, and keeps the same
+   dark-punch-on-the-thesis move).
+   Prefixes: euh- hero · eum- five moves · eub- shared use-case-band bones
+             eud- deal acceleration · euw- website conversion · eup- plg conversion
+             eua- abm · eur- reference management · eul- the pattern · euc- cta band
+   Foundation-only: every value is a --w-* token. No invented tokens, no raw brand hex.
+   ============================================================================ */
+
+/* ===== light-band technique (.cz-light) — WHITE variant (verbatim from sibling Carly-depth pages) ===== */
+.cz-light{
+  background:var(--w-bg);color:var(--w-text);
+  --w-bg:#ffffff; --w-bg-deep:#ececec; --w-bg-elev:#ffffff;
+  --w-card:#ffffff; --w-card-lo:#efefef; --w-card-hi:#ffffff;
+  --w-text:var(--w-charcoal); --w-text-2:rgba(28,26,36,0.66); --w-text-3:rgba(28,26,36,0.62);
+  --w-text-prose:#302d2e; --w-text-on-brand:#ffffff; --w-icon-ink:var(--w-charcoal);
+  --w-line-soft:rgba(28,26,36,0.06); --w-line:rgba(28,26,36,0.10); --w-line-strong:rgba(28,26,36,0.16); --w-edge-top:rgba(255,255,255,0.9);
+  --w-brand:var(--w-purple-ink); --w-brand-2:var(--w-purple); --w-brand-soft:rgba(152,135,244,0.10); --w-brand-line:rgba(152,135,244,0.28);
+  --w-shadow-raise:0 8px 18px -8px rgba(28,26,36,0.07), inset 0 1px 0 rgba(255,255,255,0.9);
+  --w-shadow-raise-soft:0 4px 10px -6px rgba(28,26,36,0.05), inset 0 1px 0 rgba(255,255,255,0.85);
+  --w-shadow-recess:inset 0 1px 3px rgba(28,26,36,0.05), inset 0 -1px 0 rgba(255,255,255,0.8);
+  --w-shadow-recess-deep:inset 0 2px 5px rgba(28,26,36,0.07), inset 0 -1px 0 rgba(255,255,255,0.7);
+  --w-shadow-sm:0 1px 2px rgba(28,26,36,0.04); --w-shadow-md:0 4px 12px rgba(28,26,36,0.05); --w-shadow-lg:0 12px 28px rgba(28,26,36,0.07);
+  --w-glow-brand:0 2px 8px rgba(28,26,36,0.05); --w-glow-brand-strong:0 6px 16px rgba(28,26,36,0.07);
+  --w-glass-fill:rgba(255,255,255,0.66); --w-glass-fill-strong:rgba(255,255,255,0.86); --w-glass-tint:rgba(28,26,36,0.90);
+  --w-glass-fill-soft:rgba(28,26,36,0.03); --w-glass-line:rgba(28,26,36,0.10); --w-glass-line-bright:rgba(28,26,36,0.16);
+  --w-glass-rim-top:rgba(255,255,255,0.95); --w-glass-rim-bottom:rgba(28,26,36,0.05);
+  --w-glass-blur:blur(18px) saturate(140%); --w-glass-blur-lg:blur(22px) saturate(145%);
+  --w-glass-shadow:0 10px 24px rgba(28,26,36,0.06); --w-glass-shadow-soft:0 4px 12px rgba(28,26,36,0.05);
+  --w-cta-fill:var(--w-glass-tint); --w-cta-text:#ffffff; --w-cta-glow:var(--w-shadow-md); --w-cta-glow-strong:var(--w-shadow-lg);
+  --w-card-brand-wash:linear-gradient(160deg, rgba(28,26,36,0.06), rgba(28,26,36,0.015)); --w-card-brand-line:var(--w-line-strong);
+  --w-tag-brand-bg:rgba(28,26,36,0.06); --w-tag-brand-fg:var(--w-text); --w-focus:rgba(28,26,36,0.55);
+  --w-grad-surface:linear-gradient(180deg, #ffffff 0%, #f5f5f5 100%);
+  --w-grad-surface-hi:linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
+  --w-grad-recess:linear-gradient(180deg, #ededed 0%, #e3e3e3 100%);
+  /* ⚠️ MUST re-declare: --w-edge-fade is declared in :root with var(--w-bg) INSIDE it, so it
+     substitutes to the DARK bg there and inherits already-resolved. Without this, every cux-
+     scene's edge-fade dissolves to charcoal on a white section (the "gray box" bug). */
+  --w-edge-fade:radial-gradient(ellipse 84% 82% at 50% 48%, transparent 52%, var(--w-bg) 100%);
+}
+@media (prefers-reduced-transparency: reduce){
+  .cz-light .w-glass,.cz-light .w-btn--glass,.cz-light .w-tag,.cz-light .w-card,.cz-light .w-cta-band{background:var(--w-card);border-color:var(--w-line)}
+}
+
+/* ===== asymmetric section rhythm (tight top / generous bottom) ===== */
+.w-section{padding-block:clamp(36px, 2.2vw + 1rem, 64px) clamp(64px, 4vw + 1.7rem, 108px)}
+.w-section--hero{padding-block:clamp(96px, 6rem + 5vw, 168px) clamp(72px, 5vw + 2rem, 128px)}
+.w-badge{box-shadow:0 2px 10px rgba(12,10,22,.12), inset 0 1px 0 var(--w-glass-rim-top)}
+.w-panel-rise{--w-panel-overlap:34px}
+
+
+/* ═══ page-scoped image tokens (dev paths; base64'd at bundle) ═══════════════ */
+:root{
+  --w-img-euc-ctabg:url("/assets/images/w/use-cases-experts/euc-ctabg.webp");
+  /* quote avatars not covered by the foundation set (Keegan is foundation-wide;
+     reused directly as var(--w-img-av-keegan)). Jon + Lauren are page-scoped,
+     landing at Phase 6 alongside the scene assets. */
+  --w-img-av-jon:url("/assets/images/w/use-cases-experts/av-jon.webp");
+  --w-img-av-lauren:url("/assets/images/w/use-cases-experts/av-lauren.webp");
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   THE USE-CASE BAND — the page's structural workhorse (§3–§7)
+   Five bands, ONE anatomy: head (kicker · title · lead · early CTA) → the
+   moment (argument, sometimes + a supporting stat) → three moves → payoff
+   (+ proof + CTA) → works-with. Each band varies its SHAPE (split-R / split-L /
+   full-bleed scene / account-list / table) — that variety is what carries the
+   long light run, per MAP Rule 6b. Shared bones live here; per-band shape below.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.eub{position:relative}
+/* scroll-margin so an anchor jump from the nav / the §2 cards / the §8 diagram
+   clears the sticky nav bar instead of hiding the band's kicker under it. */
+.eub[id]{scroll-margin-top:88px}
+
+.eub__head{max-width:820px}
+.eub__title{font-size:var(--w-fs-h1);margin-top:var(--w-s-4)}
+.eub__lead{margin-top:var(--w-s-4);color:var(--w-text-prose);font-size:var(--w-fs-lead);
+  max-width:64ch;line-height:1.5}
+.eub__head-cta{margin-top:var(--w-s-6);display:flex;gap:var(--w-s-4);align-items:center;flex-wrap:wrap}
+
+/* — the moment: the argument paragraph. Serif accent carries the emphasis, not colour. */
+.eub__moment-t{font-size:var(--w-fs-h3);max-width:22ch}
+.eub__moment-b{margin-top:var(--w-s-4);color:var(--w-text-prose);font-size:var(--w-fs-prose);
+  line-height:1.62;max-width:60ch}
+/* a supporting stat riding directly under the moment paragraph (RS-8 79% in §3/§4) —
+   distinct placement from the payoff-side proof, since it backs the ARGUMENT, not the result. */
+.eub__moment-stat{margin-top:var(--w-s-6);max-width:60ch}
+
+/* — three moves */
+.eub__moves-t{font-size:var(--w-fs-h3);margin-bottom:var(--w-s-6)}
+.eub__moves{display:grid;gap:var(--w-s-5)}
+.eub__moves--3{grid-template-columns:repeat(3,1fr)}
+.eub__move{padding:var(--w-s-6);border-radius:var(--w-r-xl);background:var(--w-card);
+  border:1px solid var(--w-line);box-shadow:var(--w-shadow-raise-soft)}
+.eub__move-ic{width:40px;height:40px;border-radius:var(--w-r-md);display:grid;place-items:center;
+  background:var(--w-charcoal);margin-bottom:var(--w-s-4)}
+.eub__move-ic .w-icon{width:20px;height:20px;color:#fff}
+.eub__move-t{font-size:var(--w-fs-body);font-weight:var(--w-fw-bold);margin-bottom:var(--w-s-2)}
+.eub__move-b{color:var(--w-text-prose);font-size:var(--w-fs-sm);line-height:1.6}
+
+/* — payoff strip: the section's "so what". Title + body + proof + CTA. */
+.eub__payoff{margin-top:var(--w-s-9);padding-top:var(--w-s-8);
+  border-top:1px solid var(--w-line);
+  display:grid;grid-template-columns:1.15fr 1fr;gap:var(--w-s-8);align-items:start}
+.eub__payoff-t{font-size:var(--w-fs-h3)}
+.eub__payoff-b{margin-top:var(--w-s-4);color:var(--w-text-prose);font-size:var(--w-fs-prose);
+  line-height:1.62}
+.eub__payoff-side{display:flex;flex-direction:column;gap:var(--w-s-5)}
+.eub__cta{display:flex;gap:var(--w-s-4);align-items:center;flex-wrap:wrap}
+
+/* — works-with: the network, made walkable. Quiet by design — must not compete with the CTA. */
+.eub__with{margin-top:var(--w-s-8);padding-top:var(--w-s-6);border-top:1px solid var(--w-line-soft)}
+.eub__with-lead{font-size:var(--w-fs-sm);font-weight:var(--w-fw-semi);color:var(--w-text-2);
+  margin-bottom:var(--w-s-4)}
+.eub__with-list{display:grid;gap:var(--w-s-3)}
+.eub__with-item{display:flex;gap:var(--w-s-3);align-items:baseline;
+  color:var(--w-text-prose);font-size:var(--w-fs-sm);line-height:1.6}
+.eub__with-item>.w-icon{width:16px;height:16px;flex:none;color:var(--w-text-3);
+  transform:translateY(2px)}
+.eub__with-item a{color:var(--w-text);font-weight:var(--w-fw-semi);
+  border-bottom:1px solid var(--w-line-strong);transition:border-color var(--w-dur) var(--w-ease)}
+.eub__with-item a:hover{border-bottom-color:var(--w-text)}
+
+/* — centered head variant (§6 ABM, §7 Reference Management) */
+.eub__head--center{max-width:820px;margin-inline:auto;text-align:center}
+.eub__head--center .eub__lead{margin-inline:auto}
+.eub__head--center .eub__head-cta{justify-content:center}
+
+/* ═══ PROOF PRIMITIVES ══════════════════════════════════════════════════════ */
+
+/* a SOURCED stat (RS-1 66% · RS-6 60% · RS-8 79% · RS-5/PS-1 300+) — a real claim */
+.eu-stat{padding:var(--w-s-6);border-radius:var(--w-r-xl);background:var(--w-card-lo);
+  border:1px solid var(--w-line)}
+.eu-stat__v{font-size:var(--w-fs-h1);font-weight:var(--w-fw-black);line-height:1;
+  background:var(--w-grad-brand);-webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent}
+.eu-stat__b{margin-top:var(--w-s-3);color:var(--w-text-prose);font-size:var(--w-fs-sm);
+  line-height:1.6}
+
+/* ⚠️ an UNSOURCED figure (SM-1..4). Jeff precedent (W-PRICING · CARLY-USECASES): render
+   VISIBLY MOCK — the "Pricing TBD" treatment — so it can never be mistaken for a sourced
+   claim. Mono, recessed, dashed, and explicitly labelled. Swapping the class is the whole
+   swap once the figure is sourced — do not restyle this into a real stat before then. */
+.eu-mock{padding:var(--w-s-6);border-radius:var(--w-r-xl);
+  background:var(--w-grad-recess);border:1px dashed var(--w-line-strong)}
+.eu-mock__v{font-family:var(--w-font-mono);font-weight:var(--w-fw-bold);
+  font-size:var(--w-fs-h3);color:var(--w-text-2);line-height:1.1}
+.eu-mock__b{margin-top:var(--w-s-3);color:var(--w-text-3);font-size:var(--w-fs-sm);line-height:1.6}
+
+/* quote card (Jon Studham · Keegan Otter · Lauren Martinez) */
+.eu-quote{padding:var(--w-s-6);border-radius:var(--w-r-xl);background:var(--w-card);
+  border:1px solid var(--w-line);box-shadow:var(--w-shadow-raise-soft)}
+.eu-quote__q{font-size:var(--w-fs-prose);line-height:1.55;color:var(--w-text)}
+.eu-quote__by{margin-top:var(--w-s-5);display:flex;gap:var(--w-s-3);align-items:center}
+.eu-quote__av{width:40px;height:40px;border-radius:var(--w-r-full);flex:none;
+  background-size:cover;background-position:center;filter:grayscale(1);
+  box-shadow:0 0 0 2px var(--w-card),0 4px 10px -5px rgba(28,26,36,.3)}
+.eu-quote__nm{font-size:var(--w-fs-sm);font-weight:var(--w-fw-bold)}
+.eu-quote__rl{font-size:var(--w-fs-xs);color:var(--w-text-3)}
+
+/* ═══ §1 · HERO — DARK · split, copy LEFT / one-click booking scene RIGHT ═══
+   Modelled on the BECOME-EXPERT dark hero split (beh) — the direct sibling
+   pattern for a split hero, since W-CARLY-USECASES's hero is a photo band and
+   this page's hero is a scene split per the MAP. */
+.euh{position:relative;padding:0;background:var(--w-bg)}
+/* the image, FULL RATIO (contain), no crop / no zoom — section aspect-locked to it */
+.euh__media{width:100%;aspect-ratio:6068/3400;
+  background:url("/assets/images/w/use-cases-experts/asset-0.webp") center center/contain no-repeat;
+  background-color:var(--w-bg)}
+/* soft scrim on the VACANT RIGHT only (transparent over the device on the left) so the
+   white copy stays legible on the lighter part of the gradient — never dims the device */
+.euh__scrim{position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:linear-gradient(90deg,transparent 44%,rgba(18,15,26,0.46) 86%)}
+/* copy overlaid on the RIGHT (vacant) region, WHITE text on the purple */
+.euh__panel{position:absolute;inset:0;z-index:2;display:flex;align-items:center}
+.euh__panel .w-container{max-width:none;width:100%;padding-inline:clamp(24px,5.6vw,80px)}
+.euh__copy{width:min(44%,520px);margin-left:auto;text-align:left;color:#fff}
+.euh__title{margin-top:20px;font-size:clamp(30px,3.4vw,56px);line-height:1.05;
+  font-weight:var(--w-fw-black);color:#fff}
+.euh__lead{margin-top:18px;max-width:44ch;color:#fff}
+.euh__cta{margin-top:30px;display:flex;gap:var(--w-s-3);flex-wrap:wrap}
+/* DARK-GLASS badge + primary button over the photo */
+.euh__copy .w-tag--kicker{background:rgba(28,26,36,0.55);border:1px solid rgba(255,255,255,0.22);color:#fff;
+  -webkit-backdrop-filter:var(--w-glass-blur);backdrop-filter:var(--w-glass-blur)}
+.euh__cta .w-btn--primary{background:rgba(28,26,36,0.62);color:#fff;border-color:rgba(255,255,255,0.20);
+  -webkit-backdrop-filter:var(--w-glass-blur);backdrop-filter:var(--w-glass-blur);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.18), var(--w-shadow-md)}
+.euh__cta .w-btn--primary:hover{background:rgba(28,26,36,0.74);transform:translateY(-1px)}
+
+/* ═══ §2 · THE FIVE MOVES — DARK · 3+2 centered card grid ═══════════════════
+   Dark ground → NO hover-charcoal (that pattern is for f3f3f3 cards on white).
+   Hover here lifts the rim + the arrow only. flex-wrap so 3 sit on row one and
+   2 centre on row two — the page's table of contents, in funnel order. */
+.eum__grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--w-s-5);margin-top:var(--w-s-8)}
+.eum__card{position:relative;display:flex;flex-direction:column;min-width:0;
+  padding:var(--w-s-6);border-radius:var(--w-r-2xl);
+  background:var(--w-card);border:1px solid var(--w-line);
+  transition:border-color var(--w-dur) var(--w-ease), box-shadow var(--w-dur) var(--w-ease)}
+.eum__card:hover{border-color:var(--w-brand-line);box-shadow:var(--w-glow-brand)}
+.eum__no{font-family:var(--w-font-mono);font-size:var(--w-fs-xs);color:var(--w-text-3);
+  letter-spacing:.08em}
+.eum__fig{position:relative;margin:var(--w-s-5) 0 var(--w-s-6);border-radius:var(--w-r-lg);overflow:hidden}
+
+/* §2 move cards — a REAL Experts+ screenshot in browser chrome (drop-in).
+   _build.py appends a background-image rule per slot + hides the placeholder
+   whenever assets/mock/wexpuc_moves_<slot>*.{webp,png} exists. */
+.eus{width:100%;aspect-ratio:16/10;display:flex;flex-direction:column;overflow:hidden;
+  border-radius:var(--w-r-md);border:1px solid var(--w-line);background:var(--w-card-lo)}
+.eus__bar{flex:none;height:24px;display:flex;align-items:center;gap:var(--w-s-2);
+  padding:0 var(--w-s-3);background:var(--w-card);border-bottom:1px solid var(--w-line-soft)}
+.eus__dots{display:inline-flex;gap:5px}
+.eus__dots i{width:7px;height:7px;border-radius:var(--w-r-full);background:var(--w-line-strong)}
+.eus__url{min-width:0;font-family:var(--w-font-mono);font-size:11px;line-height:1;
+  color:var(--w-text-3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.eus__shot{position:relative;flex:1;background-color:var(--w-bg);
+  background-size:cover;background-position:top center;background-repeat:no-repeat}
+.eus__ph{position:absolute;inset:0;display:flex;flex-direction:column;gap:3px;
+  align-items:center;justify-content:center;text-align:center;padding:var(--w-s-4);
+  font-family:var(--w-font-mono);font-size:11px;line-height:1.35;letter-spacing:.05em;
+  text-transform:uppercase;color:var(--w-text-3);
+  background:repeating-linear-gradient(135deg,transparent 0 9px,rgba(255,255,255,.025) 9px 18px)}
+.eus__ph b{color:var(--w-text-2);font-weight:600}
+.eum__t{font-size:var(--w-fs-h4);line-height:1.25}
+.eum__job{margin-top:var(--w-s-3);font-family:var(--w-font-serif);font-style:italic;
+  font-size:var(--w-fs-lead);color:var(--w-text-2);line-height:1.5;flex:1}
+.eum__link{margin-top:var(--w-s-6);display:inline-flex;align-items:center;gap:var(--w-s-2);
+  font-size:var(--w-fs-sm);font-weight:var(--w-fw-semi);color:var(--w-text);align-self:flex-start}
+.eum__link .w-icon{width:18px;height:18px;transition:transform var(--w-dur) var(--w-ease)}
+.eum__card:hover .eum__link .w-icon{transform:translateX(4px)}
+/* the base of the Adobe stack (z1, opaque dark) — generous bottom room so the
+   5th card clears the fold BEFORE §3's panel rises up and covers the tail;
+   the same "overlap eats padding, not content" logic as the eub bands below. */
+#moves{position:relative;z-index:1;background:var(--w-bg);
+  padding-bottom:clamp(120px,12vw,220px)}
+@media(max-width:700px){#moves{padding-bottom:clamp(80px,16vw,140px)}}
+
+/* WIDE card (Deal Acceleration, on TOP) — full-width, desktop mockup + copy side-by-side
+   (mirrors the Carly sibling's .cum__card--wide). */
+.eum__card--wide{grid-column:1 / -1;flex-direction:row;align-items:center;gap:var(--w-s-8)}
+.eum__fig--wide{flex:0 0 48%;margin:0}
+.eum__wide-tx{flex:1;min-width:0;display:flex;flex-direction:column;align-items:flex-start}
+.eum__wide-tx .eum__no{margin-bottom:var(--w-s-4)}
+.eum__wide-tx .eum__link{margin-top:var(--w-s-5)}
+
+/* ═══ §3 · DEAL ACCELERATION — LIGHT, split media RIGHT ═════════════════════ */
+/* §3 moment copy — a normal readable block ABOVE the editorial band */
+.eud__moment-lead{margin-top:var(--w-s-7);max-width:64ch}
+/* FULL-BLEED EDITORIAL BAND — ue3 photo edge-to-edge, pure visual (copy above). */
+.eud__band{position:relative;width:100vw;margin-inline:calc(50% - 50vw);margin-top:var(--w-s-8);
+  aspect-ratio:6068/3400;overflow:hidden}
+.eud__band-media{position:absolute;inset:0;background:var(--w-bg) url("/assets/images/w/use-cases-experts/asset-1.webp") center center/contain no-repeat}
+/* 79% stat overlaid in the vacant TOP-RIGHT light space (above the man + tablet), no card, charcoal */
+.eud__band-stat{position:absolute;z-index:2;top:clamp(14px,3.4vw,52px);left:45%;right:auto;
+  width:min(34%,470px);color:var(--w-charcoal)}
+.eud__band-stat .eu-stat{background:transparent;border:none;padding:0}
+/* all charcoal + 50% bigger (Jeff) */
+.eud__band-stat .eu-stat__v{background:none;-webkit-text-fill-color:var(--w-charcoal);
+  color:var(--w-charcoal);font-size:calc(var(--w-fs-h1) * 1.5)}
+.eud__band-stat .eu-stat__b{color:var(--w-charcoal);font-size:var(--w-fs-lead)}
+.eud__split{display:grid;grid-template-columns:1fr 1.1fr;gap:var(--w-s-9);align-items:center;
+  margin-top:var(--w-s-8)}
+.eud__stage{position:relative;aspect-ratio:1180/860;border-radius:var(--w-r-2xl);overflow:hidden}
+.eud__moves{margin-top:var(--w-s-9)}
+
+/* ═══ §4 · WEBSITE CONVERSION — LIGHT, split media LEFT (mirrors §3) ═══════ */
+/* FULL-BLEED PHOTO BAND — ue2 device photo edge-to-edge, moment copy on the vacant
+   LEFT in white (see feedback_full_section_bg_image_default). Breaks the container. */
+.euw__band{position:relative;width:100vw;margin-inline:calc(50% - 50vw);margin-top:var(--w-s-8);
+  aspect-ratio:6068/3400;overflow:hidden}
+.euw__band-media{position:absolute;inset:0;background:var(--w-bg) url("/assets/images/w/use-cases-experts/asset-2.webp") center center/contain no-repeat}
+.euw__band-scrim{position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:linear-gradient(90deg,rgba(16,13,24,0.60) 8%,rgba(16,13,24,0.30) 34%,transparent 56%)}
+.euw__band-panel{position:absolute;inset:0;z-index:2;display:flex;align-items:center}
+.euw__band-copy{width:min(46%,620px);margin-left:0;color:#fff;
+  padding-left:clamp(24px,6.5vw,110px);padding-right:var(--w-s-5)}
+/* title 2× bigger (Jeff) */
+.euw__band-copy .eub__moment-t{color:#fff;max-width:16ch;
+  font-size:clamp(38px,4vw,66px);line-height:1.03;letter-spacing:var(--w-ls-tight);
+  font-weight:var(--w-fw-black)}
+.euw__band-copy .eub__moment-b{color:rgba(255,255,255,0.90);font-size:var(--w-fs-lead);
+  margin-top:var(--w-s-5);max-width:34ch}
+.euw__band-copy .eub__moment-stat{max-width:none}
+.euw__band-copy .eu-stat{background:transparent;border:none;padding:0}
+.euw__band-copy .eu-stat__v{background:none;-webkit-text-fill-color:#fff;color:#fff}
+.euw__band-copy .eu-stat__b{color:rgba(255,255,255,0.86)}
+.euw__band-copy .eu-stat__b b{color:#fff}
+.euw__moves{margin-top:var(--w-s-9)}
+
+/* ═══ §5 · PLG CONVERSION — LIGHT, full-bleed centered in-product scene ═════
+   No split: copy centered, scene wide beneath it, three moves as an inline
+   numbered rail (deliberately not cards — a rail reads as a sequence, and a
+   3rd distinct shape from §3/§4's splits, per Rule 6b). */
+.eup__head{max-width:760px;margin-inline:auto;text-align:center}
+.eup__head .eub__lead{margin-inline:auto}
+.eup__head .eub__head-cta{justify-content:center}
+.eup__stage{position:relative;margin-top:var(--w-s-8);aspect-ratio:1180/700;
+  border-radius:var(--w-r-2xl);overflow:hidden}
+.eup__moves{margin-top:var(--w-s-9)}
+.eup__rail{margin-top:var(--w-s-9);display:grid;gap:0}
+.eup__step{display:grid;grid-template-columns:auto 1fr;gap:var(--w-s-6);
+  padding:var(--w-s-6) 0;border-top:1px solid var(--w-line)}
+.eup__step:last-child{border-bottom:1px solid var(--w-line)}
+.eup__no{font-family:var(--w-font-mono);font-weight:var(--w-fw-bold);font-size:var(--w-fs-sm);
+  color:var(--w-text-3);width:34px;padding-top:2px}
+.eup__step-t{font-size:var(--w-fs-body);font-weight:var(--w-fw-bold);margin-bottom:var(--w-s-2)}
+.eup__step-b{color:var(--w-text-prose);font-size:var(--w-fs-prose);line-height:1.6;max-width:72ch}
+
+/* ═══ §6 · ABM — LIGHT, centered head + account-list composition below ═════
+   A target-account column, each row matched to its mirror-customer — the 4th
+   distinct shape on the page. */
+.eua__stage{position:relative;margin-top:var(--w-s-8);aspect-ratio:1180/700;
+  border-radius:var(--w-r-2xl);overflow:hidden}
+.eua__moves{margin-top:var(--w-s-9)}
+
+/* ═══ §7 · REFERENCE MANAGEMENT — LIGHT, centered head + program/portfolio
+   TABLE below. The only tabular composition on the page — the 5th distinct shape. */
+.eur__stage{position:relative;margin-top:var(--w-s-8);aspect-ratio:1180/700;
+  border-radius:var(--w-r-2xl);overflow:hidden}
+.eur__moves{margin-top:var(--w-s-9)}
+
+/* §5 payoff — no separator above "More free users cross to paid…": the moves rail
+   above it already reads as a closed unit (each step has its own border-top/bottom),
+   so a second line directly above the payoff doubles up. Scoped to §5 only — §3/§4/
+   §6/§7 keep the shared .eub__payoff border-top. */
+#plg-conversion .eub__payoff{border-top:none;padding-top:0}
+
+/* Jeff precedent (Carly sibling 07-14): full-bleed centered stages read too big —
+   cap to 80% and centre, DESKTOP ONLY (≥1025px), where the slack is. Below that
+   they stay full-width so contain-scaled type never drops under the 7px floor. */
+@media(min-width:1025px){
+  .eup__stage,.eua__stage,.eur__stage{max-width:80%;margin-inline:auto}
+}
+
+/* ═══ §8 · THE PATTERN — DARK. The page's one brand moment. ════════════════
+   The hub-and-spoke diagram is the whole section, and it is also the page's
+   second nav: every spoke links to its own use-case anchor. */
+/* FULL-SECTION PHOTO BAND (ue4) — badge + title over the vacant LEFT, charcoal. */
+.eul{position:relative;padding:0;background:var(--w-bg)}
+.eul--photo{aspect-ratio:6068/3400}
+.eul__media{position:absolute;inset:0;background:var(--w-bg) url("/assets/images/w/use-cases-experts/asset-3.webp") center center/contain no-repeat}
+.eul__scrim{position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:linear-gradient(90deg,rgba(238,238,240,0.82) 6%,rgba(238,238,240,0.40) 30%,transparent 54%)}
+.eul__panel{position:absolute;inset:0;z-index:2;display:flex;align-items:center}
+.eul__panel .w-container{max-width:none;width:100%;padding-inline:clamp(24px,5.6vw,80px)}
+.eul__copy{width:min(38%,450px);color:var(--w-charcoal)}
+.eul__title{margin-top:20px;font-size:clamp(28px,3vw,50px);line-height:1.06;
+  font-weight:var(--w-fw-black);color:var(--w-charcoal)}
+/* §8 carries the page's rounded-top rise (its underlying --w-bg is dark, covered
+   edge-to-edge by the photo) — round the full-bleed media's OWN top corners to
+   match (rather than overflow:hidden on .eul, which would also clip the
+   panel-stack shadow cue below) so the rise reads as a physically rounded
+   card, not a square photo poking past a rounded box. Inherits
+   --w-panel-radius, so it steps down with the section at ≤700px for free. */
+.eul.w-panel-rise .eul__media{border-top-left-radius:var(--w-panel-radius,44px);
+  border-top-right-radius:var(--w-panel-radius,44px)}
+
+/* ═══ ADOBE PANEL-STACK — the scroll cover-reveal cue (task 6) ═════════════
+   §3–§9 all carry .w-panel-rise (rounded top + negative-margin overlap, per
+   foundation base.css); on a light→light run that overlap alone is invisible
+   (same fill colour both sides), so this adds a soft cast-shadow line at the
+   rise boundary — the same "panel physically stacking" read the dark→light
+   boundaries already get for free from the colour change. Pure box-shadow,
+   no bg/color assumptions → safe on every boundary in the run (dark or light). */
+/* the shadow lives on the section itself so it FOLLOWS the rounded top corners
+   (a ::before line can't curve) → the panel edge + curve read clearly even on a
+   light→light boundary. Bigger radius + overlap = a more pronounced physical rise. */
+main .w-panel-rise{--w-panel-radius:56px;--w-panel-overlap:104px;
+  box-shadow:0 -24px 50px -14px rgba(16,14,26,0.40)}
+/* generous bottom room on the use-case bands so the works-with row clears the
+   fold BEFORE the next panel rises up and covers the empty tail (the overlap
+   eats padding, not content). §8/§9 keep their own spacing. */
+main .eub.w-panel-rise{padding-bottom:clamp(128px,12vw,224px)}
+@media(max-width:700px){
+  main .w-panel-rise{--w-panel-radius:28px;--w-panel-overlap:44px;
+    box-shadow:0 -14px 30px -8px rgba(16,14,26,0.32)}
+  main .eub.w-panel-rise{padding-bottom:clamp(88px,16vw,128px)}
+}
+
+/* ═══ ADOBE STICKY-STACK — replicates W-HOME's .hm-stack mechanism ═════════
+   .eu-stack (wrapping §2 Moves → §9 Better Together) is its own stacking
+   context (z:0); every section inside gets an INCREASING z-index over the
+   .w-panel-rise default of z:2, so each one genuinely COVERS the section
+   before it in real z-order (previously every band sat at the SAME z:2 —
+   no true stacking, just a shared shadow/radius).
+   PIN policy (measured at 1440×900, see build notes): only a section that
+   FITS inside one viewport may position:sticky — a taller-than-viewport
+   sticky section would lock the frame and bury its OWN lower content.
+     #moves                 1944px tall  → relative (base of the stack, z1)
+     #deal-acceleration     3026px tall  → relative (z2)
+     #website-conversion    2634px tall  → relative (z3)
+     #plg-conversion        3002px tall  → relative (z4)
+     #abm                   2664px tall  → relative (z5)
+     #reference-management  2877px tall  → relative (z6)
+     #pattern                807px tall  → STICKY (z7) — fits, pins, then
+                                            §9 rises over it and buries it
+     #better-together        628px tall  → relative (z8) — last panel, no
+                                            need to pin: nothing follows it
+                                            to cover, exactly like W-HOME's
+                                            #better-together covering the
+                                            pinned #experts. */
+.eu-stack{position:relative;z-index:0}
+/* #moves z-index:1 + opaque bg declared alongside its bottom-padding rule above */
+#deal-acceleration{position:relative;z-index:2}
+#website-conversion{position:relative;z-index:3}
+#plg-conversion{position:relative;z-index:4}
+#abm{position:relative;z-index:5}
+#reference-management{position:relative;z-index:6}
+#pattern{position:sticky;top:0;z-index:7}
+#better-together{position:relative;z-index:8}
+@media(prefers-reduced-motion:reduce){#pattern{position:relative;top:auto}}
+@media(max-width:700px){#pattern{position:relative;top:auto}}
+
+/* ═══ §9 · BETTER TOGETHER + FINAL CTA — LIGHT, contained soft-brand band ══ */
+.euc{position:relative}
+.euc__band{position:relative;overflow:hidden;border-radius:var(--w-r-2xl);
+  padding:clamp(56px,5.2vw,104px) var(--w-s-6);text-align:center;isolation:isolate}
+.euc__band::before{content:"";position:absolute;inset:0;z-index:-2;
+  background-image:var(--w-img-euc-ctabg);background-size:cover;background-position:center;
+  filter:grayscale(1)}
+.euc__band::after{content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(180deg, rgba(28,26,36,0.72), rgba(28,26,36,0.80))}
+.euc__title{font-size:var(--w-fs-h1);color:#fff;max-width:760px;margin-inline:auto}
+.euc__body{margin-top:var(--w-s-5);color:rgba(255,255,255,0.80);font-size:var(--w-fs-prose);
+  line-height:1.62;max-width:700px;margin-inline:auto}
+.euc__actions{margin-top:var(--w-s-7);display:flex;gap:var(--w-s-4);justify-content:center;
+  align-items:center;flex-wrap:wrap}
+.euc__link{display:inline-flex;align-items:center;gap:var(--w-s-2);
+  color:rgba(255,255,255,0.82);font-weight:var(--w-fw-semi);font-size:var(--w-fs-sm);
+  padding:var(--w-s-3) var(--w-s-4);border-radius:var(--w-r-pill);
+  transition:color var(--w-dur) var(--w-ease)}
+.euc__link:hover{color:#fff}
+.euc__link>svg{width:18px;height:18px}
+.euc__band .w-btn--primary{background:var(--w-grad-brand);color:var(--w-charcoal);
+  box-shadow:var(--w-glow-brand)}
+.euc__band .w-btn--primary:hover{box-shadow:var(--w-glow-brand-strong)}
+/* the Experts+ lockup must flow INLINE (inline-flex splits the text nodes and collapses
+   the space onto the wrong side → "Experts +network") — the standing ep-plus gotcha. */
+.euc__wm{white-space:nowrap}
+
+/* ═══ RESPONSIVE ═══════════════════════════════════════════════════════════
+   Contract: 1440 / 1280(×800 + ×720) / 1024 / 834 / 768 / 540 / 430 / 390 / 360.
+   Copy-before-scene on every split (responsive-traps §5) — the scene never sits
+   above the copy on mobile. */
+
+@media(max-width:1100px){
+  .eub__payoff{grid-template-columns:1fr;gap:var(--w-s-6)}
+}
+@media(max-width:1024px){
+  /* the overlay dies — COPY + CTA first, image beneath (Jeff: section image under the CTA) */
+  .euh{display:flex;flex-direction:column}
+  .euh__media{order:2}
+  .euh__scrim{display:none}
+  .euh__panel{position:static;order:1;background:var(--w-bg);
+    padding:clamp(28px,6vw,48px) 0 clamp(28px,5vw,40px)}
+  .euh__copy{width:100%;max-width:none;margin-left:0;color:var(--w-text)}
+  .euh__copy .w-tag--kicker{background:var(--w-tag-brand-bg);border-color:var(--w-card-brand-line);
+    color:var(--w-tag-brand-fg);-webkit-backdrop-filter:none;backdrop-filter:none}
+  .euh__title{color:var(--w-text);font-size:clamp(32px,7vw,46px)}
+  .euh__lead{color:var(--w-text-2);max-width:58ch}
+  .euh__cta .w-btn--primary{background:var(--w-cta-fill);color:var(--w-cta-text);
+    border-color:var(--w-glass-line-bright);-webkit-backdrop-filter:none;backdrop-filter:none;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,0.45), var(--w-cta-glow)}
+  .eud__split,.euw__split{grid-template-columns:1fr;gap:var(--w-s-8);
+    display:flex;flex-direction:column}
+  .eud__split>.eub__moment,.euw__split>.eub__moment{order:-1}   /* copy first — traps §5 */
+  .eud__stage,.euw__stage{width:100%;aspect-ratio:1180/760}
+  /* photo bands → overlay dies: image on top, copy beneath in THEME colors */
+  .eud__band{display:flex;flex-direction:column;aspect-ratio:auto;overflow:visible}
+  .eud__band-media{position:relative;inset:auto;order:1;width:100%;aspect-ratio:6068/3400;border-radius:var(--w-r-2xl)}
+  .eud__band-stat{position:static;order:2;width:100%;padding:var(--w-s-6) clamp(20px,5.4vw,28px) 0;color:var(--w-text)}
+  .eud__band-stat .eu-stat__b{color:var(--w-text-prose)}
+  .euw__band{display:flex;flex-direction:column;aspect-ratio:auto;overflow:visible}
+  .euw__band-media{position:relative;inset:auto;order:1;width:100%;aspect-ratio:6068/3400;border-radius:var(--w-r-2xl)}
+  .euw__band-scrim{display:none}
+  .euw__band-panel{position:static;order:2;display:block;padding-top:var(--w-s-6)}
+  .euw__band-copy{width:100%;max-width:none;padding:0 clamp(20px,5.4vw,28px);color:var(--w-text)}
+  .euw__band-copy .eub__moment-t{color:var(--w-text);font-size:clamp(26px,7.2vw,36px);max-width:none}
+  .euw__band-copy .eub__moment-b{color:var(--w-text-prose)}
+  .euw__band-copy .eu-stat__v{color:var(--w-brand)}
+  .euw__band-copy .eu-stat__b{color:var(--w-text-prose)}
+  /* §8 Pattern photo band → overlay dies: image on top, badge+title beneath (theme) */
+  .eul--photo{display:flex;flex-direction:column;aspect-ratio:auto}
+  .eul__media{position:relative;inset:auto;order:1;width:100%;aspect-ratio:6068/3400;border-radius:var(--w-r-2xl)}
+  .eul__scrim{display:none}
+  /* §9 rises over §8 (.w-panel-rise, --w-panel-overlap 26–34px) — .eul{padding:0} at
+     every breakpoint leaves the title's last line flush with the section's own bottom
+     edge, so that overlap eats straight into the text. Bottom padding here clears it
+     with room to spare. */
+  .eul__panel{position:static;order:2;display:block;padding:var(--w-s-6) 0 var(--w-s-8)}
+  .eul__copy{width:100%;max-width:none;color:var(--w-text)}
+  .eul__title{color:var(--w-text)}
+  .euw__band-copy .eu-stat__b b{color:var(--w-text)}
+}
+@media(max-width:900px){
+  .eub__moves--3{grid-template-columns:1fr}
+  .eum__grid{grid-template-columns:1fr}
+  .eum__card{min-width:0}
+  /* the wide card stops being wide — it stacks like every other card (mirrors Carly) */
+  .eum__card--wide{flex-direction:column;align-items:stretch;gap:0}
+  .eum__wide-tx{align-items:stretch}
+  .eum__fig--wide{flex:none;width:100%;margin:var(--w-s-5) 0 var(--w-s-6)}
+  .eup__stage{aspect-ratio:1180/760}
+  .eua__stage{aspect-ratio:1180/820}
+  .eur__stage{aspect-ratio:1180/820}
+  .eul__stage{aspect-ratio:1180/860}
+}
+@media(max-width:700px){
+  .eub__title,.eul__title,.euc__title,.euh__title{font-size:var(--w-fs-h2)}
+  .euh__title{font-size:var(--w-fs-h1)}
+  .eub__moment-t,.eub__moves-t,.eub__payoff-t{font-size:var(--w-fs-h4)}
+  /* comfier mobile side gutter on the use-case bands (Jeff: contents too close to edge) */
+  main .eub>.w-container{padding-inline:clamp(24px,6.4vw,30px)}
+  /* soften the reveal scale on mobile so a settling card never grazes the edge */
+  .w-reveal--scale{--w-reveal-scale:1.02}
+  /* the scene canvases re-lay-out to their PORTRAIT alternate below 700
+     (data-canvas-sm), so the stages take a portrait aspect too or the canvas
+     contain-scales into a letterboxed strip — the legibility floor. */
+  .eud__stage,.euw__stage,.eup__stage,.eua__stage,.eur__stage,.eul__stage{aspect-ratio:440/620}
+  .eup__step{grid-template-columns:1fr;gap:var(--w-s-2)}
+  .eup__no{width:auto}
+}
+@media(max-width:560px){
+  .eub__cta,.euc__actions,.euh__cta{flex-direction:column;align-items:stretch}
+  .eub__cta>*,.euc__actions>*,.euh__cta>*{width:100%;justify-content:center}
+}
+
+
+/* ══════════ ASSET FRAGMENT CSS (hoisted, Phase 6) ══════════ */
+
+/* ═══ cux- · shared animated-scene canvas kit (W-CARLY-USECASES) ═══════════════
+   Every A-slot fragment renders a fixed-px canvas (.cux-fit) inside its section
+   stage (.emh__stage / .eme__stage / .emf__stage). The scaler JS scales the
+   canvas CONTAIN + CENTER (never width-only — that clips at medium widths,
+   responsive-traps.md §3). All values are --w-* tokens.
+   ─────────────────────────────────────────────────────────────────────────── */
+.emx{position:absolute;inset:0;overflow:hidden;border-radius:inherit}
+.cux-fit{position:absolute;left:0;top:0;transform-origin:0 0;will-change:transform}
+/* composition dissolves to the section ground at the canvas edges (brand signature) */
+.cux-fit::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:9;
+  background:var(--w-edge-fade)}
+
+/* surfaces */
+.cux-card{position:absolute;background:var(--w-card);border-radius:var(--w-r-lg);
+  box-shadow:var(--w-shadow-raise-soft);border:1px solid var(--w-line);padding:16px 18px}
+.cux-card--focal{box-shadow:var(--w-shadow-raise)}
+/* bloom-rim focal card — the brand moment (gradient rim, purple lives in product UI only) */
+.cux-rim{position:relative}
+.cux-rim::before{content:"";position:absolute;inset:-1.5px;border-radius:inherit;z-index:-1;
+  background:var(--w-grad-brand);opacity:.9}
+.cux-rim::after{content:"";position:absolute;inset:-14px;border-radius:inherit;z-index:-2;
+  background:var(--w-grad-brand);filter:blur(18px);opacity:.16}
+
+/* ghost / receding surface — the "undifferentiated list" state */
+.cux-ghost{background:var(--w-card-lo);border-color:var(--w-line-soft);box-shadow:none;
+  filter:grayscale(1);opacity:.5}
+.cux-ghost .cux-ln{background:var(--w-line-strong);opacity:.5}
+
+/* skeleton text lines (faceless rows) */
+.cux-ln{display:block;height:8px;border-radius:var(--w-r-pill);background:var(--w-line-strong)}
+
+/* chips + pills */
+.cux-chip{display:inline-flex;align-items:center;gap:6px;padding:7px 12px;
+  border-radius:var(--w-r-pill);background:var(--w-glass-fill-soft);
+  border:1px solid var(--w-line);color:var(--w-text-2);
+  font:600 12px/1 var(--w-font);white-space:nowrap}
+.cux-chip--brand{background:var(--w-tag-brand-bg);border-color:var(--w-brand-line);
+  color:var(--w-tag-brand-fg)}
+.cux-chip--score{background:var(--w-grad-brand);border-color:transparent;color:var(--w-charcoal);
+  font-family:var(--w-font-mono);font-weight:700}
+.cux-chip--mono{font-family:var(--w-font-mono);font-weight:700;font-size:11.5px}
+
+/* the illustrative marker — demo numbers must READ as demo (copy PROOF rule) */
+.cux-illus{font:400 10px/1 var(--w-font-kicker);letter-spacing:.09em;text-transform:uppercase;
+  color:var(--w-text-3);white-space:nowrap}
+
+/* avatars (foundation tokens only) */
+.cux-av{border-radius:var(--w-r-full);background-size:cover;background-position:center;flex:none;
+  box-shadow:0 0 0 2px var(--w-card),0 4px 10px -4px rgba(0,0,0,.28)}
+.cux-av--ring{box-shadow:0 0 0 2px var(--w-card),0 0 0 4px var(--w-brand),0 6px 14px -5px rgba(0,0,0,.32)}
+
+/* weight bar — the "weighing" primitive (A2) */
+.cux-bar{position:relative;height:7px;border-radius:var(--w-r-pill);
+  background:var(--w-glass-fill-soft);overflow:hidden;flex:none}
+.cux-bar>i{display:block;height:100%;border-radius:var(--w-r-pill);
+  background:var(--w-grad-brand);transform-origin:0 50%}
+
+/* connector rail (cz4 recipe — orthogonal, token stroke, gradient pulse) */
+.cux-cn{position:absolute;background:var(--w-line-strong);border-radius:var(--w-r-pill)}
+
+/* every fragment's motion is opt-IN: base CSS renders the RESOLVED END STATE, so
+   reduced-motion + no-JS both get a correct, finished scene for free. */
+
+/* ═══ v02 additions (Jeff 07-13) — pegboard motif · frosted glass · scanned faces ══════════ */
+
+/* PEGBOARD — the house back-motif. Sits behind every scene, fading OUTWARD so the composition
+   dissolves into the section ground (stacks with .cux-fit::after's edge-fade). z-index:0, and
+   every scene element must sit above it (the kit's .cux-card is position:absolute → auto z). */
+.cux-peg{position:absolute;inset:-8%;z-index:0;pointer-events:none;
+  --cux-peg-dot:rgba(28,26,36,0.17);
+  background-image:radial-gradient(circle, var(--cux-peg-dot) 1.5px, transparent 1.7px);
+  background-size:26px 26px;
+  -webkit-mask-image:radial-gradient(ellipse 58% 56% at 50% 48%, #000 0%, rgba(0,0,0,.6) 46%, transparent 80%);
+          mask-image:radial-gradient(ellipse 58% 56% at 50% 48%, #000 0%, rgba(0,0,0,.6) 46%, transparent 80%)}
+.cux-peg--dark{--cux-peg-dot:rgba(255,255,255,0.15)}
+
+/* FROSTED GLASS cards. Theme-independent on purpose: --w-glass-* flips with the section, but a
+   DARK-glass card on a LIGHT section (and vice-versa) must hold its own surface either way.
+   Pair each with the matching ink scope below so contents stay legible. */
+.cux-glass{position:absolute;border-radius:var(--w-glass-radius);
+  -webkit-backdrop-filter:var(--w-glass-blur-lg);backdrop-filter:var(--w-glass-blur-lg)}
+.cux-glass--dark{background:rgba(22,20,30,0.72);border:1px solid rgba(255,255,255,0.16);
+  box-shadow:0 24px 60px -18px rgba(10,8,18,.55), inset 0 1px 0 rgba(255,255,255,0.20)}
+.cux-glass--light{background:rgba(255,255,255,0.80);border:1px solid rgba(28,26,36,0.10);
+  box-shadow:0 24px 60px -18px rgba(10,8,18,.30), inset 0 1px 0 rgba(255,255,255,0.95)}
+/* reduced-transparency: blur is dropped → make the surfaces solid so text never lands on scene art */
+@media (prefers-reduced-transparency: reduce){
+  .cux-glass{-webkit-backdrop-filter:none;backdrop-filter:none}
+  .cux-glass--dark{background:rgba(22,20,30,0.97)}
+  .cux-glass--light{background:rgba(255,255,255,0.98)}
+}
+
+/* INK SCOPES — put on a glass card so its contents flip legibly regardless of section theme. */
+.cux-on-dark{--cux-ink:rgba(255,255,255,0.95);--cux-ink-2:rgba(255,255,255,0.66);
+  --cux-ink-3:rgba(255,255,255,0.45);--cux-hair:rgba(255,255,255,0.16);--cux-well:rgba(255,255,255,0.08)}
+.cux-on-light{--cux-ink:var(--w-charcoal);--cux-ink-2:rgba(28,26,36,0.66);
+  --cux-ink-3:rgba(28,26,36,0.48);--cux-hair:rgba(28,26,36,0.12);--cux-well:rgba(28,26,36,0.06)}
+.cux-on-dark .cux-nm,.cux-on-light .cux-nm{color:var(--cux-ink)}
+.cux-sub{color:var(--cux-ink-2)}
+/* chips inside a glass card follow the card's ink, not the section's */
+.cux-glass .cux-chip{background:var(--cux-well);border-color:var(--cux-hair);color:var(--cux-ink-2)}
+.cux-glass .cux-illus{color:var(--cux-ink-3)}
+/* the score chip stays the brand moment in BOTH scopes (charcoal on the bright gradient = AA) */
+.cux-glass .cux-chip--score{background:var(--w-grad-brand);border-color:transparent;color:var(--w-charcoal)}
+/* the avatar ring's inner halo must match the card it sits on, not the section */
+.cux-on-dark .cux-av{box-shadow:0 0 0 2px rgba(22,20,30,.9),0 4px 10px -4px rgba(0,0,0,.4)}
+.cux-on-dark .cux-av--ring{box-shadow:0 0 0 2px rgba(22,20,30,.9),0 0 0 4px var(--w-brand-2),0 6px 14px -5px rgba(0,0,0,.45)}
+.cux-on-light .cux-av--ring{box-shadow:0 0 0 2px #fff,0 0 0 4px var(--w-brand),0 6px 14px -5px rgba(28,26,36,.28)}
+
+/* SCANNED FACES — the rows/pills being scanned carry real people, desaturated. They are candidates,
+   not records: grayscale + dimmed reads as "not yet chosen", and the ONE match resolves to colour. */
+.cux-face{border-radius:var(--w-r-full);background-size:cover;background-position:center;flex:none;
+  filter:grayscale(1) contrast(.92);opacity:.55}
+
+
+/* ---- §2 move-card real screenshots (auto-wired) ---- */
+.eus__shot--a2b{background-image:url("/assets/images/w/use-cases-experts/asset-4.webp")}
+.eus--a2b .eus__ph{display:none}
+.eus--a2b .eus__bar{display:none}
+.eus__shot--a2c{background-image:url("/assets/images/w/use-cases-experts/asset-5.webp")}
+.eus--a2c .eus__ph{display:none}
+.eus--a2c .eus__bar{display:none}
+.eus__shot--a2d{background-image:url("/assets/images/w/use-cases-experts/asset-6.webp")}
+.eus--a2d .eus__ph{display:none}
+.eus--a2d .eus__bar{display:none}
+.eus__shot--a2e{background-image:url("/assets/images/w/use-cases-experts/asset-7.webp")}
+.eus--a2e .eus__ph{display:none}
+.eus--a2e .eus__bar{display:none}
+.eus__shot--wide{background-image:url("/assets/images/w/use-cases-experts/asset-8.webp")}
+.eus--wide .eus__ph{display:none}
+.eus--wide .eus__bar{display:none}
+
+/* ---- eu5_fragment ---- */
+/* ============================================================================
+   eu5 · A5 — W-EXPERTS-USECASES §5 PLG CONVERSION (light)
+   "the free→paid crossing, made by a peer who already made it"
+
+   Full-bleed centered in-product scene (no split — the section's copy sits
+   centered above, this canvas runs the full width beneath it). LEFT: the
+   free user's actual screen at the moment it turns into a decision — a
+   feature-usage meter that has hit its ceiling, and the Pro feature it gates,
+   locked. RIGHT: the Experts+ prompt that shows up right there — "Talk to a
+   customer like you" — surfacing a real PAYING peer who started on Free with
+   the same use case. A single connector runs between them, tinted from
+   neutral to success: that line IS the free→paid crossing.
+
+   TWO CANVASES, ONE STORY
+   · data-canvas    1180×720 — the gated screen LEFT, the Experts+ prompt
+     RIGHT, connector between them (vertically centered on both cards).
+   · data-canvas-sm  440×620 — PORTRAIT (host scaler stamps .is-sm at ≤700,
+     data-sm-at). The pair STACKS: the gated screen condenses (the blurred
+     preview rows drop — the lock + CTA is the point), the prompt card lands
+     directly beneath it, overlapping its bottom edge; the connector becomes
+     a short vertical drop. All .is-sm rules are ADDITIVE.
+
+   LEGIBILITY FLOOR: this canvas is full-bleed / near-full container width
+   (no 2-col split), so its worst-case contain-scale is milder than a split
+   scene's — still, at the ≈700px stage width where the host swaps to the sm
+   canvas, scale bottoms out around ≈0.55. Every text node here sits at
+   ≥13px source (≥7.15px effective); chips/illus are lifted to 14px (matches
+   the cu5/cu6 convention for non-split scenes). Portrait bottoms out at
+   ≈0.727 (360px viewport); smallest source there is 11px (≥8px effective).
+
+   ⚠ THE PROMPT CARD'S FILL: the kit's cux-glass--dark is a translucent
+   rgba fill designed to let the rim bloom read through it. On THIS canvas
+   the rim sits directly behind a wide card with a lot of text on it, so a
+   translucent face risks washing everything lavender. Rather than hand-
+   tune a one-off rgba (the cu3 exemplar's approach, and a hex/rgba literal
+   the hard constraints here forbid), this card's fill is overridden to the
+   fully OPAQUE --w-charcoal token — same "brand lives on the rim, not the
+   fill" outcome, zero raw color anywhere in this file.
+   ⚠ GATE ROWS: NOT built on .cux-ghost — that class leans on --w-card-lo,
+   which the sibling W-CARLY-USECASES build found nearly invisible on a
+   white glass card. The locked preview here is blurred + dimmed directly
+   (filter + opacity on its own wrapper) instead, sidestepping that pitfall.
+
+   Builds on the shared cux- kit (already in the page — never redefined here).
+   Every selector is scoped .eu5- (or the kit's own cux-/w- vocabulary).
+   Tokens only — zero raw hex, zero raw rgba/hsl authored in this file.
+   BASE CSS = RESOLVED END STATE (limit hit, feature locked, peer surfaced,
+   Talk control live) in BOTH layouts; all motion is opt-in under
+   prefers-reduced-motion:no-preference, with an explicit reduce block that
+   freezes it. No JS, no <img>. Avatars via --w-img-av-* tokens only.
+   ============================================================================ */
+
+.eu5-scene{--eu5-loop:11s;--eu5-ease:cubic-bezier(.2,.7,.2,1);
+  font-family:var(--w-font)}
+
+/* type floor — see legibility note above: this non-split canvas still needs
+   a lift over the kit's 10/12px default at its worst contain-scale. */
+.eu5-scene .cux-chip{font-size:14px;padding:7px 12px;gap:7px}
+
+/* ═══ WIDE (1180×720) ════════════════════════════════════════════════════════ */
+
+/* ---- THE GATE · the free user's own screen, at the decision moment ------- */
+.eu5-app{left:60px;top:70px;width:520px;height:580px;padding:34px 32px;
+  display:flex;flex-direction:column;gap:24px}
+
+.eu5-row{display:flex;align-items:center;gap:14px}
+.eu5-mark{width:44px;height:44px;flex:none;border-radius:var(--w-r-sm);
+  background:var(--w-charcoal);color:var(--w-white);
+  display:flex;align-items:center;justify-content:center;
+  font:700 19px/1 var(--w-font)}
+.eu5-appname{font:700 22px/1.2 var(--w-font);letter-spacing:var(--w-ls-tight);color:var(--cux-ink)}
+.eu5-row .cux-chip{margin-left:auto}
+
+/* usage has hit its ceiling — the predictable, high-stakes moment */
+.eu5-usage{display:flex;flex-direction:column;gap:10px}
+.eu5-usage-h{display:flex;align-items:center;gap:10px}
+.eu5-lb{font:400 13px/1 var(--w-font-kicker);letter-spacing:.08em;text-transform:uppercase;
+  color:var(--cux-ink-3);white-space:nowrap}
+.eu5-usage-v{margin-left:auto;display:flex;align-items:center;gap:8px;
+  font:700 15px/1 var(--w-font-mono);color:var(--cux-ink)}
+.eu5-usage-v .eu5-of{font-weight:500;color:var(--cux-ink-3)}
+.eu5-bar{position:relative;height:8px;border-radius:var(--w-r-pill);
+  background:var(--w-glass-fill-soft);overflow:hidden}
+.eu5-bar>i{display:block;height:100%;width:84%;border-radius:var(--w-r-pill);
+  background:var(--w-warning);transform-origin:0 50%}
+
+/* the Pro feature this hit locks — blurred + dimmed, not a "ghost" surface */
+.eu5-gate{position:relative;flex:1;border-radius:var(--w-r-lg);
+  border:1.5px dashed var(--cux-hair);background:var(--cux-well);
+  padding:22px;display:flex;flex-direction:column;gap:14px;overflow:hidden}
+.eu5-gate-h{display:flex;align-items:center;gap:10px}
+.eu5-gate-h svg{width:16px;height:16px;flex:none;fill:none;stroke:currentColor;stroke-width:2;
+  stroke-linecap:round;stroke-linejoin:round;color:var(--cux-ink-3)}
+.eu5-gate-h .cux-chip{margin-left:auto}
+
+.eu5-gate-rows{display:flex;flex-direction:column;gap:12px;filter:blur(2.5px);opacity:.48;pointer-events:none}
+.eu5-grow{display:flex;align-items:center;gap:12px;height:30px}
+.eu5-grow i{width:30px;height:30px;flex:none;border-radius:var(--w-r-xs);background:var(--cux-hair)}
+.eu5-lns{display:flex;flex-direction:column;gap:6px;flex:1;min-width:0}
+.eu5-grow .cux-ln{background:var(--cux-hair)}
+.eu5-grow .cux-ln:first-child{width:58%}
+.eu5-grow .cux-ln:last-child{width:32%}
+
+.eu5-gate-ov{position:absolute;left:50%;bottom:22px;width:296px;
+  transform:translateX(-50%);padding:22px 20px;border-radius:var(--w-r-lg);
+  background:var(--w-card);border:1px solid var(--cux-hair);
+  box-shadow:var(--w-shadow-raise-soft);
+  display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center}
+.eu5-lockbadge{width:44px;height:44px;border-radius:var(--w-r-full);
+  background:var(--cux-well);border:1px solid var(--cux-hair);
+  display:flex;align-items:center;justify-content:center;transform-origin:50% 50%}
+.eu5-lockbadge svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;
+  stroke-linecap:round;stroke-linejoin:round;color:var(--cux-ink)}
+.eu5-gate-t{margin:0;font:700 15px/1.3 var(--w-font);color:var(--cux-ink)}
+.eu5-gate-b{margin:0;font:500 14px/1.4 var(--w-font);color:var(--cux-ink-2)}
+
+/* ---- the crossing · Free → Paid, spelled out on the connector itself -----
+   Vertically aligned to the SAME baseline as the "Pro" chip on the gate
+   header (top:253px, both cux-chip so equal height) — reads as an
+   intentional Free/Pro pair instead of two badges floating at different
+   heights. z-index:2 lifts the whole crossing group above .eu5-focal (an
+   opaque card that paints later in source order) — .eu5-paid's left:668
+   sits inside .eu5-focal's box (660–1120), so without this it resolves
+   invisible, behind the card, in the settled end state. */
+.eu5-free{position:absolute;left:534px;top:253px;z-index:2}
+.eu5-scene .cux-chip.eu5-paid{position:absolute;left:618px;top:253px;z-index:2;
+  background:var(--w-success-soft);border-color:var(--w-success);color:var(--w-success)}
+.eu5-cn{left:600px;top:265px;width:12px;height:6px;z-index:2;transform-origin:0 50%;
+  background:linear-gradient(90deg,var(--w-line-strong),var(--w-success))}
+
+/* ---- THE PROMPT · Experts+ shows up right at the gate. Product UI → the
+     one place brand purple lives on this light section (the rim + its
+     bloom + the emark). .eu5-focal = animated wrapper · .eu5-rim = static
+     bloom underlay · .eu5-card = the opaque dark face + on-dark ink scope. */
+.eu5-focal{position:absolute;left:660px;top:110px;width:460px;height:500px}
+.eu5-rim{position:absolute;inset:0;border-radius:var(--w-glass-radius);pointer-events:none}
+.eu5-card{inset:0;padding:30px;display:flex;flex-direction:column;gap:18px;
+  /* opaque token fill (not the kit's translucent default) — see header note */
+  background:var(--w-charcoal)}
+
+.eu5-crow{display:flex;align-items:center;gap:12px}
+.eu5-emark{width:34px;height:34px;flex:none;border-radius:var(--w-r-full);
+  background:var(--w-grad-brand);display:flex;align-items:center;justify-content:center;
+  box-shadow:0 0 0 2px var(--w-charcoal)}
+.eu5-emark svg{width:16px;height:16px;fill:none;stroke:var(--w-charcoal);stroke-width:2.2;
+  stroke-linecap:round;stroke-linejoin:round}
+
+.eu5-move{margin:0;font:700 25px/1.32 var(--w-font);letter-spacing:var(--w-ls-tight);color:var(--cux-ink)}
+.eu5-sub{margin:0;font:500 15px/1.5 var(--w-font);color:var(--cux-ink-2)}
+
+/* the matched paying peer */
+.eu5-peer{padding:18px;border-radius:var(--w-glass-radius-nested);
+  background:var(--cux-well);border:1px solid var(--cux-hair);
+  display:flex;flex-direction:column;gap:12px}
+.eu5-peer-row{display:flex;align-items:center;gap:12px}
+.eu5-peer .cux-av{width:44px;height:44px}
+.eu5-peer-who{display:flex;flex-direction:column;gap:2px;min-width:0}
+.eu5-nm{font:700 15px/1.3 var(--w-font);color:var(--cux-ink);white-space:nowrap}
+.eu5-rl{font:500 14px/1.3 var(--w-font);color:var(--cux-ink-2);white-space:nowrap}
+.eu5-peer-row .cux-chip{margin-left:auto}
+
+.eu5-why{display:flex;flex-direction:column;gap:9px}
+.eu5-why-r{display:flex;gap:10px;font:500 14px/1.45 var(--w-font);color:var(--cux-ink-2)}
+.eu5-why-r i{margin-top:7px;width:6px;height:6px;flex:none;border-radius:var(--w-r-full);background:var(--w-success)}
+
+/* the free user takes it */
+.eu5-foot{display:flex;align-items:center;gap:12px;margin-top:auto}
+.eu5-talk{display:inline-flex;align-items:center;gap:9px;padding:12px 20px;
+  border-radius:var(--w-r-pill);border:1px solid transparent;
+  background:var(--w-white);color:var(--w-charcoal);
+  font:700 15px/1 var(--w-font);white-space:nowrap;transform-origin:50% 50%}
+.eu5-talk svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:2.4;
+  stroke-linecap:round;stroke-linejoin:round}
+.eu5-when{margin-left:auto;display:flex;align-items:center;gap:6px}
+
+/* ═══ PORTRAIT (440×620) — .is-sm · the pair STACKS ══════════════════════════
+   Additive overrides only; the base here is ALSO the resolved end state.      */
+
+.cux-fit.is-sm .cux-chip{font-size:11px;padding:6px 10px;gap:6px}
+
+.cux-fit.is-sm .eu5-app{left:22px;top:16px;width:396px;height:268px;padding:16px 18px;gap:12px}
+.cux-fit.is-sm .eu5-mark{width:30px;height:30px;font-size:14px}
+.cux-fit.is-sm .eu5-appname{font-size:16px}
+.cux-fit.is-sm .eu5-usage{gap:6px}
+.cux-fit.is-sm .eu5-lb{font-size:11px}
+.cux-fit.is-sm .eu5-usage-v{font-size:12px;gap:6px}
+.cux-fit.is-sm .eu5-bar{height:6px}
+.cux-fit.is-sm .eu5-gate{padding:12px;gap:8px;border-radius:var(--w-r-md)}
+.cux-fit.is-sm .eu5-gate-h svg{width:13px;height:13px}
+/* the blurred preview rows are the first thing to go — the lock is the point */
+.cux-fit.is-sm .eu5-gate-rows{display:none}
+.cux-fit.is-sm .eu5-gate-ov{position:static;transform:none;width:100%;margin-top:auto;padding:14px}
+.cux-fit.is-sm .eu5-lockbadge{width:32px;height:32px}
+.cux-fit.is-sm .eu5-lockbadge svg{width:14px;height:14px}
+.cux-fit.is-sm .eu5-gate-t{font-size:12.5px}
+.cux-fit.is-sm .eu5-gate-b{font-size:11px}
+
+/* the crossing stands up: a short vertical drop between the two cards */
+.cux-fit.is-sm .eu5-free{left:150px;top:276px}
+.cux-fit.is-sm .cux-chip.eu5-paid{left:150px;top:308px}
+.cux-fit.is-sm .eu5-cn{left:217px;top:284px;width:6px;height:20px;
+  transform-origin:50% 0;background:linear-gradient(180deg,var(--w-line-strong),var(--w-success))}
+
+.cux-fit.is-sm .eu5-focal{left:22px;top:304px;width:396px;height:300px}
+.cux-fit.is-sm .eu5-card{padding:16px;gap:10px}
+.cux-fit.is-sm .eu5-crow{gap:8px}
+.cux-fit.is-sm .eu5-emark{width:24px;height:24px}
+.cux-fit.is-sm .eu5-emark svg{width:12px;height:12px}
+.cux-fit.is-sm .eu5-move{font-size:17px;line-height:1.3}
+.cux-fit.is-sm .eu5-sub{font-size:11.5px;line-height:1.4}
+.cux-fit.is-sm .eu5-peer{padding:10px;gap:8px}
+.cux-fit.is-sm .eu5-peer .cux-av{width:30px;height:30px}
+.cux-fit.is-sm .eu5-nm{font-size:12px}
+.cux-fit.is-sm .eu5-rl{font-size:11px}
+.cux-fit.is-sm .eu5-why{gap:6px}
+.cux-fit.is-sm .eu5-why-r{font-size:11px;line-height:1.35;gap:7px}
+.cux-fit.is-sm .eu5-why-r i{margin-top:5px;width:5px;height:5px}
+.cux-fit.is-sm .eu5-foot{gap:8px}
+.cux-fit.is-sm .eu5-talk{padding:9px 14px;font-size:12px;gap:6px}
+.cux-fit.is-sm .eu5-talk svg{width:13px;height:13px}
+
+/* ═══ MOTION · everything above is the resolved end state ════════════════════
+   beat 1 ·  0–20%  the usage bar fills up to its ceiling
+   beat 2 · 14–26%  the lock resolves over the gated feature — "Upgrade to unlock"
+   beat 3 · 20–30%  the FREE chip lights (this is the moment: limit hit)
+   beat 4 · 28–40%  the connector runs, neutral → success
+   beat 5 · 38–46%  the PAID chip lands at the far end — the crossing, spelled out
+   beat 6 · 40–54%  the Experts+ prompt LANDS (bloom-rim card)
+   beat 7 · 52–62%  the headline resolves — "Talk to a customer like you"
+   beat 8 · 60–72%  the matched peer surfaces — Jenna, same start, now paid
+   beat 9 · 74–84%  the free user can act — Talk to Jenna lifts into place
+   beat 10 · 84–92% the control settles/pulses — ready to take
+   beat 11 · 92–96% hold  ·  96–100% reset                                      */
+@media (prefers-reduced-motion:no-preference){
+  .eu5-bar>i{animation:eu5-kfill var(--eu5-loop) var(--eu5-ease) infinite}
+  .eu5-gate-ov{animation:eu5-klock var(--eu5-loop) var(--eu5-ease) infinite}
+  .eu5-lockbadge{animation:eu5-kpulse 2.6s var(--eu5-ease) infinite}
+  .eu5-free{animation:eu5-kfree var(--eu5-loop) var(--eu5-ease) infinite}
+  .eu5-cn{animation:eu5-krun var(--eu5-loop) var(--eu5-ease) infinite}
+  .eu5-scene .cux-chip.eu5-paid{animation:eu5-kpaid var(--eu5-loop) var(--eu5-ease) infinite}
+  .eu5-focal{animation:eu5-kland var(--eu5-loop) var(--eu5-ease) infinite}
+  .eu5-move{animation:eu5-kmove var(--eu5-loop) var(--eu5-ease) infinite}
+  .eu5-peer{animation:eu5-kpeer var(--eu5-loop) var(--eu5-ease) infinite}
+  .eu5-foot{animation:eu5-kfoot var(--eu5-loop) var(--eu5-ease) infinite}
+  .eu5-talk{animation:eu5-ktake var(--eu5-loop) var(--eu5-ease) infinite}
+  /* the only structurally different beats: in portrait the connector DROPS,
+     and the lock overlay is position:static (no longer centred via left:50%)
+     so its keyframe must drop the -50% translateX or the animation drags it
+     off the left edge every loop, independent of the static base CSS. */
+  .cux-fit.is-sm .eu5-cn{animation-name:eu5-krunv}
+  .cux-fit.is-sm .eu5-gate-ov{animation-name:eu5-klockv}
+}
+
+@keyframes eu5-kfill{
+  0%,4%    {transform:scaleX(.08)}
+  20%,94%  {transform:scaleX(1)}
+  100%     {transform:scaleX(.08)}
+}
+@keyframes eu5-klock{
+  0%,14%   {opacity:0;transform:translate(-50%,10px)}
+  26%,94%  {opacity:1;transform:translate(-50%,0)}
+  100%     {opacity:0;transform:translate(-50%,10px)}
+}
+@keyframes eu5-klockv{
+  0%,14%   {opacity:0;transform:translateY(10px)}
+  26%,94%  {opacity:1;transform:none}
+  100%     {opacity:0;transform:translateY(10px)}
+}
+@keyframes eu5-kpulse{
+  0%       {box-shadow:0 0 0 0 var(--w-line-strong)}
+  70%,100% {box-shadow:0 0 0 10px transparent}
+}
+@keyframes eu5-kfree{
+  0%,20%   {opacity:0}
+  30%,94%  {opacity:1}
+  100%     {opacity:0}
+}
+@keyframes eu5-krun{
+  0%,28%   {transform:scaleX(0)}
+  40%,94%  {transform:scaleX(1)}
+  100%     {transform:scaleX(0)}
+}
+@keyframes eu5-krunv{
+  0%,28%   {transform:scaleY(0)}
+  40%,94%  {transform:scaleY(1)}
+  100%     {transform:scaleY(0)}
+}
+@keyframes eu5-kpaid{
+  0%,38%   {opacity:0;transform:translateX(-8px)}
+  46%,94%  {opacity:1;transform:none}
+  100%     {opacity:0;transform:translateX(-8px)}
+}
+/* runs on the WRAPPER (.eu5-focal) — never on .eu5-rim */
+@keyframes eu5-kland{
+  0%,40%   {opacity:0;transform:translateY(-30px) scale(.95)}
+  54%,94%  {opacity:1;transform:none}
+  100%     {opacity:0;transform:translateY(-30px) scale(.95)}
+}
+@keyframes eu5-kmove{
+  0%,52%   {opacity:0}
+  62%,94%  {opacity:1}
+  100%     {opacity:0}
+}
+@keyframes eu5-kpeer{
+  0%,60%   {opacity:0;transform:translateY(12px)}
+  72%,94%  {opacity:1;transform:none}
+  100%     {opacity:0;transform:translateY(12px)}
+}
+@keyframes eu5-kfoot{
+  0%,74%   {opacity:0}
+  84%,94%  {opacity:1}
+  100%     {opacity:0}
+}
+@keyframes eu5-ktake{
+  0%,84%   {transform:none}
+  88%      {transform:scale(.94)}
+  92%,94%  {transform:scale(1)}
+  100%     {transform:none}
+}
+
+/* motion is opt-in above; this freezes the scene at its resolved end state. */
+@media (prefers-reduced-motion:reduce){
+  .eu5-scene,.eu5-scene *,.eu5-scene *::before,.eu5-scene *::after{
+    animation:none !important;transition:none !important}
+}
+
+/* ---- eu6_fragment ---- */
+/* ============================================================================
+   eu6 · A6 — W-EXPERTS-USECASES §6 ABM (light)
+   "One mirror-customer for every account on your list."
+
+   THE ACCOUNT-LIST VIEW. A named target account (its own company, industry,
+   scale) sits beside its ONE mirror-customer (a real customer-expert who
+   shares that industry, scale, and challenge), a short match reason, a
+   tone-coded match pill, and a one-click peer-call offer. Four rows —
+   the payload is that EVERY account on the list gets its own matched peer,
+   not a generic touch. Composed as an opaque-card row list (the "table seen
+   from above" recipe, borrowed from the sibling cu6 scene) on the house
+   pegboard motif.
+
+   ROW ANATOMY (left → right on the wide canvas):
+     TARGET ACCOUNT   the named account — logo tile, industry · headcount
+     → (matched to)    a quiet chevron, the only connective tissue needed
+     MIRROR CUSTOMER   the customer-expert who mirrors it — avatar, name,
+                        title @ their company (ringed avatar = "the one")
+     MATCH             tone-coded pill (Strong→mint / Medium→amber, per the
+                        canonical Carly match-pill language) + the
+                        ExpertScore % in brand-gradient text — the scene's
+                        ONE brand-purple moment, confined to this pill
+     PEER CALL         a one-click offer chip (dark CTA fill — the house
+                        light-section CTA token, not brand purple)
+   A REASON LINE runs full-width under each row, indented under the mirror
+   column, spelling out WHY this pairing ("same industry, scale, and X").
+
+   LEGIBILITY (measured against the shared container, not assumed) — this
+   page's .eua__stage uses the SAME .w-container/pad recipe as the sibling
+   W-CARLY-USECASES §6 scene (cu6_fragment.html), and both canvases are
+   1180px WIDE (only the height differs: 760 here vs 700 there), so contain-
+   fit is width-limited in both cases and the worst-case wide scale is
+   IDENTICAL: viewport 701px → pad 28.04 → stage 645px → scale ≈0.547
+   (confirmed: at 701px .eua__stage is already past the 900px breakpoint,
+   aspect 1180/820, height-check 645×820/1180=448 vs width-check 645×760/1180
+   =415 — width is still the tighter bound). Portrait is the same story:
+   440-wide canvas, .eua__stage aspect flips to 440/620 at ≤700 so there is
+   no letterbox, worst case viewport 360 → stage 320px → scale ≈0.727. Both
+   numbers match cu6's derivation exactly, so this scene reuses cu6's proven
+   type floor: ≥14px on the wide canvas (≈7.7px effective) and ≥11px in
+   portrait (≈8.0px effective). Nothing here goes smaller.
+
+   TONE + BRAND: the match pill's Strong/Medium tones are color-mix()es of
+   --w-success / --w-warning against --w-charcoal (a light ground needs a
+   DARKENED tone ink — mint text on white is ~1.8:1, the same fix cu6 uses).
+   Brand purple appears in exactly ONE place — the ExpertScore % inside the
+   match pill, ramped --w-purple-ink → --w-purple (the ema2 light-ground
+   ramp; the canonical --w-grad-brand tops out in lavender, too pale on a
+   white card). The peer-call chip is NOT brand-colored: it uses the house
+   --w-cta-fill/--w-cta-text pair, which .cz-light already re-tokens to a
+   dark charcoal-glass pill — so the ONE purple moment stays the match pill,
+   never the CTA.
+
+   TWO CANVASES, ONE LIST
+   · data-canvas    1180×760 — four rows, table-from-above.
+   · data-canvas-sm  440×620 — condenses to THREE rows (drops the 4th,
+     weakest match) and each row becomes a stacked card: account + mirror
+     side by side (subtext dropped), match pill + score on one line, the
+     peer-call chip full-width, the reason line last. All .is-sm rules are
+     additive; this is ALSO the resolved end state.
+
+   ⚠ NO .cux-glass on this scene — rows are .cux-card (opaque white on the
+     pegboard), exactly cu6's reasoning: a glass card's (0,2,0) chip repaint
+     would grey out the tone pill. Kept the same way here.
+
+   Builds on the shared cux- kit (already in the page — never redefined
+   here). Every selector scoped .eu6- / .eu6-scene. Tokens only — zero raw
+   hex. BASE CSS = RESOLVED END STATE (all four accounts matched, scored,
+   and offered) in BOTH layouts; motion is opt-in under prefers-reduced-
+   motion:no-preference, with an explicit reduce block that freezes it.
+   Loop 11s. No JS, no <img>.
+   ============================================================================ */
+
+.eu6-scene{--eu6-loop:11s;--eu6-ease:cubic-bezier(.2,.7,.2,1);font-family:var(--w-font)}
+
+/* type floor — the kit's 10/12px default goes illegible at ≈0.547 scale */
+.eu6-scene .cux-chip{font-size:14px;padding:6px 10px;gap:6px}
+
+/* ═══ WIDE (1180×760) ═══════════════════════════════════════════════════════ */
+
+/* ---- column captions — the four columns and what they mean --------------- */
+.eu6-cols{position:absolute;left:56px;top:32px;width:1068px;height:26px;
+  display:flex;align-items:center;gap:18px}
+.eu6-cl{font:400 14px/1 var(--w-font-kicker);letter-spacing:.09em;text-transform:uppercase;
+  color:var(--cux-ink-3);white-space:nowrap}
+.eu6-cl--acct{flex:0 0 248px}
+.eu6-cl--arrow{flex:0 0 26px}
+.eu6-cl--mirror{flex:1 1 280px}
+.eu6-cl--match{flex:0 0 190px}
+.eu6-cl--call{flex:0 0 170px}
+
+/* ---- THE ROWS · four named accounts, each carrying its own mirror -------- */
+.eu6-row{left:56px;width:1068px;height:148px;box-sizing:border-box;padding:20px 26px;
+  border-radius:var(--w-r-lg);display:flex;flex-direction:column;gap:8px}
+.eu6-r1{top:76px; --eu6-d:0s}
+.eu6-r2{top:242px;--eu6-d:.09s}
+.eu6-r3{top:408px;--eu6-d:.18s}
+.eu6-r4{top:574px;--eu6-d:.27s}
+
+.eu6-rowin{display:flex;align-items:center;gap:18px}
+
+/* TARGET ACCOUNT — the named account */
+.eu6-acct{flex:0 0 248px;min-width:0;display:flex;align-items:center;gap:12px}
+.eu6-logo{width:44px;height:44px;flex:none;border-radius:11px;background:#fff;
+  border:1px solid var(--cux-hair);background-size:26px 26px;background-repeat:no-repeat;
+  background-position:center;box-shadow:0 1px 2px rgba(28,26,36,.06)}
+.eu6-atxt{display:flex;flex-direction:column;gap:3px;min-width:0}
+.eu6-anm{font:700 17px/1.2 var(--w-font);letter-spacing:var(--w-ls-tight);color:var(--cux-ink);
+  white-space:nowrap}
+.eu6-asub{font:500 14px/1.32 var(--w-font);color:var(--cux-ink-2);white-space:normal}
+
+/* → matched to — the only connector this scene needs */
+.eu6-arrow{flex:0 0 26px;width:22px;height:22px;fill:none;stroke:var(--cux-ink-3);
+  stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;transform-origin:50% 50%}
+
+/* MIRROR CUSTOMER — the real customer-expert who mirrors this account.
+   Ring = "the one" (the same ring language ema2/ema3 use for a resolved match). */
+.eu6-mirror{flex:1 1 280px;min-width:0;display:flex;align-items:center;gap:12px}
+.eu6-av{width:44px;height:44px}
+.eu6-mtxt{display:flex;flex-direction:column;gap:3px;min-width:0}
+.eu6-mnm{font:700 17px/1.2 var(--w-font);letter-spacing:var(--w-ls-tight);color:var(--cux-ink);
+  white-space:nowrap}
+.eu6-msub{font:500 14px/1.32 var(--w-font);color:var(--cux-ink-2);white-space:nowrap}
+
+/* MATCH — tone-coded pill (Strong→mint / Medium→amber) + the ExpertScore %,
+   the scene's one brand-purple moment, confined to this pill. */
+.eu6-match{flex:0 0 190px;min-width:0;display:flex;flex-direction:column;gap:6px}
+.eu6-scene .eu6-tone{display:inline-flex;align-items:center;gap:7px;padding:7px 11px;
+  border-radius:var(--w-r-pill);border:1px solid transparent;
+  font:600 14px/1 var(--w-font);white-space:nowrap;width:fit-content}
+.eu6-tone svg{width:15px;height:15px;flex:none;fill:none;stroke:currentColor;stroke-width:2.6;
+  stroke-linecap:round;stroke-linejoin:round}
+.eu6-tone--strong{color:color-mix(in srgb,var(--w-success) 45%,var(--w-charcoal));
+  background:color-mix(in srgb,var(--w-success) 16%,transparent);
+  border-color:color-mix(in srgb,var(--w-success) 40%,transparent)}
+.eu6-tone--med{color:color-mix(in srgb,var(--w-warning) 42%,var(--w-charcoal));
+  background:color-mix(in srgb,var(--w-warning) 20%,transparent);
+  border-color:color-mix(in srgb,var(--w-warning) 46%,transparent)}
+.eu6-scoreln{display:flex;align-items:baseline;gap:6px}
+.eu6-scene .eu6-pct{font:800 17px/1 var(--w-font-mono);letter-spacing:var(--w-ls-tight);
+  background:linear-gradient(135deg,var(--w-purple-ink) 0%,var(--w-purple) 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.eu6-scoreln>span{font:500 13px/1.2 var(--w-font);color:var(--cux-ink-2);white-space:nowrap}
+
+/* PEER CALL — the one-click offer. Dark CTA fill (the house light-section
+   token), NOT brand purple: the one purple moment stays in the match pill. */
+.eu6-scene .cux-chip.eu6-call{flex:0 0 170px;justify-content:center;
+  background:var(--w-cta-fill);color:var(--w-cta-text);border-color:transparent;
+  font:600 14px/1 var(--w-font);padding:11px 14px;box-shadow:var(--w-shadow-sm);
+  transform-origin:50% 50%}
+.eu6-call svg{width:15px;height:15px;flex:none;fill:none;stroke:currentColor;stroke-width:2.4;
+  stroke-linecap:round;stroke-linejoin:round}
+
+/* REASON — the short "why this pairing", indented under the mirror column */
+.eu6-reason{margin-left:320px;display:flex;align-items:flex-start;gap:8px;max-width:700px}
+.eu6-rico{width:14px;height:14px;flex:none;margin-top:2px;fill:none;stroke:var(--cux-ink-3);
+  stroke-width:2.2}
+.eu6-reason span{font:500 14px/1.4 var(--w-font);color:var(--cux-ink-2);white-space:normal}
+
+/* ═══ PORTRAIT (440×620) — .is-sm · THREE rows, each a stacked card ═══════════
+   Additive overrides only; this base is ALSO the resolved end state.        */
+
+.cux-fit.is-sm .cux-chip{font-size:11px;padding:5px 9px;gap:5px}
+
+.cux-fit.is-sm .eu6-cols{display:none}
+
+.cux-fit.is-sm .eu6-row{left:22px;width:396px;height:172px;padding:14px 16px;gap:8px}
+.cux-fit.is-sm .eu6-r1{top:14px}
+.cux-fit.is-sm .eu6-r2{top:200px}
+.cux-fit.is-sm .eu6-r3{top:386px}
+.cux-fit.is-sm .eu6-r4{display:none}
+
+/* the row wraps into a stack: account+mirror share line 1 (arrow hidden),
+   the match pill+score take their own full-width line, the peer-call chip
+   its own full-width line beneath — this WAS a flat single-line flex row
+   with no wrap, which crushed every column into an illegible overlap. */
+.cux-fit.is-sm .eu6-rowin{gap:8px 12px;flex-wrap:wrap}
+.cux-fit.is-sm .eu6-acct{flex:1 1 0;gap:8px}
+.cux-fit.is-sm .eu6-mirror{flex:1 1 0;gap:8px}
+.cux-fit.is-sm .eu6-arrow{display:none}
+.cux-fit.is-sm .eu6-logo,.cux-fit.is-sm .eu6-av{width:32px;height:32px;border-radius:9px}
+.cux-fit.is-sm .eu6-atxt,.cux-fit.is-sm .eu6-mtxt{gap:2px}
+.cux-fit.is-sm .eu6-anm,.cux-fit.is-sm .eu6-mnm{font-size:13px}
+.cux-fit.is-sm .eu6-asub,.cux-fit.is-sm .eu6-msub{display:none}
+
+/* flex:none resets the wide layout's flex:0 0 190px — without it flex-basis
+   stays pinned at 190px and the width:100% below is ignored for sizing,
+   so the pill never wraps onto its own line (the account/mirror overlap bug). */
+.cux-fit.is-sm .eu6-match{flex:none;flex-direction:row;align-items:center;gap:10px;width:100%}
+.cux-fit.is-sm .eu6-scene .eu6-tone{padding:5px 9px;font-size:11px}
+.cux-fit.is-sm .eu6-tone svg{width:12px;height:12px}
+.cux-fit.is-sm .eu6-scoreln{gap:5px}
+.cux-fit.is-sm .eu6-scene .eu6-pct{font-size:14px}
+.cux-fit.is-sm .eu6-scoreln>span{font-size:11px}
+
+.cux-fit.is-sm .eu6-scene .cux-chip.eu6-call{width:100%;flex:none;padding:9px 12px;font-size:11.5px}
+.cux-fit.is-sm .eu6-call svg{width:13px;height:13px}
+
+.cux-fit.is-sm .eu6-reason{margin-left:0;max-width:none}
+.cux-fit.is-sm .eu6-reason span{font-size:11px;line-height:1.35}
+.cux-fit.is-sm .eu6-rico{width:12px;height:12px;margin-top:1px}
+
+/* ═══ MOTION · everything above is the RESOLVED END STATE ═══════════════════
+   beat 1 ·  0–10%  the four rows land, staggered top to bottom
+   beat 2 ·  8–20%  each mirror-customer resolves (the ring lands)
+   beat 3 · 18–32%  the match pill + ExpertScore % scale in, staggered
+   beat 4 · 28–40%  the reason line writes in — why this pairing
+   beat 5 · 36–48%  the peer-call offer arrives — a soft settle, the payoff
+   beat 6 · 48–92%  hold  ·  92–100% reset                                    */
+@media (prefers-reduced-motion:no-preference){
+  .eu6-row{animation:eu6-krow var(--eu6-loop) var(--eu6-ease) infinite;
+    animation-delay:var(--eu6-d,0s)}
+  .eu6-mirror{animation:eu6-kmirror var(--eu6-loop) var(--eu6-ease) infinite;
+    animation-delay:var(--eu6-d,0s)}
+  .eu6-match{animation:eu6-kmatch var(--eu6-loop) var(--eu6-ease) infinite;
+    animation-delay:var(--eu6-d,0s)}
+  .eu6-reason{animation:eu6-kreason var(--eu6-loop) var(--eu6-ease) infinite;
+    animation-delay:var(--eu6-d,0s)}
+  .eu6-scene .cux-chip.eu6-call{animation:eu6-kcall var(--eu6-loop) var(--eu6-ease) infinite;
+    animation-delay:var(--eu6-d,0s)}
+}
+
+@keyframes eu6-krow{
+  0%      {opacity:0;transform:translateY(14px)}
+  10%,94% {opacity:1;transform:none}
+  100%    {opacity:0;transform:translateY(14px)}
+}
+@keyframes eu6-kmirror{
+  0%,8%   {opacity:.35;transform:translateX(-6px)}
+  20%,94% {opacity:1;transform:none}
+  100%    {opacity:.35;transform:translateX(-6px)}
+}
+@keyframes eu6-kmatch{
+  0%,18%  {opacity:0;transform:scale(.86)}
+  32%,94% {opacity:1;transform:none}
+  100%    {opacity:0;transform:scale(.86)}
+}
+@keyframes eu6-kreason{
+  0%,28%  {opacity:0;transform:translateY(6px)}
+  40%,94% {opacity:1;transform:none}
+  100%    {opacity:0;transform:translateY(6px)}
+}
+@keyframes eu6-kcall{
+  0%,36%  {opacity:0;transform:translateY(8px)}
+  48%     {opacity:1;transform:translateY(-2px)}
+  54%,94% {opacity:1;transform:none}
+  100%    {opacity:0;transform:translateY(8px)}
+}
+
+/* motion is opt-in above; this freezes the scene at its resolved end state. */
+@media (prefers-reduced-motion:reduce){
+  .eu6-scene,.eu6-scene *,.eu6-scene *::before,.eu6-scene *::after{
+    animation:none !important;transition:none !important}
+}
+
+/* ---- eu7_fragment ---- */
+/* ============================================================================
+   eu7 · A7 — W-EXPERTS-USECASES §7 REFERENCE MANAGEMENT (light)
+   "the program runs on rails, at any scale"
+
+   A reference-PROGRAM view, not one deal: the pool of verified customer-experts
+   who take reference calls, shown as a live roster. Copy anchor (content.md
+   §7): "Match by fit, rotate fairly, reward, and record."
+
+   THE STORY, LEFT TO RIGHT / TOP TO BOTTOM
+   · An incoming reference REQUEST (top-left) needs a Security-fit customer at
+     a FinTech, Series-C+ account.
+   · It routes straight down into THE POOL (main card) — five real customer-
+     experts, each carrying three signals at once: a FIT tag (why they could
+     take this), a FAIR-ROTATION load meter (so no one champion is over-asked
+     — every bar sits in the same healthy 55–63% band, none pinned to 100%),
+     and an ON-THE-RECORD status (synced to CRM, with a "how long ago").
+   · Aisha Rahman is the fit for THIS request — ringed avatar + highlighted
+     row — without a mismatch anywhere else in the pool.
+   · Two stat chips (top-right) carry the payoff numbers from the
+     copy: 8× reference volume, 95%+ customers glad for the next call.
+
+   TWO CANVASES, ONE STORY
+   · data-canvas    1180×760 — request + stats stacked top, pool card spans
+     full width beneath, request→pool connector a short vertical drop.
+   · data-canvas-sm  440×620 — the same three blocks stack tighter; pool rows
+     condense (avatar+name, short fit tag, shorter bar, icon-only status —
+     ADDITIVE, nothing removed) per data-sm-at.
+
+   LEGIBILITY FLOOR: same 1180-wide canvas family as the sibling cu3 scene, so
+   the same contain-scale ceiling applies (~0.376 at the worst wide-canvas
+   stage width). Every wide-canvas text node sits at ≥19px (→ ≥7.1px
+   effective); portrait sits at ≥10.5px against a shallower worst-case scale
+   (~0.727), so ≥7.6px effective. Nothing on this scene goes smaller.
+
+   TOKENS + BRAND: foundation --w-* only, zero raw hex. Brand purple is scoped
+   to product UI here — the matched row's avatar ring + soft row wash (kit
+   tokens, not a fill) — this is NOT the page's one full-strength-purple
+   moment (that's A8's hub-and-spoke). Status uses --w-success (on record),
+   the incoming request uses --w-warning (pending / not yet routed).
+
+   Builds on the shared cux- kit (already in the page — never redefined here).
+   Every selector is scoped .eu7- / .eu7-scene. BASE CSS = RESOLVED END STATE
+   (pool matched, rotation balanced, every row on record) in BOTH layouts;
+   all motion is opt-in under prefers-reduced-motion:no-preference, with an
+   explicit reduce block freezing it. No JS, no <img>.
+   ============================================================================ */
+
+.eu7-scene{--eu7-loop:12s;--eu7-ease:cubic-bezier(.2,.7,.2,1);
+  font-family:var(--w-font)}
+
+/* type floor — the kit's 10/12px default goes illegible at this canvas scale */
+.eu7-scene .cux-chip{font-size:20px;padding:7px 13px;gap:7px}
+
+/* ═══ WIDE (1180×760) ═══════════════════════════════════════════════════════ */
+
+/* ---- THE REQUEST · not yet routed --------------------------------------- */
+.eu7-req{left:60px;top:44px;width:430px;height:100px;padding:18px 24px;
+  display:flex;flex-direction:column;gap:8px;justify-content:center}
+.eu7-req-h{display:flex;align-items:center;gap:12px}
+.eu7-dot{width:14px;height:14px;flex:none;border-radius:var(--w-r-full);
+  background:var(--w-warning);box-shadow:0 0 0 6px var(--w-warning-soft)}
+.eu7-req-t{margin:0;font:500 22px/1.3 var(--w-font);letter-spacing:var(--w-ls-tight);
+  color:var(--cux-ink)}
+.eu7-req-sub{margin-left:26px;font:500 19px/1.3 var(--w-font);color:var(--cux-ink-2)}
+
+/* ---- THE PAYOFF · two stats ---------------------------------- */
+.eu7-stats{left:690px;top:44px;width:430px;height:100px;padding:14px 24px;
+  display:flex;align-items:center;gap:26px}
+.eu7-stat{display:flex;flex-direction:column;gap:2px;min-width:0}
+.eu7-stat-n{font:500 40px/1 var(--w-font-mono);letter-spacing:var(--w-ls-tight);
+  color:var(--cux-ink)}
+.eu7-stat-l{font:500 19px/1.28 var(--w-font);color:var(--cux-ink-2);max-width:130px}
+
+/* ---- the connector · request routes straight down into the pool --------- */
+.eu7-cn{left:116px;top:144px;width:6px;height:26px;transform-origin:50% 0;
+  background:linear-gradient(180deg,var(--w-warning),var(--w-line-strong))}
+
+/* ---- THE POOL · the reference-program roster ------------------------------ */
+.eu7-pool{left:60px;top:170px;width:1060px;height:500px;padding:30px 28px;
+  display:flex;flex-direction:column;gap:16px}
+.eu7-pool-h{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.eu7-pool-t{font:500 24px/1.2 var(--w-font);letter-spacing:var(--w-ls-tight);
+  color:var(--cux-ink)}
+.eu7-pool-sub{font:500 19px/1.3 var(--w-font);color:var(--cux-ink-2)}
+
+.eu7-rows{display:flex;flex-direction:column;gap:12px}
+.eu7-row{display:flex;align-items:center;gap:18px;height:68px;padding:0 20px;
+  border-radius:var(--w-r-sm);border:1px solid var(--w-line);flex:none}
+.eu7-row.is-matched{border-color:var(--w-brand-line);background:var(--w-brand-soft)}
+
+.eu7-av{width:44px;height:44px;flex:none}
+
+/* stacked (not single line) — name and role each only need their OWN width,
+   not name+role concatenated, so neither has to truncate to fit the column */
+.eu7-id{flex:0 0 200px;min-width:0;display:flex;flex-direction:column;gap:2px}
+.eu7-nm{font:500 21px/1.3 var(--w-font);letter-spacing:var(--w-ls-tight);color:var(--cux-ink);
+  white-space:nowrap}
+.eu7-role{font:500 19px/1.3 var(--w-font);color:var(--cux-ink-2);white-space:nowrap}
+
+.eu7-fit{flex:0 0 240px;min-width:0}
+
+.eu7-load{flex:0 0 190px;display:flex;align-items:center;gap:12px}
+.eu7-bar{width:130px}
+.eu7-bar>i{width:var(--eu7-w,50%)}
+.eu7-loadn{flex:none}
+
+.eu7-status{flex:1;display:flex;align-items:center;gap:10px;justify-content:flex-end;min-width:0}
+.eu7-chk{width:26px;height:26px;flex:none;border-radius:var(--w-r-full);
+  background:var(--w-success-soft);display:flex;align-items:center;justify-content:center}
+.eu7-chk svg{width:15px;height:15px;fill:none;stroke:var(--w-success);stroke-width:3;
+  stroke-linecap:round;stroke-linejoin:round}
+.eu7-status-t{font:500 19px/1.3 var(--w-font);color:var(--cux-ink-2);white-space:nowrap}
+.eu7-status-t b{color:var(--cux-ink);font-weight:500;font-family:var(--w-font-mono)}
+
+/* ═══ PORTRAIT (440×620) — .is-sm · tighter stack, nothing removed ══════════
+   Additive overrides only; the base here is ALSO the resolved end state.      */
+
+.cux-fit.is-sm .cux-chip{font-size:11px;padding:5px 9px;gap:5px}
+
+.cux-fit.is-sm .eu7-req{left:22px;top:16px;width:396px;height:64px;padding:11px 14px;gap:5px}
+.cux-fit.is-sm .eu7-req-h{gap:8px}
+.cux-fit.is-sm .eu7-dot{width:10px;height:10px;box-shadow:0 0 0 4px var(--w-warning-soft)}
+.cux-fit.is-sm .eu7-req-t{font-size:13px;line-height:1.28}
+.cux-fit.is-sm .eu7-req-sub{margin-left:18px;font-size:11px}
+
+.cux-fit.is-sm .eu7-stats{left:22px;top:92px;width:396px;height:56px;padding:9px 14px;gap:16px}
+.cux-fit.is-sm .eu7-stat-n{font-size:19px}
+.cux-fit.is-sm .eu7-stat-l{font-size:10.5px;max-width:96px}
+
+.cux-fit.is-sm .eu7-cn{left:52px;top:148px;width:6px;height:18px}
+
+.cux-fit.is-sm .eu7-pool{left:22px;top:166px;width:396px;height:432px;padding:16px 18px;gap:10px}
+.cux-fit.is-sm .eu7-pool-t{font-size:14px}
+.cux-fit.is-sm .eu7-pool-sub{font-size:10.5px}
+
+.cux-fit.is-sm .eu7-rows{gap:8px}
+.cux-fit.is-sm .eu7-row{height:50px;padding:0 12px;gap:9px}
+.cux-fit.is-sm .eu7-av{width:26px;height:26px}
+.cux-fit.is-sm .eu7-id{flex:0 0 96px}
+.cux-fit.is-sm .eu7-nm{font-size:12.5px}
+.cux-fit.is-sm .eu7-role{display:none}
+.cux-fit.is-sm .eu7-fit{flex:0 0 104px;font-size:10.5px}
+.cux-fit.is-sm .eu7-load{flex:0 0 52px;gap:4px}
+.cux-fit.is-sm .eu7-bar{width:22px;height:6px}
+.cux-fit.is-sm .eu7-loadn{font-size:10px;padding:3px 5px}
+.cux-fit.is-sm .eu7-status{gap:0;justify-content:flex-end}
+.cux-fit.is-sm .eu7-status-t{display:none}
+.cux-fit.is-sm .eu7-chk{width:20px;height:20px}
+.cux-fit.is-sm .eu7-chk svg{width:11px;height:11px;stroke-width:3.2}
+
+/* ═══ MOTION · everything above is the resolved end state ════════════════════
+   beat 1 ·  0–8%   the REQUEST lands — not yet routed (amber, pending)
+   beat 2 ·  4–12%  the payoff stats resolve
+   beat 3 · 10–20%  the connector runs straight down into the pool
+   beat 4 · 14–22%  the pool header settles
+   beat 5 · 16–30%  the five rows arrive, staggered (fit visible on each)
+   beat 6 · 20–34%  the fair-rotation load bars draw — all in the same band
+   beat 7 · 30–44%  Aisha's row resolves as the MATCH — ring + wash land
+   beat 8 · 34–48%  the on-record checks land across the pool, staggered
+   beat 9 · 60–90%  hold  ·  90–100% reset                                     */
+@media (prefers-reduced-motion:no-preference){
+  .eu7-req{animation:eu7-kreq var(--eu7-loop) var(--eu7-ease) infinite}
+  .eu7-dot{animation:eu7-kpulse 2.2s var(--eu7-ease) infinite}
+  .eu7-stats{animation:eu7-kstats var(--eu7-loop) var(--eu7-ease) infinite}
+  .eu7-cn{animation:eu7-kcn var(--eu7-loop) var(--eu7-ease) infinite}
+  .eu7-pool-h{animation:eu7-khead var(--eu7-loop) var(--eu7-ease) infinite}
+  .eu7-row{animation:eu7-krow var(--eu7-loop) var(--eu7-ease) infinite;
+    animation-delay:var(--eu7-d,0s)}
+  .eu7-bar>i{animation:eu7-kbar var(--eu7-loop) var(--eu7-ease) infinite;
+    animation-delay:var(--eu7-d,0s)}
+  .eu7-row.is-matched{animation:eu7-kmatch var(--eu7-loop) var(--eu7-ease) infinite}
+  .eu7-row.is-matched .cux-av--ring{animation:eu7-kring 2.4s var(--eu7-ease) infinite}
+  .eu7-chk svg{animation:eu7-kchk var(--eu7-loop) var(--eu7-ease) infinite;
+    animation-delay:var(--eu7-d,0s)}
+}
+
+@keyframes eu7-kreq{
+  0%       {opacity:0;transform:translateY(10px)}
+  8%,94%   {opacity:1;transform:none}
+  100%     {opacity:0;transform:translateY(10px)}
+}
+@keyframes eu7-kpulse{
+  0%       {box-shadow:0 0 0 3px var(--w-warning-soft)}
+  70%,100% {box-shadow:0 0 0 12px transparent}
+}
+@keyframes eu7-kstats{
+  0%,4%    {opacity:0}
+  12%,94%  {opacity:1}
+  100%     {opacity:0}
+}
+@keyframes eu7-kcn{
+  0%,10%   {transform:scaleY(0)}
+  20%,94%  {transform:scaleY(1)}
+  100%     {transform:scaleY(0)}
+}
+@keyframes eu7-khead{
+  0%,14%   {opacity:0;transform:translateY(8px)}
+  22%,94%  {opacity:1;transform:none}
+  100%     {opacity:0;transform:translateY(8px)}
+}
+@keyframes eu7-krow{
+  0%,14%   {opacity:0;transform:translateY(10px)}
+  26%,94%  {opacity:1;transform:none}
+  100%     {opacity:0;transform:translateY(10px)}
+}
+@keyframes eu7-kbar{
+  0%,16%   {transform:scaleX(0)}
+  30%,94%  {transform:scaleX(1)}
+  100%     {transform:scaleX(0)}
+}
+@keyframes eu7-kmatch{
+  0%,28%   {background:transparent;border-color:var(--w-line)}
+  40%,94%  {background:var(--w-brand-soft);border-color:var(--w-brand-line)}
+  100%     {background:transparent;border-color:var(--w-line)}
+}
+@keyframes eu7-kring{
+  0%       {box-shadow:0 0 0 2px #fff,0 0 0 4px var(--w-brand),0 6px 14px -5px rgba(28,26,36,.28)}
+  70%,100% {box-shadow:0 0 0 2px #fff,0 0 0 8px transparent,0 6px 14px -5px rgba(28,26,36,.28)}
+}
+@keyframes eu7-kchk{
+  0%,30%   {opacity:0;transform:scale(.4)}
+  42%      {opacity:1;transform:scale(1.15)}
+  48%,94%  {opacity:1;transform:scale(1)}
+  100%     {opacity:0;transform:scale(.4)}
+}
+
+/* motion is opt-in above; this freezes the scene at its resolved end state. */
+@media (prefers-reduced-motion:reduce){
+  .eu7-scene,.eu7-scene *,.eu7-scene *::before,.eu7-scene *::after{
+    animation:none !important;transition:none !important}
+}

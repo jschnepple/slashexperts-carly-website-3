@@ -1,0 +1,213 @@
+/* ===== shared chrome CSS (lifted verbatim from W-BOOK-DEMO _chrome) ===== */
+.cz-light{
+  background:var(--w-bg);color:var(--w-text);
+  --w-bg:#f5f5f5; --w-bg-deep:#ebebeb; --w-bg-elev:#fafafa;
+  --w-card:#ffffff; --w-card-lo:#efefef; --w-card-hi:#ffffff;
+  --w-text:var(--w-charcoal); --w-text-2:rgba(28,26,36,0.66); --w-text-3:rgba(28,26,36,0.62);
+  --w-text-prose:#302d2e; --w-text-on-brand:#ffffff; --w-icon-ink:var(--w-charcoal);
+  --w-line-soft:rgba(28,26,36,0.06); --w-line:rgba(28,26,36,0.10); --w-line-strong:rgba(28,26,36,0.16); --w-edge-top:rgba(255,255,255,0.9);
+  --w-brand:var(--w-purple-ink); --w-brand-2:var(--w-purple); --w-brand-soft:rgba(152,135,244,0.10); --w-brand-line:rgba(152,135,244,0.28);
+  --w-shadow-raise:0 8px 18px -8px rgba(28,26,36,0.07), inset 0 1px 0 rgba(255,255,255,0.9);
+  --w-shadow-raise-soft:0 4px 10px -6px rgba(28,26,36,0.05), inset 0 1px 0 rgba(255,255,255,0.85);
+  --w-shadow-recess:inset 0 1px 3px rgba(28,26,36,0.05), inset 0 -1px 0 rgba(255,255,255,0.8);
+  --w-shadow-recess-deep:inset 0 2px 5px rgba(28,26,36,0.07), inset 0 -1px 0 rgba(255,255,255,0.7);
+  --w-shadow-sm:0 1px 2px rgba(28,26,36,0.04); --w-shadow-md:0 4px 12px rgba(28,26,36,0.05); --w-shadow-lg:0 12px 28px rgba(28,26,36,0.07);
+  --w-glow-brand:0 2px 8px rgba(28,26,36,0.05); --w-glow-brand-strong:0 6px 16px rgba(28,26,36,0.07);
+  --w-glass-fill:rgba(255,255,255,0.66); --w-glass-fill-strong:rgba(255,255,255,0.86); --w-glass-tint:rgba(28,26,36,0.90);
+  --w-glass-fill-soft:rgba(28,26,36,0.03); --w-glass-line:rgba(28,26,36,0.10); --w-glass-line-bright:rgba(28,26,36,0.16);
+  --w-glass-rim-top:rgba(255,255,255,0.95); --w-glass-rim-bottom:rgba(28,26,36,0.05);
+  --w-glass-blur:blur(18px) saturate(140%); --w-glass-blur-lg:blur(22px) saturate(145%);
+  --w-glass-shadow:0 10px 24px rgba(28,26,36,0.06); --w-glass-shadow-soft:0 4px 12px rgba(28,26,36,0.05);
+  --w-cta-fill:var(--w-glass-tint); --w-cta-text:#ffffff; --w-cta-glow:var(--w-shadow-md); --w-cta-glow-strong:var(--w-shadow-lg);
+  --w-card-brand-wash:linear-gradient(160deg, rgba(28,26,36,0.06), rgba(28,26,36,0.015)); --w-card-brand-line:var(--w-line-strong);
+  --w-tag-brand-bg:rgba(28,26,36,0.06); --w-tag-brand-fg:var(--w-text); --w-focus:rgba(28,26,36,0.55);
+  --w-grad-surface:linear-gradient(180deg, #ffffff 0%, #f5f5f5 100%);
+  --w-grad-surface-hi:linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
+  --w-grad-recess:linear-gradient(180deg, #ededed 0%, #e3e3e3 100%);
+}
+/* keep glass legible if the OS asks for less transparency, inside a light band */
+@media (prefers-reduced-transparency: reduce){
+  .cz-light .w-glass,.cz-light .w-btn--glass,.cz-light .w-tag,.cz-light .w-card,.cz-light .w-cta-band{background:var(--w-card);border-color:var(--w-line)}
+}
+/* footer peel-up reveal — /Experts static, footer scrolls up over it (matches Home) */
+.w-foot-spacer{display:none}
+@media(min-width:901px){
+  main{position:relative;z-index:1;background:var(--w-bg)}
+  .w-footer{position:relative;z-index:1}
+  .w-footer__bigmark{position:fixed!important;left:0;right:0;bottom:0;z-index:0;overflow:hidden}
+  .w-footer__bigmark-tx{transform:none!important}
+  .w-foot-spacer{display:block}
+}
+/* small screens: no peel-up room, so show /Experts as a static mark sized to fit the viewport */
+@media(max-width:900px){
+  .w-footer__bigmark-tx{transform:none!important;font-size:clamp(52px,21vw,150px)}
+}
+
+.w-footer{position:relative;z-index:1}
+
+/* ===== W-PRICING page-local styles (Phase 5) ===== */
+/* page-local asset tokens (base64'd at bundle) */
+:root{
+  --w-img-av-jon:url("/assets/images/w/pricing/av-jon.webp");
+  --w-img-av-lauren:url("/assets/images/w/pricing/av-lauren.webp");
+  --w-img-pr-ctabg:url("/assets/images/w/pricing/pr-ctabg.webp");
+}
+
+/* asymmetric section spacing (approved pattern: tight top, generous bottom) */
+.w-section{padding-block:clamp(36px,2.2vw + 1rem,64px) clamp(64px,4vw + 1.7rem,108px)}
+.w-section--hero{padding-block:clamp(96px,10vh + 2rem,150px) clamp(84px,7vw + 2rem,140px)}
+
+/* ---- Adobe stacking: hero pins, plans panel covers it (stackfit JS gates the pin) ---- */
+.pr-stack{position:relative;z-index:0}
+.pr-stack #plans{position:relative;z-index:2;box-shadow:0 -24px 50px -14px rgba(0,0,0,.45)}
+
+/* ---- §1 hero (dark, centered, short) ---- */
+.pr-hero{background:var(--w-bg)}
+.pr-hero__h{margin-top:22px;max-width:none;margin-inline:auto;font-size:clamp(34px,5.9vw,84px)}
+.pr-hero__l{display:block;white-space:nowrap}
+@media(max-width:700px){.pr-hero__l{white-space:normal}.pr-hero__h{font-size:clamp(34px,9.6vw,44px)}}
+.pr-hero__lead{margin-top:18px;max-width:62ch;margin-inline:auto}
+.pr-hero__actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:34px}
+.pr-btn-wide{min-width:150px;padding-inline:34px;justify-content:center}
+
+/* ---- §2 plan columns ---- */
+.pr-plans{align-items:stretch}
+.pr-plan{position:relative;display:flex;flex-direction:column;gap:18px;padding:34px 26px 26px}
+.pr-plan__head,.pr-plan__price{text-align:center}
+.pr-plan__list{text-align:left}
+@media(min-width:1025px){.pr-plan{min-height:630px}}
+@media(min-width:769px) and (max-width:1024px){.pr-plan{min-height:525px}
+  /* 2-col wrap: the reco card spans the full row instead of orphaning at half width */
+  .pr-plans .pr-plan--reco{grid-column:1/-1;min-height:0}}
+/* soft-glass widget (Experts+ · Carly): GRAY glass outer, frosted white inner list */
+.pr-plan{background:#e6e6ea;border:1px solid rgba(255,255,255,.7);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.85),0 14px 30px -18px rgba(28,26,36,.22);
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+  transition:transform .55s cubic-bezier(.16,1,.3,1),border-color .55s cubic-bezier(.16,1,.3,1),box-shadow .55s cubic-bezier(.16,1,.3,1)}
+.pr-plan__list{transition:background .35s cubic-bezier(.16,1,.3,1),box-shadow .35s cubic-bezier(.16,1,.3,1)}
+/* hover (pointer devices, desktop): premium + SUBTLE — a quiet 3px rise, soft shadow bloom, gentle brand warm-up */
+@media(hover:hover) and (min-width:901px){
+  .pr-plan:not(.pr-plan--reco):hover{transform:translateY(-3px);border-color:rgba(152,135,244,.22);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.9),0 22px 44px -22px rgba(28,26,36,.3)}
+  .pr-plan--reco:hover{transform:translateY(-3px);border-color:rgba(152,135,244,.34);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 26px 50px -24px rgba(28,26,36,.58),var(--w-glow-brand)}
+}
+@media(prefers-reduced-motion:reduce){.pr-plan,.pr-plan__list{transition:none}}
+.pr-plan__list{background:rgba(255,255,255,.72);border:1px solid rgba(255,255,255,.8);border-radius:16px;padding:18px 16px;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.95),0 6px 16px -12px rgba(28,26,36,.14)}
+/* dark-glass widget (Carly X Experts+): charcoal outer, frosted light inner list */
+.pr-plan--reco{background:var(--w-charcoal);border:1px solid rgba(255,255,255,.12);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.14),0 24px 48px -20px rgba(28,26,36,.55)}
+.pr-plan--reco .pr-plan__name{color:#fff}
+.pr-plan--reco .pr-plan__sub{color:rgba(255,255,255,.55)}
+.pr-plan--reco .pr-plan__for{color:rgba(255,255,255,.72)}
+.pr-plan--reco .pr-plan__list{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.22);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.28)}
+.pr-plan--reco .pr-plan__list li{color:rgba(255,255,255,.85)}
+.pr-plan--reco .pr-plan__list .w-icon{color:var(--w-purple)}
+.pr-plan--reco .pr-price-tbd{border-color:rgba(255,255,255,.3);color:rgba(255,255,255,.66)}
+.pr-plan--reco .w-btn--primary{background:var(--w-grad-brand);border-color:transparent;color:#fff}
+.pr-plan__name{font-size:24px;font-weight:800;letter-spacing:-.02em;margin:0}
+.pr-plan__sub{display:block;margin-top:2px;font-family:var(--w-font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--w-text-3)}
+.pr-plan__for{margin:10px 0 0;font-style:italic;font-size:15px;line-height:1.55;color:var(--w-text-2)}
+.pr-plan__list{list-style:none;margin:0;display:grid;gap:12px;flex:1;align-content:start}
+.pr-plan__list li{display:flex;gap:10px;align-items:flex-start;font-size:14.5px;line-height:1.5;color:var(--w-text-2)}
+.pr-plan__list .w-icon{flex:none;width:17px;height:17px;margin-top:2px;color:var(--w-brand)}
+.pr-plan__price{padding-top:4px}
+.pr-price-tbd{display:inline-flex;margin-inline:auto;align-items:center;padding:7px 14px;border:1.5px dashed var(--w-line-strong);border-radius:9px;font-family:var(--w-font-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--w-text-3)}
+.pr-plan--reco{border:1px solid var(--w-brand-line);box-shadow:var(--w-shadow-lg)}
+.pr-plan__tag{position:absolute;top:-13px;left:50%;transform:translateX(-50%);white-space:nowrap;z-index:2;background:var(--w-grad-brand);color:#fff;border:0;box-shadow:0 6px 16px -8px rgba(28,26,36,.45)}
+
+.pr-plans__caption{margin:44px auto 0;max-width:56ch;text-align:center}
+
+/* ---- §3 comparison table ---- */
+.pr-table{padding:10px 26px;overflow:hidden}
+.pr-table__row{display:grid;grid-template-columns:minmax(0,1fr) 108px 108px 128px;align-items:center;gap:10px;padding:15px 0;border-top:1px solid var(--w-line-soft)}
+.pr-table__row:first-child{border-top:0}
+.pr-table__row--head .pr-table__cap,.pr-table__row--head .pr-table__col{font-family:var(--w-font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--w-text-3)}
+.pr-table__cap{font-size:14.5px;font-weight:600;color:var(--w-text);min-width:0}
+.pr-table__col{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;text-align:center}
+.pr-table__col--both{background:var(--w-brand-soft);border-radius:10px;align-self:stretch;justify-content:center;padding-block:6px}
+.pr-table__row--head .pr-table__col--both{color:var(--w-brand)}
+.pr-ck{width:17px;height:17px;color:var(--w-icon-ink)}
+.pr-table__col--both .pr-ck{color:var(--w-brand)}
+.pr-none{color:var(--w-text-3);font-size:14px}
+.pr-note{font-style:italic;font-size:12px;color:var(--w-text-3)}
+
+/* ---- §4 proof split ---- */
+.pr-proof{align-items:center;gap:clamp(28px,4vw,64px)}
+.pr-proof__stat{display:flex;flex-direction:column;gap:26px}
+.pr-stat-num{font-size:clamp(84px,9vw,150px);font-weight:800;letter-spacing:-.04em;line-height:.95;color:var(--w-text)}
+.pr-stat-unit{font-size:.5em;font-weight:700;vertical-align:baseline;margin-left:2px;color:var(--w-text)}
+.pr-stat-label{display:block;margin-top:10px;max-width:34ch;font-size:17px;line-height:1.5;color:var(--w-text-2)}
+.pr-roi-link{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:15.5px;color:var(--w-brand);text-decoration:none}
+.pr-roi-link .w-icon{width:16px;height:16px;transition:transform .25s cubic-bezier(.16,1,.3,1)}
+.pr-roi-link:hover .w-icon{transform:translateX(4px)}
+.pr-quote-stack{position:relative;padding:30px 76px}
+@media(min-width:901px) and (max-width:1199px){.pr-quote-stack{padding:26px 48px}}
+.pr-qside{position:absolute;top:50%;z-index:0;width:min(56%,340px);margin:0;padding:20px 20px 16px;
+  display:flex;flex-direction:column;gap:12px;background:var(--w-card);border:1px solid var(--w-line-soft);
+  border-radius:20px;box-shadow:var(--w-shadow-lg);pointer-events:none}
+.pr-qside--l{left:0;transform:translateY(-50%) rotate(-5deg)}
+.pr-qside--r{right:0;transform:translateY(-50%) rotate(5deg)}
+.pr-qside__q{margin:0;font-size:13px;line-height:1.55;color:var(--w-text-2)}
+.pr-qside__who{display:flex;align-items:center;gap:9px}
+.pr-qside__who--rev{flex-direction:row-reverse;text-align:right}
+.pr-qside__av{flex:none;width:32px;height:32px;border-radius:50%;background-size:cover;background-position:center;box-shadow:0 0 0 2px rgba(28,26,36,.08)}
+.pr-qside__id{display:flex;flex-direction:column;line-height:1.3}
+.pr-qside__id b{font-size:12.5px;color:var(--w-text)}
+.pr-qside__id span{font-size:10.5px;color:var(--w-text-3)}
+@media(max-width:900px){.pr-qside{display:none}.pr-quote-stack{padding:0}}
+.pr-quote{position:relative;z-index:1;margin:0;padding:34px 32px 28px;display:flex;flex-direction:column;gap:18px}
+.pr-quote__mark{width:30px;height:30px;color:var(--w-brand);opacity:.85}
+.pr-quote__q{margin:0;font-size:18px;line-height:1.6;font-weight:500}
+.pr-quote__who{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.pr-quote__av{flex:none;width:46px;height:46px;border-radius:50%;background-size:cover;background-position:center;box-shadow:0 0 0 2px rgba(255,255,255,.14)}
+.pr-quote__id{display:flex;flex-direction:column;line-height:1.3;margin-right:auto}
+.pr-quote__id b{font-size:14.5px}
+.pr-quote__id span{font-size:12.5px;opacity:.7}
+
+/* ---- §5 FAQ accordion ---- */
+.pr-faq{display:grid;gap:12px;max-width:720px;margin-inline:auto}
+.pr-faq__item{background:var(--w-card);border:1px solid var(--w-line-soft);border-radius:16px;box-shadow:var(--w-shadow-sm);overflow:hidden}
+.pr-faq__item summary{display:flex;align-items:center;justify-content:space-between;gap:16px;list-style:none;cursor:pointer;padding:19px 22px;font-weight:700;font-size:15.5px;color:var(--w-text)}
+.pr-faq__item summary::-webkit-details-marker{display:none}
+.pr-faq__chev{flex:none;width:18px;height:18px;color:var(--w-text-3);transition:transform .3s cubic-bezier(.16,1,.3,1)}
+.pr-faq__item[open] .pr-faq__chev{transform:rotate(180deg)}
+.pr-faq__item p{margin:0;padding:0 22px 20px;font-size:15px;line-height:1.6;color:var(--w-text-2);max-width:60ch}
+
+/* ---- §6 final CTA (dark punch on the grayscale nebula) ---- */
+.pr-cta{position:relative;overflow:hidden;background:var(--w-bg);z-index:2;box-shadow:0 -24px 50px -14px rgba(0,0,0,.4)}
+.pr-cta__bg{position:absolute;inset:0;z-index:0;background:var(--w-bg-deep) center/cover no-repeat;background-image:var(--w-img-pr-ctabg);filter:grayscale(1) brightness(.55)}
+.pr-cta__bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,.52),rgba(10,10,10,.66))}
+.pr-cta .w-container{position:relative;z-index:1}
+/* theme-stable dark band (matches W-BOOK-DEMO .bd-alt--bg technique): the section keeps its
+   dark nebula in BOTH themes, so the band + its contents pin to on-dark values */
+.pr-cta .w-cta-band{background:rgba(28,26,36,.42);border-color:rgba(255,255,255,.14);box-shadow:inset 0 1px 0 rgba(255,255,255,.16),0 18px 44px -22px rgba(28,26,36,.5)}
+.pr-cta .w-cta-band__title{color:#fff}
+.pr-cta .w-cta-band__title .w-accent{color:var(--w-purple)}
+.pr-cta .w-btn--primary{background:var(--w-grad-brand);border-color:transparent;color:#fff}
+.pr-cta .w-btn--glass{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.26);color:#fff;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.pr-cta .w-btn--glass:hover{background:rgba(255,255,255,.2);border-color:rgba(255,255,255,.4)}
+
+/* ---- responsive ---- */
+@media(max-width:1024px){
+  .pr-plan{padding:26px 22px 22px}
+}
+@media(max-width:768px){
+  .pr-table{padding:6px 16px}
+  .pr-table__row{grid-template-columns:minmax(0,1fr) 62px 62px 72px;gap:6px;padding:13px 0}
+  .pr-table__cap{font-size:13px}
+  .pr-table__row--head .pr-table__cap,.pr-table__row--head .pr-table__col{font-size:9.5px;letter-spacing:.08em}
+  .pr-note{font-size:10.5px}
+  .pr-quote{padding:26px 22px 22px}
+  .pr-quote__q{font-size:16px}
+}
+@media(max-width:540px){
+  .pr-hero__actions .w-btn{width:100%;justify-content:center}
+  .pr-plans__caption{margin-top:32px}
+  .pr-stat-label{font-size:15.5px}
+}
+@media(prefers-reduced-motion:reduce){
+  .pr-roi-link .w-icon,.pr-faq__chev{transition:none}
+}

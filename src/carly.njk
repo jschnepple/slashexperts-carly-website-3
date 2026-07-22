@@ -1,0 +1,252 @@
+---
+title: "Carly — buyer trust, delivered to every open deal | SlashExperts"
+description: "Carly is the AI agent in your trust layer. Carly analyzes every open deal, identifies the moment proof will move it, and delivers it while the window is still open."
+pageCSS: carly
+pageJS: carly
+ds7: true
+permalink: /carly/
+---
+
+{% extends "layouts/base-w.njk" %}
+
+{% block extraHead %}
+{# Carly bundle also loads Space Mono + JetBrains Mono (mono UI type); DS7 head loads Inter/Instrument Serif/Plus Jakarta Sans #}
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+{% raw %}
+
+  <div class="hm-stack">
+
+  <!-- §1 HERO ─────────────────────────────────────────────────────── -->
+  <section class="w-section w-section--hero cz-hero" id="top" data-nav-surface="dark">
+    <div class="w-container w-center w-stagger">
+      <div class="cz-hero__pills w-reveal">
+        <span class="w-badge"><span class="w-badge__icon"><svg viewBox="0 0 24 24"><use href="#i-shield"/></svg></span>Carly · the AI agent for your trust layer</span>
+      </div>
+      <h1 class="w-display w-reveal" style="margin-top:var(--w-s-5)">One agent. Every open deal. <span class="w-accent">Trust delivered before your buyer asks.</span></h1>
+      <p class="w-lead w-mx-auto w-reveal" style="max-width:64ch;margin-top:var(--w-s-5)">Carly analyzes every deal in your pipeline, identifies the moment proof will move it, and delivers it while the window is still open.</p>
+      <div class="w-row w-reveal" style="justify-content:center;margin-top:var(--w-s-6)">
+        <a class="w-btn w-btn--primary w-btn--lg" href="/pricing/">Start free with Carly <svg class="w-icon"><use href="#i-arrow-right"/></svg></a>
+        <a class="w-btn w-btn--glass w-btn--lg" href="#how">See how Carly works <svg class="w-icon"><use href="#i-chevron-down"/></svg></a>
+      </div>
+    </div>
+    <div class="cz-hero-embed w-reveal" id="heroEmbed">
+      <iframe src="/assets/embeds/carly/carly-embed-0.html" loading="lazy" title="Carly — the AI agent at the core of your trust layer" loading="lazy" scrolling="no" aria-label="Carly product hero animation"></iframe>
+    </div>
+  </section>
+
+  <!-- §1.5 TRUST BAND ─────────────────────────────────────────────── -->
+  <!-- Static logo band (base structure). Motion pass: swap .cz-trust → .w-marquee for the scroll. -->
+  <section class="w-section cz-light w-panel-rise" id="trust" aria-label="Customer logos" style="padding-block:var(--w-s-7)" data-nav-surface="light">
+    <div class="w-container">
+      <div class="w-trust-label w-reveal">Revenue teams building on the trust layer</div>
+      <div class="w-marquee w-reveal" aria-label="Customer logos"><div class="w-marquee__track"><span class="w-marquee__item" style="background-image:var(--w-img-logo-sendoso)"></span><span class="w-marquee__lockup"><i style="background-image:var(--w-img-logo-sequel)"></i><b>Sequel.io</b></span><span class="w-marquee__item" style="background-image:var(--w-img-logo-netline)"></span><span class="w-marquee__lockup"><i style="background-image:var(--w-img-logo-warmly)"></i><b>Warmly</b></span><span class="w-marquee__item" style="background-image:var(--w-img-logo-udemy)"></span><span class="w-marquee__lockup"><i style="background-image:var(--w-img-logo-outreach)"></i><b>Outreach</b></span><span class="w-marquee__item" style="background-image:var(--w-img-logo-checkr)"></span><span class="w-marquee__lockup"><i style="background-image:var(--w-img-logo-seismic)"></i><b>Seismic</b></span><span class="w-marquee__item" style="background-image:var(--w-img-logo-salesbricks)"></span><span class="w-marquee__lockup"><i style="background-image:var(--w-img-logo-sixsense)"></i><b>6sense</b></span><span class="w-marquee__item" style="background-image:var(--w-img-logo-euler)"></span><span class="w-marquee__lockup"><i style="background-image:var(--w-img-logo-highspot)"></i><b>Highspot</b></span><span class="w-marquee__item" style="background-image:var(--w-img-logo-spara)"></span><span class="w-marquee__lockup"><i style="background-image:var(--w-img-logo-dealhub)"></i><b>DealHub</b></span><span class="w-marquee__item" style="background-image:var(--w-img-logo-syntheticfi)"></span><span class="w-marquee__lockup"><i style="background-image:var(--w-img-logo-google)"></i><b>Google</b></span><span class="w-marquee__item" style="background-image:var(--w-img-logo-sendoso)"></span><span class="w-marquee__lockup"><i style="background-image:var(--w-img-logo-sequel)"></i><b>Sequel.io</b></span><span class="w-marquee__item" style="background-image:var(--w-img-logo-netline)"></span><span class="w-marquee__lockup"><i style="background-image:var(--w-img-logo-warmly)"></i><b>Warmly</b></span><span class="w-marquee__item" style="background-image:var(--w-img-logo-udemy)"></span><span class="w-marquee__lockup"><i style="background-image:var(--w-img-logo-outreach)"></i><b>Outreach</b></span><span class="w-marquee__item" style="background-image:var(--w-img-logo-checkr)"></span><span class="w-marquee__lockup"><i style="background-image:var(--w-img-logo-seismic)"></i><b>Seismic</b></span><span class="w-marquee__item" style="background-image:var(--w-img-logo-salesbricks)"></span><span class="w-marquee__lockup"><i style="background-image:var(--w-img-logo-sixsense)"></i><b>6sense</b></span><span class="w-marquee__item" style="background-image:var(--w-img-logo-euler)"></span><span class="w-marquee__lockup"><i style="background-image:var(--w-img-logo-highspot)"></i><b>Highspot</b></span><span class="w-marquee__item" style="background-image:var(--w-img-logo-spara)"></span><span class="w-marquee__lockup"><i style="background-image:var(--w-img-logo-dealhub)"></i><b>DealHub</b></span><span class="w-marquee__item" style="background-image:var(--w-img-logo-syntheticfi)"></span><span class="w-marquee__lockup"><i style="background-image:var(--w-img-logo-google)"></i><b>Google</b></span></div></div>
+    </div>
+  </section>
+
+  <!-- §2 WHY AN AGENT · setup paragraph + 3 alternating photo rows + capstone (no scrub) -->
+  <section class="w-section cz-wa cz-light" id="why-agent" data-nav-surface="light">
+    <div class="w-container">
+      <div class="cz-wa-intro w-reveal">
+        <span class="w-badge cz-wa-badge"><span class="w-badge__icon"><svg viewBox="0 0 24 24"><use href="#i-zap"/></svg></span>Why an agent</span>
+        <h2 class="w-section-head__title cz-wa-lead-title">The proof was always there. The coverage wasn’t.</h2>
+        <p class="w-section-head__lead cz-wa-lead-p">You already have the proof — customers who’d vouch for you, wins worth retelling, references ready to make. What you’ve never had is a way to get it into every deal, not just the three a rep had time to chase this week.</p>
+        <p class="cz-wa-bridge">That's not a people problem. It's a coverage problem — and it's exactly what an agent is for:</p>
+      </div>
+    </div>
+
+    <div class="cz-wa-panels">
+      <article class="cz-wa-panel cz-wa-panel--right" data-panel>
+        <img class="cz-wa-panel__img" src="/assets/images/w/carly/asset-9.webp" width="2400" height="1345" alt="A revenue leader watching Carly cover the whole pipeline on a desktop dashboard" loading="lazy" decoding="async">
+        <div class="cz-wa-panel__scrim" aria-hidden="true"></div>
+        <div class="cz-wa-panel__copy cz-wa-panel__copy--right">
+          <span class="cz-wa-num">01</span>
+          <h3 class="cz-wa-clause">Analyzes every open deal. Not the loud ones — all of them.</h3>
+        </div>
+      </article>
+
+      <article class="cz-wa-panel" data-panel>
+        <img class="cz-wa-panel__img" src="/assets/images/w/carly/asset-10.webp" width="2400" height="1345" alt="Carly bringing a deal the proof it needs, on a laptop from the couch" loading="lazy" decoding="async">
+        <div class="cz-wa-panel__scrim" aria-hidden="true"></div>
+        <div class="cz-wa-panel__copy cz-wa-panel__copy--left">
+          <span class="cz-wa-num">02</span>
+          <h3 class="cz-wa-clause">Delivers the proof that answers the real objection.</h3>
+        </div>
+      </article>
+
+      <article class="cz-wa-panel cz-wa-panel--right" data-panel>
+        <img class="cz-wa-panel__img" src="/assets/images/w/carly/asset-11.webp" width="2400" height="1345" alt="A rep left free to focus while Carly works in the background" loading="lazy" decoding="async">
+        <div class="cz-wa-panel__scrim" aria-hidden="true"></div>
+        <div class="cz-wa-panel__copy cz-wa-panel__copy--right cz-wa-panel__copy--close">
+          <span class="cz-wa-num">03</span>
+          <h3 class="cz-wa-clause">Leaves your reps free for the conversations only they can have.</h3>
+          <p class="cz-wa-capstone-on">Every open deal gets the air cover it deserves.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- §3 HOW CARLY WORKS — story player (4 steps) -->
+  <section class="w-section w-panel-rise w-panel-rise--dark" id="how" data-nav-surface="dark">
+    <div class="w-container">
+      <div class="w-section-head w-reveal">
+        <span class="w-badge"><span class="w-badge__icon"><svg viewBox="0 0 24 24"><use href="#i-play"/></svg></span>How Carly works</span>
+        <h2 class="w-section-head__title">Carly analyzes the deal, identifies the proof, and <span class="w-accent">delivers it.</span></h2>
+      </div>
+    </div>
+    <div class="cz-story-embed w-reveal" id="storyEmbed">
+      <iframe src="/assets/embeds/carly/carly-embed-1.html" loading="lazy" title="How Carly works — connect, read, pick, deliver" loading="lazy" scrolling="no" aria-label="How Carly works — animated four-step walkthrough"></iframe>
+    </div>
+    <div class="w-container w-center" style="margin-top:var(--w-s-5)">
+      <a class="w-btn w-btn--glass" href="/carly/how/">How Carly works, in detail <svg class="w-icon"><use href="#i-arrow-right"/></svg></a>
+    </div>
+  </section>
+
+  <!-- §4 WHAT CARLY DOES — 4 pillar cards + showcase ──────────────── -->
+  <section class="cz-do" id="what" data-nav-surface="light">
+    <div class="cz-do__pin cz-light">
+      <div class="cz-do-stage">
+        <article class="cz-do-state cz-do-state--left is-on" data-i="0">
+          <div class="cz-do-scene cz-scene--1" aria-hidden="true"></div>
+          <div class="cz-do-copy-wrap"><div class="cz-do-copy">
+            <span class="w-badge cz-do-badge"><span class="w-badge__icon"><svg viewBox="0 0 24 24"><use href="#i-check"/></svg></span>What Carly does</span>
+            <h3>Air cover on every deal</h3>
+            <p>Carly assesses every open deal for the moment proof will move it — then delivers it, without waiting to be asked.</p>
+          </div></div>
+        </article>
+        <article class="cz-do-state cz-do-state--right" data-i="1">
+          <div class="cz-do-scene cz-scene--2" aria-hidden="true"></div>
+          <div class="cz-do-copy-wrap"><div class="cz-do-copy">
+            <span class="w-badge cz-do-badge"><span class="w-badge__icon"><svg viewBox="0 0 24 24"><use href="#i-check"/></svg></span>What Carly does</span>
+            <h3>AI Outbound</h3>
+            <p>The wins you’ve already closed go back out as pipeline — your customers’ results, in front of the market that looks like them.</p>
+          </div></div>
+        </article>
+        <article class="cz-do-state cz-do-state--left" data-i="2">
+          <div class="cz-do-scene cz-scene--3" aria-hidden="true"></div>
+          <div class="cz-do-copy-wrap"><div class="cz-do-copy">
+            <span class="w-badge cz-do-badge"><span class="w-badge__icon"><svg viewBox="0 0 24 24"><use href="#i-check"/></svg></span>What Carly does</span>
+            <h3>Conversations that never wait</h3>
+            <p>Carly engages, qualifies, and routes buyer replies around the clock. No deal waits on a busy inbox.</p>
+          </div></div>
+        </article>
+        <article class="cz-do-state cz-do-state--right" data-i="3">
+          <div class="cz-do-scene cz-scene--4" aria-hidden="true"></div>
+          <div class="cz-do-copy-wrap"><div class="cz-do-copy">
+            <span class="w-badge cz-do-badge"><span class="w-badge__icon"><svg viewBox="0 0 24 24"><use href="#i-check"/></svg></span>What Carly does</span>
+            <h3>A forecast you can stand behind</h3>
+            <p>Readiness scoring on every open deal — so you walk into the forecast call knowing which ones are real.</p>
+          </div></div>
+        </article>
+      </div>
+      <div class="cz-do-dots" aria-hidden="true"><span class="cz-do-dot is-on"></span><span class="cz-do-dot"></span><span class="cz-do-dot"></span><span class="cz-do-dot"></span></div>
+    </div>
+  </section>
+
+  <!-- §4b SEE IT IN ACTION — showcase (dark) -->
+  <section class="w-section" id="showcase" data-nav-surface="dark">
+    <div class="cz-showcase__pin">
+      <div class="cz-showcase">
+        <div class="cz-showcase__rail">
+          <span class="w-badge"><span class="w-badge__icon"><svg viewBox="0 0 24 24"><use href="#i-play"/></svg></span>See it in action</span>
+          <h3 class="cz-showcase__title">Your whole pipeline, <span class="w-grad">on one screen</span></h3>
+          <div class="cz-showcase__tabs" role="tablist" aria-label="Carly product areas">
+            <button class="cz-frow is-active" role="tab" aria-selected="true" data-i="0">
+              <span class="w-itile w-itile--sm"><svg class="w-icon"><use href="#i-trending"/></svg></span>
+              <span class="cz-frow__tx"><b>Activity</b><small>Every deal Carly touched, as it happens</small></span>
+            </button>
+            <button class="cz-frow" role="tab" aria-selected="false" data-i="1">
+              <span class="w-itile w-itile--sm"><svg class="w-icon"><use href="#i-file"/></svg></span>
+              <span class="cz-frow__tx"><b>Proof Vault</b><small>Every proof point, matched and ready</small></span>
+            </button>
+            <button class="cz-frow" role="tab" aria-selected="false" data-i="2">
+              <span class="w-itile w-itile--sm"><svg class="w-icon"><use href="#i-chart"/></svg></span>
+              <span class="cz-frow__tx"><b>Analytics</b><small>What's landing, deal by deal</small></span>
+            </button>
+            <button class="cz-frow" role="tab" aria-selected="false" data-i="3">
+              <span class="w-itile w-itile--sm"><svg class="w-icon"><use href="#i-settings"/></svg></span>
+              <span class="cz-frow__tx"><b>Settings</b><small>Set the rules Carly works within</small></span>
+            </button>
+            <button class="cz-frow" role="tab" aria-selected="false" data-i="4">
+              <span class="w-itile w-itile--sm"><svg class="w-icon"><use href="#i-users"/></svg></span>
+              <span class="cz-frow__tx"><b>Teams</b><small>Seats, roles and access in one place</small></span>
+            </button>
+            <button class="cz-frow" role="tab" aria-selected="false" data-i="5">
+              <span class="w-itile w-itile--sm"><svg class="w-icon"><use href="#i-message"/></svg></span>
+              <span class="cz-frow__tx"><b>Help</b><small>Answers the moment you need them</small></span>
+            </button>
+          </div>
+        </div>
+        <div class="cz-showcase__device" id="showcaseDevice">
+          <iframe data-cz-src="/assets/embeds/carly/carly-embed-2.html" loading="lazy" title="Carly product showcase — device preview" tabindex="-1" inert scrolling="no" aria-label="Carly product showcase device"></iframe>
+        </div>
+      </div>
+      <div class="cz-showcase__cta">
+        <div class="w-row" style="justify-content:center">
+          <a class="w-btn w-btn--glass" href="/carly/use-cases/">See all four use cases <svg class="w-icon"><use href="#i-arrow-right"/></svg></a>
+          <a class="w-btn w-btn--ghost" href="/carly/ai-outbound/">Explore AI Outbound <svg class="w-icon"><use href="#i-arrow-right"/></svg></a>
+          <a class="w-btn w-btn--ghost" href="/carly/intelligence/">Explore Deal Intelligence <svg class="w-icon"><use href="#i-arrow-right"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- §5 PROOF — stats + testimonial ──────────────────────────────── -->
+  <section class="w-section cz-light w-panel-rise" id="proof" data-nav-surface="light">
+    <div class="w-container">
+      <div class="w-section-head w-reveal">
+        <span class="w-badge"><span class="w-badge__icon"><svg viewBox="0 0 24 24"><use href="#i-trophy"/></svg></span>Proof</span>
+      </div>
+      <div class="w-stat-grid w-stagger" style="max-width:920px;margin:0 auto var(--w-s-7)">
+        <div class="w-stat w-stat--center w-reveal">
+          <span class="w-stat__value">60%</span>
+          <span class="w-stat__detail">lift in win rate and deal velocity when proof reaches a buyer inside 48 hours. Only 8% of teams manage it by hand. Carly makes you the 8%. — 2026 GTM Benchmark, 450 GTM leaders</span>
+        </div>
+        <div class="w-stat w-stat--center w-reveal">
+          <span class="w-stat__value">46%</span>
+          <span class="w-stat__detail">of leading revenue teams already automate proof and reference matching. Laggards sit at 12%. Carly is how you land on the right side of that gap. — 2026 GTM Benchmark, 450 GTM leaders</span>
+        </div>
+      </div>
+    </div>
+  
+    <div class="czr-stage w-reveal" aria-label="Customer reviews"><div class="czr-side czr-side--lo"><div class="czr-card"><svg class="czr-qi" viewBox="0 0 24 24"><use href="#i-quote"/></svg><p class="czr-q">Every renewal now opens with a customer who’s been exactly where this account is. That moves more than any deck we ever built.</p><div class="czr-by"><img class="czr-av" src="/assets/images/w/carly/asset-33.webp" alt=""><div class="czr-meta"><b>Allison Moore</b><small>Head of CS</small></div><span class="czr-metric">+21% retention</span></div></div></div><div class="czr-side czr-side--lm"><div class="czr-card"><svg class="czr-qi" viewBox="0 0 24 24"><use href="#i-quote"/></svg><p class="czr-q">Carly identifies the story each deal needs and gets it in front of the buyer before we’d have thought to ask. Replies doubled.</p><div class="czr-by"><img class="czr-av" src="/assets/images/w/carly/asset-34.webp" alt=""><div class="czr-meta"><b>Aisha Bell</b><small>VP Sales</small></div><span class="czr-metric">2× reply rate</span></div></div></div><div class="czr-side czr-side--li"><div class="czr-card"><svg class="czr-qi" viewBox="0 0 24 24"><use href="#i-quote"/></svg><p class="czr-q">Reference calls that took a week of chasing now book in hours, with zero rep effort. Our deals move at a different speed.</p><div class="czr-by"><img class="czr-av" src="/assets/images/w/carly/asset-35.webp" alt=""><div class="czr-meta"><b>George Stevens</b><small>RevOps Lead</small></div><span class="czr-metric">5 days → hours</span></div></div></div><figure class="czr-main"><svg class="czr-qi czr-qi--lg" viewBox="0 0 24 24"><use href="#i-quote"/></svg><blockquote class="czr-q czr-q--lg">We completely rethought our demo follow-up process. Now prospects can instantly connect with customers who’ve solved similar challenges. It’s accelerated our entire sales motion.</blockquote><figcaption class="czr-by"><span class="czr-av czr-av--bg" style="background-image:var(--w-img-av-keegan)"></span><div class="czr-meta"><b>Keegan Otter</b><small>Head of Revenue · Warmly</small></div><span class="czr-metric czr-metric--on">25% shorter cycle</span></figcaption></figure><div class="czr-side czr-side--ri"><div class="czr-card"><svg class="czr-qi" viewBox="0 0 24 24"><use href="#i-quote"/></svg><p class="czr-q">Buyers believe peers, not pitches. Carly puts the right proof in front of every buyer at the moment it counts. Win rate up 38% in a quarter.</p><div class="czr-by"><img class="czr-av" src="/assets/images/w/carly/asset-36.webp" alt=""><div class="czr-meta"><b>Joseph White</b><small>Sales Director</small></div><span class="czr-metric">+38% win rate</span></div></div></div><div class="czr-side czr-side--rm"><div class="czr-card"><svg class="czr-qi" viewBox="0 0 24 24"><use href="#i-quote"/></svg><p class="czr-q">Proof reaches every open deal now — not just the ones someone remembered. Nothing we’ve earned sits unused.</p><div class="czr-by"><img class="czr-av" src="/assets/images/w/carly/asset-37.webp" alt=""><div class="czr-meta"><b>Ava Cheng</b><small>CMO</small></div><span class="czr-metric">3× proof sent</span></div></div></div><div class="czr-side czr-side--ro"><div class="czr-card"><svg class="czr-qi" viewBox="0 0 24 24"><use href="#i-quote"/></svg><p class="czr-q">Our best customers quietly became our best pipeline source, with no referral program required. Carly turned goodwill into tracked demand.</p><div class="czr-by"><img class="czr-av" src="/assets/images/w/carly/asset-38.webp" alt=""><div class="czr-meta"><b>Amy Lee</b><small>Demand Gen</small></div><span class="czr-metric">4× referrals</span></div></div></div></div>
+  </section>
+
+  <!-- §6 BETTER TOGETHER — the Experts+ seam ──────────────────────── -->
+  <section class="w-section cz-light" id="better-together" data-nav-surface="light">
+    <div class="czbt-bg w-reveal" aria-hidden="true"><div class="czbt-side czbt-side--l"><div class="czbt-wrap" style="top:4%;left:-8px;transform:rotate(-4deg) scale(0.9);opacity:1.0;z-index:3;animation-delay:-0.4s"><div class="czbt-card"><span class="czbt-avail"><i></i>Available</span><div class="czbt-av"><img src="/assets/images/w/carly/asset-39.webp" alt=""></div><div class="czbt-namerow"><span class="czbt-name">Diana Brooks</span><span class="czbt-li">in</span></div><div class="czbt-title">Director of Sales</div><div class="czbt-co">TechCorp</div><div class="czbt-tags"><span class="czbt-tag">CRM</span><span class="czbt-tag">Sales</span><span class="czbt-tag">Enterprise</span></div><div class="czbt-langs"><span class="czbt-lang">🇺🇸 EN</span><span class="czbt-lang">🇨🇳 ZH</span></div><div class="czbt-slots"><div class="czbt-slot"><span class="czbt-d">Today</span><span class="czbt-t">10:00 AM</span></div><div class="czbt-slot"><span class="czbt-d">Tomorrow</span><span class="czbt-t">2:30 PM</span></div></div><button class="czbt-book"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Book Call</button></div></div><div class="czbt-wrap" style="top:30%;left:34px;transform:rotate(3deg) scale(0.77);opacity:0.97;z-index:1;filter:blur(0.5px);animation-delay:-1.7s"><div class="czbt-card"><span class="czbt-avail"><i></i>Available</span><div class="czbt-av"><img src="/assets/images/w/carly/asset-40.webp" alt=""></div><div class="czbt-namerow"><span class="czbt-name">Kris Martins</span><span class="czbt-li">in</span></div><div class="czbt-title">Head of Growth</div><div class="czbt-co">ScaleUp</div><div class="czbt-tags"><span class="czbt-tag">Growth</span><span class="czbt-tag">SaaS</span></div><div class="czbt-langs"><span class="czbt-lang">🇺🇸 EN</span></div><div class="czbt-slots"><div class="czbt-slot"><span class="czbt-d">Today</span><span class="czbt-t">10:00 AM</span></div><div class="czbt-slot"><span class="czbt-d">Tomorrow</span><span class="czbt-t">2:30 PM</span></div></div><button class="czbt-book"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Book Call</button></div></div><div class="czbt-wrap" style="top:54%;left:2px;transform:rotate(-3deg) scale(0.84);opacity:0.99;z-index:2;animation-delay:-3.0s"><div class="czbt-card"><span class="czbt-avail"><i></i>Available</span><div class="czbt-av"><img src="/assets/images/w/carly/asset-41.webp" alt=""></div><div class="czbt-namerow"><span class="czbt-name">Ava Williams</span><span class="czbt-li">in</span></div><div class="czbt-title">Product Manager</div><div class="czbt-co">DataFlow</div><div class="czbt-tags"><span class="czbt-tag">Marketing</span><span class="czbt-tag">SMB</span><span class="czbt-tag">Technology</span></div><div class="czbt-langs"><span class="czbt-lang">🇺🇸 EN</span><span class="czbt-lang">🇫🇷 FR</span></div><div class="czbt-slots"><div class="czbt-slot"><span class="czbt-d">Today</span><span class="czbt-t">10:00 AM</span></div><div class="czbt-slot"><span class="czbt-d">Tomorrow</span><span class="czbt-t">2:30 PM</span></div></div><button class="czbt-book"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Book Call</button></div></div></div><div class="czbt-side czbt-side--r"><div class="czbt-wrap" style="top:5%;right:-6px;transform:rotate(4deg) scale(0.9);opacity:1.0;z-index:3;animation-delay:-0.4s"><div class="czbt-card"><span class="czbt-avail"><i></i>Available</span><div class="czbt-av"><img src="/assets/images/w/carly/asset-42.webp" alt=""></div><div class="czbt-namerow"><span class="czbt-name">Lucas Johnson</span><span class="czbt-li">in</span></div><div class="czbt-title">VP Engineering</div><div class="czbt-co">CloudBase</div><div class="czbt-tags"><span class="czbt-tag">Analytics</span><span class="czbt-tag">Technology</span></div><div class="czbt-langs"><span class="czbt-lang">🇺🇸 EN</span></div><div class="czbt-slots"><div class="czbt-slot"><span class="czbt-d">Today</span><span class="czbt-t">10:00 AM</span></div><div class="czbt-slot"><span class="czbt-d">Tomorrow</span><span class="czbt-t">2:30 PM</span></div></div><button class="czbt-book"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Book Call</button></div></div><div class="czbt-wrap" style="top:31%;right:36px;transform:rotate(-3deg) scale(0.76);opacity:1.0;z-index:4;animation-delay:-1.7s"><div class="czbt-card"><span class="czbt-avail"><i></i>Available</span><div class="czbt-av"><img src="/assets/images/w/carly/asset-43.webp" alt=""></div><div class="czbt-namerow"><span class="czbt-name">Marcus Thompson</span><span class="czbt-li">in</span></div><div class="czbt-title">CTO</div><div class="czbt-co">StartupX</div><div class="czbt-tags"><span class="czbt-tag">Cloud</span><span class="czbt-tag">Technology</span></div><div class="czbt-langs"><span class="czbt-lang">🇺🇸 EN</span></div><div class="czbt-slots"><div class="czbt-slot"><span class="czbt-d">Today</span><span class="czbt-t">10:00 AM</span></div><div class="czbt-slot"><span class="czbt-d">Tomorrow</span><span class="czbt-t">2:30 PM</span></div></div><button class="czbt-book"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Book Call</button></div></div><div class="czbt-wrap" style="top:55%;right:4px;transform:rotate(3deg) scale(0.83);opacity:0.99;z-index:2;animation-delay:-3.0s"><div class="czbt-card"><span class="czbt-avail"><i></i>Available</span><div class="czbt-av"><img src="/assets/images/w/carly/asset-44.webp" alt=""></div><div class="czbt-namerow"><span class="czbt-name">Sena Jones</span><span class="czbt-li">in</span></div><div class="czbt-title">Senior Architect</div><div class="czbt-co">BuildCo</div><div class="czbt-tags"><span class="czbt-tag">Infra</span><span class="czbt-tag">Technology</span></div><div class="czbt-langs"><span class="czbt-lang">🇺🇸 EN</span></div><div class="czbt-slots"><div class="czbt-slot"><span class="czbt-d">Today</span><span class="czbt-t">10:00 AM</span></div><div class="czbt-slot"><span class="czbt-d">Tomorrow</span><span class="czbt-t">2:30 PM</span></div></div><button class="czbt-book"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Book Call</button></div></div></div></div>
+    <div class="w-container w-container--narrow">
+      <div class="w-section-head w-reveal">
+        <span class="w-badge"><span class="w-badge__icon"><svg viewBox="0 0 24 24"><use href="#i-link"/></svg></span>Better together</span>
+        <h2 class="w-section-head__title">Carly is only as strong as <span class="w-accent">her supply.</span></h2>
+        <p class="w-section-head__lead">The proof Carly delivers comes from Experts+ — your verified customer network, matched by ExpertScore AI across 50+ data points, bookable the moment a buyer comes looking. Experts+ holds the trust. Carly determines which deal needs it, and when.</p>
+      </div>
+      <div class="w-cta-band w-cta-band--brand w-reveal w-reveal--scale">
+        <p class="w-cta-band__lead" style="font-weight:var(--w-fw-semi);color:var(--w-text);max-width:50ch">Experts+ answers the second your buyer asks. Carly moves before they do. Run both and your whole pipeline is covered.</p>
+        <div class="w-cta-band__actions">
+          <a class="w-btn w-btn--primary" href="/experts/">Meet Experts<svg class="w-icon w-icon--inherit ep-plus"><use href="#i-plus"/></svg> <svg class="w-icon"><use href="#i-arrow-right"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </div><!-- /.hm-stack -->
+
+  <!-- §7 FINAL CTA ────────────────────────────────────────────────── -->
+  <section class="w-section cz-light" id="cta" data-nav-surface="light">
+    <div class="w-container">
+      <div class="w-cta-band w-cta-band--brand w-reveal w-reveal--scale">
+        <h2 class="w-cta-band__title">Put Carly on <span class="w-accent">your pipeline.</span></h2>
+        <p class="w-cta-band__lead">Two weeks, every deal you have open, no credit card. Watch her analyze a live deal and deliver the proof that closes it.</p>
+        <div class="w-cta-band__actions">
+          <a class="w-btn w-btn--primary w-btn--lg" href="/pricing/">Start free with Carly <svg class="w-icon"><use href="#i-arrow-right"/></svg></a>
+          <a class="w-btn w-btn--glass w-btn--lg" href="/book-a-demo/">Book a demo <svg class="w-icon"><use href="#i-arrow-right"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endraw %}
+{% endblock %}

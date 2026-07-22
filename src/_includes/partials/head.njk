@@ -59,12 +59,23 @@
 <!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+{% if ds7 %}
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=Space+Mono:wght@400;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+{% else %}
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+{% endif %}
 
 <!-- Main Stylesheet -->
+{% if ds7 %}
+<link rel="stylesheet" href="/assets/css/w/ds7.css">
+{% if pageCSS %}
+<link rel="stylesheet" href="/assets/css/w/pages/{{ pageCSS }}.css">
+{% endif %}
+{% else %}
 <link rel="stylesheet" href="/assets/css/main.css">
 {% if pageCSS %}
 <link rel="stylesheet" href="/assets/css/pages/{{ pageCSS }}.css">
+{% endif %}
 {% endif %}
 
 <!-- Revenue Hero Script (for Book A Demo and Pricing pages) -->

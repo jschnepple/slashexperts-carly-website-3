@@ -1,0 +1,1042 @@
+---
+navProduct: experts
+title: Experts+ Use Cases | SlashExperts
+description: Five places your customers close business for you — deal acceleration, website conversion, PLG conversion, ABM, and reference management. One verified customer-expert network, matched by ExpertScore AI and bookable in one click.
+pageCSS: use-cases-experts
+pageJS: use-cases-experts
+ds7: true
+permalink: /experts/use-cases/
+---
+
+{% extends "layouts/base-w.njk" %}
+
+{% block content %}
+{% raw %}
+
+
+  <!-- ══ §1 · HERO — DARK · FULL-RATIO PHOTO BAND (ue1: MacBook on the LEFT, vacant
+       purple on the RIGHT). Copy sits in the vacant right region, WHITE text on the
+       purple (dark bg → white), dark-glass badge + button. Mirrors the canonical
+       full-section-bg pattern (W-ANALYTICS-ROI ar-hero). ≤1024 the overlay dies →
+       image on top, copy beneath in theme colors. -->
+  <section class="euh w-section--hero" id="top" data-nav-surface="dark">
+    <div class="euh__media" aria-hidden="true"></div>
+    <div class="euh__scrim" aria-hidden="true"></div>
+    <div class="euh__panel">
+      <div class="w-container">
+        <div class="euh__copy w-stagger">
+          <span class="w-tag w-tag--kicker w-reveal">
+            <svg class="w-icon w-icon--inherit"><use href="#i-users"/></svg>
+            Experts<svg class="w-icon w-icon--inherit ep-plus"><use href="#i-plus"/></svg> &middot; Use Cases
+          </span>
+          <h1 class="euh__title w-reveal">Five places your customers close business for you.</h1>
+          <p class="w-lead euh__lead w-reveal">Experts<svg class="w-icon w-icon--inherit ep-plus"><use href="#i-plus"/></svg> puts the right customer in front of the right buyer &mdash; matched by ExpertScore AI, bookable in one click, embedded everywhere your buyers already are. Here are the five moments where a real customer's voice does the selling.</p>
+          <div class="euh__cta w-reveal">
+            <a class="w-btn w-btn--primary w-btn--lg" href="/book-a-demo/">Book a Demo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ ADOBE STICKY-STACK — mirrors W-HOME's .hm-stack: its own stacking context,
+       every section inside gets an increasing z-index + opaque bg so it genuinely
+       COVERS the one before. §8 Pattern (viewport-fit) pins and gets buried by
+       §9 Better Together; the tall use-case bands stay relative (cover-reveal,
+       never pin — a taller-than-viewport sticky section would hide its own
+       lower content). See _page.css "ADOBE STICKY-STACK" block. -->
+  <div class="eu-stack">
+
+  <!-- ══ §2 · THE FIVE MOVES — DARK · 3+2 centered card grid ═══════════════════════
+       The page's table of contents, in funnel order: deal &middot; website &middot; product &middot;
+       account &middot; program. Each card links to its own anchor below. -->
+  <section class="eum w-section" id="moves" data-nav-surface="dark">
+    <div class="w-container w-container--wide">
+      <div class="w-section-head w-section-head--left w-reveal">
+        <span class="w-tag w-tag--kicker">
+          <svg class="w-icon"><use href="#i-match"/></svg> The five moves
+        </span>
+      </div>
+
+      <div class="eum__grid w-stagger">
+
+        <article class="eum__card eum__card--wide w-reveal w-reveal--scale">
+          <div class="eum__fig eum__fig--wide" id="eu2a"><!-- wide · §2 WIDE card (Deal Acceleration, on top) — REAL Experts+ DESKTOP mockup in
+     browser chrome. Markup only (.eus styles in _page.css). _build.py auto-wires the
+     desktop capture from assets/mock/wexpuc_section_dealaccel*.{webp,png}. -->
+<div class="eus eus--wide" role="img" aria-label="Experts+ Deal Acceleration desktop">
+  <div class="eus__bar">
+    <span class="eus__dots"><i></i><i></i><i></i></span>
+    <span class="eus__url">app.slashexperts.com/deals</span>
+  </div>
+  <div class="eus__shot eus__shot--wide">
+    <span class="eus__ph">Deal Acceleration<br><b>desktop mockup pending</b></span>
+  </div>
+</div></div>
+          <div class="eum__wide-tx">
+            <span class="eum__no">01</span>
+            <h3 class="eum__t">Deal Acceleration</h3>
+            <p class="eum__job">A late-stage buyer books the customer who's been in their seat, same day &mdash; and the deal that came down to trust goes your way.</p>
+            <a class="eum__link" href="#deal-acceleration">See Deal Acceleration <svg class="w-icon"><use href="#i-arrow-right"/></svg></a>
+          </div>
+        </article>
+
+        <article class="eum__card w-reveal w-reveal--scale">
+          <span class="eum__no">02</span>
+          <div class="eum__fig" id="eu2b"><!-- a2b · §2 move card — REAL Experts+ screenshot in browser chrome.
+     Markup only (shared .eus styles live in _page.css). _build.py auto-wires the
+     real capture from assets/mock/wexpuc_moves_a2b*.{webp,png} when present;
+     until then the labeled placeholder shows. -->
+<div class="eus eus--a2b" role="img" aria-label="Website with embedded Experts+ booking widget">
+  <div class="eus__bar">
+    <span class="eus__dots"><i></i><i></i><i></i></span>
+    <span class="eus__url">acme.io/pricing</span>
+  </div>
+  <div class="eus__shot eus__shot--a2b">
+    <span class="eus__ph">Website Conversion<br><b>real screen pending</b></span>
+  </div>
+</div></div>
+          <h3 class="eum__t">Website Conversion</h3>
+          <p class="eum__job">The booking surface lives on your highest-intent pages, so the traffic you already pay for starts producing booked pipeline.</p>
+          <a class="eum__link" href="#website-conversion">See Website Conversion <svg class="w-icon"><use href="#i-arrow-right"/></svg></a>
+        </article>
+
+        <article class="eum__card w-reveal w-reveal--scale">
+          <span class="eum__no">03</span>
+          <div class="eum__fig" id="eu2c"><!-- a2c · §2 move card — REAL Experts+ screenshot in browser chrome.
+     Markup only (shared .eus styles live in _page.css). _build.py auto-wires the
+     real capture from assets/mock/wexpuc_moves_a2c*.{webp,png} when present;
+     until then the labeled placeholder shows. -->
+<div class="eus eus--a2c" role="img" aria-label="In-product upgrade screen with Experts+ prompt">
+  <div class="eus__bar">
+    <span class="eus__dots"><i></i><i></i><i></i></span>
+    <span class="eus__url">app.acme.io/upgrade</span>
+  </div>
+  <div class="eus__shot eus__shot--a2c">
+    <span class="eus__ph">PLG Conversion<br><b>real screen pending</b></span>
+  </div>
+</div></div>
+          <h3 class="eum__t">PLG Conversion</h3>
+          <p class="eum__job">A paying peer shows up at the upgrade decision, and the free user crosses to paid &mdash; self-serve, with a human proof point.</p>
+          <a class="eum__link" href="#plg-conversion">See PLG Conversion <svg class="w-icon"><use href="#i-arrow-right"/></svg></a>
+        </article>
+
+        <article class="eum__card w-reveal w-reveal--scale">
+          <span class="eum__no">04</span>
+          <div class="eum__fig" id="eu2d"><!-- a2d · §2 move card — REAL Experts+ screenshot in browser chrome.
+     Markup only (shared .eus styles live in _page.css). _build.py auto-wires the
+     real capture from assets/mock/wexpuc_moves_a2d*.{webp,png} when present;
+     until then the labeled placeholder shows. -->
+<div class="eus eus--a2d" role="img" aria-label="Target-account view with matched mirror-customer">
+  <div class="eus__bar">
+    <span class="eus__dots"><i></i><i></i><i></i></span>
+    <span class="eus__url">app.slashexperts.com/accounts</span>
+  </div>
+  <div class="eus__shot eus__shot--a2d">
+    <span class="eus__ph">ABM<br><b>real screen pending</b></span>
+  </div>
+</div></div>
+          <h3 class="eum__t">ABM</h3>
+          <p class="eum__job">Every named account is matched to the customer who mirrors it, so your account play offers a peer the committee actually wants.</p>
+          <a class="eum__link" href="#abm">See ABM <svg class="w-icon"><use href="#i-arrow-right"/></svg></a>
+        </article>
+
+        <article class="eum__card w-reveal w-reveal--scale">
+          <span class="eum__no">05</span>
+          <div class="eum__fig" id="eu2e"><!-- a2e · §2 move card — REAL Experts+ screenshot in browser chrome.
+     Markup only (shared .eus styles live in _page.css). _build.py auto-wires the
+     real capture from assets/mock/wexpuc_moves_a2e*.{webp,png} when present;
+     until then the labeled placeholder shows. -->
+<div class="eus eus--a2e" role="img" aria-label="Reference-program pool view">
+  <div class="eus__bar">
+    <span class="eus__dots"><i></i><i></i><i></i></span>
+    <span class="eus__url">app.slashexperts.com/references</span>
+  </div>
+  <div class="eus__shot eus__shot--a2e">
+    <span class="eus__ph">Reference Management<br><b>real screen pending</b></span>
+  </div>
+</div></div>
+          <h3 class="eum__t">Reference Management</h3>
+          <p class="eum__job">Match-by-fit, fair rotation, and compensation run the whole program on rails &mdash; limitless reference capacity, customers glad to help.</p>
+          <a class="eum__link" href="#reference-management">See Reference Management <svg class="w-icon"><use href="#i-arrow-right"/></svg></a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ §3 · DEAL ACCELERATION — LIGHT · split media RIGHT + three-move row ═══════
+       Experts+ Use Case &middot; Sales. RS-8 (79%) rides under the moment paragraph — it
+       backs the ARGUMENT (buyers go looking); RS-6 (60%) + the Jon Studham quote close
+       the payoff — they back the RESULT. -->
+  <section class="cz-light eub eud w-section w-panel-rise" id="deal-acceleration" data-nav-surface="light">
+    <div class="w-container">
+
+      <div class="eub__head w-reveal w-reveal--scale">
+        <span class="w-tag w-tag--kicker">
+          <svg class="w-icon"><use href="#i-trending"/></svg> Experts<svg class="w-icon w-icon--inherit ep-plus"><use href="#i-plus"/></svg> Use Case &middot; Sales
+        </span>
+        <h2 class="eub__title">Put a customer who's solved their exact problem in the room &mdash; in one click.</h2>
+        <p class="eub__lead">Late-stage deals turn on one question: has anyone like me actually done this? Experts<svg class="w-icon w-icon--inherit ep-plus"><use href="#i-plus"/></svg> answers it live. ExpertScore AI matches the buyer to the customer who's already been in their seat, and they book the call the same day &mdash; so the conversation that decides the deal happens with your customer doing the talking.</p>
+        <div class="eub__head-cta">
+          <a class="w-btn w-btn--primary w-btn--sm" href="/book-a-demo/">Book a Demo</a>
+        </div>
+      </div>
+
+      <div class="eud__moment-lead w-reveal w-reveal--scale">
+        <h3 class="eub__moment-t">Late in the deal, your buyer goes looking for a peer. Hand them one.</h3>
+        <p class="eub__moment-b">A buyer with a signature in reach stops taking the vendor's word and starts asking other customers &mdash; on their own, often in a backchannel you'd never see. Experts<svg class="w-icon w-icon--inherit ep-plus"><use href="#i-plus"/></svg> brings that search onto your turf: the buyer books a matched customer-expert in one click, hears exactly how a peer solved the same problem on the same stack, and walks back into the committee ready to move &mdash; with every booking on the record in your CRM.</p>
+      </div>
+
+      <!-- FULL-BLEED EDITORIAL BAND (ue3: a real buyer with the matched-experts screen).
+           The 79% stat overlays the vacant light space ABOVE the man + tablet (no card,
+           charcoal). ≤1024 → image on top, stat beneath in theme colors. -->
+      <div class="eud__band">
+        <div class="eud__band-media" role="img" aria-label="A buyer reviewing matched customer-experts on a tablet"></div>
+        <div class="eud__band-stat w-reveal">
+          <div class="eu-stat">
+            <p class="eu-stat__v">79%</p>
+            <p class="eu-stat__b"><b>79% of proof interactions are buyer-initiated</b> &mdash; late-stage buyers go looking for a peer themselves, and Experts<svg class="w-icon w-icon--inherit ep-plus"><use href="#i-plus"/></svg> puts the right one one click away.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="eud__moves">
+        <h3 class="eub__moves-t w-reveal">Match the customer, book the call, log it to the deal.</h3>
+        <div class="eub__moves eub__moves--3 w-stagger">
+          <div class="eub__move w-reveal w-reveal--scale">
+            <span class="eub__move-ic"><svg class="w-icon"><use href="#i-match"/></svg></span>
+            <h4 class="eub__move-t">Matches on the deal's real context.</h4>
+            <p class="eub__move-b">ExpertScore AI reads role, industry, stack, and deal stage and surfaces the customer-expert who's solved this buyer's exact problem across 50+ data points &mdash; a precise fit, not a generic logo.</p>
+          </div>
+          <div class="eub__move w-reveal w-reveal--scale">
+            <span class="eub__move-ic"><svg class="w-icon"><use href="#i-booking"/></svg></span>
+            <h4 class="eub__move-t">Books in one click.</h4>
+            <p class="eub__move-b">The buyer picks a time and the call lands on the calendar the same day &mdash; no AE chasing a CSM, no manual scheduling, no week of waiting.</p>
+          </div>
+          <div class="eub__move w-reveal w-reveal--scale">
+            <span class="eub__move-ic"><svg class="w-icon"><use href="#i-link"/></svg></span>
+            <h4 class="eub__move-t">Puts it on the record.</h4>
+            <p class="eub__move-b">Every match, booking, and outcome syncs to the opportunity, so the rep always knows the peer conversation happened and what it moved.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="eub__payoff w-reveal w-reveal--scale">
+        <div>
+          <h3 class="eub__payoff-t">The deals that come down to trust go your way.</h3>
+          <p class="eub__payoff-b">When a buyer can hear the answer from a peer the same day they ask, the conversation that used to happen out of your sight happens in your deal instead &mdash; and your buyer carries a customer's yes into the room where the deal gets signed.</p>
+          <div class="eub__cta" style="margin-top:var(--w-s-7)">
+            <a class="w-btn w-btn--primary" href="/book-a-demo/">Book a Demo</a>
+            <a class="eum__link" href="/roi-calculator/">Estimate your ROI <svg class="w-icon"><use href="#i-arrow-right"/></svg></a>
+          </div>
+        </div>
+        <div class="eub__payoff-side">
+          <div class="eu-quote">
+            <p class="eu-quote__q">&ldquo;We were losing deals in the final stages because we couldn't get references scheduled fast enough. SlashExperts fixed that completely. Our close rates improved by 30%.&rdquo;</p>
+            <div class="eu-quote__by">
+              <span class="eu-quote__av" style="background-image:var(--w-img-av-jon)" role="img" aria-label="Jon Studham"></span>
+              <span>
+                <span class="eu-quote__nm">Jon Studham,</span><br>
+                <span class="eu-quote__rl">VP of Sales, Spara</span>
+              </span>
+            </div>
+          </div>
+          <div class="eu-stat">
+            <p class="eu-stat__v">60%</p>
+            <p class="eu-stat__b">Teams that get proof to the buyer within 48 hours see a <b>60% lift in win rate and deal velocity</b> &mdash; Experts<svg class="w-icon w-icon--inherit ep-plus"><use href="#i-plus"/></svg> does it the same day.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="eub__with w-reveal">
+        <p class="eub__with-lead">Deal Acceleration is the on-demand call your buyer books.</p>
+        <div class="eub__with-list">
+          <p class="eub__with-item"><svg class="w-icon"><use href="#i-arrow-right"/></svg>
+            <span>Want the call to happen before the buyer even asks? <a href="/carly/use-cases/proof-delivery/">Carly &middot; Proactive Proof Delivery</a> brings the same proof to the deal on her own.</span></p>
+          <p class="eub__with-item"><svg class="w-icon"><use href="#i-arrow-right"/></svg>
+            <span>The match runs on ExpertScore AI &rarr; see <a href="/experts/peer-matching/">Peer Matching</a> for how the fit is built.</span></p>
+          <p class="eub__with-item"><svg class="w-icon"><use href="#i-arrow-right"/></svg>
+            <span>For the full sales picture, see <a href="/solutions-sales/">For Sales</a>.</span></p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══ §4 · WEBSITE CONVERSION — LIGHT · split media LEFT (mirrors §3) ════════════
+       Experts+ Use Case &middot; Marketing. Closes on the Keegan Otter quote + the SM-1
+       mock chip (3.4&times;). -->
+  <section class="cz-light eub euw w-section w-panel-rise" id="website-conversion" data-nav-surface="light">
+    <div class="w-container">
+
+      <div class="eub__head w-reveal w-reveal--scale">
+        <span class="w-tag w-tag--kicker">
+          <svg class="w-icon"><use href="#i-megaphone"/></svg> Experts<svg class="w-icon w-icon--inherit ep-plus"><use href="#i-plus"/></svg> Use Case &middot; Marketing
+        </span>
+        <h2 class="eub__title">Your website starts booking expert calls.</h2>
+        <p class="eub__lead">Embed Experts<svg class="w-icon w-icon--inherit ep-plus"><use href="#i-plus"/></svg> where your buyers already land &mdash; pricing, product, solution pages &mdash; and a high-intent visitor can book a call with a customer in their industry, their size, their use case. The page stops describing your value and starts proving it, live.</p>
+        <div class="eub__head-cta">
+          <a class="w-btn w-btn--primary w-btn--sm" href="/book-a-demo/">Book a Demo</a>
+        </div>
+      </div>
+
+      <!-- FULL-BLEED PHOTO BAND (ue2: iPhone booking popup RIGHT, vacant purple LEFT →
+           moment copy on the LEFT, WHITE text). ≤1024 → image on top, copy beneath. -->
+      <div class="euw__band">
+        <div class="euw__band-media" aria-hidden="true"></div>
+        <div class="euw__band-scrim" aria-hidden="true"></div>
+        <div class="euw__band-panel">
+          <div class="euw__band-copy w-reveal w-reveal--scale">
+            <h3 class="eub__moment-t">Your highest-intent visitors arrive ready to act. Give them a customer to talk to.</h3>
+            <p class="eub__moment-b">Experts<svg class="w-icon w-icon--inherit ep-plus"><use href="#i-plus"/></svg> meets them there: an embedded booking surface that matches them to a real customer and lets them book on the spot.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="euw__moves">
+        <h3 class="eub__moves-t w-reveal">Your best pages, turned into a booking surface.</h3>
+        <div class="eub__moves eub__moves--3 w-stagger">
+          <div class="eub__move w-reveal w-reveal--scale">
+            <span class="eub__move-ic"><svg class="w-icon"><use href="#i-widget"/></svg></span>
+            <h4 class="eub__move-t">Embeds anywhere it counts.</h4>
+            <p class="eub__move-b">Drop the booking surface onto any page &mdash; pricing, product, campaign landing pages &mdash; so proof lives at the exact spot a visitor decides.</p>
+          </div>
+          <div class="eub__move w-reveal w-reveal--scale">
+            <span class="eub__move-ic"><svg class="w-icon"><use href="#i-match"/></svg></span>
+            <h4 class="eub__move-t">Matches the visitor to a real customer.</h4>
+            <p class="eub__move-b">ExpertScore AI reads what the visitor is exploring and surfaces a customer-expert in their industry, size, and use case &mdash; across 50+ data points &mdash; instead of a static testimonial.</p>
+          </div>
+          <div class="eub__move w-reveal w-reveal--scale">
+            <span class="eub__move-ic"><svg class="w-icon"><use href="#i-check"/></svg></span>
+            <h4 class="eub__move-t">Books, qualifies, and syncs.</h4>
+            <p class="eub__move-b">The visitor books in one click, and the new opportunity flows straight into your CRM with the context attached &mdash; pipeline your team can work the next morning.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="eub__payoff w-reveal w-reveal--scale">
+        <div>
+          <h3 class="eub__payoff-t">The traffic you already pay for starts booking pipeline.</h3>
+          <p class="eub__payoff-b">Your best pages already do the hard part &mdash; they pull in buyers with real intent. Experts<svg class="w-icon w-icon--inherit ep-plus"><use href="#i-plus"/></svg> lets those pages close the loop on the spot: the visitor books a customer, and your team opens the next morning to a qualified opportunity that proved itself &mdash; a real customer doing the convincing instead of another headline.</p>
+          <div class="eub__cta" style="margin-top:var(--w-s-7)">
+            <a class="w-btn w-btn--primary" href="/book-a-demo/">Book a Demo</a>
+          </div>
+        </div>
+        <div class="eub__payoff-side">
+          <div class="eu-mock">
+            <p class="eu-mock__v">3.4&times;</p>
+            <p class="eu-mock__b">Pages with an embedded Experts<svg class="w-icon w-icon--inherit ep-plus"><use href="#i-plus"/></svg> booking surface turn high-intent visitors into qualified pipeline at 3.4&times; the rate of a standard contact form.</p>
+          </div>
+          <div class="eu-quote">
+            <p class="eu-quote__q">&ldquo;Now prospects can instantly connect with customers who've solved similar challenges. It's accelerated our entire sales motion.&rdquo;</p>
+            <div class="eu-quote__by">
+              <span class="eu-quote__av" style="background-image:var(--w-img-av-keegan)" role="img" aria-label="Keegan Otter"></span>
+              <span>
+                <span class="eu-quote__nm">Keegan Otter,</span><br>
+                <span class="eu-quote__rl">Head of Revenue, Warmly</span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="eub__with w-reveal">
+        <p class="eub__with-lead">Website Conversion turns your site into a booking surface.</p>
+        <div class="eub__with-list">
+          <p class="eub__with-item"><svg class="w-icon"><use href="#i-arrow-right"/></svg>
+            <span>Curious how a visitor gets paired to the right customer? <a href="/experts/peer-matching/">Peer Matching</a> is the engine behind it.</span></p>
+          <p class="eub__with-item"><svg class="w-icon"><use href="#i-arrow-right"/></svg>
+            <span>Want the same booking in your CRM and email? <a href="/experts/crm-integration/">Embed &amp; CRM</a> puts it on every surface.</span></p>
+          <p class="eub__with-item"><svg class="w-icon"><use href="#i-arrow-right"/></svg>
+            <span>See the whole demand picture in <a href="/solutions-marketing/">For Marketing</a>.</span></p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══ §5 · PLG CONVERSION — LIGHT · full-bleed centered in-product scene ═════════
+       Experts+ Use Case &middot; Growth. No split — copy centered, scene wide beneath it,
+       three moves as an inline numbered rail (a 3rd distinct shape). SM-2 mock chip (2.6&times;). -->
+  <section class="cz-light eub eup w-section w-panel-rise" id="plg-conversion" data-nav-surface="light">
+    <div class="w-container w-container--wide">
+
+      <div class="eup__head w-reveal w-reveal--scale">
+        <span class="w-tag w-tag--kicker">
+          <svg class="w-icon"><use href="#i-zap"/></svg> Experts<svg class="w-icon w-icon--inherit ep-plus"><use href="#i-plus"/></svg> Use Case &middot; Growth
+        </span>
+        <h2 class="eub__title">Let a paying customer show free users what's on the other side.</h2>
+        <p class="eub__lead">The free user staring at your upgrade screen wants one thing: to know it's worth it from someone who already pays. Experts<svg class="w-icon w-icon--inherit ep-plus"><use href="#i-plus"/></svg> surfaces that customer right at the decision point &mdash; a peer in their shoes who made the leap &mdash; so the upgrade goes from a maybe to a yes.</p>
+        <div class="eub__head-cta">
+          <a class="w-btn w-btn--primary w-btn--sm" href="/book-a-demo/">Book a Demo</a>
+        </div>
+      </div>
+
+      <div class="eup__stage w-reveal" id="eu5" style="--w-reveal-delay:.08s"><div class="cux-fit eu5-scene" data-canvas="1180x720" data-canvas-sm="440x620" data-sm-at="700"
+     style="width:1180px;height:720px" aria-hidden="true">
+
+  <!-- PEGBOARD · the house back-motif. First child, z-index:0 — every positioned
+       element below paints above it. Light section → the charcoal-dot default. -->
+  <div class="cux-peg"></div>
+
+  <!-- ══ THE GATE · the free user's own screen, mid-decision ══════════════ -->
+  <div class="cux-glass cux-glass--light cux-on-light eu5-app">
+
+    <div class="eu5-row">
+      <span class="eu5-mark" aria-hidden="true">W</span>
+      <span class="eu5-appname">Workspace</span>
+      <span class="cux-chip">Free plan</span>
+    </div>
+
+    <!-- the predictable, high-stakes moment: a usage ceiling, hit -->
+    <div class="eu5-usage">
+      <div class="eu5-usage-h">
+        <span class="eu5-lb">Reports this month</span>
+        <span class="eu5-usage-v">42<span class="eu5-of">&nbsp;/&nbsp;50</span></span>
+      </div>
+      <span class="eu5-bar"><i></i></span>
+    </div>
+
+    <!-- the Pro feature this hit gates — blurred, not a ghost surface -->
+    <div class="eu5-gate">
+      <div class="eu5-gate-h">
+        <svg viewBox="0 0 24 24" focusable="false"><rect x="4" y="11" width="16" height="9" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+        <span class="eu5-lb">Custom Report Builder</span>
+        <span class="cux-chip">Pro</span>
+      </div>
+      <div class="eu5-gate-rows">
+        <div class="eu5-grow"><i></i><span class="eu5-lns"><i class="cux-ln"></i><i class="cux-ln"></i></span></div>
+        <div class="eu5-grow"><i></i><span class="eu5-lns"><i class="cux-ln"></i><i class="cux-ln"></i></span></div>
+        <div class="eu5-grow"><i></i><span class="eu5-lns"><i class="cux-ln"></i><i class="cux-ln"></i></span></div>
+      </div>
+      <div class="eu5-gate-ov">
+        <span class="eu5-lockbadge">
+          <svg viewBox="0 0 24 24" focusable="false"><rect x="4" y="11" width="16" height="9" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+        </span>
+        <p class="eu5-gate-t">Upgrade to unlock</p>
+        <p class="eu5-gate-b">Custom report templates are a Pro feature.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ══ THE CROSSING · Free → Paid, spelled out on the connector itself ══ -->
+  <span class="cux-chip eu5-free">Free</span>
+  <i class="cux-cn eu5-cn"></i>
+  <span class="cux-chip eu5-paid">Paid</span>
+
+  <!-- ══ THE PROMPT · Experts+ shows up right at the gate. Product UI → the
+       one place brand purple lives on this light section (the rim + the
+       emark). .eu5-focal = animated wrapper · .eu5-rim = static bloom
+       underlay · .eu5-card = the opaque dark face + on-dark ink scope. ═══ -->
+  <div class="eu5-focal">
+    <i class="cux-rim eu5-rim"></i>
+    <div class="cux-glass cux-glass--dark cux-on-dark eu5-card">
+
+      <div class="eu5-crow">
+        <span class="eu5-emark" role="img" aria-label="Experts+">
+          <svg viewBox="0 0 24 24" focusable="false"><path d="M12 2 4 14h6l-1 8 9-13h-6z"/></svg>
+        </span>
+        <span class="cux-chip cux-chip--brand">Experts+ &middot; Peer match</span>
+      </div>
+
+      <p class="eu5-move">Talk to a customer like you.</p>
+      <p class="eu5-sub">Jenna hit this same limit &mdash; she&rsquo;s on Pro now, and says it was worth it.</p>
+
+      <!-- THE MATCHED PEER · same start, same use case, now paying -->
+      <div class="eu5-peer">
+        <div class="eu5-peer-row">
+          <i class="cux-av cux-av--ring eu5-av" style="background-image:var(--w-img-av-ava)"></i>
+          <span class="eu5-peer-who">
+            <span class="eu5-nm">Jenna Cole</span>
+            <span class="eu5-rl">Ops Lead &middot; Northwind</span>
+          </span>
+          <span class="cux-chip cux-chip--mono">3&nbsp;mo on Pro</span>
+        </div>
+        <div class="eu5-why">
+          <span class="eu5-why-r"><i></i><span>Started on Free, same use case: automated reporting.</span></span>
+          <span class="eu5-why-r"><i></i><span>Now on Pro &mdash; she&rsquo;s glad to tell you what tipped the decision.</span></span>
+        </div>
+      </div>
+
+      <!-- the free user takes it -->
+      <div class="eu5-foot">
+        <!-- a span, not a <button>: the scene is aria-hidden and must not
+             offer a real focus stop or inherit page button chrome. -->
+        <span class="eu5-talk">
+          <svg viewBox="0 0 24 24" focusable="false"><path d="M20 15a2 2 0 0 1-2 2H8l-4 4V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2z"/></svg>
+          Talk to Jenna
+        </span>
+        <span class="cux-chip">Maybe later</span>
+        <span class="eu5-when"><span class="cux-chip cux-chip--mono">~2 min</span></span>
+      </div>
+
+    </div>
+  </div>
+
+</div></div>
+
+      <div class="eup__moves">
+        <div class="eub__moment w-reveal w-reveal--scale" style="max-width:760px;margin-inline:auto;text-align:center">
+          <h3 class="eub__moment-t" style="max-width:none;margin-inline:auto">At the upgrade moment, one paying customer outsells any feature comparison.</h3>
+          <p class="eub__moment-b" style="margin-inline:auto">Free users decide at predictable, high-stakes moments &mdash; they hit a feature limit, they open the pricing page, their trial winds down. That's the instant they want proof from a peer, not a checklist from you. Experts<svg class="w-icon w-icon--inherit ep-plus"><use href="#i-plus"/></svg> puts a paying customer right there: a quick conversation with someone who started exactly where they are and found the paid tier worth it. The case for upgrading gets made by the person best positioned to make it.</p>
+          <div class="eub__moment-stat" style="margin-inline:auto;max-width:60ch">
+            <div class="eu-stat w-reveal">
+              <p class="eu-stat__v">66%</p>
+              <p class="eu-stat__b"><b>66% of buyers say peer conversations are among the most influential factors in their decisions</b> &mdash; Experts<svg class="w-icon w-icon--inherit ep-plus"><use href="#i-plus"/></svg> brings that influence to the upgrade moment.</p>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="eub__moves-t w-reveal" style="margin-top:var(--w-s-9)">Surface a paying peer at the moment of the upgrade.</h3>
+        <div class="eup__rail w-stagger">
+          <div class="eup__step w-reveal">
+            <span class="eup__no">01</span>
+            <div>
+              <h4 class="eup__step-t">Triggers at the decision point.</h4>
+              <p class="eup__step-b">Place Experts<svg class="w-icon w-icon--inherit ep-plus"><use href="#i-plus"/></svg> at the moments that move free users &mdash; the feature gate, the pricing page, the trial-end screen &mdash; so proof shows up exactly where the choice is made.</p>
+            </div>
+          </div>
+          <div class="eup__step w-reveal">
+            <span class="eup__no">02</span>
+            <div>
+              <h4 class="eup__step-t">Matches free to paid.</h4>
+              <p class="eup__step-b">ExpertScore AI pairs the free user with a customer who started in the same place and use case and now pays &mdash; across 50+ data points &mdash; so the conversation is genuinely peer-to-peer.</p>
+            </div>
+          </div>
+          <div class="eup__step w-reveal">
+            <span class="eup__no">03</span>
+            <div>
+              <h4 class="eup__step-t">Keeps it light and tracked.</h4>
+              <p class="eup__step-b">A short, one-click conversation &mdash; no sales call &mdash; and every interaction syncs back, so growth can see which peer moments move upgrades.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="eub__payoff w-reveal w-reveal--scale">
+        <div>
+          <h3 class="eub__payoff-t">More free users cross to paid &mdash; moved by someone who already did.</h3>
+          <p class="eub__payoff-b">Attach a real paying peer to the upgrade decision and the moment that usually slides by turns into a conversion: self-serve growth, with a human proof point standing exactly where the free user hesitates.</p>
+          <div class="eub__cta" style="margin-top:var(--w-s-7)">
+            <a class="w-btn w-btn--primary" href="/book-a-demo/">Book a Demo</a>
+          </div>
+        </div>
+        <div class="eub__payoff-side">
+          <div class="eu-mock">
+            <p class="eu-mock__v">2.6&times;</p>
+            <p class="eu-mock__b">Free users who talk to a paying peer at the upgrade moment cross to paid at 2.6&times; the rate of those who go it alone.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="eub__with w-reveal">
+        <p class="eub__with-lead">PLG Conversion brings a paying peer to the upgrade decision.</p>
+        <div class="eub__with-list">
+          <p class="eub__with-item"><svg class="w-icon"><use href="#i-arrow-right"/></svg>
+            <span>How a free user is paired to the right paying customer &rarr; <a href="/experts/peer-matching/">Peer Matching</a> has the mechanics.</span></p>
+          <p class="eub__with-item"><svg class="w-icon"><use href="#i-arrow-right"/></svg>
+            <span>Run the same proof on your marketing site &rarr; <a href="#website-conversion">Website Conversion</a>.</span></p>
+          <p class="eub__with-item"><svg class="w-icon"><use href="#i-arrow-right"/></svg>
+            <span>Where PLG fits the wider demand engine &rarr; <a href="/solutions-marketing/">For Marketing</a>.</span></p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══ §6 · ABM — LIGHT · centered head + account-list composition below ══════════
+       Experts+ Use Case &middot; Marketing. A target-account column, each row matched to its
+       mirror-customer (the 4th distinct shape). Lauren Martinez quote + SM-3 mock chip (5&times;). -->
+  <section class="cz-light eub eua w-section w-panel-rise" id="abm" data-nav-surface="light">
+    <div class="w-container">
+
+      <div class="eub__head eub__head--center w-reveal w-reveal--scale">
+        <span class="w-tag w-tag--kicker">
+          <svg class="w-icon"><use href="#i-megaphone"/></svg> Experts<svg class="w-icon w-icon--inherit ep-plus"><use href="#i-plus"/></svg> Use Case &middot; Marketing
+        </span>
+        <h2 class="eub__title">Put a real customer in your target account's seat.</h2>
+        <p class="eub__lead">Your named accounts have seen every personalized email. What they haven't been offered is a conversation with a customer exactly like them. Experts<svg class="w-icon w-icon--inherit ep-plus"><use href="#i-plus"/></svg> matches each target account to your most relevant customer &mdash; same industry, same scale, same problem &mdash; so your account play arrives with peer trust built in.</p>
+        <div class="eub__head-cta">
+          <a class="w-btn w-btn--primary w-btn--sm" href="/book-a-demo/">Book a Demo</a>
+        </div>
+      </div>
+
+      <div class="eua__stage w-reveal" id="eu6" style="--w-reveal-delay:.08s"><div class="cux-fit eu6-scene cux-on-light" data-canvas="1180x760" data-canvas-sm="440x620"
+     data-sm-at="700" style="width:1180px;height:760px" aria-hidden="true">
+
+  <!-- PEGBOARD · the house back-motif. First child, z-index:0 — every positioned
+       element below paints above it. Light section → the charcoal-dot default. -->
+  <div class="cux-peg"></div>
+
+  <!-- ══ COLUMN CAPTIONS · the four things every row says ══════════════════ -->
+  <div class="eu6-cols">
+    <span class="eu6-cl eu6-cl--acct">Target account</span>
+    <span class="eu6-cl eu6-cl--arrow"></span>
+    <span class="eu6-cl eu6-cl--mirror">Mirror customer</span>
+    <span class="eu6-cl eu6-cl--match">Match</span>
+    <span class="eu6-cl eu6-cl--call">Peer call</span>
+  </div>
+
+  <!-- ══ THE LIST · four named accounts, each with its own mirror-customer ══ -->
+
+  <div class="cux-card cux-card--focal eu6-row eu6-r1">
+    <div class="eu6-rowin">
+      <span class="eu6-acct">
+        <i class="eu6-logo" style="background-image:var(--w-img-logo-highspot)" role="img" aria-label="Highspot"></i>
+        <span class="eu6-atxt">
+          <span class="eu6-anm">Highspot</span>
+          <span class="eu6-asub">Enterprise &middot; 2,400 employees</span>
+        </span>
+      </span>
+      <svg class="eu6-arrow" viewBox="0 0 24 24" focusable="false"><path d="M4 12h13M13 6l6 6-6 6"/></svg>
+      <span class="eu6-mirror">
+        <i class="cux-av cux-av--ring eu6-av" style="background-image:var(--w-img-av-george)"></i>
+        <span class="eu6-mtxt">
+          <span class="eu6-mnm">George Stevens</span>
+          <span class="eu6-msub">VP Sales &middot; Sendoso</span>
+        </span>
+      </span>
+      <span class="eu6-match">
+        <span class="cux-chip eu6-tone eu6-tone--strong">
+          <svg viewBox="0 0 24 24" focusable="false"><path d="M5 12.5 10 17.5 19 7"/></svg>Strong match
+        </span>
+        <span class="eu6-scoreln">
+          <b class="eu6-pct">96%</b><span>ExpertScore</span>
+        </span>
+      </span>
+      <span class="cux-chip eu6-call">
+        <svg viewBox="0 0 24 24" focusable="false"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+        Offer peer call
+      </span>
+    </div>
+    <span class="eu6-reason">
+      <svg class="eu6-rico" viewBox="0 0 24 24" focusable="false"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="2.6"/></svg>
+      <span>Same industry, scale, and security-review stage as your evaluation.</span>
+    </span>
+  </div>
+
+  <div class="cux-card eu6-row eu6-r2">
+    <div class="eu6-rowin">
+      <span class="eu6-acct">
+        <i class="eu6-logo" style="background-image:var(--w-img-logo-sixsense)" role="img" aria-label="6sense"></i>
+        <span class="eu6-atxt">
+          <span class="eu6-anm">6sense</span>
+          <span class="eu6-asub">Mid-market &middot; 850 employees</span>
+        </span>
+      </span>
+      <svg class="eu6-arrow" viewBox="0 0 24 24" focusable="false"><path d="M4 12h13M13 6l6 6-6 6"/></svg>
+      <span class="eu6-mirror">
+        <i class="cux-av cux-av--ring eu6-av" style="background-image:var(--w-img-av-diana)"></i>
+        <span class="eu6-mtxt">
+          <span class="eu6-mnm">Diana Reyes</span>
+          <span class="eu6-msub">Head of RevOps &middot; Gong</span>
+        </span>
+      </span>
+      <span class="eu6-match">
+        <span class="cux-chip eu6-tone eu6-tone--strong">
+          <svg viewBox="0 0 24 24" focusable="false"><path d="M5 12.5 10 17.5 19 7"/></svg>Strong match
+        </span>
+        <span class="eu6-scoreln">
+          <b class="eu6-pct">93%</b><span>ExpertScore</span>
+        </span>
+      </span>
+      <span class="cux-chip eu6-call">
+        <svg viewBox="0 0 24 24" focusable="false"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+        Offer peer call
+      </span>
+    </div>
+    <span class="eu6-reason">
+      <svg class="eu6-rico" viewBox="0 0 24 24" focusable="false"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="2.6"/></svg>
+      <span>Same industry, scale, and buying-committee size as your account.</span>
+    </span>
+  </div>
+
+  <div class="cux-card eu6-row eu6-r3">
+    <div class="eu6-rowin">
+      <span class="eu6-acct">
+        <i class="eu6-logo" style="background-image:var(--w-img-logo-warmly)" role="img" aria-label="Warmly"></i>
+        <span class="eu6-atxt">
+          <span class="eu6-anm">Warmly</span>
+          <span class="eu6-asub">Growth-stage &middot; 320 employees</span>
+        </span>
+      </span>
+      <svg class="eu6-arrow" viewBox="0 0 24 24" focusable="false"><path d="M4 12h13M13 6l6 6-6 6"/></svg>
+      <span class="eu6-mirror">
+        <i class="cux-av cux-av--ring eu6-av" style="background-image:var(--w-img-av-ava)"></i>
+        <span class="eu6-mtxt">
+          <span class="eu6-mnm">Ava Chen</span>
+          <span class="eu6-msub">CRO &middot; Outreach</span>
+        </span>
+      </span>
+      <span class="eu6-match">
+        <span class="cux-chip eu6-tone eu6-tone--med">
+          <svg viewBox="0 0 24 24" focusable="false"><path d="M6 12h12"/></svg>Medium match
+        </span>
+        <span class="eu6-scoreln">
+          <b class="eu6-pct">85%</b><span>ExpertScore</span>
+        </span>
+      </span>
+      <span class="cux-chip eu6-call">
+        <svg viewBox="0 0 24 24" focusable="false"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+        Offer peer call
+      </span>
+    </div>
+    <span class="eu6-reason">
+      <svg class="eu6-rico" viewBox="0 0 24 24" focusable="false"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="2.6"/></svg>
+      <span>Same industry, scale, and outbound-motion challenge you're solving.</span>
+    </span>
+  </div>
+
+  <div class="cux-card eu6-row eu6-r4">
+    <div class="eu6-rowin">
+      <span class="eu6-acct">
+        <i class="eu6-logo" style="background-image:var(--w-img-logo-salesbricks)" role="img" aria-label="Salesbricks"></i>
+        <span class="eu6-atxt">
+          <span class="eu6-anm">Salesbricks</span>
+          <span class="eu6-asub">SMB &middot; 140 employees</span>
+        </span>
+      </span>
+      <svg class="eu6-arrow" viewBox="0 0 24 24" focusable="false"><path d="M4 12h13M13 6l6 6-6 6"/></svg>
+      <span class="eu6-mirror">
+        <i class="cux-av cux-av--ring eu6-av" style="background-image:var(--w-img-av-aisha)"></i>
+        <span class="eu6-mtxt">
+          <span class="eu6-mnm">Aisha Malik</span>
+          <span class="eu6-msub">VP Marketing &middot; Clay</span>
+        </span>
+      </span>
+      <span class="eu6-match">
+        <span class="cux-chip eu6-tone eu6-tone--med">
+          <svg viewBox="0 0 24 24" focusable="false"><path d="M6 12h12"/></svg>Medium match
+        </span>
+        <span class="eu6-scoreln">
+          <b class="eu6-pct">79%</b><span>ExpertScore</span>
+        </span>
+      </span>
+      <span class="cux-chip eu6-call">
+        <svg viewBox="0 0 24 24" focusable="false"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+        Offer peer call
+      </span>
+    </div>
+    <span class="eu6-reason">
+      <svg class="eu6-rico" viewBox="0 0 24 24" focusable="false"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="2.6"/></svg>
+      <span>Same industry, scale, and pricing objection on the table.</span>
+    </span>
+  </div>
+
+</div></div>
+
+      <div class="eua__moves">
+        <div class="eub__moment w-reveal w-reveal--scale" style="max-width:760px;margin-inline:auto;text-align:center">
+          <h3 class="eub__moment-t" style="max-width:none;margin-inline:auto">The account play that lands is the one that offers a peer, not a pitch.</h3>
+          <p class="eub__moment-b" style="margin-inline:auto">A buying committee at a named account weighs vendors against each other and tunes out the marketing aimed at them. The thing they can't get anywhere else is a candid conversation with a company just like theirs that already chose you. Experts<svg class="w-icon w-icon--inherit ep-plus"><use href="#i-plus"/></svg> makes that the centerpiece of the play: ExpertScore AI matches the account to the customer who mirrors it, and your team offers a booked peer conversation instead of one more touch &mdash; and the account leans in.</p>
+        </div>
+
+        <h3 class="eub__moves-t w-reveal" style="margin-top:var(--w-s-9)">One mirror-customer for every account on your list.</h3>
+        <div class="eub__moves eub__moves--3 w-stagger">
+          <div class="eub__move w-reveal w-reveal--scale">
+            <span class="eub__move-ic"><svg class="w-icon"><use href="#i-match"/></svg></span>
+            <h4 class="eub__move-t">Mirrors each account with its closest customer.</h4>
+            <p class="eub__move-b">ExpertScore AI pairs your target account with the customer who shares its industry, scale, and challenge across 50+ data points &mdash; the peer whose story this committee can't dismiss.</p>
+          </div>
+          <div class="eub__move w-reveal w-reveal--scale">
+            <span class="eub__move-ic"><svg class="w-icon"><use href="#i-booking"/></svg></span>
+            <h4 class="eub__move-t">Arms the play with a real conversation.</h4>
+            <p class="eub__move-b">Your team leads with a booked peer call instead of another asset &mdash; the one offer in the account's inbox that gives them something they actually want.</p>
+          </div>
+          <div class="eub__move w-reveal w-reveal--scale">
+            <span class="eub__move-ic"><svg class="w-icon"><use href="#i-link"/></svg></span>
+            <h4 class="eub__move-t">Books and tracks per account.</h4>
+            <p class="eub__move-b">The committee books in one click, and every conversation logs to the account in your CRM &mdash; so the play's peer touches are on the record for the whole pursuit team.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="eub__payoff w-reveal w-reveal--scale">
+        <div>
+          <h3 class="eub__payoff-t">Your most-wanted accounts book the call &mdash; because you offered the one thing they can't get elsewhere.</h3>
+          <p class="eub__payoff-b">Match every target account to a customer who mirrors it and your account plays stop competing on creativity and start competing on trust. The committee that ignored your last six touches takes a conversation with a company exactly like theirs.</p>
+          <div class="eub__cta" style="margin-top:var(--w-s-7)">
+            <a class="w-btn w-btn--primary" href="/book-a-demo/">Book a Demo</a>
+          </div>
+        </div>
+        <div class="eub__payoff-side">
+          <div class="eu-mock">
+            <p class="eu-mock__v">5&times;</p>
+            <p class="eu-mock__b">Target accounts offered a matched peer conversation book meetings at 5&times; the rate of a standard ABM touch.</p>
+          </div>
+          <div class="eu-quote">
+            <p class="eu-quote__q">&ldquo;Our reps now have instant access to relevant experts, and our reference conversion rate jumped 40%.&rdquo;</p>
+            <div class="eu-quote__by">
+              <span class="eu-quote__av" style="background-image:var(--w-img-av-lauren)" role="img" aria-label="Lauren Martinez"></span>
+              <span>
+                <span class="eu-quote__nm">Lauren Martinez,</span><br>
+                <span class="eu-quote__rl">VP of Customer Marketing, Sendoso</span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="eub__with w-reveal">
+        <p class="eub__with-lead">ABM is your team's named-account play, armed with a matched peer.</p>
+        <div class="eub__with-list">
+          <p class="eub__with-item"><svg class="w-icon"><use href="#i-arrow-right"/></svg>
+            <span>Want it run autonomously at market scale? <a href="/carly/use-cases/ai-outbound/">Carly &middot; AI Outbound</a> turns your customers' wins into demand programs across your whole market.</span></p>
+          <p class="eub__with-item"><svg class="w-icon"><use href="#i-arrow-right"/></svg>
+            <span>How an account gets paired to its mirror-customer &rarr; <a href="/experts/peer-matching/">Peer Matching</a> is the engine.</span></p>
+          <p class="eub__with-item"><svg class="w-icon"><use href="#i-arrow-right"/></svg>
+            <span>Marketing's full playbook lives in <a href="/solutions-marketing/">For Marketing</a>.</span></p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══ §7 · REFERENCE MANAGEMENT — LIGHT · centered head + program/portfolio TABLE ═
+       Experts+ Use Case &middot; Customer Success. The only tabular composition on the page
+       (5th distinct shape). SM-4 mock chip (8&times; / 95%+) + Become an Expert secondary CTA. -->
+  <section class="cz-light eub eur w-section w-panel-rise" id="reference-management" data-nav-surface="light">
+    <div class="w-container">
+
+      <div class="eub__head eub__head--center w-reveal w-reveal--scale">
+        <span class="w-tag w-tag--kicker">
+          <svg class="w-icon"><use href="#i-heart"/></svg> Experts<svg class="w-icon w-icon--inherit ep-plus"><use href="#i-plus"/></svg> Use Case &middot; Customer Success
+        </span>
+        <h2 class="eub__title">A reference program that scales to any volume &mdash; and keeps your customers glad to say yes.</h2>
+        <p class="eub__lead">Your happiest customers want to help. Experts<svg class="w-icon w-icon--inherit ep-plus"><use href="#i-plus"/></svg> makes it light for them and limitless for you: ExpertScore AI spreads each request across the right matched customers, fair rotation keeps any one champion from carrying the load, compensation says thank you, and every call lands on the record. The program runs on rails, at any scale.</p>
+        <div class="eub__head-cta">
+          <a class="w-btn w-btn--primary w-btn--sm" href="/book-a-demo/">Book a Demo</a>
+        </div>
+      </div>
+
+      <div class="eur__stage w-reveal" id="eu7" style="--w-reveal-delay:.08s"><div class="cux-fit eu7-scene" data-canvas="1180x760" data-canvas-sm="440x620" data-sm-at="700"
+     style="width:1180px;height:760px" aria-hidden="true">
+
+  <!-- PEGBOARD · the house back-motif. First child, z-index:0. -->
+  <div class="cux-peg"></div>
+
+  <!-- ══ THE REQUEST · not yet routed ══════════════════════════════════════ -->
+  <div class="cux-glass cux-glass--light cux-on-light eu7-req">
+    <div class="eu7-req-h">
+      <i class="eu7-dot"></i>
+      <p class="eu7-req-t">Incoming reference request</p>
+    </div>
+    <span class="eu7-req-sub">Security review &middot; FinTech, Series&nbsp;C+</span>
+  </div>
+
+  <!-- ══ THE PAYOFF · the payoff numbers, per content.md §7 ═══════════════════ -->
+  <div class="cux-glass cux-glass--light cux-on-light eu7-stats">
+    <div class="eu7-stat">
+      <span class="eu7-stat-n">8&times;</span>
+      <span class="eu7-stat-l">reference volume, same network</span>
+    </div>
+    <div class="eu7-stat">
+      <span class="eu7-stat-n">95%+</span>
+      <span class="eu7-stat-l">customers glad for the next call</span>
+    </div>
+  </div>
+
+  <!-- the request routes straight down into the pool -->
+  <i class="cux-cn eu7-cn"></i>
+
+  <!-- ══ THE POOL · match by fit, rotate fairly, reward, record ═══════════════ -->
+  <div class="cux-glass cux-glass--light cux-on-light eu7-pool">
+    <div class="eu7-pool-h">
+      <span class="eu7-pool-t">Reference Pool</span>
+      <span class="eu7-pool-sub">Match by fit &middot; rotate fairly &middot; reward &middot; record</span>
+    </div>
+
+    <div class="eu7-rows">
+
+      <div class="eu7-row" style="--eu7-d:0s">
+        <i class="cux-av eu7-av" style="background-image:var(--w-img-av-diana)"></i>
+        <span class="eu7-id"><span class="eu7-nm">Diana Reyes</span><span class="eu7-role">VP RevOps</span></span>
+        <span class="cux-chip eu7-fit">Fit &middot; Enterprise</span>
+        <span class="eu7-load">
+          <span class="cux-bar eu7-bar" style="--eu7-w:58%"><i></i></span>
+          <span class="cux-chip cux-chip--mono eu7-loadn">58%</span>
+        </span>
+        <span class="eu7-status">
+          <span class="eu7-status-t">On record &middot; <b>4m ago</b></span>
+          <i class="eu7-chk"><svg viewBox="0 0 24 24" focusable="false"><path d="M5 12.5 10 17.5 19 7"/></svg></i>
+        </span>
+      </div>
+
+      <div class="eu7-row is-matched" style="--eu7-d:.08s">
+        <i class="cux-av cux-av--ring eu7-av" style="background-image:var(--w-img-av-aisha)"></i>
+        <span class="eu7-id"><span class="eu7-nm">Aisha Rahman</span><span class="eu7-role">Head of Security</span></span>
+        <span class="cux-chip cux-chip--brand eu7-fit">Fit &middot; FinTech</span>
+        <span class="eu7-load">
+          <span class="cux-bar eu7-bar" style="--eu7-w:61%"><i></i></span>
+          <span class="cux-chip cux-chip--mono eu7-loadn">61%</span>
+        </span>
+        <span class="eu7-status">
+          <span class="eu7-status-t">Matched &middot; <b>1m ago</b></span>
+          <i class="eu7-chk"><svg viewBox="0 0 24 24" focusable="false"><path d="M5 12.5 10 17.5 19 7"/></svg></i>
+        </span>
+      </div>
+
+      <div class="eu7-row" style="--eu7-d:.16s">
+        <i class="cux-av eu7-av" style="background-image:var(--w-img-av-ava)"></i>
+        <span class="eu7-id"><span class="eu7-nm">Ava Williams</span><span class="eu7-role">VP Revenue</span></span>
+        <span class="cux-chip eu7-fit">Fit &middot; PLG</span>
+        <span class="eu7-load">
+          <span class="cux-bar eu7-bar" style="--eu7-w:55%"><i></i></span>
+          <span class="cux-chip cux-chip--mono eu7-loadn">55%</span>
+        </span>
+        <span class="eu7-status">
+          <span class="eu7-status-t">On record &middot; <b>6m ago</b></span>
+          <i class="eu7-chk"><svg viewBox="0 0 24 24" focusable="false"><path d="M5 12.5 10 17.5 19 7"/></svg></i>
+        </span>
+      </div>
+
+      <div class="eu7-row" style="--eu7-d:.24s">
+        <i class="cux-av eu7-av" style="background-image:var(--w-img-av-george)"></i>
+        <span class="eu7-id"><span class="eu7-nm">George Osei</span><span class="eu7-role">Head of Sales</span></span>
+        <span class="cux-chip eu7-fit">Fit &middot; Mid-Market</span>
+        <span class="eu7-load">
+          <span class="cux-bar eu7-bar" style="--eu7-w:63%"><i></i></span>
+          <span class="cux-chip cux-chip--mono eu7-loadn">63%</span>
+        </span>
+        <span class="eu7-status">
+          <span class="eu7-status-t">On record &middot; <b>3m ago</b></span>
+          <i class="eu7-chk"><svg viewBox="0 0 24 24" focusable="false"><path d="M5 12.5 10 17.5 19 7"/></svg></i>
+        </span>
+      </div>
+
+      <div class="eu7-row" style="--eu7-d:.32s">
+        <i class="cux-av eu7-av" style="background-image:var(--w-img-av-allison)"></i>
+        <span class="eu7-id"><span class="eu7-nm">Allison Brooks</span><span class="eu7-role">COO</span></span>
+        <span class="cux-chip eu7-fit">Fit &middot; Series&nbsp;C+</span>
+        <span class="eu7-load">
+          <span class="cux-bar eu7-bar" style="--eu7-w:57%"><i></i></span>
+          <span class="cux-chip cux-chip--mono eu7-loadn">57%</span>
+        </span>
+        <span class="eu7-status">
+          <span class="eu7-status-t">On record &middot; <b>9m ago</b></span>
+          <i class="eu7-chk"><svg viewBox="0 0 24 24" focusable="false"><path d="M5 12.5 10 17.5 19 7"/></svg></i>
+        </span>
+      </div>
+
+    </div>
+  </div>
+
+</div></div>
+
+      <div class="eur__moves">
+        <div class="eub__moment w-reveal w-reveal--scale" style="max-width:760px;margin-inline:auto;text-align:center">
+          <h3 class="eub__moment-t" style="max-width:none;margin-inline:auto">Demand for your references only grows. Build a program that grows with it.</h3>
+          <p class="eub__moment-b" style="margin-inline:auto">As deals multiply, so do the calls your reference customers get asked to take &mdash; and a program run on a spreadsheet leans on the same few names until the goodwill runs thin. Experts<svg class="w-icon w-icon--inherit ep-plus"><use href="#i-plus"/></svg> turns it into a system built to scale: requests are matched to the right customer by fit, rotated fairly across the network, rewarded, and recorded. Every deal that needs a reference gets one, and every customer who gives one feels valued for it.</p>
+          <div class="eub__moment-stat" style="margin-inline:auto;max-width:60ch">
+            <div class="eu-stat w-reveal">
+              <p class="eu-stat__v">300+</p>
+              <p class="eu-stat__b"><b>300+ conversations happen about the average B2B company every month</b> &mdash; a healthy, matched, fairly-run network is how your customers stay part of the decisive ones without being over-asked.</p>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="eub__moves-t w-reveal" style="margin-top:var(--w-s-9)">Match by fit, rotate fairly, reward, and record.</h3>
+        <div class="eub__moves eub__moves--3 w-stagger">
+          <div class="eub__move w-reveal w-reveal--scale">
+            <span class="eub__move-ic"><svg class="w-icon"><use href="#i-match"/></svg></span>
+            <h4 class="eub__move-t">Routes every request to its best-fit customer.</h4>
+            <p class="eub__move-b">ExpertScore AI sends each reference ask to the right customer-expert across 50+ data points, so the buyer gets a true peer and no one gets a mismatch.</p>
+          </div>
+          <div class="eub__move w-reveal w-reveal--scale">
+            <span class="eub__move-ic"><svg class="w-icon"><use href="#i-program"/></svg></span>
+            <h4 class="eub__move-t">Rotates fairly and rewards.</h4>
+            <p class="eub__move-b">The network spreads requests across many customers instead of the same three, with compensation built in &mdash; so participating stays light, fair, and worth their time.</p>
+          </div>
+          <div class="eub__move w-reveal w-reveal--scale">
+            <span class="eub__move-ic"><svg class="w-icon"><use href="#i-file"/></svg></span>
+            <h4 class="eub__move-t">Records every call.</h4>
+            <p class="eub__move-b">Each conversation and outcome syncs to your CRM, giving you a live, auditable picture of who's helping, how often, and what it moves.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="eub__payoff w-reveal w-reveal--scale">
+        <div>
+          <h3 class="eub__payoff-t">Customers who feel valued. A program that never runs dry.</h3>
+          <p class="eub__payoff-b">A reference program run on fit and fairness deepens the customer relationships it draws on and feeds every deal that needs proof &mdash; the rare program that's good for both sides, at any scale.</p>
+          <div class="eub__cta" style="margin-top:var(--w-s-7)">
+            <a class="w-btn w-btn--primary" href="/book-a-demo/">Book a Demo</a>
+            <a class="eum__link" href="/become-an-expert/">Become an Expert <svg class="w-icon"><use href="#i-arrow-right"/></svg></a>
+          </div>
+        </div>
+        <div class="eub__payoff-side">
+          <div class="eu-mock">
+            <p class="eu-mock__v">8&times; / 95%+</p>
+            <p class="eu-mock__b">Smart matching and fair rotation let teams run 8&times; the reference volume while 95%+ of customers stay glad to take the next call.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="eub__with w-reveal">
+        <p class="eub__with-lead">Reference Management keeps the supply healthy that every other use case draws on.</p>
+        <div class="eub__with-list">
+          <p class="eub__with-item"><svg class="w-icon"><use href="#i-arrow-right"/></svg>
+            <span>The network it protects is what Carly reaches into &rarr; that's the <a href="/experts/#better-together">Better Together</a> story.</span></p>
+          <p class="eub__with-item"><svg class="w-icon"><use href="#i-arrow-right"/></svg>
+            <span>The customers who opt in come through <a href="/become-an-expert/">Become an Expert</a>.</span></p>
+          <p class="eub__with-item"><svg class="w-icon"><use href="#i-arrow-right"/></svg>
+            <span>For the full CS picture, see <a href="/solutions-customer-success/">For Customer Success</a>.</span></p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══ §8 · THE PATTERN — DARK · the page's one brand moment ══════════════════════
+       Centered hub-and-spoke diagram: one verified expert network at the centre, five
+       booking surfaces radiating out. Every spoke links to its own use-case anchor —
+       the diagram is the page's second nav. -->
+  <!-- ══ §8 · THE PATTERN — FULL-SECTION PHOTO BAND (ue4: the expert network on a
+       tablet). Just the badge + title over the vacant LEFT (light bg → charcoal).
+       ≤1024 → image on top, copy beneath. -->
+  <section class="eul eul--photo w-section--hero w-panel-rise" id="pattern" data-nav-surface="light">
+    <div class="eul__media" aria-hidden="true"></div>
+    <div class="eul__scrim" aria-hidden="true"></div>
+    <div class="eul__panel">
+      <div class="w-container">
+        <div class="eul__copy w-stagger">
+          <span class="w-tag w-tag--kicker w-reveal">
+            <svg class="w-icon"><use href="#i-match"/></svg> The pattern
+          </span>
+          <h2 class="eul__title w-reveal">One network. Every moment a buyer wants proof.</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ §9 · BETTER TOGETHER + FINAL CTA — LIGHT, contained soft-brand band ════════ -->
+  <section class="cz-light euc w-section w-panel-rise" id="better-together" data-nav-surface="light">
+    <div class="w-container">
+      <div class="euc__band w-reveal w-reveal--scale">
+        <h2 class="euc__title">Experts<svg class="w-icon w-icon--inherit ep-plus"><use href="#i-plus"/></svg> is the supply. Carly puts it to work on every deal.</h2>
+        <p class="euc__body">Every match on this page draws on your verified Experts<svg class="w-icon w-icon--inherit ep-plus"><use href="#i-plus"/></svg> network &mdash; and that same network is what Carly reaches into when she works your pipeline on her own. Experts<svg class="w-icon w-icon--inherit ep-plus"><use href="#i-plus"/></svg> makes your customers matchable and bookable everywhere; Carly takes that supply to every open deal at full scale. Buy either and it works. Buy both and your trust layer reaches every opportunity, on demand and on its own.</p>
+        <div class="euc__actions">
+          <a class="w-btn w-btn--primary w-btn--lg" href="/book-a-demo/">Book a Demo</a>
+          <a class="euc__link" href="/experts/#better-together">
+            <span class="euc__wm">See how they work together</span>
+            <svg class="w-icon w-icon--inherit"><use href="#i-arrow-right"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </div><!-- /.eu-stack -->
+
+{% endraw %}
+{% endblock %}

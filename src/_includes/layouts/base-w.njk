@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="{{ dsTheme | default('dark') }}">
+<head>
+    {% include "partials/head.njk" %}
+    {% block extraHead %}{% endblock %}
+</head>
+<body>
+    {# GTM noscript fallback - must be immediately after <body> #}
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5ZHWLL6"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    {# DS7-Web monoline icon sprite — required once per page, before any <use> #}
+    {% include "partials/w-icons.njk" %}
+
+    {% include "components/nav-w.njk" %}
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    {% include "components/footer-w.njk" %}
+
+    {# DS7 shared behavior (nav drawer/mega/adaptive surface, reveal, parallax, footer reveal) #}
+    <script src="/assets/js/w/base.js"></script>
+    {% if pageJS %}
+    <script src="/assets/js/w/pages/{{ pageJS }}.js"></script>
+    {% endif %}
+    {# UTM first-touch attribution — must run on every page (INTEGRATIONS_PARITY §3.4) #}
+    <script type="module" src="/assets/js/w/utm-init.js"></script>
+    {% block extraScripts %}{% endblock %}
+</body>
+</html>

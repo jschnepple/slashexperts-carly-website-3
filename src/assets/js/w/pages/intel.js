@@ -1,0 +1,2 @@
+/* intel page script (P3, Session D) — #dikFit dashboard fit-scaler (verbatim from bundle). */
+(function(){var fit=document.getElementById("dikFit");if(!fit)return;var box=fit.parentElement;function s(){var sc=Math.min(box.clientWidth/1180,box.clientHeight/860);var tx=(box.clientWidth-1180*sc)/2,ty=(box.clientHeight-860*sc)/2;fit.style.transform="translate("+tx+"px,"+ty+"px) scale("+sc+")";}s();if(window.ResizeObserver){new ResizeObserver(s).observe(box);}else{window.addEventListener("resize",s);}window.addEventListener("load",s);})();

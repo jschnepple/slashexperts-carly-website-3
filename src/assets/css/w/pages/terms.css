@@ -1,0 +1,80 @@
+/* ===== shared chrome CSS (lifted verbatim from W-PRICING / W-BOOK-DEMO _chrome) ===== */
+.cz-light{
+  background:var(--w-bg);color:var(--w-text);
+  --w-bg:#f5f5f5; --w-bg-deep:#ebebeb; --w-bg-elev:#fafafa;
+  --w-card:#ffffff; --w-card-lo:#efefef; --w-card-hi:#ffffff;
+  --w-text:var(--w-charcoal); --w-text-2:rgba(28,26,36,0.66); --w-text-3:rgba(28,26,36,0.62);
+  --w-text-prose:#302d2e; --w-text-on-brand:#ffffff; --w-icon-ink:var(--w-charcoal);
+  --w-line-soft:rgba(28,26,36,0.06); --w-line:rgba(28,26,36,0.10); --w-line-strong:rgba(28,26,36,0.16); --w-edge-top:rgba(255,255,255,0.9);
+  --w-brand:var(--w-purple-ink); --w-brand-2:var(--w-purple); --w-brand-soft:rgba(152,135,244,0.10); --w-brand-line:rgba(152,135,244,0.28);
+  --w-shadow-raise:0 8px 18px -8px rgba(28,26,36,0.07), inset 0 1px 0 rgba(255,255,255,0.9);
+  --w-shadow-raise-soft:0 4px 10px -6px rgba(28,26,36,0.05), inset 0 1px 0 rgba(255,255,255,0.85);
+  --w-shadow-recess:inset 0 1px 3px rgba(28,26,36,0.05), inset 0 -1px 0 rgba(255,255,255,0.8);
+  --w-shadow-recess-deep:inset 0 2px 5px rgba(28,26,36,0.07), inset 0 -1px 0 rgba(255,255,255,0.7);
+  --w-shadow-sm:0 1px 2px rgba(28,26,36,0.04); --w-shadow-md:0 4px 12px rgba(28,26,36,0.05); --w-shadow-lg:0 12px 28px rgba(28,26,36,0.07);
+  --w-glow-brand:0 2px 8px rgba(28,26,36,0.05); --w-glow-brand-strong:0 6px 16px rgba(28,26,36,0.07);
+  --w-glass-fill:rgba(255,255,255,0.66); --w-glass-fill-strong:rgba(255,255,255,0.86); --w-glass-tint:rgba(28,26,36,0.90);
+  --w-glass-fill-soft:rgba(28,26,36,0.03); --w-glass-line:rgba(28,26,36,0.10); --w-glass-line-bright:rgba(28,26,36,0.16);
+  --w-glass-rim-top:rgba(255,255,255,0.95); --w-glass-rim-bottom:rgba(28,26,36,0.05);
+  --w-glass-blur:blur(18px) saturate(140%); --w-glass-blur-lg:blur(22px) saturate(145%);
+  --w-glass-shadow:0 10px 24px rgba(28,26,36,0.06); --w-glass-shadow-soft:0 4px 12px rgba(28,26,36,0.05);
+  --w-cta-fill:var(--w-glass-tint); --w-cta-text:#ffffff; --w-cta-glow:var(--w-shadow-md); --w-cta-glow-strong:var(--w-shadow-lg);
+  --w-card-brand-wash:linear-gradient(160deg, rgba(28,26,36,0.06), rgba(28,26,36,0.015)); --w-card-brand-line:var(--w-line-strong);
+  --w-tag-brand-bg:rgba(28,26,36,0.06); --w-tag-brand-fg:var(--w-text); --w-focus:rgba(28,26,36,0.55);
+  --w-grad-surface:linear-gradient(180deg, #ffffff 0%, #f5f5f5 100%);
+  --w-grad-surface-hi:linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
+  --w-grad-recess:linear-gradient(180deg, #ededed 0%, #e3e3e3 100%);
+}
+/* keep glass legible if the OS asks for less transparency, inside a light band */
+@media (prefers-reduced-transparency: reduce){
+  .cz-light .w-glass,.cz-light .w-btn--glass,.cz-light .w-tag,.cz-light .w-card,.cz-light .w-cta-band{background:var(--w-card);border-color:var(--w-line)}
+}
+/* footer peel-up reveal — /Experts static, footer scrolls up over it (matches Home) */
+.w-foot-spacer{display:none}
+@media(min-width:901px){
+  main{position:relative;z-index:1;background:var(--w-bg)}
+  .w-footer{position:relative;z-index:1}
+  .w-footer__bigmark{position:fixed!important;left:0;right:0;bottom:0;z-index:0;overflow:hidden}
+  .w-footer__bigmark-tx{transform:none!important}
+  .w-foot-spacer{display:block}
+}
+@media(max-width:900px){
+  .w-footer__bigmark-tx{transform:none!important;font-size:clamp(52px,21vw,150px)}
+}
+.w-footer{position:relative;z-index:1}
+
+/* ===== W-LEGAL page-local styles ===== */
+.w-section{padding-block:clamp(52px,3vw + 1rem,84px) clamp(76px,4.5vw + 1.7rem,120px)}
+.lg-hero{position:relative;overflow:hidden;background:var(--w-bg);padding-block:clamp(92px,11vh + 2rem,152px) clamp(38px,5vw,64px)}
+.lg-hero__bg{position:absolute;inset:0;z-index:0;pointer-events:none;background:radial-gradient(ellipse 62% 60% at 50% 0%,rgba(152,135,244,.15),transparent 70%),radial-gradient(rgba(255,255,255,.045) 1px,transparent 1.4px);background-size:auto,26px 26px}
+.lg-hero__bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent,var(--w-bg))}
+.lg-hero .w-container{position:relative;z-index:1}
+.lg-hero__inner{max-width:780px}
+.lg-hero__h{margin-top:16px;font-size:clamp(38px,5vw,66px);line-height:1.04;letter-spacing:-.03em;font-weight:var(--w-fw-black);color:#fff}
+.lg-hero__h .w-accent{font-family:var(--w-font-serif);font-style:italic;font-weight:400;color:#c9bcff;-webkit-text-fill-color:#c9bcff;background:none}
+.lg-hero__lead{margin-top:16px;max-width:64ch;color:rgba(255,255,255,.84)}
+.lg-hero__meta{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px 22px;font-size:13.5px;color:rgba(255,255,255,.56)}
+.lg-hero__meta span{display:inline-flex;align-items:center;gap:7px}
+.lg-hero__meta .w-icon{width:15px;height:15px}
+.lg-hero__actions{margin-top:26px;display:flex;gap:12px;flex-wrap:wrap}
+.lg-body{padding-block:clamp(48px,5vw,82px) clamp(74px,7vw,120px)}
+.lg-prose{max-width:772px;margin-inline:auto}
+.lg-prose>h2:first-child{margin-top:0;padding-top:0;border-top:none}
+.lg-prose h2{font-size:clamp(22px,2vw,28px);font-weight:var(--w-fw-black);letter-spacing:-.015em;color:var(--w-text);margin:clamp(38px,4vw,54px) 0 14px;padding-top:clamp(22px,2.2vw,30px);border-top:1px solid var(--w-line)}
+.lg-prose h3{font-size:clamp(17px,1.3vw,19.5px);font-weight:var(--w-fw-bold);color:var(--w-text);margin:28px 0 10px}
+.lg-prose h4{font-size:15.5px;font-weight:var(--w-fw-bold);color:var(--w-text);margin:20px 0 8px}
+.lg-prose p{font-size:clamp(15px,.7vw + .6rem,16.5px);line-height:1.72;color:var(--w-text-2);margin:0 0 16px}
+.lg-prose ul,.lg-prose ol{margin:0 0 18px;padding-left:22px;color:var(--w-text-2)}
+.lg-prose li{font-size:clamp(15px,.7vw + .6rem,16.5px);line-height:1.66;margin:0 0 9px}
+.lg-prose li::marker{color:var(--w-brand)}
+.lg-prose a{color:var(--w-brand);text-decoration:none;border-bottom:1px solid rgba(152,135,244,.32);word-break:break-word}
+.lg-prose a:hover{border-bottom-color:currentColor}
+.lg-prose strong{color:var(--w-text);font-weight:var(--w-fw-bold)}
+.lg-tablewrap{overflow-x:auto;margin:0 0 20px;border:1px solid var(--w-line);border-radius:12px}
+.lg-prose table{width:100%;min-width:520px;border-collapse:collapse;margin:0;font-size:14.5px}
+.lg-prose thead th{background:var(--w-card-lo);color:var(--w-text);font-weight:var(--w-fw-bold);font-size:13.5px;letter-spacing:.01em}
+.lg-prose th,.lg-prose td{border-bottom:1px solid var(--w-line);border-right:1px solid var(--w-line);padding:11px 14px;text-align:left;vertical-align:top;color:var(--w-text-2);line-height:1.55}
+.lg-prose tr td:last-child,.lg-prose tr th:last-child{border-right:none}
+.lg-prose tbody tr:last-child td{border-bottom:none}
+.lg-prose table ul,.lg-prose table ol{margin:0;padding-left:18px}
+.lg-prose table li{margin:0 0 4px}

@@ -165,6 +165,17 @@ _inputs:
     label: Image Alt Text
     comment: Describe the image for accessibility and SEO
 
+  # Added Session K4 with the DS7 standard post layout (layouts/post-w.njk).
+  heroImage:
+    type: image
+    label: Hero Image (optional)
+    comment: Wide crop used as the article hero background. Falls back to the Featured Image when empty.
+
+  plainIntro:
+    type: switch
+    label: No drop cap
+    comment: Turn on to drop the serif drop-cap on the first paragraph.
+
   readTime:
     type: number
     label: Read Time (minutes)

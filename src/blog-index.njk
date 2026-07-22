@@ -1,0 +1,203 @@
+---
+title: Blog | SlashExperts
+description: Insights on the Trust Layer for B2B sales — Carly, Experts+, peer influence, and the research behind why buyers trust customers over pitches.
+ds7: true
+pageCSS: blog
+pageJS: blog
+pagination:
+  data: collections.posts
+  size: 12
+  alias: posts
+  reverse: false
+permalink: "{% if pagination.pageNumber == 0 %}/blog/{% else %}/blog/page/{{ pagination.pageNumber + 1 }}/{% endif %}"
+---
+
+{#
+  DS7-Web · /blog/ listing (Session K4). Converted from the designer's
+  blog.bundle.html. Replaces the legacy fork stub src/pages/resources-blog.njk,
+  which owned the same permalink (D53). Pagination behaviour and the permalink
+  expression are carried over UNCHANGED from that stub: 12 posts per page,
+  page 1 at /blog/, pages 2+ at /blog/page/N/.
+#}
+{% extends "layouts/base-w.njk" %}
+
+{% set featuredPost = collections.featuredPosts[0] or collections.posts[0] %}
+
+{% block content %}
+
+  <!-- ══ §1 · HERO (D) — index promise + search ══ -->
+  <section class="blh" id="top" data-nav-surface="dark">
+    <div class="blh__glow" aria-hidden="true"></div>
+    <div class="w-container">
+      <div class="blh__in w-stagger">
+        <span class="w-tag w-tag--kicker w-reveal"><svg class="w-icon"><use href="#i-article"/></svg> Insights &amp; Research</span>
+        <h1 class="w-reveal">The science of <em>buyer trust</em><br>&amp; peer connection.</h1>
+        <p class="w-reveal">Playbooks, product updates, and research on building a Trust Layer — from the team behind Carly and Experts+.</p>
+        <label class="blh__search w-reveal">
+          <svg class="w-icon"><use href="#i-search"/></svg>
+          <input type="search" placeholder="Search articles, topics, and research…" aria-label="Search the blog">
+        </label>
+      </div>
+    </div>
+  </section>
+
+  {# The featured article is the front door of the index — page 1 only. #}
+  {% if pagination.pageNumber == 0 and featuredPost %}
+  <!-- ══ §2 · FEATURED (L) ══ -->
+  <section class="bl-sec blf-sec cz-light" id="featured">
+    <div class="w-container">
+      <div class="bl-head w-reveal" style="margin-bottom:28px">
+        <span class="w-tag w-tag--kicker"><svg class="w-icon"><use href="#i-star"/></svg> Featured</span>
+      </div>
+      {% set fa = null %}{% for a in authors %}{% if a.slug == featuredPost.data.author %}{% set fa = a %}{% endif %}{% endfor %}
+      <article class="blf w-reveal w-reveal--scale">
+        <div class="blf__media"{% if featuredPost.data.featuredImage %} style="background-image:linear-gradient(to top,rgba(15,13,24,.5),rgba(15,13,24,0) 46%),url('{{ featuredPost.data.featuredImage }}')"{% endif %}>
+          <span class="blf__badge w-tag w-tag--kicker" style="background:rgba(20,17,32,.5);color:#fff;border-color:rgba(255,255,255,.2)"><svg class="w-icon"><use href="#i-magic"/></svg> {{ featuredPost.data.category | default('Featured') }}</span>
+        </div>
+        <div class="blf__body">
+          <div class="blf__meta">
+            {% if featuredPost.data.category %}<span class="blf__cat">{{ featuredPost.data.category }}</span><span class="dot"></span>{% endif %}
+            <span>{{ featuredPost.date | date('MMMM Y') }}</span><span class="dot"></span>
+            <span><svg class="w-icon" style="width:13px;height:13px;vertical-align:-2px"><use href="#i-clock"/></svg> {{ featuredPost.data.readTime | default(5) }} min read</span>
+          </div>
+          <h3><a href="{{ featuredPost.url }}">{{ featuredPost.data.title }}</a></h3>
+          <p>{{ featuredPost.data.excerpt or featuredPost.data.dek or featuredPost.data.description }}</p>
+          <div class="blf__foot">
+            <span class="blf__av"{% if fa.avatarImage %} style="background-image:url('{{ fa.avatarImage }}');background-size:cover;background-position:center"{% endif %} role="img" aria-label="{{ fa.name if fa else 'SlashExperts' }}">{% if fa and not fa.avatarImage %}{{ fa.initials }}{% endif %}</span>
+            <div class="blf__by"><b>{{ fa.name if fa else 'SlashExperts' }}</b><small>{{ fa.title if fa else 'SlashExperts' }}</small></div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- ══ §3 · FILTERS + GRID + SIDEBAR (L) ══ -->
+  <section class="bl-sec blg-sec cz-light" id="all">
+    <div class="w-container">
+      <div class="bl-head w-reveal" style="margin-bottom:22px">
+        <span class="w-tag w-tag--kicker"><svg class="w-icon"><use href="#i-book"/></svg> Latest</span>
+        <h2>From the blog</h2>
+      </div>
+
+      {# Chips filter the cards rendered on THIS page (the designer's client-side
+         behaviour, kept as-is); categories come from the live collection. #}
+      <div class="blc w-reveal" role="tablist" aria-label="Filter articles by topic">
+        <button class="blc__chip is-active" type="button" role="tab" aria-selected="true">All Articles</button>
+        {% for cat in collections.blogCategories %}
+        <button class="blc__chip" type="button" role="tab" aria-selected="false">{{ cat }}</button>
+        {% endfor %}
+      </div>
+
+      <div class="blg-layout">
+        <div class="blg w-stagger">
+          {% for post in posts %}
+          {% set pa = null %}{% for a in authors %}{% if a.slug == post.data.author %}{% set pa = a %}{% endif %}{% endfor %}
+          <a class="blg__card w-reveal w-reveal--scale" data-cat="{{ post.data.category }}" href="{{ post.url }}">
+            <div class="blg__media"{% if post.data.featuredImage %} style="background-image:url('{{ post.data.featuredImage }}');background-size:cover;background-position:center"{% endif %}>
+              {% if post.data.category %}<span class="blg__cat">{{ post.data.category }}</span>{% endif %}
+              <svg class="w-icon"><use href="#i-article"/></svg>
+            </div>
+            <div class="blg__c">
+              <h3>{{ post.data.title }}</h3>
+              <p>{{ (post.data.excerpt or post.data.dek or post.data.description) | truncate(150) }}</p>
+              <div class="blg__foot">
+                <svg class="w-icon"><use href="#i-clock"/></svg>
+                <span>{{ post.data.readTime | default(5) }} min</span><span class="dot"></span>
+                <span class="blg__auth"><i class="blg__av"{% if pa.avatarImage %} style="background-image:url('{{ pa.avatarImage }}')"{% endif %}></i>{{ pa.name if pa else 'SlashExperts' }}</span>
+              </div>
+            </div>
+          </a>
+          {% endfor %}
+
+          {# Pagination — the designer bundle has no pagination UI (it showed a
+             fixed 6-card grid), so the control is built from the page's own
+             .blc__chip button treatment rather than a new component. #}
+          {% if pagination.pages.length > 1 %}
+          <nav class="blp w-reveal" aria-label="Blog pagination">
+            {% if pagination.href.previous %}
+            <a class="blc__chip" href="{{ pagination.href.previous }}" rel="prev">← Previous</a>
+            {% else %}
+            <span class="blc__chip is-disabled" aria-disabled="true">← Previous</span>
+            {% endif %}
+            <span class="blp__count">Page {{ pagination.pageNumber + 1 }} of {{ pagination.pages.length }}</span>
+            {% if pagination.href.next %}
+            <a class="blc__chip" href="{{ pagination.href.next }}" rel="next">Next →</a>
+            {% else %}
+            <span class="blc__chip is-disabled" aria-disabled="true">Next →</span>
+            {% endif %}
+          </nav>
+          {% endif %}
+        </div>
+
+        <aside class="bls">
+          <div class="bls__card w-reveal">
+            <h4>Most read this month</h4>
+            {% for post in collections.posts | limit(3) %}
+            <a class="bls__item" href="{{ post.url }}">
+              <span class="bls__num">{{ "0" + (loop.index | string) }}</span>
+              <span class="bls__tx"><b>{{ post.data.title }}</b><small>{{ post.data.category }}</small></span>
+            </a>
+            {% endfor %}
+          </div>
+          <div class="bls__card w-reveal">
+            <h4>Browse by topic</h4>
+            <span class="bls__tag"><svg class="w-icon"><use href="#i-magic"/></svg> Carly</span>
+            <span class="bls__tag"><svg class="w-icon"><use href="#i-proof"/></svg> Trust Layer</span>
+            <span class="bls__tag"><svg class="w-icon"><use href="#i-match"/></svg> Peer matching</span>
+            <span class="bls__tag"><svg class="w-icon"><use href="#i-link"/></svg> CRM &amp; attribution</span>
+            <span class="bls__tag"><svg class="w-icon"><use href="#i-chart"/></svg> Benchmarks</span>
+            <span class="bls__tag"><svg class="w-icon"><use href="#i-trophy"/></svg> Win rate</span>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ §4 · NEWSLETTER (D close) ══ -->
+  <section class="bl-sec bln-sec" id="subscribe" data-nav-surface="dark">
+    <div class="bln__glow" aria-hidden="true"></div>
+    <div class="w-container">
+      <div class="bln__in w-stagger">
+        <span class="w-tag w-tag--kicker w-reveal"><svg class="w-icon"><use href="#i-mail"/></svg> The briefing</span>
+        <h2 class="w-reveal">Get the Trust Layer briefing.</h2>
+        <p class="w-reveal">One email a month: the sharpest new research, product updates, and playbooks on building buyer trust. No noise.</p>
+        <form class="bln__form w-reveal" data-form-name="newsletter" novalidate>
+          <input type="email" name="email" placeholder="you@company.com" aria-label="Work email" required>
+          <button class="w-btn w-btn--primary" type="submit">Subscribe</button>
+        </form>
+        <p class="bln__note w-reveal" data-newsletter-note>Join revenue leaders reading the briefing. Unsubscribe anytime.</p>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}
+
+{% block extraScripts %}
+<script type="module">
+/* Newsletter signup (D65) — form_name "newsletter", already registered in
+   INTEGRATIONS_PARITY §3.3/§4: Customer.io identify ONLY, no n8n webhook.
+   Attributes preserved from 2.0: newsletter_subscriber + newsletter_signup_date. */
+import { identifyUser } from '/assets/js/components/customerio.js';
+
+const form = document.querySelector('form[data-form-name="newsletter"]');
+const note = document.querySelector('[data-newsletter-note]');
+if (form) {
+  const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const input = form.querySelector('input[name="email"]');
+    const email = (input.value || '').trim();
+    if (!emailRe.test(email)) { input.setAttribute('aria-invalid', 'true'); input.focus(); return; }
+    input.removeAttribute('aria-invalid');
+    identifyUser({
+      email,
+      formName: 'newsletter',
+      attributes: { newsletter_subscriber: true, newsletter_signup_date: new Date().toISOString() }
+    });
+    form.reset();
+    if (note) note.textContent = 'You’re in. The next briefing lands in your inbox.';
+  });
+}
+</script>
+{% endblock %}

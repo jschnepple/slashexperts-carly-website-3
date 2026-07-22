@@ -1,0 +1,363 @@
+/* Experts+ page image tokens (from the designer bundle's foundation block; canonical ds7.css omits these) */
+:root{
+  --w-img-carly: url("/assets/images/w/carly.png");
+  --w-img-visor: url("/assets/images/w/visor.png");
+  --w-img-se: url("/assets/images/w/se.png");
+  --w-img-av-jeff: url("/assets/images/w/av-jeff.png");
+  --w-img-logo-sendoso: url("/assets/images/w/logo-sendoso.png");
+  --w-img-logo-sequel: url("/assets/images/w/logo-sequel.png");
+  --w-img-logo-netline: url("/assets/images/w/logo-netline.png");
+  --w-img-logo-udemy: url("/assets/images/w/logo-udemy.png");
+  --w-img-logo-checkr: url("/assets/images/w/logo-checkr.png");
+  --w-img-logo-warmly: url("/assets/images/w/logo-warmly.png");
+  --w-img-logo-salesbricks: url("/assets/images/w/logo-salesbricks.png");
+  --w-img-logo-euler: url("/assets/images/w/logo-euler.png");
+  --w-img-logo-spara: url("/assets/images/w/logo-spara.png");
+  --w-img-logo-syntheticfi: url("/assets/images/w/logo-syntheticfi.png");
+}
+
+html{overflow-x:clip}   /* kill any horizontal scroll — clip keeps sticky working */
+:root{--w-img-av-lauren:url("/assets/images/w/experts/av-lauren.webp")}   /* real Lauren Martinez (from W-BOOK-DEMO) */
+
+/* ── per-section LIGHT band · re-declares the foundation light tokens in scope ───
+   (mirrors :root[data-theme="light"] from tokens.css; lets a single section render
+   light inside the dark-default page — every --w-* component inside flips.) */
+.cz-light{
+  background:var(--w-bg);color:var(--w-text);
+  --w-bg:#f5f5f5; --w-bg-deep:#ebebeb; --w-bg-elev:#fafafa;
+  --w-card:#ffffff; --w-card-lo:#efefef; --w-card-hi:#ffffff;
+  --w-text:var(--w-charcoal); --w-text-2:rgba(28,26,36,0.66); --w-text-3:rgba(28,26,36,0.62);
+  --w-text-prose:#302d2e; --w-text-on-brand:#ffffff; --w-icon-ink:var(--w-charcoal);
+  --w-line-soft:rgba(28,26,36,0.06); --w-line:rgba(28,26,36,0.10); --w-line-strong:rgba(28,26,36,0.16); --w-edge-top:rgba(255,255,255,0.9);
+  --w-brand:var(--w-purple-ink); --w-brand-2:var(--w-purple); --w-brand-soft:rgba(152,135,244,0.10); --w-brand-line:rgba(152,135,244,0.28);
+  --w-shadow-raise:0 8px 18px -8px rgba(28,26,36,0.07), inset 0 1px 0 rgba(255,255,255,0.9);
+  --w-shadow-raise-soft:0 4px 10px -6px rgba(28,26,36,0.05), inset 0 1px 0 rgba(255,255,255,0.85);
+  --w-shadow-recess:inset 0 1px 3px rgba(28,26,36,0.05), inset 0 -1px 0 rgba(255,255,255,0.8);
+  --w-shadow-recess-deep:inset 0 2px 5px rgba(28,26,36,0.07), inset 0 -1px 0 rgba(255,255,255,0.7);
+  --w-shadow-sm:0 1px 2px rgba(28,26,36,0.04); --w-shadow-md:0 4px 12px rgba(28,26,36,0.05); --w-shadow-lg:0 12px 28px rgba(28,26,36,0.07);
+  --w-glow-brand:0 2px 8px rgba(28,26,36,0.05); --w-glow-brand-strong:0 6px 16px rgba(28,26,36,0.07);
+  --w-glass-fill:rgba(255,255,255,0.66); --w-glass-fill-strong:rgba(255,255,255,0.86); --w-glass-tint:rgba(28,26,36,0.90);
+  --w-glass-fill-soft:rgba(28,26,36,0.03); --w-glass-line:rgba(28,26,36,0.10); --w-glass-line-bright:rgba(28,26,36,0.16);
+  --w-glass-rim-top:rgba(255,255,255,0.95); --w-glass-rim-bottom:rgba(28,26,36,0.05);
+  --w-glass-blur:blur(18px) saturate(140%); --w-glass-blur-lg:blur(22px) saturate(145%);
+  --w-glass-shadow:0 10px 24px rgba(28,26,36,0.06); --w-glass-shadow-soft:0 4px 12px rgba(28,26,36,0.05);
+  --w-cta-fill:var(--w-glass-tint); --w-cta-text:#ffffff; --w-cta-glow:var(--w-shadow-md); --w-cta-glow-strong:var(--w-shadow-lg);
+  --w-card-brand-wash:linear-gradient(160deg, rgba(28,26,36,0.06), rgba(28,26,36,0.015)); --w-card-brand-line:var(--w-line-strong);
+  --w-tag-brand-bg:rgba(28,26,36,0.06); --w-tag-brand-fg:var(--w-text); --w-focus:rgba(28,26,36,0.55);
+  --w-grad-surface:linear-gradient(180deg, #ffffff 0%, #f5f5f5 100%);
+  --w-grad-surface-hi:linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
+  --w-grad-recess:linear-gradient(180deg, #ededed 0%, #e3e3e3 100%);
+}
+/* keep glass legible if the OS asks for less transparency, inside a light band */
+@media (prefers-reduced-transparency: reduce){
+  .cz-light .w-glass,.cz-light .w-btn--glass,.cz-light .w-tag,.cz-light .w-card,.cz-light .w-cta-band{background:var(--w-card);border-color:var(--w-line)}
+}
+/* keep glass legible if the OS asks for less transparency, inside a light band */
+@media (prefers-reduced-transparency: reduce){
+  .cz-light .w-glass,.cz-light .w-btn--glass,.cz-light .w-tag,.cz-light .w-card,.cz-light .w-cta-band{background:var(--w-card);border-color:var(--w-line)}
+}
+
+/* footer peel-up reveal — /Experts static, footer scrolls up over it (matches Home) */
+.w-foot-spacer{display:none}
+@media(min-width:901px){
+  main{position:relative;z-index:1;background:var(--w-bg)}
+  .w-footer{position:relative;z-index:1}
+  .w-footer__bigmark{position:fixed!important;left:0;right:0;bottom:0;z-index:0;overflow:hidden}
+  .w-footer__bigmark-tx{transform:none!important}
+  .w-foot-spacer{display:block}
+}
+/* small screens: no peel-up room, so show /Experts as a static mark sized to fit the viewport */
+@media(max-width:900px){
+  .w-footer__bigmark-tx{transform:none!important;font-size:clamp(52px,21vw,150px)}
+}
+
+/* asymmetric section rhythm (approved) — tight top, generous bottom (room after every CTA) */
+.w-section{padding-block:clamp(40px,2.4vw+1rem,72px) clamp(64px,4vw+1.7rem,112px)}
+.w-section--hero{padding-block:clamp(88px,6vw+2rem,150px) clamp(56px,4vw,96px)}
+
+/* ── Adobe-style sticky STACKING (W-HOME recipe, scoped to .hm-stack so pins release) ──
+   Viewport-fit sections pin (sticky top:0); the next opaque panel buries them with a top
+   shadow. Light panels enter over dark ones with rounded corners + overlap (panel-rise). */
+.hm-stack{position:relative;z-index:0}
+#top{position:relative;z-index:1}
+#peer-proof{position:relative;z-index:2}
+#trust{position:relative;z-index:3;padding-block:clamp(44px,4vw,72px) clamp(20px,2vw,32px);
+  border-top-left-radius:var(--w-panel-radius);border-top-right-radius:var(--w-panel-radius);
+  margin-top:calc(-1 * var(--w-panel-overlap));box-shadow:0 -24px 50px -14px rgba(0,0,0,.40)}
+#how{position:relative;z-index:4;padding-top:clamp(10px,1.2vw,18px)}
+#what{position:relative;z-index:5}
+section#proof{position:sticky;top:0;z-index:6;background:var(--w-bg);
+  padding-bottom:calc(var(--w-section-y) + var(--w-panel-overlap))}   /* +overlap so the visible bottom gap matches the top */
+section#better-together{position:sticky;top:0;z-index:7;
+  border-top-left-radius:var(--w-panel-radius);border-top-right-radius:var(--w-panel-radius);
+  margin-top:calc(-1 * var(--w-panel-overlap));box-shadow:0 -24px 50px -14px rgba(0,0,0,.40)}
+#for-customers{z-index:8;
+  border-top-left-radius:var(--w-panel-radius);border-top-right-radius:var(--w-panel-radius);
+  margin-top:calc(-1 * var(--w-panel-overlap));box-shadow:0 -24px 50px -14px rgba(0,0,0,.40)}
+#cta{position:relative;z-index:9}
+@media(prefers-reduced-motion:reduce){section#proof,section#better-together{position:relative;top:auto}
+  #trust,section#better-together,#for-customers{margin-top:0;border-top-left-radius:0;border-top-right-radius:0}
+  #trust{padding-block:clamp(44px,4vw,72px)}}
+@media(max-width:700px){section#proof,section#better-together{position:relative;top:auto}
+  section#proof{padding-bottom:var(--w-section-y)}
+  #trust,section#better-together,#for-customers{margin-top:0;border-top-left-radius:0;border-top-right-radius:0}}
+
+/* ===== §2.5 · TRUST MARQUEE — CSS lifted verbatim from W-BOOK-DEMO §3 ===== */
+.ep-trust{margin-bottom:0}
+.ep-trust .w-trust-label{margin-bottom:var(--w-s-5)}
+/* canonical trust marquee (DS7-Web §8) sits on a .cz-light BAND while html is
+   data-theme=dark, so the default white-invert filter makes the marks invisible —
+   force the dark-logo treatment here (mirrors the foundation light-theme rule) */
+.cz-light .w-marquee__item{filter:grayscale(1) brightness(0);opacity:.5}
+.cz-light .w-marquee__lockup i{filter:grayscale(1) brightness(0);opacity:.5}
+.cz-light .w-marquee__lockup b{color:rgba(28,26,36,0.62)}
+
+/* ═════════ §1 HERO — full product image (aspect-matched: no crop, no zoom) · content LEFT ═════════ */
+.ep-hero{position:relative;overflow:hidden;display:grid;grid-template-columns:minmax(0,1fr);align-items:start;
+  aspect-ratio:2912 / 1632;padding-block:clamp(28px,2.6vw,48px) 0;
+  background-color:var(--w-bg-elev);background-image:url("/assets/images/w/experts/asset-0.webp");background-size:contain;background-position:center;background-repeat:no-repeat}
+.ep-hero .w-badge,.ep-hero .w-btn--glass{backdrop-filter:none;-webkit-backdrop-filter:none}
+.ep-hero>.w-container{position:relative;z-index:2}
+.ep-hero__inner{width:min(90vw,35rem);display:block;text-align:left}
+.ep-hero__inner .w-display{margin:var(--w-s-5) 0 var(--w-s-5);font-size:var(--w-fs-h1);font-weight:var(--w-fw-bold);letter-spacing:var(--w-ls-tight);line-height:1.14;text-wrap:normal}
+.ep-hero__body{margin:0 0 var(--w-s-6);max-width:46ch;font-size:var(--w-fs-body);line-height:1.6}
+.ep-hero__inner .w-row{justify-content:flex-start}
+@media(max-width:860px){
+  .ep-hero{aspect-ratio:auto;display:block;background-size:contain;background-position:bottom center;
+    padding-block:clamp(52px,9vw,88px) min(64vw,340px)}
+  .ep-hero__inner{max-width:none}
+}
+
+/* ═════════ §2 THESIS (light) — centered band ═════════ */
+/* §2 peer split — full-bleed background images (e5 | e6) · slide-in + Ken-Burns */
+.ep-peer2{position:relative;overflow:hidden;display:grid;align-items:center;isolation:isolate;
+  min-height:clamp(540px,66vh,740px);padding-block:clamp(56px,7vw,110px)}
+.ep-peer2__bg{position:absolute;inset:0;z-index:0}
+.ep-peer2__half{position:absolute;top:0;bottom:0;width:50.2%;overflow:hidden;opacity:0;
+  transition:opacity 1s var(--w-ease),transform 1s var(--w-ease);will-change:opacity,transform}
+.ep-peer2__half--l{left:0;transform:translateX(-44px)}
+.ep-peer2__half--r{right:0;transform:translateX(44px)}
+.ep-peer2.is-in .ep-peer2__half{opacity:1;transform:none}
+.ep-peer2__img{position:absolute;inset:0;background-size:cover;animation:epKen 18s ease-in-out infinite alternate}
+.ep-peer2__img--e5{background-image:url("/assets/images/w/experts/asset-1.webp?v=2");background-position:58% center}
+.ep-peer2__img--e6{background-image:url("/assets/images/w/experts/asset-2.webp?v=2");background-position:45% center;animation-direction:alternate-reverse}
+@keyframes epKen{from{transform:scale(1.03)}to{transform:scale(1.12)}}
+.ep-peer2__scrim{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(20,20,21,.38) 0%,rgba(20,20,21,.44) 50%,rgba(20,20,21,.56) 100%)}
+.ep-peer2__content{position:relative;z-index:2;text-align:center;color:#fff}
+.ep-peer2__content .w-badge{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.28);color:#fff}
+.ep-peer2__content .w-badge__icon{color:#fff}
+.ep-peer2__content .w-section-head__title{color:#fff;text-shadow:0 2px 22px rgba(0,0,0,.45)}
+.ep-peer2__content .w-p{color:rgba(255,255,255,.92);font-size:var(--w-fs-lead);line-height:1.7;text-shadow:0 1px 16px rgba(0,0,0,.4)}
+@media(prefers-reduced-motion:reduce){.ep-peer2__half{opacity:1;transform:none;transition:none}.ep-peer2__img{animation:none}}
+@media(max-width:600px){
+  .ep-peer2__half{width:100%;height:50%}
+  .ep-peer2__half--l{top:0;bottom:auto;transform:translateY(-30px)}
+  .ep-peer2__half--r{top:auto;bottom:0;right:0;transform:translateY(30px)}
+}
+
+/* ═════════ §3 STEPS (light) — 3 numbered process cards ═════════ */
+.ep-sublink{display:inline-flex;align-items:center;gap:7px;margin-top:var(--w-s-6);font-weight:600;color:var(--w-brand)}
+.ep-sublink .w-icon{width:16px;height:16px}
+.ep-center{text-align:center}
+
+/* ── §3 How it works — split: step captions + animated match→book→sync canvas (cz4 bundle idiom) ── */
+.ephow{position:relative;margin-top:0}
+.ephow__pin{display:flex;flex-direction:column;gap:clamp(46px,6vw,96px)}
+.ephow__stage{display:flex;flex-direction:column;gap:clamp(46px,6vw,96px)}
+.ephow__head{margin:0}
+.ephow__dots{display:none}
+.ephow .ephow__media--video{position:static;background:none!important;border:0!important;box-shadow:none!important;border-radius:0!important;aspect-ratio:auto!important;overflow:visible;z-index:1}
+.ephow .ephow__media--video::after{display:none!important}
+.ephow .ephow__vid{position:static;display:block;width:100%;height:auto;border-radius:0;background:none;object-fit:contain}
+.ephow__text{position:relative;z-index:2}
+@media(min-width:841px){
+  .ephow{height:270vh;width:100vw;margin-left:calc(50% - 50vw)}
+  .ephow__pin{position:sticky;top:0;height:100vh;overflow:hidden;display:flex;flex-direction:column;gap:0}
+  .ephow__head{position:relative;z-index:6;flex:none;margin:0 auto;padding-top:clamp(84px,11vh,132px);display:flex;flex-direction:column;align-items:center;text-align:center}
+  .ephow__stage{position:relative;flex:1 1 auto;min-height:0;display:block}
+  .ephow__row{position:absolute;inset:0;margin:0!important;opacity:0;visibility:hidden;transition:opacity .55s var(--w-ease)}
+  .ephow__row.is-on{opacity:1;visibility:visible}
+  .ephow__row .ephow__text{position:absolute;top:50%;transform:translateY(-50%);left:clamp(40px,6vw,120px);max-width:min(31vw,414px);z-index:2}
+  .ephow__row--rev .ephow__text{left:auto;right:clamp(40px,6vw,120px)}
+  .ephow .ephow__media--video{position:absolute;bottom:0;right:0;left:auto;top:auto;width:min(52vw,810px);z-index:1;-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 56px),linear-gradient(to right,transparent 0,#000 56px,#000 calc(100% - 56px),transparent 100%);-webkit-mask-composite:source-in;mask-image:linear-gradient(to bottom,transparent 0,#000 56px),linear-gradient(to right,transparent 0,#000 56px,#000 calc(100% - 56px),transparent 100%);mask-composite:intersect}
+  .ephow__row--rev .ephow .ephow__media--video,.ephow__row--rev.ephow__row .ephow__media--video{right:auto;left:0}
+  .ephow__dots{display:flex;position:absolute;left:0;right:0;bottom:2.4vh;justify-content:center;gap:10px;z-index:5}
+  .ephow__dot{width:8px;height:8px;border-radius:50%;background:rgba(28,26,36,.26);transition:background .3s,transform .3s}
+  .ephow__dot.is-on{background:var(--w-brand);transform:scale(1.3)}
+}
+.ephow__row{display:grid;grid-template-columns:0.82fr 1.35fr;gap:clamp(24px,3vw,52px);align-items:center}
+.ephow__row--rev .ephow__text{order:2}
+.ephow__row--rev .ephow__media{order:1}
+.ephow__text{display:flex;gap:16px;align-items:flex-start}
+.ephow__n{font-family:var(--w-font-mono);font-size:13px;font-weight:700;color:var(--w-brand);letter-spacing:.06em;background:var(--w-brand-soft);border:1px solid var(--w-brand-line);border-radius:var(--w-r-pill);padding:5px 12px;flex:none;margin-top:5px}
+.ephow__text h3{font-size:clamp(1.2rem,.6vw+1.05rem,1.6rem);font-weight:700;color:var(--w-text);line-height:1.22;margin:0 0 10px}
+.ephow__text p{color:var(--w-text-2);line-height:1.6;margin:0;font-size:clamp(1rem,.2vw+.96rem,1.1rem);max-width:44ch}
+.ephow__pts{list-style:none;margin:clamp(14px,1.4vw,20px) 0 0;padding:0;display:flex;flex-direction:column;gap:clamp(7px,.7vw,10px);max-width:44ch}
+.ephow__pts li{position:relative;padding-left:19px;color:var(--w-text-2);font-size:clamp(.9rem,.14vw+.87rem,.98rem);line-height:1.45}
+.ephow__pts li::before{content:"";position:absolute;left:0;top:.52em;width:6px;height:6px;border-radius:50%;background:var(--w-brand)}
+.ephow__media{position:relative;border-radius:var(--w-r-2xl);background:var(--w-glass-fill);border:1px solid var(--w-line);box-shadow:var(--w-shadow-lg);aspect-ratio:1180/860;overflow:hidden}
+.ephow__media::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;box-shadow:inset 0 1px 0 rgba(255,255,255,.7)}
+@media(max-width:840px){.ephow__row{grid-template-columns:1fr;gap:clamp(34px,6vw,52px)}.ephow__row--rev .ephow__text{order:0}.ephow__row--rev .ephow__media{order:1}}
+
+
+/* §3 scene extras — opt-in toggles (s1), booking+sync (s3), shared stat/slot/record */
+/* booking scene (s3) */
+
+/* ── §3 wireframe scenes: REAL DS1 company components over per-scene ghost UI ── */
+/* DS1 component library (lifted verbatim from Design System_1_Main.html, scoped) */
+/* positioning node inside the 1180x860 canvas */
+/* wireframe backdrop (flat-wireframe language) */
+/* per-scene fields (motif variety) */
+/* ── scene animations ── */
+/* s1 opt-in toggles (staggered flip) + verified badge reveal */
+/* s2 match: scan, focus ring, best-fit reveal, filter pills */
+/* s3 book: cursor, book->booked crossfade, status badge, synced reveal */
+/* shared */
+
+/* ── §3 scene 1 RICH: real Experts-directory components (C-EX-001), DS5/DS7 neu ── */
+/* mini opt-in toggle (neu) */
+/* floating pulled-forward profile card ring */
+/* ── scene-1 rich animations: rows 3-4 opt in (invited/pending -> active + toggle flip) ── */
+
+/* §3 scene-1 additions: real search bar, Filter/Sort tools, industry tags, table footer (C-EX-001) */
+
+/* §3 scene-1: DS5 bg motifs, thicker rim, softer gray shadow, enlarged Diana card, arrow */
+/* softer gray shadows (scoped to scene 1) + thicker bloom rim */
+/* DS5 squircle-grid motif */
+/* DS5 binary watermark motif */
+/* enlarged Diana highlight card + contextual animation */
+/* annotation arrow + label */
+/* white 2x cursor: clicks Diana row, then her card appears */
+/* Diana card appears AFTER the click */
+/* Diana card: thin gray outline (no purple ring), keep frosted glass */
+/* purple buttons -> dark glass */
+/* ── §3 scene 1 v2 JOURNEY rev2: sequential cursor-driven opt-in flow, crossed grid, edge fade, DS5 neu ── */
+/* sequential timeline — 10s loop, cursor-driven */
+/* ── §3 scene 2 v2 PAIRING: ExpertScore AI top-down match flow — animated-scene kit, squircle motif ── */
+/* sequential timeline — 10s loop */
+/* ── §3 scene 3 v2: one-click book -> CRM sync (diagonal duo), animated-scene kit, sequential ── */
+/* sequential timeline — 10s, cursor-driven */
+@media(min-width:841px){.ephow__row--big{grid-template-columns:1fr 1.3fr}.ephow__row--big.ephow__row--rev{grid-template-columns:1.3fr 1fr}}
+
+.ep-linkrow{display:flex;flex-wrap:wrap;gap:14px 26px;justify-content:center;margin-top:var(--w-s-7)}
+/* ═ §4 SHOWCASE — tabbed real-component showcase (light · liquid-glass) ═ */
+/* §4 showcase — cz-showcase layout (W-CARLY "See it in action"): rail left, BIG device
+   attached to the right edge of the screen, faded white on its right side */
+.ep-show{display:grid;grid-template-columns:minmax(300px,0.62fr) 1.38fr;gap:var(--w-s-6);align-items:center;
+  width:min(1680px,98vw);margin:0 0 0 auto;padding-left:var(--w-container-pad)}
+.ep-show>*{min-width:0}
+.ep-show__rail{display:flex;flex-direction:column;align-items:flex-start;gap:var(--w-s-4)}
+.ep-show__title{font-size:var(--w-fs-h2);font-weight:var(--w-fw-bold);letter-spacing:var(--w-ls-tight);line-height:var(--w-lh-snug);color:var(--w-text);max-width:18ch}
+@media(max-width:920px){.ep-show{grid-template-columns:1fr;gap:var(--w-s-5);width:100%;margin:0;padding-inline:var(--w-container-pad)}}
+.ep-show__tabs{display:flex;flex-direction:column;gap:10px;align-self:stretch;min-width:0;max-width:100%}
+@media(max-width:920px){.ep-show__tabs{flex-direction:column;overflow:visible;gap:8px;padding-bottom:0}}
+.ep-show__tab{display:flex;gap:13px;align-items:flex-start;text-align:left;padding:15px 17px;border-radius:var(--w-r-lg);background:var(--w-glass-fill);backdrop-filter:var(--w-glass-blur);-webkit-backdrop-filter:var(--w-glass-blur);border:1px solid var(--w-glass-line);cursor:pointer;transition:background .25s var(--w-ease),border-color .25s var(--w-ease),box-shadow .25s var(--w-ease);width:100%;font:inherit}
+.ep-show__tab:hover{border-color:var(--w-glass-line-bright)}
+.ep-show__tab.is-active{background:var(--w-glass-fill-strong);border-color:var(--w-brand-line);box-shadow:var(--w-glass-shadow)}
+.ep-show__tab-ic{flex:none;width:38px;height:38px;border-radius:14px;display:grid;place-items:center;color:#fff;
+  background:radial-gradient(ellipse 100% 65% at 50% -25%,rgba(255,255,255,.22) 0%,transparent 65%),linear-gradient(180deg,rgba(48,42,72,.96) 0%,rgba(28,26,36,.97) 100%);
+  border:1px solid rgba(255,255,255,.14);
+  box-shadow:inset 0 1.5px 0 rgba(255,255,255,.28),inset 0 -0.5px 0 rgba(255,255,255,.10),0 8px 18px -6px rgba(28,26,36,.38)}
+.ep-show__tab-ic .w-icon{width:19px;height:19px;color:#fff}
+.ep-show__tab-tx b{display:block;color:var(--w-text);font-weight:600;font-size:1rem}
+.ep-show__tab-tx small{display:block;color:var(--w-text-3);font-size:.85rem;margin-top:3px;line-height:1.42}
+.ep-show__tab.is-active .ep-show__tab-tx b{color:var(--w-brand)}
+@media(max-width:920px){.ep-show__tab{min-width:0;width:100%;flex:0 0 auto;align-items:center}.ep-show__tab-tx small{display:none}}
+.ep-show__stage{position:relative;border-radius:var(--w-r-2xl);overflow:hidden;width:100%;aspect-ratio:1480/980;max-height:min(72vh,700px);min-height:clamp(390px,40vw,470px)}
+/* n-card-rim--bloom (DS5) — flat surface + lift, CHARCOAL corner-bloom rim, frosted-glass outline */
+.ep-show__stage.n-card-rim--bloom{background:var(--w-grad-surface);box-shadow:var(--w-shadow-lg);isolation:isolate}
+.ep-show__stage.n-card-rim--bloom::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:5px;z-index:6;pointer-events:none;
+  background:radial-gradient(circle at 100% 0%,rgba(28,26,36,.85) 0%,rgba(28,26,36,.42) 28%,transparent 65%),
+             radial-gradient(circle at 0% 100%,rgba(28,26,36,.75) 0%,rgba(28,26,36,.38) 28%,transparent 65%),
+             linear-gradient(135deg,rgba(255,255,255,.55),rgba(255,255,255,.22) 40%,rgba(255,255,255,.4));
+  backdrop-filter:blur(14px) saturate(1.15);-webkit-backdrop-filter:blur(14px) saturate(1.15);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.5);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;
+          mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);mask-composite:exclude}
+/* right-edge white fade (device runs off the right of the screen, cz-showcase style) */
+.ep-show__fade{position:absolute;top:0;right:0;bottom:0;width:12%;z-index:7;pointer-events:none;
+  background:linear-gradient(to right,transparent,var(--w-bg))}
+@media(max-width:920px){.ep-show__fade{display:none}.ep-show__stage{max-height:none}}
+.ep-show__scene{position:absolute;inset:0;padding:clamp(20px,2.3vw,32px);opacity:0;visibility:hidden;transition:opacity .45s var(--w-ease)}
+.ep-show__scene.is-active{opacity:1;visibility:visible}
+/* real-app showcase scenes — full-bleed embed of the actual SE dashboard */
+.ep-show__scene--app{padding:0}
+.ep-show__appframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block;background:transparent;pointer-events:none}
+
+/* ═════════ §5 PROOF (dark) — stat block + testimonial split ═════════ */
+.ep-proof__grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:clamp(28px,4vw,56px);align-items:center;margin-top:var(--w-s-6)}
+@media(max-width:900px){.ep-proof__grid{grid-template-columns:1fr;gap:36px}}
+.ep-proof__stats{display:flex;flex-direction:column;gap:26px}
+#proof{position:relative;overflow:hidden}
+#proof::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.055) 1px,transparent 1px);background-size:clamp(48px,5vw,72px) clamp(48px,5vw,72px);background-position:center;-webkit-mask-image:radial-gradient(130% 90% at 50% 40%,#000 35%,transparent 78%);mask-image:radial-gradient(130% 90% at 50% 40%,#000 35%,transparent 78%)}
+#proof>.w-container{position:relative;z-index:1}
+.ep-bigstat__v{font-size:clamp(2.6rem,4vw,3.6rem);font-weight:800;letter-spacing:-.02em;color:var(--w-text);line-height:1}
+.ep-bigstat__d{margin-top:8px;color:var(--w-text-2);line-height:1.5;max-width:34ch}
+.ep-quote{position:relative;padding:clamp(26px,3vw,38px);border-radius:var(--w-r-2xl)}
+/* frosted WHITE glass testimonial card on the dark proof band (cz-light flips the text tokens) */
+.ep-quote.cz-light{background:linear-gradient(160deg,rgba(255,255,255,.96),rgba(255,255,255,.84));
+  backdrop-filter:blur(16px) saturate(140%);-webkit-backdrop-filter:blur(16px) saturate(140%);
+  border:1px solid rgba(255,255,255,.55);
+  box-shadow:0 -9px 24px rgba(28,26,36,.10),0 22px 48px -14px rgba(0,0,0,.45),inset 0 1.5px 0 rgba(255,255,255,.95),inset 0 -1.5px 0 rgba(28,26,36,.05)}
+.ep-quote.cz-light .ep-quote__av{border-color:rgba(28,26,36,.12)}
+.ep-quote__mark{width:34px;height:34px;color:var(--w-brand);margin-bottom:14px}
+.ep-quote p{font-size:clamp(1.14rem,1vw+1rem,1.46rem);line-height:1.42;color:var(--w-text);font-weight:500}
+.ep-quote__by{display:flex;align-items:center;gap:14px;margin-top:24px;flex-wrap:wrap}
+.ep-quote__av{width:52px;height:52px;border-radius:var(--w-r-full);background:var(--w-card-lo) center/cover no-repeat;flex:none;border:1px solid var(--w-glass-line)}
+.ep-quote__meta{min-width:0}
+.ep-quote__meta b{display:block;color:var(--w-text);font-weight:600}
+.ep-quote__meta span{font-size:.9rem;color:var(--w-text-3)}
+.ep-quote__stat{margin-left:auto;text-align:right}
+.ep-quote__stat b{display:block;font-size:1.7rem;font-weight:800;color:var(--w-brand);line-height:1}
+.ep-quote__stat span{font-size:.78rem;color:var(--w-text-3)}
+@media(max-width:520px){.ep-quote__stat{margin-left:0;text-align:left;width:100%;margin-top:6px}}
+
+/* ═════════ §6 BETTER TOGETHER (light) — e9 photo bg · text right-aligned ═════════ */
+#better-together{position:relative;overflow:hidden;display:grid;align-items:center;isolation:isolate;
+  min-height:clamp(540px,72vh,780px);padding-block:clamp(56px,7vw,110px)}
+.ep-bt2__bg{position:absolute;inset:0;z-index:0;background:#e9e9eb url("/assets/images/w/experts/asset-3.webp") center/cover no-repeat;pointer-events:none}
+.ep-bt2__bg::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(90deg,rgba(18,17,20,.5) 0%,rgba(18,17,20,.22) 22%,rgba(18,17,20,0) 44%)}   /* dark fade, photo side (left) */
+.ep-bt2__wide{position:relative;z-index:1;width:100%;padding-inline:clamp(20px,3vw,48px)}
+.ep-bt2__col{max-width:620px;margin-left:auto;text-align:right}
+.ep-bt2__col .w-section-head{margin-bottom:var(--w-s-6);text-align:right}
+.ep-bt2__col .w-section-head__title,.ep-bt2__col .w-section-head__lead{margin-left:auto}
+.ep-bt2__col .w-cta-band{text-align:right;align-items:flex-end;max-width:460px;margin-left:auto;
+  padding:clamp(18px,2.2vw,30px) clamp(22px,3.5vw,45px);gap:var(--w-s-3)}   /* ≈30% shorter than the stock band */
+.ep-bt2__col .w-cta-band__lead{margin-left:auto}
+.ep-bt2__col .w-cta-band__actions{justify-content:flex-end}
+@media(min-width:861px){#better-together{aspect-ratio:6067/3400;min-height:0}}   /* full e9 frame, no cover-crop */
+@media(max-width:860px){.ep-bt2__col{max-width:100%}
+  .ep-bt2__bg{background-position:22% center}
+  .ep-bt2__bg::after{content:"";position:absolute;inset:0;background:rgba(238,238,240,.9)}}
+
+/* ═════════ §7 FOR YOUR CUSTOMERS (light) — e10 photo bg · text left-aligned · mirror of §6 ═════════ */
+#for-customers{position:relative;overflow:hidden;display:grid;align-items:center;isolation:isolate;
+  min-height:clamp(540px,72vh,780px);padding-block:clamp(56px,7vw,110px)}
+.ep-cust2__bg{position:absolute;inset:0;z-index:0;background:#e9e9eb url("/assets/images/w/experts/asset-4.webp") center/cover no-repeat;pointer-events:none}
+.ep-cust2__bg::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(270deg,rgba(18,17,20,.5) 0%,rgba(18,17,20,.22) 22%,rgba(18,17,20,0) 44%)}   /* dark fade, photo side (right) */
+.ep-cust2__wide{position:relative;z-index:1;width:100%;padding-inline:clamp(20px,3vw,48px)}
+.ep-cust2__col{max-width:620px;margin-right:auto;text-align:left}
+.ep-cust2__col .w-section-head{margin-bottom:var(--w-s-6);text-align:left;align-items:flex-start;margin-left:0;margin-right:0}
+.ep-cust2__col .w-section-head__title,.ep-cust2__col .w-section-head__lead{margin-right:auto}
+/* single glass card (same recipe as §6's band) — benefit texts + CTA, left-aligned */
+.ep-cust2__col .w-cta-band{text-align:left;align-items:flex-start;max-width:460px;margin-left:0;margin-right:auto;
+  padding:clamp(18px,2.2vw,30px) clamp(22px,3.5vw,45px);gap:var(--w-s-3)}   /* matches §6's compact band */
+.ep-cust2__col .w-cta-band__actions{justify-content:flex-start}
+.ep-cust2__perks{display:flex;flex-direction:column;gap:13px}
+.ep-cust2__perks span{display:inline-flex;align-items:center;gap:11px;font-weight:var(--w-fw-semi);color:var(--w-text)}
+.ep-cust2__perks .w-icon{width:18px;height:18px;color:#fff;flex:none;filter:drop-shadow(0 1px 2px rgba(28,26,36,.35))}
+@media(min-width:861px){#for-customers{aspect-ratio:6067/3400;min-height:0}}   /* full e11 frame, no cover-crop */
+@media(max-width:860px){.ep-cust2__col{max-width:100%}
+  .ep-cust2__bg{background-position:72% center}
+  .ep-cust2__bg::after{content:"";position:absolute;inset:0;background:rgba(238,238,240,.9)}}
+
+/* ═════════ §8 CTA (dark) — nebula grayscale band ═════════ */
+.ep-cta{position:relative;overflow:hidden;isolation:isolate;border-radius:var(--w-r-2xl);background:var(--w-charcoal);box-shadow:0 18px 44px -22px rgba(28,26,36,.5)}
+.ep-cta__bg{position:absolute;inset:0;z-index:0;background:var(--w-bg-deep) center/cover no-repeat;background-image:url("/assets/images/w/experts/asset-5.webp");filter:grayscale(1) brightness(.5)}
+.ep-cta__bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,.5),rgba(10,10,10,.66))}
+.ep-cta .w-cta-band{position:relative;z-index:1;background:transparent;border:0;backdrop-filter:none;-webkit-backdrop-filter:none;box-shadow:none}
+.ep-cta .w-cta-band__title{color:#fff}
+.ep-cta .w-cta-band__lead{color:rgba(255,255,255,.85)}
+.ep-cta .w-btn--glass{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.26);color:#fff;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}

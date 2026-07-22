@@ -1,0 +1,344 @@
+/* Page-scoped image tokens (D51): this bundle's stale foundation declared these
+   --w-img-* tokens that canonical ds7.css lacks. Re-declared here verbatim,
+   pointing at already-shared images. Never edit canonical ds7.css. */
+:root{
+  --w-img-av-allison: url("/assets/images/w/av-allison.png");
+  --w-img-logo-google: url("/assets/images/w/logo-google.svg");
+  --w-img-logo-highspot: url("/assets/images/w/logo-highspot.svg");
+  --w-img-logo-outreach: url("/assets/images/w/logo-outreach.png");
+  --w-img-logo-seismic: url("/assets/images/w/logo-seismic.svg");
+  --w-img-logo-sixsense: url("/assets/images/w/logo-sixsense.svg");
+}
+
+/* ============================================================================
+   W-CASE-STUDIES · Case Studies  /case-studies/  · Tier 3 · Proof & authority
+   Lean 3-section proof page. Theme rhythm D · L · [L w/ dark CTA band].
+     dark hero (the promise + a trust strip of the 3 customer logos) →
+     ONE light beat = the three sourced outcome cards (the whole argument) →
+     dark CTA band close on the reused nebula.
+   Prefixes: csh- hero · cso- outcomes · csc- cta band.
+   ~100% REUSE: 3 foundation logo tokens + 3 avatars + the nebula bg. No scenes.
+   Foundation-only: every value is a --w-* token. No invented tokens, no raw brand hex.
+   ============================================================================ */
+/* ===== light-band technique (.cz-light) — WHITE variant (verbatim from sibling Carly-depth pages) ===== */
+.cz-light{
+  background:var(--w-bg);color:var(--w-text);
+  --w-bg:#ffffff; --w-bg-deep:#ececec; --w-bg-elev:#ffffff;
+  --w-card:#ffffff; --w-card-lo:#efefef; --w-card-hi:#ffffff;
+  --w-text:var(--w-charcoal); --w-text-2:rgba(28,26,36,0.66); --w-text-3:rgba(28,26,36,0.62);
+  --w-text-prose:#302d2e; --w-text-on-brand:#ffffff; --w-icon-ink:var(--w-charcoal);
+  --w-line-soft:rgba(28,26,36,0.06); --w-line:rgba(28,26,36,0.10); --w-line-strong:rgba(28,26,36,0.16); --w-edge-top:rgba(255,255,255,0.9);
+  --w-brand:var(--w-purple-ink); --w-brand-2:var(--w-purple); --w-brand-soft:rgba(152,135,244,0.10); --w-brand-line:rgba(152,135,244,0.28);
+  --w-shadow-raise:0 8px 18px -8px rgba(28,26,36,0.07), inset 0 1px 0 rgba(255,255,255,0.9);
+  --w-shadow-raise-soft:0 4px 10px -6px rgba(28,26,36,0.05), inset 0 1px 0 rgba(255,255,255,0.85);
+  --w-shadow-recess:inset 0 1px 3px rgba(28,26,36,0.05), inset 0 -1px 0 rgba(255,255,255,0.8);
+  --w-shadow-recess-deep:inset 0 2px 5px rgba(28,26,36,0.07), inset 0 -1px 0 rgba(255,255,255,0.7);
+  --w-shadow-sm:0 1px 2px rgba(28,26,36,0.04); --w-shadow-md:0 4px 12px rgba(28,26,36,0.05); --w-shadow-lg:0 12px 28px rgba(28,26,36,0.07);
+  --w-glow-brand:0 2px 8px rgba(28,26,36,0.05); --w-glow-brand-strong:0 6px 16px rgba(28,26,36,0.07);
+  --w-glass-fill:rgba(255,255,255,0.66); --w-glass-fill-strong:rgba(255,255,255,0.86); --w-glass-tint:rgba(28,26,36,0.90);
+  --w-glass-fill-soft:rgba(28,26,36,0.03); --w-glass-line:rgba(28,26,36,0.10); --w-glass-line-bright:rgba(28,26,36,0.16);
+  --w-glass-rim-top:rgba(255,255,255,0.95); --w-glass-rim-bottom:rgba(28,26,36,0.05);
+  --w-glass-blur:blur(18px) saturate(140%); --w-glass-blur-lg:blur(22px) saturate(145%);
+  --w-glass-shadow:0 10px 24px rgba(28,26,36,0.06); --w-glass-shadow-soft:0 4px 12px rgba(28,26,36,0.05);
+  --w-cta-fill:var(--w-glass-tint); --w-cta-text:#ffffff; --w-cta-glow:var(--w-shadow-md); --w-cta-glow-strong:var(--w-shadow-lg);
+  --w-card-brand-wash:linear-gradient(160deg, rgba(28,26,36,0.06), rgba(28,26,36,0.015)); --w-card-brand-line:var(--w-line-strong);
+  --w-tag-brand-bg:rgba(28,26,36,0.06); --w-tag-brand-fg:var(--w-text); --w-focus:rgba(28,26,36,0.55);
+  --w-grad-surface:linear-gradient(180deg, #ffffff 0%, #f5f5f5 100%);
+  --w-grad-surface-hi:linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
+  --w-grad-recess:linear-gradient(180deg, #ededed 0%, #e3e3e3 100%);
+  /* ⚠️ MUST re-declare: --w-edge-fade is declared in :root with var(--w-bg) INSIDE it, so it
+     substitutes to the DARK bg there and inherits already-resolved. Without this, every cux-
+     scene's edge-fade dissolves to charcoal on a white section (the "gray box" bug). */
+  --w-edge-fade:radial-gradient(ellipse 84% 82% at 50% 48%, transparent 52%, var(--w-bg) 100%);
+}
+@media (prefers-reduced-transparency: reduce){
+  .cz-light .w-glass,.cz-light .w-btn--glass,.cz-light .w-tag,.cz-light .w-card,.cz-light .w-cta-band{background:var(--w-card);border-color:var(--w-line)}
+}
+
+/* ===== asymmetric section rhythm (tight top / generous bottom) ===== */
+.w-section{padding-block:clamp(36px, 2.2vw + 1rem, 64px) clamp(64px, 4vw + 1.7rem, 108px)}
+.w-section--hero{padding-block:clamp(96px, 6rem + 5vw, 168px) clamp(72px, 5vw + 2rem, 128px)}
+.w-badge{box-shadow:0 2px 10px rgba(12,10,22,.12), inset 0 1px 0 var(--w-glass-rim-top)}
+.w-panel-rise{--w-panel-overlap:34px}
+
+
+/* ═══ page-scoped image tokens (dev paths; base64'd at bundle) ══════════════ */
+:root{
+  --w-img-csc-ctabg:url("/assets/images/w/case-studies/csc-ctabg.webp");
+  /* Jon + Lauren are page-scoped webp copies; Keegan is foundation-wide
+     (--w-img-av-keegan) — permitted TESTIMONIAL use here. */
+  --w-img-av-jon:url("/assets/images/w/case-studies/av-jon.webp");
+  --w-img-av-lauren:url("/assets/images/w/case-studies/av-lauren.webp");
+  /* Warmly override: the foundation --w-img-logo-warmly asset is a self-contained
+     dark TILE with the wordmark knocked out — it can't be filtered white/charcoal
+     to sit beside the transparent Sendoso/Spara wordmarks. Rasterized from the
+     project's own transparent Warmly wordmark SVG so all three read as one family. */
+  --w-img-logo-warmly:url("/assets/images/w/case-studies/logo-warmly.webp");
+  --w-img-csh-herobg:url("/assets/images/w/case-studies/csh-herobg.webp");
+}
+
+/* ═══ §1 · HERO — DARK, centered · cs1 full-bleed bg + legibility scrim ══════ */
+.csh{position:relative;text-align:center;overflow:hidden;isolation:isolate;
+  min-height:clamp(600px,80vh,880px)}
+/* full-bleed image — no scrim/dim (per Jeff) */
+.csh::before{content:"";position:absolute;inset:0;z-index:-1;
+  background:var(--w-img-csh-herobg) center/cover no-repeat}
+.csh__wrap{display:flex;flex-direction:column;align-items:center}
+.csh__copy{max-width:720px;display:flex;flex-direction:column;align-items:center}
+.csh__title{font-size:var(--w-fs-display);font-weight:var(--w-fw-black);
+  letter-spacing:var(--w-ls-tight);margin-top:var(--w-s-4)}
+.csh__lead{margin-top:var(--w-s-5);max-width:56ch}
+.csh__cta{margin-top:var(--w-s-7)}
+
+/* ═══ §2 · FEATURED OUTCOMES — LIGHT · 3-up sourced-win cards ═══════════════ */
+.cso__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--w-s-6);
+  margin-top:var(--w-s-8)}
+/* container styling comes from the DS7 brand card (.w-card .w-card--brand);
+   gap:0 lets the element's own margins own the internal rhythm */
+.cso__card{gap:0}
+/* the company logo (charcoal on the light card) */
+.cso__logo{height:26px;width:120px;background-size:contain;background-repeat:no-repeat;
+  background-position:left center;filter:grayscale(1) brightness(.35);opacity:.9}
+.cso__logo--sendoso{background-image:var(--w-img-logo-sendoso)}
+.cso__logo--warmly{background-image:var(--w-img-logo-warmly)}
+.cso__logo--spara{background-image:var(--w-img-logo-spara)}
+/* the headline metric — big gradient numeral + the outcome, one line of copy */
+.cso__metric{margin-top:var(--w-s-6);font-size:var(--w-fs-h4);line-height:1.25;
+  color:var(--w-text);font-weight:var(--w-fw-semi)}
+.cso__metric-v{display:block;font-size:var(--w-fs-display);font-weight:var(--w-fw-black);
+  line-height:1;letter-spacing:var(--w-ls-tight);margin-bottom:var(--w-s-2);
+  background:var(--w-grad-brand);-webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent}
+/* the customer's words */
+.cso__quote{margin:var(--w-s-6) 0 0;font-family:var(--w-font-serif);font-style:italic;
+  font-size:var(--w-fs-prose);line-height:1.5;color:var(--w-text-2)}
+/* attribution — avatar + name · role */
+.cso__by{margin-top:auto;padding-top:var(--w-s-6);display:flex;gap:var(--w-s-3);align-items:center}
+.cso__av{width:44px;height:44px;flex:none;border-radius:var(--w-r-full);
+  background-size:cover;background-position:center;filter:grayscale(1);
+  box-shadow:0 0 0 2px var(--w-card),0 4px 10px -5px rgba(28,26,36,.3)}
+.cso__nm{font-size:var(--w-fs-sm);font-weight:var(--w-fw-bold);color:var(--w-text)}
+.cso__rl{font-size:var(--w-fs-xs);color:var(--w-text-3)}
+
+/* ═══ §3 · CTA — dark nebula band on a light section (canonical close) ══════ */
+.csc__band{position:relative;overflow:hidden;border-radius:var(--w-r-2xl);
+  padding:clamp(56px,5.2vw,104px) var(--w-s-6);text-align:center;isolation:isolate}
+.csc__band::before{content:"";position:absolute;inset:0;z-index:-2;
+  background-image:var(--w-img-csc-ctabg);background-size:cover;background-position:center;
+  filter:grayscale(1)}
+.csc__band::after{content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(180deg, rgba(28,26,36,0.72), rgba(28,26,36,0.82))}
+.csc__title{font-size:var(--w-fs-h1);color:#fff;max-width:680px;margin-inline:auto}
+.csc__actions{margin-top:var(--w-s-7);display:flex;justify-content:center}
+.csc__band .w-btn--primary{background:var(--w-grad-brand);color:var(--w-charcoal);
+  box-shadow:var(--w-glow-brand)}
+.csc__band .w-btn--primary:hover{box-shadow:var(--w-glow-brand-strong)}
+
+/* ═══ §2 · WHY IT WORKS — DARK · research stat band ═════════════════════════ */
+.csw__title{font-size:var(--w-fs-h2);font-weight:var(--w-fw-bold);
+  letter-spacing:var(--w-ls-tight);line-height:var(--w-lh-snug);max-width:22ch;margin-inline:auto}
+.csw__lead{margin-top:var(--w-s-4);max-width:60ch;margin-inline:auto}
+.csw__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:var(--w-s-9)}
+.csw__stat{text-align:center;padding:var(--w-s-2) clamp(16px,2vw,28px);
+  border-left:1px solid var(--w-line)}
+.csw__stat:first-child{border-left:none}
+.csw__v{display:block;font-size:var(--w-fs-display);font-weight:var(--w-fw-black);
+  line-height:1;letter-spacing:var(--w-ls-tight);
+  background:var(--w-grad-brand);-webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent}
+.csw__d{margin-top:var(--w-s-4);font-size:var(--w-fs-sm);line-height:1.55;color:var(--w-text-2)}
+
+/* ═══ §4 · CUSTOMER SPOTLIGHT — LIGHT · two-column deep-dive + quote card ════ */
+.csd__grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(32px,4.4vw,72px);
+  align-items:center}
+.csd__title{font-size:var(--w-fs-h2);font-weight:var(--w-fw-bold);
+  letter-spacing:var(--w-ls-tight);line-height:var(--w-lh-snug);
+  margin:var(--w-s-4) 0 var(--w-s-7);max-width:20ch}
+.csd__media{display:flex;flex-direction:column;gap:var(--w-s-5)}
+.csd__shot{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;object-position:center;
+  border-radius:var(--w-r-xl);box-shadow:var(--w-shadow-md)}
+.csd__step{margin-top:var(--w-s-6)}
+.csd__step-k{display:block;font-family:var(--w-font-kicker);text-transform:uppercase;
+  letter-spacing:.12em;font-size:var(--w-fs-xs);font-weight:var(--w-fw-bold);color:var(--w-brand)}
+.csd__step-b{margin-top:var(--w-s-2);font-size:var(--w-fs-prose);line-height:1.6;color:var(--w-text-2)}
+.csd__quotecard{position:relative;padding:clamp(28px,3vw,44px);border-radius:var(--w-r-2xl);
+  background:var(--w-card);border:1px solid var(--w-line);box-shadow:var(--w-shadow-raise-soft)}
+.csd__mark{display:block;width:34px;height:34px;fill:none;stroke:currentColor;stroke-width:1.6;
+  color:var(--w-brand);margin-bottom:var(--w-s-4)}
+.csd__quote{margin:0;font-family:var(--w-font-serif);font-style:italic;
+  font-size:var(--w-fs-h4);line-height:1.4;color:var(--w-text)}
+.csd__by{margin-top:var(--w-s-6);display:flex;gap:var(--w-s-3);align-items:center}
+.csd__av{width:48px;height:48px;flex:none;border-radius:var(--w-r-full);
+  background-size:cover;background-position:center;filter:grayscale(1);
+  box-shadow:0 0 0 2px var(--w-card),0 4px 10px -5px rgba(28,26,36,.3)}
+.csd__nm{font-size:var(--w-fs-sm);font-weight:var(--w-fw-bold);color:var(--w-text)}
+.csd__rl{font-size:var(--w-fs-xs);color:var(--w-text-3)}
+.csd__stat{margin-top:var(--w-s-6);padding-top:var(--w-s-6);border-top:1px solid var(--w-line);
+  display:flex;align-items:baseline;gap:var(--w-s-3)}
+.csd__stat-v{font-size:var(--w-fs-h2);font-weight:var(--w-fw-black);line-height:1;
+  letter-spacing:var(--w-ls-tight);background:var(--w-grad-brand);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.csd__stat-l{font-size:var(--w-fs-sm);color:var(--w-text-2)}
+
+/* ═══ §5 · OUTCOMES BY TEAM — LIGHT · 3 cross-linked tiles ══════════════════ */
+.cst__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--w-s-6);margin-top:var(--w-s-8)}
+/* container styling comes from the DS7 brand card (.w-card .w-card--brand .w-card--link) */
+.cst__tile{align-items:flex-start;gap:0;text-decoration:none}
+/* icon = the DS7 brand-card icon tile (dark, glowing) — like the reference */
+.cst__icon{display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;
+  border-radius:var(--w-r-md);background:var(--w-cta-fill);color:var(--w-cta-text);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.35), var(--w-cta-glow)}
+.cst__icon .w-icon{color:#fff}
+.cst__team{margin-top:var(--w-s-5);font-family:var(--w-font-kicker);text-transform:uppercase;
+  letter-spacing:.12em;font-size:var(--w-fs-xs);font-weight:var(--w-fw-bold);color:var(--w-text-3)}
+.cst__h{margin-top:var(--w-s-2);font-size:var(--w-fs-lead);font-weight:var(--w-fw-bold);color:var(--w-text)}
+.cst__b{margin-top:var(--w-s-3);font-size:var(--w-fs-sm);line-height:1.55;color:var(--w-text-2)}
+.cst__link{margin-top:var(--w-s-6);display:inline-flex;align-items:center;gap:var(--w-s-2);
+  font-size:var(--w-fs-sm);font-weight:var(--w-fw-bold);color:var(--w-brand)}
+.cst__link .w-icon{width:16px;height:16px;transition:transform var(--w-dur) var(--w-ease)}
+.cst__tile:hover .cst__link .w-icon{transform:translateX(3px)}
+
+/* ═══ §5b · REAL TEAMS — LIGHT · candid 3-up photo band ═════════════════════ */
+.cst2__title{font-size:var(--w-fs-h2);font-weight:var(--w-fw-bold);
+  letter-spacing:var(--w-ls-tight);line-height:var(--w-lh-snug);text-align:center}
+.cst2__mq{margin-top:var(--w-s-8)}
+.cst2__mq .w-marquee__track{gap:var(--w-s-5);animation-duration:64s}
+.cst2__ph{margin:0;flex:none;width:clamp(210px,22vw,308px);aspect-ratio:4/5;
+  border-radius:var(--w-r-2xl);overflow:hidden;border:1px solid var(--w-line);box-shadow:var(--w-shadow-md)}
+.cst2__ph img{display:block;width:100%;height:100%;object-fit:cover;object-position:center;
+  filter:grayscale(1) contrast(1.02);transition:filter var(--w-dur) var(--w-ease),transform var(--w-dur) var(--w-ease)}
+.cst2__ph:hover img{filter:grayscale(0);transform:scale(1.03)}
+@media(max-width:640px){.cst2__ph{width:clamp(180px,64vw,240px)}}
+
+/* ═══ §6 · THE PLAYBOOK — DARK (panel-rise) · 3-step mechanism ══════════════ */
+.csm__title{font-size:var(--w-fs-h2);font-weight:var(--w-fw-bold);
+  letter-spacing:var(--w-ls-tight);line-height:var(--w-lh-snug);max-width:22ch;margin-inline:auto}
+.csm__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--w-s-6);margin-top:var(--w-s-8)}
+.csm__step{position:relative;padding:var(--w-s-7);border-radius:var(--w-r-2xl);
+  background:var(--w-surface);border:1px solid var(--w-line)}
+.csm__fig{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;object-position:center;
+  border-radius:var(--w-r-lg);border:1px solid var(--w-line);margin-bottom:var(--w-s-6)}
+.csm__n{position:absolute;top:var(--w-s-6);right:var(--w-s-6);font-size:var(--w-fs-h3);
+  font-weight:var(--w-fw-black);line-height:1;color:var(--w-text-3);opacity:.32}
+.csm__icon{display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;
+  border-radius:var(--w-r-lg);background:var(--w-card-brand-wash);color:var(--w-brand)}
+.csm__icon .w-icon{width:24px;height:24px}
+.csm__h{margin-top:var(--w-s-5);font-size:var(--w-fs-lead);font-weight:var(--w-fw-bold);color:var(--w-text)}
+.csm__b{margin-top:var(--w-s-3);font-size:var(--w-fs-sm);line-height:1.6;color:var(--w-text-2)}
+
+/* ═══ §1b · TRUST MARQUEE — DARK band · uses foundation .w-marquee ═══════════ */
+.csmq{padding-block:clamp(40px,5vw,76px)}
+.csmq__label{margin-bottom:var(--w-s-6)}
+
+/* ═══ §7 · EXPERIENCES — LIGHT · premium review wall (bento) ════════════════ */
+.csr__head{display:flex;flex-direction:column;align-items:center;text-align:center;
+  margin-bottom:clamp(36px,4vw,64px)}
+.csr__kicker{align-self:center}
+.csr__display{margin-top:var(--w-s-4);font-size:clamp(64px,11vw,160px);line-height:.92;
+  font-weight:var(--w-fw-black);letter-spacing:-0.04em;color:var(--w-text)}
+.csr__year{margin-top:var(--w-s-3);font-family:var(--w-font-kicker);font-weight:var(--w-fw-bold);
+  font-size:var(--w-fs-sm);letter-spacing:.04em;color:var(--w-text-3)}
+/* masonry wall — ragged, varied card heights, packed tight (Pinterest-style).
+   CSS multicol = no-JS fallback; the layout script upgrades to shortest-column
+   flex packing (.csr__grid--js) so columns stay balanced with no vacant gaps. */
+.csr__wall{position:relative}
+/* soft white fade at the bottom of the aligned wall → seamless finish */
+.csr__wall::after{content:"";position:absolute;left:0;right:0;bottom:0;height:clamp(100px,12vw,170px);
+  background:linear-gradient(to bottom, transparent, var(--w-bg));pointer-events:none;z-index:2}
+.csr__grid{columns:4;column-gap:14px;column-fill:balance}
+/* JS mode: flex-start so the script can measure content heights per column;
+   the script then sets each column's min-height to the tallest, and the last
+   card in each column grows (flex) so every column ends flush at one bottom line */
+.csr__grid--js{columns:auto;display:flex;align-items:flex-start;gap:14px}
+.csr__col{flex:1 1 0;min-width:0;display:flex;flex-direction:column;gap:14px}
+.csr__col > .csr__card:last-child{flex:1 1 auto}
+/* a card — sizes to its content; heights vary → the wall look */
+.csr__card{position:relative;display:flex;flex-direction:column;gap:var(--w-s-4);
+  break-inside:avoid;margin-bottom:14px;
+  padding:clamp(22px,1.7vw,28px);border-radius:var(--w-r-2xl);background:var(--w-card);
+  border:1px solid var(--w-line);box-shadow:var(--w-shadow-raise-soft);
+  transition:border-color var(--w-dur) var(--w-ease), box-shadow var(--w-dur) var(--w-ease), transform var(--w-dur) var(--w-ease)}
+.csr__grid--js .csr__card{margin-bottom:0}
+.csr__card:hover{border-color:var(--w-brand-line);box-shadow:var(--w-glow-brand);transform:translateY(-3px)}
+/* the "+" affordance, top-right */
+.csr__plus{width:18px;height:18px;flex:none;fill:none;stroke:currentColor;stroke-width:1.6;
+  color:var(--w-text-3);opacity:.5}
+/* stars */
+.csr__stars{display:inline-flex;gap:3px;color:var(--w-text)}
+.csr__stars .w-icon{width:16px;height:16px}
+.csr__stars--sm .w-icon{width:13px;height:13px}
+/* author row */
+.csr__auth{display:flex;align-items:center;gap:var(--w-s-3)}
+.csr__av{width:40px;height:40px;flex:none;border-radius:var(--w-r-full);
+  background-size:cover;background-position:center;filter:grayscale(1);
+  box-shadow:0 0 0 2px var(--w-card),0 4px 10px -5px rgba(28,26,36,.3)}
+.csr__auth-tx{display:flex;flex-direction:column;line-height:1.25}
+.csr__nm{font-size:var(--w-fs-sm);font-weight:var(--w-fw-bold);color:var(--w-text)}
+.csr__rl{font-size:var(--w-fs-xs);color:var(--w-text-3)}
+/* meta row: stars + plus */
+.csr__meta{display:flex;align-items:center;justify-content:space-between}
+/* the quote — the visual anchor; larger, tight */
+.csr__q{margin:0;font-size:var(--w-fs-lead);line-height:1.35;color:var(--w-text);
+  font-weight:var(--w-fw-semi);letter-spacing:-0.01em}
+.csr__q--xl{font-size:clamp(23px,1.8vw,29px);line-height:1.28}
+.csr__q--sm{font-size:var(--w-fs-body);font-weight:var(--w-fw-semi)}
+.csr__src{font-size:var(--w-fs-xs);color:var(--w-text-3);font-weight:var(--w-fw-bold);
+  text-transform:uppercase;letter-spacing:.1em}
+/* flip card pushes author to the bottom */
+.csr__card--flip .csr__q{order:-1}
+.csr__card .csr__q{margin-top:auto}
+.csr__card--flip .csr__auth{margin-top:auto}
+.csr__card--flip .csr__q{margin-top:0}
+/* aggregate card — an intentional premium DARK tile among the white review cards */
+.csr__card--agg{background:var(--w-charcoal);border-color:transparent;gap:var(--w-s-4)}
+.csr__card--agg .csr__stars{color:#fff}
+.csr__card--agg .csr__kick{color:rgba(255,255,255,.55)}
+.csr__card--agg .csr__big{color:rgba(255,255,255,.82)}
+.csr__card--agg .csr__trust{color:rgba(255,255,255,.55)}
+.csr__card--agg .csr__sav{box-shadow:0 0 0 2px var(--w-charcoal)}
+.csr__card--agg .csr__more{background:#fff;color:var(--w-charcoal)}
+.csr__card--agg .csr__btn{background:#fff;color:var(--w-charcoal)}
+.csr__card--agg .csr__btn:hover{background:rgba(255,255,255,.88)}
+.csr__kick{font-family:var(--w-font-kicker);text-transform:uppercase;letter-spacing:.12em;
+  font-size:var(--w-fs-xs);font-weight:var(--w-fw-bold);color:var(--w-text-3)}
+.csr__big{margin:0;font-size:var(--w-fs-sm);line-height:1.5;color:var(--w-text-2)}
+.csr__big-v{display:block;font-size:clamp(48px,4vw,64px);font-weight:var(--w-fw-black);
+  line-height:1;letter-spacing:var(--w-ls-tight);margin-bottom:var(--w-s-3);
+  background:var(--w-grad-brand);-webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent}
+.csr__agg-foot{margin-top:auto;display:flex;flex-direction:column;gap:var(--w-s-4)}
+.csr__stack{display:flex;align-items:center}
+.csr__sav{width:34px;height:34px;border-radius:var(--w-r-full);background-size:cover;
+  background-position:center;filter:grayscale(1);box-shadow:0 0 0 2px var(--w-surface);margin-left:-9px}
+.csr__sav:first-child{margin-left:0}
+.csr__more{margin-left:10px;display:inline-flex;align-items:center;justify-content:center;
+  width:34px;height:34px;flex:none;padding:0;border-radius:var(--w-r-full);background:var(--w-charcoal);
+  color:#fff;font-size:11px;font-weight:var(--w-fw-bold);letter-spacing:-0.01em}
+.csr__trust{font-size:var(--w-fs-xs);color:var(--w-text-3)}
+.csr__btn{width:100%;justify-content:center;background:var(--w-charcoal);color:#fff;box-shadow:none}
+.csr__btn:hover{transform:translateY(-1px);box-shadow:var(--w-shadow-raise-soft)}
+
+/* ═══ RESPONSIVE ═══════════════════════════════════════════════════════════ */
+@media(max-width:1120px){ .csr__grid{columns:3} }
+@media(max-width:820px){ .csr__grid{columns:2} }
+@media(max-width:520px){ .csr__grid{columns:1;max-width:440px;margin-inline:auto} }
+@media(max-width:900px){
+  .cso__grid{grid-template-columns:1fr;gap:var(--w-s-5);max-width:560px;margin-inline:auto}
+  .csw__grid{grid-template-columns:repeat(2,1fr);gap:var(--w-s-7) 0}
+  .csw__stat:nth-child(odd){border-left:none}
+  .csd__grid{grid-template-columns:1fr;gap:var(--w-s-8)}
+  .cst__grid,.csm__grid{grid-template-columns:1fr;gap:var(--w-s-5);max-width:560px;margin-inline:auto}
+}
+@media(max-width:700px){
+  .csh__title{font-size:var(--w-fs-h1)}
+  .csc__title,.csw__title,.csd__title,.csm__title,.cst__title{font-size:var(--w-fs-h2)}
+  .csh__logos{gap:clamp(24px,7vw,40px)}
+  .csd__quote{font-size:var(--w-fs-lead)}
+}
+@media(max-width:560px){
+  .csh__cta,.csc__actions{display:flex}
+  .csh__cta .w-btn,.csc__actions .w-btn{width:100%;justify-content:center}
+  .csw__grid{grid-template-columns:1fr;gap:var(--w-s-6)}
+  .csw__stat,.csw__stat:nth-child(odd){border-left:none}
+  .csr__display{font-size:clamp(38px,12.5vw,66px)}
+}

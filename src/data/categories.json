@@ -38,5 +38,30 @@
     "slug": "research",
     "name": "Research",
     "description": "Industry research and buyer behavior analysis"
+  },
+  {
+    "slug": "product-updates",
+    "name": "Product & Updates",
+    "description": "Carly and Experts+ product news and releases"
+  },
+  {
+    "slug": "build-trust",
+    "name": "Build Trust",
+    "description": "The Trust Layer category — what it is and why it emerged"
+  },
+  {
+    "slug": "win-more-deals",
+    "name": "Win More Deals",
+    "description": "Speed-to-proof, attribution, and win-rate mechanics"
+  },
+  {
+    "slug": "scale-connection",
+    "name": "Scale Connection",
+    "description": "Peer matching and connecting buyers to the right customer"
+  },
+  {
+    "slug": "research-data",
+    "name": "Research & Data",
+    "description": "Benchmarks and original GTM research"
   }
 ]

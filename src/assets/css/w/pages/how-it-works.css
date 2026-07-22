@@ -1,0 +1,181 @@
+/* ================= W-EXPERTS-HOW page styles — tokens only, no raw brand hex ================= */
+:root{
+  --w-img-ehow-ctabg:url("/assets/images/w/how-it-works/ehow-ctabg.webp");
+}
+
+/* ===== light-band technique (.cz-light) — WHITE variant (verbatim from sibling Carly-depth pages) ===== */
+.cz-light{
+  background:var(--w-bg);color:var(--w-text);
+  --w-bg:#ffffff; --w-bg-deep:#ececec; --w-bg-elev:#ffffff;
+  --w-card:#ffffff; --w-card-lo:#efefef; --w-card-hi:#ffffff;
+  --w-text:var(--w-charcoal); --w-text-2:rgba(28,26,36,0.66); --w-text-3:rgba(28,26,36,0.62);
+  --w-text-prose:#302d2e; --w-text-on-brand:#ffffff; --w-icon-ink:var(--w-charcoal);
+  --w-line-soft:rgba(28,26,36,0.06); --w-line:rgba(28,26,36,0.10); --w-line-strong:rgba(28,26,36,0.16); --w-edge-top:rgba(255,255,255,0.9);
+  --w-brand:var(--w-purple-ink); --w-brand-2:var(--w-purple); --w-brand-soft:rgba(152,135,244,0.10); --w-brand-line:rgba(152,135,244,0.28);
+  --w-shadow-raise:0 8px 18px -8px rgba(28,26,36,0.07), inset 0 1px 0 rgba(255,255,255,0.9);
+  --w-shadow-raise-soft:0 4px 10px -6px rgba(28,26,36,0.05), inset 0 1px 0 rgba(255,255,255,0.85);
+  --w-shadow-recess:inset 0 1px 3px rgba(28,26,36,0.05), inset 0 -1px 0 rgba(255,255,255,0.8);
+  --w-shadow-recess-deep:inset 0 2px 5px rgba(28,26,36,0.07), inset 0 -1px 0 rgba(255,255,255,0.7);
+  --w-shadow-sm:0 1px 2px rgba(28,26,36,0.04); --w-shadow-md:0 4px 12px rgba(28,26,36,0.05); --w-shadow-lg:0 12px 28px rgba(28,26,36,0.07);
+  --w-glow-brand:0 2px 8px rgba(28,26,36,0.05); --w-glow-brand-strong:0 6px 16px rgba(28,26,36,0.07);
+  --w-glass-fill:rgba(255,255,255,0.66); --w-glass-fill-strong:rgba(255,255,255,0.86); --w-glass-tint:rgba(28,26,36,0.90);
+  --w-glass-fill-soft:rgba(28,26,36,0.03); --w-glass-line:rgba(28,26,36,0.10); --w-glass-line-bright:rgba(28,26,36,0.16);
+  --w-glass-rim-top:rgba(255,255,255,0.95); --w-glass-rim-bottom:rgba(28,26,36,0.05);
+  --w-glass-blur:blur(18px) saturate(140%); --w-glass-blur-lg:blur(22px) saturate(145%);
+  --w-glass-shadow:0 10px 24px rgba(28,26,36,0.06); --w-glass-shadow-soft:0 4px 12px rgba(28,26,36,0.05);
+  --w-cta-fill:var(--w-glass-tint); --w-cta-text:#ffffff; --w-cta-glow:var(--w-shadow-md); --w-cta-glow-strong:var(--w-shadow-lg);
+  --w-card-brand-wash:linear-gradient(160deg, rgba(28,26,36,0.06), rgba(28,26,36,0.015)); --w-card-brand-line:var(--w-line-strong);
+  --w-tag-brand-bg:rgba(28,26,36,0.06); --w-tag-brand-fg:var(--w-text); --w-focus:rgba(28,26,36,0.55);
+  --w-grad-surface:linear-gradient(180deg, #ffffff 0%, #f5f5f5 100%);
+  --w-grad-surface-hi:linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
+  --w-grad-recess:linear-gradient(180deg, #ededed 0%, #e3e3e3 100%);
+}
+@media (prefers-reduced-transparency: reduce){
+  .cz-light .w-glass,.cz-light .w-btn--glass,.cz-light .w-tag,.cz-light .w-card,.cz-light .w-cta-band{background:var(--w-card);border-color:var(--w-line)}
+}
+
+/* ===== asymmetric section rhythm (tight top / generous bottom) ===== */
+.w-section{padding-block:clamp(36px, 2.2vw + 1rem, 64px) clamp(64px, 4vw + 1.7rem, 108px)}
+.w-section--hero{padding-block:clamp(96px, 6rem + 5vw, 168px) clamp(72px, 5vw + 2rem, 128px)}
+.w-badge{box-shadow:0 2px 10px rgba(12,10,22,.12), inset 0 1px 0 var(--w-glass-rim-top)}
+.w-panel-rise{--w-panel-overlap:34px}
+
+
+/* ───────────── §1 HERO — badge on top · tablet in bg · white fade down to centered copy ───────────── */
+.eh-hero3{position:relative;background:#f1f0ee;text-align:center;overflow:hidden;padding-bottom:clamp(52px,6vw,104px)}
+.eh-hero3__media{position:relative;width:100%;margin-inline:auto}
+.eh-hero3__img{display:block;width:100%;height:auto}
+.eh-hero3__badge{position:absolute;top:clamp(16px,4vw,44px);left:0;right:0;margin-inline:auto;width:max-content;z-index:2}
+.eh-hero3__fade{position:absolute;left:0;right:0;bottom:-1px;height:34%;z-index:1;pointer-events:none;
+  background:linear-gradient(to bottom,transparent 0%,rgba(241,240,238,.5) 48%,#f1f0ee 88%)}
+.eh-hero3__copy{position:relative;z-index:3;max-width:1080px;margin-inline:auto;margin-top:clamp(-150px,-9vw,-52px);
+  display:flex;flex-direction:column;align-items:center;padding-inline:var(--w-s-5)}
+.eh-hero3__copy .w-display{font-size:clamp(2.2rem,1rem + 3.2vw,3.5rem);line-height:1.06}
+.eh-hero3__copy .w-lead{margin-top:var(--w-s-4);max-width:60ch}
+.eh-hero3__tags{justify-content:center;margin-top:var(--w-s-6)}
+.eh-hero3__copy .w-row{margin-top:var(--w-s-6);justify-content:center}
+@media (max-width:700px){
+  .eh-hero3__copy{margin-top:clamp(-64px,-9vw,-20px)}
+  .eh-hero3__fade{height:26%}
+}
+
+/* ───────────── §2 THE FIVE MOVES — pinned scroll-scrub · 5 steps drive a crossfading panel ───────────── */
+.ehl-loop{border-radius:52px 52px 0 0;min-height:calc(100vh + 250vh);background:#fff;
+  position:relative;z-index:1;margin-top:-60px;
+  box-shadow:0 -44px 84px -38px rgba(28,26,36,.24), inset 0 1px 0 rgba(255,255,255,.9)}
+.ehl-loop .w-section-head{position:relative;z-index:2}
+.ehl-loop__pin{position:sticky;top:0;min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding-block:clamp(56px,8vh,110px)}
+.ehl-loop__grid{display:grid;grid-template-columns:minmax(0,480px);margin-top:clamp(24px,3vw,44px)}
+.ehl-loop__steps{position:relative;padding-left:26px}
+.ehl-loop__prog{position:absolute;left:0;top:6px;bottom:6px;width:2px;border-radius:2px;background:var(--w-line)}
+.ehl-loop__prog-fill{position:absolute;top:0;left:0;width:100%;height:0;border-radius:2px;background:var(--w-brand);box-shadow:0 0 12px -2px var(--w-brand);transition:height .35s cubic-bezier(.22,1,.36,1)}
+.ehl-loop__list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:clamp(4px,.8vw,12px)}
+.ehl-loop__step{display:grid;grid-template-columns:44px 1fr;gap:0 18px;padding:clamp(11px,1.3vw,17px) 0;opacity:.4;transition:opacity .45s ease}
+.ehl-loop__step.is-on{opacity:1}
+.ehl-loop__no{grid-row:1/3;font-family:var(--w-font-mono);font-size:var(--w-fs-sm);font-weight:700;color:var(--w-text-3);padding-top:4px;letter-spacing:.06em;transition:color .45s ease}
+.ehl-loop__step.is-on .ehl-loop__no{color:var(--w-brand)}
+.ehl-loop__t{font-size:var(--w-fs-h4);font-weight:var(--w-fw-bold);letter-spacing:var(--w-ls-tight);color:var(--w-text)}
+.ehl-loop__b{margin:0;font-size:var(--w-fs-sm);line-height:1.55;color:var(--w-text-2);max-width:46ch;max-height:0;opacity:0;overflow:hidden;transition:max-height .5s ease,opacity .45s ease,margin .5s ease}
+.ehl-loop__step.is-on .ehl-loop__b{max-height:160px;opacity:1;margin-top:8px}
+.ehl-loop__media{position:absolute;right:0;top:0;z-index:1;width:min(50vw,810px);aspect-ratio:4/3;max-height:70vh}
+.ehl-loop__frame{position:absolute;inset:0;overflow:hidden}
+.ehl-loop__vid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border:0;outline:none;-webkit-tap-highlight-color:transparent;opacity:0;transform:scale(1.03);transition:opacity .6s ease,transform .85s cubic-bezier(.22,1,.36,1)}
+.ehl-loop__vid.is-on{opacity:1;transform:scale(1)}
+.ehl-loop__frame video::-webkit-media-controls,.ehl-loop__frame video::-webkit-media-controls-panel,.ehl-loop__frame video::-webkit-media-controls-enclosure,.ehl-loop__frame video::-webkit-media-controls-start-playback-button,.ehl-loop__frame video::-webkit-media-controls-overlay-play-button{display:none!important;-webkit-appearance:none!important;opacity:0!important}
+.ehl-loop__vph{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;text-align:center;background:radial-gradient(120% 100% at 50% 0,#f1eff9,#e7e4f1)}
+.ehl-loop__vph svg{width:30px;height:30px;color:var(--w-brand)}
+.ehl-loop__vph b{font-family:var(--w-font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(28,26,36,.78)}
+.ehl-loop__vph span{font-size:12px;color:rgba(28,26,36,.48)}
+@media(max-width:1024px){.ehl-loop__grid{grid-template-columns:1fr;gap:var(--w-s-7)}}
+@media(max-width:900px),(prefers-reduced-motion:reduce){
+  .ehl-loop{min-height:0;margin-top:0;border-radius:0;box-shadow:none}.ehl-loop__pin{position:static;min-height:0;padding-block:0}
+  .ehl-loop__grid{grid-template-columns:1fr;gap:var(--w-s-6)}
+  .ehl-loop__step{opacity:1}.ehl-loop__b{max-height:none;opacity:1;overflow:visible;margin-top:8px}
+  .ehl-loop__vid[data-i="0"]{opacity:1;transform:none}.ehl-loop__prog{display:none}
+  .ehl-loop__media{position:relative;right:auto;top:auto!important;transform:none;width:100%;max-width:760px;margin-inline:auto;max-height:none;aspect-ratio:4/3;margin-top:var(--w-s-6)}
+}
+
+/* ───────────── §3 VERIFIED SUPPLY — dark · asymmetric type-led split ───────────── */
+.eh-verify{background:var(--w-bg)}
+.eh-verify__grid{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(36px,6vw,96px);align-items:center}
+.eh-verify__copy .w-p{margin-top:var(--w-s-5);font-size:var(--w-fs-lead);line-height:var(--w-lh-normal);color:var(--w-text-2);max-width:52ch}
+.ehv-num{display:block;font:800 clamp(80px,11vw,152px)/0.9 var(--w-font);
+  background:linear-gradient(120deg,var(--w-brand),var(--w-brand-2));
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.ehv-line{margin-top:var(--w-s-4);max-width:26ch;font-size:var(--w-fs-lead);line-height:var(--w-lh-normal);color:var(--w-text-2)}
+
+/* ───────────── §4 FINAL CTA — light section · soft-brand band (nebula, grayscale-scrim) ───────────── */
+.eh-cta{background:var(--w-bg)}
+.eh-cta__band{position:relative;overflow:hidden;border-radius:var(--w-r-xl);padding:clamp(48px,7vw,96px) var(--w-s-6);text-align:center;border:1px solid rgba(255,255,255,.10);
+  background:linear-gradient(rgba(10,8,18,.4),rgba(10,8,18,.4)), var(--w-img-ehow-ctabg) center/cover no-repeat;box-shadow:var(--w-shadow-lg)}
+.eh-cta__band>*{position:relative;z-index:1;text-shadow:0 2px 18px rgba(6,4,12,.55)}
+.eh-cta__band .w-display{color:#fff;-webkit-text-fill-color:#fff}
+.eh-cta__band .w-display .w-accent{color:var(--w-brand-2);-webkit-text-fill-color:var(--w-brand-2);background:none}
+.eh-cta__band .w-btn--primary{background:linear-gradient(120deg,var(--w-brand),var(--w-brand-2));color:#fff;-webkit-text-fill-color:#fff;border-color:transparent;text-shadow:none}
+.eh-cta__band .w-btn--primary svg{color:#fff}
+.eh-cta__band .w-btn--glass{color:#fff;border-color:rgba(255,255,255,.32);background:rgba(255,255,255,.09);text-shadow:none}
+.eh-cta__band .w-btn--glass svg{color:#fff}
+
+/* ───────────── responsive ───────────── */
+@media (max-width:900px){
+  .eh-verify__grid{grid-template-columns:1fr;gap:var(--w-s-7)}
+}
+
+
+
+/* ───────────── FEATURE BANDS (.ehb-) — full-bleed product render · copy overlaid on the empty side ───────────── */
+.ehb{position:relative;overflow:hidden;background:#efeeec}
+.ehb__stage{position:relative;width:100%;margin-inline:auto}
+.ehb__img{display:block;width:100%;height:auto}
+.ehb__scrim{position:absolute;inset:0;z-index:1;pointer-events:none}
+.ehb__scrim--left{background:linear-gradient(90deg,rgba(245,245,243,.99) 0%,rgba(245,245,243,.97) 26%,rgba(245,245,243,.8) 42%,rgba(245,245,243,.3) 58%,transparent 72%)}
+.ehb__scrim--right{background:linear-gradient(270deg,rgba(245,245,243,.99) 0%,rgba(245,245,243,.97) 26%,rgba(245,245,243,.8) 42%,rgba(245,245,243,.3) 58%,transparent 72%)}
+.ehb__overlay{position:absolute;inset:0;z-index:2;display:flex;align-items:center;pointer-events:none}
+.ehb__overlay .w-container{width:100%;display:flex}
+.ehb__copy{width:100%;max-width:440px;pointer-events:auto}
+.ehb__copy--right{margin-left:auto}
+.ehb__copy h2{font-size:var(--w-fs-h2);font-weight:var(--w-fw-bold);letter-spacing:var(--w-ls-tight);line-height:var(--w-lh-snug);color:var(--w-text);margin-top:var(--w-s-5)}
+.ehb__copy p{margin-top:var(--w-s-4);font-size:var(--w-fs-lead);line-height:var(--w-lh-normal);color:var(--w-text-2)}
+.ehb__link{margin-top:var(--w-s-5)}
+.ehb__points{margin-top:var(--w-s-5);display:flex;flex-direction:column;gap:var(--w-s-3)}
+.ehb__point{display:flex;align-items:flex-start;gap:10px;font-size:var(--w-fs-body);line-height:var(--w-lh-normal);color:var(--w-text-2)}
+.ehb__point svg{width:20px;height:20px;flex:none;margin-top:1px;color:var(--w-brand-2);fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+/* hero supporting spec-row */
+.eh-hero__specs{display:flex;flex-wrap:wrap;gap:var(--w-s-3);margin-top:var(--w-s-6)}
+.eh-spec{display:inline-flex;align-items:center;gap:8px;padding:9px 15px;border-radius:var(--w-r-pill);
+  background:var(--w-glass-fill-soft);border:1px solid var(--w-line);font:500 13px/1 var(--w-font);color:var(--w-text-2)}
+.eh-spec svg{width:16px;height:16px;color:var(--w-brand);fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+/* verified-supply · "what verified means" trust list */
+.ehv-checks{margin-top:var(--w-s-6);display:flex;flex-direction:column;gap:var(--w-s-3)}
+.ehv-check{display:flex;align-items:flex-start;gap:10px;font-size:var(--w-fs-body);line-height:var(--w-lh-normal);color:var(--w-text-2)}
+.ehv-check svg{width:20px;height:20px;flex:none;margin-top:1px;color:var(--w-brand-2);fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ehv-check b{color:var(--w-text);font-weight:var(--w-fw-semi)}
+
+@media (max-width:900px){
+  .ehb{background:var(--w-bg)}
+  .ehb__stage{display:flex;flex-direction:column-reverse}
+  .ehb__scrim{display:none}
+  .ehb__overlay{position:static;padding:clamp(28px,7vw,52px) 0 clamp(18px,5vw,30px)}
+  .ehb__overlay .w-container{display:block}
+  .ehb__copy,.ehb__copy--right{max-width:none;margin:0}
+}
+
+/* ── Adobe sticky-stack — bands pin at top:0, next rises over (rounded top + shadow + increasing z). Off ≤900px + reduced-motion. ── */
+.hm-stack{position:relative;z-index:0}
+@media (min-width:901px) and (prefers-reduced-motion:no-preference){
+  .hm-stack .ehb{position:sticky;top:0}
+  .hm-stack #dashboard{z-index:1}
+  .hm-stack #analytics{z-index:2}
+  .hm-stack #integrations{z-index:3}
+  .hm-stack #programs{z-index:4}
+  .hm-stack #deals{z-index:5}
+  .hm-stack #plays{z-index:6}
+  .hm-stack #analytics,.hm-stack #integrations,.hm-stack #programs,.hm-stack #deals,.hm-stack #plays{
+    border-radius:var(--w-panel-radius,44px) var(--w-panel-radius,44px) 0 0;
+    box-shadow:0 -24px 50px -14px rgba(28,26,36,.30)}
+}
+/* verified (dark) + CTA rise above the stack */
+.eh-verify{position:relative;z-index:1}
+.eh-cta{position:relative;z-index:1}

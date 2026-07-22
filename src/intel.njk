@@ -1,0 +1,220 @@
+---
+title: "Deal Intelligence | SlashExperts"
+description: "Carly turns every conversation into signal — transcript, sentiment, and deal-readiness scoring that tells your team the next best move on every opportunity."
+pageCSS: intel
+pageJS: intel
+ds7: true
+permalink: /carly/intelligence/
+---
+
+{% extends "layouts/base-w.njk" %}
+
+{% block extraHead %}
+{# Preload hero background (LCP): .di-hero's background is a CSS url() otherwise discovered late after CSS parse. Faithful perf lever, no pixel change. #}
+<link rel="preload" as="image" href="/assets/images/w/intel/asset-0.webp" fetchpriority="high">
+{% endblock %}
+
+{% block content %}
+{% raw %}
+
+  <!-- §1 · HERO — dark · split (copy left / scoring scene right) ───────────── -->
+  <section class="w-section w-section--hero di-hero" id="top" data-nav-surface="dark">
+    <div class="w-container">
+      <div class="di-hero__inner w-stagger">
+        <span class="w-badge w-reveal"><span class="w-badge__icon"><svg viewBox="0 0 24 24"><use href="#i-chart"/></svg></span>Deal Intelligence · inside Carly</span>
+        <h1 class="w-display w-reveal" style="margin-top:var(--w-s-5)">She knows which deals are ready — and <span class="w-accent">what they need next.</span></h1>
+        <p class="w-lead w-reveal" style="max-width:42ch;margin-top:var(--w-s-5)">Carly turns every conversation into signal: transcript, sentiment, and deal-readiness scoring that tells your team the next best move on every opportunity.</p>
+        <div class="w-row w-reveal" style="margin-top:var(--w-s-6)">
+          <a class="w-btn w-btn--primary w-btn--lg" href="/book-a-demo/">Book a Demo <svg class="w-icon"><use href="#i-arrow-right"/></svg></a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- trust band — below the full-image hero, on solid dark ─────────────────── -->
+  <section class="w-section di-trust" data-nav-surface="dark">
+    <div class="w-container">
+      <div class="di-hero__trust w-reveal">
+        <div class="w-trust-label">Trusted by revenue teams</div>
+        <div class="w-marquee" aria-label="Customer logos"><div class="w-marquee__track"><span class="w-marquee__item" style="background-image:var(--w-img-logo-sendoso)"></span><span class="w-marquee__lockup"><i style="background-image:var(--w-img-logo-sequel)"></i><b>Sequel.io</b></span><span class="w-marquee__item" style="background-image:var(--w-img-logo-netline)"></span><span class="w-marquee__lockup"><i style="background-image:var(--w-img-logo-warmly)"></i><b>Warmly</b></span><span class="w-marquee__item" style="background-image:var(--w-img-logo-udemy)"></span><span class="w-marquee__lockup"><i style="background-image:var(--w-img-logo-outreach)"></i><b>Outreach</b></span><span class="w-marquee__item" style="background-image:var(--w-img-logo-checkr)"></span><span class="w-marquee__lockup"><i style="background-image:var(--w-img-logo-seismic)"></i><b>Seismic</b></span><span class="w-marquee__item" style="background-image:var(--w-img-logo-salesbricks)"></span><span class="w-marquee__lockup"><i style="background-image:var(--w-img-logo-sixsense)"></i><b>6sense</b></span><span class="w-marquee__item" style="background-image:var(--w-img-logo-euler)"></span><span class="w-marquee__lockup"><i style="background-image:var(--w-img-logo-highspot)"></i><b>Highspot</b></span><span class="w-marquee__item" style="background-image:var(--w-img-logo-spara)"></span><span class="w-marquee__item" style="background-image:var(--w-img-logo-syntheticfi)"></span><span class="w-marquee__lockup"><i style="background-image:var(--w-img-logo-google)"></i><b>Google</b></span><span class="w-marquee__item" style="background-image:var(--w-img-logo-sendoso)"></span><span class="w-marquee__lockup"><i style="background-image:var(--w-img-logo-sequel)"></i><b>Sequel.io</b></span><span class="w-marquee__item" style="background-image:var(--w-img-logo-netline)"></span><span class="w-marquee__lockup"><i style="background-image:var(--w-img-logo-warmly)"></i><b>Warmly</b></span><span class="w-marquee__item" style="background-image:var(--w-img-logo-udemy)"></span><span class="w-marquee__lockup"><i style="background-image:var(--w-img-logo-outreach)"></i><b>Outreach</b></span><span class="w-marquee__item" style="background-image:var(--w-img-logo-checkr)"></span><span class="w-marquee__lockup"><i style="background-image:var(--w-img-logo-seismic)"></i><b>Seismic</b></span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- §2 · WHAT SHE TRACKS — dark · 3-up feature cards ──────────────────────── -->
+  <section class="w-section di-track" id="tracks" data-nav-surface="dark">
+    <div class="w-container">
+      <div class="w-section-head w-reveal">
+        <span class="w-badge"><span class="w-badge__icon"><svg viewBox="0 0 24 24"><use href="#i-scan"/></svg></span>What she tracks</span>
+        <h2>Signal, <span class="w-accent">not noise.</span></h2>
+      </div>
+      <div class="w-grid w-grid--3 w-stagger" style="margin-top:var(--w-s-7)">
+        <div class="w-card w-card--feature w-reveal--scale w-reveal">
+          <div class="di-fig" aria-hidden="true">
+            <div class="dt1-msg dt1-m1"><span class="di-fig__av" style="background-image:var(--w-img-av-george)"></span><p>How did the rollout actually go for your team?</p></div>
+            <div class="dt1-msg dt1-m2"><span class="di-fig__av" style="background-image:var(--w-img-av-diana)"></span><p>Honestly, smoother than we expected.</p></div>
+            <div class="dt1-foot"><span class="dt1-sum"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Summarized</span><span class="dt1-q"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>rollout risk &middot; <b>3 matches</b></span></div>
+          </div>
+          <span class="di-track__no">01</span>
+          <h3 class="w-card__title">Conversation capture</h3>
+          <p class="w-card__body">Transcripts of the peer and buyer conversations, summarized and searchable.</p>
+        </div>
+        <div class="w-card w-card--feature w-reveal--scale w-reveal">
+          <div class="di-fig" aria-hidden="true">
+            <p class="dt2-quote">&ldquo;&hellip;this would <b>save the team hours</b> every single week.&rdquo;</p>
+            <div class="dt2-gaugewrap"><div class="dt2-gauge"></div><span class="dt2-mark"></span></div>
+            <div class="dt2-foot"><span class="dis-senti dis-senti--pos"><svg viewBox="0 0 24 24"><path d="M7 14l5-5 5 5"/></svg>Positive</span><small>Not a stage field &middot; the call itself</small></div>
+          </div>
+          <span class="di-track__no">02</span>
+          <h3 class="w-card__title">Sentiment</h3>
+          <p class="w-card__body">How the buyer actually feels, read across the conversation, not guessed from a stage field.</p>
+        </div>
+        <div class="w-card w-card--feature w-reveal--scale w-reveal">
+          <div class="di-fig" aria-hidden="true">
+            <div class="dt3">
+              <span class="dt3-ring"><svg viewBox="0 0 40 40"><circle class="bg" cx="20" cy="20" r="16" pathLength="100"/><circle class="val" cx="20" cy="20" r="16" pathLength="100"/></svg><b>81</b></span>
+              <span class="dt3-side"><span class="dis-score__s dis-score--warm"><svg viewBox="0 0 24 24"><path d="M7 14l5-5 5 5"/></svg>Warming <b>+9</b></span><small><b>Why:</b> champion re-engaged, pricing revisited twice this week.</small></span>
+            </div>
+          </div>
+          <span class="di-track__no">03</span>
+          <h3 class="w-card__title">Deal-readiness score</h3>
+          <p class="w-card__body">A live read on which deals are warming, cooling, or stuck, and why.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- §3 · REPLY ROUTING — light · media split (timeline left / copy right) ─── -->
+  <section class="w-section cz-light di-handle w-panel-rise" id="handling" data-nav-surface="light">
+    <div class="w-container">
+      <div class="di-handle__grid">
+        <!-- A2 · reply-routing timeline (page-native) -->
+        <div class="dik-media w-reveal--scale w-reveal" aria-hidden="true">
+          <div class="dik-stage"><div class="dik-fit" id="dikFit">
+            <div class="dik-motif"></div>
+            <div class="dik-ghost" style="left:880px;top:36px;width:252px;height:104px"><span class="dik-gbar" style="width:62%"></span><span class="dik-gbar" style="width:40%"></span></div>
+            <div class="dik-ghost" style="left:56px;top:52px;width:300px;height:112px"><span class="dik-gbar" style="width:48%"></span><span class="dik-gbar" style="width:74%"></span></div>
+            <div class="dik-ghost" style="left:960px;top:678px;width:190px;height:130px"><span class="dik-gbar" style="width:56%"></span><span class="dik-gbar" style="width:80%"></span></div>
+            <div class="dik-ghost" style="left:80px;top:648px;width:210px;height:140px"><span class="dik-gbar" style="width:66%"></span><span class="dik-gbar" style="width:44%"></span></div>
+            <svg class="dik-wires" viewBox="0 0 1180 860" fill="none" aria-hidden="true"><defs><linearGradient id="dikflow" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#9887f4" stop-opacity="0"/><stop offset=".5" stop-color="#c18cff"/><stop offset="1" stop-color="#9887f4" stop-opacity="0"/></linearGradient></defs><path class="dik-cn" d="M611 290 L632 290 Q646 290 646 276 L646 191 Q646 177 660 177 L660 177"/><path class="dik-cn" d="M611 368 L660 368"/><path class="dik-cn" d="M611 445 L632 445 Q646 445 646 459 L646 543 Q646 557 660 557 L660 557"/><path class="dik-cn" d="M300 548 L300 636 Q300 650 314 650 L360 650"/><path class="dik-flow" d="M611 290 L632 290 Q646 290 646 276 L646 191 Q646 177 660 177 L660 177" style="animation-delay:0s"/><path class="dik-flow" d="M611 368 L660 368" style="animation-delay:.45s"/><path class="dik-flow" d="M611 445 L632 445 Q646 445 646 459 L646 543 Q646 557 660 557 L660 557" style="animation-delay:.9s"/><path class="dik-flow" d="M300 548 L300 636 Q300 650 314 650 L360 650" style="animation-delay:1.35s"/></svg>
+            <div class="dik2-hero" style="left:36px;top:180px;width:575px;height:368px">
+              <div class="dik2-hero__head">
+                <span class="dik2-hero__av" style="background-image:var(--w-img-carly)"></span>
+                <span class="dik2-hero__id"><b>Carly</b><small>Actively working &middot; 12:47 AM</small></span>
+                <span class="dik2-banner"><i></i>Working</span>
+              </div>
+              <p class="dik2-hero__reason">Buyer replied about seat pricing &mdash; routing to the deal owner with the <b>Enterprise rollout</b> case and the full thread attached.</p>
+              <div class="dik2-rail"><i></i></div>
+              <div class="dik2-hero__foot">3 replies routed overnight</div>
+            </div>
+            <div class="dik-card dik-cand dik2-r1" style="left:660px;top:100px;width:480px;height:155px">
+              <span class="dik-av" style="background-image:var(--w-img-av-ava)"></span>
+              <span class="dik-cand__tx"><b>New reply, routed to owner</b><small>12:47 AM &middot; seat pricing question</small></span>
+              <span class="dik-pill dik-pill--score">Routed</span>
+            </div>
+            <div class="dik-card dik-cand dik2-r2" style="left:660px;top:290px;width:480px;height:155px">
+              <span class="dik2-tile"><svg viewBox="0 0 24 24"><use href="#i-check"/></svg></span>
+              <span class="dik-cand__tx"><b>Context captured</b><small>1:03 AM &middot; full thread on the record</small></span>
+              <span class="dik-pill dik-pill--score">By Carly</span>
+            </div>
+            <div class="dik-card dik-cand dik2-r3" style="left:660px;top:480px;width:480px;height:155px">
+              <span class="dik2-tile dik2-tile--mint"><svg viewBox="0 0 24 24"><use href="#i-trending"/></svg></span>
+              <span class="dik-cand__tx"><b>Routed to pipeline</b><small>3:12 AM &middot; on the deal record</small></span>
+              <span class="dik-pill dik-pill--score dik2-pill--mint">Synced</span>
+            </div>
+            <div class="dik-card dik-cand dik2-morning" style="left:360px;top:650px;width:440px;height:165px">
+              <span class="dik2-cluster"><span class="dik-av" style="background-image:var(--w-img-av-diana)"></span><span class="dik-av" style="background-image:var(--w-img-av-george)"></span></span>
+              <span class="dik-cand__tx"><b>Morning handoff</b><small>8:00 AM &middot; summarized, ranked, ready</small></span>
+              <span class="dik-pill dik-pill--score dik2-pill--mint">Ready</span>
+            </div>
+            <div class="dik-packet" style="left:830px;top:690px"><span class="dik-packet__ck">&#10003;</span>Not a cold lead</div>
+          </div></div>
+        </div>
+        <div class="di-handle__copy w-stagger">
+          <span class="w-badge w-reveal"><span class="w-badge__icon"><svg viewBox="0 0 24 24"><use href="#i-clock"/></svg></span>Reply routing</span>
+          <h2 class="w-reveal" style="margin-top:var(--w-s-5)">Always on the record, <span class="w-accent">never dropped.</span></h2>
+          <p class="w-p w-reveal" style="margin-top:var(--w-s-5)">The moment a buyer replies, Carly routes it to the rep who owns the deal — with the full thread and context attached — and logs it to your CRM around the clock. So a reply that lands at midnight reaches the right person, on the record, instead of sitting in an inbox until someone notices.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- §3.5 · IN THE PRODUCT — light · staggered device gallery ──────────────── -->
+  <section class="w-section cz-light di-showcase w-panel-rise" id="in-product" data-nav-surface="light">
+    <div class="w-container">
+      <div class="w-section-head dx-head w-reveal">
+        <span class="w-badge"><span class="w-badge__icon"><svg viewBox="0 0 24 24"><use href="#i-widget"/></svg></span>In the product</span>
+        <h2>Deal Intelligence, <span class="w-accent">everywhere your team works.</span></h2>
+        <p class="w-lead" style="margin-top:var(--w-s-4)">The same live read — on your desk, in your pocket, and inside the tools your team already runs on.</p>
+      </div>
+      <!-- Row 1 · desktop (media left) -->
+      <div class="dxr">
+        <div class="dxr-media w-reveal"><div class="dxr-shot dxr-shot--desk"><span class="dxr-shot__img"></span></div></div>
+        <div class="dxr-glass w-reveal">
+          <span class="dxr-tag"><svg viewBox="0 0 24 24"><use href="#i-chart"/></svg>Desktop</span>
+          <h3>The whole pipeline, scored.</h3>
+          <p>Carly's live read on every open opportunity — transcript, sentiment, and readiness — in one always-current view.</p>
+          <ul class="dxr-feats">
+            <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Live readiness score on every deal</li>
+            <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Sentiment read from the conversation, not a stage field</li>
+            <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Ranked, explained open pipeline</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Row 2 · mobile (media right) -->
+      <div class="dxr dxr--flip">
+        <div class="dxr-media w-reveal"><div class="dxr-shot dxr-shot--phone"><span class="dxr-shot__img"></span></div></div>
+        <div class="dxr-glass w-reveal">
+          <span class="dxr-tag"><svg viewBox="0 0 24 24"><use href="#i-clock"/></svg>Mobile</span>
+          <h3>In your pocket, around the clock.</h3>
+          <p>The midnight reply, routed and on the record — so the morning handoff is already waiting.</p>
+          <ul class="dxr-feats">
+            <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Every reply routed to the deal owner</li>
+            <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Full context on the record, not a cold lead</li>
+            <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>The task queue, wherever you are</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Row 3 · CRM (media left) -->
+      <div class="dxr">
+        <div class="dxr-media w-reveal"><div class="dxr-shot dxr-shot--crm"><span class="dxr-shot__img"></span></div></div>
+        <div class="dxr-glass w-reveal">
+          <span class="dxr-tag"><svg viewBox="0 0 24 24"><use href="#i-link"/></svg>Your CRM</span>
+          <h3>Wired into your stack.</h3>
+          <p>Connect Salesforce, HubSpot, or Freshworks once — every score and next step flows to the deal record.</p>
+          <ul class="dxr-feats">
+            <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Salesforce · HubSpot · Freshworks</li>
+            <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Scores and next steps sync to the record</li>
+            <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>One-time setup, no ongoing lift</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- §4 · WHY IT MATTERS — light · centered stat band ─────────────────────── -->
+  <section class="w-section cz-light di-why w-panel-rise" id="why" data-nav-surface="light">
+    <div class="w-container w-container--narrow w-stagger">
+      <span class="w-badge w-reveal"><span class="w-badge__icon"><svg viewBox="0 0 24 24"><use href="#i-trophy"/></svg></span>Why it matters</span>
+      <h2 class="w-reveal" style="margin-top:var(--w-s-5)">Stop guessing where to <span class="w-accent">spend the day.</span></h2>
+      <span class="di-why__stat w-reveal">60%</span>
+      <p class="w-lead di-why__lead w-reveal">lift in win rate and velocity.</p>
+      <p class="w-p di-why__detail w-reveal">Instead of a rep's gut and a stale CRM stage, your team starts each morning with a ranked, explained view of which deals to push and what each one needs. That's where the win-rate lift comes from.</p>
+    </div>
+  </section>
+
+  <!-- §5 · FINAL CTA — light · soft brand band ─────────────────────────────── -->
+  <section class="w-section cz-light di-cta w-panel-rise" id="cta" data-nav-surface="light">
+    <div class="w-container">
+      <div class="di-cta__band w-reveal">
+        <h2 class="w-display" style="max-width:22ch;margin-inline:auto">See your pipeline through <span class="w-accent">Carly's eyes.</span></h2>
+        <div class="w-row" style="justify-content:center;margin-top:var(--w-s-6)">
+          <a class="w-btn w-btn--primary w-btn--lg" href="/book-a-demo/">Book a Demo <svg class="w-icon"><use href="#i-arrow-right"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endraw %}
+{% endblock %}

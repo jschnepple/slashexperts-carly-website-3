@@ -46,5 +46,23 @@
     "title": "Implementation Specialist",
     "bio": "Rachel helps new customers launch their expert programs successfully.",
     "avatar": "/assets/images/authors/rachel-park.webp"
+  },
+  {
+    "slug": "annie-s",
+    "name": "Annie S.",
+    "initials": "AS",
+    "title": "SlashExperts Writer",
+    "bio": "Annie writes about Carly, the Trust Layer, and how proof moves deals — for the team building both.",
+    "avatar": "/assets/images/w/av-annie-s.webp",
+    "avatarImage": "/assets/images/w/av-annie-s.webp"
+  },
+  {
+    "slug": "justin-c",
+    "name": "Justin C.",
+    "initials": "JC",
+    "title": "SlashExperts Writer",
+    "bio": "Justin covers win rates, benchmarks, and the mechanics of putting customer proof in front of buyers faster.",
+    "avatar": "/assets/images/w/av-justin-c.webp",
+    "avatarImage": "/assets/images/w/av-justin-c.webp"
   }
 ]

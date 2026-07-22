@@ -1,9 +1,9 @@
 {
-  "layout": "layouts/post.njk",
+  "layout": "layouts/post-w.njk",
   "tags": ["posts"],
   "permalink": "/post/{{ page.fileSlug }}/",
-  "pageCSS": "blog-post",
-  "pageJS": "blog-post",
-  "lightNav": true,
+  "ds7": true,
+  "pageCSS": "post",
+  "pageJS": "post",
   "ogType": "article"
 }

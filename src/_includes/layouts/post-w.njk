@@ -1,0 +1,166 @@
+{#
+  DS7-Web · THE standard blog-post layout (D63, Session K4).
+  Every post in `collections.posts` renders through this file — the 221 migrated
+  markdown posts, the 7 new 2026 posts, and every future post. Structure is
+  lifted verbatim from the designer's post bundles (blog1–blog7, 2026-07-21):
+  §1 hero (arh) · §2 body + share (arb) · §3 related (arr) · §4 CTA (arc).
+  Everything that was hard-coded per-post in the bundle (hero image, author,
+  category, related cards) is driven from front matter + collections here.
+  Front matter consumed (unchanged from layouts/post.njk so the back catalogue
+  renders identically): title · description · date · author → data/authors.json ·
+  category → data/categories.json · tags · featuredImage/featuredImageAlt ·
+  readTime · featured · draft. NEW optional: heroImage (large hero crop,
+  falls back to featuredImage) · plainIntro (drops the drop-cap).
+#}
+{% extends "layouts/base-w.njk" %}
+
+{# ── author lookup ───────────────────────────────────────────────── #}
+{% set authorData = null %}
+{% for a in authors %}
+  {% if a.slug == author %}{% set authorData = a %}{% endif %}
+{% endfor %}
+{% set heroSrc = heroImage or featuredImage %}
+{# dek = the on-page article summary (distinct from the SEO meta description);
+   excerpt = the short card blurb used on the index and in related cards.
+   Both fall back to `description`, so the 221 migrated posts are unaffected. #}
+{% set dekText = dek or description %}
+
+{% block extraHead %}
+<!-- Article-specific Open Graph (base OG/Twitter/canonical come from head.njk) -->
+<meta property="article:published_time" content="{{ date | date('Y-m-d') }}">
+{% if authorData %}<meta property="article:author" content="{{ authorData.name }}">{% endif %}
+{% if category %}<meta property="article:section" content="{{ category }}">{% endif %}
+{% for tag in tags %}{% if tag != 'posts' %}<meta property="article:tag" content="{{ tag }}">
+{% endif %}{% endfor %}
+{% if heroSrc %}<link rel="preload" as="image" href="{{ heroSrc }}" fetchpriority="high">{% endif %}
+
+<!-- JSON-LD Structured Data (shared partial — unchanged) -->
+{% include "partials/blog-schema.njk" %}
+{% endblock %}
+
+{% block content %}
+{#
+  Share-icon sprite supplement. The canonical partials/w-icons.njk sprite is
+  shared by every DS7 page and is never edited (parallel-safety); these three
+  brand marks exist only on post pages, so they are declared page-scoped here,
+  verbatim from the designer bundle.
+#}
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+<symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM2.4 9h5.16v12H2.4zM9.6 9h4.95v1.64h.07c.69-1.24 2.38-2.05 4.1-2.05 4.38 0 5.18 2.68 5.18 6.17V21h-5.16v-5.5c0-1.31-.03-3-1.9-3-1.9 0-2.19 1.43-2.19 2.9V21H9.6z"/></symbol>
+<symbol id="i-twitter" viewBox="0 0 24 24"><path d="M18.24 2.25h3.31l-7.23 8.26 8.5 11.24h-6.66l-5.21-6.82-5.97 6.82H1.67l7.73-8.84L1.25 2.25h6.83l4.71 6.23zm-1.16 17.52h1.83L7.08 4.13H5.12z"/></symbol>
+<symbol id="i-facebook" viewBox="0 0 24 24"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.52 1.5-3.91 3.77-3.91 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.78-1.63 1.57v1.89h2.78l-.45 2.91h-2.33V22c4.78-.76 8.44-4.92 8.44-9.94z"/></symbol>
+</defs></svg>
+
+<article>
+
+  <!-- ══ §1 · HERO (D) ══ -->
+  <section class="arh" id="top" data-nav-surface="dark">
+    <div class="arh__media" aria-hidden="true"{% if heroSrc %} style="background-image:url('{{ heroSrc }}')"{% endif %}></div>
+    <div class="arh__scrim" aria-hidden="true"></div>
+    <div class="w-container">
+      <div class="arh__in w-stagger">
+        <nav class="arh__crumbs w-reveal" aria-label="Breadcrumb">
+          <a href="/blog/">Blog</a><span class="sep">/</span>
+          {% if category %}<span class="arh__catb">{{ category }}</span>{% endif %}
+        </nav>
+        <h1 class="w-reveal">{{ title }}</h1>
+        {% if dekText %}<p class="arh__dek w-reveal">{{ dekText }}</p>{% endif %}
+        <div class="arh__meta w-reveal">
+          {#
+            avatarImage = a real headshot file in the repo (the two 2026 blog
+            authors have one). Authors without it fall back to the initials
+            treatment the .arh__av gradient circle was already styled for —
+            which is exactly how the 221 migrated posts rendered before.
+          #}
+          {% if authorData %}
+          <span class="arh__av"{% if authorData.avatarImage %} style="background-image:url('{{ authorData.avatarImage }}')"{% endif %} role="img" aria-label="{{ authorData.name }}">{% if not authorData.avatarImage %}{{ authorData.initials }}{% endif %}</span>
+          {% endif %}
+          <div class="arh__by">
+            <b>{{ authorData.name if authorData else 'SlashExperts' }}</b>
+            <small>{% if category %}{{ category }}{% endif %}<span><svg class="w-icon"><use href="#i-calendar"/></svg></span>{{ date | date('MMMM Y') }}<svg class="w-icon"><use href="#i-clock"/></svg> {{ readTime | default(content | readingTime) }} min read</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ §2 · BODY (L) ══ -->
+  <section class="arb-sec cz-light">
+    <div class="w-container">
+      <div class="arb{% if plainIntro %} arb--plain{% endif %} w-reveal">
+        {{ content | safe }}
+      </div>
+
+      <div class="arb__share">
+        <span>Share</span>
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://slashexperts.com{{ page.url | urlencode }}&title={{ title | urlencode }}" target="_blank" rel="noopener noreferrer" aria-label="Share on LinkedIn"><svg class="w-icon brand-ic"><use href="#i-linkedin"/></svg></a>
+        <a href="https://twitter.com/intent/tweet?text={{ title | urlencode }}&url=https://slashexperts.com{{ page.url | urlencode }}" target="_blank" rel="noopener noreferrer" aria-label="Share on X"><svg class="w-icon brand-ic"><use href="#i-twitter"/></svg></a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://slashexperts.com{{ page.url | urlencode }}" target="_blank" rel="noopener noreferrer" aria-label="Share on Facebook"><svg class="w-icon brand-ic"><use href="#i-facebook"/></svg></a>
+        <a href="mailto:?subject={{ title | urlencode }}&body=https://slashexperts.com{{ page.url | urlencode }}" aria-label="Share by email"><svg class="w-icon"><use href="#i-mail"/></svg></a>
+        <a href="#" data-copy-link="https://slashexperts.com{{ page.url }}" aria-label="Copy link"><svg class="w-icon"><use href="#i-link"/></svg></a>
+        {% if tags and tags.length > 1 %}
+        <div class="arb__tags">
+          {% for tag in tags %}{% if tag != 'posts' %}
+          <a class="bls__tag" href="/blog/" style="text-decoration:none"><svg class="w-icon"><use href="#i-proof"/></svg> {{ tag | replace('-', ' ') }}</a>
+          {% endif %}{% endfor %}
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ §3 · RELATED (L) ══ -->
+  {# Same-category posts first, then the most recent others, capped at 3. #}
+  {% set related = [] %}
+  {% for p in collections.posts %}
+    {% if p.url != page.url and p.data.category == category and related.length < 3 %}
+      {% set related = (related.push(p), related) %}
+    {% endif %}
+  {% endfor %}
+  {% for p in collections.posts %}
+    {% if p.url != page.url and p.data.category != category and related.length < 3 %}
+      {% set related = (related.push(p), related) %}
+    {% endif %}
+  {% endfor %}
+  {% if related.length %}
+  <section class="arr-sec cz-light">
+    <div class="w-container">
+      <div class="arr-head w-reveal">
+        <span class="w-tag w-tag--kicker"><svg class="w-icon"><use href="#i-book"/></svg> Keep reading</span>
+        <h2>More on the Trust Layer</h2>
+      </div>
+      <div class="arr w-stagger">
+        {% for p in related %}
+        <a class="arr__card w-reveal" href="{{ p.url }}">
+          <div class="arr__media"{% if p.data.featuredImage %} style="background-image:url('{{ p.data.featuredImage }}')"{% endif %}>
+            {% if p.data.category %}<span class="arr__cat">{{ p.data.category }}</span>{% endif %}
+          </div>
+          <div class="arr__c">
+            <h3>{{ p.data.title }}</h3>
+            <p>{{ (p.data.excerpt or p.data.dek or p.data.description) | truncate(120) }}</p>
+          </div>
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- ══ §4 · CTA (D close) ══ -->
+  <section class="arc-sec" id="cta" data-nav-surface="dark">
+    <div class="arc__glow" aria-hidden="true"></div>
+    <div class="w-container">
+      <div class="arc__in w-stagger">
+        <span class="w-tag w-tag--kicker w-reveal"><svg class="w-icon"><use href="#i-magic"/></svg> See Carly</span>
+        <h2 class="w-reveal">See Carly work a deal.</h2>
+        <p class="w-reveal">Book a walkthrough and watch Carly surface the right proof on a live opportunity — from your pipeline, in your CRM.</p>
+        <div class="arc__cta w-reveal">
+          <a class="w-btn w-btn--primary w-btn--lg" href="/book-a-demo/">Book a demo</a>
+          <a class="w-btn w-btn--ghost w-btn--lg" href="/carly/">Meet Carly</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</article>
+{% endblock %}

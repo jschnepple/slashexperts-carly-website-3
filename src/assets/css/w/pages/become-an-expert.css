@@ -1,0 +1,1908 @@
+:root{
+  --w-img-av-allison:url("/assets/images/w/av-allison.png");
+  --w-img-av-george:url("/assets/images/w/av-george.png");
+}
+
+/* ============================================================================
+   W-BECOME-EXPERT · Become an Expert  /become-an-expert/
+   Theme rhythm: D · L · L · L  (one dark, human hero → a fully light run.
+   No dark punch after the hero — a recruit page must read as an invitation,
+   not a pitch.)
+   Prefixes: beh- hero · bew- what's-in-it (§2) · bes- steps (§3) · bec- cta (§4)
+   Scene kit: bxx-  ·  Foundation-only: every value is a --w-* token.
+   ============================================================================ */
+/* ===== light-band technique (.cz-light) — WHITE variant (verbatim from sibling Carly-depth pages) ===== */
+.cz-light{
+  background:var(--w-bg);color:var(--w-text);
+  --w-bg:#ffffff; --w-bg-deep:#ececec; --w-bg-elev:#ffffff;
+  --w-card:#ffffff; --w-card-lo:#efefef; --w-card-hi:#ffffff;
+  --w-text:var(--w-charcoal); --w-text-2:rgba(28,26,36,0.66); --w-text-3:rgba(28,26,36,0.62);
+  --w-text-prose:#302d2e; --w-text-on-brand:#ffffff; --w-icon-ink:var(--w-charcoal);
+  --w-line-soft:rgba(28,26,36,0.06); --w-line:rgba(28,26,36,0.10); --w-line-strong:rgba(28,26,36,0.16); --w-edge-top:rgba(255,255,255,0.9);
+  --w-brand:var(--w-purple-ink); --w-brand-2:var(--w-purple); --w-brand-soft:rgba(152,135,244,0.10); --w-brand-line:rgba(152,135,244,0.28);
+  --w-shadow-raise:0 8px 18px -8px rgba(28,26,36,0.07), inset 0 1px 0 rgba(255,255,255,0.9);
+  --w-shadow-raise-soft:0 4px 10px -6px rgba(28,26,36,0.05), inset 0 1px 0 rgba(255,255,255,0.85);
+  --w-shadow-recess:inset 0 1px 3px rgba(28,26,36,0.05), inset 0 -1px 0 rgba(255,255,255,0.8);
+  --w-shadow-recess-deep:inset 0 2px 5px rgba(28,26,36,0.07), inset 0 -1px 0 rgba(255,255,255,0.7);
+  --w-shadow-sm:0 1px 2px rgba(28,26,36,0.04); --w-shadow-md:0 4px 12px rgba(28,26,36,0.05); --w-shadow-lg:0 12px 28px rgba(28,26,36,0.07);
+  --w-glow-brand:0 2px 8px rgba(28,26,36,0.05); --w-glow-brand-strong:0 6px 16px rgba(28,26,36,0.07);
+  --w-glass-fill:rgba(255,255,255,0.66); --w-glass-fill-strong:rgba(255,255,255,0.86); --w-glass-tint:rgba(28,26,36,0.90);
+  --w-glass-fill-soft:rgba(28,26,36,0.03); --w-glass-line:rgba(28,26,36,0.10); --w-glass-line-bright:rgba(28,26,36,0.16);
+  --w-glass-rim-top:rgba(255,255,255,0.95); --w-glass-rim-bottom:rgba(28,26,36,0.05);
+  --w-glass-blur:blur(18px) saturate(140%); --w-glass-blur-lg:blur(22px) saturate(145%);
+  --w-glass-shadow:0 10px 24px rgba(28,26,36,0.06); --w-glass-shadow-soft:0 4px 12px rgba(28,26,36,0.05);
+  --w-cta-fill:var(--w-glass-tint); --w-cta-text:#ffffff; --w-cta-glow:var(--w-shadow-md); --w-cta-glow-strong:var(--w-shadow-lg);
+  --w-card-brand-wash:linear-gradient(160deg, rgba(28,26,36,0.06), rgba(28,26,36,0.015)); --w-card-brand-line:var(--w-line-strong);
+  --w-tag-brand-bg:rgba(28,26,36,0.06); --w-tag-brand-fg:var(--w-text); --w-focus:rgba(28,26,36,0.55);
+  --w-grad-surface:linear-gradient(180deg, #ffffff 0%, #f5f5f5 100%);
+  --w-grad-surface-hi:linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
+  --w-grad-recess:linear-gradient(180deg, #ededed 0%, #e3e3e3 100%);
+  --w-edge-fade:radial-gradient(ellipse 84% 82% at 50% 48%, transparent 52%, var(--w-bg) 100%);
+}
+@media (prefers-reduced-transparency: reduce){
+  .cz-light .w-glass,.cz-light .w-btn--glass,.cz-light .w-tag,.cz-light .w-card,.cz-light .w-cta-band{background:var(--w-card);border-color:var(--w-line)}
+}
+
+/* ===== asymmetric section rhythm (tight top / generous bottom) ===== */
+.w-section{padding-block:clamp(36px, 2.2vw + 1rem, 64px) clamp(64px, 4vw + 1.7rem, 108px)}
+.w-section--hero{padding-block:clamp(96px, 6rem + 5vw, 168px) clamp(72px, 5vw + 2rem, 128px)}
+.w-badge{box-shadow:0 2px 10px rgba(12,10,22,.12), inset 0 1px 0 var(--w-glass-rim-top)}
+.w-panel-rise{--w-panel-overlap:34px}
+
+/* page-local asset tokens (same pattern as the sibling pages — declared here, not in foundation) */
+:root{
+  --w-img-bech-ctabg:url("/assets/images/w/become-an-expert/bech-ctabg.webp");
+  /* real expert avatars (Design System/Avatar → optimized 176px WebP, base64'd at bundle) */
+  --w-img-av-timothy:url("/assets/images/w/become-an-expert/av-timothy.webp");
+  --w-img-av-rick:url("/assets/images/w/become-an-expert/av-rick.webp");
+  --w-img-av-joseph:url("/assets/images/w/become-an-expert/av-joseph.webp");
+}
+
+/* ═══ ADOBE STICKY STACK (§1–§6) ═══════════════════════════════════════════════
+   Contiguous sections pin at top:0 and get covered by the next — depth, not parallax.
+   Rules from motion-library §2: the wrapper ENDS the sticky scope (without it, pinned
+   sections bleed into later ones); every covering section is OPAQUE with a rounded top +
+   top shadow + strictly increasing z; every DARK section needs an explicit bg or it is
+   transparent over the body and the pinned section shows through. Fit-or-flow is a HEIGHT
+   problem → the `stackfit` JS un-pins any section taller than the viewport. */
+.bx-stack{position:relative;z-index:0}
+@media (min-width:901px) and (prefers-reduced-motion:no-preference){
+  .bx-stack > section{position:sticky;top:0}
+  .bx-stack #top{z-index:1}
+  .bx-stack #why{z-index:2}
+  .bx-stack #who{z-index:3}
+  .bx-stack #how{z-index:4}
+  .bx-stack #verification{z-index:5}
+  .bx-stack #conversation{z-index:6}
+  /* the covering panels — rounded top + the shadow that sells the depth */
+  .bx-stack #why,.bx-stack #who,.bx-stack #how,.bx-stack #verification,.bx-stack #conversation{
+    border-radius:var(--w-panel-radius,44px) var(--w-panel-radius,44px) 0 0;
+    box-shadow:0 -24px 50px -14px rgba(28,26,36,.30)}
+}
+/* everything after the stack rides above it */
+.bet,.bevo,.beq,.bec{position:relative;z-index:1}
+
+/* ─── §1 HERO — DARK · split, copy LEFT / expert's-eye scene RIGHT ─────────── */
+/* opaque bg is REQUIRED for a pinned dark section (else the body shows through) */
+.beh{position:relative;overflow:hidden;background:var(--w-bg)}
+.beh__grid{display:grid;grid-template-columns:0.95fr 1.05fr;align-items:center;
+  gap:clamp(40px,4.6vw,92px)}
+.beh__copy{min-width:0;max-width:560px}
+.beh__title{font-size:var(--w-fs-display);font-weight:var(--w-fw-black);
+  letter-spacing:var(--w-ls-tight);line-height:var(--w-lh-tight);color:var(--w-text);
+  margin-top:var(--w-s-5)}
+.beh__lead{margin-top:var(--w-s-5);max-width:520px}
+.beh__cta{margin-top:var(--w-s-7);display:flex;gap:var(--w-s-4);flex-wrap:wrap;align-items:center}
+/* avatar trust row beneath the hero CTA */
+.beh__trust{margin-top:var(--w-s-6);display:flex;align-items:center;gap:var(--w-s-4);flex-wrap:wrap}
+.beh__avs{display:flex;align-items:center}
+.beh__av{width:34px;height:34px;border-radius:var(--w-r-full);background-size:cover;
+  background-position:center;box-shadow:0 0 0 2px var(--w-bg);margin-left:-10px}
+.beh__av:first-child{margin-left:0}
+.beh__tx{color:var(--w-text-2);font-size:var(--w-fs-sm);font-weight:var(--w-fw-semi)}
+.beh__illus{font-family:var(--w-font-kicker);font-size:var(--w-fs-xs);letter-spacing:.09em;
+  text-transform:uppercase;color:var(--w-text-3)}
+.beh__media{position:relative;min-width:0}
+.beh__stage{position:relative;width:100%;aspect-ratio:700/560;border-radius:var(--w-r-2xl);
+  overflow:hidden}
+@media(max-width:1024px){
+  .beh__grid{grid-template-columns:1fr;gap:var(--w-s-7)}
+  .beh__copy{max-width:none}
+  .beh__stage{aspect-ratio:760/580;max-width:720px;margin-inline:auto}
+}
+@media(max-width:700px){.beh__stage{aspect-ratio:440/580;max-width:440px}}
+@media(max-width:560px){.beh__cta{flex-direction:column;align-items:stretch}
+  .beh__cta>*{width:100%;justify-content:center}}
+
+/* ─── §2 WHAT'S IN IT FOR YOU — LIGHT · offset 3-card bento on white ───────── */
+.bew{position:relative;overflow:hidden}
+.bew .w-section-head--left{max-width:640px}
+.bew__title{font-size:var(--w-fs-h1);margin-top:var(--w-s-4)}
+.bew__grid{margin-top:clamp(40px,3.6vw,64px);display:grid;grid-template-columns:repeat(3,1fr);
+  gap:clamp(20px,1.8vw,28px);align-items:start}
+/* the offset — human-scaled stagger, NOT a flat feature row */
+.bew__card:nth-child(2){margin-top:clamp(18px,2.2vw,40px)}
+.bew__card:nth-child(3){margin-top:clamp(36px,4.4vw,80px)}
+/* §2 cards = the CANONICAL DS7 dark-glass widget (.w-card.w-card--dark + .w-card__panel).
+   Jeff 07-13: use the real DS7 component, no bespoke card. All three identical; no hover-dark.
+   This page adds ONLY the offset stagger + the scene stage inside the frosted inner panel. */
+.bew__card{overflow:hidden;isolation:isolate}
+/* the frosted panel at DS7's 50% white reads as MID-GRAY over the dark glass, and the scene
+   inside it goes muddy (Jeff: "assets inside the inner white card not visible"). On this page the
+   panel is a CONTENT surface, not decoration — so make it actually white and drop the blur. */
+.bew__panel{padding:var(--w-s-3);background:#ffffff;border-color:rgba(255,255,255,0.9);
+  -webkit-backdrop-filter:none;backdrop-filter:none;
+  box-shadow:0 12px 30px rgba(0,0,0,0.22), inset 0 1px 0 rgba(255,255,255,0.9)}
+/* the scene sits DIRECTLY on the DS7 frosted panel — no plate, no inner card, no purple.
+   The A2 fragments ship a focal card (bg + border + shadow + .bxx-rim gradient bloom). Inside a
+   backdrop-filtered .w-card__panel that rim's negative-z pseudo-elements paint THROUGH in Safari
+   (it renders white in Chromium) — the "purple glass" bug. So we strip the card chrome entirely
+   and let the CONTENT live on the frosted white panel, with colors re-tuned for that ground. */
+.bew__fig{position:relative;width:100%;aspect-ratio:360/210;border-radius:var(--w-r-md);
+  background:transparent;overflow:hidden}
+/* 1 · kill the inner surface + the rim bloom (the purple) + the edge fade */
+.bew__fig .bxx-card{background:transparent;border-color:transparent;box-shadow:none}
+.bew__fig .bxx-rim::before,
+.bew__fig .bxx-rim::after{display:none}
+.bew__fig .bxx-fit::after{background:none}
+/* 2 · re-tune contents for the frosted-white ground (charcoal ink, denser lines/chips) */
+.bew__fig .bxx-ln{background:rgba(28,26,36,0.13)}
+.bew__fig .bxx-chip{background:rgba(28,26,36,0.05);border-color:rgba(28,26,36,0.10);
+  color:rgba(28,26,36,0.74)}
+.bew__fig .bxx-chip--mono{background:rgba(28,26,36,0.04);border-color:rgba(28,26,36,0.12);color:var(--w-charcoal)}
+.bew__fig .bxx-av{box-shadow:0 0 0 2px rgba(255,255,255,0.9),0 4px 10px -4px rgba(12,10,22,0.28)}
+@media(max-width:900px){
+  .bew__grid{grid-template-columns:1fr;gap:var(--w-s-5);max-width:520px;margin-inline:auto}
+  .bew__card:nth-child(2),.bew__card:nth-child(3){margin-top:0}
+}
+
+/* ─── §3 WHO JOINS — LIGHT (white) · split, copy LEFT / persona rows RIGHT ─── */
+.bep{position:relative;overflow:hidden}
+.bep__grid{display:grid;grid-template-columns:0.82fr 1.18fr;align-items:center;
+  gap:clamp(40px,4.4vw,88px)}
+.bep__copy{min-width:0;max-width:460px}
+.bep__title{font-size:var(--w-fs-h1);margin-top:var(--w-s-4)}
+.bep__body{margin-top:var(--w-s-5);color:var(--w-text-prose);font-size:var(--w-fs-lead);
+  line-height:var(--w-lh-normal)}
+.bep__close{margin-top:var(--w-s-6);padding-top:var(--w-s-5);border-top:1px solid var(--w-line);
+  color:var(--w-text);font-size:var(--w-fs-body);font-weight:var(--w-fw-semi);
+  line-height:var(--w-lh-normal)}
+.bep__list{display:flex;flex-direction:column;gap:var(--w-s-3);min-width:0}
+.bep__row{display:flex;align-items:center;gap:var(--w-s-5);
+  background:#f3f3f3;border:1px solid var(--w-line-soft);border-radius:var(--w-r-xl);
+  padding:clamp(16px,1.3vw,20px) clamp(18px,1.5vw,24px);
+  transition:background var(--w-dur) var(--w-ease), color var(--w-dur) var(--w-ease),
+             transform var(--w-dur) var(--w-ease), box-shadow var(--w-dur) var(--w-ease)}
+.bep__row:hover{background:var(--w-charcoal);transform:translateX(4px);box-shadow:var(--w-shadow-lg)}
+.bep__row:hover .bep__rt{color:#fff}
+.bep__row:hover .bep__rb{color:rgba(255,255,255,0.72)}
+.bep__av{width:52px;height:52px;flex:none;border-radius:var(--w-r-full);
+  background-size:cover;background-position:center;
+  box-shadow:0 0 0 2px var(--w-card),0 4px 10px -4px rgba(28,26,36,.22)}
+.bep__rt{font-size:var(--w-fs-body);font-weight:var(--w-fw-bold);color:var(--w-text);
+  letter-spacing:var(--w-ls-tight);transition:color var(--w-dur) var(--w-ease)}
+.bep__rb{margin-top:4px;color:var(--w-text-2);font-size:var(--w-fs-sm);
+  line-height:var(--w-lh-normal);transition:color var(--w-dur) var(--w-ease)}
+@media(max-width:1024px){
+  .bep__grid{grid-template-columns:1fr;gap:var(--w-s-7)}
+  .bep__copy{max-width:none}
+}
+@media(max-width:560px){.bep__row{gap:var(--w-s-4);padding:16px}.bep__av{width:44px;height:44px}}
+
+/* ─── §3 HOW IT WORKS — LIGHT (white) · wide horizontal 3-beat rail ────────── */
+.bes{position:relative;overflow:hidden}
+/* pegboard motif — a dot grid behind EVERYTHING in this section, faded outwards so it
+   dissolves into the white ground at the edges (Jeff 07-13). Decorative only, sits at z-0;
+   all section content is lifted to z-1 below. */
+.bes::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background-image:radial-gradient(circle, var(--w-line) 1.1px, transparent 1.2px);
+  background-size:32px 32px;background-position:center;
+  -webkit-mask-image:radial-gradient(ellipse 62% 56% at 50% 50%, #000 0%, rgba(0,0,0,.35) 45%, transparent 72%);
+  mask-image:radial-gradient(ellipse 62% 56% at 50% 50%, #000 0%, rgba(0,0,0,.35) 45%, transparent 72%);
+  opacity:.5}
+.bes>.w-container{position:relative;z-index:1}
+.bes .w-section-head--left{max-width:640px}
+.bes__title{font-size:var(--w-fs-h1);margin-top:var(--w-s-4)}
+.bes__fig{margin-top:clamp(40px,3.6vw,64px)}
+.bes__stage{position:relative;width:100%;max-width:var(--w-container-wide);margin-inline:auto;
+  aspect-ratio:1180/440;border-radius:var(--w-r-2xl);overflow:hidden}
+/* ≤900px the fragment swaps to its PORTRAIT canvas (data-sm-at="900") — match the stage to it.
+   The wide 1180 canvas contain-scales to ~0.6 in a 768px stage → 6px text. Legibility floor = the
+   real breakpoint, not the layout breakpoint. */
+@media(max-width:900px){.bes__stage{aspect-ratio:440/620;max-width:440px}}
+/* the step rail beneath the scene — numbered, plain-spoken */
+.bes__steps{margin-top:clamp(32px,3vw,52px);display:grid;grid-template-columns:repeat(3,1fr);
+  gap:clamp(24px,2.6vw,48px)}
+.bes__step{position:relative;padding-top:var(--w-s-5);border-top:1px solid var(--w-line)}
+.bes__n{font-family:var(--w-font-mono);font-size:var(--w-fs-sm);font-weight:700;
+  color:var(--w-brand);letter-spacing:var(--w-ls-wide)}
+.bes__st{margin-top:var(--w-s-3);font-size:var(--w-fs-h4);font-weight:var(--w-fw-bold);
+  color:var(--w-text);letter-spacing:var(--w-ls-tight)}
+.bes__sb{margin-top:var(--w-s-2);color:var(--w-text-2);font-size:var(--w-fs-body);
+  line-height:var(--w-lh-normal)}
+@media(max-width:900px){.bes__steps{grid-template-columns:1fr;gap:var(--w-s-6);
+  max-width:520px;margin-inline:auto}}
+
+/* ─── §5 VERIFICATION — LIGHT · centered head + 3 borderless check columns ─── */
+.bevf{position:relative;overflow:hidden}
+.bevf__head{max-width:720px;margin-inline:auto;text-align:center}
+.bevf__title{font-size:var(--w-fs-h1);margin-top:var(--w-s-4)}
+.bevf__body{margin-top:var(--w-s-5);margin-inline:auto;max-width:620px;color:var(--w-text-prose);
+  font-size:var(--w-fs-lead);line-height:var(--w-lh-normal)}
+.bevf__grid{margin-top:clamp(44px,4vw,72px);display:grid;grid-template-columns:repeat(3,1fr);
+  gap:clamp(28px,3vw,56px)}
+.bevf__col{position:relative;padding-left:clamp(20px,1.6vw,26px);
+  border-left:1px solid var(--w-line)}
+.bevf__seal{width:40px;height:40px;border-radius:var(--w-r-full);display:grid;place-items:center;
+  background:var(--w-charcoal);color:#ffffff;
+  box-shadow:var(--w-shadow-md)}
+.bevf__seal svg{width:18px;height:18px}
+.bevf__ct{margin-top:var(--w-s-5);font-size:var(--w-fs-h4);font-weight:var(--w-fw-bold);
+  color:var(--w-text);letter-spacing:var(--w-ls-tight)}
+.bevf__cb{margin-top:var(--w-s-3);color:var(--w-text-2);font-size:var(--w-fs-body);
+  line-height:var(--w-lh-normal)}
+.bevf__foot{margin-top:clamp(36px,3.2vw,56px);text-align:center;color:var(--w-text-2);
+  font-size:var(--w-fs-body);line-height:var(--w-lh-normal);max-width:640px;margin-inline:auto}
+@media(max-width:900px){.bevf__grid{grid-template-columns:1fr;gap:var(--w-s-6);
+  max-width:520px;margin-inline:auto}}
+
+/* ─── §5 THE CONVERSATION — DARK punch · split scene LEFT / copy RIGHT ─────── */
+.bev{position:relative;overflow:hidden;background:var(--w-bg)}
+.bev__grid{display:grid;grid-template-columns:1.05fr 0.95fr;align-items:center;
+  gap:clamp(40px,4.4vw,88px)}
+.bev__media{position:relative;min-width:0}
+.bev__stage{position:relative;width:100%;aspect-ratio:700/560;border-radius:var(--w-r-2xl);
+  overflow:hidden}
+.bev__copy{min-width:0}
+.bev__title{font-size:var(--w-fs-h1);margin-top:var(--w-s-4)}
+.bev__body{margin-top:var(--w-s-5);color:var(--w-text-prose);font-size:var(--w-fs-lead);
+  line-height:var(--w-lh-normal)}
+.bev__beats{margin-top:var(--w-s-7);display:flex;flex-direction:column;gap:var(--w-s-5)}
+.bev__beat{display:grid;grid-template-columns:88px 1fr;gap:var(--w-s-5);align-items:baseline;
+  padding-top:var(--w-s-4);border-top:1px solid var(--w-line)}
+.bev__t{font-family:var(--w-font-mono);font-size:var(--w-fs-xs);font-weight:700;
+  color:var(--w-brand);letter-spacing:var(--w-ls-wide);white-space:nowrap}
+.bev__bt{font-size:var(--w-fs-body);font-weight:var(--w-fw-bold);color:var(--w-text)}
+.bev__bb{margin-top:4px;color:var(--w-text-2);font-size:var(--w-fs-sm);line-height:var(--w-lh-normal)}
+/* the "what you never do" strip — full width beneath the split */
+.bev__never{margin-top:clamp(48px,4.4vw,88px)}
+.bev__nh{font-family:var(--w-font-kicker);font-size:var(--w-fs-xs);letter-spacing:.09em;
+  text-transform:uppercase;color:var(--w-text-3)}
+.bev__ngrid{margin-top:var(--w-s-5);display:grid;grid-template-columns:repeat(4,1fr);
+  gap:clamp(16px,1.6vw,24px)}
+.bev__ncard{display:flex;gap:var(--w-s-4);align-items:flex-start;
+  background:var(--w-glass-fill-soft);border:1px solid var(--w-line);border-radius:var(--w-r-xl);
+  padding:clamp(18px,1.5vw,24px)}
+.bev__nx{flex:none;width:28px;height:28px;border-radius:var(--w-r-full);
+  display:grid;place-items:center;background:var(--w-card-lo);border:1px solid var(--w-line);
+  color:var(--w-text-3)}
+.bev__nx svg{width:14px;height:14px}
+.bev__ntx{color:var(--w-text-2);font-size:var(--w-fs-sm);line-height:var(--w-lh-normal)}
+.bev__ntx b{color:var(--w-text);font-weight:var(--w-fw-bold)}
+@media(max-width:1024px){
+  .bev__grid{grid-template-columns:1fr;gap:var(--w-s-7)}
+  .bev__copy{order:-1}                 /* copy-before-scene on stacked (responsive-traps §5) */
+  .bev__stage{aspect-ratio:760/580;max-width:720px;margin-inline:auto}
+  .bev__ngrid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:700px){.bev__stage{aspect-ratio:440/600;max-width:440px}}
+@media(max-width:560px){.bev__ngrid{grid-template-columns:1fr}
+  .bev__beat{grid-template-columns:1fr;gap:var(--w-s-2)}}
+
+/* ─── §6 YOUR TERMS — LIGHT (white) · centered head + one guardrail card ───── */
+.bet{position:relative;overflow:hidden}
+.bet__head{max-width:720px;margin-inline:auto;text-align:center}
+.bet__title{font-size:var(--w-fs-h1);margin-top:var(--w-s-4)}
+.bet__body{margin-top:var(--w-s-5);margin-inline:auto;max-width:600px;color:var(--w-text-prose);
+  font-size:var(--w-fs-lead);line-height:var(--w-lh-normal)}
+.bet__card{margin-top:clamp(40px,3.6vw,64px);max-width:1040px;margin-inline:auto;
+  background:var(--w-card);border:1px solid var(--w-line);border-radius:var(--w-r-2xl);
+  box-shadow:var(--w-shadow-md);padding:clamp(24px,2.4vw,44px);
+  display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(20px,2vw,36px)}
+.bet__item{display:flex;gap:var(--w-s-4);align-items:flex-start}
+.bet__ico{flex:none;width:38px;height:38px;border-radius:var(--w-r-md);display:grid;place-items:center;
+  background:var(--w-tag-brand-bg);border:1px solid var(--w-line-soft);color:var(--w-icon-ink)}
+.bet__ico svg{width:18px;height:18px}
+.bet__it{font-size:var(--w-fs-body);font-weight:var(--w-fw-bold);color:var(--w-text);
+  letter-spacing:var(--w-ls-tight)}
+.bet__ib{margin-top:4px;color:var(--w-text-2);font-size:var(--w-fs-sm);line-height:var(--w-lh-normal)}
+@media(max-width:820px){.bet__card{grid-template-columns:1fr}}
+
+/* ─── §8 VOICES — LIGHT (white) · 3 quote cards, centre card raised (fan) ──── */
+.bevo{position:relative;overflow:hidden}
+.bevo__head{max-width:680px;margin-inline:auto;text-align:center}
+.bevo__title{font-size:var(--w-fs-h1);margin-top:var(--w-s-4)}
+/* Jeff 07-13: all three cards the SAME SIZE (card 1 was taller — its quote is longer).
+   stretch + equal rows + push the attribution to the bottom = identical boxes. */
+.bevo__grid{margin-top:clamp(44px,4vw,72px);display:grid;grid-template-columns:repeat(3,1fr);
+  gap:clamp(20px,1.8vw,28px);align-items:stretch;grid-auto-rows:1fr}
+.bevo__card{position:relative;display:flex;flex-direction:column;
+  background:#f3f3f3;border:1px solid var(--w-line-soft);border-radius:var(--w-r-2xl);
+  padding:clamp(24px,2vw,32px);
+  transition:transform var(--w-dur) var(--w-ease), box-shadow var(--w-dur) var(--w-ease)}
+/* the centre card is the raised one — a quiet fan, not three flat tiles */
+.bevo__card--focal{background:var(--w-charcoal);border-color:transparent;
+  box-shadow:var(--w-shadow-lg);transform:translateY(-16px)}
+.bevo__card--focal .bevo__q{color:#fff}
+.bevo__card--focal .bevo__n{color:#fff}
+.bevo__card--focal .bevo__r{color:rgba(255,255,255,0.66)}
+.bevo__card:hover{transform:translateY(-20px);box-shadow:var(--w-shadow-lg)}
+.bevo__card--focal:hover{transform:translateY(-24px)}
+.bevo__mark{width:26px;height:26px;color:var(--w-text-3)}
+.bevo__q{margin-top:var(--w-s-4);color:var(--w-text);font-size:var(--w-fs-lead);
+  line-height:var(--w-lh-normal);font-weight:var(--w-fw-semi);letter-spacing:var(--w-ls-tight)}
+.bevo__by{margin-top:auto;padding-top:var(--w-s-6);display:flex;align-items:center;gap:var(--w-s-4)}
+.bevo__av{width:44px;height:44px;flex:none;border-radius:var(--w-r-full);
+  background-size:cover;background-position:center;filter:grayscale(1);
+  box-shadow:0 0 0 2px var(--w-card)}
+@media(max-width:900px){
+  .bevo__grid{grid-template-columns:1fr;gap:var(--w-s-5);max-width:520px;margin-inline:auto}
+  .bevo__card--focal{transform:none}
+  .bevo__card:hover,.bevo__card--focal:hover{transform:none}
+}
+
+/* ─── §9 FAQ — LIGHT · centered accordion (pattern lifted from W-PRICING) ──── */
+.beq{position:relative}
+.beq__head{max-width:640px;margin-inline:auto;text-align:center}
+.beq__title{font-size:var(--w-fs-h1);margin-top:var(--w-s-4)}
+.beq__list{margin-top:clamp(36px,3.2vw,56px);display:grid;gap:12px;max-width:760px;
+  margin-inline:auto}
+.beq__item{background:var(--w-card);border:1px solid var(--w-line-soft);border-radius:var(--w-r-lg);
+  box-shadow:var(--w-shadow-sm);overflow:hidden}
+.beq__item summary{display:flex;align-items:center;justify-content:space-between;gap:16px;
+  list-style:none;cursor:pointer;padding:19px 22px;font-weight:var(--w-fw-bold);
+  font-size:var(--w-fs-body);color:var(--w-text)}
+.beq__item summary::-webkit-details-marker{display:none}
+.beq__chev{flex:none;width:18px;height:18px;color:var(--w-text-3);
+  transition:transform var(--w-dur) var(--w-ease)}
+.beq__item[open] .beq__chev{transform:rotate(180deg)}
+.beq__item p{margin:0;padding:0 22px 20px;font-size:var(--w-fs-sm);line-height:var(--w-lh-normal);
+  color:var(--w-text-2);max-width:62ch}
+@media (prefers-reduced-motion: reduce){.beq__chev{transition:none}}
+
+/* ─── §8 FINAL CTA — LIGHT section, contained soft-brand band (default close) ─ */
+.bec{position:relative}
+.bec__band{position:relative;overflow:hidden;border-radius:var(--w-r-2xl);
+  padding:clamp(56px,5.2vw,104px) var(--w-s-6);text-align:center;isolation:isolate}
+.bec__band::before{content:"";position:absolute;inset:0;z-index:-2;
+  background-image:var(--w-img-bech-ctabg);background-size:cover;background-position:center;
+  filter:grayscale(1)}
+.bec__band::after{content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(180deg, rgba(28,26,36,0.72), rgba(28,26,36,0.80))}
+.bec__title{font-size:var(--w-fs-h1);color:#fff;max-width:760px;margin-inline:auto}
+.bec__actions{margin-top:var(--w-s-7);display:flex;gap:var(--w-s-4);justify-content:center;
+  align-items:center;flex-wrap:wrap}
+.bec__link{display:inline-flex;align-items:center;gap:var(--w-s-2);
+  color:rgba(255,255,255,0.82);font-weight:var(--w-fw-semi);font-size:var(--w-fs-sm);
+  padding:var(--w-s-3) var(--w-s-4);border-radius:var(--w-r-pill);
+  transition:color var(--w-dur) var(--w-ease)}
+.bec__link:hover{color:#fff}
+.bec__link svg{width:18px;height:18px}
+/* the CTA band always renders its own dark surface — force the brand CTA fill regardless of the
+   light section it sits in (the light-theme --w-cta-fill would go dark-glass on dark = invisible) */
+.bec__band .w-btn--primary{background:var(--w-grad-brand);color:var(--w-charcoal);
+  box-shadow:var(--w-glow-brand)}
+.bec__band .w-btn--primary:hover{box-shadow:var(--w-glow-brand-strong)}
+@media(max-width:560px){.bec__actions{flex-direction:column}
+  .bec__actions>*{width:100%;justify-content:center}}
+
+/* ─── shared: kicker badge ────────────────────────────────────────────────── */
+.be-kicker{display:inline-flex}
+/* §2 + §3 sit on WHITE (the f3f3f3 cards need a white ground — feedback_ds7web light gotchas) */
+.be-white{--w-bg:#ffffff;background:#ffffff}
+
+
+/* ══════════ ASSET FRAGMENT CSS (hoisted, Phase 6) ══════════ */
+
+/* ═══ bxx- · shared animated-scene canvas kit (W-BECOME-EXPERT) ═══════════════
+   Every A-slot fragment renders a fixed-px canvas (.bxx-fit) inside its section
+   stage (.beh__stage / .bew__stage / .bes__stage). The scaler JS scales the
+   canvas CONTAIN + CENTER (never width-only — that clips at medium widths,
+   responsive-traps.md §3). All values are --w-* tokens.
+   ─────────────────────────────────────────────────────────────────────────── */
+.bxx{position:absolute;inset:0;overflow:hidden;border-radius:inherit}
+.bxx-fit{position:absolute;left:0;top:0;transform-origin:0 0;will-change:transform}
+/* composition dissolves to the section ground at the canvas edges (brand signature) */
+.bxx-fit::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:9;
+  background:var(--w-edge-fade)}
+
+/* surfaces */
+.bxx-card{position:absolute;background:var(--w-card);border-radius:var(--w-r-lg);
+  box-shadow:var(--w-shadow-raise-soft);border:1px solid var(--w-line);padding:16px 18px}
+.bxx-card--focal{box-shadow:var(--w-shadow-raise)}
+/* bloom-rim focal card — the brand moment (gradient rim, purple lives in product UI only) */
+.bxx-rim{position:relative}
+.bxx-rim::before{content:"";position:absolute;inset:-1.5px;border-radius:inherit;z-index:-1;
+  background:var(--w-grad-brand);opacity:.9}
+.bxx-rim::after{content:"";position:absolute;inset:-14px;border-radius:inherit;z-index:-2;
+  background:var(--w-grad-brand);filter:blur(18px);opacity:.16}
+
+/* ghost / receding surface — the "undifferentiated list" state */
+.bxx-ghost{background:var(--w-card-lo);border-color:var(--w-line-soft);box-shadow:none;
+  filter:grayscale(1);opacity:.5}
+.bxx-ghost .bxx-ln{background:var(--w-line-strong);opacity:.5}
+
+/* skeleton text lines (faceless rows) */
+.bxx-ln{display:block;height:8px;border-radius:var(--w-r-pill);background:var(--w-line-strong)}
+
+/* chips + pills */
+.bxx-chip{display:inline-flex;align-items:center;gap:6px;padding:7px 12px;
+  border-radius:var(--w-r-pill);background:var(--w-glass-fill-soft);
+  border:1px solid var(--w-line);color:var(--w-text-2);
+  font:600 12px/1 var(--w-font);white-space:nowrap}
+.bxx-chip--brand{background:var(--w-tag-brand-bg);border-color:var(--w-brand-line);
+  color:var(--w-tag-brand-fg)}
+.bxx-chip--score{background:var(--w-grad-brand);border-color:transparent;color:var(--w-charcoal);
+  font-family:var(--w-font-mono);font-weight:700}
+.bxx-chip--mono{font-family:var(--w-font-mono);font-weight:700;font-size:11.5px}
+
+/* the illustrative marker — demo numbers must READ as demo (copy PROOF rule) */
+.bxx-illus{font:400 10px/1 var(--w-font-kicker);letter-spacing:.09em;text-transform:uppercase;
+  color:var(--w-text-3);white-space:nowrap}
+
+/* avatars (foundation tokens only) */
+.bxx-av{border-radius:var(--w-r-full);background-size:cover;background-position:center;flex:none;
+  box-shadow:0 0 0 2px var(--w-card),0 4px 10px -4px rgba(0,0,0,.28)}
+.bxx-av--ring{box-shadow:0 0 0 2px var(--w-card),0 0 0 4px var(--w-brand),0 6px 14px -5px rgba(0,0,0,.32)}
+
+/* weight bar — the "weighing" primitive (A2) */
+.bxx-bar{position:relative;height:7px;border-radius:var(--w-r-pill);
+  background:var(--w-glass-fill-soft);overflow:hidden;flex:none}
+.bxx-bar>i{display:block;height:100%;border-radius:var(--w-r-pill);
+  background:var(--w-grad-brand);transform-origin:0 50%}
+
+/* connector rail (cz4 recipe — orthogonal, token stroke, gradient pulse) */
+.bxx-cn{position:absolute;background:var(--w-line-strong);border-radius:var(--w-r-pill)}
+
+/* every fragment's motion is opt-IN: base CSS renders the RESOLVED END STATE, so
+   reduced-motion + no-JS both get a correct, finished scene for free. */
+
+
+/* ---- bea1_fragment ---- */
+/* ============================================================
+   bea1_fragment — W-BECOME-EXPERT §1 slot A1 · hero scene
+   "The expert's inbox."  (the page's honesty, made literal)
+
+   Every sibling page renders the Experts+ machine from the BUYER's
+   end of the wire — a company getting matched to the right expert.
+   This is the same machine seen from the EXPERT's end: requests that
+   ARRIVE, that you take on your terms, landing on a week that is
+   still mostly empty. Inverted point of view, identical vocabulary
+   (bloom-rim focal card · real avatars · cz4 connectors · illus tag).
+
+   TWO CANVASES, ONE STORY
+   · data-canvas     700×560 — LANDSCAPE (default). Confirmed-request
+     history row on top · the live request card · connectors down
+     into the week strip. Read top→bottom, generous line lengths.
+   · data-canvas-sm  440×580 — PORTRAIT. The host scaler (_scaler.js)
+     swaps to this below a 700px viewport and stamps .is-sm on the
+     .bxx-fit. Same bands, re-proportioned (narrower card, tighter
+     week columns). All .is-sm rules are ADDITIVE OVERRIDES — the
+     desktop rules are never touched.
+
+   LOOP · 11s, pure CSS, no JS, no <img>, no external URL.
+     0–5%    request A (George) slides up + settles — both buttons real
+     5–18%   hold · Decline and Accept are equally weighted, equally real
+    18–22%   ACCEPT is pressed → gradient CTA crossfades to ✓ Accepted
+    24–30%   card A slides up and away, taken
+    26–33%   its connector draws down into Tuesday
+    28–34%   it settles into the history row: "✓ Accepted · Confirmed"
+    31–40%   the Tuesday 9:00 slot lands on the week
+    30–36%   request B (Aisha) arrives — bloom-rim focal card
+    36–53%   hold · both buttons real again
+    53–57%   ACCEPT is pressed → gradient CTA crossfades to ✓ Accepted
+    57–66%   second connector draws down · the slot lands on Thursday
+    66–94%   REST on the resolved end state
+    94–100%  fade back out and re-run
+
+   Decline is never the beat that gets taken — but it stays fully
+   present, fully styled, fully clickable-looking on BOTH cards. The
+   point is that saying no is ALWAYS available, not that it happens.
+
+   MOTION IS OPT-IN. The BASE CSS renders the RESOLVED END STATE
+   (history row present · both requests accepted · Tue 9:00 and
+   Thu 4:15 confirmed on a still-mostly-empty week), so no-JS AND
+   prefers-reduced-motion both get a correct, finished scene for free.
+   All @keyframes live inside prefers-reduced-motion:no-preference,
+   and an explicit reduce block pins animation:none back to that same
+   end state.
+
+   DARK theme (§1 is the page's only dark section).
+   Prefix bea1-. Kit classes (.bxx-*) are COMPOSED, never redefined.
+   Values are --w-* foundation tokens ONLY — zero raw hex.
+   Brand purple appears ONLY as product UI: the focal card's bloom
+   rim, the avatar ring, the Accept gradient, the connectors, and the
+   two confirmed slots. Never as a wash, never as decoration.
+   Content sits inside the central ~85% of each canvas — the kit's
+   radial edge-fade (.bxx-fit::after) dissolves the rest to ground.
+   ============================================================ */
+
+.bea1-scene{--bea1-loop:11s}
+.bea1-scene *{box-sizing:border-box}
+
+/* ═══ LANDSCAPE (700×560) — the default canvas ═══════════════════════════════ */
+
+/* ---- band 1 · the request you already took (base = present) ---------------- */
+.bea1-hist{left:60px;top:46px;width:580px;height:46px;padding:0 16px;
+  border-radius:var(--w-r-md);display:flex;align-items:center;gap:12px}
+.bea1-hav{width:26px;height:26px}
+.bea1-hname{font:700 13px/1 var(--w-font);color:var(--w-text);white-space:nowrap}
+.bea1-hask{font:500 12.5px/1 var(--w-font);color:var(--w-text-3);white-space:nowrap;
+  overflow:hidden;text-overflow:ellipsis}
+.bea1-hchip{margin-left:auto;padding:5px 10px;font-size:11px}
+.bea1-note{font:400 11px/1 var(--w-font-kicker);letter-spacing:.06em;
+  color:var(--w-text-3);white-space:nowrap}
+
+/* ---- band 2 · the live request · one seat, two cards take turns ------------ */
+.bea1-seat{position:absolute;left:60px;top:106px;width:580px;height:216px}
+/* BASE = END STATE: card A has already been accepted and cleared, so it is GONE.
+   It exists only inside the loop (and is drawn ON TOP of card B while it lives).
+   Without this opacity:0 the reduced-motion frame would show a request still
+   pending, not the resolved week — i.e. the wrong end state. */
+.bea1-a{z-index:3;opacity:0}
+.bea1-focal{z-index:2}   /* the live request — the bloom-rim brand moment */
+.bea1-card{position:absolute;inset:0;padding:20px 24px;display:flex;flex-direction:column}
+
+.bea1-head{display:flex;align-items:center;gap:14px;min-width:0}
+.bea1-av{width:46px;height:46px}
+.bea1-id{display:flex;flex-direction:column;gap:4px;min-width:0}
+.bea1-id b{font:800 18px/1.15 var(--w-font);letter-spacing:var(--w-ls-tight);
+  color:var(--w-text);white-space:nowrap}
+.bea1-id small{font:500 12.5px/1.3 var(--w-font);color:var(--w-text-3);white-space:nowrap}
+.bea1-head .bxx-chip{margin-left:auto;padding:6px 11px;font-size:11.5px}
+
+/* what they actually want to talk about — scene chrome, not page copy */
+.bea1-ask{margin-top:16px;font:500 15px/1.45 var(--w-font);color:var(--w-text-2)}
+.bea1-tags{display:flex;gap:8px;margin-top:14px}
+.bea1-tag{padding:7px 11px;font-size:12px}
+
+/* ---- the two buttons · BOTH are real ---------------------------------------- */
+/* Widths are RESERVED, not fitted: .bea1-swap is a 1-cell grid holding both the
+   "Accept" and the "✓ Accepted" span, so the pill is always as wide as its widest
+   state and the row never reflows mid-loop. Horizontal padding lives on the spans
+   (not the grid) so the longer label keeps real breathing room off both edges. */
+.bea1-acts{display:flex;gap:10px;margin-top:auto;justify-content:flex-end}
+.bea1-btn{height:40px;min-width:132px;padding:0 22px;border:1px solid transparent;
+  border-radius:var(--w-r-pill);display:inline-flex;align-items:center;justify-content:center;
+  gap:7px;font:700 13.5px/1 var(--w-font);white-space:nowrap}
+.bea1-btn--no{background:var(--w-glass-fill-soft);border-color:var(--w-line-strong);
+  color:var(--w-text)}
+/* the accept CTA is a 2-state crossfade — zero layout shift between states */
+.bea1-swap{position:relative;display:grid;padding:0;border:0;background:none}
+/* both states share one grid cell, so the pill is sized by its WIDEST label
+   ("✓ Accepted") in both frames — and the min-width matches Decline exactly, so
+   the pair reads as a balanced set whichever state the loop is in. */
+.bea1-swap>span{grid-area:1/1;height:40px;min-width:132px;padding:0 22px;
+  border-radius:var(--w-r-pill);display:flex;align-items:center;justify-content:center;gap:7px;
+  font:700 13.5px/1 var(--w-font);white-space:nowrap}
+.bea1-bs1{background:var(--w-grad-brand);color:var(--w-cta-text);
+  box-shadow:var(--w-glow-brand);opacity:0}                       /* base: already taken */
+.bea1-bs2{background:var(--w-success-soft);color:var(--w-success);
+  box-shadow:inset 0 0 0 1px var(--w-success-soft);opacity:1}     /* base: ✓ Accepted */
+
+/* ---- band 3 · the connectors · each accepted request → its slot ------------- */
+/* seated under the Tuesday and Thursday columns
+   (cz4: orthogonal, token stroke, brand pulse) */
+.bea1-cn{top:322px;width:2px;height:26px;transform-origin:50% 0;
+  background:var(--w-grad-brand);box-shadow:0 0 12px var(--w-brand-line)}
+.bea1-cn--a{left:239px}   /* George → Tue 9:00  */
+.bea1-cn--b{left:461px}   /* Aisha  → Thu 4:15  */
+
+/* ---- band 4 · your week — STILL MOSTLY EMPTY. The promise, drawn. ---------- */
+/* Two calls booked out of ten cells. Taking work never means losing the week. */
+.bea1-week{left:60px;top:348px;width:580px;height:158px;padding:16px 20px;
+  display:flex;flex-direction:column}
+.bea1-whead{display:flex;align-items:center;gap:10px}
+.bea1-whead b{font:700 14px/1 var(--w-font);color:var(--w-text)}
+.bea1-wsub{font:500 12px/1 var(--w-font);color:var(--w-text-3)}
+.bea1-whead .bxx-illus{margin-left:auto}
+.bea1-days{display:flex;gap:13px;margin-top:16px}
+.bea1-day{width:98px;display:flex;flex-direction:column;gap:8px}
+.bea1-dl{margin-bottom:2px;font:400 10px/1 var(--w-font-kicker);letter-spacing:.09em;
+  text-transform:uppercase;color:var(--w-text-3)}
+/* off = you never opened it · open = you did · on = the ones that got booked */
+.bea1-cell{height:30px;border-radius:var(--w-r-xs);border:1px dashed var(--w-line)}
+.bea1-cell--open{border:1px solid var(--w-line);background:var(--w-glass-fill-soft)}
+.bea1-cell--on{border:0;background:var(--w-grad-brand);box-shadow:var(--w-glow-brand);
+  display:flex;align-items:center;justify-content:center;gap:6px}
+.bea1-cav{width:18px;height:18px;box-shadow:none}
+.bea1-ct{font:700 11px/1 var(--w-font-mono);color:var(--w-cta-text)}
+
+/* ═══ PORTRAIT (440×580) — .is-sm · same bands, re-proportioned ═══════════════ */
+/* Additive overrides only. Base here is ALSO the resolved end state.           */
+
+.bea1-scene.is-sm .bea1-hist{left:36px;top:34px;width:368px;height:44px;padding:0 14px;gap:10px}
+/* the ask is the live card's job at this width — but "Confirmed" is the whole
+   point of the row, so the chip and the note both stay */
+.bea1-scene.is-sm .bea1-hask{display:none}
+
+.bea1-scene.is-sm .bea1-seat{left:36px;top:90px;width:368px;height:246px}
+.bea1-scene.is-sm .bea1-card{padding:18px 20px}
+.bea1-scene.is-sm .bea1-head{gap:12px}
+.bea1-scene.is-sm .bea1-av{width:42px;height:42px}
+.bea1-scene.is-sm .bea1-id b{font-size:17px}
+.bea1-scene.is-sm .bea1-id small{font-size:12px}
+.bea1-scene.is-sm .bea1-head .bxx-chip{padding:5px 10px;font-size:11px}
+.bea1-scene.is-sm .bea1-ask{margin-top:14px;font-size:14.5px}
+.bea1-scene.is-sm .bea1-tags{margin-top:12px}
+.bea1-scene.is-sm .bea1-tag{padding:6px 10px;font-size:11.5px}
+/* the pair stays balanced at 274px total inside a 328px content box */
+.bea1-scene.is-sm .bea1-btn{height:38px;min-width:120px;padding:0 18px;font-size:13px}
+.bea1-scene.is-sm .bea1-swap{padding:0}
+.bea1-scene.is-sm .bea1-swap>span{height:38px;min-width:120px;padding:0 18px;font-size:13px}
+
+.bea1-scene.is-sm .bea1-cn{top:336px;height:20px}
+.bea1-scene.is-sm .bea1-cn--a{left:151px}
+.bea1-scene.is-sm .bea1-cn--b{left:285px}
+
+.bea1-scene.is-sm .bea1-week{left:36px;top:356px;width:368px;height:160px;padding:16px 20px}
+.bea1-scene.is-sm .bea1-days{gap:8px;margin-top:14px}
+.bea1-scene.is-sm .bea1-day{width:59px}
+.bea1-scene.is-sm .bea1-ct{font-size:10px}
+.bea1-scene.is-sm .bea1-cav{width:16px;height:16px}
+
+/* ---- motion · everything above is the RESOLVED END STATE ------------------- */
+/* Elements whose start AND end frames are both opacity:0 loop seamlessly; the
+   end-state set (history row · focal card · connectors · booked slots) fades out
+   across 94–100% so the reset reads as a deliberate re-run, not a pop.
+   The two accept CTAs share the same STYLING classes (.bea1-bs1/.bea1-bs2) and
+   are told apart for motion purposes by their parent card, so card A fires its
+   crossfade at 18–22% and card B at 53–57%.                                   */
+@media (prefers-reduced-motion:no-preference){
+  .bea1-a          {animation:bea1-kreq   var(--bea1-loop) cubic-bezier(.2,.7,.2,1) infinite}
+  .bea1-a .bea1-swap{animation:bea1-katap var(--bea1-loop) cubic-bezier(.2,.7,.2,1) infinite}
+  .bea1-a .bea1-bs1{animation:bea1-kas1   var(--bea1-loop) cubic-bezier(.2,.7,.2,1) infinite}
+  .bea1-a .bea1-bs2{animation:bea1-kas2   var(--bea1-loop) cubic-bezier(.2,.7,.2,1) infinite}
+  .bea1-hist       {animation:bea1-khist  var(--bea1-loop) cubic-bezier(.2,.7,.2,1) infinite}
+  .bea1-focal      {animation:bea1-kland  var(--bea1-loop) cubic-bezier(.2,.7,.2,1) infinite}
+  .bea1-focal .bea1-swap{animation:bea1-ktap var(--bea1-loop) cubic-bezier(.2,.7,.2,1) infinite}
+  .bea1-focal .bea1-bs1{animation:bea1-kbs1 var(--bea1-loop) cubic-bezier(.2,.7,.2,1) infinite}
+  .bea1-focal .bea1-bs2{animation:bea1-kbs2 var(--bea1-loop) cubic-bezier(.2,.7,.2,1) infinite}
+  .bea1-cn--a      {animation:bea1-kdrawa var(--bea1-loop) cubic-bezier(.2,.7,.2,1) infinite}
+  .bea1-cn--b      {animation:bea1-kdrawb var(--bea1-loop) cubic-bezier(.2,.7,.2,1) infinite}
+  .bea1-cell--on1  {animation:bea1-kbooka var(--bea1-loop) cubic-bezier(.2,.7,.2,1) infinite}
+  .bea1-cell--on2  {animation:bea1-kbookb var(--bea1-loop) cubic-bezier(.2,.7,.2,1) infinite}
+}
+/* belt-and-braces: if motion is refused, everything sits at the end state above */
+@media (prefers-reduced-motion:reduce){
+  .bea1-a,.bea1-a .bea1-swap,.bea1-a .bea1-bs1,.bea1-a .bea1-bs2,
+  .bea1-hist,.bea1-focal,.bea1-focal .bea1-swap,.bea1-focal .bea1-bs1,.bea1-focal .bea1-bs2,
+  .bea1-cn--a,.bea1-cn--b,.bea1-cell--on1,.bea1-cell--on2{animation:none}
+}
+
+/* request A · arrives, is ACCEPTED, and rises into the history row */
+@keyframes bea1-kreq{
+  0%       {opacity:0;transform:translateY(26px) scale(.98)}
+  5%,24%   {opacity:1;transform:none}
+  30%,100% {opacity:0;transform:translateY(-14px) scale(.97)}
+}
+/* the Accept press on card A — a real click, on a real button */
+@keyframes bea1-katap{
+  0%,18%   {transform:none}
+  20%      {transform:scale(.94)}
+  22%,100% {transform:none}
+}
+@keyframes bea1-kas1{0%,18%{opacity:1} 22%,100%{opacity:0}}   /* Accept (gradient) */
+@keyframes bea1-kas2{0%,18%{opacity:0} 22%,100%{opacity:1}}   /* ✓ Accepted (BASE)  */
+/* it lands in the history row · "✓ Accepted · Confirmed".
+   NOTE: .bxx-ghost already sits at opacity:.5 — the resolved frames match that
+   exactly, or the animated end state would drift from the reduced-motion base. */
+@keyframes bea1-khist{
+  0%,28%   {opacity:0;transform:translateY(-10px)}
+  34%,94%  {opacity:.5;transform:none}
+  100%     {opacity:0;transform:translateY(-4px)}
+}
+/* request B · arrives and is ACCEPTED too (BASE = landed) */
+@keyframes bea1-kland{
+  0%,30%   {opacity:0;transform:translateY(26px) scale(.98)}
+  36%,94%  {opacity:1;transform:none}
+  100%     {opacity:0;transform:translateY(10px) scale(.99)}
+}
+@keyframes bea1-ktap{
+  0%,53%   {transform:none}
+  55%      {transform:scale(.94)}
+  57%,100% {transform:none}
+}
+@keyframes bea1-kbs1{0%,53%{opacity:1} 57%,100%{opacity:0}}   /* Accept (gradient) */
+@keyframes bea1-kbs2{0%,53%{opacity:0} 57%,100%{opacity:1}}   /* ✓ Accepted (BASE)  */
+/* each connector draws DOWN into the week (BASE = both drawn) */
+@keyframes bea1-kdrawa{
+  0%,26%   {transform:scaleY(0)}
+  33%,94%  {transform:scaleY(1)}
+  100%     {transform:scaleY(0)}
+}
+@keyframes bea1-kdrawb{
+  0%,57%   {transform:scaleY(0)}
+  66%,94%  {transform:scaleY(1)}
+  100%     {transform:scaleY(0)}
+}
+/* the two booked slots on an otherwise empty week (BASE = both booked) */
+@keyframes bea1-kbooka{
+  0%,31%   {opacity:0;transform:scale(.7)}
+  36%      {opacity:1;transform:scale(1.06)}
+  40%,94%  {opacity:1;transform:scale(1)}
+  100%     {opacity:0;transform:scale(.7)}
+}
+@keyframes bea1-kbookb{
+  0%,62%   {opacity:0;transform:scale(.7)}
+  67%      {opacity:1;transform:scale(1.06)}
+  71%,94%  {opacity:1;transform:scale(1)}
+  100%     {opacity:0;transform:scale(.7)}
+}
+
+/* ---- bea2a_fragment ---- */
+/* ============================================================
+   bea2a_fragment — W-BECOME-EXPERT §2 card 1 · "Build your reputation"
+   A verified-expert profile chip: real avatar with a brand ring, a
+   name line, a "Verified expert" check chip, and one quiet
+   ExpertScore ring. Reputation, made concrete.
+
+   Canvas 360×210 (single canvas — no data-canvas-sm; the figure is
+   small and contain-scales cleanly). Prefix: bea2a-.
+   Composed from the shared bxx- kit. LIGHT theme (.cz-light §2).
+   --w-* tokens ONLY · zero raw hex · no JS · no img · no external URL.
+
+   ── MATCHED SET (bea2a · bea2b · bea2c) ─────────────────────
+   All three share ONE geometry so they read as one family side by
+   side: a single focal card at left:30 top:27, 300×156, bxx-rim,
+   identical padding, identical type scale, identical stroke.
+
+   ── HOVER-PROOF (the hard constraint) ───────────────────────
+   The host .bew__card flips to CHARCOAL on hover and .bew__fig goes
+   translucent-dark. The --w-* custom properties do NOT change (the
+   section stays .cz-light), so anything drawn in ink tokens on the
+   BARE canvas would vanish on the charcoal ground. Therefore:
+     1. EVERY mark — text, chip, line, avatar — sits on the OPAQUE
+        card (background:var(--w-card) = #fff in light). The card
+        floats as a white product surface on both grounds; nothing
+        is ever drawn directly on the canvas ground.
+     2. The kit's .bxx-fit::after edge-fade is a radial to
+        var(--w-bg) (OFF-WHITE). On the white fig it is invisible;
+        on the charcoal hover ground it would paint a white haze in
+        the corners. It is therefore neutralised — scoped to THIS
+        scene only via .bxx .bea2a-scene::after (0,2,1 > the kit's
+        0,1,1), never by touching the kit rule itself. The fig has
+        its own hard rounded border, so nothing is lost.
+
+   ── MOTION ──────────────────────────────────────────────────
+   STILL figure. Base CSS renders the RESOLVED END STATE, so no-JS
+   and prefers-reduced-motion both get the finished scene for free.
+   An OPTIONAL reveal plays ONCE if the host adds .is-in (the page
+   scaler's IntersectionObserver pattern) and rests on that same
+   base state. Never loops. The reveal lifts via `top`, never
+   `transform` — an animated transform would spawn a stacking
+   context and paint the .bxx-rim gradient (negative-z pseudo) over
+   the card's own surface.
+   ============================================================ */
+
+/* the kit vignette fades to the OFF-WHITE page ground — kill it here
+   so the figure survives the charcoal hover (see header note 2) */
+.bxx .bea2a-scene::after{background:none}
+
+/* ---- the profile card — shared set geometry ----------------- */
+.bea2a-card{left:30px;top:27px;width:300px;height:156px;
+  display:flex;flex-direction:column;justify-content:center;gap:16px}
+
+/* ---- head · avatar + name + quiet ExpertScore ring ---------- */
+.bea2a-head{display:flex;align-items:center;gap:14px;min-width:0}
+.bea2a-av{width:52px;height:52px}
+.bea2a-id{display:flex;flex-direction:column;gap:3px;min-width:0}
+.bea2a-name{font:700 17px/1.2 var(--w-font);letter-spacing:var(--w-ls-tight);
+  color:var(--w-text);white-space:nowrap}
+.bea2a-role{font:500 13.5px/1.2 var(--w-font);color:var(--w-text-2);white-space:nowrap}
+
+/* quiet score ring — a conic donut, not a hero number.
+   84% of the sweep in --w-brand, the remainder in the plain rule
+   token; the inner disc is --w-card so the ring reads as a stroke. */
+.bea2a-ring{position:relative;width:48px;height:48px;flex:none;margin-left:auto;
+  border-radius:var(--w-r-full);
+  background:conic-gradient(from -90deg, var(--w-brand) 0 302deg, var(--w-line-strong) 302deg 360deg);
+  display:grid;place-items:center}
+.bea2a-ring::before{content:"";position:absolute;inset:4px;border-radius:var(--w-r-full);
+  background:var(--w-card)}
+.bea2a-score{position:relative;font:700 14px/1 var(--w-font-mono);color:var(--w-text)}
+
+/* ---- the verified chip ------------------------------------- */
+.bea2a-vf{align-self:flex-start}
+/* pure-CSS check — a brand disc with a charcoal tick (same fg pairing
+   as the kit's .bxx-chip--score: charcoal ink on the brand gradient) */
+.bea2a-ck{position:relative;width:16px;height:16px;flex:none;
+  border-radius:var(--w-r-full);background:var(--w-grad-brand)}
+.bea2a-ck::after{content:"";position:absolute;left:5.5px;top:3px;width:3px;height:7px;
+  border:2px solid var(--w-charcoal);border-top:0;border-left:0;transform:rotate(42deg)}
+
+/* ---- reveal · plays ONCE · never loops --------------------- */
+@media (prefers-reduced-motion:no-preference){
+  .bea2a-scene.is-in .bea2a-card,
+  .is-in .bea2a-scene .bea2a-card{animation:bea2a-rise .66s cubic-bezier(.2,.7,.2,1) both}
+}
+@keyframes bea2a-rise{
+  from{opacity:0;top:39px}
+  to{opacity:1;top:27px}   /* ends exactly on the base state */
+}
+
+/* ---- bea2b_fragment ---- */
+/* ============================================================
+   bea2b_fragment — W-BECOME-EXPERT §2 card 2 · "Help your peers"
+   Two people on a short peer call: two real avatars, a 30 min
+   duration chip, two soft speech rows. That is the WHOLE scene.
+
+   ⛔ ZERO CRM / PIPELINE / DASHBOARD FURNITURE — no charts, no
+   stages, no deal cards, no logos, no score. The entire point of
+   this figure is that this is NOT a sales call: it is two humans
+   talking for half an hour. Anything that smells of a CRM breaks
+   the promise the copy is making. Keep it human and quiet.
+
+   Canvas 360×210 (single canvas — no data-canvas-sm). Prefix: bea2b-.
+   Composed from the shared bxx- kit. LIGHT theme (.cz-light §2).
+   --w-* tokens ONLY · zero raw hex · no JS · no img · no external URL.
+
+   ── MATCHED SET (bea2a · bea2b · bea2c) ─────────────────────
+   Same geometry as its siblings so the three read as one family:
+   one focal card at left:30 top:27, 300×156, bxx-rim, same padding,
+   same type scale, same stroke. Different people (Aisha + George).
+
+   ── HOVER-PROOF ─────────────────────────────────────────────
+   The host .bew__card flips to CHARCOAL on hover; the --w-* tokens
+   do NOT change with it. So every mark sits on the OPAQUE card
+   (var(--w-card)) — the speech rows use --w-glass-fill-soft /
+   --w-tag-brand-bg, which are ink-tinted fills that only work over
+   that white surface, never over the bare canvas. And the kit's
+   .bxx-fit::after edge-fade (a radial to the OFF-WHITE --w-bg) is
+   neutralised for this scene only, scoped through the bea2b- prefix,
+   or it would haze the charcoal corners on hover.
+
+   ── MOTION ──────────────────────────────────────────────────
+   STILL figure. Base CSS = the resolved end state (no-JS and
+   reduced-motion get the finished scene free). Optional one-shot
+   reveal if the host adds .is-in. Never loops. Lifts via `top`,
+   never `transform` (a transform would spawn a stacking context and
+   paint the .bxx-rim negative-z gradient over the card surface).
+   ============================================================ */
+
+/* the kit vignette fades to the OFF-WHITE page ground — kill it here
+   so the figure survives the charcoal hover */
+.bxx .bea2b-scene::after{background:none}
+
+/* ---- the call card — shared set geometry -------------------- */
+.bea2b-card{left:30px;top:27px;width:300px;height:156px;
+  display:flex;flex-direction:column;justify-content:center;gap:10px}
+
+/* ---- head · the two people + how long ---------------------- */
+.bea2b-head{display:flex;align-items:center;min-width:0}
+/* an overlapping pair — two people in one conversation, not a roster */
+.bea2b-pair{display:flex;align-items:center;flex:none}
+.bea2b-av{width:40px;height:40px}
+.bea2b-av2{margin-left:-13px}
+.bea2b-when{margin-left:auto}
+/* live dot — the only accent in the scene */
+.bea2b-dot{width:6px;height:6px;flex:none;border-radius:var(--w-r-full);
+  background:var(--w-grad-brand)}
+
+/* ---- two soft speech rows ---------------------------------- */
+/* bubbles, not messages: skeleton lines only, so nothing here can be
+   misread as a script, an agenda or a pitch */
+.bea2b-say{display:flex;flex-direction:column;gap:6px;padding:8px 12px;
+  border-radius:var(--w-r-md);border:1px solid var(--w-line)}
+.bea2b-say1{align-self:flex-start;width:196px;
+  background:var(--w-glass-fill-soft);border-top-left-radius:var(--w-r-xs)}
+.bea2b-say2{align-self:flex-end;width:150px;
+  background:var(--w-tag-brand-bg);border-color:var(--w-brand-line);
+  border-top-right-radius:var(--w-r-xs)}
+
+/* ---- reveal · plays ONCE · never loops --------------------- */
+@media (prefers-reduced-motion:no-preference){
+  .bea2b-scene.is-in .bea2b-card,
+  .is-in .bea2b-scene .bea2b-card{animation:bea2b-rise .66s cubic-bezier(.2,.7,.2,1) both}
+}
+@keyframes bea2b-rise{
+  from{opacity:0;top:39px}
+  to{opacity:1;top:27px}   /* ends exactly on the base state */
+}
+
+/* ---- bea2c_fragment ---- */
+/* ============================================================
+   bea2c_fragment — W-BECOME-EXPERT §2 card 3 · "Earn for your time"
+   A mono chip reading $200–500/month, an explicit ILLUSTRATIVE
+   label, and three small ticked "conversation" rows underneath.
+
+   ⚠️ THE HARD REQUIREMENT — THIS NUMBER IS NOT A CLAIM.
+   The source copy marks $200–500/month as [ILLUSTRATIVE — confirm].
+   The figure must READ as a mock/demo number at a glance, never as
+   a promise. Three independent signals carry that, so no single one
+   can be lost to a theme flip, a crop or a scale-down:
+     1. the .bxx-illus label — the kit's literal "Illustrative"
+        marker (uppercase kicker), sitting right beside the number;
+     2. the chip's border is DASHED — the universal placeholder /
+        estimate convention, and the ONLY dashed stroke on the page;
+     3. the chip is deliberately QUIET — the plain mono chip, not
+        .bxx-chip--score. It is never dressed as a hero stat.
+   Do not "clean this up" by removing the label or solidifying the
+   border. The restraint IS the compliance.
+
+   Canvas 360×210 (single canvas — no data-canvas-sm). Prefix: bea2c-.
+   Composed from the shared bxx- kit. LIGHT theme (.cz-light §2).
+   --w-* tokens ONLY · zero raw hex · no JS · no img · no external URL.
+
+   ── MATCHED SET (bea2a · bea2b · bea2c) ─────────────────────
+   Same geometry as its siblings: one focal card at left:30 top:27,
+   300×156, bxx-rim, same padding, same type scale, same stroke.
+   Different people again (Ava · Allison · George) — the three
+   conversations behind the number.
+
+   ── HOVER-PROOF ─────────────────────────────────────────────
+   The host .bew__card flips to CHARCOAL on hover while the --w-*
+   tokens stay light, so every mark — including the small-type
+   Illustrative label (--w-text-3) — sits on the OPAQUE card
+   (var(--w-card)). Nothing is drawn on the bare canvas. The kit's
+   .bxx-fit::after edge-fade (radial to the OFF-WHITE --w-bg) is
+   neutralised for this scene only, scoped through the bea2c- prefix.
+
+   ── MOTION ──────────────────────────────────────────────────
+   STILL figure. Base CSS = the resolved end state (no-JS and
+   reduced-motion get the finished scene free). Optional one-shot
+   reveal if the host adds .is-in. Never loops. Lifts via `top`,
+   never `transform` (a transform would spawn a stacking context and
+   paint the .bxx-rim negative-z gradient over the card surface).
+   ============================================================ */
+
+/* the kit vignette fades to the OFF-WHITE page ground — kill it here
+   so the figure survives the charcoal hover */
+.bxx .bea2c-scene::after{background:none}
+
+/* ---- the earnings card — shared set geometry ---------------- */
+.bea2c-card{left:30px;top:27px;width:300px;height:156px;
+  display:flex;flex-direction:column;justify-content:center;gap:12px}
+
+/* ---- the number · quiet, dashed, labelled ------------------ */
+.bea2c-top{display:flex;align-items:center;gap:10px;min-width:0}
+/* (0,2,0) — beats the kit's .bxx-chip / .bxx-chip--mono */
+.bea2c-scene .bea2c-amt{font-size:14px;padding:9px 14px;color:var(--w-text);
+  border-style:dashed;border-color:var(--w-line-strong)}
+/* the label is not decoration — it is the compliance (see header) */
+.bea2c-scene .bea2c-illus{font-size:11px}  /* ≥11px so it survives contain-scaling */
+
+/* ---- the conversations behind the number ------------------- */
+.bea2c-rows{display:flex;flex-direction:column;gap:7px}
+.bea2c-row{display:flex;align-items:center;gap:10px}
+.bea2c-av{width:20px;height:20px}
+/* the tick — a taken conversation, closed out. Quiet: brand tint,
+   never the gradient (that weight belongs to the number, and the
+   number is deliberately not carrying it either). */
+.bea2c-tk{position:relative;width:14px;height:14px;flex:none;margin-left:auto;
+  border-radius:var(--w-r-full);background:var(--w-tag-brand-bg);
+  border:1px solid var(--w-brand-line)}
+.bea2c-tk::after{content:"";position:absolute;left:4.5px;top:2px;width:2.5px;height:6px;
+  border:1.5px solid var(--w-brand);border-top:0;border-left:0;transform:rotate(42deg)}
+
+/* ---- reveal · plays ONCE · never loops --------------------- */
+@media (prefers-reduced-motion:no-preference){
+  .bea2c-scene.is-in .bea2c-card,
+  .is-in .bea2c-scene .bea2c-card{animation:bea2c-rise .66s cubic-bezier(.2,.7,.2,1) both}
+}
+@keyframes bea2c-rise{
+  from{opacity:0;top:39px}
+  to{opacity:1;top:27px}   /* ends exactly on the base state */
+}
+
+/* ---- bea3_fragment ---- */
+/* ============================================================
+   bea3_fragment — W-BECOME-EXPERT §3 slot A3 · "How it works (for experts)"
+   asset: bexp_how_a3_rail_light_v01
+
+   THE 3-BEAT RAIL — what joining actually costs you in time.
+   Sits directly above the numbered step rail (01 Apply and get verified ·
+   02 Set your availability · 03 Talk and get matched), so the figure reads
+   in exactly those three beats.
+
+     ① APPLY & GET VERIFIED — a short application card resolves, a verified
+        check LANDS on it. Small and calm: a quick vetting, nothing heavy.
+     ② SET YOUR AVAILABILITY — a week grid where MOST slots are OFF/grey and
+        the expert flips just TWO on. The EMPTINESS IS THE MESSAGE: you only
+        take what you opt into. Never fill this grid in.
+     ③ TALK AND GET MATCHED — the match ARRIVES into a slot you opened: a
+        gradient connector packet travels the cz4 path (orthogonal segments,
+        rounded elbows, purple glow) and lands as a bloom-rim focal card with
+        a best-fit score chip + a visible ILLUSTRATIVE marker.
+
+   TWO CANVASES, ONE STORY
+   · data-canvas    1180×440 — LANDSCAPE. Read LEFT→RIGHT: application ·
+     week grid · match. The connector runs out of the open Thu slot, up and
+     right into the focal card.
+   · data-canvas-sm  440×620 — PORTRAIT. The host scaler swaps to this below
+     a 700px viewport and stamps .is-sm on .bxx-fit. Read TOP→BOTTOM: the
+     same three beats stacked; the connector runs DOWN out of the open slot,
+     jogs left, and drops into the card. (A 1180-wide canvas contain-scales
+     to ~0.33 in a 390px stage — illegible. The portrait canvas scales ~0.89.)
+     Every .is-sm rule is an ADDITIVE OVERRIDE — the desktop canvas is
+     untouched. Elbow geometry is identical in both (same two borders, same
+     rounded corner) — only the seats and the segment axes change.
+
+   Builds on the shared bxx- canvas kit (already in the page — NEVER
+   redefined here). Prefix bea3-. Pure CSS · no JS · no <img> · no URLs.
+   BASE CSS = THE RESOLVED END STATE in BOTH canvases (application verified ·
+   two slots on · the match landed, scored, marked illustrative). ALL motion
+   lives inside prefers-reduced-motion:no-preference → reduced-motion and
+   no-JS both get a correct, finished scene for free. Loop 12s.
+   LIGHT theme (.cz-light section). --w-* tokens only — zero raw hex.
+   Brand purple appears ONLY as product UI: the two ON slots, the connector
+   packet, the focal card's bloom rim + avatar ring, the score chip. The
+   verified check is --w-success (a status colour), never purple.
+   Avatars: aisha (the applicant) · diana (the arriving match). Never keegan
+   (reviews only), never jeff (owner).
+   Content stays inside the central ~85% of each canvas — the kit's radial
+   edge-fade (.bxx-fit::after) dissolves the rest into the section ground.
+   ============================================================ */
+
+.bea3-scene{
+  --bea3-loop:12s;
+  /* ---- week-grid geometry (relative to the grid card) ---- */
+  --bea3-gx:18px;   /* first column x      */
+  --bea3-gy:72px;   /* first row y         */
+  --bea3-gsx:61px;  /* column pitch        */
+  --bea3-gsy:46px;  /* row pitch           */
+  --bea3-cw:50px;   /* cell width          */
+  --bea3-ch:34px;   /* cell height         */
+  /* ---- connector packet waypoints (LANDSCAPE: right · up · right) ---- */
+  --bea3-p1x:114px; --bea3-p1y:0px;
+  --bea3-p2x:114px; --bea3-p2y:-89px;
+  --bea3-p3x:175px; --bea3-p3y:-89px;
+  /* ---- focal-card entry offset (LANDSCAPE: it arrives from the LEFT) ---- */
+  --bea3-fx:-24px;  --bea3-fy:0px;
+}
+
+/* beat wrappers — every child is seated in px against the wrapper */
+.bea3-b{position:absolute}
+.bea3-b1{left:56px;top:84px;width:290px;height:250px}
+.bea3-b2{left:392px;top:50px;width:340px;height:330px}
+.bea3-b3{left:818px;top:108px;width:300px;height:230px}
+
+/* the step numeral — ties the figure to the 01/02/03 rail beneath it */
+.bea3-num{position:absolute;font:400 11px/1 var(--w-font-kicker);
+  letter-spacing:var(--w-ls-wide);color:var(--w-text-3)}
+.bea3-n1{left:8px;top:0}
+.bea3-n2{left:0;top:0}
+.bea3-n3{left:8px;top:0}
+
+/* ═══ BEAT 1 · the application + the verified check ═══════════════════════════ */
+.bea3-app{left:8px;top:36px;width:250px;height:190px}
+.bea3-aav{position:absolute;left:20px;top:20px;width:40px;height:40px}
+.bea3-al{position:absolute;left:72px}
+.bea3-al1{top:26px;width:86px}
+.bea3-al2{top:44px;width:58px;opacity:.6}
+
+/* the form fields that settle (draw left→right) */
+.bea3-fl{position:absolute;left:20px;transform-origin:0 50%}
+.bea3-fl1{top:82px;width:206px}
+.bea3-fl2{top:102px;width:186px}
+.bea3-fl3{top:122px;width:140px}
+
+/* the check that LANDS — success, not purple: this is a status, not the brand */
+.bea3-check{position:absolute;left:222px;top:20px;width:44px;height:44px;
+  border-radius:var(--w-r-full);background:var(--w-success);
+  box-shadow:0 0 0 3px var(--w-card),var(--w-shadow-md);z-index:3}
+.bea3-tick{position:absolute;left:15px;top:12px;width:10px;height:17px;
+  border-right:2.5px solid var(--w-white);border-bottom:2.5px solid var(--w-white);
+  transform:rotate(45deg)}
+
+.bea3-vchip{position:absolute;left:20px;top:146px;padding:6px 11px;font-size:11.5px}
+.bea3-dot{width:7px;height:7px;border-radius:var(--w-r-full);
+  background:var(--w-success);flex:none}
+
+/* ═══ BEAT 2 · the week grid — MOSTLY EMPTY, and that is the point ═══════════ */
+.bea3-grid{left:0;top:28px;width:330px;height:292px}
+.bea3-gtitle{position:absolute;left:18px;top:14px;
+  font:600 13px/1 var(--w-font);color:var(--w-text)}
+.bea3-day{position:absolute;top:48px;width:var(--bea3-cw);
+  left:calc(var(--bea3-gx) + var(--bea3-cx) * var(--bea3-gsx));
+  text-align:center;font:400 10px/1 var(--w-font-kicker);
+  letter-spacing:var(--w-ls-wide);color:var(--w-text-3)}
+
+/* an OFF slot — recessed, unclaimed, silent. 18 of the 20 look like this. */
+.bea3-cell{position:absolute;width:var(--bea3-cw);height:var(--bea3-ch);
+  border-radius:var(--w-r-xs);background:var(--w-card-lo);
+  border:1px solid var(--w-line-soft);box-sizing:border-box;
+  left:calc(var(--bea3-gx) + var(--bea3-cx) * var(--bea3-gsx));
+  top:calc(var(--bea3-gy) + var(--bea3-cy) * var(--bea3-gsy))}
+
+/* the TWO slots the expert flips on (product UI → brand gradient is allowed) */
+.bea3-on{overflow:hidden}
+.bea3-fill{position:absolute;inset:0;border-radius:inherit;
+  background:var(--w-grad-brand);
+  box-shadow:0 0 0 1px var(--w-brand-line),0 8px 16px -6px var(--w-brand-line)}
+.bea3-t{position:absolute;inset:0;display:flex;align-items:center;
+  justify-content:center;font:700 11px/1 var(--w-font-mono);
+  color:var(--w-charcoal);z-index:2}
+/* the second opened slot (Thu). Its seat is authored HERE, never inline —
+   an inline custom property would out-specify the .is-sm re-seat below. */
+.bea3-onb{--bea3-cx:3;--bea3-cy:3;--bea3-d:1.1s}
+
+.bea3-gfoot{position:absolute;left:18px;top:258px}
+
+/* ═══ THE cz4 CONNECTOR · orthogonal segments + rounded elbows ═══════════════
+   Runs OUT of the open Thu slot, not out of thin air. Segments use the kit's
+   .bxx-cn stroke; the elbows are border-drawn so the corner is truly rounded
+   (never an abstract bezier). The packet carries the gradient + the glow.   */
+.bea3-cn{z-index:4}
+.bea3-s1{left:648px;top:302px;width:106px;height:2px;transform-origin:0 50%}
+.bea3-s3{left:764px;top:225px;width:2px;height:67px;transform-origin:50% 100%}
+.bea3-s5{left:776px;top:213px;width:50px;height:2px;transform-origin:0 50%}
+
+.bea3-el{position:absolute;width:12px;height:12px;box-sizing:border-box;
+  border:0 solid var(--w-line-strong);z-index:4}
+/* elbow A — the turn out of the slot (identical border pair in both canvases) */
+.bea3-c1{left:754px;top:292px;border-bottom-width:2px;border-right-width:2px;
+  border-bottom-right-radius:12px}
+/* elbow B — the turn into the card */
+.bea3-c2{left:764px;top:213px;border-top-width:2px;border-left-width:2px;
+  border-top-left-radius:12px}
+
+/* the packet — gradient pulse + purple glow, travelling the path */
+.bea3-pkt{position:absolute;left:645px;top:297px;width:11px;height:11px;
+  border-radius:var(--w-r-full);background:var(--w-grad-brand);
+  box-shadow:0 0 0 4px var(--w-brand-soft),0 0 16px 3px var(--w-brand-line);
+  z-index:5;opacity:0}
+
+/* ═══ BEAT 3 · the match that ARRIVES (bloom-rim focal card) ═════════════════ */
+.bea3-focal{position:absolute;left:8px;top:32px;width:290px;height:186px}
+.bea3-fcard{inset:0;padding:20px 22px;display:flex;flex-direction:column;gap:12px}
+.bea3-hrow{display:flex;align-items:center;gap:14px;min-width:0}
+.bea3-fav{width:44px;height:44px}
+.bea3-who{min-width:0}
+.bea3-name{display:block;font:800 19px/1.1 var(--w-font);
+  letter-spacing:var(--w-ls-tight);color:var(--w-text);white-space:nowrap}
+.bea3-role{display:block;margin-top:4px;font:500 12px/1 var(--w-font);
+  color:var(--w-text-2);white-space:nowrap}
+.bea3-crow{display:flex;align-items:center;gap:8px}
+.bea3-chip{padding:6px 11px;font-size:11.5px}
+.bea3-foot{display:flex;align-items:center;gap:10px;margin-top:auto}
+.bea3-score{padding:8px 13px;font-size:13px;transform-origin:50% 50%}
+.bea3-illus{margin-left:auto}
+
+/* ═══ PORTRAIT (440×620) — .is-sm · same three beats, read TOP→BOTTOM ════════
+   Additive overrides only. The base here is ALSO the resolved end state.     */
+
+.bea3-scene.is-sm{
+  --bea3-gx:16px; --bea3-gy:32px; --bea3-gsx:56px; --bea3-gsy:38px;
+  --bea3-cw:44px; --bea3-ch:32px;
+  /* packet: down · left · down */
+  --bea3-p1x:0px;   --bea3-p1y:60px;
+  --bea3-p2x:-66px; --bea3-p2y:60px;
+  --bea3-p3x:-66px; --bea3-p3y:91px;
+  /* the card now arrives from ABOVE, not from the left */
+  --bea3-fx:0px; --bea3-fy:-20px;
+}
+
+.bea3-scene.is-sm .bea3-b1{left:70px;top:12px;width:300px;height:190px}
+.bea3-scene.is-sm .bea3-b2{left:70px;top:176px;width:300px;height:210px}
+.bea3-scene.is-sm .bea3-b3{left:70px;top:418px;width:300px;height:190px}
+.bea3-scene.is-sm .bea3-n1,
+.bea3-scene.is-sm .bea3-n3{left:0}
+
+/* beat 1 — one field line drops so the card can breathe at portrait scale */
+.bea3-scene.is-sm .bea3-app{left:30px;top:28px;width:240px;height:148px}
+.bea3-scene.is-sm .bea3-aav{left:18px;top:16px}
+.bea3-scene.is-sm .bea3-al{left:68px}
+.bea3-scene.is-sm .bea3-al1{top:22px;width:80px}
+.bea3-scene.is-sm .bea3-al2{top:40px;width:52px}
+.bea3-scene.is-sm .bea3-fl{left:18px}
+.bea3-scene.is-sm .bea3-fl1{top:70px;width:196px}
+.bea3-scene.is-sm .bea3-fl2{top:88px;width:170px}
+.bea3-scene.is-sm .bea3-fl3{display:none}
+.bea3-scene.is-sm .bea3-vchip{left:18px;top:110px}
+.bea3-scene.is-sm .bea3-check{left:222px;top:12px}
+
+/* beat 2 — 5×3 (the 4th row drops); still 2 on. Emptiness preserved. */
+.bea3-scene.is-sm .bea3-grid{left:0;top:28px;width:300px;height:176px}
+.bea3-scene.is-sm .bea3-gtitle{display:none}
+.bea3-scene.is-sm .bea3-day{top:12px}
+.bea3-scene.is-sm .bea3-r4{display:none}   /* the whole 4th row */
+.bea3-scene.is-sm .bea3-hs{display:none}   /* …and the grey cell onB re-seats onto */
+.bea3-scene.is-sm .bea3-onb{--bea3-cy:2}   /* the open Thu slot moves up one row */
+.bea3-scene.is-sm .bea3-gfoot{left:16px;top:148px}
+
+/* connector — re-aimed DOWN · LEFT · DOWN. Same elbows, new seats + new axes. */
+.bea3-scene.is-sm .bea3-s1{left:274px;top:344px;width:2px;height:50px;
+  transform-origin:50% 0}
+.bea3-scene.is-sm .bea3-c1{left:264px;top:394px}
+.bea3-scene.is-sm .bea3-s3{left:220px;top:404px;width:44px;height:2px;
+  transform-origin:100% 50%}
+.bea3-scene.is-sm .bea3-c2{left:208px;top:404px}
+.bea3-scene.is-sm .bea3-s5{left:208px;top:416px;width:2px;height:20px;
+  transform-origin:50% 0}
+.bea3-scene.is-sm .bea3-pkt{left:270px;top:339px}
+
+/* beat 3 */
+.bea3-scene.is-sm .bea3-focal{left:0;top:18px;width:300px;height:156px}
+.bea3-scene.is-sm .bea3-fcard{padding:18px}
+.bea3-scene.is-sm .bea3-fav{width:40px;height:40px}
+.bea3-scene.is-sm .bea3-name{font-size:18px}
+.bea3-scene.is-sm .bea3-score{padding:7px 12px;font-size:12.5px}
+
+/* ═══ MOTION · everything above is the resolved end state ════════════════════
+   Beat 1  0–19%   application card in · fields settle · the check lands
+   Beat 2  21–42%  the grid arrives · 20 empty slots · TWO flip on
+   Beat 3  45–82%  the cz4 path draws · the packet travels · the card blooms
+           82–96%  HOLD on the finished scene  ·  96–100% dissolve + reset
+   Direction-dependent values ride on --bea3-* vars so ONE packet keyframe and
+   ONE card keyframe serve both canvases; only the three segment axes swap.  */
+@media (prefers-reduced-motion:no-preference){
+  .bea3-app   {animation:bea3-kapp   var(--bea3-loop) var(--w-ease) infinite}
+  .bea3-n1    {animation:bea3-knum1  var(--bea3-loop) var(--w-ease) infinite}
+  .bea3-fl    {animation:bea3-kline  var(--bea3-loop) var(--w-ease) infinite;
+               animation-delay:var(--bea3-d,0s)}
+  .bea3-check {animation:bea3-kcheck var(--bea3-loop) var(--w-ease-spring) infinite}
+  .bea3-vchip {animation:bea3-kvchip var(--bea3-loop) var(--w-ease) infinite}
+
+  .bea3-grid  {animation:bea3-kgrid  var(--bea3-loop) var(--w-ease) infinite}
+  .bea3-n2    {animation:bea3-knum2  var(--bea3-loop) var(--w-ease) infinite}
+  .bea3-gtitle,
+  .bea3-day,
+  .bea3-gfoot {animation:bea3-kgtext var(--bea3-loop) var(--w-ease) infinite}
+  .bea3-cell  {animation:bea3-kcell  var(--bea3-loop) var(--w-ease) infinite;
+               animation-delay:var(--bea3-d,0s)}
+  .bea3-fill,
+  .bea3-t     {animation:bea3-kon    var(--bea3-loop) var(--w-ease-spring) infinite;
+               animation-delay:var(--bea3-d,0s)}
+
+  .bea3-s1    {animation:bea3-kdx1   var(--bea3-loop) var(--w-ease) infinite}
+  .bea3-c1    {animation:bea3-kc1    var(--bea3-loop) var(--w-ease) infinite}
+  .bea3-s3    {animation:bea3-kdy3   var(--bea3-loop) var(--w-ease) infinite}
+  .bea3-c2    {animation:bea3-kc2    var(--bea3-loop) var(--w-ease) infinite}
+  .bea3-s5    {animation:bea3-kdx5   var(--bea3-loop) var(--w-ease) infinite}
+  .bea3-pkt   {animation:bea3-kpkt   var(--bea3-loop) linear infinite}
+
+  .bea3-focal {animation:bea3-kfocal var(--bea3-loop) var(--w-ease) infinite}
+  .bea3-n3    {animation:bea3-knum3  var(--bea3-loop) var(--w-ease) infinite}
+  .bea3-score {animation:bea3-kscore var(--bea3-loop) var(--w-ease-spring) infinite}
+  .bea3-illus {animation:bea3-killus var(--bea3-loop) var(--w-ease) infinite}
+
+  /* the only structurally different beats: in portrait the path draws
+     DOWN · LEFT · DOWN, so segments 1 and 5 grow on Y and segment 3 on X. */
+  .bea3-scene.is-sm .bea3-s1{animation-name:bea3-kdy1}
+  .bea3-scene.is-sm .bea3-s3{animation-name:bea3-kdx3}
+  .bea3-scene.is-sm .bea3-s5{animation-name:bea3-kdy5}
+}
+
+/* belt-and-braces: if a host ever moves motion outside the query above, the
+   reduce case still lands on the same resolved end state the base CSS paints. */
+@media (prefers-reduced-motion:reduce){
+  .bea3-scene *{animation:none !important}
+  .bea3-pkt{opacity:0}
+}
+
+/* ---- beat 1 ---- */
+@keyframes bea3-kapp{
+  0%      {opacity:0;transform:translateY(12px) scale(.97)}
+  3%,96%  {opacity:1;transform:none}
+  100%    {opacity:0;transform:translateY(12px) scale(.97)}
+}
+@keyframes bea3-knum1{
+  0%      {opacity:0}
+  4%,96%  {opacity:1}
+  100%    {opacity:0}
+}
+@keyframes bea3-kline{
+  0%,3%   {opacity:0;transform:scaleX(0)}
+  10%,96% {opacity:1;transform:scaleX(1)}
+  100%    {opacity:0;transform:scaleX(0)}
+}
+@keyframes bea3-kcheck{
+  0%,10%  {opacity:0;transform:scale(1.9)}
+  13.5%   {opacity:1;transform:scale(.9)}
+  15%,96% {opacity:1;transform:scale(1)}
+  100%    {opacity:0;transform:scale(1.9)}
+}
+@keyframes bea3-kvchip{
+  0%,14%  {opacity:0;transform:translateY(6px)}
+  19%,96% {opacity:1;transform:none}
+  100%    {opacity:0;transform:translateY(6px)}
+}
+
+/* ---- beat 2 ---- */
+@keyframes bea3-kgrid{
+  0%,21%  {opacity:0;transform:translateY(14px) scale(.97)}
+  26%,96% {opacity:1;transform:none}
+  100%    {opacity:0;transform:translateY(14px) scale(.97)}
+}
+@keyframes bea3-knum2{
+  0%,20%  {opacity:0}
+  25%,96% {opacity:1}
+  100%    {opacity:0}
+}
+@keyframes bea3-kgtext{
+  0%,23%  {opacity:0}
+  28%,96% {opacity:1}
+  100%    {opacity:0}
+}
+@keyframes bea3-kcell{
+  0%,24%  {opacity:0;transform:scale(.8)}
+  30%,96% {opacity:1;transform:none}
+  100%    {opacity:0;transform:scale(.8)}
+}
+@keyframes bea3-kon{
+  0%,33%  {opacity:0;transform:scale(.5)}
+  35.5%   {opacity:1;transform:scale(1.14)}
+  37%,96% {opacity:1;transform:scale(1)}
+  100%    {opacity:0;transform:scale(.5)}
+}
+
+/* ---- beat 3 · the cz4 path draws segment → elbow → segment → elbow → segment */
+@keyframes bea3-kdx1{
+  0%,45%  {transform:scaleX(0)}
+  48%,96% {transform:scaleX(1)}
+  100%    {transform:scaleX(0)}
+}
+@keyframes bea3-kdy1{
+  0%,45%  {transform:scaleY(0)}
+  48%,96% {transform:scaleY(1)}
+  100%    {transform:scaleY(0)}
+}
+@keyframes bea3-kc1{
+  0%,48%    {opacity:0}
+  49.5%,96% {opacity:1}
+  100%      {opacity:0}
+}
+@keyframes bea3-kdy3{
+  0%,49.5%{transform:scaleY(0)}
+  54%,96% {transform:scaleY(1)}
+  100%    {transform:scaleY(0)}
+}
+@keyframes bea3-kdx3{
+  0%,49.5%{transform:scaleX(0)}
+  54%,96% {transform:scaleX(1)}
+  100%    {transform:scaleX(0)}
+}
+@keyframes bea3-kc2{
+  0%,54%    {opacity:0}
+  55.5%,96% {opacity:1}
+  100%      {opacity:0}
+}
+@keyframes bea3-kdx5{
+  0%,55.5%{transform:scaleX(0)}
+  59%,96% {transform:scaleX(1)}
+  100%    {transform:scaleX(0)}
+}
+@keyframes bea3-kdy5{
+  0%,55.5%{transform:scaleY(0)}
+  59%,96% {transform:scaleY(1)}
+  100%    {transform:scaleY(0)}
+}
+/* the packet — orthogonal, one turn at a time (linear on purpose: it is a
+   routed packet, not a thrown ball). Base state = gone: it already landed. */
+@keyframes bea3-kpkt{
+  0%,60%  {opacity:0;transform:translate(0,0) scale(.5)}
+  62%     {opacity:1;transform:translate(0,0) scale(1)}
+  66%     {opacity:1;transform:translate(var(--bea3-p1x),var(--bea3-p1y)) scale(1)}
+  70%     {opacity:1;transform:translate(var(--bea3-p2x),var(--bea3-p2y)) scale(1)}
+  73%     {opacity:1;transform:translate(var(--bea3-p3x),var(--bea3-p3y)) scale(1)}
+  75%,100%{opacity:0;transform:translate(var(--bea3-p3x),var(--bea3-p3y)) scale(.4)}
+}
+@keyframes bea3-kfocal{
+  0%,69%  {opacity:0;
+           transform:translate(var(--bea3-fx),var(--bea3-fy)) scale(.92)}
+  76%,96% {opacity:1;transform:none}
+  100%    {opacity:0;
+           transform:translate(var(--bea3-fx),var(--bea3-fy)) scale(.92)}
+}
+@keyframes bea3-knum3{
+  0%,68%  {opacity:0}
+  74%,96% {opacity:1}
+  100%    {opacity:0}
+}
+@keyframes bea3-kscore{
+  0%,75%  {opacity:0;transform:scale(.6)}
+  77%     {opacity:1;transform:scale(1.12)}
+  79%,96% {opacity:1;transform:scale(1)}
+  100%    {opacity:0;transform:scale(.6)}
+}
+@keyframes bea3-killus{
+  0%,79%  {opacity:0}
+  82%,96% {opacity:1}
+  100%    {opacity:0}
+}
+
+/* ---- bea5_fragment ---- */
+/* ============================================================
+   bea5_fragment — W-BECOME-EXPERT §5 slot A5 · "What a conversation actually looks like"
+   asset: bexp_call_a5_anatomy_dark_v02
+
+   THE ANATOMY OF THE CALL ITSELF — the page's single DARK punch.
+
+   THIS IS A CALL. Not a chat. Not a thread. Not messaging.
+   Two people are TALKING — so the scene is a CALL SURFACE:
+   · a live status line (● LIVE · 30 MIN) and a running call timer that
+     advances 01:20 → 03:05 → 09:40 → 18:05 → 27:30 → 30:00;
+   · two participant tiles — Diana (you, the expert) and Aisha (the peer) —
+     each with an audio LEVEL METER, and an ACTIVE-SPEAKER ring that
+     alternates between them as the call passes back and forth;
+   · a single live CAPTION bar under the tiles: one spoken line at a time,
+     in one fixed seat, tied to whoever is talking. Captions REPLACE each
+     other — they never stack into a transcript, never alternate left/right,
+     have no bubble tails, no composer, no send affordance. People speak;
+     nobody types.
+
+   And in the middle of it, the peer asks the thing she actually called to
+   ask. THAT line does not get a caption — it gets the only CARD on the
+   canvas, wearing the bloom rim. It is the brand moment.
+
+   Underneath runs a 30-MINUTE RAIL, segmented 0–5 / 5–25 / 25–30.
+   The middle segment is FOUR TIMES the width of either end — the real
+   question is most of the call, and the geometry says so before the labels
+   do. A playhead sweeps the rail; each segment fills and its label lights
+   as the call passes through it.
+
+   RAIL LABELS · each label owns a BOX that is exactly as wide as its own
+   segment and starts at that segment's left edge (60/92 · 160/380 ·
+   548/92 landscape; 36/58 · 100/242 · 348/56 portrait). The 8px inter-
+   segment gutter is therefore also the label gutter: adjacent label boxes
+   CANNOT touch, let alone overlap. Inside the box the range sits on line 1
+   (mono) and the word on line 2 (kicker caps), tracked down to fit — and
+   where the box is too narrow for words at all (the two SHORT segments in
+   portrait) the words are dropped and the range carries the label alone.
+   Never widen a label box past its segment.
+
+   AND THEN IT ENDS. The rail completes, a quiet mono "30:00 · done" lands,
+   and NOTHING ELSE APPEARS. No CRM record. No pipeline stage. No deal card.
+   No follow-up task. The empty ground below the rail is not leftover space —
+   it IS the payload. Never fill it.
+
+   TWO CANVASES, ONE STORY
+   · data-canvas     700×560 — LANDSCAPE (default). Status line · two
+     participant tiles side by side · the quoted question in the centre ·
+     the caption bar · the rail along the bottom.
+   · data-canvas-sm  440×600 — PORTRAIT. The host scaler (_scaler.js) swaps
+     to this below a 700px viewport and stamps .is-sm on the .bxx-fit. Same
+     bands, re-proportioned: the tiles narrow and drop their roles, the
+     caption drops its speaker name (the avatar already says who), the focal
+     card tightens, and the two OUTER rail labels shed their words.
+     Every .is-sm rule is an ADDITIVE OVERRIDE; the desktop canvas is never
+     touched. Playhead waypoints ride on --bea5-x*, so ONE playhead keyframe
+     serves both canvases.
+
+   LOOP · 14s, pure CSS. No JS, no <img>, no external URL.
+     0–4%    the two participants arrive, facing each other
+     4–8%    the call goes live · the empty rail settles, three segments
+     7–15%   0–5 lights · playhead crosses INTRODUCTIONS · timer starts
+     8–19%   AISHA speaking → "Thanks for making the time."          (01:20)
+    19–27%   DIANA speaking → "Ask me anything. I've got nothing…"   (03:05)
+    19–58%   5–25 fills SLOWLY — the long middle. THE REAL QUESTION.
+    27–45%   AISHA speaking · the question blooms as the one card    (09:40)
+    45–58%   DIANA speaking → the honest answer                      (18:05)
+    59–67%   25–30 lights · the wrap · AISHA's last line             (27:30)
+    67–75%   the rail completes · "30:00 · done" · illustrative marker
+    75–96%   REST on the finished scene — and on the empty ground
+    96–100%  dissolve and re-run
+
+   MOTION IS OPT-IN. The BASE CSS renders the RESOLVED END STATE (call
+   complete · rail full · playhead parked at 30:00 · timer on 30:00 · the
+   question landed · Aisha's last line captioned and her tile still lit as
+   the last active speaker), so no-JS AND prefers-reduced-motion both get a
+   correct, finished scene for free. All @keyframes live inside
+   prefers-reduced-motion:no-preference, and an explicit reduce block pins
+   animation:none back onto that same end state.
+
+   DARK theme (§5 is the page's only dark section).
+   Prefix bea5-. Kit classes (.bxx-*) are COMPOSED, never redefined.
+   Values are --w-* foundation tokens ONLY — zero raw hex.
+   Brand purple appears ONLY as product UI: the active-speaker ring, the
+   live level meter, the rail's segment fill, the playhead, the focal card's
+   bloom rim + avatar ring, and the one brand chip. Never as a wash, never
+   as decoration. The live dot is --w-success because "live" is STATUS, not
+   brand. The people, the captions and the timestamps are all neutral — a
+   conversation has no brand colour.
+   Avatars: diana (the expert · you) · aisha (the peer asking). Never
+   keegan (reviews only), never jeff (owner).
+   Every demo number (call timer · caption timestamps · 30:00) sits inside a
+   region carrying the .bxx-illus marker. Content stays inside the central
+   ~85% of each canvas — the kit's radial edge-fade (.bxx-fit::after)
+   dissolves the rest into the section ground.
+   ============================================================ */
+
+.bea5-scene{
+  --bea5-loop:14s;
+  /* playhead waypoints, measured from the rail's left edge —
+     end of seg1 · start of seg2 · end of seg2 · start of seg3 · the end */
+  --bea5-x1:92px; --bea5-x2:100px; --bea5-x3:480px; --bea5-x4:488px; --bea5-x5:580px;
+}
+.bea5-scene *{box-sizing:border-box}
+
+/* ═══ LANDSCAPE (700×560) — the default canvas ═══════════════════════════════ */
+
+/* ---- band 1 · the call is LIVE, and it is running ------------------------- */
+.bea5-bar{position:absolute;left:60px;top:40px;width:580px;height:22px;
+  display:flex;align-items:center;gap:9px}
+/* status, not brand — a live dot is green everywhere on earth */
+.bea5-dot{width:8px;height:8px;flex:none;border-radius:var(--w-r-full);
+  background:var(--w-success);box-shadow:0 0 0 3px var(--w-success-soft)}
+.bea5-live{font:700 11px/1 var(--w-font-kicker);letter-spacing:var(--w-ls-wide);
+  text-transform:uppercase;color:var(--w-text-2);white-space:nowrap}
+/* the running call timer — six states share ONE grid cell, so the row can never
+   reflow as the clock advances (all six are 5 mono glyphs wide anyway) */
+.bea5-timer{margin-left:auto;display:grid;justify-items:end;
+  font:700 13px/1 var(--w-font-mono);color:var(--w-text)}
+.bea5-timer>span{grid-area:1/1;opacity:0;white-space:nowrap}
+/* selector must out-specify `.bea5-timer>span` above, or the BASE (end) state
+   loses the cascade and the finished scene renders with a blank clock */
+.bea5-timer>.bea5-t6{opacity:1}           /* BASE = the call reached 30:00 */
+
+/* ---- band 2 · the two people on the call · a call surface, not a thread ---- */
+.bea5-tile{top:76px;width:278px;height:110px}
+.bea5-tl{left:60px}
+.bea5-tr{left:362px}
+.bea5-tp{display:flex;align-items:center;gap:12px;min-width:0}
+.bea5-avw{position:relative;width:44px;height:44px;flex:none}
+.bea5-tav{position:absolute;inset:0}
+/* the ACTIVE-SPEAKER ring — product UI, so it is allowed to be purple */
+.bea5-ring{position:absolute;inset:-4px;border-radius:var(--w-r-full);
+  box-shadow:0 0 0 2px var(--w-brand),0 0 18px 3px var(--w-brand-line)}
+.bea5-tid{display:flex;flex-direction:column;gap:4px;min-width:0}
+.bea5-tid b{font:700 14px/1 var(--w-font);color:var(--w-text);white-space:nowrap}
+.bea5-tid small{font:500 12px/1 var(--w-font);color:var(--w-text-3);white-space:nowrap}
+
+/* the level meter · idle bars are flat + neutral, live bars are tall + brand.
+   The live row sits EXACTLY over the idle row (same width, same gap, same
+   baseline) and is taller and opaque, so it simply covers it — no crossfade. */
+.bea5-wave{position:relative;margin-top:12px;height:22px;
+  display:flex;align-items:flex-end;gap:5px}
+.bea5-wb{width:3px;height:3px;border-radius:var(--w-r-pill);background:var(--w-line-strong)}
+.bea5-wl{position:absolute;left:0;bottom:0;display:flex;align-items:flex-end;gap:5px}
+.bea5-wbl{width:3px;height:var(--bea5-h);border-radius:var(--w-r-pill);
+  background:var(--w-grad-brand);transform-origin:50% 100%}
+
+/* who is talking · BASE = Aisha (she said the last thing before 30:00) */
+.bea5-td{opacity:0}
+.bea5-ta{opacity:1}
+
+/* ---- band 3 · THE REAL QUESTION · the only card, and the brand moment ------ */
+/* the wrapper owns the seat + the stacking context (.bxx-rim paints at z-index:-1) */
+.bea5-fwrap{position:absolute;left:100px;top:210px;width:500px;height:122px;z-index:2}
+.bea5-focal{inset:0;padding:20px 24px;display:flex;flex-direction:column;gap:14px}
+.bea5-q{font:700 19px/1.3 var(--w-font);letter-spacing:var(--w-ls-tight);color:var(--w-text)}
+.bea5-qfoot{display:flex;align-items:center;gap:10px;margin-top:auto}
+.bea5-qav{width:26px;height:26px}
+.bea5-qwho{font:700 11.5px/1 var(--w-font-mono);color:var(--w-text-3);white-space:nowrap}
+.bea5-qchip{margin-left:auto;padding:6px 11px;font-size:11.5px;transform-origin:50% 50%}
+
+/* ---- band 4 · the live caption · ONE line, ONE seat, spoken not sent -------
+   Captions replace each other in place. They never alternate sides, never
+   stack, never gain a tail. This is a caption track, not a conversation log. */
+.bea5-capw{position:absolute;left:80px;top:356px;width:540px;height:44px}
+.bea5-cap{position:absolute;inset:0;display:flex;align-items:center;gap:10px;
+  padding:0 18px;border-radius:var(--w-r-pill);
+  background:var(--w-glass-fill-soft);border:1px solid var(--w-line);opacity:0}
+.bea5-c4{opacity:1}                       /* BASE = the last thing anyone said */
+.bea5-cav{width:24px;height:24px}
+.bea5-cwho{font:700 10.5px/1 var(--w-font-kicker);letter-spacing:var(--w-ls-wide);
+  text-transform:uppercase;color:var(--w-text-3);white-space:nowrap}
+.bea5-ctx{font:500 13.5px/1.35 var(--w-font);color:var(--w-text);white-space:nowrap}
+.bea5-cts{margin-left:auto;font:700 11px/1 var(--w-font-mono);color:var(--w-text-3);
+  white-space:nowrap}
+
+/* ---- band 5 · the 30-minute rail ·  0–5  ·  5–25  ·  25–30 ────────────────
+   The middle segment is 4× either end. That ratio is the argument. ---------- */
+.bea5-rhead{position:absolute;left:60px;top:430px;width:580px;height:22px;
+  display:flex;align-items:center;justify-content:flex-end;gap:12px}
+.bea5-done{padding:6px 11px;font-size:11.5px}
+
+.bea5-rail{position:absolute;left:60px;top:458px;width:580px;height:12px}
+.bea5-seg{position:absolute;top:0;height:12px;border-radius:var(--w-r-pill);
+  background:var(--w-glass-fill-soft);border:1px solid var(--w-line);
+  overflow:hidden;z-index:1}
+/* product UI → the brand gradient is allowed to be the progress fill */
+.bea5-sf{position:absolute;inset:0;border-radius:inherit;
+  background:var(--w-grad-brand);transform-origin:0 50%}
+.bea5-g1{left:0;width:92px}
+.bea5-g2{left:100px;width:380px}
+.bea5-g3{left:488px;width:92px}
+/* the middle segment's bloom — a sibling, because the segment clips its own fill */
+.bea5-glow{position:absolute;left:100px;top:0;width:380px;height:12px;z-index:0;
+  border-radius:var(--w-r-pill);background:var(--w-grad-brand);
+  filter:blur(10px);opacity:.35}
+
+/* the playhead — seated INSIDE the rail, so both canvases share one origin */
+.bea5-ph{position:absolute;left:0;top:6px;width:14px;height:14px;margin:-7px 0 0 -7px;
+  border-radius:var(--w-r-full);background:var(--w-grad-brand);
+  box-shadow:0 0 0 4px var(--w-brand-soft),0 0 16px 3px var(--w-brand-line);
+  z-index:3;transform:translateX(var(--bea5-x5))}   /* BASE = parked at 30:00 */
+
+/* ---- the rail labels · ONE BOX PER SEGMENT, exactly segment-wide -----------
+   left == segment left, width == segment width. The 8px gutter between
+   segments is therefore the gutter between labels: they cannot collide.
+   Range on line 1, word on line 2 — a two-line label always beats a label
+   that runs into its neighbour. */
+.bea5-lbl{position:absolute;top:478px;display:block}
+.bea5-lt{display:block;font:700 10px/1.2 var(--w-font-mono);color:var(--w-text-3)}
+/* 9px / .045em is the SIZE AT WHICH THE LONGEST WORD FITS THE SHORTEST BOX:
+   "INTRODUCTIONS" is 13 monospace glyphs and seg1 is only 92px wide. Tracked any
+   wider, it runs out of its box and into segment 2 — which is exactly the bug
+   this layout exists to kill. Do not enlarge without re-measuring seg1. */
+.bea5-lw{display:block;margin-top:3px;
+  font:400 9px/1.25 var(--w-font-kicker);letter-spacing:.045em;
+  text-transform:uppercase;color:var(--w-text-3)}
+.bea5-l1{left:60px;width:92px}
+.bea5-l2{left:160px;width:380px}          /* the one that matters, and it reads that way */
+.bea5-l2 .bea5-lt,
+.bea5-l2 .bea5-lw{color:var(--w-text)}
+.bea5-l3{left:548px;width:92px}
+
+/* ---- band 6 · WHAT ISN'T HERE ---------------------------------------------
+   Below the rail: nothing. No record, no pipeline, no task. The empty ground
+   is the deliverable. Do not add furniture here — you would delete the point. */
+
+/* ═══ PORTRAIT (440×600) — .is-sm · same bands, re-proportioned ══════════════ */
+/* Additive overrides only. The base here is ALSO the resolved end state.       */
+
+.bea5-scene.is-sm{
+  --bea5-x1:58px; --bea5-x2:64px; --bea5-x3:306px; --bea5-x4:312px; --bea5-x5:368px;
+}
+
+/* band 1 */
+.bea5-scene.is-sm .bea5-bar{left:36px;top:34px;width:368px;gap:8px}
+.bea5-scene.is-sm .bea5-live{font-size:10px}
+.bea5-scene.is-sm .bea5-timer{font-size:12px}
+
+/* band 2 — the roles drop; the faces, the ring and the levels carry it */
+.bea5-scene.is-sm .bea5-tile{top:72px;width:176px;height:96px;padding:14px}
+.bea5-scene.is-sm .bea5-tl{left:36px}
+.bea5-scene.is-sm .bea5-tr{left:228px}
+.bea5-scene.is-sm .bea5-tp{gap:10px}
+.bea5-scene.is-sm .bea5-avw{width:38px;height:38px}
+.bea5-scene.is-sm .bea5-tid small{display:none}
+.bea5-scene.is-sm .bea5-tid b{font-size:13.5px}
+.bea5-scene.is-sm .bea5-wave{margin-top:10px;height:18px;gap:4px}
+.bea5-scene.is-sm .bea5-wl{gap:4px}
+.bea5-scene.is-sm .bea5-wbl{height:calc(var(--bea5-h) * .8)}
+
+/* band 3 — the seat is sized to the card, not the other way round: .bxx-rim makes
+   the card position:relative, so it sizes to its content and sits at the seat's top. */
+.bea5-scene.is-sm .bea5-fwrap{left:18px;top:200px;width:404px;height:106px}
+.bea5-scene.is-sm .bea5-focal{padding:18px 20px;gap:12px}
+.bea5-scene.is-sm .bea5-q{font-size:17px}
+.bea5-scene.is-sm .bea5-qav{width:24px;height:24px}
+.bea5-scene.is-sm .bea5-qchip{padding:5px 10px;font-size:11px}
+
+/* band 4 — the caption drops the speaker NAME: the avatar already says who,
+   and the line itself is the only thing worth the width. */
+.bea5-scene.is-sm .bea5-capw{left:18px;top:340px;width:404px;height:44px}
+.bea5-scene.is-sm .bea5-cap{padding:0 14px;gap:8px}
+.bea5-scene.is-sm .bea5-cwho{display:none}
+.bea5-scene.is-sm .bea5-cav{width:22px;height:22px}
+.bea5-scene.is-sm .bea5-ctx{font-size:12.5px}
+.bea5-scene.is-sm .bea5-cts{font-size:10px}
+
+/* band 5 — the 4:1 middle-segment ratio survives the squeeze. It has to. */
+.bea5-scene.is-sm .bea5-rhead{left:36px;top:448px;width:368px;gap:10px}
+.bea5-scene.is-sm .bea5-done{padding:5px 10px;font-size:11px}
+.bea5-scene.is-sm .bea5-rail{left:36px;top:478px;width:368px}
+.bea5-scene.is-sm .bea5-g1{left:0;width:58px}
+.bea5-scene.is-sm .bea5-g2{left:64px;width:242px}
+.bea5-scene.is-sm .bea5-g3{left:312px;width:56px}
+.bea5-scene.is-sm .bea5-glow{left:64px;width:242px}
+/* label boxes track the segments exactly, at this canvas too */
+.bea5-scene.is-sm .bea5-lbl{top:498px}
+.bea5-scene.is-sm .bea5-lt{font-size:11px}
+.bea5-scene.is-sm .bea5-lw{margin-top:2px;font-size:10.5px;letter-spacing:.04em}
+.bea5-scene.is-sm .bea5-l1{left:36px;width:58px}
+.bea5-scene.is-sm .bea5-l2{left:100px;width:242px}
+.bea5-scene.is-sm .bea5-l3{left:348px;width:56px}
+/* 58px and 56px cannot hold a word at any legible size, so the two SHORT
+   segments keep only their time range — the LONG one keeps its words, because
+   the middle of the call is the whole reason the scene exists. */
+.bea5-scene.is-sm .bea5-l1 .bea5-lw,
+.bea5-scene.is-sm .bea5-l3 .bea5-lw{display:none}
+
+/* ═══ MOTION · everything above is the RESOLVED END STATE ═════════════════════
+   Segment fills and the playhead run LINEAR — a clock does not ease. Everything
+   human (people arriving, the ring changing hands, a line landing, the question
+   blooming) rides --w-ease. */
+@media (prefers-reduced-motion:no-preference){
+  .bea5-tl    {animation:bea5-ktl    var(--bea5-loop) var(--w-ease) infinite}
+  .bea5-tr    {animation:bea5-ktr    var(--bea5-loop) var(--w-ease) infinite}
+  .bea5-bar   {animation:bea5-kbar   var(--bea5-loop) var(--w-ease) infinite}
+  .bea5-dot   {animation:bea5-kdot   1.6s var(--w-ease-in-out) infinite}
+
+  .bea5-t1    {animation:bea5-kt1    var(--bea5-loop) var(--w-ease) infinite}
+  .bea5-t2    {animation:bea5-kt2    var(--bea5-loop) var(--w-ease) infinite}
+  .bea5-t3    {animation:bea5-kt3    var(--bea5-loop) var(--w-ease) infinite}
+  .bea5-t4    {animation:bea5-kt4    var(--bea5-loop) var(--w-ease) infinite}
+  .bea5-t5    {animation:bea5-kt5    var(--bea5-loop) var(--w-ease) infinite}
+  .bea5-t6    {animation:bea5-kt6    var(--bea5-loop) var(--w-ease) infinite}
+
+  /* the ring + the live meter change hands as the call goes back and forth */
+  .bea5-td    {animation:bea5-kliveD var(--bea5-loop) var(--w-ease) infinite}
+  .bea5-ta    {animation:bea5-kliveA var(--bea5-loop) var(--w-ease) infinite}
+  /* and the meter itself moves, because someone is actually speaking into it */
+  .bea5-wbl   {animation:bea5-kwb 900ms var(--w-ease-in-out) infinite alternate;
+               animation-delay:var(--bea5-wd,0s)}
+
+  .bea5-seg   {animation:bea5-kseg   var(--bea5-loop) var(--w-ease) infinite;
+               animation-delay:var(--bea5-d,0s)}
+  .bea5-g1 .bea5-sf{animation:bea5-kf1 var(--bea5-loop) linear infinite}
+  .bea5-g2 .bea5-sf{animation:bea5-kf2 var(--bea5-loop) linear infinite}
+  .bea5-g3 .bea5-sf{animation:bea5-kf3 var(--bea5-loop) linear infinite}
+  .bea5-glow  {animation:bea5-kglow  var(--bea5-loop) linear infinite}
+  .bea5-ph    {animation:bea5-kph    var(--bea5-loop) linear infinite}
+
+  .bea5-l1    {animation:bea5-kl1    var(--bea5-loop) var(--w-ease) infinite}
+  .bea5-l2    {animation:bea5-kl2    var(--bea5-loop) var(--w-ease) infinite}
+  .bea5-l3    {animation:bea5-kl3    var(--bea5-loop) var(--w-ease) infinite}
+
+  .bea5-c1    {animation:bea5-kcap1  var(--bea5-loop) var(--w-ease) infinite}
+  .bea5-c2    {animation:bea5-kcap2  var(--bea5-loop) var(--w-ease) infinite}
+  .bea5-c3    {animation:bea5-kcap3  var(--bea5-loop) var(--w-ease) infinite}
+  .bea5-c4    {animation:bea5-kcap4  var(--bea5-loop) var(--w-ease) infinite}
+
+  .bea5-fwrap {animation:bea5-kfocal var(--bea5-loop) var(--w-ease) infinite}
+  .bea5-qchip {animation:bea5-kqchip var(--bea5-loop) var(--w-ease-spring) infinite}
+
+  .bea5-done  {animation:bea5-kdone  var(--bea5-loop) var(--w-ease) infinite}
+  .bea5-illus {animation:bea5-killus var(--bea5-loop) var(--w-ease) infinite}
+}
+/* belt-and-braces: if motion is refused, every element sits on the end state the
+   base CSS already paints — rail full, timer on 30:00, playhead at --bea5-x5,
+   the question landed, Aisha's tile still lit and her last line captioned. */
+@media (prefers-reduced-motion:reduce){
+  .bea5-scene *{animation:none !important}
+}
+
+/* ═══ THE KEYFRAMES THEMSELVES ARE ALSO GATED ════════════════════════════════
+   Belt, braces AND a second belt: the animation PROPERTIES are opt-in above, the
+   reduce block pins animation:none, and the @keyframes are not even DEFINED when
+   motion is refused. Nothing can accidentally move a scene whose base CSS is
+   already the finished frame. */
+@media (prefers-reduced-motion:no-preference){
+
+/* ---- the two participants arrive, facing each other ------------------------ */
+@keyframes bea5-ktl{
+  0%       {opacity:0;transform:translateX(-14px)}
+  4%,96%   {opacity:1;transform:none}
+  100%     {opacity:0;transform:translateX(-14px)}
+}
+@keyframes bea5-ktr{
+  0%       {opacity:0;transform:translateX(14px)}
+  4%,96%   {opacity:1;transform:none}
+  100%     {opacity:0;transform:translateX(14px)}
+}
+/* the call goes live */
+@keyframes bea5-kbar{
+  0%,3%    {opacity:0}
+  7%,96%   {opacity:1}
+  100%     {opacity:0}
+}
+@keyframes bea5-kdot{
+  0%       {opacity:1;transform:scale(1)}
+  100%     {opacity:.35;transform:scale(.82)}
+}
+
+/* ---- the running call timer · one value per beat, one grid cell ------------
+   HANDOFFS ARE SEQUENTIAL, never crossfaded: each value is fully out (opacity 0)
+   at the exact percentage the next one starts coming in, so two numerals are
+   never inked over each other in the shared grid cell. It reads as a clock tick. */
+@keyframes bea5-kt1{0%,6%{opacity:0}     8%,18%{opacity:1}   19.5%,100%{opacity:0}} /* 01:20 */
+@keyframes bea5-kt2{0%,19.5%{opacity:0}  21%,26%{opacity:1}  27.5%,100%{opacity:0}} /* 03:05 */
+@keyframes bea5-kt3{0%,27.5%{opacity:0}  29%,43%{opacity:1}  44.5%,100%{opacity:0}} /* 09:40 */
+@keyframes bea5-kt4{0%,44.5%{opacity:0}  46%,58%{opacity:1}  59.5%,100%{opacity:0}} /* 18:05 */
+@keyframes bea5-kt5{0%,59.5%{opacity:0}  61%,68%{opacity:1}  69.5%,100%{opacity:0}} /* 27:30 */
+@keyframes bea5-kt6{0%,69.5%{opacity:0}  71%,96%{opacity:1}  100%{opacity:0}}       /* 30:00 · BASE */
+
+/* ---- the active speaker · the ring and the meter change hands -------------- */
+/* AISHA: the thanks (01:20) · THE QUESTION (09:40) · the wrap (27:30 → BASE)   */
+@keyframes bea5-kliveA{
+  0%,7%    {opacity:0}
+  9%,18%   {opacity:1}
+  20%,26%  {opacity:0}
+  28%,44%  {opacity:1}
+  46%,58%  {opacity:0}
+  60%,96%  {opacity:1}
+  100%     {opacity:0}
+}
+/* DIANA: "nothing to pitch" (03:05) · the honest answer (18:05)               */
+@keyframes bea5-kliveD{
+  0%,18%   {opacity:0}
+  20%,26%  {opacity:1}
+  28%,44%  {opacity:0}
+  46%,58%  {opacity:1}
+  60%,100% {opacity:0}
+}
+/* audio levels — the meter is never perfectly still while someone is talking */
+@keyframes bea5-kwb{
+  0%       {transform:scaleY(.34)}
+  100%     {transform:scaleY(1)}
+}
+
+/* ---- the empty rail settles · then fills, one segment at a time ------------ */
+@keyframes bea5-kseg{
+  0%,4%    {opacity:0;transform:scaleX(.94)}
+  8%,96%   {opacity:1;transform:none}
+  100%     {opacity:0;transform:scaleX(.94)}
+}
+@keyframes bea5-kf1{                       /* 0–5 · introductions — quick   */
+  0%,7%    {transform:scaleX(0)}
+  15%,96%  {transform:scaleX(1)}
+  100%     {transform:scaleX(0)}
+}
+@keyframes bea5-kf2{                       /* 5–25 · the long middle — slow */
+  0%,19%   {transform:scaleX(0)}
+  58%,96%  {transform:scaleX(1)}
+  100%     {transform:scaleX(0)}
+}
+@keyframes bea5-kf3{                       /* 25–30 · wrap — quick          */
+  0%,59%   {transform:scaleX(0)}
+  67%,96%  {transform:scaleX(1)}
+  100%     {transform:scaleX(0)}
+}
+@keyframes bea5-kglow{
+  0%,19%   {opacity:0}
+  40%,96%  {opacity:.35}
+  100%     {opacity:0}
+}
+/* the playhead — one keyframe, both canvases (waypoints ride on --bea5-x*) */
+@keyframes bea5-kph{
+  0%,5%    {opacity:0;transform:translateX(0) scale(.4)}
+  7%       {opacity:1;transform:translateX(0) scale(1)}
+  15%      {opacity:1;transform:translateX(var(--bea5-x1)) scale(1)}
+  19%      {opacity:1;transform:translateX(var(--bea5-x2)) scale(1)}
+  58%      {opacity:1;transform:translateX(var(--bea5-x3)) scale(1)}
+  59%      {opacity:1;transform:translateX(var(--bea5-x4)) scale(1)}
+  67%,96%  {opacity:1;transform:translateX(var(--bea5-x5)) scale(1)}
+  100%     {opacity:0;transform:translateX(var(--bea5-x5)) scale(.4)}
+}
+/* each label lights as the call reaches its segment */
+@keyframes bea5-kl1{0%,6%{opacity:0}  11%,96%{opacity:1} 100%{opacity:0}}
+@keyframes bea5-kl2{0%,18%{opacity:0} 24%,96%{opacity:1} 100%{opacity:0}}
+@keyframes bea5-kl3{0%,58%{opacity:0} 63%,96%{opacity:1} 100%{opacity:0}}
+
+/* ---- the captions · one seat · each line REPLACES the last ------------------
+   Nothing accumulates. Nothing is "sent". They are talking.
+   Like the timer, the handoff is SEQUENTIAL: the outgoing line is fully out at
+   the exact percentage the incoming line starts, so two captions are never inked
+   over each other in the shared seat.                                          */
+@keyframes bea5-kcap1{                     /* AISHA · 01:20 */
+  0%,8%    {opacity:0;transform:translateY(6px)}
+  11%,18%  {opacity:1;transform:none}
+  20%,100% {opacity:0;transform:translateY(-4px)}
+}
+@keyframes bea5-kcap2{                     /* DIANA · 03:05 */
+  0%,20%   {opacity:0;transform:translateY(6px)}
+  23%,27%  {opacity:1;transform:none}
+  29%,100% {opacity:0;transform:translateY(-4px)}
+}
+/* 29–44% the caption seat is deliberately EMPTY: the question has the floor. */
+@keyframes bea5-kcap3{                     /* DIANA · 18:05 — the honest answer */
+  0%,44%   {opacity:0;transform:translateY(6px)}
+  47%,57%  {opacity:1;transform:none}
+  59%,100% {opacity:0;transform:translateY(-4px)}
+}
+@keyframes bea5-kcap4{                     /* AISHA · 27:30 — the wrap · BASE */
+  0%,59%   {opacity:0;transform:translateY(6px)}
+  62%,96%  {opacity:1;transform:none}
+  100%     {opacity:0;transform:translateY(-4px)}
+}
+
+/* ---- THE REAL QUESTION · 09:40 · the brand moment -------------------------- */
+@keyframes bea5-kfocal{
+  0%,26%   {opacity:0;transform:translateY(10px) scale(.94)}
+  34%,96%  {opacity:1;transform:none}
+  100%     {opacity:0;transform:translateY(10px) scale(.94)}
+}
+@keyframes bea5-kqchip{
+  0%,34%   {opacity:0;transform:scale(.6)}
+  36.5%    {opacity:1;transform:scale(1.1)}
+  38.5%,96%{opacity:1;transform:scale(1)}
+  100%     {opacity:0;transform:scale(.6)}
+}
+
+/* ---- and then it just ends. Nothing files itself. Nothing chases you. ------ */
+@keyframes bea5-kdone{
+  0%,67%   {opacity:0;transform:translateY(6px)}
+  71%,96%  {opacity:1;transform:none}
+  100%     {opacity:0;transform:translateY(6px)}
+}
+@keyframes bea5-killus{
+  0%,71%   {opacity:0}
+  75%,96%  {opacity:1}
+  100%     {opacity:0}
+}
+
+}  /* ← end @media (prefers-reduced-motion:no-preference) · keyframes gate */

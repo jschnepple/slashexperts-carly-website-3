@@ -1,0 +1,926 @@
+---
+navProduct: experts
+title: "Become an Expert | SlashExperts"
+description: "Join the Experts+ network and take occasional conversations with people facing the challenge you've already solved — on your schedule, on your terms."
+pageCSS: become-an-expert
+pageJS: become-an-expert
+ds7: true
+permalink: /become-an-expert/
+---
+
+{% extends "layouts/base-w.njk" %}
+
+{% block content %}
+{% raw %}
+  <!-- ══ ADOBE STICKY STACK (§1–§6) — each section pins at top:0 and the next rises over it
+       (rounded top + shadow + increasing z). Gated by stackfit JS: a section that does NOT fit the
+       viewport HEIGHT flows normally (motion-library §2 · responsive-traps). Off ≤900px + reduced-motion. -->
+  <div class="bx-stack">
+
+  <!-- ══ §1 · HERO — DARK · split, copy LEFT / expert's-eye scene RIGHT ═════ -->
+  <section class="beh w-section w-section--hero" id="top" data-nav-surface="dark">
+    <div class="w-container w-container--wide">
+      <div class="beh__grid">
+
+        <div class="beh__copy w-stagger">
+          <span class="w-tag w-tag--kicker w-reveal be-kicker">
+            <svg class="w-icon w-icon--inherit"><use href="#i-star"/></svg>
+            Become an Expert
+          </span>
+          <h1 class="beh__title w-reveal">Share what you know. Get <span class="w-accent">something</span> back for it.</h1>
+          <p class="w-lead beh__lead w-reveal">Join the Experts<svg class="w-icon w-icon--inherit ep-plus"><use href="#i-plus"/></svg> network and take occasional conversations with people facing the challenge you've already solved — on your schedule, on your terms.</p>
+          <div class="beh__cta w-reveal">
+            <a class="w-btn w-btn--primary w-btn--lg" href="/contact">Apply to join</a>
+          </div>
+
+          <div class="beh__trust w-reveal">
+            <span class="beh__avs">
+              <span class="beh__av" style="background-image:var(--w-img-av-diana)"></span>
+              <span class="beh__av" style="background-image:var(--w-img-av-george)"></span>
+              <span class="beh__av" style="background-image:var(--w-img-av-ava)"></span>
+              <span class="beh__av" style="background-image:var(--w-img-av-allison)"></span>
+              <span class="beh__av" style="background-image:var(--w-img-av-aisha)"></span>
+            </span>
+            <span class="beh__tx">350+ experts verified</span>
+          </div>
+        </div>
+
+        <div class="beh__media w-reveal w-reveal--scale">
+          <div class="beh__stage" id="bea1">
+<div class="bxx" aria-hidden="true">
+  <div class="bxx-fit bea1-scene" data-canvas="700x560" data-canvas-sm="440x580"
+       style="width:700px;height:560px">
+
+    <!-- BAND 1 · the one you already took. Logged, confirmed, done. -->
+    <div class="bxx-card bxx-ghost bea1-hist">
+      <i class="bxx-av bea1-hav" style="background-image:var(--w-img-av-george)"></i>
+      <span class="bea1-hname">George</span>
+      <span class="bea1-hask">&ldquo;Walk me through your rollout plan?&rdquo;</span>
+      <span class="bxx-chip bea1-hchip">&#10003; Accepted</span>
+      <span class="bea1-note">Confirmed</span>
+    </div>
+
+    <!-- BAND 2a · the first request being ACCEPTED (base = gone; it became the row above) -->
+    <div class="bea1-seat bea1-a">
+      <div class="bxx-card bxx-card--focal bea1-card">
+        <div class="bea1-head">
+          <i class="bxx-av bea1-av" style="background-image:var(--w-img-av-george)"></i>
+          <span class="bea1-id"><b>George</b><small>Head of RevOps &middot; Meridian</small></span>
+          <span class="bxx-chip">30 min</span>
+        </div>
+        <p class="bea1-ask">&ldquo;Can you walk me through how you phased the rollout?&rdquo;</p>
+        <div class="bea1-tags">
+          <span class="bxx-chip bxx-chip--brand bea1-tag">Tue &middot; 9:00 AM</span>
+          <span class="bxx-chip bea1-tag">Change management</span>
+        </div>
+        <div class="bea1-acts">
+          <span class="bea1-btn bea1-btn--no">Decline</span>
+          <span class="bea1-btn bea1-swap">
+            <span class="bea1-bs1">Accept</span>
+            <span class="bea1-bs2">&#10003; Accepted</span>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- BAND 2b · the second request being ACCEPTED · the bloom-rim focal card (base = landed) -->
+    <div class="bea1-seat bea1-focal">
+      <div class="bxx-card bxx-card--focal bxx-rim bea1-card">
+        <div class="bea1-head">
+          <i class="bxx-av bxx-av--ring bea1-av" style="background-image:var(--w-img-av-aisha)"></i>
+          <span class="bea1-id"><b>Aisha</b><small>VP Engineering &middot; Northwind</small></span>
+          <span class="bxx-chip">30 min</span>
+        </div>
+        <p class="bea1-ask">&ldquo;How did you handle the migration at 400 seats?&rdquo;</p>
+        <div class="bea1-tags">
+          <span class="bxx-chip bxx-chip--brand bea1-tag">Thu &middot; 4:15 PM</span>
+          <span class="bxx-chip bea1-tag">Data migration</span>
+        </div>
+        <div class="bea1-acts">
+          <span class="bea1-btn bea1-btn--no">Decline</span>
+          <span class="bea1-btn bea1-swap">
+            <span class="bea1-bs1">Accept</span>
+            <span class="bea1-bs2">&#10003; Accepted</span>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- BAND 3 · each accepted request → the slot you opened for it -->
+    <i class="bxx-cn bea1-cn bea1-cn--a"></i>
+    <i class="bxx-cn bea1-cn bea1-cn--b"></i>
+
+    <!-- BAND 4 · your week. Two slots open, two calls booked, everything else off. -->
+    <div class="bxx-card bea1-week">
+      <div class="bea1-whead">
+        <b>Your week</b>
+        <span class="bea1-wsub">2 calls booked</span>
+      </div>
+      <div class="bea1-days">
+        <div class="bea1-day">
+          <span class="bea1-dl">Mon</span>
+          <i class="bea1-cell"></i>
+          <i class="bea1-cell"></i>
+        </div>
+        <div class="bea1-day">
+          <span class="bea1-dl">Tue</span>
+          <span class="bea1-cell bea1-cell--on bea1-cell--on1">
+            <i class="bxx-av bea1-cav" style="background-image:var(--w-img-av-george)"></i>
+            <span class="bea1-ct">9:00</span>
+          </span>
+          <i class="bea1-cell bea1-cell--open"></i>
+        </div>
+        <div class="bea1-day">
+          <span class="bea1-dl">Wed</span>
+          <i class="bea1-cell bea1-cell--open"></i>
+          <i class="bea1-cell"></i>
+        </div>
+        <div class="bea1-day">
+          <span class="bea1-dl">Thu</span>
+          <span class="bea1-cell bea1-cell--on bea1-cell--on2">
+            <i class="bxx-av bea1-cav" style="background-image:var(--w-img-av-aisha)"></i>
+            <span class="bea1-ct">4:15</span>
+          </span>
+          <i class="bea1-cell"></i>
+        </div>
+        <div class="bea1-day">
+          <span class="bea1-dl">Fri</span>
+          <i class="bea1-cell"></i>
+          <i class="bea1-cell"></i>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ §2 · WHAT'S IN IT FOR YOU — LIGHT (white) · offset 3-card bento ════ -->
+  <section class="cz-light be-white bew w-section" id="why" data-nav-surface="light">
+    <div class="w-container w-container--wide">
+
+      <div class="w-section-head--left w-stagger">
+        <span class="w-tag w-tag--kicker w-reveal be-kicker">
+          <svg class="w-icon w-icon--inherit"><use href="#i-heart"/></svg>
+          Why do it
+        </span>
+        <h2 class="bew__title w-reveal">What's in it for you.</h2>
+      </div>
+
+      <div class="bew__grid w-stagger">
+
+        <article class="w-card w-card--dark bew__card w-reveal">
+          <span class="w-card__icon"><svg class="w-icon"><use href="#i-star"/></svg></span>
+          <h3 class="w-card__title">Build your reputation</h3>
+          <div class="w-card__panel bew__panel">
+            <div class="bew__fig" id="bea2a">
+<div class="bxx" aria-hidden="true">
+  <div class="bxx-fit bea2a-scene" data-canvas="360x210" style="width:360px;height:210px">
+
+    <!-- ═══ Reputation, made concrete: a real person, verified, scored. ═══ -->
+    <div class="bxx-card bxx-card--focal bxx-rim bea2a-card">
+
+      <div class="bea2a-head">
+        <i class="bxx-av bxx-av--ring bea2a-av" style="background-image:var(--w-img-av-diana)"></i>
+        <span class="bea2a-id">
+          <span class="bea2a-name">Diana</span>
+          <span class="bea2a-role">Platform engineer</span>
+        </span>
+        <span class="bea2a-ring"><span class="bea2a-score">92</span></span>
+      </div>
+
+      <span class="bxx-chip bxx-chip--brand bea2a-vf">
+        <i class="bea2a-ck"></i>Verified expert
+      </span>
+
+    </div>
+
+  </div>
+</div>
+</div>
+          </div>
+          <p class="w-card__body">be recognized as the person who solved this well.</p>
+        </article>
+
+        <article class="w-card w-card--dark bew__card w-reveal">
+          <span class="w-card__icon"><svg class="w-icon"><use href="#i-users"/></svg></span>
+          <h3 class="w-card__title">Help your peers</h3>
+          <div class="w-card__panel bew__panel">
+            <div class="bew__fig" id="bea2b">
+<div class="bxx" aria-hidden="true">
+  <div class="bxx-fit bea2b-scene" data-canvas="360x210" style="width:360px;height:210px">
+
+    <!-- ═══ Two peers, thirty minutes, a real conversation. Nothing else. ═══ -->
+    <div class="bxx-card bxx-card--focal bxx-rim bea2b-card">
+
+      <div class="bea2b-head">
+        <span class="bea2b-pair">
+          <i class="bxx-av bxx-av--ring bea2b-av" style="background-image:var(--w-img-av-aisha)"></i>
+          <i class="bxx-av bea2b-av bea2b-av2" style="background-image:var(--w-img-av-george)"></i>
+        </span>
+        <span class="bxx-chip bea2b-when"><i class="bea2b-dot"></i>30 min</span>
+      </div>
+
+      <span class="bea2b-say bea2b-say1">
+        <i class="bxx-ln" style="width:152px"></i>
+        <i class="bxx-ln" style="width:110px"></i>
+      </span>
+
+      <span class="bea2b-say bea2b-say2">
+        <i class="bxx-ln" style="width:104px"></i>
+      </span>
+
+    </div>
+
+  </div>
+</div>
+</div>
+          </div>
+          <p class="w-card__body">short, genuinely useful conversations, not sales calls.</p>
+        </article>
+
+        <article class="w-card w-card--dark bew__card w-reveal">
+          <span class="w-card__icon"><svg class="w-icon"><use href="#i-trending"/></svg></span>
+          <h3 class="w-card__title">Earn for your time</h3>
+          <div class="w-card__panel bew__panel">
+            <div class="bew__fig" id="bea2c">
+<div class="bxx" aria-hidden="true">
+  <div class="bxx-fit bea2c-scene" data-canvas="360x210" style="width:360px;height:210px">
+
+    <!-- ═══ A demo number, drawn as a demo number. Never a claim. ═══ -->
+    <div class="bxx-card bxx-card--focal bxx-rim bea2c-card">
+
+      <div class="bea2c-top">
+        <span class="bxx-chip bxx-chip--mono bea2c-amt">$200&ndash;500/month</span>
+      </div>
+
+      <!-- the three conversations behind it — real people, taken, ticked -->
+      <div class="bea2c-rows">
+        <div class="bea2c-row">
+          <i class="bxx-av bea2c-av" style="background-image:var(--w-img-av-ava)"></i>
+          <i class="bxx-ln" style="width:142px"></i>
+          <i class="bea2c-tk"></i>
+        </div>
+        <div class="bea2c-row">
+          <i class="bxx-av bea2c-av" style="background-image:var(--w-img-av-allison)"></i>
+          <i class="bxx-ln" style="width:110px"></i>
+          <i class="bea2c-tk"></i>
+        </div>
+        <div class="bea2c-row">
+          <i class="bxx-av bea2c-av" style="background-image:var(--w-img-av-george)"></i>
+          <i class="bxx-ln" style="width:156px"></i>
+          <i class="bea2c-tk"></i>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+</div>
+          </div>
+          <p class="w-card__body">experts typically earn $200–500/month for the conversations they take.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ §3 · WHO JOINS — LIGHT (white) · split copy LEFT / persona rows RIGHT ═ -->
+  <section class="cz-light be-white bep w-section" id="who" data-nav-surface="light">
+    <div class="w-container w-container--wide">
+      <div class="bep__grid">
+
+        <div class="bep__copy w-stagger">
+          <span class="w-tag w-tag--kicker w-reveal be-kicker">
+            <svg class="w-icon w-icon--inherit"><use href="#i-users"/></svg>
+            Who joins
+          </span>
+          <h2 class="bep__title w-reveal">You've already done the hard part.</h2>
+          <p class="bep__body w-reveal">Experts<svg class="w-icon w-icon--inherit ep-plus"><use href="#i-plus"/></svg> isn't a panel of consultants or professional advisors. It's the people who actually did the work — and can say what it was really like.</p>
+          <p class="bep__close w-reveal">If a peer would trade half an hour to hear how you did it, you're who we're looking for.</p>
+        </div>
+
+        <div class="bep__list w-stagger">
+          <div class="bep__row w-reveal">
+            <span class="bep__av" style="background-image:var(--w-img-av-diana)"></span>
+            <div>
+              <div class="bep__rt">The one who ran the migration</div>
+              <p class="bep__rb">You moved the whole team onto a new platform and lived to tell it.</p>
+            </div>
+          </div>
+          <div class="bep__row w-reveal">
+            <span class="bep__av" style="background-image:var(--w-img-av-george)"></span>
+            <div>
+              <div class="bep__rt">The one who drove adoption</div>
+              <p class="bep__rb">You got a skeptical team to actually use the thing they didn't ask for.</p>
+            </div>
+          </div>
+          <div class="bep__row w-reveal">
+            <span class="bep__av" style="background-image:var(--w-img-av-allison)"></span>
+            <div>
+              <div class="bep__rt">The one who made the case</div>
+              <p class="bep__rb">You built the business case, defended the number, and got it funded.</p>
+            </div>
+          </div>
+          <div class="bep__row w-reveal">
+            <span class="bep__av" style="background-image:var(--w-img-av-ava)"></span>
+            <div>
+              <div class="bep__rt">The one who's done it twice</div>
+              <p class="bep__rb">You've been through this at two companies, and you'd do it differently now.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ §4 · HOW IT WORKS (for experts) — LIGHT (white) · wide 3-beat rail ═ -->
+  <section class="cz-light be-white bes w-section" id="how" data-nav-surface="light">
+    <div class="w-container w-container--wide">
+
+      <div class="w-section-head--left w-stagger">
+        <span class="w-tag w-tag--kicker w-reveal be-kicker">
+          <svg class="w-icon w-icon--inherit"><use href="#i-calendar"/></svg>
+          How it works
+        </span>
+        <h2 class="bes__title w-reveal">Light, flexible, on your schedule.</h2>
+      </div>
+
+      <div class="bes__fig w-reveal w-reveal--scale">
+        <div class="bes__stage" id="bea3">
+<div class="bxx" aria-hidden="true">
+  <div class="bxx-fit bea3-scene" data-canvas="1180x440" data-canvas-sm="440x620" data-sm-at="900"
+       style="width:1180px;height:440px">
+
+    <!-- ══ BEAT 1 · apply and get verified ══════════════════════════════════ -->
+    <div class="bea3-b bea3-b1">
+      <span class="bea3-num bea3-n1">01</span>
+
+      <div class="bxx-card bea3-app">
+        <i class="bxx-av bea3-aav" style="background-image:var(--w-img-av-aisha)"></i>
+        <i class="bxx-ln bea3-al bea3-al1"></i>
+        <i class="bxx-ln bea3-al bea3-al2"></i>
+
+        <!-- the short application, settling -->
+        <i class="bxx-ln bea3-fl bea3-fl1"></i>
+        <i class="bxx-ln bea3-fl bea3-fl2" style="--bea3-d:.14s"></i>
+        <i class="bxx-ln bea3-fl bea3-fl3" style="--bea3-d:.28s"></i>
+
+        <!-- base = already verified -->
+        <span class="bxx-chip bea3-vchip"><i class="bea3-dot"></i>Verified expert</span>
+      </div>
+
+      <!-- the check that lands: a quick vetting, so the network stays good -->
+      <i class="bea3-check"><i class="bea3-tick"></i></i>
+    </div>
+
+    <!-- ══ BEAT 2 · set your availability — MOSTLY EMPTY BY DESIGN ══════════ -->
+    <div class="bea3-b bea3-b2">
+      <span class="bea3-num bea3-n2">02</span>
+
+      <div class="bxx-card bea3-grid">
+        <span class="bea3-gtitle">Your availability</span>
+
+        <span class="bea3-day" style="--bea3-cx:0">Mon</span>
+        <span class="bea3-day" style="--bea3-cx:1">Tue</span>
+        <span class="bea3-day" style="--bea3-cx:2">Wed</span>
+        <span class="bea3-day" style="--bea3-cx:3">Thu</span>
+        <span class="bea3-day" style="--bea3-cx:4">Fri</span>
+
+        <!-- row 1 · all off -->
+        <i class="bea3-cell" style="--bea3-cx:0;--bea3-cy:0;--bea3-d:0s"></i>
+        <i class="bea3-cell" style="--bea3-cx:1;--bea3-cy:0;--bea3-d:.03s"></i>
+        <i class="bea3-cell" style="--bea3-cx:2;--bea3-cy:0;--bea3-d:.06s"></i>
+        <i class="bea3-cell" style="--bea3-cx:3;--bea3-cy:0;--bea3-d:.09s"></i>
+        <i class="bea3-cell" style="--bea3-cx:4;--bea3-cy:0;--bea3-d:.12s"></i>
+
+        <!-- row 2 · ONE slot opened (Tue) -->
+        <i class="bea3-cell" style="--bea3-cx:0;--bea3-cy:1;--bea3-d:.15s"></i>
+        <div class="bea3-cell bea3-on" style="--bea3-cx:1;--bea3-cy:1;--bea3-d:.18s">
+          <i class="bea3-fill"></i><span class="bea3-t">9:30</span>
+        </div>
+        <i class="bea3-cell" style="--bea3-cx:2;--bea3-cy:1;--bea3-d:.21s"></i>
+        <i class="bea3-cell" style="--bea3-cx:3;--bea3-cy:1;--bea3-d:.24s"></i>
+        <i class="bea3-cell" style="--bea3-cx:4;--bea3-cy:1;--bea3-d:.27s"></i>
+
+        <!-- row 3 · all off  (.bea3-hs = the seat onB takes over in portrait) -->
+        <i class="bea3-cell" style="--bea3-cx:0;--bea3-cy:2;--bea3-d:.30s"></i>
+        <i class="bea3-cell" style="--bea3-cx:1;--bea3-cy:2;--bea3-d:.33s"></i>
+        <i class="bea3-cell" style="--bea3-cx:2;--bea3-cy:2;--bea3-d:.36s"></i>
+        <i class="bea3-cell bea3-hs" style="--bea3-cx:3;--bea3-cy:2;--bea3-d:.39s"></i>
+        <i class="bea3-cell" style="--bea3-cx:4;--bea3-cy:2;--bea3-d:.42s"></i>
+
+        <!-- row 4 · landscape only · the SECOND opened slot (Thu) lives here -->
+        <i class="bea3-cell bea3-r4" style="--bea3-cx:0;--bea3-cy:3;--bea3-d:.45s"></i>
+        <i class="bea3-cell bea3-r4" style="--bea3-cx:1;--bea3-cy:3;--bea3-d:.48s"></i>
+        <i class="bea3-cell bea3-r4" style="--bea3-cx:2;--bea3-cy:3;--bea3-d:.51s"></i>
+        <div class="bea3-cell bea3-on bea3-onb">
+          <i class="bea3-fill"></i><span class="bea3-t">2:00</span>
+        </div>
+        <i class="bea3-cell bea3-r4" style="--bea3-cx:4;--bea3-cy:3;--bea3-d:.54s"></i>
+      </div>
+    </div>
+
+    <!-- ══ THE cz4 PATH · out of the slot you opened, into the match ════════ -->
+    <i class="bxx-cn bea3-cn bea3-s1"></i>
+    <i class="bea3-el bea3-c1"></i>
+    <i class="bxx-cn bea3-cn bea3-s3"></i>
+    <i class="bea3-el bea3-c2"></i>
+    <i class="bxx-cn bea3-cn bea3-s5"></i>
+    <i class="bea3-pkt"></i>
+
+    <!-- ══ BEAT 3 · talk and get matched — the match ARRIVES ════════════════ -->
+    <div class="bea3-b bea3-b3">
+      <span class="bea3-num bea3-n3">03</span>
+
+      <div class="bea3-focal">
+        <div class="bxx-card bxx-card--focal bxx-rim bea3-fcard">
+          <div class="bea3-hrow">
+            <i class="bxx-av bxx-av--ring bea3-fav"
+               style="background-image:var(--w-img-av-diana)"></i>
+            <span class="bea3-who">
+              <span class="bea3-name">Diana</span>
+              <span class="bea3-role">VP Sales · Fintech</span>
+            </span>
+          </div>
+          <div class="bea3-crow">
+            <span class="bxx-chip bxx-chip--mono bea3-chip">Thu · 2:00 PM</span>
+            <span class="bxx-chip bea3-chip">30 min</span>
+          </div>
+          <div class="bea3-foot">
+            <span class="bxx-chip bxx-chip--score bea3-score">94% Best fit</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+      </div>
+
+      <div class="bes__steps w-stagger">
+        <div class="bes__step w-reveal">
+          <span class="bes__n">01</span>
+          <h3 class="bes__st">Apply and get verified</h3>
+          <p class="bes__sb">a quick vetting so the network stays high-quality.</p>
+        </div>
+        <div class="bes__step w-reveal">
+          <span class="bes__n">02</span>
+          <h3 class="bes__st">Set your availability</h3>
+          <p class="bes__sb">you only take the conversations you opt into.</p>
+        </div>
+        <div class="bes__step w-reveal">
+          <span class="bes__n">03</span>
+          <h3 class="bes__st">Talk and get matched</h3>
+          <p class="bes__sb">ExpertScore AI brings you relevant conversations; you share your experience.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══ §5 · VERIFICATION — LIGHT (white) · centered head + 3 check columns ═ -->
+  <section class="cz-light be-white bevf w-section" id="verification" data-nav-surface="light">
+    <div class="w-container w-container--wide">
+
+      <div class="bevf__head w-stagger">
+        <span class="w-tag w-tag--kicker w-reveal be-kicker">
+          <svg class="w-icon w-icon--inherit"><use href="#i-check"/></svg>
+          Verification
+        </span>
+        <h2 class="bevf__title w-reveal">What "verified" actually means.</h2>
+        <p class="bevf__body w-reveal">The vetting is short, but it isn't a formality. Three things get checked, and that's the whole of it.</p>
+      </div>
+
+      <div class="bevf__grid w-stagger">
+        <div class="bevf__col w-reveal">
+          <span class="bevf__seal"><svg class="w-icon w-icon--inherit"><use href="#i-user"/></svg></span>
+          <div class="bevf__ct">You're a real customer.</div>
+          <p class="bevf__cb">We confirm you actually used the product you'd be talking about. No borrowed credentials, no stand-ins.</p>
+        </div>
+        <div class="bevf__col w-reveal">
+          <span class="bevf__seal"><svg class="w-icon w-icon--inherit"><use href="#i-proof"/></svg></span>
+          <div class="bevf__ct">You did the thing.</div>
+          <p class="bevf__cb">We check that the work you'd be asked about is work you actually did — not a project you watched from a distance.</p>
+        </div>
+        <div class="bevf__col w-reveal">
+          <span class="bevf__seal"><svg class="w-icon w-icon--inherit"><use href="#i-message"/></svg></span>
+          <div class="bevf__ct">You'll be straight with people.</div>
+          <p class="bevf__cb">A short conversation with our team. We're looking for someone who'll say what didn't work — not someone who'll perform.</p>
+        </div>
+      </div>
+
+      <p class="bevf__foot w-reveal">Most applications are reviewed within a week. If you're not a fit, we'll tell you plainly, and you'll know why.</p>
+
+    </div>
+  </section>
+
+
+  <!-- ══ §6 · THE CONVERSATION — DARK punch · scene LEFT / copy RIGHT ═══════ -->
+  <section class="bev w-section w-panel-rise--dark" id="conversation" data-nav-surface="dark">
+    <div class="w-container w-container--wide">
+
+      <div class="bev__grid">
+
+        <div class="bev__media w-reveal w-reveal--scale">
+          <div class="bev__stage" id="bea5">
+<div class="bxx" aria-hidden="true">
+  <div class="bxx-fit bea5-scene" data-canvas="700x560" data-canvas-sm="440x600"
+       style="width:700px;height:560px">
+
+    <!-- ══ BAND 1 · the call is live, and the clock is running ═══════════════ -->
+    <div class="bea5-bar">
+      <i class="bea5-dot"></i>
+      <span class="bea5-live">Live &middot; 30 min</span>
+      <span class="bea5-timer">
+        <span class="bea5-t1">01:20</span>
+        <span class="bea5-t2">03:05</span>
+        <span class="bea5-t3">09:40</span>
+        <span class="bea5-t4">18:05</span>
+        <span class="bea5-t5">27:30</span>
+        <span class="bea5-t6">30:00</span>
+      </span>
+    </div>
+
+    <!-- ══ BAND 2 · the two people ON the call · rings + live audio levels ═══ -->
+    <div class="bxx-card bea5-tile bea5-tl">
+      <div class="bea5-tp">
+        <span class="bea5-avw">
+          <i class="bea5-ring bea5-td"></i>
+          <i class="bxx-av bea5-tav" style="background-image:var(--w-img-av-diana)"></i>
+        </span>
+        <span class="bea5-tid"><b>Diana</b><small>You &middot; the expert</small></span>
+      </div>
+      <div class="bea5-wave">
+        <i class="bea5-wb"></i><i class="bea5-wb"></i><i class="bea5-wb"></i>
+        <i class="bea5-wb"></i><i class="bea5-wb"></i><i class="bea5-wb"></i>
+        <i class="bea5-wb"></i><i class="bea5-wb"></i><i class="bea5-wb"></i>
+        <span class="bea5-wl bea5-td">
+          <i class="bea5-wbl" style="--bea5-h:7px;--bea5-wd:0ms"></i>
+          <i class="bea5-wbl" style="--bea5-h:15px;--bea5-wd:120ms"></i>
+          <i class="bea5-wbl" style="--bea5-h:9px;--bea5-wd:240ms"></i>
+          <i class="bea5-wbl" style="--bea5-h:19px;--bea5-wd:60ms"></i>
+          <i class="bea5-wbl" style="--bea5-h:12px;--bea5-wd:300ms"></i>
+          <i class="bea5-wbl" style="--bea5-h:22px;--bea5-wd:180ms"></i>
+          <i class="bea5-wbl" style="--bea5-h:8px;--bea5-wd:360ms"></i>
+          <i class="bea5-wbl" style="--bea5-h:16px;--bea5-wd:90ms"></i>
+          <i class="bea5-wbl" style="--bea5-h:10px;--bea5-wd:270ms"></i>
+        </span>
+      </div>
+    </div>
+
+    <div class="bxx-card bea5-tile bea5-tr">
+      <div class="bea5-tp">
+        <span class="bea5-avw">
+          <i class="bea5-ring bea5-ta"></i>
+          <i class="bxx-av bea5-tav" style="background-image:var(--w-img-av-aisha)"></i>
+        </span>
+        <span class="bea5-tid"><b>Aisha</b><small>Peer &middot; same problem</small></span>
+      </div>
+      <div class="bea5-wave">
+        <i class="bea5-wb"></i><i class="bea5-wb"></i><i class="bea5-wb"></i>
+        <i class="bea5-wb"></i><i class="bea5-wb"></i><i class="bea5-wb"></i>
+        <i class="bea5-wb"></i><i class="bea5-wb"></i><i class="bea5-wb"></i>
+        <span class="bea5-wl bea5-ta">
+          <i class="bea5-wbl" style="--bea5-h:9px;--bea5-wd:150ms"></i>
+          <i class="bea5-wbl" style="--bea5-h:18px;--bea5-wd:0ms"></i>
+          <i class="bea5-wbl" style="--bea5-h:7px;--bea5-wd:330ms"></i>
+          <i class="bea5-wbl" style="--bea5-h:22px;--bea5-wd:210ms"></i>
+          <i class="bea5-wbl" style="--bea5-h:14px;--bea5-wd:75ms"></i>
+          <i class="bea5-wbl" style="--bea5-h:11px;--bea5-wd:390ms"></i>
+          <i class="bea5-wbl" style="--bea5-h:20px;--bea5-wd:255ms"></i>
+          <i class="bea5-wbl" style="--bea5-h:8px;--bea5-wd:105ms"></i>
+          <i class="bea5-wbl" style="--bea5-h:15px;--bea5-wd:300ms"></i>
+        </span>
+      </div>
+    </div>
+
+    <!-- ══ BAND 3 · THE REAL QUESTION (5–25) · the one card on the canvas ════
+         She SAYS this. It gets a card instead of a caption because it is the
+         reason she booked the call — not because anybody typed it.        -->
+    <div class="bea5-fwrap">
+      <div class="bxx-card bxx-card--focal bxx-rim bea5-focal">
+        <p class="bea5-q">&ldquo;What would you skip if you did it again?&rdquo;</p>
+        <div class="bea5-qfoot">
+          <i class="bxx-av bxx-av--ring bea5-qav"
+             style="background-image:var(--w-img-av-aisha)"></i>
+          <span class="bea5-qwho">Aisha &middot; 09:40</span>
+          <span class="bxx-chip bxx-chip--brand bea5-qchip">The real question</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ BAND 4 · the live caption · ONE seat · each line replaces the last ═ -->
+    <div class="bea5-capw">
+      <div class="bea5-cap bea5-c1">
+        <i class="bxx-av bea5-cav" style="background-image:var(--w-img-av-aisha)"></i>
+        <span class="bea5-cwho">Aisha</span>
+        <span class="bea5-ctx">Thanks for making the time.</span>
+        <span class="bea5-cts">01:20</span>
+      </div>
+
+      <div class="bea5-cap bea5-c2">
+        <i class="bxx-av bea5-cav" style="background-image:var(--w-img-av-diana)"></i>
+        <span class="bea5-cwho">Diana</span>
+        <span class="bea5-ctx">Ask me anything. I&rsquo;ve got nothing to pitch.</span>
+        <span class="bea5-cts">03:05</span>
+      </div>
+
+      <div class="bea5-cap bea5-c3">
+        <i class="bxx-av bea5-cav" style="background-image:var(--w-img-av-diana)"></i>
+        <span class="bea5-cwho">Diana</span>
+        <span class="bea5-ctx">The pilot. I&rsquo;d go straight to one real team.</span>
+        <span class="bea5-cts">18:05</span>
+      </div>
+
+      <div class="bea5-cap bea5-c4">
+        <i class="bxx-av bea5-cav" style="background-image:var(--w-img-av-aisha)"></i>
+        <span class="bea5-cwho">Aisha</span>
+        <span class="bea5-ctx">That&rsquo;s what I needed to hear.</span>
+        <span class="bea5-cts">27:30</span>
+      </div>
+    </div>
+
+    <!-- ══ BAND 5 · the thirty minutes · 0–5 · 5–25 · 25–30 ═════════════════ -->
+    <div class="bea5-rhead">
+      <span class="bxx-chip bxx-chip--mono bea5-done">30:00 &middot; done</span>
+    </div>
+
+    <div class="bea5-rail">
+      <i class="bea5-glow"></i>
+
+      <i class="bea5-seg bea5-g1" style="--bea5-d:0s"><i class="bea5-sf"></i></i>
+      <i class="bea5-seg bea5-g2" style="--bea5-d:.10s"><i class="bea5-sf"></i></i>
+      <i class="bea5-seg bea5-g3" style="--bea5-d:.20s"><i class="bea5-sf"></i></i>
+
+      <!-- the playhead, parked at 30:00 in the base (end) state -->
+      <i class="bea5-ph"></i>
+    </div>
+
+    <!-- one box per segment · segment-aligned · they cannot collide -->
+    <span class="bea5-lbl bea5-l1"><b class="bea5-lt">0&ndash;5</b><i class="bea5-lw">Introductions</i></span>
+    <span class="bea5-lbl bea5-l2"><b class="bea5-lt">5&ndash;25</b><i class="bea5-lw">The real question</i></span>
+    <span class="bea5-lbl bea5-l3"><b class="bea5-lt">25&ndash;30</b><i class="bea5-lw">Wrap</i></span>
+
+    <!-- ══ BAND 6 · and below the rail: NOTHING. That is the whole point. ════
+         No CRM record. No pipeline. No deal card. No follow-up task.
+         The empty ground is the deliverable — never fill it.              -->
+
+  </div>
+</div>
+</div>
+        </div>
+
+        <div class="bev__copy w-stagger">
+          <span class="w-tag w-tag--kicker w-reveal be-kicker">
+            <svg class="w-icon w-icon--inherit"><use href="#i-message"/></svg>
+            The conversation
+          </span>
+          <h2 class="bev__title w-reveal">Thirty minutes. One <span class="w-accent">honest</span> question.</h2>
+          <p class="bev__body w-reveal">Someone in your shoes is about to make a decision you already made. They don't want a pitch — they want to know what actually happened. That's the whole shape of it.</p>
+
+          <div class="bev__beats">
+            <div class="bev__beat w-reveal">
+              <span class="bev__t">0–5 MIN</span>
+              <div>
+                <div class="bev__bt">Introductions.</div>
+                <p class="bev__bb">They tell you where they are. You tell them where you were.</p>
+              </div>
+            </div>
+            <div class="bev__beat w-reveal">
+              <span class="bev__t">5–25 MIN</span>
+              <div>
+                <div class="bev__bt">The real question.</div>
+                <p class="bev__bb">What broke, what you'd do again, what you'd skip.</p>
+              </div>
+            </div>
+            <div class="bev__beat w-reveal">
+              <span class="bev__t">25–30 MIN</span>
+              <div>
+                <div class="bev__bt">Wrap.</div>
+                <p class="bev__bb">They leave with a straight answer. You leave with a peer who owes you one.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="bev__never w-stagger">
+        <div class="bev__nh w-reveal">What you never do</div>
+        <div class="bev__ngrid">
+          <div class="bev__ncard w-reveal">
+            <span class="bev__nx"><svg class="w-icon w-icon--inherit"><use href="#i-x"/></svg></span>
+            <p class="bev__ntx"><b>No selling.</b> You are not on the vendor's side of the table.</p>
+          </div>
+          <div class="bev__ncard w-reveal">
+            <span class="bev__nx"><svg class="w-icon w-icon--inherit"><use href="#i-x"/></svg></span>
+            <p class="bev__ntx"><b>No demo.</b> You are not showing anyone software.</p>
+          </div>
+          <div class="bev__ncard w-reveal">
+            <span class="bev__nx"><svg class="w-icon w-icon--inherit"><use href="#i-x"/></svg></span>
+            <p class="bev__ntx"><b>No prep.</b> Show up as you are — you already know this.</p>
+          </div>
+          <div class="bev__ncard w-reveal">
+            <span class="bev__nx"><svg class="w-icon w-icon--inherit"><use href="#i-x"/></svg></span>
+            <p class="bev__ntx"><b>No chasing.</b> When the call ends, you are done.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  </div><!-- /bx-stack -->
+
+
+  <!-- ══ §6 · YOUR TERMS — LIGHT (white) · centered head + guardrail card ═══ -->
+  <section class="cz-light be-white bet w-section" id="terms" data-nav-surface="light">
+    <div class="w-container w-container--wide">
+
+      <div class="bet__head w-stagger">
+        <span class="w-tag w-tag--kicker w-reveal be-kicker">
+          <svg class="w-icon w-icon--inherit"><use href="#i-shield"/></svg>
+          Your terms
+        </span>
+        <h2 class="bet__title w-reveal">You stay in control of every part of this.</h2>
+        <p class="bet__body w-reveal">Joining the network doesn't hand anyone your calendar, your inbox, or your name.</p>
+      </div>
+
+      <div class="bet__card w-reveal w-reveal--scale">
+        <div class="bet__item">
+          <span class="bet__ico"><svg class="w-icon w-icon--inherit"><use href="#i-match"/></svg></span>
+          <div>
+            <div class="bet__it">You approve the topics.</div>
+            <p class="bet__ib">Conversations only reach you when they match what you actually know.</p>
+          </div>
+        </div>
+        <div class="bet__item">
+          <span class="bet__ico"><svg class="w-icon w-icon--inherit"><use href="#i-calendar"/></svg></span>
+          <div>
+            <div class="bet__it">You choose the times.</div>
+            <p class="bet__ib">Your availability is yours. Slots you never open stay closed.</p>
+          </div>
+        </div>
+        <div class="bet__item">
+          <span class="bet__ico"><svg class="w-icon w-icon--inherit"><use href="#i-x"/></svg></span>
+          <div>
+            <div class="bet__it">You can decline anything.</div>
+            <p class="bet__ib">No reason required. No penalty, no score to protect.</p>
+          </div>
+        </div>
+        <div class="bet__item">
+          <span class="bet__ico"><svg class="w-icon w-icon--inherit"><use href="#i-shield"/></svg></span>
+          <div>
+            <div class="bet__it">Nothing is shared without your consent.</div>
+            <p class="bet__ib">Your name and your company appear only where you allow it.</p>
+          </div>
+        </div>
+        <div class="bet__item">
+          <span class="bet__ico"><svg class="w-icon w-icon--inherit"><use href="#i-book"/></svg></span>
+          <div>
+            <div class="bet__it">Your employer's rules come first.</div>
+            <p class="bet__ib">If your company has a policy on peer conversations, it wins — we work inside it.</p>
+          </div>
+        </div>
+        <div class="bet__item">
+          <span class="bet__ico"><svg class="w-icon w-icon--inherit"><use href="#i-settings"/></svg></span>
+          <div>
+            <div class="bet__it">You can leave whenever.</div>
+            <p class="bet__ib">Pause your availability or withdraw from the network at any time.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══ §8 · VOICES — LIGHT (white) · 3 quote cards, centre raised ═════════ -->
+  <section class="cz-light be-white bevo w-section" id="voices" data-nav-surface="light">
+    <div class="w-container w-container--wide">
+
+      <div class="bevo__head w-stagger">
+        <span class="w-tag w-tag--kicker w-reveal be-kicker">
+          <svg class="w-icon w-icon--inherit"><use href="#i-quote"/></svg>
+          Voices from the network
+        </span>
+        <h2 class="bevo__title w-reveal">What experts say about it.</h2>
+      </div>
+
+      <div class="bevo__grid w-stagger">
+
+        <article class="bevo__card w-reveal">
+          <svg class="w-icon bevo__mark"><use href="#i-quote"/></svg>
+          <p class="bevo__q">I said yes because I remembered being the one asking. Half an hour, and someone skipped a mistake I made.</p>
+          <div class="bevo__by">
+            <span class="bevo__av" style="background-image:var(--w-img-av-timothy)"></span>
+            <div>
+              <div class="bevo__n">Timothy Harolds</div>
+              <div class="bevo__r">Platform Engineer</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="bevo__card bevo__card--focal w-reveal">
+          <svg class="w-icon bevo__mark"><use href="#i-quote"/></svg>
+          <p class="bevo__q">It's the only sales-adjacent thing I've ever done that never once felt like selling.</p>
+          <div class="bevo__by">
+            <span class="bevo__av" style="background-image:var(--w-img-av-rick)"></span>
+            <div>
+              <div class="bevo__n">Rick Dalton</div>
+              <div class="bevo__r">Director of IT</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="bevo__card w-reveal">
+          <svg class="w-icon bevo__mark"><use href="#i-quote"/></svg>
+          <p class="bevo__q">Two calls a month. My calendar hasn't noticed, and my network has.</p>
+          <div class="bevo__by">
+            <span class="bevo__av" style="background-image:var(--w-img-av-joseph)"></span>
+            <div>
+              <div class="bevo__n">Joseph White</div>
+              <div class="bevo__r">VP Customer Success</div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ §9 · FAQ — LIGHT · centered accordion ══════════════════════════════ -->
+  <section class="cz-light beq w-section" id="faq" data-nav-surface="light">
+    <div class="w-container">
+
+      <div class="beq__head w-stagger">
+        <span class="w-tag w-tag--kicker w-reveal be-kicker">
+          <svg class="w-icon w-icon--inherit"><use href="#i-message"/></svg>
+          Questions
+        </span>
+        <h2 class="beq__title w-reveal">Before you apply.</h2>
+      </div>
+
+      <div class="beq__list w-stagger">
+        <details class="beq__item w-reveal">
+          <summary><span>How much time is this, really?</span><svg class="w-icon beq__chev"><use href="#i-chevron-down"/></svg></summary>
+          <p>Most experts take one or two 30-minute conversations a month, and only in slots they opened themselves. If a month is busy, you open nothing and nothing happens.</p>
+        </details>
+        <details class="beq__item w-reveal">
+          <summary><span>Do I get paid, and how?</span><svg class="w-icon beq__chev"><use href="#i-chevron-down"/></svg></summary>
+          <p>Yes — you're paid for the conversations you take. The rate and the payment method are confirmed with you before your first call.</p>
+        </details>
+        <details class="beq__item w-reveal">
+          <summary><span>Will this cause a problem with my employer?</span><svg class="w-icon beq__chev"><use href="#i-chevron-down"/></svg></summary>
+          <p>It shouldn't. You choose what you say, nothing confidential is ever expected of you, and if your company has a policy on peer conversations, it takes precedence. Many experts clear it with their manager first, and we'll support you doing that.</p>
+        </details>
+        <details class="beq__item w-reveal">
+          <summary><span>Who am I actually talking to?</span><svg class="w-icon beq__chev"><use href="#i-chevron-down"/></svg></summary>
+          <p>Someone evaluating a decision you've already lived through, matched to you by ExpertScore AI on the things that make a conversation useful: the same problem, a similar scale, a comparable stage. Not a random name off a list.</p>
+        </details>
+        <details class="beq__item w-reveal">
+          <summary><span>Is this a sales call in disguise?</span><svg class="w-icon beq__chev"><use href="#i-chevron-down"/></svg></summary>
+          <p>No. You don't represent the vendor, you're never asked to pitch, and you're free to say what didn't work. The conversation is only worth anything to the other person if it's honest.</p>
+        </details>
+        <details class="beq__item w-reveal">
+          <summary><span>What if I want out?</span><svg class="w-icon beq__chev"><use href="#i-chevron-down"/></svg></summary>
+          <p>Pause your availability or leave the network whenever you like. Nothing lingers.</p>
+        </details>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══ §8 · FINAL CTA — LIGHT section, contained soft-brand band ══════════ -->
+  <section class="cz-light bec w-section w-panel-rise" id="cta" data-nav-surface="light">
+    <div class="w-container">
+      <div class="bec__band w-reveal">
+        <h2 class="bec__title">Ready to share what you've learned?</h2>
+        <div class="bec__actions">
+          <a class="w-btn w-btn--primary w-btn--lg" href="/contact">Apply to join</a>
+          <a class="bec__link" href="/contact">
+            Questions? Contact us
+            <svg class="w-icon w-icon--inherit"><use href="#i-arrow-right"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endraw %}
+{% endblock %}

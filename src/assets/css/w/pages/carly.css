@@ -1,0 +1,338 @@
+/* Carly page image tokens (from the designer bundle's foundation block; canonical ds7.css omits these) */
+:root{
+  --w-img-carly: url("/assets/images/w/carly.png");
+  --w-img-visor: url("/assets/images/w/visor.png");
+  --w-img-se: url("/assets/images/w/se.png");
+  --w-img-av-jeff: url("/assets/images/w/av-jeff.png");
+  --w-img-logo-google: url("/assets/images/w/logo-google.svg");
+  --w-img-logo-sixsense: url("/assets/images/w/logo-sixsense.svg");
+  --w-img-logo-highspot: url("/assets/images/w/logo-highspot.svg");
+  --w-img-logo-seismic: url("/assets/images/w/logo-seismic.svg");
+  --w-img-logo-outreach: url("/assets/images/w/logo-outreach.png");
+  --w-img-logo-dealhub: url("/assets/images/w/logo-dealhub.png");
+  --w-img-logo-sendoso: url("/assets/images/w/logo-sendoso.png");
+  --w-img-logo-sequel: url("/assets/images/w/logo-sequel.png");
+  --w-img-logo-netline: url("/assets/images/w/logo-netline.png");
+  --w-img-logo-udemy: url("/assets/images/w/logo-udemy.png");
+  --w-img-logo-checkr: url("/assets/images/w/logo-checkr.png");
+  --w-img-logo-warmly: url("/assets/images/w/logo-warmly.png");
+  --w-img-logo-salesbricks: url("/assets/images/w/logo-salesbricks.png");
+  --w-img-logo-euler: url("/assets/images/w/logo-euler.png");
+  --w-img-logo-spara: url("/assets/images/w/logo-spara.png");
+  --w-img-logo-syntheticfi: url("/assets/images/w/logo-syntheticfi.png");
+}
+
+html{overflow-x:clip}   /* kill any horizontal scroll (marquee track etc.) — clip keeps sticky working */
+
+/* ── page-only styles · ONLY --w-* tokens, no raw brand hex ───────────────── */
+
+/* ── per-section LIGHT band · re-declares the foundation light tokens in scope ─
+   (mirrors :root[data-theme="light"] from tokens.css; lets a single section render
+   light inside the dark-default page — every --w-* component inside flips.) */
+.cz-light{
+  background:var(--w-bg);color:var(--w-text);
+  --w-bg:#f5f5f5; --w-bg-deep:#ebebeb; --w-bg-elev:#fafafa;
+  --w-card:#ffffff; --w-card-lo:#efefef; --w-card-hi:#ffffff;
+  --w-text:var(--w-charcoal); --w-text-2:rgba(28,26,36,0.66); --w-text-3:rgba(28,26,36,0.62);
+  --w-text-prose:#302d2e; --w-text-on-brand:#ffffff; --w-icon-ink:var(--w-charcoal);
+  --w-line-soft:rgba(28,26,36,0.06); --w-line:rgba(28,26,36,0.10); --w-line-strong:rgba(28,26,36,0.16); --w-edge-top:rgba(255,255,255,0.9);
+  --w-brand:var(--w-purple-ink); --w-brand-2:var(--w-purple); --w-brand-soft:rgba(152,135,244,0.10); --w-brand-line:rgba(152,135,244,0.28);
+  --w-shadow-raise:0 8px 18px -8px rgba(28,26,36,0.07), inset 0 1px 0 rgba(255,255,255,0.9);
+  --w-shadow-raise-soft:0 4px 10px -6px rgba(28,26,36,0.05), inset 0 1px 0 rgba(255,255,255,0.85);
+  --w-shadow-recess:inset 0 1px 3px rgba(28,26,36,0.05), inset 0 -1px 0 rgba(255,255,255,0.8);
+  --w-shadow-recess-deep:inset 0 2px 5px rgba(28,26,36,0.07), inset 0 -1px 0 rgba(255,255,255,0.7);
+  --w-shadow-sm:0 1px 2px rgba(28,26,36,0.04); --w-shadow-md:0 4px 12px rgba(28,26,36,0.05); --w-shadow-lg:0 12px 28px rgba(28,26,36,0.07);
+  --w-glow-brand:0 2px 8px rgba(28,26,36,0.05); --w-glow-brand-strong:0 6px 16px rgba(28,26,36,0.07);
+  --w-glass-fill:rgba(255,255,255,0.66); --w-glass-fill-strong:rgba(255,255,255,0.86); --w-glass-tint:rgba(28,26,36,0.90);
+  --w-glass-fill-soft:rgba(28,26,36,0.03); --w-glass-line:rgba(28,26,36,0.10); --w-glass-line-bright:rgba(28,26,36,0.16);
+  --w-glass-rim-top:rgba(255,255,255,0.95); --w-glass-rim-bottom:rgba(28,26,36,0.05);
+  --w-glass-blur:blur(18px) saturate(140%); --w-glass-blur-lg:blur(22px) saturate(145%);
+  --w-glass-shadow:0 10px 24px rgba(28,26,36,0.06); --w-glass-shadow-soft:0 4px 12px rgba(28,26,36,0.05);
+  --w-cta-fill:var(--w-glass-tint); --w-cta-text:#ffffff; --w-cta-glow:var(--w-shadow-md); --w-cta-glow-strong:var(--w-shadow-lg);
+  --w-card-brand-wash:linear-gradient(160deg, rgba(28,26,36,0.06), rgba(28,26,36,0.015)); --w-card-brand-line:var(--w-line-strong);
+  --w-tag-brand-bg:rgba(28,26,36,0.06); --w-tag-brand-fg:var(--w-text); --w-focus:rgba(28,26,36,0.55);
+  --w-grad-surface:linear-gradient(180deg, #ffffff 0%, #f5f5f5 100%);
+  --w-grad-surface-hi:linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
+  --w-grad-recess:linear-gradient(180deg, #ededed 0%, #e3e3e3 100%);
+}
+/* keep glass legible if the OS asks for less transparency, inside a light band */
+@media (prefers-reduced-transparency: reduce){
+  .cz-light .w-glass,.cz-light .w-btn--glass,.cz-light .w-tag,.cz-light .w-card,.cz-light .w-cta-band{background:var(--w-card);border-color:var(--w-line)}
+}
+
+
+/* hero */
+/* ONE DS7 background for the whole hero (button area + asset) — base + mesh, uniform */
+.cz-hero{position:relative;overflow:hidden;padding-bottom:0;background:var(--w-bg)}
+.cz-hero::before{content:"";position:absolute;inset:0;background:var(--w-grad-hero-mesh);pointer-events:none;z-index:0}
+.cz-hero .w-container{position:relative;z-index:1}
+.cz-hero__pills{display:inline-flex;align-items:center;gap:var(--w-s-2);flex-wrap:wrap;justify-content:center}
+/* responsive hero embed — fixed 1320×840 live asset (transparent bg) scaled to the embed width
+   via JS. Breaks out wider than the text container (~40% larger), shows the WHOLE dashboard. */
+.cz-hero-embed{position:relative;width:min(1680px,96vw);margin:var(--w-s-7) auto 0;
+  aspect-ratio:1320/840;overflow:hidden;background:transparent}
+.cz-hero-embed iframe{position:absolute;top:0;left:0;width:1320px;height:840px;border:0;transform-origin:top left;background:transparent}
+/* grounding fade — ~2× taller dark zone (starts ~60%). NOTE: this now reaches up into the
+   Globex card (br, ~64–81%), so its lower half fades into the ground. */
+.cz-hero-embed::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:2;
+  background:linear-gradient(to bottom,transparent 60%,var(--w-bg-deep) 100%)}
+
+/* interactive story player (How It Works) — transparent asset, centered, scaled to width via JS */
+.cz-story-embed{position:relative;width:min(1180px,94vw);margin:0 auto;aspect-ratio:1180/770;
+  overflow:hidden;background:transparent;
+  -webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 93%,transparent 100%);
+          mask-image:linear-gradient(to bottom,#000 0%,#000 93%,transparent 100%)}
+.cz-story-embed iframe{position:absolute;top:0;left:0;width:1180px;height:770px;border:0;transform-origin:top left;background:transparent}
+
+/* §6 "better together" — INLINE ambient bg (DS7 brand cards, overlap neighbors, no iframe) */
+#better-together{position:relative;overflow-x:clip;overflow-y:visible;z-index:1}
+#better-together .w-container{position:relative;z-index:1}
+.czbt-bg{position:absolute;left:0;right:0;top:-86px;bottom:-86px;z-index:0;pointer-events:none}
+.czbt-side{position:absolute;top:0;bottom:0;width:50%;min-width:390px}
+.czbt-side--l{left:0;-webkit-mask:linear-gradient(to right,#000 0,#000 42%,transparent 92%);mask:linear-gradient(to right,#000 0,#000 42%,transparent 92%)}
+.czbt-side--r{right:0;-webkit-mask:linear-gradient(to left,#000 0,#000 42%,transparent 92%);mask:linear-gradient(to left,#000 0,#000 42%,transparent 92%)}
+@keyframes czbt-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+.czbt-wrap{position:absolute;transform-origin:center}
+/* entrance: booking cards glide in from their side, staggered, then settle into the float.
+   Uses the independent `translate`/`filter` props so it never fights each card's inline rotate/scale or the bob. */
+.czbt-bg.w-reveal{opacity:1;transform:none}
+.czbt-wrap{--cz-dx:0;translate:var(--cz-dx) 30px;filter:opacity(0) blur(4px);transition:translate 1s cubic-bezier(.2,.7,.2,1),filter .7s ease}
+.czbt-side--l .czbt-wrap{--cz-dx:-52px}
+.czbt-side--r .czbt-wrap{--cz-dx:52px}
+.czbt-side .czbt-wrap:nth-child(1){transition-delay:.05s}
+.czbt-side .czbt-wrap:nth-child(2){transition-delay:.22s}
+.czbt-side .czbt-wrap:nth-child(3){transition-delay:.39s}
+.czbt-bg.is-visible .czbt-wrap{translate:0 0;filter:opacity(1) blur(0)}
+@media(prefers-reduced-motion:reduce){.czbt-wrap{translate:none;filter:none;transition:none}}
+.czbt-card{position:relative;width:272px;padding:22px 20px 20px;border-radius:24px;
+  background:linear-gradient(160deg,rgba(28,26,36,.06),rgba(28,26,36,.015)),#f6f6f9;
+  border:1px solid rgba(28,26,36,.14);
+  box-shadow:0 -9px 24px rgba(28,26,36,.06),0 14px 30px rgba(28,26,36,.09),inset 0 1.5px 0 rgba(255,255,255,.95),inset 0 -1.5px 0 rgba(28,26,36,.05);
+  display:flex;flex-direction:column;align-items:center;text-align:center;animation:czbt-bob 7.5s ease-in-out infinite;will-change:transform}
+.czbt-avail{position:absolute;top:13px;right:13px;display:inline-flex;align-items:center;gap:4px;padding:3px 9px;border-radius:999px;background:rgba(34,176,122,.12);font-size:9.5px;font-weight:700;color:#178a5e}
+.czbt-avail i{width:5px;height:5px;border-radius:50%;background:#22c55e}
+.czbt-av{width:64px;height:64px;border-radius:50%;overflow:hidden;margin:2px auto 10px;border:2.5px solid #a98af9;box-shadow:0 0 0 1px rgba(152,135,244,.25),0 5px 14px -4px rgba(124,107,240,.4)}
+.czbt-av img{width:100%;height:100%;object-fit:cover;display:block}
+.czbt-namerow{display:flex;align-items:center;justify-content:center;gap:6px;margin-bottom:3px}
+.czbt-name{font-size:16px;font-weight:700;color:#1c1a24}
+.czbt-li{width:16px;height:16px;border-radius:3px;background:#0a85c7;color:#fff;font-size:9.5px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.czbt-title{font-size:12px;color:rgba(28,26,36,.62);font-weight:500}
+.czbt-co{font-size:11px;color:rgba(28,26,36,.42);margin-bottom:11px}
+.czbt-tags{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:9px}
+.czbt-tag{font-size:10.5px;font-weight:600;padding:4px 10px;border-radius:8px;background:rgba(28,26,36,.05);color:rgba(28,26,36,.62);box-shadow:inset 0 0 0 1px rgba(28,26,36,.08)}
+.czbt-langs{display:flex;gap:6px;justify-content:center;margin-bottom:13px}
+.czbt-lang{font-size:10px;font-weight:600;color:rgba(28,26,36,.62);background:rgba(28,26,36,.04);padding:3px 8px;border-radius:5px}
+.czbt-slots{display:flex;flex-direction:column;gap:6px;width:100%;margin-bottom:14px}
+.czbt-slot{display:flex;justify-content:space-between;align-items:center;padding:8px 13px;border-radius:10px;background:rgba(28,26,36,.035);box-shadow:inset 0 0 0 1px rgba(28,26,36,.05);font-size:12px}
+.czbt-slot .czbt-d{font-weight:600;color:rgba(28,26,36,.62)}
+.czbt-slot .czbt-t{font-weight:700;color:#1c1a24}
+.czbt-book{width:100%;border:0;cursor:default;display:flex;align-items:center;justify-content:center;gap:8px;padding:11px;border-radius:999px;background:rgba(28,26,36,.08);color:#1c1a24;font-size:13px;font-weight:700;font-family:inherit;box-shadow:inset 0 0 0 1px rgba(28,26,36,.08),0 4px 10px -6px rgba(28,26,36,.14)}
+.czbt-book svg{width:14px;height:14px}
+@media (prefers-reduced-motion:reduce){.czbt-card{animation:none}}
+@media (max-width:900px){.czbt-bg{display:none}}
+
+
+/* close the §3 → §4 boundary so the gap before "What Carly does" isn't oversized */
+#how{padding-bottom:var(--w-s-6)}
+#what{padding-top:var(--w-s-5)}
+
+/* interactive showcase (What Carly does) — DS7 rail (page) + big right-bleeding device, click-driven */
+.cz-showcase{display:grid;grid-template-columns:minmax(300px,0.62fr) 1.38fr;gap:var(--w-s-6);align-items:center;
+  width:min(1680px,98vw);margin:var(--w-s-9) auto 0;padding-left:var(--w-container-pad)}
+.cz-showcase__rail{display:flex;flex-direction:column;align-items:flex-start;gap:var(--w-s-4)}
+.cz-showcase__title{font-size:var(--w-fs-h2);font-weight:var(--w-fw-bold);letter-spacing:var(--w-ls-tight);line-height:var(--w-lh-snug);color:var(--w-text);max-width:18ch}
+.cz-showcase__tabs{display:flex;flex-direction:column;gap:var(--w-s-2);margin-top:var(--w-s-3);align-self:stretch}
+.cz-frow{display:flex;align-items:center;gap:var(--w-s-3);text-align:left;width:100%;padding:var(--w-s-3) var(--w-s-4);
+  border-radius:var(--w-r-lg);border:1px solid transparent;background:transparent;cursor:pointer;
+  transition:background var(--w-dur) var(--w-ease),border-color var(--w-dur) var(--w-ease)}
+.cz-frow:hover{background:var(--w-glass-fill-soft)}
+.cz-frow.is-active{background:var(--w-glass-fill);border-color:var(--w-glass-line);box-shadow:inset 3px 0 0 var(--w-brand)}
+.cz-frow .w-itile{transition:background var(--w-dur) var(--w-ease),color var(--w-dur) var(--w-ease)}
+.cz-frow.is-active .w-itile{background:var(--w-grad-brand);color:var(--w-charcoal);border-color:transparent}
+.cz-frow__tx{display:flex;flex-direction:column;gap:2px;min-width:0}
+.cz-frow__tx b{font-size:var(--w-fs-h4);font-weight:var(--w-fw-bold);color:var(--w-text);line-height:1.2}
+.cz-frow__tx small{font-size:var(--w-fs-sm);color:var(--w-text-2)}
+.cz-showcase__device{position:relative;width:100%;aspect-ratio:1480/980;overflow:hidden;
+  -webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 90%,transparent 100%);
+          mask-image:linear-gradient(to bottom,#000 0%,#000 90%,transparent 100%)}
+.cz-showcase__device iframe{position:absolute;top:0;left:0;width:1480px;height:980px;border:0;transform-origin:top left;background:transparent;pointer-events:none}
+.cz-showcase__device::after{content:"";position:absolute;top:0;right:0;bottom:0;width:12%;pointer-events:none;z-index:2;background:linear-gradient(to right,transparent,var(--w-bg))}
+@media(max-width:900px){.cz-showcase{grid-template-columns:1fr;gap:var(--w-s-6);width:100%;padding-inline:var(--w-container-pad)}
+  /* device is contained (not right-bleeding) once stacked — drop the right-edge fade so it doesn't clip the screenshot */
+  .cz-showcase__device::after{display:none}}
+
+/* §5 PROOF — static review carousel (dark-glass center + white-glass sides, extend to edges) */
+#proof{overflow-x:clip}
+#proof .w-stat__detail{font-size:.98rem;line-height:1.55}
+.czr-stage{position:relative;width:100%;min-height:430px;display:flex;align-items:center;justify-content:center;overflow:visible;margin-top:104px}
+.czr-q{font-family:var(--w-font);font-style:normal;margin:0}
+.czr-qi{width:22px;height:22px;color:var(--w-brand);opacity:.9}
+.czr-by{display:flex;align-items:center;gap:12px;width:100%}
+.czr-av{width:40px;height:40px;border-radius:50%;object-fit:cover;flex:none;box-shadow:0 0 0 2px rgba(255,255,255,.18)}
+.czr-av--bg{background-size:cover;background-position:center}
+.czr-meta{display:flex;flex-direction:column;line-height:1.25;text-align:left;min-width:0}
+.czr-meta b{font-size:13.5px;font-weight:700}
+.czr-meta small{font-size:11.5px}
+.czr-metric{margin-left:auto;font-size:11px;font-weight:700;padding:4px 10px;border-radius:999px;white-space:nowrap;background:rgba(28,26,36,.06);color:var(--w-charcoal)}
+/* center — dark glass */
+.czr-main{position:relative;z-index:10;width:min(448px,86vw);height:310px;margin:0;padding:26px 28px;border-radius:24px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:14px;
+  background:rgba(8,6,16,.74);-webkit-backdrop-filter:blur(20px) saturate(140%);backdrop-filter:blur(20px) saturate(140%);
+  box-shadow:inset 0 1.5px 0 rgba(255,255,255,.16),inset 0 -1.5px 0 rgba(255,255,255,.06),0 20px 48px -30px rgba(8,6,16,.34)}
+.czr-main .czr-q--lg{font-size:18px;line-height:1.5;color:#fff;font-weight:500;max-width:32ch}
+.czr-main .czr-qi--lg{width:30px;height:30px;color:var(--w-lavender)}
+.czr-main .czr-meta b{color:#fff}
+.czr-main .czr-meta small{color:rgba(255,255,255,.6)}
+.czr-metric--on{background:rgba(255,255,255,.14);color:#fff}
+/* sides — white glass, ~70% size */
+.czr-side{position:absolute;top:50%;left:50%;opacity:0;transform:translate(-50%,-50%) scale(.6);transition:transform .9s cubic-bezier(.2,.72,.24,1),opacity .55s ease;will-change:transform,opacity}
+.czr-card{width:448px;height:310px;padding:26px 28px;border-radius:24px;display:flex;flex-direction:column;align-items:flex-start;gap:12px;text-align:left;background:linear-gradient(160deg,rgba(28,26,36,.06),rgba(28,26,36,.015)),#f6f6f9;border:1px solid rgba(28,26,36,.14);box-shadow:0 -9px 24px rgba(28,26,36,.06),0 14px 30px rgba(28,26,36,.09),inset 0 1.5px 0 rgba(255,255,255,.95),inset 0 -1.5px 0 rgba(28,26,36,.05)}
+.czr-card .czr-q{font-size:14.5px;line-height:1.5;color:var(--w-charcoal);font-weight:500}
+.czr-card .czr-by{margin-top:auto}
+.czr-card .czr-meta b{color:var(--w-charcoal)}
+.czr-card .czr-meta small{color:rgba(28,26,36,.5)}
+.czr-card .czr-av{box-shadow:0 0 0 2px rgba(255,255,255,.9),0 2px 6px -2px rgba(28,26,36,.2)}
+/* inner flank center; outer hug the edges (extend throughout) */
+.czr-side--li{z-index:6}
+.czr-side--ri{z-index:6}
+.czr-side--lm{z-index:5}
+.czr-side--rm{z-index:5}
+.czr-side--lo{z-index:4}
+.czr-side--ro{z-index:4}
+/* deal-out enter: Keegan first, then the fan opens from center in pairs */
+.czr-main{opacity:0;transform:scale(.9);transition:opacity .6s ease,transform .8s cubic-bezier(.2,.72,.24,1)}
+.czr-stage.is-visible .czr-main{opacity:1;transform:none}
+.czr-stage.is-visible .czr-side{opacity:1}
+.czr-stage.is-visible .czr-side--li{transform:translate(-50%,-50%) translateX(-232px) translateY(-26px) rotate(-3deg);transition-delay:.14s}
+.czr-stage.is-visible .czr-side--ri{transform:translate(-50%,-50%) translateX(232px) translateY(-26px) rotate(3deg);transition-delay:.14s}
+.czr-stage.is-visible .czr-side--lm{transform:translate(-50%,-50%) translateX(-462px) translateY(-66px) rotate(-6deg);transition-delay:.26s}
+.czr-stage.is-visible .czr-side--rm{transform:translate(-50%,-50%) translateX(462px) translateY(-66px) rotate(6deg);transition-delay:.26s}
+.czr-stage.is-visible .czr-side--lo{transform:translate(-50%,-50%) translateX(-690px) translateY(-116px) rotate(-9deg);transition-delay:.38s}
+.czr-stage.is-visible .czr-side--ro{transform:translate(-50%,-50%) translateX(690px) translateY(-116px) rotate(9deg);transition-delay:.38s}
+@media(prefers-reduced-motion:reduce){.czr-side{transition:none}.czr-main{transition:none}}
+@media (max-width:900px){.czr-side{display:none}.czr-stage{min-height:0;margin-top:40px}}
+
+/* §2 why-agent — PINNED SCROLL-SCRUB. The section is tall; an inner 100vh panel pins while you
+   scroll through it. The badge stays fixed. As scroll progresses, the background cross-fades
+   m1b → m1a and the STATE block (title + body) swaps A → B:
+   A = "The proof was always there." · B = "Carly puts it to work." JS drives the opacities. */
+/* §2 Why an agent — setup + 3 FULL-BLEED stacked photo panels + capstone.
+   Each panel reveals on scroll: clip-path wipe + settle-scale on the image, copy rises. No pin. */
+.cz-wa{padding-top:var(--w-section-y);padding-bottom:0}
+.cz-wa-intro{max-width:720px;margin:0 auto var(--w-s-8);text-align:center}
+.cz-wa-badge{margin-bottom:var(--w-s-4)}
+.cz-wa-lead-p{margin-top:var(--w-s-4);margin-inline:auto;max-width:62ch}
+.cz-wa-bridge{margin-top:var(--w-s-5);font-weight:600;color:var(--w-text)}
+/* full-bleed stacked panels */
+.cz-wa-panels{display:flex;flex-direction:column}
+.cz-wa-panel{position:relative;width:100%;height:clamp(460px,76vh,820px);overflow:hidden;isolation:isolate;background:#1b1b1d}
+.cz-wa-panel__img{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;filter:brightness(.9);transform:scale(1.14);clip-path:inset(0 0 100% 0);transition:clip-path 1.05s var(--w-ease),transform 1.5s var(--w-ease);will-change:transform,clip-path}
+.cz-wa-panel.is-in .cz-wa-panel__img{clip-path:inset(0 0 0 0);transform:scale(1)}
+.cz-wa-panel__scrim{position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(26,26,28,.66) 0%,rgba(26,26,28,.3) 32%,rgba(26,26,28,0) 60%),linear-gradient(0deg,rgba(26,26,28,.5) 0%,rgba(26,26,28,0) 42%)}
+.cz-wa-panel--right .cz-wa-panel__scrim{background:linear-gradient(270deg,rgba(26,26,28,.66) 0%,rgba(26,26,28,.3) 32%,rgba(26,26,28,0) 60%),linear-gradient(0deg,rgba(26,26,28,.5) 0%,rgba(26,26,28,0) 42%)}
+/* standard film grain over each image (foundation fractalNoise) */
+.cz-wa-panel::after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='czg'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23czg)' opacity='0.9'/%3E%3C/svg%3E") repeat;background-size:180px 180px;mix-blend-mode:overlay;opacity:.14}
+.cz-wa-panel__copy{position:absolute;z-index:3;bottom:clamp(28px,6vh,68px);max-width:min(44ch,44vw);color:#fff;opacity:0;transform:translateY(28px);transition:opacity .8s var(--w-ease) .22s,transform .8s var(--w-ease) .22s}
+.cz-wa-panel.is-in .cz-wa-panel__copy{opacity:1;transform:none}
+.cz-wa-panel__copy--left{left:clamp(20px,5vw,72px);text-align:left}
+.cz-wa-panel__copy--right{right:clamp(20px,5vw,72px);text-align:right}
+.cz-wa-panel__copy--close{max-width:min(52ch,52vw);bottom:clamp(84px,10vh,120px)}
+.cz-wa-num{display:inline-block;font-family:var(--w-font-mono);font-size:.82rem;letter-spacing:.16em;color:rgba(255,255,255,.72);margin-bottom:var(--w-s-3)}
+.cz-wa-clause{font-size:clamp(1.7rem,3.6vw,3rem);line-height:1.12;color:#fff;text-wrap:balance}
+.cz-wa-capstone-on{margin-top:var(--w-s-4);padding-top:var(--w-s-4);border-top:1px solid rgba(255,255,255,.22);font-size:clamp(1rem,1.4vw,1.3rem);line-height:1.3;font-weight:600;color:rgba(255,255,255,.94);white-space:nowrap}
+.cz-wa-capstone-on .w-accent{color:#c8b6ff}
+/* panel 03 (laptop scene) — taller frame + downward crop bias so the whole laptop shows */
+.cz-wa-panels .cz-wa-panel:last-child{height:clamp(560px,86vh,900px)}
+.cz-wa-panels .cz-wa-panel:last-child .cz-wa-panel__img{object-position:50% 90%}
+@media(max-width:768px){
+  .cz-wa-intro{text-align:left;margin-bottom:var(--w-s-6)}
+  .cz-wa-lead-p{margin-inline:0}
+  .cz-wa-panel{height:clamp(420px,66vh,620px)}
+  .cz-wa-panel__scrim,.cz-wa-panel--right .cz-wa-panel__scrim{background:linear-gradient(0deg,rgba(26,26,28,.72) 0%,rgba(26,26,28,.15) 48%,rgba(26,26,28,0) 72%)}
+  .cz-wa-panel__copy,.cz-wa-panel__copy--right{left:20px;right:20px;max-width:none;text-align:left}
+  .cz-wa-panel__copy--close{max-width:none}
+  .cz-wa-capstone-on{white-space:normal}
+}
+@media(prefers-reduced-motion:reduce){
+  .cz-wa-panel__img{clip-path:none;transform:none;transition:none}
+  .cz-wa-panel__copy{opacity:1;transform:none;transition:none}
+}
+
+/* §4 What Carly does — PINNED 4-STATE SCRUB. Full-bleed mockup scenes (C1/C2, nebula UI baked in)
+   with the copy in the vacant half, alternating left / right. States 3-4 float a device on the
+   opposite side. Cross-fade through the four capabilities on scroll. */
+.cz-do{position:relative;height:300vh}
+.cz-do__pin{position:sticky;top:0;height:100vh;min-height:640px;overflow:hidden;background:var(--w-bg)}
+.cz-do-stage{position:absolute;inset:0}
+.cz-do-state{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity .6s var(--w-ease)}
+.cz-do-state.is-on{opacity:1;visibility:visible}
+/* full-bleed uploaded scene (device + vacant space baked in) */
+.cz-do-scene{position:absolute;inset:0;background-size:cover;background-position:center;background-repeat:no-repeat}
+.cz-scene--3{background-image:url(/assets/images/w/carly/asset-0.webp)}
+.cz-scene--4{background-image:url(/assets/images/w/carly/asset-1.webp)}
+.cz-scene--1{background-image:url(/assets/images/w/carly/asset-2.webp)}
+.cz-scene--2{background-image:url(/assets/images/w/carly/asset-3.webp)}
+/* device image floated on the opposite side from the copy (states 3-4) */
+/* copy sits in the vacant half, inside the page container, aligned per side */
+.cz-do-copy-wrap{position:absolute;inset:0;max-width:var(--w-container);margin-inline:auto;padding-inline:var(--w-container-pad);display:flex;align-items:center;pointer-events:none}
+.cz-do-state--left .cz-do-copy-wrap{justify-content:flex-start}
+.cz-do-state--right .cz-do-copy-wrap{justify-content:flex-end}
+.cz-do-copy{max-width:36ch;pointer-events:auto}
+.cz-do-badge{margin-bottom:var(--w-s-4)}
+.cz-do-copy h3{color:var(--w-text);font-size:var(--w-fs-h2);letter-spacing:var(--w-ls-tight);margin-bottom:var(--w-s-3)}
+.cz-do-copy p{color:var(--w-text-2);font-size:var(--w-fs-lead);line-height:var(--w-lh-normal)}
+.cz-do-dots{position:absolute;left:0;right:0;bottom:4vh;display:flex;justify-content:center;gap:10px;z-index:3}
+.cz-do-dot{width:8px;height:8px;border-radius:50%;background:rgba(28,26,36,.28);transition:background .3s,transform .3s}
+.cz-do-dot.is-on{background:var(--w-brand);transform:scale(1.15)}
+@media(prefers-reduced-motion:reduce),(max-width:768px){
+  .cz-do{height:auto}
+  .cz-do__pin{position:static;height:auto;min-height:0;padding:var(--w-section-y) var(--w-container-pad)}
+  .cz-do-stage{position:static}
+  .cz-do-state{position:relative;opacity:1;visibility:visible;margin-bottom:var(--w-s-8);display:flex;flex-direction:column}
+  .cz-do-state:last-child{margin-bottom:0}
+  /* mobile: show badge/title/subtitle BEFORE the scene image (copy first) */
+  .cz-do-copy-wrap{order:-1;margin-bottom:var(--w-s-4)}
+  .cz-do-scene{position:relative;inset:auto;width:100%;aspect-ratio:16/9;border-radius:16px;margin-bottom:0}
+  .cz-do-copy-wrap{position:relative;inset:auto;max-width:none;padding:0;justify-content:flex-start!important}
+  .cz-do-copy{max-width:none}
+  .cz-do-dots{display:none}
+}
+
+/* ── §1.5 Trust band · exact foundation .w-marquee (copied from Home). The foundation light-logo
+   override is scoped :root[data-theme="light"], which does NOT match a per-section .cz-light band,
+   so re-scope it here → dark logos on the light band. ── */
+.cz-light .w-marquee__item{filter:brightness(0);opacity:.55}
+.cz-light .w-marquee__lockup i{filter:brightness(0);opacity:.55}
+.cz-light .w-marquee__lockup b{color:rgba(28,26,36,0.62)}
+
+/* footer peel-up reveal — /Experts static, footer scrolls up over it (matches Home) */
+.w-foot-spacer{display:none}
+@media(min-width:901px){
+  main{position:relative;z-index:1;background:var(--w-bg)}
+  .w-footer{position:relative;z-index:1}
+  .w-footer__bigmark{position:fixed!important;left:0;right:0;bottom:0;z-index:0;overflow:hidden}
+  .w-footer__bigmark-tx{transform:none!important}
+  .w-foot-spacer{display:block}
+}
+/* small screens: no peel-up room, so show /Experts as a static mark sized to fit the viewport */
+@media(max-width:900px){
+  .w-footer__bigmark-tx{transform:none!important;font-size:clamp(52px,21vw,150px)}
+}
+
+/* ── Adobe-style panel STACKING (scoped to .hm-stack). No full-page pins — each section is opaque and
+   z-ordered so covering panels stack cleanly with rounded tops; the scrub sections (#why-agent/#what)
+   still hold via their own inner sticky pins. No pinned hero → nothing bleeds through. Generous
+   bottom padding on covered sections so all content clears the next panel's rounded overlap. */
+.hm-stack{position:relative;z-index:0}
+#top{position:relative;z-index:1;background:var(--w-bg)}
+#trust{position:relative;z-index:2;box-shadow:0 -24px 50px -14px rgba(0,0,0,.30)}
+#why-agent{position:relative;z-index:3}
+#how{position:relative;z-index:4;background:var(--w-bg)}
+#what{position:relative;z-index:5}
+#showcase{position:relative;z-index:6;background:var(--w-bg)}
+/* showcase = normal section; tabs are CLICK-driven (Activity shown on entry, click a tab to switch) */
+.cz-showcase__pin{display:flex;flex-direction:column;gap:var(--w-s-6)}
+.cz-showcase__pin .cz-showcase{width:100%}
+.cz-showcase__pin .cz-showcase__device{max-height:min(70vh,600px)}
+.cz-showcase__cta{display:flex;justify-content:center}
+#proof{position:relative;z-index:7;box-shadow:0 -24px 50px -14px rgba(0,0,0,.30)}
+#better-together{position:relative;z-index:8}

@@ -1,0 +1,332 @@
+---
+title: "Calculators — ROI & Invisible Pipeline Score | SlashExperts"
+description: "Two tools: model the revenue a Trust Layer could add to your pipeline, and score how much of your proof pipeline is invisible today — built on our 2026 GTM benchmarks."
+pageCSS: calculators
+pageJS: calculators
+ds7: true
+permalink: /roi-calculator/
+---
+
+{% extends "layouts/base-w.njk" %}
+
+{% block content %}
+{% raw %}
+<section class="cx-hero" data-nav-surface="dark">
+    <div class="cx-hero__bg" aria-hidden="true"></div>
+    <div class="w-container">
+      <div class="cx-hero__inner w-reveal">
+        <span class="w-badge"><span class="w-badge__icon"><svg viewBox="0 0 24 24"><use href="#i-calculator"/></svg></span>Calculators</span>
+        <h1 class="w-display cx-hero__h">Put a number on your <span class="w-accent">Trust Layer.</span></h1>
+        <p class="cx-hero__sub">Two quick tools: model the revenue a Trust Layer could add, and score how much of your proof pipeline is invisible today. Built on the same benchmarks behind our GTM research.</p>
+        <div class="cx-hero__actions" style="margin-top:28px;display:flex;gap:14px;flex-wrap:wrap;justify-content:center">
+          <a class="w-btn w-btn--primary w-btn--lg" href="#roi">ROI Calculator <svg class="w-icon"><use href="#i-arrow-right"/></svg></a>
+          <a class="w-btn w-btn--ghost w-btn--lg" href="#pipeline">Pipeline Score <svg class="w-icon"><use href="#i-arrow-right"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="roi" class="w-section" data-nav-surface="dark">
+    <div class="w-container">
+      <div class="w-section-head w-reveal" style="text-align:center;max-width:640px;margin:0 auto clamp(26px,2.6vw,40px)">
+        <span class="cx-eyebrow"><svg class="w-icon"><use href="#i-trending"/></svg>ROI Calculator</span>
+        <h2 class="w-section-head__title" style="color:#fff;margin-top:12px">What could a Trust Layer add to your pipeline?</h2>
+        <p class="w-section-head__lead" style="color:rgba(255,255,255,.8);margin-inline:auto">Move the sliders to your real numbers — we model the revenue impact instantly.</p>
+      </div>
+      <div class="cx-panel">
+          <div class="cx-card w-reveal">
+            <span class="cx-eyebrow"><svg class="w-icon"><use href="#i-trending"/></svg>Your current metrics</span>
+            <h2 class="cx-card__h">Tell us about your pipeline.</h2>
+            <div class="cx-field">
+              <div class="cx-field__top"><span class="cx-field__label">Monthly qualified opportunities</span><span class="cx-field__val" id="oppsVal">50</span></div>
+              <input type="range" class="cx-range" id="opps" min="10" max="500" value="50" step="10">
+            </div>
+            <div class="cx-field">
+              <span class="cx-field__label">Average deal size</span>
+              <div class="cx-input-money"><input type="text" inputmode="numeric" class="cx-input" id="dealSize" value="50,000"></div>
+            </div>
+            <div class="cx-field">
+              <div class="cx-field__top"><span class="cx-field__label">Current win rate</span><span class="cx-field__val" id="winVal">25%</span></div>
+              <input type="range" class="cx-range" id="winRate" min="5" max="60" value="25" step="1">
+            </div>
+            <div class="cx-field">
+              <div class="cx-field__top"><span class="cx-field__label">Average sales cycle</span><span class="cx-field__val" id="cycleVal">90 days</span></div>
+              <input type="range" class="cx-range" id="cycle" min="14" max="365" value="90" step="1">
+              <div class="cx-field__hint">Average time from first contact to closed deal.</div>
+            </div>
+            <div class="cx-field">
+              <span class="cx-field__label">Industry</span>
+              <select class="cx-select" id="industry">
+                <option value="saas">SaaS / Software</option>
+                <option value="fintech">FinTech / Financial Services</option>
+                <option value="healthcare">Healthcare / Life Sciences</option>
+                <option value="manufacturing">Manufacturing</option>
+                <option value="professional">Professional Services</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="cx-card cx-card--dark w-reveal">
+            <span class="cx-eyebrow"><svg class="w-icon"><use href="#i-star"/></svg>Your projected ROI</span>
+            <h2 class="cx-card__h">What a Trust Layer could add.</h2>
+            <div id="roiResults" class="cx-blur">
+              <div class="cx-roi-hero">
+                <div class="cx-roi-hero__label">Annual revenue impact</div>
+                <div class="cx-roi-hero__val" id="totalROI">$1.8M</div>
+                <div class="cx-roi-hero__sub">additional revenue potential · <span id="costOfInaction">-$150K</span>/mo cost of waiting</div>
+              </div>
+              <div class="cx-metrics">
+                <div class="cx-metric"><div class="cx-metric__v" id="winLift">+60%</div><div class="cx-metric__l">Win rate lift</div></div>
+                <div class="cx-metric"><div class="cx-metric__v" id="cycleSaved">26 days</div><div class="cx-metric__l">Cycle reduction</div></div>
+                <div class="cx-metric"><div class="cx-metric__v" id="extraDeals">+18</div><div class="cx-metric__l">Extra deals / year</div></div>
+                <div class="cx-metric"><div class="cx-metric__v" id="hoursSaved">1,050 hrs</div><div class="cx-metric__l">Admin hours saved</div></div>
+              </div>
+              <p class="cx-note">Modeled on our GTM benchmarks — <b>deals with peer validation close at 2.4× the rate</b> of those without. Directional estimate, not a guarantee.</p>
+            </div>
+            <div class="cx-gate" id="roiGate">
+              <div class="cx-gate__h">See your projected numbers</div>
+              <p class="cx-gate__p">Where should we send your ROI breakdown?</p>
+              <div class="cx-gate__row"><input class="cx-input" id="gFirst" placeholder="First name"><input class="cx-input" id="gLast" placeholder="Last name"></div>
+              <input class="cx-input" id="gEmail" type="email" placeholder="Work email">
+              <input class="cx-input" id="gCompany" placeholder="Company">
+              <select class="cx-select" id="gRole"><option value="">Your role…</option><option>Sales / Revenue Leader</option><option>Marketing Leader</option><option>Customer Success Leader</option><option>Founder / Executive</option><option>Other</option></select>
+              <button class="w-btn w-btn--primary w-btn--lg" id="gSubmit" style="margin-top:14px;width:100%;justify-content:center">Unlock my results <svg class="w-icon"><use href="#i-arrow-right"/></svg></button>
+              <p class="cx-gate__p" id="gErr" style="color:#f87171;display:none;margin-bottom:0">Please add your work email to continue.</p>
+            </div>
+          </div>
+        </div>
+    </div>
+  </section>
+
+  <section id="roi-band" class="cx-band" data-nav-surface="dark" role="img" aria-label="A revenue leader reviewing SlashExperts Plays"></section>
+
+  <section id="live" class="w-section cz-light" data-nav-surface="light">
+    <div class="w-container">
+      <div class="cxa">
+        <div class="w-reveal">
+          <span class="cx-eyebrow"><svg class="w-icon"><use href="#i-chart"/></svg>Not hypothetical</span>
+          <h2 class="w-section-head__title" style="margin-top:14px">Every figure here is something we actually track.</h2>
+          <p style="margin-top:16px;font-size:var(--w-fs-lead);line-height:1.6;color:var(--w-text-2)">Revenue influenced, deals moved, proof delivered — the numbers the calculator estimates are the same ones SlashExperts logs live in your CRM and shows on the dashboard your team already opens.</p>
+          <a class="lr-inline" href="/analytics-roi" style="margin-top:22px;display:inline-flex;align-items:center;gap:7px;color:var(--w-brand);font-weight:var(--w-fw-medium);text-decoration:none">See the analytics <svg class="w-icon" style="width:16px;height:16px"><use href="#i-arrow-right"/></svg></a>
+        </div>
+        <div class="cxa__media w-reveal w-reveal--scale" role="img" aria-label="SlashExperts analytics dashboard"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pipeline" class="w-section" data-nav-surface="dark">
+    <div class="w-container">
+      <div class="w-section-head w-reveal" style="text-align:center;max-width:640px;margin:0 auto clamp(26px,2.6vw,40px)">
+        <span class="cx-eyebrow"><svg class="w-icon"><use href="#i-scan"/></svg>Invisible Pipeline Score</span>
+        <h2 class="w-section-head__title" style="color:#fff;margin-top:12px">How much of your proof pipeline is invisible?</h2>
+        <p class="w-section-head__lead" style="color:rgba(255,255,255,.8);margin-inline:auto">Answer six questions — get a 0–100 score and see exactly where proof is leaking.</p>
+      </div>
+      <div class="cx-panel">
+          <div class="cx-card w-reveal">
+            <span class="cx-eyebrow"><svg class="w-icon"><use href="#i-scan"/></svg>Invisible Pipeline Score</span>
+            <h2 class="cx-card__h">How much of your proof is invisible?</h2>
+            <div class="cx-q" data-q="responseTime"><div class="cx-q__top"><span class="cx-q__cat">Speed</span><span class="cx-q__label">How quickly can you connect prospects with peers?</span></div><div class="cx-q__opts"><button class="cx-opt" data-v="1">No system</button><button class="cx-opt" data-v="2">3–5 days</button><button class="cx-opt" data-v="3">24–48 hrs</button><button class="cx-opt" data-v="4">Under 24 hrs</button></div><div class="cx-hint">Deals won in under 48 hours have ~60% higher close rates.</div></div>
+            <div class="cx-q" data-q="tracking"><div class="cx-q__top"><span class="cx-q__cat">Visibility</span><span class="cx-q__label">Do you track peer validation conversations?</span></div><div class="cx-q__opts"><button class="cx-opt" data-v="1">Not at all</button><button class="cx-opt" data-v="2">Manually</button><button class="cx-opt" data-v="3">Partial</button><button class="cx-opt" data-v="4">Fully automated</button></div><div class="cx-hint">73% of top performers now track these conversations.</div></div>
+            <div class="cx-q" data-q="matching"><div class="cx-q__top"><span class="cx-q__cat">Precision</span><span class="cx-q__label">How do you match prospects with relevant peers?</span></div><div class="cx-q__opts"><button class="cx-opt" data-v="1">Random / none</button><button class="cx-opt" data-v="2">Manual list</button><button class="cx-opt" data-v="3">Basic criteria</button><button class="cx-opt" data-v="4">AI-powered</button></div><div class="cx-hint">AI-powered matching increases relevance 3.2× and conversion 47%.</div></div>
+            <div class="cx-q" data-q="scale"><div class="cx-q__top"><span class="cx-q__cat">Scale</span><span class="cx-q__label">How many customer experts are available for calls?</span></div><div class="cx-q__opts"><button class="cx-opt" data-v="1">0–10</button><button class="cx-opt" data-v="2">11–50</button><button class="cx-opt" data-v="3">51–100</button><button class="cx-opt" data-v="4">100+</button></div><div class="cx-hint">Top performers keep 100+ active experts for availability.</div></div>
+            <div class="cx-q" data-q="integration"><div class="cx-q__top"><span class="cx-q__cat">Integration</span><span class="cx-q__label">Is peer validation connected to your sales workflow?</span></div><div class="cx-q__opts"><button class="cx-opt" data-v="1">None</button><button class="cx-opt" data-v="2">Spreadsheets</button><button class="cx-opt" data-v="3">Partial CRM</button><button class="cx-opt" data-v="4">Full CRM sync</button></div><div class="cx-hint">CRM-integrated proof sees 29% faster cycles and 40% higher adoption.</div></div>
+            <div class="cx-q" data-q="channels"><div class="cx-q__top"><span class="cx-q__cat">Coverage</span><span class="cx-q__label">Where can prospects access peer validation?</span></div><div class="cx-q__opts"><button class="cx-opt" data-v="1">None</button><button class="cx-opt" data-v="2">Rep request</button><button class="cx-opt" data-v="3">Website only</button><button class="cx-opt" data-v="4">Multi-channel</button></div><div class="cx-hint">Multi-channel availability increases engagement 2.4×.</div></div>
+          </div>
+
+          <div class="cx-card cx-card--dark w-reveal">
+            <span class="cx-eyebrow"><svg class="w-icon"><use href="#i-proof"/></svg>Your score</span>
+            <div id="pipelineResults" class="cx-blur">
+              <div class="cx-score">
+                <div class="cx-score__ring">
+                  <svg viewBox="0 0 180 180" width="180" height="180"><defs><linearGradient id="cxgrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9887f4"/><stop offset="1" stop-color="#c18cff"/></linearGradient></defs><circle class="cx-score__track" cx="90" cy="90" r="78"/><circle class="cx-score__prog" id="scoreProg" cx="90" cy="90" r="78" stroke-dasharray="490" stroke-dashoffset="490"/></svg>
+                  <div class="cx-score__num" id="scoreNum">0</div>
+                </div>
+                <div class="cx-score__rating" id="scoreRating" data-tier="critical">Answer the 6 questions</div>
+              </div>
+              <div class="cx-dims">
+                <div><div class="cx-dim__top"><span>Speed</span><span id="dimSpeedV">0</span></div><div class="cx-dim__bar"><span class="cx-dim__fill" id="dimSpeed"></span></div></div>
+                <div><div class="cx-dim__top"><span>Visibility</span><span id="dimVisV">0</span></div><div class="cx-dim__bar"><span class="cx-dim__fill" id="dimVis"></span></div></div>
+                <div><div class="cx-dim__top"><span>Precision</span><span id="dimPrecV">0</span></div><div class="cx-dim__bar"><span class="cx-dim__fill" id="dimPrec"></span></div></div>
+                <div><div class="cx-dim__top"><span>Scale</span><span id="dimScaleV">0</span></div><div class="cx-dim__bar"><span class="cx-dim__fill" id="dimScale"></span></div></div>
+              </div>
+              <p class="cx-impact" id="scoreImpact">Each dimension scores out of 25. Answer all six to see where your proof pipeline is leaking — and what it's worth to close the gap.</p>
+            </div>
+            <div class="cx-gate" id="plGate">
+              <div class="cx-gate__h">See your Invisible Pipeline Score</div>
+              <p class="cx-gate__p">Answer the six questions, then tell us where to send your full breakdown.</p>
+              <div class="cx-gate__row"><input class="cx-input" id="plFirst" placeholder="First name"><input class="cx-input" id="plLast" placeholder="Last name"></div>
+              <input class="cx-input" id="plEmail" type="email" placeholder="Work email">
+              <input class="cx-input" id="plCompany" placeholder="Company">
+              <select class="cx-select" id="plRole"><option value="">Your role…</option><option>Sales / Revenue Leader</option><option>Marketing Leader</option><option>Customer Success Leader</option><option>Founder / Executive</option><option>Other</option></select>
+              <button class="w-btn w-btn--primary w-btn--lg" id="plSubmit" style="margin-top:14px;width:100%;justify-content:center">Reveal my score <svg class="w-icon"><use href="#i-arrow-right"/></svg></button>
+              <p class="cx-gate__p" id="plErr" style="color:#f87171;display:none;margin-bottom:0">Please add your work email to continue.</p>
+            </div>
+          </div>
+        </div>
+    </div>
+  </section>
+
+  <section id="compare" class="w-section cz-light w-panel-rise" data-nav-surface="light">
+    <div class="w-container">
+      <div class="w-section-head w-reveal" style="text-align:center;max-width:640px;margin:0 auto clamp(26px,2.6vw,40px)">
+        <span class="cx-eyebrow"><svg class="w-icon"><use href="#i-scan"/></svg>The delta, side by side</span>
+        <h2 class="w-section-head__title" style="margin-top:12px">What the numbers actually represent.</h2>
+        <p class="w-section-head__lead" style="margin-inline:auto">The gap the calculator quantifies is the difference between chasing proof and running it as infrastructure.</p>
+      </div>
+      <div class="cxv w-reveal">
+        <div class="cxv__col cxv__col--old">
+          <div class="cxv__h"><svg class="w-icon"><use href="#i-x"/></svg>Without a Trust Layer</div>
+          <div class="cxv__li"><svg class="w-icon"><use href="#i-x"/></svg>Proof shows up after the deal has already slipped.</div>
+          <div class="cxv__li"><svg class="w-icon"><use href="#i-x"/></svg>Win rates stay stuck at your current baseline.</div>
+          <div class="cxv__li"><svg class="w-icon"><use href="#i-x"/></svg>Reps chase references by hand, deal by deal.</div>
+          <div class="cxv__li"><svg class="w-icon"><use href="#i-x"/></svg>No record of which proof actually moved the deal.</div>
+        </div>
+        <div class="cxv__col cxv__col--new">
+          <div class="cxv__h"><svg class="w-icon"><use href="#i-check"/></svg>With a Trust Layer</div>
+          <div class="cxv__li"><svg class="w-icon"><use href="#i-check"/></svg>Proof delivered at the deciding moment — even before it's asked.</div>
+          <div class="cxv__li"><svg class="w-icon"><use href="#i-check"/></svg>Validated deals close at up to 2.4× the rate.</div>
+          <div class="cxv__li"><svg class="w-icon"><use href="#i-check"/></svg>The right peer is matched automatically.</div>
+          <div class="cxv__li"><svg class="w-icon"><use href="#i-check"/></svg>Every conversation and outcome on the record.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="method" class="w-section" data-nav-surface="dark">
+    <div class="w-container">
+      <div class="w-section-head w-reveal" style="text-align:center;max-width:640px;margin:0 auto clamp(26px,2.6vw,40px)">
+        <span class="cx-eyebrow"><svg class="w-icon"><use href="#i-book"/></svg>How we get these numbers</span>
+        <h2 class="w-section-head__title" style="color:#fff;margin-top:12px">Benchmarks, not guesses.</h2>
+        <p class="w-section-head__lead" style="color:rgba(255,255,255,.8);margin-inline:auto">Both tools run on the same figures behind our 2026 GTM research — the measurable lift when proof reaches the right buyer at the deciding moment.</p>
+      </div>
+      <div class="cx-method w-stagger">
+        <div class="cx-mcard w-reveal w-reveal--scale" style="background:linear-gradient(160deg,#221d33,#191622);border-color:rgba(255,255,255,.1)"><div class="cx-mcard__n">2.4×</div><div class="cx-mcard__b" style="color:rgba(255,255,255,.72)">Deals with peer validation close at 2.4× the rate of those without.</div></div>
+        <div class="cx-mcard w-reveal w-reveal--scale" style="background:linear-gradient(160deg,#221d33,#191622);border-color:rgba(255,255,255,.1)"><div class="cx-mcard__n">+60%</div><div class="cx-mcard__b" style="color:rgba(255,255,255,.72)">Win-rate lift when proof is matched and delivered at the deciding moment.</div></div>
+        <div class="cx-mcard w-reveal w-reveal--scale" style="background:linear-gradient(160deg,#221d33,#191622);border-color:rgba(255,255,255,.1)"><div class="cx-mcard__n">29%</div><div class="cx-mcard__b" style="color:rgba(255,255,255,.72)">Faster sales cycles when peer validation is wired into the CRM workflow.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="w-section cz-light w-panel-rise" data-nav-surface="light">
+    <div class="w-container">
+      <div class="w-section-head w-reveal" style="text-align:center;max-width:640px;margin:0 auto clamp(26px,2.6vw,40px)">
+        <span class="cx-eyebrow"><svg class="w-icon"><use href="#i-message"/></svg>Questions about the math</span>
+        <h2 class="w-section-head__title" style="margin-top:12px">Before you trust the number.</h2>
+        <p class="w-section-head__lead" style="margin-inline:auto">A few things worth knowing about how these estimates work.</p>
+      </div>
+      <div class="cxf w-stagger">
+        <details class="cxf__item w-reveal"><summary class="cxf__q">How accurate are these numbers?<svg class="w-icon"><use href="#i-plus"/></svg></summary><div class="cxf__a">They're directional estimates built on our 2026 GTM benchmarks and observed customer outcomes — not guarantees. A 20-minute demo maps the model to your actual pipeline, CRM data, and deals.</div></details>
+        <details class="cxf__item w-reveal"><summary class="cxf__q">Where do the benchmarks come from?<svg class="w-icon"><use href="#i-plus"/></svg></summary><div class="cxf__a">From our GTM Benchmark research and measured results across customers — the 2.4× close rate on validated deals, the ~60% win-rate lift, and 29% faster cycles when proof is wired into the workflow.</div></details>
+        <details class="cxf__item w-reveal"><summary class="cxf__q">Do you store what I enter?<svg class="w-icon"><use href="#i-plus"/></svg></summary><div class="cxf__a">The calculators run entirely in your browser — your inputs never leave the page. We only receive the details you choose to submit in the ROI form to send your breakdown.</div></details>
+        <details class="cxf__item w-reveal"><summary class="cxf__q">What is the Invisible Pipeline Score?<svg class="w-icon"><use href="#i-plus"/></svg></summary><div class="cxf__a">A quick self-assessment of how much of your peer-proof pipeline is untracked and unrealized today — scored across speed, visibility, precision, scale, integration, and coverage.</div></details>
+      </div>
+    </div>
+  </section>
+
+  <section id="cta" class="cx-close w-section w-panel-rise--dark" data-nav-surface="dark">
+    <div class="cx-close__bg" aria-hidden="true"></div>
+    <div class="w-container">
+      <div class="w-reveal" style="max-width:620px;margin-inline:auto">
+        <h2 class="cx-close__h">See the model run on your real pipeline.</h2>
+        <p style="margin-top:16px;font-size:var(--w-fs-lead);line-height:1.6;color:rgba(255,255,255,.82)">A 20-minute demo turns these estimates into a plan — mapped to your deals, your CRM, and your numbers.</p>
+        <div class="cx-close__actions">
+          <a class="w-btn w-btn--primary w-btn--lg" href="/book-a-demo">Book a Demo <svg class="w-icon"><use href="#i-arrow-right"/></svg></a>
+          <a class="w-btn w-btn--ghost w-btn--lg" href="/learn">Read Trust Layer 101 <svg class="w-icon"><use href="#i-arrow-right"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endraw %}
+{% endblock %}
+
+{% block extraScripts %}
+<script type="module">
+/* calculators integrations (P3, Session K3; pipeline gate added per Jeff 2026-07-21).
+   TWO capture steps on this page, each on the designer's own submit button (capture-phase, so it
+   fires before the reveal handler; designer validation/UX untouched):
+     • ROI card lead gate      (#roiGate / #gSubmit) → form_name `roi_calculator`
+     • Invisible Pipeline gate  (#plGate / #plSubmit) → form_name `pipeline_calculator`  ← NEW (Jeff: gate the quiz)
+   Both: Customer.io identify + n8n POST + UTM spread (INTEGRATIONS_PARITY §2 / §3.1 / §3.4).
+   `quiz_completed` fires once the visitor has identified via EITHER gate and all 6 answers are in. */
+import { identifyUser, trackEvent } from '/assets/js/components/customerio.js';
+import { getUtmData, flattenUtmForPayload } from '/assets/js/components/utm.js';
+import { WEBHOOK_URL } from '/assets/js/config/webhooks.js';
+
+const emailRe = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+const v = (id) => ((document.getElementById(id) || {}).value || '').trim();
+let identified = null;
+
+async function sendToWebhook(d, leadSource) {
+  try {
+    const res = await fetch(WEBHOOK_URL, {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        ...d,
+        timestamp: new Date().toISOString(),
+        page: window.location.pathname,
+        referrer: document.referrer || null,
+        leadSource,
+        ...flattenUtmForPayload(getUtmData())
+      })
+    });
+    if (!res.ok) console.error('Webhook response not OK:', res.status);
+  } catch (e) { console.error('Error sending to webhook:', e); }
+}
+
+/* ROI card → roi_calculator */
+const roiBtn = document.getElementById('gSubmit');
+if (roiBtn) {
+  roiBtn.addEventListener('click', () => {
+    const email = v('gEmail');
+    if (!emailRe.test(email)) return;                     // mirrors the designer's own gate check
+    const d = { firstName: v('gFirst'), lastName: v('gLast'), email, company: v('gCompany'), role: v('gRole') };
+    identified = email;
+    identifyUser({
+      email, formName: 'roi_calculator',
+      attributes: {
+        first_name: d.firstName || null, last_name: d.lastName || null,
+        company: d.company || null, job_title: d.role || null,
+        lead_source: '2026 GTM Report - ROI Calculator'
+      }
+    });
+    sendToWebhook(d, '2026 GTM Report - ROI Calculator');
+  }, { capture: true });
+}
+
+/* Invisible Pipeline gate → pipeline_calculator (registered form_name) */
+const plBtn = document.getElementById('plSubmit');
+if (plBtn) {
+  plBtn.addEventListener('click', () => {
+    const email = v('plEmail');
+    if (!emailRe.test(email)) return;                     // mirrors the gate's own email check
+    const score = (document.getElementById('scoreNum') || {}).textContent || '';
+    const d = { firstName: v('plFirst'), lastName: v('plLast'), email, company: v('plCompany'), role: v('plRole') };
+    identified = email;
+    identifyUser({
+      email, formName: 'pipeline_calculator',
+      attributes: {
+        first_name: d.firstName || null, last_name: d.lastName || null,
+        company: d.company || null, job_title: d.role || null,
+        lead_source: '2026 GTM Report - Invisible Pipeline Score',
+        pipeline_score: score || null
+      }
+    });
+    sendToWebhook({ ...d, pipelineScore: score, quizType: 'Invisible Pipeline Score' }, '2026 GTM Report - Invisible Pipeline Score');
+  }, { capture: true });
+}
+
+/* quiz_completed — once identified via either gate and all 6 answers are in */
+let quizSent = false;
+document.addEventListener('click', (e) => {
+  if (quizSent || !identified || !e.target.closest || !e.target.closest('.cx-opt')) return;
+  const answered = document.querySelectorAll('.cx-q .cx-opt[aria-pressed="true"]').length;
+  const total = document.querySelectorAll('.cx-q').length;
+  if (total && answered >= total) {
+    quizSent = true;
+    const score = (document.getElementById('scoreNum') || {}).textContent || '';
+    trackEvent('quiz_completed', { form_name: 'pipeline_calculator', quiz_type: 'Invisible Pipeline Score', pipeline_score: score });
+  }
+});
+</script>
+{% endblock %}

@@ -1,0 +1,1272 @@
+/* peer-matching page styles (P3, Session E). Reuses canonical ds7.css (D51).
+   20 shared avatar/logo image tokens the stale bundle foundation declared but canonical
+   ds7.css lacks are re-declared page-scoped here so the trust marquee + proof rows render
+   faithfully (all images already shared in images/w/ except av-allison.png, copied in). */
+:root{
+  --w-img-av-aisha: url("/assets/images/w/av-aisha.png");
+  --w-img-av-allison: url("/assets/images/w/av-allison.png");
+  --w-img-av-ava: url("/assets/images/w/av-ava.png");
+  --w-img-av-diana: url("/assets/images/w/av-diana.png");
+  --w-img-av-george: url("/assets/images/w/av-george.png");
+  --w-img-logo-checkr: url("/assets/images/w/logo-checkr.png");
+  --w-img-logo-euler: url("/assets/images/w/logo-euler.png");
+  --w-img-logo-google: url("/assets/images/w/logo-google.svg");
+  --w-img-logo-highspot: url("/assets/images/w/logo-highspot.svg");
+  --w-img-logo-netline: url("/assets/images/w/logo-netline.png");
+  --w-img-logo-outreach: url("/assets/images/w/logo-outreach.png");
+  --w-img-logo-salesbricks: url("/assets/images/w/logo-salesbricks.png");
+  --w-img-logo-seismic: url("/assets/images/w/logo-seismic.svg");
+  --w-img-logo-sendoso: url("/assets/images/w/logo-sendoso.png");
+  --w-img-logo-sequel: url("/assets/images/w/logo-sequel.png");
+  --w-img-logo-sixsense: url("/assets/images/w/logo-sixsense.svg");
+  --w-img-logo-spara: url("/assets/images/w/logo-spara.png");
+  --w-img-logo-syntheticfi: url("/assets/images/w/logo-syntheticfi.png");
+  --w-img-logo-udemy: url("/assets/images/w/logo-udemy.png");
+  --w-img-logo-warmly: url("/assets/images/w/logo-warmly.png");
+}
+
+/* ============================================================================
+   W-EXPERTS-MATCH · Peer Matching  /experts/peer-matching/
+   Theme rhythm: L · D · L · L  (light open → ONE dark punch on the engine → light close)
+   Prefixes: emh- hero · eme- engine (§2) · emf- fit (§3) · emc- cta (§4)
+   Foundation-only: every value is a --w-* token. No invented tokens, no raw brand hex.
+   ============================================================================ */
+/* ===== light-band technique (.cz-light) — WHITE variant (verbatim from sibling Carly-depth pages) ===== */
+.cz-light{
+  background:var(--w-bg);color:var(--w-text);
+  --w-bg:#ffffff; --w-bg-deep:#ececec; --w-bg-elev:#ffffff;
+  --w-card:#ffffff; --w-card-lo:#efefef; --w-card-hi:#ffffff;
+  --w-text:var(--w-charcoal); --w-text-2:rgba(28,26,36,0.66); --w-text-3:rgba(28,26,36,0.62);
+  --w-text-prose:#302d2e; --w-text-on-brand:#ffffff; --w-icon-ink:var(--w-charcoal);
+  --w-line-soft:rgba(28,26,36,0.06); --w-line:rgba(28,26,36,0.10); --w-line-strong:rgba(28,26,36,0.16); --w-edge-top:rgba(255,255,255,0.9);
+  --w-brand:var(--w-purple-ink); --w-brand-2:var(--w-purple); --w-brand-soft:rgba(152,135,244,0.10); --w-brand-line:rgba(152,135,244,0.28);
+  --w-shadow-raise:0 8px 18px -8px rgba(28,26,36,0.07), inset 0 1px 0 rgba(255,255,255,0.9);
+  --w-shadow-raise-soft:0 4px 10px -6px rgba(28,26,36,0.05), inset 0 1px 0 rgba(255,255,255,0.85);
+  --w-shadow-recess:inset 0 1px 3px rgba(28,26,36,0.05), inset 0 -1px 0 rgba(255,255,255,0.8);
+  --w-shadow-recess-deep:inset 0 2px 5px rgba(28,26,36,0.07), inset 0 -1px 0 rgba(255,255,255,0.7);
+  --w-shadow-sm:0 1px 2px rgba(28,26,36,0.04); --w-shadow-md:0 4px 12px rgba(28,26,36,0.05); --w-shadow-lg:0 12px 28px rgba(28,26,36,0.07);
+  --w-glow-brand:0 2px 8px rgba(28,26,36,0.05); --w-glow-brand-strong:0 6px 16px rgba(28,26,36,0.07);
+  --w-glass-fill:rgba(255,255,255,0.66); --w-glass-fill-strong:rgba(255,255,255,0.86); --w-glass-tint:rgba(28,26,36,0.90);
+  --w-glass-fill-soft:rgba(28,26,36,0.03); --w-glass-line:rgba(28,26,36,0.10); --w-glass-line-bright:rgba(28,26,36,0.16);
+  --w-glass-rim-top:rgba(255,255,255,0.95); --w-glass-rim-bottom:rgba(28,26,36,0.05);
+  --w-glass-blur:blur(18px) saturate(140%); --w-glass-blur-lg:blur(22px) saturate(145%);
+  --w-glass-shadow:0 10px 24px rgba(28,26,36,0.06); --w-glass-shadow-soft:0 4px 12px rgba(28,26,36,0.05);
+  --w-cta-fill:var(--w-glass-tint); --w-cta-text:#ffffff; --w-cta-glow:var(--w-shadow-md); --w-cta-glow-strong:var(--w-shadow-lg);
+  --w-card-brand-wash:linear-gradient(160deg, rgba(28,26,36,0.06), rgba(28,26,36,0.015)); --w-card-brand-line:var(--w-line-strong);
+  --w-tag-brand-bg:rgba(28,26,36,0.06); --w-tag-brand-fg:var(--w-text); --w-focus:rgba(28,26,36,0.55);
+  --w-grad-surface:linear-gradient(180deg, #ffffff 0%, #f5f5f5 100%);
+  --w-grad-surface-hi:linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
+  --w-grad-recess:linear-gradient(180deg, #ededed 0%, #e3e3e3 100%);
+  /* ⚠️ MUST re-declare: --w-edge-fade is declared in :root with var(--w-bg) INSIDE it, so it
+     substitutes to the DARK bg there and inherits already-resolved. Without this, every emx-
+     scene's edge-fade dissolves to charcoal on a white section (the 'gray box' bug). */
+  --w-edge-fade:radial-gradient(ellipse 84% 82% at 50% 48%, transparent 52%, var(--w-bg) 100%);
+}
+@media (prefers-reduced-transparency: reduce){
+  .cz-light .w-glass,.cz-light .w-btn--glass,.cz-light .w-tag,.cz-light .w-card,.cz-light .w-cta-band{background:var(--w-card);border-color:var(--w-line)}
+}
+
+/* ===== asymmetric section rhythm (tight top / generous bottom) ===== */
+.w-section{padding-block:clamp(36px, 2.2vw + 1rem, 64px) clamp(64px, 4vw + 1.7rem, 108px)}
+.w-section--hero{padding-block:clamp(96px, 6rem + 5vw, 168px) clamp(72px, 5vw + 2rem, 128px)}
+.w-badge{box-shadow:0 2px 10px rgba(12,10,22,.12), inset 0 1px 0 var(--w-glass-rim-top)}
+.w-panel-rise{--w-panel-overlap:34px}
+
+/* page-local asset tokens (same pattern as the sibling pages — declared here, not in foundation) */
+:root{
+  --w-img-emch-ctabg:url("/assets/images/w/peer-matching/emch-ctabg.webp");
+  --w-img-emch-hero:url("/assets/images/w/peer-matching/emch-hero.webp");   /* 2880px = 2x retina @1440 (v01 was 2400px → upscaled + soft) */
+  /* em2/em3/em4 — editorial MacBook mockups, PORTRAIT ~3:4, 1400px HQ retina */
+  --w-img-emp-bg:url("/assets/images/w/peer-matching/emp-bg.webp");    /* em2 · Expert Profile */
+  --w-img-emr-bg:url("/assets/images/w/peer-matching/emr-bg.webp");      /* em3 · Experts roster */
+  --w-img-emsf-bg:url("/assets/images/w/peer-matching/emsf-bg.webp");  /* em4 · Design Studio */
+  --w-img-embt:url("/assets/images/w/peer-matching/embt.webp");       /* W-HOME §5 seam image */
+}
+
+/* ─── §1 HERO — full-ratio editorial photo · LEFT column · white ink ───────
+   Photo is shown at FULL RATIO, contain, no crop, no zoom (the W-EXPERTS-PLUS /
+   W-CARLY-INTEL image-hero precedent). The section's aspect-ratio is locked to the
+   image so `contain` fills it exactly with no letterbox. */
+.emh{position:relative;isolation:isolate;overflow:hidden;background:var(--w-charcoal);
+  display:flex;align-items:center;
+  aspect-ratio:6068/3400;min-height:560px}
+.emh__media{position:absolute;inset:0;z-index:-2;
+  background-image:var(--w-img-emch-hero);
+  background-size:contain;background-position:center;background-repeat:no-repeat}
+/* SOFT CHARCOAL LEFT FADE (Jeff: "not too much") — deliberately LIGHT: a gentle left wash plus a
+   soft pool over the bright counter + lit forearm in the lower-left (a flat left gradient alone
+   can't tame that hotspot). Both fall to zero before the laptop — the product screen and the whole
+   right side of the frame stay untouched. A light fade ALONE can't carry white text on this photo
+   (measured ~3:1), so it's paired with the approved text-shadow lift below. */
+.emh__scrim{position:absolute;inset:0;z-index:-1;
+  background:
+    radial-gradient(ellipse 58% 55% at 8% 88%, rgba(28,26,36,0.594) 0%, rgba(28,26,36,0.27) 52%, rgba(28,26,36,0) 76%),
+    linear-gradient(90deg,
+      rgba(28,26,36,0.486) 0%,
+      rgba(28,26,36,0.414) 34%,
+      rgba(28,26,36,0.234) 48%,
+      rgba(28,26,36,0) 62%)}
+.emh__inner{width:100%}
+.emh__head{max-width:540px;text-align:left}      /* LEFT-aligned, per Jeff. Narrowed from 600 so
+   the lead never runs out of the scrim's strong zone and onto the bright counter. */
+/* kicker = DARK frosted glass pill, white ink (Jeff) */
+.emh__kicker{background:rgba(22,20,30,0.62);border-color:rgba(255,255,255,0.22);color:#fff;
+  -webkit-backdrop-filter:var(--w-glass-blur);backdrop-filter:var(--w-glass-blur);
+  box-shadow:0 8px 24px -10px rgba(10,8,18,.5)}
+.emh__kicker .w-icon{color:#fff}
+/* WHITE ink + the approved dark text-shadow lift (approved-patterns: "title + sub get a
+   text-shadow readability lift over media"). Carries what the light fade can't. */
+.emh__title{font-size:var(--w-fs-display);font-weight:var(--w-fw-black);letter-spacing:var(--w-ls-tight);
+  line-height:var(--w-lh-tight);color:#fff;margin-top:var(--w-s-5);text-shadow:0 2px 6px rgba(12,10,20,.55),0 6px 22px rgba(12,10,20,.45),0 1px 2px rgba(12,10,20,.5)}
+.emh__lead{margin-top:var(--w-s-5);max-width:470px;
+  font-size:var(--w-fs-lead);line-height:var(--w-lh-normal);color:#fff;text-shadow:0 1px 4px rgba(12,10,20,.62),0 4px 16px rgba(12,10,20,.55),0 1px 2px rgba(12,10,20,.6)}
+/* serif accent returns to the brand gradient — it sits on white ink now, not charcoal */
+.emh__cta{margin-top:var(--w-s-7);display:flex}
+/* the hero sits on its own dark photo — force the brand CTA fill regardless of theme */
+.emh .w-btn--primary{background:var(--w-grad-brand);color:var(--w-charcoal);box-shadow:var(--w-glow-brand)}
+.emh .w-btn--primary:hover{box-shadow:var(--w-glow-brand-strong)}
+
+/* ≤900px: STOP OVERLAYING. With no scrim allowed, a `cover` crop drops the copy straight onto
+   the laptop and the frame goes cluttered. So below 900 the hero un-stacks: the photo runs FULL
+   RATIO on top (uncropped, undimmed — and finally big enough to actually read the product screen),
+   with the copy on a clean white surface beneath it. Photo stays ABOVE so the nav is still over
+   the photo and `data-nav-surface="dark"` remains correct. */
+@media(max-width:1024px){
+  /* copy sits on a CHARCOAL surface below the photo — the hero ink is white, so a light surface
+     here would render it invisible. */
+  .emh{aspect-ratio:auto;min-height:0;display:flex;flex-direction:column;
+    background:var(--w-charcoal);padding-block:0 var(--w-section-y)}
+  .emh__media{order:1;position:relative;inset:auto;z-index:0;width:100%;
+    aspect-ratio:6068/3400;background-size:cover;background-position:center}
+  .emh__inner{order:2;margin-top:clamp(32px,6vw,56px)}
+  .emh__head{max-width:none}
+  /* on a clean white surface the halo is unnecessary — drop it so the type stays crisp */
+  .emh__title,.emh__lead{text-shadow:none}
+  .emh__lead{max-width:none;color:rgba(255,255,255,0.86)}
+}
+@media(max-width:700px){
+  .emh__cta .w-btn{width:100%;justify-content:center}
+}
+
+/* ─── TRUST BAND — geometry lifted verbatim from W-CARLY-INTEL (.di-trust → .emt-trust),
+   flipped to the LIGHT band (Jeff 07-13). It uses .cz-light, which is a CLASS — so the
+   foundation's `:root[data-theme="light"] .w-marquee__*` logo rules do NOT fire (they're keyed
+   to the root theme). Re-declare them scoped to the band, exactly as the foundation defines
+   them, or the logos stay white-inverted and vanish on the light surface. */
+.emt-trust{padding-block:clamp(30px,3.4vw,52px) clamp(8px,1vw,16px);background:var(--w-bg)}
+.emt-trust__inner{position:relative;z-index:1}
+.emt-trust__inner .w-trust-label{margin-bottom:var(--w-s-4)}
+.emt-trust .w-marquee__item{filter:brightness(0);opacity:.55}
+.emt-trust .w-marquee__lockup i{filter:brightness(0);opacity:.55}
+.emt-trust .w-marquee__lockup b{color:rgba(28,26,36,0.62)}
+
+/* ─── §2 SHORTLIST — light · centered head + full-width rail (the promoted A1) ── */
+.emn{position:relative;overflow:hidden;
+  /* extra top room — the trust band's own bottom padding is tight (lifted from INTEL), so the
+     section head was crowding it (Jeff 07-13) */
+  padding-top:clamp(72px,7vw,136px)}
+.emn__head{max-width:760px;margin-inline:auto;text-align:center}
+.emn__title{font-size:var(--w-fs-h1);margin-top:var(--w-s-4)}
+.emn__lead{margin-top:var(--w-s-5);margin-inline:auto;max-width:640px;
+  font-size:var(--w-fs-lead);line-height:var(--w-lh-normal);color:var(--w-text-prose)}
+.emn__fig{margin-top:clamp(40px,3.8vw,72px)}
+.emn__stage{position:relative;width:100%;max-width:var(--w-container-wide);margin-inline:auto;
+  aspect-ratio:1180/430;border-radius:var(--w-r-2xl);overflow:hidden}
+@media(max-width:900px){.emn__stage{aspect-ratio:1180/470}}
+/* ≤700px the scaler swaps ema1 to its PORTRAIT 440x600 canvas (.is-sm) — match + cap it */
+@media(max-width:700px){.emn__stage{aspect-ratio:440/600;max-width:440px;margin-inline:auto}}
+
+/* ─── §2 ENGINE — DARK punch. split, media LEFT / copy RIGHT ───────────────── */
+.eme{position:relative;background:var(--w-bg);overflow:hidden}
+.eme__grid{display:grid;grid-template-columns:1.08fr 0.92fr;align-items:center;gap:clamp(40px,4.4vw,88px)}
+.eme__media{position:relative;min-width:0}
+.eme__stage{position:relative;width:100%;aspect-ratio:640/560;border-radius:var(--w-r-2xl);overflow:hidden}
+.eme__copy{min-width:0}
+.eme__title{font-size:var(--w-fs-h1);margin-top:var(--w-s-4)}
+.eme__body{margin-top:var(--w-s-5);color:var(--w-text-prose);font-size:var(--w-fs-lead);line-height:var(--w-lh-normal)}
+@media(max-width:1024px){
+  .eme__grid{grid-template-columns:1fr;gap:var(--w-s-7)}
+  .eme__copy{order:-1}                 /* copy-before-scene on stacked (responsive-traps §5) */
+  .eme__stage{aspect-ratio:760/600;max-width:720px;margin-inline:auto}
+}
+@media(max-width:560px){.eme__stage{aspect-ratio:420/520}}
+
+/* ─── §3 FIT BEATS VOLUME — light, asymmetric type-led + still figure ──────── */
+.emf{position:relative;overflow:hidden}
+.emf__grid{display:grid;grid-template-columns:0.86fr 1.14fr;align-items:center;gap:clamp(40px,4.6vw,96px)}
+.emf__copy{max-width:460px;min-width:0}
+.emf__title{font-size:var(--w-fs-h1);margin-top:var(--w-s-4)}
+.emf__body{margin-top:var(--w-s-5);color:var(--w-text-prose);font-size:var(--w-fs-lead);line-height:var(--w-lh-normal)}
+.emf__media{position:relative;min-width:0}
+.emf__stage{position:relative;width:100%;aspect-ratio:660/470;border-radius:var(--w-r-2xl);overflow:hidden}
+@media(max-width:1024px){
+  .emf__grid{grid-template-columns:1fr;gap:var(--w-s-7)}
+  .emf__copy{max-width:none}
+  .emf__stage{aspect-ratio:720/500;max-width:720px;margin-inline:auto}
+}
+@media(max-width:560px){.emf__stage{aspect-ratio:420/470}}
+
+/* ─── §4 FINAL CTA — light section, contained soft-brand band (current default) */
+.emc{position:relative}
+.emc__band{position:relative;overflow:hidden;border-radius:var(--w-r-2xl);
+  padding:clamp(56px,5.2vw,104px) var(--w-s-6);text-align:center;isolation:isolate}
+.emc__band::before{content:"";position:absolute;inset:0;z-index:-2;
+  background-image:var(--w-img-emch-ctabg);background-size:cover;background-position:center;
+  filter:grayscale(1)}
+.emc__band::after{content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(180deg, rgba(28,26,36,0.72), rgba(28,26,36,0.80))}
+.emc__title{font-size:var(--w-fs-h1);color:#fff;max-width:760px;margin-inline:auto}
+.emc__actions{margin-top:var(--w-s-7);display:flex;gap:var(--w-s-4);justify-content:center;align-items:center;flex-wrap:wrap}
+.emc__link{display:inline-flex;align-items:center;gap:var(--w-s-2);
+  color:rgba(255,255,255,0.82);font-weight:var(--w-fw-semi);font-size:var(--w-fs-sm);
+  padding:var(--w-s-3) var(--w-s-4);border-radius:var(--w-r-pill);
+  transition:color var(--w-dur) var(--w-ease)}
+.emc__link:hover{color:#fff}
+.emc__link>svg{width:18px;height:18px}   /* direct child only — don't resize the ep-plus inside the wordmark */
+/* plain INLINE flow, like the nav/footer wordmark. inline-flex split the text nodes into
+   separate flex items and collapsed the literal space onto the wrong side ("Experts +works"). */
+.emc__wm{white-space:nowrap}
+/* the #i-plus glyph carries side-bearing inside its 24x24 viewBox, so mid-sentence it reads as
+   a detached "Experts + works". Pull it back onto the word — the wordmark must read as Experts+.
+   PAGE-WIDE: this bit us twice (CTA link, then the Better Together lead). Any Experts+ wordmark
+   in running text needs it, so scope it to the page, not to one component. */
+main .ep-plus{margin-left:-0.02em;margin-right:0.04em}
+/* the CTA band always renders its own dark surface — force the brand CTA fill regardless of the
+   light section it sits in (the light-theme --w-cta-fill would go dark-glass on dark = invisible) */
+.emc__band .w-btn--primary{background:var(--w-grad-brand);color:var(--w-charcoal);box-shadow:var(--w-glow-brand)}
+.emc__band .w-btn--primary:hover{box-shadow:var(--w-glow-brand-strong)}
+@media(max-width:560px){.emc__actions{flex-direction:column}.emc__actions>*{width:100%;justify-content:center}}
+
+/* ─── shared: kicker badge + reveal helpers ───────────────────────────────── */
+.em-kicker{display:inline-flex}
+
+/* ═══════════ v08 — three feature sections, SECTION-BG mockups (Jeff 07-13) ═══════
+
+   em2/em3/em4 are PORTRAIT (~3:4) editorial MacBook scenes. A portrait image used as a literal
+   full-width section background would make the section ~1900px tall at desktop width — so each
+   scene is anchored to ONE SIDE at FULL SECTION HEIGHT.
+
+   The scene lives on its OWN layer (`::before`) rather than on the section's `background`, for two
+   reasons: (1) a CSS mask on the section would mask its CHILDREN too (it faded the copy — real bug
+   hit here), and (2) a gradient mask has NO intrinsic size, so `mask-size:auto` can't be made to
+   match the photo's width. Giving the layer the image's own `aspect-ratio` with `top/bottom:0`
+   derives its width from the section height — so the box IS the image, and the mask spans exactly
+   it. `background-size:100% 100%` on a box of the image's own ratio = FULL RATIO, NO ZOOM, NO CROP.
+   NOTE: an inner-edge mask was tried and REMOVED (Jeff) — the scene now meets the section on a
+   clean, hard edge. ⚠️ If a mask is ever reintroduced it must live on THIS ::before layer, never
+   on the section: a mask on the section masks its CHILDREN too and visibly fades the body copy.
+   ═════════════════════════════════════════════════════════════════════════════════ */
+
+.em-bg{position:relative;overflow:hidden;display:flex;align-items:center;
+  min-height:clamp(620px,52vw,860px)}
+.em-bg::before{content:"";position:absolute;top:0;bottom:0;z-index:0;pointer-events:none;
+  background-repeat:no-repeat;background-size:100% 100%}
+.em-bg>.w-container{position:relative;z-index:1;width:100%}
+
+/* NO FADE (Jeff) — the scene meets the section on a clean edge. */
+.em-bg--right::before{right:0}
+.em-bg--left::before{left:0}
+
+/* ─── §5 PROFILE — light · scene RIGHT, copy LEFT ─────────────────────────── */
+.emp::before{background-image:var(--w-img-emp-bg);aspect-ratio:3867/5133}   /* em2 */
+.emp__grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,0.82fr);align-items:center;gap:clamp(32px,4vw,72px)}
+.emp__copy{max-width:520px;min-width:0}
+.emp__title{font-size:var(--w-fs-h1);margin-top:var(--w-s-4)}
+.emp__body{margin-top:var(--w-s-5);color:var(--w-text-prose);font-size:var(--w-fs-lead);line-height:var(--w-lh-normal)}
+
+/* ─── §6 ROSTER — DARK punch · scene LEFT, copy RIGHT (mirrors §5) ────────── */
+.emr{background-color:var(--w-bg)}
+.emr::before{background-image:var(--w-img-emr-bg);aspect-ratio:4000/5133}   /* em3 */
+.emr__grid{display:grid;grid-template-columns:minmax(0,0.82fr) minmax(0,1fr);align-items:center;gap:clamp(32px,4vw,72px)}
+.emr__copy{grid-column:2;max-width:520px;min-width:0;margin-left:auto}
+.emr__title{font-size:var(--w-fs-h1);margin-top:var(--w-s-4)}
+.emr__body{margin-top:var(--w-s-5);color:var(--w-text-prose);font-size:var(--w-fs-lead);line-height:var(--w-lh-normal)}
+
+/* ─── §8 SURFACES — light · scene RIGHT, copy LEFT ────────────────────────── */
+.emsf::before{background-image:var(--w-img-emsf-bg);aspect-ratio:4000/5133} /* em4 */
+.emsf__grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,0.82fr);align-items:center;gap:clamp(32px,4vw,72px)}
+.emsf__head{max-width:520px;min-width:0;text-align:left}
+.emsf__title{font-size:var(--w-fs-h1);margin-top:var(--w-s-4)}
+.emsf__lead{margin-top:var(--w-s-5);color:var(--w-text-prose);font-size:var(--w-fs-lead);line-height:var(--w-lh-normal)}
+
+/* ─── ≤1024: the scene un-stacks to FULL WIDTH beneath the copy ───────────── */
+@media(max-width:1024px){
+  .em-bg{display:block;min-height:0;padding-bottom:0}
+  .em-bg::before{top:auto;bottom:0;left:0;right:0;width:100%;height:auto}
+  .emp__grid,.emr__grid,.emsf__grid{grid-template-columns:1fr}
+  .emp__copy,.emr__copy,.emsf__head{max-width:none;margin-left:0}
+  .emr__copy{grid-column:1}
+  /* the scene's own height, as a % of section width (portrait → taller than wide) */
+  .emp{padding-bottom:132.7%}   /* em2  3867x5133 */
+  .emr{padding-bottom:128.3%}   /* em3  4000x5133 */
+  .emsf{padding-bottom:128.3%}  /* em4  4000x5133 */
+}
+
+/* ═══════════ v09 — ADOBE STACKING PANELS (motion-library.md §2) ══════════════
+   The house signature: a contiguous run of sections pins and gets COVERED by the next,
+   creating depth. Applied to engine → fit → profile → roster → surfaces.
+
+   Non-negotiables (each one is a bug we've already paid for):
+   • The run MUST be wrapped (`.ems-stack{position:relative;z-index:0}`) — without it the sticky
+     scope runs to the page bottom and pinned sections bleed through the footer.
+   • Every covering panel needs an OPAQUE background (dark sections are transparent over the body
+     by default → the pinned section shows through).
+   • z-index must strictly INCREASE down the run.
+   • A section can only be PINNED if it fits the viewport — that's a HEIGHT question, which CSS
+     media queries can't ask. The `stackfit` JS unpins anything taller than the viewport.
+   • Off below 700px and under reduced-motion.
+   ═════════════════════════════════════════════════════════════════════════════ */
+.ems-stack{position:relative;z-index:0}
+.ems-stack>section{position:sticky;top:0}
+
+/* every panel after the first RISES over the one before it */
+.ems-stack>section+section{
+  border-top-left-radius:var(--w-panel-radius);border-top-right-radius:var(--w-panel-radius);
+  margin-top:calc(-1 * var(--w-panel-overlap));
+  box-shadow:0 -24px 50px -14px rgba(0,0,0,.42)}
+
+/* strictly increasing z-index down the run */
+.ems-stack>section:nth-child(1){z-index:1}
+.ems-stack>section:nth-child(2){z-index:2}
+.ems-stack>section:nth-child(3){z-index:3}
+.ems-stack>section:nth-child(4){z-index:4}
+.ems-stack>section:nth-child(5){z-index:5}
+
+/* opaque grounds — a covering panel with a see-through bg reveals the pinned section behind it */
+.ems-stack>.eme{background:var(--w-bg)}
+.ems-stack>.emr{background:var(--w-bg)}
+.ems-stack>.cz-light{background:var(--w-bg)}   /* .cz-light re-scopes --w-bg to #fff */
+
+/* the rounded top must clip the em-bg scene layer too */
+.ems-stack>.em-bg{overflow:hidden}
+
+/* stackfit sets `position:relative;top:auto` inline when a section can't fit the viewport */
+@media(max-width:700px),(prefers-reduced-motion:reduce){
+  .ems-stack>section{position:relative;top:auto}
+  .ems-stack>section+section{margin-top:0;box-shadow:none;
+    border-top-left-radius:0;border-top-right-radius:0}
+}
+
+/* ═══════════ v10 — +10% section padding from "From a list to a name" down ════
+   Base rhythm (page-scoped, from _czlight.css) is asymmetric:
+     .w-section{padding-block: clamp(36px, 2.2vw + 1rem, 64px)   clamp(64px, 4vw + 1.7rem, 108px)}
+   Every stop below is that × 1.1, so the asymmetry (tight top / generous bottom) is preserved
+   rather than flattened. Applies to §2 Shortlist → CTA; hero + trust band keep their own rhythm.
+   NOTE: taller sections mean `stackfit` will unpin the stack on more viewports — that's the
+   mechanism working as intended (a pinned section taller than the viewport hides its own bottom).
+   ═════════════════════════════════════════════════════════════════════════════ */
+.emn, .eme, .emf, .emp, .emr, .emsf, .emc{
+  padding-block: clamp(39.6px, 2.42vw + 1.1rem, 70.4px) clamp(70.4px, 4.4vw + 1.87rem, 118.8px)}
+
+/* the shortlist carries an extra top offset (the lifted trust band has a deliberately tight
+   bottom) — bump that by 10% too, and keep the 10%-larger bottom from the rule above */
+.emn{padding-top: clamp(79.2px, 7.7vw, 149.6px)}
+
+/* +10% AGAIN on "Why fit beats volume" only (Jeff) — compounds on the v10 bump, so this
+   section now sits at 1.21× the base rhythm. Must come AFTER the v10 rule to win. */
+.emf{padding-block: clamp(43.56px, 2.662vw + 1.21rem, 77.44px) clamp(77.44px, 4.84vw + 2.057rem, 130.68px)}
+
+/* ═══════════ v12 — §9 PROOF (dark stat) + §10 BETTER TOGETHER (Carly seam) ═══ */
+
+/* ─── §9 PROOF — dark, centered brand numeral (the page's only stat) ───────── */
+.emq{position:relative;background:var(--w-bg);overflow:hidden;
+  padding-block: clamp(39.6px, 2.42vw + 1.1rem, 70.4px) clamp(70.4px, 4.4vw + 1.87rem, 118.8px)}
+.emq__inner{max-width:820px;margin-inline:auto;text-align:center}
+.emq__stat{margin-top:var(--w-s-5)}
+.emq__num{display:inline-block;
+  font-size:var(--w-fs-display);   /* DS7 ceiling — was an off-scale 10rem custom clamp */
+  font-weight:var(--w-fw-black);letter-spacing:var(--w-ls-tight);line-height:.95;
+  background:var(--w-grad-brand);-webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent}
+.emq__line{margin-top:var(--w-s-5);margin-inline:auto;max-width:620px;
+  font-size:var(--w-fs-lead);line-height:var(--w-lh-normal);color:var(--w-text-prose)}
+
+/* ─── §10 BETTER TOGETHER — CSS lifted VERBATIM from the shipped W-HOME §5 ──── */
+#better-together{position:relative;overflow:hidden;overflow-x:clip;
+  padding-block: clamp(39.6px, 2.42vw + 1.1rem, 70.4px) clamp(70.4px, 4.4vw + 1.87rem, 118.8px)}
+.hm-bt__img{position:relative;width:min(1100px,94vw);margin:var(--w-s-6) auto var(--w-s-7);
+  aspect-ratio:2560/1440;border-radius:var(--w-r-2xl);overflow:hidden;
+  background:var(--w-img-embt) center/110% no-repeat;
+  box-shadow:var(--w-shadow-lg);border:1px solid var(--w-line);
+  will-change:transform;transform-origin:center bottom;backface-visibility:hidden}
+.hm-move{gap:var(--w-s-4)}
+.hm-move__title{font-size:var(--w-fs-h4);font-weight:var(--w-fw-bold);letter-spacing:var(--w-ls-tight);
+  line-height:var(--w-lh-snug);color:var(--w-charcoal)}
+.hm-move__inner{margin-top:auto;background:rgba(255,255,255,0.66);border:1px solid rgba(255,255,255,0.6);
+  border-radius:14px;padding:14px 16px;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.7),0 4px 12px rgba(28,26,36,0.05);
+  transition:background .5s ease}
+.hm-move__sub{margin:0;font-size:var(--w-fs-sm);line-height:var(--w-lh-normal);color:rgba(28,26,36,0.66)}
+.hm-bt__compound{max-width:50ch;margin:var(--w-s-7) auto var(--w-s-5);text-align:center}
+#better-together .hm-move .w-card__icon{transition:transform .55s cubic-bezier(.34,1.56,.64,1)}
+#better-together .w-card__icon svg{stroke:#ffffff;fill:none;stroke-width:1.8;
+  stroke-linecap:round;stroke-linejoin:round;width:22px;height:22px}
+#better-together .bt-fly{opacity:0;will-change:transform,opacity;transform-origin:center}
+@media(hover:hover) and (min-width:901px){
+  .hm-move{transition:transform .55s cubic-bezier(.16,1,.3,1),box-shadow .55s cubic-bezier(.16,1,.3,1),border-color .4s ease}
+  #better-together .hm-move:hover{transform:translateY(-7px) scale(1.012);box-shadow:0 22px 44px -16px rgba(28,26,36,.20)}
+  #better-together .hm-move:hover .w-card__icon{transform:scale(1.1) rotate(-4deg)}
+  #better-together .hm-move:hover .hm-move__inner{background:rgba(255,255,255,.85)}
+}
+@media(prefers-reduced-motion:reduce){
+  .hm-bt__img{transform:none!important}
+  #better-together .bt-fly{opacity:1!important;transform:none!important}
+}
+
+/* ═══════════ v13 — §8 SURFACES: Design Studio layout subsections ════════════
+   ⚠️ The em4 scene layer is `top:0;bottom:0` + `aspect-ratio`, so its WIDTH is derived from the
+   SECTION HEIGHT. Adding the four layout cards makes the section much taller — which would have
+   ballooned the scene to absurd width. So on desktop the scene is pinned to the TOP block only
+   (fixed height, `bottom:auto`), and the cards flow beneath it.
+   ═════════════════════════════════════════════════════════════════════════════ */
+.emsf{display:block;min-height:0}
+.emsf__grid{min-height:clamp(620px,52vw,860px)}
+.emsf::before{bottom:auto;height:clamp(620px,52vw,860px)}   /* width derives from THIS, not the section */
+
+/* ─── the subsection head ─────────────────────────────────────────────────── */
+.emsf__subhead{max-width:640px;margin:clamp(56px,5.5vw,104px) auto clamp(36px,3.4vw,60px);text-align:center}
+.emsf__subtitle{font-size:var(--w-fs-h2);font-weight:var(--w-fw-bold);letter-spacing:var(--w-ls-tight);
+  line-height:var(--w-lh-snug);color:var(--w-text);margin-top:var(--w-s-4)}
+.emsf__sublead{margin-top:var(--w-s-4);font-size:var(--w-fs-lead);
+  line-height:var(--w-lh-normal);color:var(--w-text-prose)}
+
+/* ─── CROSSED GRIDLINES ────────────────────────────────────────────────────────
+   Frame + dividers drawn as two pseudo-layers that OVERHANG the grid box: the verticals
+   run past the top/bottom edges, the horizontals past the left/right. Where they cross,
+   you get the little "+" ticks at every corner and junction. Cells carry padding instead
+   of gap so the content sits inside the ruled boxes. */
+.emsf__layouts{--emsf-over:18px;
+  position:relative;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+  margin-top:clamp(8px,1vw,16px)}
+.emsf__layouts::before,.emsf__layouts::after{content:"";position:absolute;pointer-events:none;z-index:0}
+/* 3 verticals (left · center · right), overhanging top + bottom */
+.emsf__layouts::before{top:calc(-1*var(--emsf-over));bottom:calc(-1*var(--emsf-over));left:0;right:0;
+  background:
+    linear-gradient(var(--w-line),var(--w-line)) left   center/1px 100% no-repeat,
+    linear-gradient(var(--w-line),var(--w-line)) center center/1px 100% no-repeat,
+    linear-gradient(var(--w-line),var(--w-line)) right  center/1px 100% no-repeat}
+/* 3 horizontals (top · middle · bottom), overhanging left + right */
+.emsf__layouts::after{left:calc(-1*var(--emsf-over));right:calc(-1*var(--emsf-over));top:0;bottom:0;
+  background:
+    linear-gradient(var(--w-line),var(--w-line)) center top/100% 1px no-repeat,
+    linear-gradient(var(--w-line),var(--w-line)) center center/100% 1px no-repeat,
+    linear-gradient(var(--w-line),var(--w-line)) center bottom/100% 1px no-repeat}
+
+/* Cells: the visual is a CHIP floating in whitespace — the ruled box is the frame, so the
+   shot itself carries no cell border. A fixed stage height keeps all four chips on one
+   baseline regardless of caption length. */
+.emsf__lay{position:relative;z-index:1;margin:0;min-width:0;
+  padding:clamp(36px,3.8vw,64px) clamp(30px,3vw,56px) clamp(40px,4vw,68px);
+  display:flex;flex-direction:column}
+.emsf__shot{flex:0 0 auto;display:flex;align-items:center;justify-content:center;
+  min-height:clamp(180px,15.5vw,248px)}
+.emsf__shot img{display:block;width:82%;max-width:100%;height:auto;
+  aspect-ratio:16/10;object-fit:cover;object-position:top center;
+  border-radius:var(--w-r-lg);box-shadow:0 22px 44px -20px rgba(28,26,36,.20), 0 2px 6px -2px rgba(28,26,36,.08)}
+.emsf__cap{margin-top:clamp(28px,2.6vw,44px);text-align:center}
+.emsf__lay-title{font-size:var(--w-fs-h4);font-weight:var(--w-fw-bold);   /* DS card-title step */
+  letter-spacing:var(--w-ls-tight);line-height:var(--w-lh-snug);color:var(--w-text)}
+.emsf__lay-sub{margin-top:var(--w-s-3);font-size:var(--w-fs-sm);
+  line-height:var(--w-lh-normal);color:var(--w-text-prose);max-width:34ch;margin-inline:auto}
+@media(hover:hover) and (min-width:901px){
+  .emsf__shot img{transition:transform .55s cubic-bezier(.16,1,.3,1),box-shadow .55s cubic-bezier(.16,1,.3,1)}
+  .emsf__lay:hover .emsf__shot img{transform:translateY(-6px);
+    box-shadow:0 34px 62px -22px rgba(28,26,36,.26), 0 2px 6px -2px rgba(28,26,36,.10)}
+}
+
+/* ═══════════ v11 — FIX: restore the ≤1024 stacked scene + fade it ════════════
+   ⚠️ BUG (mine): the v10 "+10% padding" rule `.emp,.emr,.emsf{padding-block:…}` was appended
+   AFTER the @media(max-width:1024px) block, so it overrode `padding-bottom:132.7%` at EVERY
+   width. The section collapsed and the portrait scene — which is bottom-anchored and sized by
+   its own aspect-ratio — spilled UP behind the copy, making the text unreadable on mobile.
+   Rule of thumb: any later flat declaration silently beats an earlier media query. Re-assert
+   the responsive values LAST.
+   ═════════════════════════════════════════════════════════════════════════════ */
+@media(max-width:1024px){
+  /* the scene's own height as a % of section width (percentage padding resolves against WIDTH),
+     PLUS the +10% bottom rhythm so the copy still breathes above it */
+  .emsf__grid{min-height:0}
+  .emsf::before{bottom:0;height:auto}          /* back to the stacked full-width scene */
+  /* single column → the centre vertical + middle horizontal no longer map to the layout.
+     Drop the pseudo-grid and rule the cells directly. */
+  .emsf__layouts{grid-template-columns:1fr}
+  .emsf__layouts::before{background:
+    linear-gradient(var(--w-line),var(--w-line)) left  center/1px 100% no-repeat,
+    linear-gradient(var(--w-line),var(--w-line)) right center/1px 100% no-repeat}
+  .emsf__layouts::after{background:
+    linear-gradient(var(--w-line),var(--w-line)) center top/100% 1px no-repeat,
+    linear-gradient(var(--w-line),var(--w-line)) center bottom/100% 1px no-repeat}
+  .emsf__lay + .emsf__lay{border-top:1px solid var(--w-line)}
+  .emp{padding-bottom:calc(132.7% + clamp(70.4px, 4.4vw + 1.87rem, 118.8px))}   /* em2 3867x5133 */
+  .emr{padding-bottom:calc(128.3% + clamp(70.4px, 4.4vw + 1.87rem, 118.8px))}   /* em3 4000x5133 */
+  .emsf{padding-bottom:calc(128.3% + clamp(70.4px, 4.4vw + 1.87rem, 118.8px))}  /* em4 4000x5133 */
+
+  /* FADE the scene on mobile (Jeff) — the copy sits above it, and the scene's top edge now
+     dissolves into the section ground so the two never fight. Mask lives on the ::before
+     (the scene's own layer) — NEVER on the section, which would mask the copy too. */
+  .em-bg::before{
+    -webkit-mask-image:linear-gradient(180deg,transparent 0,rgba(0,0,0,.35) 8%,#000 22%,#000 100%);
+            mask-image:linear-gradient(180deg,transparent 0,rgba(0,0,0,.35) 8%,#000 22%,#000 100%)}
+}
+
+
+/* ══════════ ASSET FRAGMENT CSS (hoisted, Phase 6) ══════════ */
+
+/* ═══ emx- · shared animated-scene canvas kit (W-EXPERTS-MATCH) ═══════════════
+   Every A-slot fragment renders a fixed-px canvas (.emx-fit) inside its section
+   stage (.emh__stage / .eme__stage / .emf__stage). The scaler JS scales the
+   canvas CONTAIN + CENTER (never width-only — that clips at medium widths,
+   responsive-traps.md §3). All values are --w-* tokens.
+   ─────────────────────────────────────────────────────────────────────────── */
+.emx{position:absolute;inset:0;overflow:hidden;border-radius:inherit}
+.emx-fit{position:absolute;left:0;top:0;transform-origin:0 0;will-change:transform}
+/* composition dissolves to the section ground at the canvas edges (brand signature) */
+.emx-fit::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:9;
+  background:var(--w-edge-fade)}
+
+/* surfaces */
+.emx-card{position:absolute;background:var(--w-card);border-radius:var(--w-r-lg);
+  box-shadow:var(--w-shadow-raise-soft);border:1px solid var(--w-line);padding:16px 18px}
+.emx-card--focal{box-shadow:var(--w-shadow-raise)}
+/* bloom-rim focal card — the brand moment (gradient rim, purple lives in product UI only) */
+.emx-rim{position:relative}
+.emx-rim::before{content:"";position:absolute;inset:-1.5px;border-radius:inherit;z-index:-1;
+  background:var(--w-grad-brand);opacity:.9}
+.emx-rim::after{content:"";position:absolute;inset:-14px;border-radius:inherit;z-index:-2;
+  background:var(--w-grad-brand);filter:blur(18px);opacity:.16}
+
+/* ghost / receding surface — the "undifferentiated list" state */
+.emx-ghost{background:var(--w-card-lo);border-color:var(--w-line-soft);box-shadow:none;
+  filter:grayscale(1);opacity:.5}
+.emx-ghost .emx-ln{background:var(--w-line-strong);opacity:.5}
+
+/* skeleton text lines (faceless rows) */
+.emx-ln{display:block;height:8px;border-radius:var(--w-r-pill);background:var(--w-line-strong)}
+
+/* chips + pills */
+.emx-chip{display:inline-flex;align-items:center;gap:6px;padding:7px 12px;
+  border-radius:var(--w-r-pill);background:var(--w-glass-fill-soft);
+  border:1px solid var(--w-line);color:var(--w-text-2);
+  font:600 12px/1 var(--w-font);white-space:nowrap}
+.emx-chip--brand{background:var(--w-tag-brand-bg);border-color:var(--w-brand-line);
+  color:var(--w-tag-brand-fg)}
+.emx-chip--score{background:var(--w-grad-brand);border-color:transparent;color:var(--w-charcoal);
+  font-family:var(--w-font-mono);font-weight:700}
+.emx-chip--mono{font-family:var(--w-font-mono);font-weight:700;font-size:11.5px}
+
+/* the illustrative marker — demo numbers must READ as demo (copy PROOF rule) */
+.emx-illus{font:400 10px/1 var(--w-font-kicker);letter-spacing:.09em;text-transform:uppercase;
+  color:var(--w-text-3);white-space:nowrap}
+
+/* avatars (foundation tokens only) */
+.emx-av{border-radius:var(--w-r-full);background-size:cover;background-position:center;flex:none;
+  box-shadow:0 0 0 2px var(--w-card),0 4px 10px -4px rgba(0,0,0,.28)}
+.emx-av--ring{box-shadow:0 0 0 2px var(--w-card),0 0 0 4px var(--w-brand),0 6px 14px -5px rgba(0,0,0,.32)}
+
+/* weight bar — the "weighing" primitive (A2) */
+.emx-bar{position:relative;height:7px;border-radius:var(--w-r-pill);
+  background:var(--w-glass-fill-soft);overflow:hidden;flex:none}
+.emx-bar>i{display:block;height:100%;border-radius:var(--w-r-pill);
+  background:var(--w-grad-brand);transform-origin:0 50%}
+
+/* connector rail (cz4 recipe — orthogonal, token stroke, gradient pulse) */
+.emx-cn{position:absolute;background:var(--w-line-strong);border-radius:var(--w-r-pill)}
+
+/* every fragment's motion is opt-IN: base CSS renders the RESOLVED END STATE, so
+   reduced-motion + no-JS both get a correct, finished scene for free. */
+
+/* ═══ v02 additions (Jeff 07-13) — pegboard motif · frosted glass · scanned faces ══════════ */
+
+/* PEGBOARD — the house back-motif. Sits behind every scene, fading OUTWARD so the composition
+   dissolves into the section ground (stacks with .emx-fit::after's edge-fade). z-index:0, and
+   every scene element must sit above it (the kit's .emx-card is position:absolute → auto z). */
+.emx-peg{position:absolute;inset:-8%;z-index:0;pointer-events:none;
+  --emx-peg-dot:rgba(28,26,36,0.17);
+  background-image:radial-gradient(circle, var(--emx-peg-dot) 1.5px, transparent 1.7px);
+  background-size:26px 26px;
+  -webkit-mask-image:radial-gradient(ellipse 58% 56% at 50% 48%, #000 0%, rgba(0,0,0,.6) 46%, transparent 80%);
+          mask-image:radial-gradient(ellipse 58% 56% at 50% 48%, #000 0%, rgba(0,0,0,.6) 46%, transparent 80%)}
+.emx-peg--dark{--emx-peg-dot:rgba(255,255,255,0.15)}
+
+/* FROSTED GLASS cards. Theme-independent on purpose: --w-glass-* flips with the section, but a
+   DARK-glass card on a LIGHT section (and vice-versa) must hold its own surface either way.
+   Pair each with the matching ink scope below so contents stay legible. */
+.emx-glass{position:absolute;border-radius:var(--w-glass-radius);
+  -webkit-backdrop-filter:var(--w-glass-blur-lg);backdrop-filter:var(--w-glass-blur-lg)}
+.emx-glass--dark{background:rgba(22,20,30,0.72);border:1px solid rgba(255,255,255,0.16);
+  box-shadow:0 24px 60px -18px rgba(10,8,18,.55), inset 0 1px 0 rgba(255,255,255,0.20)}
+.emx-glass--light{background:rgba(255,255,255,0.80);border:1px solid rgba(28,26,36,0.10);
+  box-shadow:0 24px 60px -18px rgba(10,8,18,.30), inset 0 1px 0 rgba(255,255,255,0.95)}
+/* reduced-transparency: blur is dropped → make the surfaces solid so text never lands on scene art */
+@media (prefers-reduced-transparency: reduce){
+  .emx-glass{-webkit-backdrop-filter:none;backdrop-filter:none}
+  .emx-glass--dark{background:rgba(22,20,30,0.97)}
+  .emx-glass--light{background:rgba(255,255,255,0.98)}
+}
+
+/* INK SCOPES — put on a glass card so its contents flip legibly regardless of section theme. */
+.emx-on-dark{--emx-ink:rgba(255,255,255,0.95);--emx-ink-2:rgba(255,255,255,0.66);
+  --emx-ink-3:rgba(255,255,255,0.45);--emx-hair:rgba(255,255,255,0.16);--emx-well:rgba(255,255,255,0.08)}
+.emx-on-light{--emx-ink:var(--w-charcoal);--emx-ink-2:rgba(28,26,36,0.66);
+  --emx-ink-3:rgba(28,26,36,0.48);--emx-hair:rgba(28,26,36,0.12);--emx-well:rgba(28,26,36,0.06)}
+.emx-on-dark .emx-nm,.emx-on-light .emx-nm{color:var(--emx-ink)}
+.emx-sub{color:var(--emx-ink-2)}
+/* chips inside a glass card follow the card's ink, not the section's */
+.emx-glass .emx-chip{background:var(--emx-well);border-color:var(--emx-hair);color:var(--emx-ink-2)}
+.emx-glass .emx-illus{color:var(--emx-ink-3)}
+/* the score chip stays the brand moment in BOTH scopes (charcoal on the bright gradient = AA) */
+.emx-glass .emx-chip--score{background:var(--w-grad-brand);border-color:transparent;color:var(--w-charcoal)}
+/* the avatar ring's inner halo must match the card it sits on, not the section */
+.emx-on-dark .emx-av{box-shadow:0 0 0 2px rgba(22,20,30,.9),0 4px 10px -4px rgba(0,0,0,.4)}
+.emx-on-dark .emx-av--ring{box-shadow:0 0 0 2px rgba(22,20,30,.9),0 0 0 4px var(--w-brand-2),0 6px 14px -5px rgba(0,0,0,.45)}
+.emx-on-light .emx-av--ring{box-shadow:0 0 0 2px #fff,0 0 0 4px var(--w-brand),0 6px 14px -5px rgba(28,26,36,.28)}
+
+/* SCANNED FACES — the rows/pills being scanned carry real people, desaturated. They are candidates,
+   not records: grayscale + dimmed reads as "not yet chosen", and the ONE match resolves to colour. */
+.emx-face{border-radius:var(--w-r-full);background-size:cover;background-position:center;flex:none;
+  filter:grayscale(1) contrast(.92);opacity:.55}
+
+
+/* ---- ema1_fragment ---- */
+/* ============================================================
+   ema1_fragment — W-EXPERTS-MATCH §1 slot A1 · hero figure
+   "A list of people → the right person."  (v02 · Jeff 07-13)
+
+   A rail of SCANNED PEOPLE — every row carries a real face,
+   grayscale + dimmed (.emx-face), beside blurred-out skeleton
+   detail: candidates the AI is reading, not database records.
+   A scan sweeps · the rest recede to grey ghosts · ONE row
+   resolves forward into a DARK FROSTED-GLASS profile card in
+   full colour (Allison Moore · ring · chips · 98% Best fit).
+   A pegboard (.emx-peg) sits behind it all and fades outward.
+
+   TWO CANVASES, ONE STORY
+   · data-canvas    1180×430 — LANDSCAPE. 9 faced rows on the
+     left, focal glass card to the RIGHT. Read left→right.
+   · data-canvas-sm  440×600 — PORTRAIT. The host scaler swaps
+     to this below a 700px viewport and stamps .is-sm on
+     .emx-fit. 6 faced rows on TOP, focal card BELOW.
+     All .is-sm rules are ADDITIVE OVERRIDES — desktop untouched.
+     BOTH canvases get: pegboard · faces · dark glass · the full
+     name "Allison Moore" uncropped.
+
+   ⚠ STACKING-CONTEXT: .emx-rim's ::before uses z-index:-1, so the
+   rim element must never be a stacking context. It therefore lives
+   on its OWN static underlay <i class="emx-rim ema1-rim"> — never
+   on the glass card (backdrop-filter = stacking context) and never
+   on the animated .ema1-focal wrapper (opacity/transform = ditto).
+
+   Builds on the shared emx- canvas kit (already in the page —
+   never redefined here). Prefix ema1-. Pure CSS, no JS, no img.
+   BASE CSS = RESOLVED END STATE in BOTH layouts. ALL motion lives
+   in prefers-reduced-motion:no-preference → reduced-motion and
+   no-JS both get a correct, finished scene. Loop 10s.
+   LIGHT theme (.cz-light section) → the pegboard is the default
+   dark-dot variant. Tokens only — zero raw hex; rgba only for
+   neutral shadow/scrim alpha, exactly as the kit does.
+   Content stays inside the central band of each canvas — the
+   kit's radial edge-fade (.emx-fit::after) + the pegboard's own
+   mask dissolve the rest.
+   ============================================================ */
+
+.ema1-scene{--ema1-loop:10s}
+
+/* ═══ LANDSCAPE (1180×430) — the default canvas ═══════════════════════════════ */
+
+/* ---- the rail · 9 scanned PEOPLE (face + anonymous detail) ---------------- */
+.ema1-row{left:96px;width:490px;height:32px;padding:0 14px;
+  border-radius:var(--w-r-sm);display:flex;align-items:center;gap:12px;
+  transform-origin:0 50%}
+.ema1-face{width:24px;height:24px}
+.ema1-row .emx-ln{flex:none;width:var(--ema1-w,96px)}
+.ema1-row .ema1-tail{margin-left:auto}
+
+/* row seats — authored in CSS (not inline) so .is-sm can re-seat them.
+   9 seats · pitch 35 · vertically centred (59 → 371) so nothing strands
+   at the canvas edge. */
+.ema1-r1{top:59px}
+.ema1-r2{top:94px}
+.ema1-r3{top:129px}
+.ema1-r4{top:164px}
+.ema1-r6{top:234px}
+.ema1-r7{top:269px}
+.ema1-r8{top:304px}
+.ema1-r9{top:339px}
+
+/* the slot the match was pulled OUT of — an empty, recessed well */
+.ema1-slot{position:absolute;left:96px;top:199px;width:490px;height:32px;
+  border-radius:var(--w-r-sm);border:1px dashed var(--w-line-strong);
+  background:transparent}
+
+/* the picked row · sits ON the slot, base = gone (it became the card) */
+.ema1-pick{position:absolute;top:199px;background:var(--w-card);
+  border:1px solid var(--w-line);box-shadow:none;opacity:0}
+
+/* ---- scan sweep (brand tint = product UI, allowed) ------------------------ */
+.ema1-scanwrap{position:absolute;left:80px;top:48px;width:524px;height:340px;
+  overflow:hidden;pointer-events:none;z-index:2}
+.ema1-scan{position:absolute;left:0;top:0;bottom:0;width:150px;opacity:0;
+  border-right:1px solid var(--w-brand-line);
+  background:linear-gradient(90deg,transparent 0%,var(--w-brand-soft) 42%,
+    var(--w-brand-line) 100%)}
+
+/* ---- connector · rail slot → focal card ---------------------------------- */
+.ema1-cn{left:592px;top:214px;width:56px;height:2px;transform-origin:0 50%}
+
+/* ---- the ONE match · DARK FROSTED-GLASS profile card ---------------------- */
+/* .ema1-focal is the ANIMATED wrapper (opacity + transform live here).       */
+.ema1-focal{position:absolute;left:648px;top:104px;width:416px;height:222px}
+/* the bloom rim is its own STATIC underlay — no z-index, no animated opacity,
+   no animated transform (see the stacking-context note at the top). */
+.ema1-rim{position:absolute;inset:0;border-radius:var(--w-glass-radius);
+  pointer-events:none}
+.ema1-card{inset:0;padding:22px 24px;display:flex;flex-direction:column;gap:16px;
+  /* WHITE frosted (Jeff). The rim/bloom underlay bleeds through a translucent face and
+     tints the card lavender — so the face is near-opaque; the brand still reads on the
+     rim edge and the outer halo. */
+  background:rgba(255,255,255,0.95)}
+/* name row gets the whole card width — "Allison Moore" must never ellipsize */
+.ema1-hrow{display:flex;align-items:center;gap:16px;min-width:0}
+.ema1-av{width:54px;height:54px}
+.ema1-name{flex:1 1 auto;min-width:0;font:800 26px/1.15 var(--w-font);
+  letter-spacing:var(--w-ls-tight);white-space:nowrap;overflow:visible}
+.ema1-crow{display:flex;align-items:center;gap:8px}
+.ema1-chip{padding:8px 13px;font-size:13px}
+.ema1-foot{display:flex;align-items:center;gap:12px;margin-top:auto}
+.ema1-score{padding:9px 15px;font-size:15px;transform-origin:50% 50%}
+.ema1-illus{margin-left:auto;font-size:11px}
+
+/* ═══ PORTRAIT (440×600) — .is-sm · same story, read top→bottom ══════════════ */
+/* Additive overrides only. Base here is ALSO the resolved end state.          */
+
+/* rail → a short, dense stack of faces centred at the top of the canvas */
+.emx-fit.is-sm .ema1-row{left:62px;width:316px;height:34px;padding:0 12px;gap:10px;
+  transform-origin:50% 50%;--ema1-rcx:0px}
+.emx-fit.is-sm .ema1-face{width:22px;height:22px}
+.emx-fit.is-sm .ema1-row .emx-ln{width:calc(var(--ema1-w,96px) * .58)}
+
+/* 6 rows, not 9 — a legible short stack beats a cramped long one */
+.emx-fit.is-sm .ema1-r1{top:56px}
+.emx-fit.is-sm .ema1-r2{top:94px}
+.emx-fit.is-sm .ema1-r3{top:132px}
+.emx-fit.is-sm .ema1-r4{top:170px}
+.emx-fit.is-sm .ema1-r6{top:208px}
+.emx-fit.is-sm .ema1-r7,
+.emx-fit.is-sm .ema1-r8,
+.emx-fit.is-sm .ema1-r9{display:none}
+
+/* the picked row sits at the BOTTOM of the stack — nearest its card */
+.emx-fit.is-sm .ema1-slot{left:62px;top:246px;width:316px;height:34px}
+.emx-fit.is-sm .ema1-pick{top:246px;
+  --ema1-pnx:0px;--ema1-pny:6px;--ema1-pfx:0px;--ema1-pfy:44px}
+
+/* scan still sweeps across the rail (horizontal reads as "scanning the list") */
+.emx-fit.is-sm .ema1-scanwrap{left:46px;top:46px;width:348px;height:244px;
+  --ema1-sx0:-120px;--ema1-sx1:360px}
+.emx-fit.is-sm .ema1-scan{width:110px}
+
+/* connector re-aimed: straight DOWN from the emptied slot into the card */
+.emx-fit.is-sm .ema1-cn{left:219px;top:282px;width:2px;height:28px;
+  transform-origin:50% 0}
+
+/* the ONE match · below the stack. 328 wide − 40 padding − 62 (avatar+gap)
+   = 226px of name track for a ~175px "Allison Moore" at 24px/800 → no crop. */
+.emx-fit.is-sm .ema1-focal{left:56px;top:310px;width:328px;height:196px;
+  --ema1-rx:0px;--ema1-ry:-22px}
+.emx-fit.is-sm .ema1-card{padding:20px;gap:14px}
+.emx-fit.is-sm .ema1-hrow{gap:14px}
+.emx-fit.is-sm .ema1-av{width:48px;height:48px}
+.emx-fit.is-sm .ema1-name{font-size:24px}
+.emx-fit.is-sm .ema1-chip{padding:7px 12px;font-size:12.5px}
+.emx-fit.is-sm .ema1-score{padding:8px 14px;font-size:14px}
+.emx-fit.is-sm .ema1-illus{font-size:11px}
+
+/* ---- motion · everything above is the resolved end state ------------------ */
+/* Direction-dependent offsets are read from --ema1-* vars so ONE keyframe set
+   serves both canvases (landscape defaults; .is-sm re-points them vertically).
+   NOTE: nothing here animates .ema1-rim. Ever. */
+@media (prefers-reduced-motion:no-preference){
+  .ema1-row{animation:ema1-krecede var(--ema1-loop,10s) cubic-bezier(.2,.7,.2,1) infinite;
+    animation-delay:var(--ema1-d,0s)}
+  .ema1-scan{animation:ema1-kscan var(--ema1-loop,10s) cubic-bezier(.2,.7,.2,1) infinite}
+  .ema1-pick{animation:ema1-kpick var(--ema1-loop,10s) cubic-bezier(.2,.7,.2,1) infinite}
+  .ema1-cn{animation:ema1-kdraw var(--ema1-loop,10s) cubic-bezier(.2,.7,.2,1) infinite}
+  .ema1-focal{animation:ema1-kresolve var(--ema1-loop,10s) cubic-bezier(.2,.7,.2,1) infinite}
+  .ema1-score{animation:ema1-kpop var(--ema1-loop,10s) cubic-bezier(.2,.7,.2,1) infinite}
+  .ema1-illus{animation:ema1-kfade var(--ema1-loop,10s) cubic-bezier(.2,.7,.2,1) infinite}
+  /* the only structurally different beat: the connector draws DOWN, not across */
+  .emx-fit.is-sm .ema1-cn{animation-name:ema1-kdrawv}
+}
+
+/* beat 1 · 0–8%   identical faced rows, present and interchangeable
+   beat 2 · 6–26%  the scan sweeps the rail of people
+   beat 3 · 20–34% the other rows recede into grey ghosts (staggered top-down)
+   beat 4 · 32–46% the one person resolves forward into the glass card
+   beat 5 · 44–52% the 98% score pops
+   beat 6 · 52–94% hold  ·  94–100% reset */
+
+@keyframes ema1-krecede{
+  0%,20%   {opacity:1;transform:none;background-color:var(--w-card)}
+  32%,94%  {opacity:.5;transform:translateX(var(--ema1-rcx,-8px)) scale(.955);
+            background-color:var(--w-card-lo)}
+  100%     {opacity:1;transform:none;background-color:var(--w-card)}
+}
+@keyframes ema1-kscan{
+  0%,6%    {opacity:0;transform:translateX(var(--ema1-sx0,-160px))}
+  10%,23%  {opacity:1}
+  26%,100% {opacity:0;transform:translateX(var(--ema1-sx1,530px))}
+}
+@keyframes ema1-kpick{
+  0%,24%   {opacity:1;transform:none}
+  30%      {opacity:1;transform:translate(var(--ema1-pnx,8px),var(--ema1-pny,0px)) scale(1.03)}
+  38%,94%  {opacity:0;transform:translate(var(--ema1-pfx,56px),var(--ema1-pfy,0px)) scale(1)}
+  100%     {opacity:1;transform:none}
+}
+@keyframes ema1-kdraw{
+  0%,34%   {transform:scaleX(0)}
+  44%,94%  {transform:scaleX(1)}
+  100%     {transform:scaleX(0)}
+}
+@keyframes ema1-kdrawv{
+  0%,34%   {transform:scaleY(0)}
+  44%,94%  {transform:scaleY(1)}
+  100%     {transform:scaleY(0)}
+}
+/* runs on the WRAPPER (.ema1-focal), never on the .emx-rim element */
+@keyframes ema1-kresolve{
+  0%,32%   {opacity:0;transform:translate(var(--ema1-rx,-30px),var(--ema1-ry,0px)) scale(.9)}
+  46%,94%  {opacity:1;transform:none}
+  100%     {opacity:0;transform:translate(var(--ema1-rx,-30px),var(--ema1-ry,0px)) scale(.9)}
+}
+@keyframes ema1-kpop{
+  0%,44%   {opacity:0;transform:scale(.6)}
+  48%      {opacity:1;transform:scale(1.08)}
+  52%,94%  {opacity:1;transform:scale(1)}
+  100%     {opacity:0;transform:scale(.6)}
+}
+@keyframes ema1-kfade{
+  0%,46%   {opacity:0}
+  54%,94%  {opacity:1}
+  100%     {opacity:0}
+}
+
+/* ---- ema2_fragment ---- */
+/* ============================================================
+   ema2_fragment — W-EXPERTS-MATCH §2 slot A2 · engine media
+   "THE SCORING ANATOMY" — the weighing, not the pairing.
+
+   Five NAMED signals (Industry · Company size and stage · Role
+   and seniority · Use case · The objection on the table) each
+   carry a weight bar of a DIFFERENT length — the unequal weights
+   ARE the idea. A "+ dozens more" tail row continues the list.
+   All of it drops through orthogonal, rounded-elbow connectors
+   (cz4 recipe · gradient pulse travels the rail) into ONE focal
+   ExpertScore card that resolves to 98% · George Stevens, with a
+   muted 94% · Ava runner-up beneath. Scores carry a visible
+   ILLUSTRATIVE tag (copy PROOF marker — demo numbers).
+
+   v02 (07-13):
+   · pegboard motif (dark variant) behind the whole scene
+   · the FOCAL card is LIGHT FROSTED GLASS on the dark section —
+     the one light surface in the composition, so it reads as the
+     answer. The inputs panel + the runner-up stay DARK glass:
+     same material family, opposite ink, so the focal card is the
+     only thing that "turns the lights on". Its contents run off
+     the .emx-on-light ink scope; the 98% is a brand-gradient
+     numeral ramped purple-ink → purple so it stays AA-legible on
+     white glass (plain --w-grad-brand tops out in lavender, which
+     is too pale on a light surface).
+   · the focal card carries NO .emx-rim (backdrop-filter makes a
+     stacking context → the rim's negative-z gradient would paint
+     over the face). The bloom is a separate, static underlay.
+   · ODOMETER FIX: the roll used to pass through 91%, momentarily
+     scoring the "best fit" BELOW the 94% runner-up. Intermediate
+     stops now stay ≤ 89% and the runner-up is held offstage until
+     the focal number has parked on 98% — the scene can never show
+     best-fit < runner-up, not for a single frame (including the
+     loop reset, where the runner-up leaves before the roll rewinds).
+
+   Builds on the shared emx- canvas kit (already in the page —
+   never redefined here). Prefix ema2-. Pure CSS, no JS, no img.
+   BASE CSS = RESOLVED END STATE (five bars at their final,
+   unequal lengths · rails drawn · focal card up · 98% shown).
+   ALL motion lives in prefers-reduced-motion:no-preference →
+   reduced-motion + no-JS both get the finished scene for free.
+   Loop 11s. Canvas 640×560 fixed-px; host page scales .emx-fit.
+   DARK section — purple appears ONLY inside product UI: bar
+   fills, focal bloom, score number, connector pulse. Never as a
+   wash or a scene accent. Tokens only — zero raw hex.
+   ============================================================ */
+
+.ema2-scene{--ema2-loop:11s}
+
+/* ---- INPUTS · the signal panel (DARK glass) ------------------------------- */
+.ema2-scene .ema2-signals{left:56px;top:22px;width:528px;height:272px;
+  padding:18px 20px;display:flex;flex-direction:column;gap:13px}
+.ema2-head{display:flex;align-items:center;justify-content:space-between}
+.ema2-kicker{font:400 11px/1 var(--w-font-kicker);letter-spacing:var(--w-ls-wide);
+  text-transform:uppercase;color:var(--emx-ink-3);white-space:nowrap}
+
+.ema2-rows{display:flex;flex-direction:column;gap:9px}
+.ema2-row{display:flex;align-items:center;gap:12px;height:26px}
+.ema2-lb{width:200px;flex:none;font:600 13px/1.2 var(--w-font);
+  color:var(--emx-ink-2);white-space:nowrap}
+/* the weighing primitive — the bars must read as visibly UNEQUAL */
+.ema2-row .emx-bar{flex:1 1 auto;height:8px}
+
+/* the tail — "and dozens more signals" (the list keeps going) */
+.ema2-tail{display:flex;align-items:center;gap:12px;height:28px}
+.ema2-scene .ema2-tail .emx-chip{padding:6px 11px;font-size:11.5px}
+.ema2-tail .emx-ln{flex:1 1 auto;opacity:.35}
+
+/* ---- COMPUTATION · orthogonal rails with rounded elbows (cz4) ------------- */
+.ema2-cn{overflow:hidden}
+.ema2-cn>i{position:absolute;opacity:0}
+/* vertical drop / trunk */
+.ema2-v{width:2px;transform-origin:50% 0}
+.ema2-v>i{left:0;right:0;top:0;height:50%;
+  background:linear-gradient(180deg,transparent,var(--w-brand-2),transparent)}
+/* horizontal bus */
+.ema2-h{height:2px}
+.ema2-h>i{top:0;bottom:0;left:0;width:40%;
+  background:linear-gradient(90deg,transparent,var(--w-brand-2),transparent)}
+.ema2-hl{transform-origin:0 50%}
+.ema2-hr{transform-origin:100% 50%}
+
+.ema2-d1{left:169px;top:294px;height:20px}
+.ema2-d2{left:319px;top:294px;height:34px}
+.ema2-d3{left:469px;top:294px;height:20px}
+.ema2-b1{left:187px;top:328px;width:134px}
+.ema2-b2{left:319px;top:328px;width:135px}
+.ema2-tr{left:319px;top:328px;height:34px}
+
+/* rounded elbows — orthogonal turns, never abstract beziers */
+.ema2-el{position:absolute;top:312px;width:18px;height:18px;
+  border-color:var(--w-line-strong);border-style:solid;border-width:0}
+.ema2-el-l{left:169px;border-left-width:2px;border-bottom-width:2px;
+  border-bottom-left-radius:10px}
+.ema2-el-r{left:453px;border-right-width:2px;border-bottom-width:2px;
+  border-bottom-right-radius:10px}
+
+/* ---- OUTPUT · the focal ExpertScore card (LIGHT glass · the brand moment) -- */
+/* wide enough that a FULL NAME never meets the score number */
+.ema2-focal{position:absolute;left:72px;top:362px;width:496px;height:104px}
+/* the bloom — a STATIC underlay, never .emx-rim on the glass card itself
+   (backdrop-filter = stacking context → a negative-z rim would paint over the face) */
+.ema2-bloom{position:absolute;inset:-14px;
+  border-radius:calc(var(--w-glass-radius) + 12px);
+  background:var(--w-grad-brand);filter:blur(20px);opacity:.20}
+.ema2-scene .ema2-card{inset:0;padding:16px 22px;display:flex;align-items:center;gap:14px}
+.ema2-av{width:52px;height:52px}
+
+.ema2-idn{flex:1 1 auto;display:flex;flex-direction:column;gap:3px}
+/* full name — nowrap, no clamp, and the row has ~260px of slack at 640 canvas */
+.ema2-scene .ema2-name{font:800 21px/1.2 var(--w-font);letter-spacing:var(--w-ls-tight);
+  color:var(--emx-ink);white-space:nowrap}
+.ema2-scene .ema2-sub{font:500 11.5px/1.2 var(--w-font);color:var(--emx-ink-2);
+  white-space:nowrap}
+
+.ema2-out{flex:none;display:flex;flex-direction:column;align-items:flex-end;gap:5px}
+/* the odometer — resolves to 98% (base = landed on 98%) */
+.ema2-num{height:44px;width:108px;overflow:hidden;text-align:right}
+.ema2-roll{display:block;transform:translateY(-176px)}
+/* brand numeral, ramped for a LIGHT surface: --w-grad-brand ends in lavender,
+   which is too pale on white glass. purple-ink → purple keeps it AA-legible. */
+.ema2-roll b{display:block;height:44px;font:800 36px/44px var(--w-font-mono);
+  letter-spacing:var(--w-ls-tight);
+  background:linear-gradient(135deg,var(--w-purple-ink) 0%,var(--w-purple) 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.ema2-scene .emx-glass .ema2-illus{font-size:11px;color:var(--emx-ink-2)}
+
+/* ---- the muted runner-up (DARK glass — it must not compete) ---------------- */
+.ema2-scene .ema2-runner{left:152px;top:482px;width:336px;height:44px;padding:0 16px;
+  display:flex;align-items:center;gap:11px}
+.ema2-runner .emx-av{width:26px;height:26px}
+.ema2-rname{font:700 14px/1 var(--w-font);color:var(--emx-ink-2);white-space:nowrap}
+.ema2-rpct{margin-left:auto;font:700 15px/1 var(--w-font-mono);
+  color:var(--emx-ink-2);white-space:nowrap}
+
+/* ---- motion · everything above is the RESOLVED END STATE ------------------ */
+@media (prefers-reduced-motion:no-preference){
+  .ema2-row{animation:ema2-krow var(--ema2-loop,11s) cubic-bezier(.2,.7,.2,1) infinite;
+    animation-delay:var(--ema2-d,0s)}
+  .ema2-row .emx-bar>i{animation:ema2-kfill var(--ema2-loop,11s) cubic-bezier(.2,.7,.2,1) infinite;
+    animation-delay:var(--ema2-d,0s)}
+  .ema2-tail{animation:ema2-ktail var(--ema2-loop,11s) cubic-bezier(.2,.7,.2,1) infinite}
+  .ema2-v{animation:ema2-kdrawv var(--ema2-loop,11s) cubic-bezier(.2,.7,.2,1) infinite}
+  .ema2-tr{animation:ema2-kdrawt var(--ema2-loop,11s) cubic-bezier(.2,.7,.2,1) infinite}
+  .ema2-h{animation:ema2-kdrawh var(--ema2-loop,11s) cubic-bezier(.2,.7,.2,1) infinite}
+  .ema2-el{animation:ema2-kel var(--ema2-loop,11s) cubic-bezier(.2,.7,.2,1) infinite}
+  .ema2-v>i{animation:ema2-kflowv var(--ema2-loop,11s) cubic-bezier(.2,.7,.2,1) infinite}
+  .ema2-tr>i{animation:ema2-kflowt var(--ema2-loop,11s) cubic-bezier(.2,.7,.2,1) infinite}
+  .ema2-b1>i{animation:ema2-kflowr var(--ema2-loop,11s) cubic-bezier(.2,.7,.2,1) infinite}
+  .ema2-b2>i{animation:ema2-kflowl var(--ema2-loop,11s) cubic-bezier(.2,.7,.2,1) infinite}
+  .ema2-focal{animation:ema2-kfocal var(--ema2-loop,11s) cubic-bezier(.2,.7,.2,1) infinite}
+  .ema2-roll{animation:ema2-kroll var(--ema2-loop,11s) cubic-bezier(.2,.7,.2,1) infinite}
+  .ema2-runner{animation:ema2-krun var(--ema2-loop,11s) cubic-bezier(.2,.7,.2,1) infinite}
+}
+
+/* beat 1 · 4–14%  the five named signals arrive, staggered
+   beat 2 · 14–38% each bar fills to its OWN, different weight
+   beat 3 · 38–60% the rails draw · a brand pulse travels them
+   beat 4 · 62–72% the focal ExpertScore card rises
+   beat 5 · 66–78% the number counts (12 → 41 → 67 → 89) and PARKS on 98%
+   beat 6 · 79–85% ONLY THEN does the 94% runner-up arrive
+   beat 7 · 85–94% hold · 94–100% reset (runner-up leaves FIRST, then the
+            roll rewinds under an already-faded card — so best-fit is never
+            shown below runner-up, not even during the reset) */
+
+@keyframes ema2-krow{
+  0%,4%    {opacity:0;transform:translateY(12px)}
+  14%,94%  {opacity:1;transform:none}
+  100%     {opacity:0;transform:translateY(12px)}
+}
+@keyframes ema2-kfill{
+  0%,14%   {transform:scaleX(0)}
+  38%,94%  {transform:scaleX(1)}
+  100%     {transform:scaleX(0)}
+}
+@keyframes ema2-ktail{
+  0%,20%   {opacity:0;transform:translateY(8px)}
+  30%,94%  {opacity:1;transform:none}
+  100%     {opacity:0;transform:translateY(8px)}
+}
+@keyframes ema2-kdrawv{
+  0%,38%   {transform:scaleY(0)}
+  45%,94%  {transform:scaleY(1)}
+  100%     {transform:scaleY(0)}
+}
+@keyframes ema2-kel{
+  0%,44%   {opacity:0}
+  48%,94%  {opacity:1}
+  100%     {opacity:0}
+}
+@keyframes ema2-kdrawh{
+  0%,46%   {transform:scaleX(0)}
+  53%,94%  {transform:scaleX(1)}
+  100%     {transform:scaleX(0)}
+}
+@keyframes ema2-kdrawt{
+  0%,53%   {transform:scaleY(0)}
+  60%,94%  {transform:scaleY(1)}
+  100%     {transform:scaleY(0)}
+}
+/* the pulse — signals fall into the engine */
+@keyframes ema2-kflowv{
+  0%,45%   {opacity:0;transform:translateY(-120%)}
+  48%      {opacity:1}
+  52%      {opacity:1;transform:translateY(220%)}
+  53%,100% {opacity:0;transform:translateY(220%)}
+}
+@keyframes ema2-kflowr{
+  0%,53%   {opacity:0;transform:translateX(-120%)}
+  56%      {opacity:1}
+  59%      {opacity:1;transform:translateX(220%)}
+  60%,100% {opacity:0;transform:translateX(220%)}
+}
+@keyframes ema2-kflowl{
+  0%,53%   {opacity:0;transform:translateX(220%)}
+  56%      {opacity:1}
+  59%      {opacity:1;transform:translateX(-120%)}
+  60%,100% {opacity:0;transform:translateX(-120%)}
+}
+@keyframes ema2-kflowt{
+  0%,60%   {opacity:0;transform:translateY(-120%)}
+  63%      {opacity:1}
+  67%      {opacity:1;transform:translateY(220%)}
+  68%,100% {opacity:0;transform:translateY(220%)}
+}
+@keyframes ema2-kfocal{
+  0%,62%   {opacity:0;transform:translateY(18px) scale(.96)}
+  72%,94%  {opacity:1;transform:none}
+  98%,100% {opacity:0;transform:translateY(18px) scale(.96)}
+}
+/* odometer · 12 → 41 → 67 → 89 → 98.  Every intermediate stop sits BELOW 90,
+   and the runner-up's 94% does not exist on screen until the roll has parked
+   on 98% (see ema2-krun) — the "best fit" is never the loser. The rewind at
+   97–100% happens after the runner-up has left AND under a faded-out card. */
+@keyframes ema2-kroll{
+  0%,66%   {transform:translateY(0)}          /* 12% */
+  69%      {transform:translateY(-44px)}      /* 41% */
+  72%      {transform:translateY(-88px)}      /* 67% */
+  75%      {transform:translateY(-132px)}     /* 89% */
+  78%,97%  {transform:translateY(-176px)}     /* 98%  ← parked */
+  100%     {transform:translateY(0)}
+}
+@keyframes ema2-krun{
+  0%,79%   {opacity:0;transform:translateY(10px)}   /* held offstage until 98% lands */
+  85%,94%  {opacity:1;transform:none}
+  97%,100% {opacity:0;transform:translateY(10px)}   /* leaves BEFORE the roll rewinds */
+}
+
+/* ---- ema3_fragment ---- */
+/* ============================================================
+   ema3_fragment — W-EXPERTS-MATCH §3 slot A3 · "ONE vs TEN"
+   "One great match beats ten okay ones."
+   TEN faceless cards stacked as ONE dense, dull, interchangeable
+   deck (no avatars · no names · no scores — a database of names)
+   and ONE crisp focal card forward, left, elevated: Amy Lee,
+   98% Best fit, one line of relevance context.
+   The layout IS the argument.
+   Builds on the shared emx- kit (v02). Prefix ema3-. Pure CSS.
+
+   ── rev · v02 (Jeff 07-13) ─────────────────────────────────
+   1. The match is ALLISON MOORE — full name, --w-img-av-aisha.
+      The name lives ALONE in the head row (avatar + name); the
+      chips live on their own rows, so nothing can squeeze it.
+      Budget: card 296 − 40 padding − 54 avatar − 12 gap = 190px
+      of name track. "Amy Lee" at 700/20px Inter ≈ 150px →
+      ~40px of slack. .ema3-name is flex:none + nowrap and NO
+      ellipsis exists anywhere in this fragment: it cannot crop.
+   2. The focal card is DARK FROSTED GLASS on the white section
+      (.emx-glass.emx-glass--light.emx-on-light). Every child colour
+      now comes from the ink scope (--emx-ink / -2 / -3), never
+      from the section's --w-text*: on this card the ground is
+      dark, the section is light, and the two must not be confused.
+      The 98% score chip stays the brand gradient (kit scopes it).
+   3. The pegboard motif (.emx-peg, LIGHT variant — dark dots) is
+      the first child of .emx-fit, so it paints beneath every
+      scene element (it is z-index:0; the cards are positioned
+      with z-index:auto and come later in tree order).
+
+   ── THE STACKING-CONTEXT TRAP (the bug this rev fixes) ─────
+   The kit's .emx-rim paints its gradient on pseudo-elements at
+   z-index:-1/-2 — i.e. BEHIND the element's own background. That
+   only works while the element is NOT a stacking context. Anything
+   that makes one — z-index, transform, filter, opacity < 1, or
+   backdrop-filter — traps those pseudos INSIDE it, where -1 can no
+   longer go behind the background, and the card renders as a solid
+   purple block.
+   The old rev animated `opacity` on the rim-carrying focal card →
+   solid purple block for the whole entrance. And this rev's glass
+   card carries backdrop-filter, which would break it permanently.
+   So: NO rim pseudo-element anywhere. The bloom is a SEPARATE,
+   STATIC underlay div (.ema3-bloom) that sits before the card in
+   tree order, and the entrance animates a WRAPPER (.ema3-focalwrap)
+   — never the glass card itself. Nothing that carries a surface
+   carries z-index, an animated opacity, or an animated transform.
+
+   ── SAFE AREA (re-checked for the new focal rect) ──────────
+   The kit's .emx-fit::after vignette is
+   radial-gradient(ellipse 84% 82% at 50% 48%, transparent 52%,
+   var(--w-bg) 100%) → on 660×470 that is rx=554.4 ry=385.4 about
+   (330,225.6); a point is untouched only while
+   r = √((dx/554.4)² + (dy/385.4)²) < 0.52.
+   · Focal 296×172 at (70,140) → corners (70,140) r=.519 ·
+     (70,312) r=.520 · (366,140) r=.230 · (366,312) r=.238.
+     ALL inside. (The old 296×190 @ (52,164) had its bottom-left
+     corner at r=.60 — a ~17% white wash, invisible on a white
+     card but a milky corner on a dark one. Hence the reposition.)
+   · Deck unchanged and still clear: nearest ghost
+     (300,236)-(508,350) max r=.47 · furthest (408,119)-(575,211)
+     max r=.52. The vignette contributes ZERO wash to the deck;
+     the outward fade is carried by the pegboard's own mask.
+
+   ── COUNTABILITY (do not regress) ──────────────────────────
+   TEN cards, countable on a white ground. The countability comes
+   from the EDGE, not the fill: --w-card-lo sits only ~16 gray
+   levels below the page, so ramping fill opacity across ten cards
+   cannot delimit them. --w-line-strong (.16 alpha) is far too
+   faint for the border — on the last card it lands at .16×.44=.07
+   and vanishes. --w-text-3 (a faint gray INK token, .62) is the
+   softest token that still draws a real line: ×each card's own
+   opacity it lands .60 near → .27 far. With the short per-step
+   travel (12,-13) every card clears the one in front by 13px of
+   top edge, and those ten stacked top-edges are the count.
+   Opacity floor .44 — nothing dips into "gray texture".
+
+   STILL COMPOSITION — NO LOOP. Base CSS = the finished scene.
+   An OPTIONAL reveal (host adds .is-in) fades the deck in and
+   lifts the focal card ONCE, then rests on that same base state.
+   No-JS and reduced-motion both get the full scene free.
+
+   Canvas 660×470, fixed px — host page scales .emx-fit.
+   LIGHT section (.cz-light). Tokens only, zero raw hex.
+   ============================================================ */
+
+/* ---- TEN · the undifferentiated deck ------------------------ */
+/* one card, drawn ten times — that repetition is the point.
+   FACELESS by contract: a skeleton disc, never a person. The A1
+   scene shows real faces being scanned; these ten are the "okay"
+   alternatives, and their anonymity is the whole argument. */
+.ema3-g{left:300px;top:236px;width:208px;height:114px;
+  padding:14px 16px;border-radius:var(--w-r-md);
+  display:flex;flex-direction:column;gap:11px;transform-origin:0 0}
+.ema3-grow{display:flex;align-items:center;gap:10px}
+.ema3-gt{display:flex;flex-direction:column;gap:6px;flex:1;min-width:0}
+.ema3-dot{width:28px;height:28px;border-radius:var(--w-r-full);
+  background:var(--w-line-strong);opacity:.8;flex:none}
+
+/* (0,2,0) beats the kit's flat .emx-ghost. Ink-token border = the countable
+   edge; --w-shadow-sm hairline = deliberately NOT the lift the match gets. */
+.ema3-scene .ema3-g{border-color:var(--w-text-3);
+  box-shadow:var(--w-shadow-sm);filter:grayscale(1)}
+/* (0,3,0) beats .emx-ghost .emx-ln — skeletons must survive the far cards */
+.ema3-scene .ema3-g .emx-ln{opacity:.72}
+
+/* recede: further back = a little smaller, a little higher, a little fainter */
+.ema3-scene .ema3-g1 {transform:translate(0,0)          scale(1);    opacity:.96}
+.ema3-scene .ema3-g2 {transform:translate(12px,-13px)   scale(.978); opacity:.90}
+.ema3-scene .ema3-g3 {transform:translate(24px,-26px)   scale(.956); opacity:.84}
+.ema3-scene .ema3-g4 {transform:translate(36px,-39px)   scale(.934); opacity:.78}
+.ema3-scene .ema3-g5 {transform:translate(48px,-52px)   scale(.912); opacity:.72}
+.ema3-scene .ema3-g6 {transform:translate(60px,-65px)   scale(.890); opacity:.66}
+.ema3-scene .ema3-g7 {transform:translate(72px,-78px)   scale(.868); opacity:.60}
+.ema3-scene .ema3-g8 {transform:translate(84px,-91px)   scale(.846); opacity:.54}
+.ema3-scene .ema3-g9 {transform:translate(96px,-104px)  scale(.824); opacity:.48}
+.ema3-scene .ema3-g10{transform:translate(108px,-117px) scale(.802); opacity:.44}
+
+/* ---- ONE · the focal match --------------------------------- */
+/* The wrapper owns ALL motion (opacity + transform). Never the card. */
+.ema3-focalwrap{position:absolute;left:70px;top:140px;width:296px;height:172px}
+
+/* Static bloom underlay — the brand moment, as a real element rather than a
+   negative-z pseudo (see the trap note). Tree order puts it under the glass,
+   so the card's backdrop-filter picks it up as a soft coloured halo instead of
+   painting over the face. No z-index: DOM order is enough. */
+.ema3-bloom{position:absolute;inset:-16px;border-radius:34px;pointer-events:none;
+  background:var(--w-grad-brand);filter:blur(20px);opacity:.26}
+/* WHITE frosted (Jeff) — near-opaque face so the bloom stays an OUTER halo and doesn't
+   tint the card lavender through the glass. Frost (backdrop-filter) is untouched. */
+.ema3-scene .ema3-focal{background:rgba(255,255,255,0.95)}
+
+/* the dark frosted card itself — fills the wrapper */
+.ema3-focal{left:0;top:0;right:0;bottom:0;width:auto;height:auto;
+  padding:18px 20px;display:flex;flex-direction:column;gap:12px}
+.ema3-head{display:flex;align-items:center;gap:12px}
+.ema3-av{width:54px;height:54px}
+/* flex:none + nowrap + no ellipsis anywhere → "Amy Lee" cannot be cropped */
+.ema3-scene .ema3-name{flex:none;white-space:nowrap;
+  font:700 20px/1.2 var(--w-font);letter-spacing:-.01em;color:var(--emx-ink)}
+.ema3-meta{display:flex;align-items:center;justify-content:space-between;gap:10px}
+/* ink-scope colours: the card is dark, the section is not */
+.ema3-scene .ema3-illus{font-size:11px;letter-spacing:.1em;color:var(--emx-ink-2)}
+.ema3-scene .ema3-ctx{align-self:flex-start;margin-top:auto;color:var(--emx-ink)}
+
+/* ---- reveal · plays ONCE · never loops ---------------------- */
+@media (prefers-reduced-motion:no-preference){
+  .ema3-scene.is-in .ema3-focalwrap,
+  .is-in .ema3-scene .ema3-focalwrap{animation:ema3-lift .72s cubic-bezier(.2,.7,.2,1) both;
+    animation-delay:.10s}
+  .ema3-scene.is-in .ema3-g,
+  .is-in .ema3-scene .ema3-g{animation:ema3-settle .6s cubic-bezier(.2,.7,.2,1) both}
+  .ema3-scene.is-in .ema3-g10,.is-in .ema3-scene .ema3-g10{animation-delay:.06s}
+  .ema3-scene.is-in .ema3-g9, .is-in .ema3-scene .ema3-g9 {animation-delay:.12s}
+  .ema3-scene.is-in .ema3-g8, .is-in .ema3-scene .ema3-g8 {animation-delay:.18s}
+  .ema3-scene.is-in .ema3-g7, .is-in .ema3-scene .ema3-g7 {animation-delay:.24s}
+  .ema3-scene.is-in .ema3-g6, .is-in .ema3-scene .ema3-g6 {animation-delay:.30s}
+  .ema3-scene.is-in .ema3-g5, .is-in .ema3-scene .ema3-g5 {animation-delay:.36s}
+  .ema3-scene.is-in .ema3-g4, .is-in .ema3-scene .ema3-g4 {animation-delay:.42s}
+  .ema3-scene.is-in .ema3-g3, .is-in .ema3-scene .ema3-g3 {animation-delay:.48s}
+  .ema3-scene.is-in .ema3-g2, .is-in .ema3-scene .ema3-g2 {animation-delay:.54s}
+  .ema3-scene.is-in .ema3-g1, .is-in .ema3-scene .ema3-g1 {animation-delay:.60s}
+}
+/* the deck settles in — opacity only, so each ghost keeps its own recede
+   transform, and the end state is exactly the base state */
+@keyframes ema3-settle{from{opacity:0}}
+/* the one match lifts forward — on the WRAPPER, so the glass card and its
+   bloom never become a stacking context mid-flight. Ends on the base state. */
+@keyframes ema3-lift{
+  from{opacity:0;transform:translateY(14px)}
+  to{opacity:1;transform:none}
+}

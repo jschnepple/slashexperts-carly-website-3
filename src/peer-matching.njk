@@ -1,0 +1,555 @@
+---
+navProduct: experts
+title: "Peer Matching | SlashExperts"
+description: "Peer Matching uses ExpertScore AI to pair each prospect with the single best-fit customer across 50+ data points — every time."
+pageCSS: peer-matching
+pageJS: peer-matching
+ds7: true
+permalink: /experts/peer-matching/
+---
+
+{% extends "layouts/base-w.njk" %}
+
+{% block content %}
+{% raw %}
+
+
+  <!-- ══ §1 · HERO — full-ratio editorial photo · LEFT column · white ink ═══ -->
+  <section class="cz-light emh w-section--hero" id="top" data-nav-surface="dark">
+    <div class="emh__media" role="img" aria-label="A laptop on a terracotta desk showing the SlashExperts booking experience — a buyer choosing a customer-expert to talk to."></div>
+    <div class="emh__scrim"></div>
+    <div class="w-container w-container--wide emh__inner">
+      <div class="emh__head w-stagger">
+        <span class="w-tag w-tag--kicker w-reveal em-kicker emh__kicker">
+          <svg class="w-icon w-icon--inherit"><use href="#i-match"/></svg>
+          Peer Matching · powered by ExpertScore AI
+        </span>
+        <h1 class="emh__title w-reveal">Not a list. The right match.</h1>
+        <p class="emh__lead w-reveal">Reference tools hand you a database of names and wish you luck. Peer Matching uses ExpertScore AI to pair each prospect with the single best-fit customer across 50+ data points — every time.</p>
+        <div class="emh__cta w-reveal">
+          <a class="w-btn w-btn--primary w-btn--lg" href="/book-a-demo">Book a Demo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ TRUST BAND — lifted VERBATIM from the shipped W-CARLY-INTEL page ═════ -->
+  <section class="cz-light w-section emt-trust" data-nav-surface="light">
+    <div class="w-container">
+      <div class="emt-trust__inner w-reveal">
+        <div class="w-trust-label">Trusted by revenue teams</div>
+        <div class="w-marquee" aria-label="Customer logos"><div class="w-marquee__track"><span class="w-marquee__item" style="background-image:var(--w-img-logo-sendoso)"></span><span class="w-marquee__lockup"><i style="background-image:var(--w-img-logo-sequel)"></i><b>Sequel.io</b></span><span class="w-marquee__item" style="background-image:var(--w-img-logo-netline)"></span><span class="w-marquee__lockup"><i style="background-image:var(--w-img-logo-warmly)"></i><b>Warmly</b></span><span class="w-marquee__item" style="background-image:var(--w-img-logo-udemy)"></span><span class="w-marquee__lockup"><i style="background-image:var(--w-img-logo-outreach)"></i><b>Outreach</b></span><span class="w-marquee__item" style="background-image:var(--w-img-logo-checkr)"></span><span class="w-marquee__lockup"><i style="background-image:var(--w-img-logo-seismic)"></i><b>Seismic</b></span><span class="w-marquee__item" style="background-image:var(--w-img-logo-salesbricks)"></span><span class="w-marquee__lockup"><i style="background-image:var(--w-img-logo-sixsense)"></i><b>6sense</b></span><span class="w-marquee__item" style="background-image:var(--w-img-logo-euler)"></span><span class="w-marquee__lockup"><i style="background-image:var(--w-img-logo-highspot)"></i><b>Highspot</b></span><span class="w-marquee__item" style="background-image:var(--w-img-logo-spara)"></span><span class="w-marquee__item" style="background-image:var(--w-img-logo-syntheticfi)"></span><span class="w-marquee__lockup"><i style="background-image:var(--w-img-logo-google)"></i><b>Google</b></span><span class="w-marquee__item" style="background-image:var(--w-img-logo-sendoso)"></span><span class="w-marquee__lockup"><i style="background-image:var(--w-img-logo-sequel)"></i><b>Sequel.io</b></span><span class="w-marquee__item" style="background-image:var(--w-img-logo-netline)"></span><span class="w-marquee__lockup"><i style="background-image:var(--w-img-logo-warmly)"></i><b>Warmly</b></span><span class="w-marquee__item" style="background-image:var(--w-img-logo-udemy)"></span><span class="w-marquee__lockup"><i style="background-image:var(--w-img-logo-outreach)"></i><b>Outreach</b></span><span class="w-marquee__item" style="background-image:var(--w-img-logo-checkr)"></span><span class="w-marquee__lockup"><i style="background-image:var(--w-img-logo-seismic)"></i><b>Seismic</b></span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ §2 · THE SHORTLIST COLLAPSE — LIGHT · centered head + full-width rail ══ -->
+  <section class="cz-light emn w-section" id="shortlist" data-nav-surface="light">
+    <div class="w-container w-container--wide">
+
+      <div class="emn__head">
+        <span class="w-tag w-tag--kicker w-reveal em-kicker">
+          <svg class="w-icon w-icon--inherit"><use href="#i-scan"/></svg>
+          From a list to a name
+        </span>
+        <h2 class="emn__title w-reveal">Your whole network, narrowed to one name.</h2>
+        <p class="emn__lead w-reveal">ExpertScore AI reads every customer-expert against the deal in front of you — and puts one forward, with the score that earned it.</p>
+      </div>
+
+      <div class="emn__fig w-reveal w-reveal--scale">
+        <div class="emn__stage" id="ema1">
+<div class="emx ema1-scene" aria-hidden="true">
+  <div class="emx-fit" data-canvas="1180x430" data-canvas-sm="440x600"
+       style="width:1180px;height:430px">
+
+    <!-- PEGBOARD · house back-motif, light section → default dark-dot variant.
+         First child, z-index:0 — every positioned element below paints above it.
+         Fades outward via its own mask (stacks with .emx-fit::after). -->
+    <div class="emx-peg"></div>
+
+    <!-- THE LIST · scanned PEOPLE — real face (grayscale, dimmed) + anonymous
+         skeleton detail. Base = receded ghosts. Avatars cycle, never adjacent-
+         repeat; keegan (reviews) and jeff (owner) are never used here. -->
+    <div class="emx-card emx-ghost ema1-row ema1-r1" style="--ema1-d:0s">
+      <i class="emx-face ema1-face" style="background-image:var(--w-img-av-ava)"></i>
+      <i class="emx-ln" style="--ema1-w:96px"></i><i class="emx-ln" style="--ema1-w:152px"></i><i class="emx-ln ema1-tail" style="--ema1-w:32px"></i>
+    </div>
+    <div class="emx-card emx-ghost ema1-row ema1-r2" style="--ema1-d:.06s">
+      <i class="emx-face ema1-face" style="background-image:var(--w-img-av-aisha)"></i>
+      <i class="emx-ln" style="--ema1-w:84px"></i><i class="emx-ln" style="--ema1-w:174px"></i><i class="emx-ln ema1-tail" style="--ema1-w:32px"></i>
+    </div>
+    <div class="emx-card emx-ghost ema1-row ema1-r3" style="--ema1-d:.12s">
+      <i class="emx-face ema1-face" style="background-image:var(--w-img-av-george)"></i>
+      <i class="emx-ln" style="--ema1-w:104px"></i><i class="emx-ln" style="--ema1-w:140px"></i><i class="emx-ln ema1-tail" style="--ema1-w:32px"></i>
+    </div>
+    <div class="emx-card emx-ghost ema1-row ema1-r4" style="--ema1-d:.18s">
+      <i class="emx-face ema1-face" style="background-image:var(--w-img-av-diana)"></i>
+      <i class="emx-ln" style="--ema1-w:90px"></i><i class="emx-ln" style="--ema1-w:166px"></i><i class="emx-ln ema1-tail" style="--ema1-w:32px"></i>
+    </div>
+
+    <!-- the row that got pulled out (empty well) + the row itself — Allison,
+         still grayscale in the rail, still anonymous. She resolves to COLOUR
+         only in the card. Landscape: mid-rail (199). Portrait: foot (246). -->
+    <div class="ema1-slot"></div>
+    <div class="emx-card ema1-row ema1-pick">
+      <i class="emx-face ema1-face" style="background-image:var(--w-img-av-allison)"></i>
+      <i class="emx-ln" style="--ema1-w:98px"></i><i class="emx-ln" style="--ema1-w:158px"></i><i class="emx-ln ema1-tail" style="--ema1-w:32px"></i>
+    </div>
+
+    <div class="emx-card emx-ghost ema1-row ema1-r6" style="--ema1-d:.24s">
+      <i class="emx-face ema1-face" style="background-image:var(--w-img-av-ava)"></i>
+      <i class="emx-ln" style="--ema1-w:110px"></i><i class="emx-ln" style="--ema1-w:132px"></i><i class="emx-ln ema1-tail" style="--ema1-w:32px"></i>
+    </div>
+    <!-- r7–r9 · landscape only (hidden under .is-sm to keep the portrait stack legible) -->
+    <div class="emx-card emx-ghost ema1-row ema1-r7" style="--ema1-d:.3s">
+      <i class="emx-face ema1-face" style="background-image:var(--w-img-av-aisha)"></i>
+      <i class="emx-ln" style="--ema1-w:80px"></i><i class="emx-ln" style="--ema1-w:180px"></i><i class="emx-ln ema1-tail" style="--ema1-w:32px"></i>
+    </div>
+    <div class="emx-card emx-ghost ema1-row ema1-r8" style="--ema1-d:.36s">
+      <i class="emx-face ema1-face" style="background-image:var(--w-img-av-diana)"></i>
+      <i class="emx-ln" style="--ema1-w:100px"></i><i class="emx-ln" style="--ema1-w:146px"></i><i class="emx-ln ema1-tail" style="--ema1-w:32px"></i>
+    </div>
+    <div class="emx-card emx-ghost ema1-row ema1-r9" style="--ema1-d:.42s">
+      <i class="emx-face ema1-face" style="background-image:var(--w-img-av-george)"></i>
+      <i class="emx-ln" style="--ema1-w:88px"></i><i class="emx-ln" style="--ema1-w:170px"></i><i class="emx-ln ema1-tail" style="--ema1-w:32px"></i>
+    </div>
+
+    <!-- the scan that separates the one from the many -->
+    <div class="ema1-scanwrap"><i class="ema1-scan"></i></div>
+
+    <!-- emptied slot → focal card (landscape: rightward · portrait: downward) -->
+    <i class="emx-cn ema1-cn"></i>
+
+    <!-- THE ONE MATCH · resolved profile card, DARK FROSTED GLASS on the light
+         section. Base = forward, scored, in full colour.
+         .ema1-focal = animated wrapper · .ema1-rim = static bloom underlay ·
+         .ema1-card = the glass surface + .emx-on-light ink scope (WHITE frosted, Jeff). -->
+    <div class="ema1-focal">
+      <i class="emx-rim ema1-rim"></i>
+      <div class="emx-glass emx-glass--light emx-on-light ema1-card">
+        <div class="ema1-hrow">
+          <i class="emx-av emx-av--ring ema1-av" style="background-image:var(--w-img-av-allison)"></i>
+          <span class="emx-nm ema1-name">Allison Moore</span>
+        </div>
+        <div class="ema1-crow">
+          <span class="emx-chip ema1-chip">Fintech</span>
+          <span class="emx-chip ema1-chip">VP Sales</span>
+        </div>
+        <div class="ema1-foot">
+          <span class="emx-chip emx-chip--score ema1-score">98% Best fit</span>
+          <span class="emx-illus ema1-illus">Illustrative</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══ ADOBE STICKY STACK — engine → surfaces pin and get covered ══════════ -->
+  <div class="ems-stack">
+
+  <!-- ══ §3 · WHAT GOES INTO A MATCH — DARK punch · split media-LEFT ═══════ -->
+  <section class="eme w-section" id="engine" data-nav-surface="dark">
+    <div class="w-container w-container--wide">
+      <div class="eme__grid">
+
+        <div class="eme__media w-reveal w-reveal--scale">
+          <div class="eme__stage" id="ema2">
+<div class="emx ema2-scene" aria-hidden="true">
+  <div class="emx-fit" data-canvas="640x560" style="width:640px;height:560px">
+
+    <!-- the house pegboard — behind everything, fades outward via its own mask -->
+    <div class="emx-peg emx-peg--dark"></div>
+
+    <!-- INPUTS · the named signals, each weighed differently (DARK glass) -->
+    <div class="emx-glass emx-glass--dark emx-on-dark ema2-signals">
+      <div class="ema2-head">
+        <span class="ema2-kicker">Signals weighed</span>
+        <span class="ema2-kicker">Weight</span>
+      </div>
+
+      <div class="ema2-rows">
+        <div class="ema2-row" style="--ema2-d:0s">
+          <span class="ema2-lb">Industry</span>
+          <span class="emx-bar"><i style="width:82%"></i></span>
+        </div>
+        <div class="ema2-row" style="--ema2-d:.12s">
+          <span class="ema2-lb">Company size and stage</span>
+          <span class="emx-bar"><i style="width:58%"></i></span>
+        </div>
+        <div class="ema2-row" style="--ema2-d:.24s">
+          <span class="ema2-lb">Role and seniority</span>
+          <span class="emx-bar"><i style="width:70%"></i></span>
+        </div>
+        <div class="ema2-row" style="--ema2-d:.36s">
+          <span class="ema2-lb">Use case</span>
+          <span class="emx-bar"><i style="width:91%"></i></span>
+        </div>
+        <div class="ema2-row" style="--ema2-d:.48s">
+          <span class="ema2-lb">The objection on the table</span>
+          <span class="emx-bar"><i style="width:97%"></i></span>
+        </div>
+      </div>
+
+      <!-- the list keeps going -->
+      <div class="ema2-tail">
+        <span class="emx-chip emx-chip--mono">+ dozens more</span>
+        <i class="emx-ln"></i>
+      </div>
+    </div>
+
+    <!-- COMPUTATION · orthogonal rails, rounded elbows, gradient pulse -->
+    <i class="emx-cn ema2-cn ema2-v ema2-d1"><i></i></i>
+    <i class="emx-cn ema2-cn ema2-v ema2-d2"><i></i></i>
+    <i class="emx-cn ema2-cn ema2-v ema2-d3"><i></i></i>
+    <i class="ema2-el ema2-el-l"></i>
+    <i class="ema2-el ema2-el-r"></i>
+    <i class="emx-cn ema2-cn ema2-h ema2-hl ema2-b1"><i></i></i>
+    <i class="emx-cn ema2-cn ema2-h ema2-hr ema2-b2"><i></i></i>
+    <i class="emx-cn ema2-cn ema2-v ema2-tr"><i></i></i>
+
+    <!-- OUTPUT · one number, on the one LIGHT surface in the scene -->
+    <div class="ema2-focal">
+      <i class="ema2-bloom"></i>
+      <div class="emx-glass emx-glass--light emx-on-light ema2-card">
+        <i class="emx-av emx-av--ring ema2-av" style="background-image:var(--w-img-av-george)"></i>
+        <span class="ema2-idn">
+          <span class="emx-nm ema2-name">George Stevens</span>
+          <span class="emx-sub ema2-sub">ExpertScore &middot; best fit</span>
+        </span>
+        <span class="ema2-out">
+          <span class="ema2-num">
+            <span class="ema2-roll">
+              <b>12%</b><b>41%</b><b>67%</b><b>89%</b><b>98%</b>
+            </span>
+          </span>
+          <span class="emx-illus ema2-illus">Illustrative</span>
+        </span>
+      </div>
+    </div>
+
+    <!-- the runner-up · same math, lower score (DARK glass — recedes) -->
+    <div class="emx-glass emx-glass--dark emx-on-dark ema2-runner">
+      <i class="emx-av" style="background-image:var(--w-img-av-ava)"></i>
+      <span class="ema2-rname">Ava</span>
+      <span class="ema2-rpct">94%</span>
+    </div>
+
+  </div>
+</div>
+</div>
+        </div>
+
+        <div class="eme__copy w-stagger">
+          <span class="w-tag w-tag--kicker w-reveal em-kicker">
+            <svg class="w-icon w-icon--inherit"><use href="#i-settings"/></svg>
+            What goes into a match
+          </span>
+          <h2 class="eme__title w-reveal">50+ data points, one fit score.</h2>
+          <p class="eme__body w-reveal">ExpertScore AI weighs industry, company size and stage, role and seniority, the specific use case, the objection on the table, and dozens more signals to rank your customer-experts for each deal. The result is a clear fit score, so your team and your buyer both know why this is the right person to talk to.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ §4 · WHY FIT BEATS VOLUME — LIGHT · asymmetric type-led ═══════════ -->
+  <section class="cz-light emf w-section" id="fit" data-nav-surface="light">
+    <div class="w-container w-container--wide">
+      <div class="emf__grid">
+
+        <div class="emf__copy w-stagger">
+          <span class="w-tag w-tag--kicker w-reveal em-kicker">
+            <svg class="w-icon w-icon--inherit"><use href="#i-proof"/></svg>
+            Why fit beats volume
+          </span>
+          <h2 class="emf__title w-reveal">One great match beats ten okay ones.</h2>
+          <p class="emf__body w-reveal">A buyer doesn't want "a reference." They want the person who had their exact problem and solved it. High-fit matches convert because they're relevant — and Peer Matching is built to find relevance, not just availability.</p>
+        </div>
+
+        <div class="emf__media w-reveal">
+          <div class="emf__stage" id="ema3">
+<div class="emx ema3-scene" aria-hidden="true">
+  <div class="emx-fit" data-canvas="660x470" style="width:660px;height:470px">
+
+    <!-- ═══ the pegboard — house back-motif, LIGHT variant (dark dots on white).
+         FIRST child: z-index:0, everything after it paints above. Fades outward
+         via its own mask, stacking with .emx-fit::after's edge-fade. ═══ -->
+    <div class="emx-peg"></div>
+
+    <!-- ═══ TEN · a database of names. Faceless, flat, interchangeable. ═══
+         Ten identical cards — no avatars, no names, no scores, ever.
+         Authored back-to-front: g10 (farthest) → g1 (nearest). -->
+    <div class="emx-card emx-ghost ema3-g ema3-g10">
+      <div class="ema3-grow"><span class="ema3-dot"></span>
+        <span class="ema3-gt"><i class="emx-ln" style="width:76px"></i><i class="emx-ln" style="width:50px"></i></span></div>
+      <i class="emx-ln" style="width:164px"></i>
+      <i class="emx-ln" style="width:116px"></i>
+    </div>
+    <div class="emx-card emx-ghost ema3-g ema3-g9">
+      <div class="ema3-grow"><span class="ema3-dot"></span>
+        <span class="ema3-gt"><i class="emx-ln" style="width:76px"></i><i class="emx-ln" style="width:50px"></i></span></div>
+      <i class="emx-ln" style="width:164px"></i>
+      <i class="emx-ln" style="width:116px"></i>
+    </div>
+    <div class="emx-card emx-ghost ema3-g ema3-g8">
+      <div class="ema3-grow"><span class="ema3-dot"></span>
+        <span class="ema3-gt"><i class="emx-ln" style="width:76px"></i><i class="emx-ln" style="width:50px"></i></span></div>
+      <i class="emx-ln" style="width:164px"></i>
+      <i class="emx-ln" style="width:116px"></i>
+    </div>
+    <div class="emx-card emx-ghost ema3-g ema3-g7">
+      <div class="ema3-grow"><span class="ema3-dot"></span>
+        <span class="ema3-gt"><i class="emx-ln" style="width:76px"></i><i class="emx-ln" style="width:50px"></i></span></div>
+      <i class="emx-ln" style="width:164px"></i>
+      <i class="emx-ln" style="width:116px"></i>
+    </div>
+    <div class="emx-card emx-ghost ema3-g ema3-g6">
+      <div class="ema3-grow"><span class="ema3-dot"></span>
+        <span class="ema3-gt"><i class="emx-ln" style="width:76px"></i><i class="emx-ln" style="width:50px"></i></span></div>
+      <i class="emx-ln" style="width:164px"></i>
+      <i class="emx-ln" style="width:116px"></i>
+    </div>
+    <div class="emx-card emx-ghost ema3-g ema3-g5">
+      <div class="ema3-grow"><span class="ema3-dot"></span>
+        <span class="ema3-gt"><i class="emx-ln" style="width:76px"></i><i class="emx-ln" style="width:50px"></i></span></div>
+      <i class="emx-ln" style="width:164px"></i>
+      <i class="emx-ln" style="width:116px"></i>
+    </div>
+    <div class="emx-card emx-ghost ema3-g ema3-g4">
+      <div class="ema3-grow"><span class="ema3-dot"></span>
+        <span class="ema3-gt"><i class="emx-ln" style="width:76px"></i><i class="emx-ln" style="width:50px"></i></span></div>
+      <i class="emx-ln" style="width:164px"></i>
+      <i class="emx-ln" style="width:116px"></i>
+    </div>
+    <div class="emx-card emx-ghost ema3-g ema3-g3">
+      <div class="ema3-grow"><span class="ema3-dot"></span>
+        <span class="ema3-gt"><i class="emx-ln" style="width:76px"></i><i class="emx-ln" style="width:50px"></i></span></div>
+      <i class="emx-ln" style="width:164px"></i>
+      <i class="emx-ln" style="width:116px"></i>
+    </div>
+    <div class="emx-card emx-ghost ema3-g ema3-g2">
+      <div class="ema3-grow"><span class="ema3-dot"></span>
+        <span class="ema3-gt"><i class="emx-ln" style="width:76px"></i><i class="emx-ln" style="width:50px"></i></span></div>
+      <i class="emx-ln" style="width:164px"></i>
+      <i class="emx-ln" style="width:116px"></i>
+    </div>
+    <div class="emx-card emx-ghost ema3-g ema3-g1">
+      <div class="ema3-grow"><span class="ema3-dot"></span>
+        <span class="ema3-gt"><i class="emx-ln" style="width:76px"></i><i class="emx-ln" style="width:50px"></i></span></div>
+      <i class="emx-ln" style="width:164px"></i>
+      <i class="emx-ln" style="width:116px"></i>
+    </div>
+
+    <!-- ═══ ONE · the person who had their exact problem — and solved it. ═══
+         wrapper (animated) › bloom underlay (static) › dark frosted card.
+         The card carries NO z-index, NO animated opacity, NO animated
+         transform, and NO rim pseudo-element. -->
+    <div class="ema3-focalwrap">
+      <div class="ema3-bloom"></div>
+      <div class="emx-glass emx-glass--light emx-on-light ema3-focal">
+        <div class="ema3-head">
+          <i class="emx-av emx-av--ring ema3-av" style="background-image:var(--w-img-av-aisha)"></i>
+          <span class="emx-nm ema3-name">Amy Lee</span>
+        </div>
+        <div class="ema3-meta">
+          <span class="emx-chip emx-chip--score">98% Best fit</span>
+          <span class="emx-illus ema3-illus">Illustrative</span>
+        </div>
+        <span class="emx-chip ema3-ctx">Same problem &middot; solved it</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ §5 · EVERY MATCH IS A PERSON — LIGHT · split, media RIGHT ═════════ -->
+  <section class="cz-light em-bg em-bg--right emp w-section" id="ema-profile" data-nav-surface="light" role="img"
+           aria-label="A laptop on a terracotta plinth showing the Experts+ expert profile — role, company, active status, and public/private visibility.">
+    <div class="w-container w-container--wide">
+      <div class="emp__grid">
+
+        <div class="emp__copy w-stagger">
+          <span class="w-tag w-tag--kicker w-reveal em-kicker">
+            <svg class="w-icon w-icon--inherit"><use href="#i-user"/></svg>
+            The profile behind the score
+          </span>
+          <h2 class="emp__title w-reveal">Every match is a person, not a row.</h2>
+          <p class="emp__body w-reveal">The score gets you to a name. The profile is what your buyer actually lands on — the role they hold, the company they did it at, the expertise they're tagged for, what's public and what isn't, and whether they're free to talk this week. That's what "50+ data points" looks like when it stops being a number.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ §6 · YOU CURATE THE BENCH — DARK punch · split, media LEFT ════════ -->
+  <section class="em-bg em-bg--left emr w-section" id="ema-roster" data-nav-surface="dark" role="img"
+           aria-label="A laptop showing the Experts+ roster — every customer-expert with status, program, tags, visibility, and segment.">
+    <div class="w-container w-container--wide">
+      <div class="emr__grid">
+
+        <div class="emr__copy w-stagger">
+          <span class="w-tag w-tag--kicker w-reveal em-kicker">
+            <svg class="w-icon w-icon--inherit"><use href="#i-shield"/></svg>
+            Control and automation
+          </span>
+          <h2 class="emr__title w-reveal">You curate the bench. The engine picks the player.</h2>
+          <p class="emr__body w-reveal">ExpertScore never reaches outside the roster you built. You approve who joins, tag what they're credible on, set who's public and who stays private, and gate who they can be shown to. Inside those rules, the engine does the ranking — automatically, on every deal. Automation you don't have to take on faith.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ §7 · ON EVERY SURFACE — LIGHT · centered head + full-width scene ═══ -->
+  <section class="cz-light em-bg em-bg--right emsf w-section" id="ema-surfaces" data-nav-surface="light" role="img"
+           aria-label="A laptop showing the Experts+ Design Studio — booking system, single expert card, pop-up widget, email-safe card and multi-expert strip templates.">
+    <div class="w-container w-container--wide">
+      <div class="emsf__grid">
+
+      <div class="emsf__head w-stagger">
+        <span class="w-tag w-tag--kicker w-reveal em-kicker">
+          <svg class="w-icon w-icon--inherit"><use href="#i-widget"/></svg>
+          Wherever the deal is happening
+        </span>
+        <h2 class="emsf__title w-reveal">The right match, on every surface.</h2>
+        <p class="emsf__lead w-reveal">One match, rendered wherever your buyer already is — a widget on your site, a popup in the flow, a card in an email, an embed inside the CRM. Matching follows the buyer instead of waiting for them to come find it.</p>
+      </div>
+
+      </div>
+
+      <!-- Design Studio layouts — real renders of the shipped C-DS templates -->
+      <div class="emsf__subhead">
+        <span class="w-tag w-tag--kicker w-reveal em-kicker">
+          <svg class="w-icon w-icon--inherit"><use href="#i-widget"/></svg>
+          Built in Design Studio
+        </span>
+        <h3 class="emsf__subtitle w-reveal">Four ways to render the same match.</h3>
+        <p class="emsf__sublead w-reveal">Pick the surface, style it to your brand, ship it. The match underneath is identical — only the frame around it changes.</p>
+      </div>
+
+      <div class="emsf__layouts w-stagger">
+        <figure class="emsf__lay w-reveal">
+          <div class="emsf__shot"><img src="/assets/images/w/peer-matching/asset-2.webp" alt="Website booking system — a full expert directory embedded on your site, with search, filters and instant booking." loading="lazy" decoding="async"></div>
+          <figcaption class="emsf__cap">
+            <h3 class="emsf__lay-title">Website booking system</h3>
+            <p class="emsf__lay-sub">A full expert directory on your own domain — search, filter, book. The whole network, one page.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="emsf__lay w-reveal">
+          <div class="emsf__shot"><img src="/assets/images/w/peer-matching/asset-3.webp" alt="Single expert card — a compact embeddable card featuring one matched customer-expert." loading="lazy" decoding="async"></div>
+          <figcaption class="emsf__cap">
+            <h3 class="emsf__lay-title">Single expert card</h3>
+            <p class="emsf__lay-sub">One matched customer, embedded anywhere — a product page, a case study, a pricing page.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="emsf__lay w-reveal">
+          <div class="emsf__shot"><img src="/assets/images/w/peer-matching/asset-4.webp" alt="Pop-up widget — a booking modal triggered by a CTA button, showing the matched expert and open slots." loading="lazy" decoding="async"></div>
+          <figcaption class="emsf__cap">
+            <h3 class="emsf__lay-title">Pop-up widget</h3>
+            <p class="emsf__lay-sub">Triggered by any CTA on your site. The match appears in the flow, without sending the buyer away.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="emsf__lay w-reveal">
+          <div class="emsf__shot"><img src="/assets/images/w/peer-matching/asset-5.webp" alt="Email-safe expert card — a card that renders correctly in any inbox." loading="lazy" decoding="async"></div>
+          <figcaption class="emsf__cap">
+            <h3 class="emsf__lay-title">Email-safe card</h3>
+            <p class="emsf__lay-sub">Drops into a follow-up and renders in any inbox — the match arrives where the conversation already is.</p>
+          </figcaption>
+        </figure>
+      </div>
+
+    </div>
+  </section>
+
+  </div>
+
+
+
+  <!-- ══ §9 · PROOF — DARK stat band · centered brand numeral ══════════════ -->
+  <section class="emq w-section" id="proof" data-nav-surface="dark">
+    <div class="w-container">
+      <div class="emq__inner w-stagger">
+        <span class="w-tag w-tag--kicker w-reveal em-kicker">
+          <svg class="w-icon w-icon--inherit"><use href="#i-trending"/></svg>
+          Proof
+        </span>
+        <p class="emq__stat w-reveal"><span class="emq__num">66%</span></p>
+        <p class="emq__line w-reveal">of buyers say peer conversations are very or extremely influential.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ §10 · BETTER TOGETHER — lifted VERBATIM from the shipped W-HOME §5 ═══
+       Markup, copy, cards, image + the briefcase-open / cards-fly-in motion are the
+       W-HOME originals. Only the image is re-pathed to a local asset. -->
+  <section class="w-section cz-light" id="better-together" data-nav-surface="light">
+    <div class="w-container">
+      <div class="w-section-head w-reveal">
+        <span class="w-badge"><span class="w-badge__icon"><svg viewBox="0 0 24 24"><use href="#i-link"/></svg></span>Better together</span>
+        <h2 class="w-section-head__title">Match on demand. Or match <span class="w-accent">on its own.</span></h2>
+        <p class="w-section-head__lead">Peer Matching finds the right customer the moment a buyer asks. <b style="color:var(--w-text)">Carly</b> brings them before anyone asks — she works your open deals and pulls the best-fit expert from the same network. Infrastructure plus agent: your trust layer.</p>
+      </div>
+      <div class="hm-bt__img" role="img" aria-label="SlashExperts in action, side by side — a light analytics dashboard and the dark Carly agent workspace, better together."></div>
+      <div class="w-grid w-grid--3 w-stagger">
+        <div class="w-card w-card--soft hm-move bt-fly">
+          <span class="w-card__icon"><svg viewBox="0 0 24 24"><use href="#i-users"/></svg></span>
+          <h3 class="hm-move__title">Experts+ gives Carly her supply</h3>
+          <div class="hm-move__inner"><p class="hm-move__sub">— every verified customer, every reference, the whole library she draws from.</p></div>
+        </div>
+        <div class="w-card w-card--soft hm-move bt-fly">
+          <span class="w-card__icon"><svg viewBox="0 0 24 24"><use href="#i-zap"/></svg></span>
+          <h3 class="hm-move__title">Carly makes Experts+ proactive</h3>
+          <div class="hm-move__inner"><p class="hm-move__sub">— your trust layer stops waiting to be opened and starts reaching into live deals on its own.</p></div>
+        </div>
+        <div class="w-card w-card--soft hm-move bt-fly">
+          <span class="w-card__icon"><svg viewBox="0 0 24 24"><use href="#i-trending"/></svg></span>
+          <h3 class="hm-move__title">Together they compound</h3>
+          <div class="hm-move__inner"><p class="hm-move__sub">— every proof that lands on time creates another win, another referenceable customer, more supply. The flywheel turns.</p></div>
+        </div>
+      </div>
+      <p class="w-lead hm-bt__compound w-reveal">Buy either and it works. Buy both and your trust layer stops waiting to be asked.</p>
+      <div class="w-row w-reveal" style="justify-content:center">
+        <a class="w-btn w-btn--glass" href="/carly/">See how they work together <svg class="w-icon"><use href="#i-arrow-right"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ §5 · FINAL CTA — LIGHT section, contained soft-brand band ═════════ -->
+  <section class="cz-light emc w-section w-panel-rise" id="cta" data-nav-surface="light">
+    <div class="w-container">
+      <div class="emc__band w-reveal">
+        <h2 class="emc__title">See ExpertScore AI match one of your deals.</h2>
+        <div class="emc__actions">
+          <a class="w-btn w-btn--primary w-btn--lg" href="/book-a-demo">Book a Demo</a>
+          <a class="emc__link" href="/experts/how-it-works/">
+            <span class="emc__wm">See how Experts<svg class="w-icon w-icon--inherit ep-plus"><use href="#i-plus"/></svg> works</span>
+            <svg class="w-icon w-icon--inherit"><use href="#i-arrow-right"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endraw %}
+{% endblock %}
